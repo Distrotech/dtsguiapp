@@ -227,7 +227,7 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	dtsgui_listbox_add(ilist, "ISDN BRI", NULL);
 	dtsgui_listbox_add(ilist, "Analogue", NULL);
 	objunref(ilist);
-	dtsgui_textbox(pg, "No. Of Trunk Ports", NULL, NULL);
+	dtsgui_xmltextbox(pg, "No. Of Trunk Ports", NULL, NULL);
 	ilist = dtsgui_xmllistbox(pg, "Gateway Trunk", NULL, NULL);
 	dtsgui_listbox_add(ilist, "None", NULL);
 	dtsgui_listbox_add(ilist, "ISDN PRI", NULL);
