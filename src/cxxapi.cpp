@@ -266,7 +266,8 @@ extern struct form_item *dtsgui_combobox(dtsgui_pane pane, const char *title, vo
 
 const char *getxmlvalue(struct xml_element *xml) {
 	struct xml_node *xn;
-	const char *ret, *tmp;
+	const char *ret = NULL;
+	const char *tmp;
 
 	if (!xml || !xml->xsearch) {
 		return NULL;

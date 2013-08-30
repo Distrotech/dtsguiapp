@@ -299,7 +299,6 @@ struct xml_element *DTSPanel::GetNode(const char *xpath, const char *attr) {
 	}
 
 	if (!(xml->xsearch = xml_xpath(xmldoc, xpath, attr))) {
-		printf("Node Not Found: %s\n", xpath);
 		objunref(xml);
 		return NULL;
 	}
@@ -341,6 +340,10 @@ void DTSPanel::CheckBox(const char *title, int ischecked, void *data, enum form_
 	AddItem(cbox, wxGBPosition(g_row, 3), wxGBSpan(1, 3), wxLEFT | wxRIGHT, 10);
 	g_row++;
 
+	if ((dtype == DTSGUI_FORM_DATA_XML) && !data) {
+		cbox->Disable();
+	}
+
 	fi = create_new_fitem(cbox, DTS_WIDGET_CHECKBOX, title, (ischecked) ? "on" : "", data, dtype);
 	objunref(fi);
 }
@@ -352,6 +355,10 @@ struct form_item *DTSPanel::ListBox(const char *title, void *data, enum form_dat
 	AddItem(text, wxGBPosition(g_row, 0), wxGBSpan(1, 3), wxLEFT | wxRIGHT, 10);
 	AddItem(lbox, wxGBPosition(g_row, 3), wxGBSpan(1, 3), wxEXPAND | wxGROW | wxLEFT | wxRIGHT, 10);
 	g_row++;
+
+	if ((dtype == DTSGUI_FORM_DATA_XML) && !data) {
+		lbox->Disable();
+	}
 
 	return create_new_fitem(lbox, DTS_WIDGET_LISTBOX, title, NULL, data, dtype);
 }
@@ -366,6 +373,10 @@ struct form_item *DTSPanel::ComboBox(const char *title, void *data, enum form_da
 
 	if (dtsevthandler) {
 		dtsevthandler->BindCombo(panel, lbox->GetId());
+	}
+
+	if ((dtype == DTSGUI_FORM_DATA_XML) && !data) {
+		lbox->Disable();
 	}
 
 	return create_new_fitem(lbox, DTS_WIDGET_COMBOBOX, title, NULL, data, dtype);
