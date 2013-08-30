@@ -29,7 +29,7 @@
 <!ELEMENT Interfaces (Interface|Interface6)*>
 <!ELEMENT Filters (Filter)*>
 <!ELEMENT Collections (Collection)*>
-<!ELEMENT VOIP (SIP|IAX)*>
+<!ELEMENT VOIP (SIP|IAX|ASTDB)*>
 <!ELEMENT LDAP (Config|Directories|PublicMail|Replica)*>
 <!ELEMENT Directories (Directory)*>
 <!ELEMENT Email (Filters|Collections|Config)*>
@@ -52,6 +52,7 @@
 <!ELEMENT ACL (BlackList)*>
 <!ELEMENT IAX (Peers)*>
 <!ELEMENT SIP (Peers)*>
+<!ELEMENT ASTDB (Option)*>
 <!ELEMENT IPv6 (IPv6to4)*>
 <!ELEMENT IPv6to4 (SIT)*>
 <!ELEMENT InAddr (Reverse)*>

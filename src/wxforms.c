@@ -134,7 +134,7 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	dtsgui_xmltextbox(pg, "Aliases", "/config/FileServer/Config/Option[@option = 'netbios name']", NULL);
 	dtsgui_xmltextbox(pg, "Domain Controllers", "/config/FileServer/Setup/Option[@option = 'ADSServer']", NULL);
 	dtsgui_xmltextbox(pg, "Realm [If Joining ADS]", "/config/FileServer/Setup/Option[@option = 'ADSRealm']", NULL);
-	dtsgui_xmlcheckbox(pg, "Domain Controller", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Domain Controller", NULL, NULL, NULL, NULL);
 
 	pg=dp[6];
 	ilist = dtsgui_xmlcombobox(pg, "External Interface", NULL, NULL);
@@ -143,7 +143,8 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	dtsgui_listbox_add(ilist, "br0.100", NULL);
 	dtsgui_listbox_add(ilist, "3G", NULL);
 	objunref(ilist);
-	dtsgui_xmlcheckbox(pg, "External Device Is PPPoE", NULL, NULL);
+	/*XXX USE TMP VAL and set later unckeced could be 3G...*/
+	dtsgui_xmlcheckbox(pg, "External Device Is PPPoE", "ADSL", "Dialup", "/config/IP/Dialup/Option[@option = 'Connection']", NULL);
 	dtsgui_xmltextbox(pg, "Number/Service/APN", "/config/IP/Dialup/Option[@option = 'Number']", NULL);
 	dtsgui_xmltextbox(pg, "Username", "/config/IP/Dialup/Option[@option = 'Username']", NULL);
 	dtsgui_xmltextbox(pg, "Password", "/config/IP/Dialup/Option[@option = 'Password']", NULL);
@@ -174,28 +175,27 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	dtsgui_listbox_add(ilist, "Premium", NULL);
 	dtsgui_listbox_add(ilist, "International", NULL);
 	objunref(ilist);
-	ilist = dtsgui_xmllistbox(pg, "Snom Network Port Config", NULL, NULL);
+	ilist = dtsgui_xmllistbox(pg, "Snom Network Port Config", "/config/IP/VOIP/ASTDB/Option[@option = '']", NULL);
 	dtsgui_listbox_add(ilist, "100Mb/s Full Duplex", NULL);
 	dtsgui_listbox_add(ilist, "100Mb/s Half Duplex", NULL);
 	dtsgui_listbox_add(ilist, "10Mb/s Full Duplex", NULL);
 	dtsgui_listbox_add(ilist, "10Mb/s Half Duplex", NULL);
 	dtsgui_listbox_add(ilist, "Auto", NULL);
 	objunref(ilist);
-	dtsgui_xmltextbox(pg, "Voip Vlan Interface", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Default Extension Prefix", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Auto Config Start", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Auto Config End", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Default Ring Timeout", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "Require Authorization", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "Lock Snom Phone Settings", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "Enable Voice Mail", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "Enable Call Logging", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "Hangup Calls To Unknown Numbers/DDI", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "Require Extension Number With PIN", NULL, NULL);
+	dtsgui_xmltextbox(pg, "Voip Vlan Interface", "/config/IP/VOIP/ASTDB/Option[@option = 'AutoVLAN']", NULL);
+	dtsgui_xmltextbox(pg, "Default Extension Prefix", "/config/IP/VOIP/ASTDB/Option[@option = 'DefaultPrefix']", NULL);
+	dtsgui_xmltextbox(pg, "Auto Config Start", "/config/IP/VOIP/ASTDB/Option[@option = 'AutoStart']", NULL);
+	dtsgui_xmltextbox(pg, "Auto Config End", "/config/IP/VOIP/ASTDB/Option[@option = 'AutoEnd']", NULL);
+	dtsgui_xmltextbox(pg, "Default Ring Timeout", "/config/IP/VOIP/ASTDB/Option[@option = 'Timeout']", NULL);
+	dtsgui_xmlcheckbox(pg, "Require Authorization", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'AutoAuth']", NULL);
+	dtsgui_xmlcheckbox(pg, "Lock Snom Phone Settings", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'AutoLock']", NULL);
+	dtsgui_xmlcheckbox(pg, "Enable Voice Mail", "0", "1", "/config/IP/VOIP/ASTDB/Option[@option = 'DEFNOVMAIL']", NULL);
+	dtsgui_xmlcheckbox(pg, "Enable Call Logging", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'DEFRECORD']", NULL);
+	dtsgui_xmlcheckbox(pg, "Require Extension Number With PIN", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'ADVPIN']", NULL);
 
 	pg=dp[8];
-	dtsgui_xmltextbox(pg, "Local Area Code", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Local Extension Prefix", NULL, NULL);
+	dtsgui_xmltextbox(pg, "Local Area Code", "/config/IP/VOIP/ASTDB/Option[@option = 'AreaCode']", NULL);
+	dtsgui_xmltextbox(pg, "Local Extension Prefix", "/config/IP/VOIP/ASTDB/Option[@option = 'ExCode']", NULL);
 	ilist = dtsgui_xmllistbox(pg, "ISDN PRI Framing [T1-E1]", NULL, NULL);
 	dtsgui_listbox_add(ilist, "ccs - esf", NULL);
 	dtsgui_listbox_add(ilist, "cas - d4/Superframe", NULL);
@@ -204,21 +204,21 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	dtsgui_listbox_add(ilist, "hdb3 - b8zs", NULL);
 	dtsgui_listbox_add(ilist, "ami", NULL);
 	objunref(ilist);
-	dtsgui_xmlcheckbox(pg, "Calls To Internal Extensions Follow Forward Rules", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "Hangup Calls To Unknown Numbers/DDI", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "ISDN BRI Immeadiate Routeing (No MSN/DDI)", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "ISDN BRI Use Round Robin Routing", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "ISDN BRI Allow Automatic Setting Of CLI (DDI Required)", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "ISDN PRI CRC4 Checking (E1 Only)", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Calls To Internal Extensions Follow Forward Rules", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'LocalFwd']", NULL);
+	dtsgui_xmlcheckbox(pg, "Hangup Calls To Unknown Numbers/DDI", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'UNKDEF']", NULL);
+	dtsgui_xmlcheckbox(pg, "ISDN BRI Immeadiate Routeing (No MSN/DDI)", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'mISDNimm']", NULL);
+	dtsgui_xmlcheckbox(pg, "ISDN BRI Use Round Robin Routing", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'mISDNrr']", NULL);
+	dtsgui_xmlcheckbox(pg, "ISDN Allow Automatic Setting Of CLI (DDI Required)", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'AutoCLI']", NULL);
+	dtsgui_xmlcheckbox(pg, "ISDN PRI CRC4 Checking (E1 Only)", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'PRIcrc4']", NULL);
 
 	/*XXXX PRI CONFIG LBO*/
 	pg=dp[9];
-	dtsgui_xmltextbox(pg, "Queue Timeout Checked Every 18s", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Auto Attendant Mailbox/Forward On No Agent/Timeout", NULL, NULL);
-	dtsgui_xmltextbox(pg, "IVR Delay Between Digits", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "Disable Default Auto Attendant Prompts", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "Music On Hold When Calling Reception", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "Record Inbound Calls", NULL, NULL);
+	dtsgui_xmltextbox(pg, "Queue Timeout Checked Every 18s", "/config/IP/VOIP/ASTDB/Option[@option = 'AATimeout']", NULL);
+	dtsgui_xmltextbox(pg, "Auto Attendant Mailbox/Forward On No Agent/Timeout", "/config/IP/VOIP/ASTDB/Option[@option = 'AANext']", NULL);
+	dtsgui_xmltextbox(pg, "IVR Delay Between Digits", "/config/IP/VOIP/ASTDB/Option[@option = 'AADelay']", NULL);
+	dtsgui_xmlcheckbox(pg, "Disable Default Auto Attendant Prompts", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'AANOPROMPT']", NULL);
+	dtsgui_xmlcheckbox(pg, "Music On Hold When Calling Reception", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'AAMOH']", NULL);
+	dtsgui_xmlcheckbox(pg, "Record Inbound Calls", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'AAREC']", NULL);
 
 	pg=dp[10];
 	ilist = dtsgui_xmllistbox(pg, "Primary Trunk", NULL, NULL);
@@ -235,17 +235,18 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	dtsgui_listbox_add(ilist, "Analogue", NULL);
 	objunref(ilist);
 	dtsgui_xmltextbox(pg, "No. Of Gateway Ports", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "Extensions Are On Gateway By Default", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Extensions Are On Gateway By Default", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'REMDEF']", NULL);
 
 	pg=dp[11];
 	ilist = dtsgui_xmllistbox(pg, "Protocol", NULL, NULL);
 	dtsgui_listbox_add(ilist, "SIP", NULL);
 	dtsgui_listbox_add(ilist, "IAX2", NULL);
 	objunref(ilist);
-	dtsgui_xmlcheckbox(pg, "Use DTMF INFO (SIP)", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "Use SRTP (SIP)", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "Use From User (SIP [Disables Sending CLI])", NULL, NULL);
-	dtsgui_xmlcheckbox(pg, "Disable Video", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Use DTMF INFO (SIP)", "info", "rfc2833", "/config/IP/VOIP", "dtmf");
+	dtsgui_xmlcheckbox(pg, "Use SRTP (SIP)", "true", "false", "/config/IP/VOIP", "srtp");
+	dtsgui_xmlcheckbox(pg, "Use From User (SIP [Disables Sending CLI])", "true", "false", "/config/IP/VOIP", "fromuser");
+	dtsgui_xmlcheckbox(pg, "Disable Video", "true", "false", "/config/IP/VOIP", "novideo");
+	dtsgui_xmlcheckbox(pg, "Register To Server", "true", "false", "/config/IP/VOIP", "register");
 
 	res = dtsgui_runwizard(twiz);
 
@@ -273,7 +274,7 @@ int newsys_wizard(struct dtsgui *dtsgui, void *data) {
 	const char defconf[PATH_MAX];
 	struct xml_doc *xmldoc;
 
-	snprintf((char*)defconf, PATH_MAX, "%s/default.xml", DATA_DIR);
+	snprintf((char*)defconf, PATH_MAX-1, "%s/default.xml", DATA_DIR);
 	if (!is_file(defconf)) {
 		dtsgui_alert(dtsgui, "Default configuration not found.\nCheck Installation.");
 		return 0;
@@ -295,7 +296,7 @@ int editsys_wizard(struct dtsgui *dtsgui, void *data) {
 		return 0;
 	}
 
-	if (!(xmldoc = xml_loaddoc(filename, 0))) {
+	if (!(xmldoc = xml_loaddoc(filename, 1	))) {
 		dtsgui_alert(dtsgui, "Configuration failed to load.\n");
 		return 0;
 	}
@@ -419,9 +420,15 @@ int main(int argc, char **argv) {
 	struct point wpos = {50, 50};
 	struct app_data *appdata;
 	int res;
+	const char xmlcat[PATH_MAX];
 
 	if (!(appdata = objalloc(sizeof(*appdata), free_appdata))) {
 		return -1;
+	}
+
+	snprintf((char*)xmlcat, PATH_MAX-1, "%s/catalog.xml", DATA_DIR);
+	if (is_file(xmlcat)) {
+		setenv("XML_CATALOG_FILES", xmlcat, 1);
 	}
 
 	startthreads();

@@ -116,7 +116,7 @@ struct form_item *dtsgui_combobox(dtsgui_pane pane, const char *title, void *dat
 extern void dtsgui_xmltextbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
 extern void dtsgui_xmltextbox_multi(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
 extern void dtsgui_xmlpasswdbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
-extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
+extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *checkval, const char *uncheckval, const char *xpath, const char *attr);
 struct form_item *dtsgui_xmllistbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
 struct form_item *dtsgui_xmlcombobox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
 

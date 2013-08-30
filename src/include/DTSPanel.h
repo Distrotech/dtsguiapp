@@ -41,6 +41,7 @@ struct form_item {
 	enum form_data_type dtype;
 	enum widget_type type;
 	const char *name;
+	const char *value2;
 	void *widget;
 };
 
