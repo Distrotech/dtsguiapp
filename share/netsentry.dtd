@@ -1,4 +1,4 @@
-<!ELEMENT config (IP|DNS|Proxy|Email|Cron|FileServer|Radius|X509|NFS|LDAP|SQL|IPv6)*>
+<!ELEMENT config (IP|DNS|Proxy|Email|Cron|FileServer|Radius|X509|NFS|LDAP|SQL|IPv6|Customer)*>
 <!ELEMENT FileServer (Config|Setup|Shares|Mappings|ClamAV)*>
 <!ELEMENT Radius (Clients|Realms|RAS|Config)*>
 <!ELEMENT SQL (Option)*>
@@ -57,6 +57,7 @@
 <!ELEMENT IPv6to4 (SIT)*>
 <!ELEMENT InAddr (Reverse)*>
 <!ELEMENT List (ProxyFilter)*>
+<!ELEMENT Customer (Option)*>
 <!ELEMENT SIT (#PCDATA)>
 <!ELEMENT Modem (#PCDATA)>
 <!ELEMENT Realm (#PCDATA)>
