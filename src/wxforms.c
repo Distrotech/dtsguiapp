@@ -90,14 +90,14 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	dp[11] = dtsgui_wizard_addpage(twiz, "Least Cost Routing", NULL, xmldoc);
 
 	pg=dp[0];
-	dtsgui_xmltextbox(pg, "Customer Name", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Contact Person", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Email Address", NULL, NULL);
-	dtsgui_xmltextbox_multi(pg, "Customer Address (Postal)", NULL, NULL);
-	dtsgui_xmltextbox_multi(pg, "Customer Address (Physical)", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Customer Tel", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Customer Company ID", NULL, NULL);
-	dtsgui_xmltextbox(pg, "VAT No.", NULL, NULL);
+	dtsgui_xmltextbox(pg, "Customer Name", "/config/Customer/Option[@option = 'Name']", NULL);
+	dtsgui_xmltextbox(pg, "Contact Person", "/config/Customer/Option[@option = 'Contact']", NULL);
+	dtsgui_xmltextbox(pg, "Email Address", "/config/Customer/Option[@option = 'Email']", NULL);
+	dtsgui_xmltextbox_multi(pg, "Customer Address (Postal)", "/config/Customer/Option[@option = 'Postal Addr']", NULL);
+	dtsgui_xmltextbox_multi(pg, "Customer Address (Physical)", "/config/Customer/Option[@option = 'Phys Addr']", NULL);
+	dtsgui_xmltextbox(pg, "Customer Tel", "/config/Customer/Option[@option = 'Tel']", NULL);
+	dtsgui_xmltextbox(pg, "Customer Company ID", "/config/Customer/Option[@option = 'ID']", NULL);
+	dtsgui_xmltextbox(pg, "VAT No.", "/config/Customer/Option[@option = 'VAT']", NULL);
 
 	pg=dp[1];
 	dtsgui_xmltextbox(pg, "IPv4 Address", "/config/IP/Interfaces/Interface[/config/IP/SysConf/Option[@option = 'Internal'] = .]", "ipaddr");

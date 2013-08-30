@@ -307,8 +307,15 @@ extern void dtsgui_xmltextbox_multi(dtsgui_pane pane, const char *title, const c
 	struct xml_element *xml;
 	const char *value = NULL;
 
-	xml = p->GetNode(xpath, attr);
+	if ((xml = p->GetNode(xpath, attr))) {
+		value = getxmlvalue(xml);
+	}
+
 	p->TextBox(title, value, wxTE_MULTILINE, 5, xml, DTSGUI_FORM_DATA_XML);
+
+	if (value) {
+		free((void*)value);
+	}
 }
 
 extern void dtsgui_xmlpasswdbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr) {
@@ -316,8 +323,15 @@ extern void dtsgui_xmlpasswdbox(dtsgui_pane pane, const char *title, const char 
 	struct xml_element *xml;
 	const char *value = NULL;
 
-	xml = p->GetNode(xpath, attr);
+	if ((xml = p->GetNode(xpath, attr))) {
+		value = getxmlvalue(xml);
+	}
+
 	p->TextBox(title, value, wxTE_PASSWORD, 1, xml, DTSGUI_FORM_DATA_XML);
+
+	if (value) {
+		free((void*)value);
+	}
 }
 
 extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *checkval, const char *uncheckval, const char *xpath, const char *attr) {
