@@ -86,7 +86,7 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	dp[7] = dtsgui_wizard_addpage(twiz, "Extensions", NULL, xmldoc);
 	dp[8] = dtsgui_wizard_addpage(twiz, "PBX Setup", NULL, xmldoc);
 	dp[9] = dtsgui_wizard_addpage(twiz, "Attendant", NULL, xmldoc);
-	dp[10] = dtsgui_wizard_addpage(twiz, "Truk Setup", NULL, xmldoc);
+	dp[10] = dtsgui_wizard_addpage(twiz, "TrukSetup", NULL, xmldoc);
 	dp[11] = dtsgui_wizard_addpage(twiz, "Least Cost Routing", NULL, xmldoc);
 
 	pg=dp[0];
@@ -113,12 +113,12 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	dtsgui_xmltextbox(pg, "Dynamic DNS KEY", "/config/DNS/Config/Option[@option = 'DynKey']", NULL);
 
 	pg=dp[3];
-	dtsgui_xmltextbox(pg, "Primary DNS", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Secondary DNS", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Primary WINS", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Secondary WINS", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Primary MX", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Secondary MX", NULL, NULL);
+	dtsgui_xmltextbox(pg, "Primary DNS", "/config/IP/SysConf/Option[@option = 'PrimaryDns']", NULL);
+	dtsgui_xmltextbox(pg, "Secondary DNS", "/config/IP/SysConf/Option[@option = 'SecondaryDns']", NULL);
+	dtsgui_xmltextbox(pg, "Primary WINS", "/config/IP/SysConf/Option[@option = 'PrimaryWins']", NULL);
+	dtsgui_xmltextbox(pg, "Secondary WINS", "/config/IP/SysConf/Option[@option = 'SecondaryWins']", NULL);
+	dtsgui_xmltextbox(pg, "Primary MX", "/config/Email/Config/Option[@option = 'MailExchange1']", NULL);
+	dtsgui_xmltextbox(pg, "Secondary MX", "/config/Email/Config/Option[@option = 'MailExchange2']", NULL);
 
 	pg=dp[4];
 	dtsgui_xmltextbox(pg, "Country Code", "/config/X509/Option[@option = 'Country']", NULL);
@@ -131,9 +131,9 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 
 	pg=dp[5];
 	dtsgui_xmltextbox(pg, "Workgroup/Domain", "/config/FileServer/Setup/Option[@option = 'Domain']", NULL);
-	dtsgui_xmltextbox(pg, "Aliases", "/config/FileServer/Config/Item[starts-with(.,'netbios name')]", NULL);
-	dtsgui_xmltextbox(pg, "Domain Controllers", NULL, NULL);
-	dtsgui_xmltextbox(pg, "Realm [If Joining ADS]", NULL, NULL);
+	dtsgui_xmltextbox(pg, "Aliases", "/config/FileServer/Config/Option[@option = 'netbios name']", NULL);
+	dtsgui_xmltextbox(pg, "Domain Controllers", "/config/FileServer/Setup/Option[@option = 'ADSServer']", NULL);
+	dtsgui_xmltextbox(pg, "Realm [If Joining ADS]", "/config/FileServer/Setup/Option[@option = 'ADSRealm']", NULL);
 	dtsgui_xmlcheckbox(pg, "Domain Controller", NULL, NULL);
 
 	pg=dp[6];
