@@ -19,16 +19,38 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #include <dtsapp.h>
 
 #include "dtsgui.h"
 
-void pwevent(dtsgui_pane p, int event, void *data) {
-	struct basic_auth *auth = (struct basic_auth *)data;
+
+void pwevent(dtsgui_pane p, int type, int event, void *data) {
+	struct bucket_loop *bloop;
+	struct bucket_list *il;
+	struct form_item *fi;
+	void **vptr;
 
 	if (event == wx_PANEL_BUTTON_YES) {
-		printf("U: %s\nP: %s\n", auth->user, auth->passwd);
+		il = dtsgui_panel_items(p);
+		bloop = init_bucket_loop(il);
+
+		while (bloop && (fi = next_bucket_loop(bloop))) {
+			if (!(vptr = dtsgui_item_data(fi))) {
+				objunref(fi);
+				continue;
+			}
+
+			if (*vptr) {
+				free(*vptr);
+			}
+
+			*vptr = dtsgui_item_value(fi);
+			objunref(fi);
+		}
+
+		stop_bucket_loop(bloop);
 	}
 }
 
@@ -41,11 +63,10 @@ struct basic_auth *dtsgui_pwdialog(const char *user, const char *passwd, void *d
 		return NULL;
 	}
 
-	pwbox = dtsgui_newpanel(dtsgui, "Athentification", wx_PANEL_BUTTON_ACTION, wx_DTSPANEL_DIALOG);
-	dtsgui_newtextbox(pwbox, "Username", bauth->user);
-	dtsgui_newpasswdbox(pwbox, "Password", bauth->passwd);
-	dtsgui_setevcallback(pwbox, pwevent, bauth);
-	dtsgui_rundialog(pwbox);
+	pwbox = dtsgui_panel(dtsgui, "Athentification", wx_PANEL_BUTTON_ACTION, wx_DTSPANEL_DIALOG, NULL);
+	dtsgui_textbox(pwbox, "Username", bauth->user, &bauth->user);
+	dtsgui_passwdbox(pwbox, "Password", bauth->passwd, &bauth->passwd);
+	dtsgui_rundialog(pwbox, pwevent, NULL);
 
 	return bauth;
 }

@@ -9,7 +9,7 @@ AC_CONFIG_HEADERS([config.h])
 #x:y:z z <= x
 #so.x.z.y
 
-LT_LIBVER=0:0:0
+LT_LIBVER=0:1:0
 AC_SUBST(LT_LIBVER)
 
 # Checks for programs.
@@ -34,7 +34,7 @@ AC_ARG_ENABLE([dev-mode], AS_HELP_STRING([--enable-dev-mode], [Developer mode -g
 AC_ARG_ENABLE([world-peace], AS_HELP_STRING([--enable-world-peace], [Yeah right .....]))
 
 if test "x$enable_dev_mode" = "xyes" ; then
- DEVELOPER_CFLAGS="-g -Wall -Werror -pedantic-errors -Wno-long-long -Wno-unused-local-typedefs"
+ DEVELOPER_CFLAGS="-g -Wall -Werror -pedantic-errors -Wno-long-long -Wno-unused-local-typedefs -Wno-variadic-macros"
 fi;
 AC_SUBST(DEVELOPER_CFLAGS)
 
@@ -65,5 +65,6 @@ AC_CHECK_HEADER_STDBOOL
 
 AC_CONFIG_FILES([Makefile
                  src/Makefile
+                 share/Makefile
                  src/libdtsapp_gui.pc])
 AC_OUTPUT

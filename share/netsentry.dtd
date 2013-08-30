@@ -1,0 +1,365 @@
+<!ELEMENT config (IP|DNS|Proxy|Email|Cron|FileServer|Radius|X509|NFS|LDAP|SQL|IPv6)*>
+<!ELEMENT FileServer (Config|Setup|Shares|Mappings|ClamAV)*>
+<!ELEMENT Radius (Clients|Realms|RAS|Config)*>
+<!ELEMENT SQL (Option)*>
+<!ELEMENT Cron (Event)*>
+<!ELEMENT NFS (Shares|Mounts)*>
+<!ELEMENT DNS (Config|Hosts|Hosted|InAddr)*>
+<!ELEMENT Proxy (Redirect|SquidAccess|Bypass|List|TimeGroups|SourceGroups|Config|ACLS|Redirect)*>
+<!ELEMENT Config (Item|Option)*>
+<!ELEMENT IP (WiFi|Dialup|FW|QOS|Interfaces|SysConf|ADSL|VOIP|Fax|Routes|GenRoutes|GRE|ESP)*>
+<!ELEMENT Source (Firewall)*>
+<!ELEMENT Setup (Option)*>
+<!ELEMENT Shares (Share)*>
+<!ELEMENT Mappings (Mapping)*>
+<!ELEMENT ClamAV (Option)*>
+<!ELEMENT SysConf (Option)*>
+<!ELEMENT Dialup (Option)*>
+<!ELEMENT ADSL (Users|Links)*>
+<!ELEMENT Users (User)*>
+<!ELEMENT GenRoutes (Route)*>
+<!ELEMENT Routes (Route)*>
+<!ELEMENT Links (Link)*>
+<!ELEMENT Mounts (Mount)*>
+<!ELEMENT X509 (Option)*>
+<!ELEMENT Fax (Option)*>
+<!ELEMENT Hosted (Domain)*>
+<!ELEMENT Hosts (Host)*>
+<!ELEMENT Domain (NameServer)*>
+<!ELEMENT Interfaces (Interface|Interface6)*>
+<!ELEMENT Filters (Filter)*>
+<!ELEMENT Collections (Collection)*>
+<!ELEMENT VOIP (SIP|IAX)*>
+<!ELEMENT LDAP (Config|Directories|PublicMail|Replica)*>
+<!ELEMENT Directories (Directory)*>
+<!ELEMENT Email (Filters|Collections|Config)*>
+<!ELEMENT QOS (TOS)*>
+<!ELEMENT SquidAccess (Access)*>
+<!ELEMENT ACLS (ACL)*>
+<!ELEMENT FW (Iface)*>
+<!ELEMENT Iface (Source)*>
+<!ELEMENT PublicMail (MailBox)*>
+<!ELEMENT Realms (Realm)*>
+<!ELEMENT RAS (Modem)*>
+<!ELEMENT Clients (Client)*>
+<!ELEMENT GRE (Routes|Tunnels)*>
+<!ELEMENT ESP (Tunnels)*>
+<!ELEMENT Tunnels (Tunnel|ESPTunnel)*>
+<!ELEMENT TimeGroups (TimeGroup)*>
+<!ELEMENT SourceGroups (SourceGroup)*>
+<!ELEMENT SourceGroup (IPAddress)*>
+<!ELEMENT Redirect (WWW)*>
+<!ELEMENT ACL (BlackList)*>
+<!ELEMENT IAX (Peers)*>
+<!ELEMENT SIP (Peers)*>
+<!ELEMENT IPv6 (IPv6to4)*>
+<!ELEMENT IPv6to4 (SIT)*>
+<!ELEMENT InAddr (Reverse)*>
+<!ELEMENT List (ProxyFilter)*>
+<!ELEMENT SIT (#PCDATA)>
+<!ELEMENT Modem (#PCDATA)>
+<!ELEMENT Realm (#PCDATA)>
+<!ELEMENT Client (#PCDATA)>
+<!ELEMENT Share (#PCDATA)>
+<!ELEMENT Mount (#PCDATA)>
+<!ELEMENT Item (#PCDATA)>
+<!ELEMENT Option (#PCDATA)>
+<!ELEMENT Event (#PCDATA)>
+<!ELEMENT Host (#PCDATA)>
+<!ELEMENT Access (#PCDATA)>
+<!ELEMENT Bypass (#PCDATA)>
+<!ELEMENT Firewall (#PCDATA)>
+<!ELEMENT WiFi (#PCDATA)>
+<!ELEMENT Interface (#PCDATA)>
+<!ELEMENT NameServer (#PCDATA)>
+<!ELEMENT TOS (#PCDATA)>
+<!ELEMENT User (#PCDATA)>
+<!ELEMENT Filter (#PCDATA)>
+<!ELEMENT Collection (#PCDATA)>
+<!ELEMENT Directory (#PCDATA)>
+<!ELEMENT Route (#PCDATA)>
+<!ELEMENT Link (#PCDATA)>
+<!ELEMENT MailBox (#PCDATA)>
+<!ELEMENT Tunnel (#PCDATA)>
+<!ELEMENT ESPTunnel (#PCDATA)>
+<!ELEMENT WWW (#PCDATA)>
+<!ELEMENT TimeGroup (#PCDATA)>
+<!ELEMENT IPAddress (#PCDATA)>
+<!ELEMENT BlackList (#PCDATA)>
+<!ELEMENT Peers (#PCDATA)>
+<!ELEMENT Replica (#PCDATA)>
+<!ELEMENT ProxyFilter (#PCDATA)>
+<!ELEMENT Mapping (#PCDATA)>
+<!ELEMENT Reverse (#PCDATA)>
+<!ELEMENT Interface6 (#PCDATA)>
+<!ATTLIST Option
+          option   CDATA #IMPLIED
+          flag     CDATA #IMPLIED>
+<!ATTLIST config
+          serial   CDATA #IMPLIED>
+<!ATTLIST FileServer
+          profile  CDATA #IMPLIED
+          homedir  CDATA #IMPLIED
+          sharedir CDATA #IMPLIED>
+<!ATTLIST Share
+          grw      CDATA #IMPLIED
+          av       CDATA #IMPLIED
+          uread    CDATA #IMPLIED
+          group    CDATA #IMPLIED
+          drive    CDATA #IMPLIED
+          backup   CDATA #IMPLIED
+          folder   CDATA #IMPLIED
+          uid      CDATA #IMPLIED
+          gid      CDATA #IMPLIED
+          ipaddr   CDATA #IMPLIED
+          ro       CDATA #IMPLIED
+          squash   CDATA #IMPLIED
+          sharedir CDATA #IMPLIED>
+<!ATTLIST Mount
+          type     CDATA #IMPLIED
+          value    CDATA #IMPLIED
+          folder   CDATA #IMPLIED
+          mount    CDATA #IMPLIED
+          bind     CDATA #IMPLIED
+          username CDATA #IMPLIED
+          password CDATA #IMPLIED
+          uid      CDATA #IMPLIED
+          gid      CDATA #IMPLIED
+          ro       CDATA #IMPLIED
+          backup   CDATA #IMPLIED
+          av       CDATA #IMPLIED>
+<!ATTLIST Event
+          to       CDATA #IMPLIED
+          from     CDATA #IMPLIED
+          min      CDATA #IMPLIED
+          days     CDATA #IMPLIED>
+<!ATTLIST Host
+          ipaddr   CDATA #IMPLIED
+          macaddr  CDATA #IMPLIED>
+<!ATTLIST Domain
+          domain   CDATA #IMPLIED
+          internal CDATA #IMPLIED
+          key      CDATA #IMPLIED
+          b64key   CDATA #IMPLIED>
+<!ATTLIST Bypass
+          subnet   CDATA #IMPLIED
+          ipaddr   CDATA #IMPLIED>
+<!ATTLIST Access
+          subnet   CDATA #IMPLIED
+          ipaddr   CDATA #IMPLIED>
+<!ATTLIST X509
+          locked   CDATA #IMPLIED>
+<!ATTLIST WiFi
+          regdom   CDATA #IMPLIED
+          mode     CDATA #IMPLIED
+          channel  CDATA #IMPLIED
+          key      CDATA #IMPLIED
+          txpower  CDATA #IMPLIED
+          auth     CDATA #IMPLIED
+          type     CDATA #IMPLIED>
+<!ATTLIST Source
+          name     CDATA #IMPLIED
+          ipaddr   CDATA #IMPLIED
+          subnet   CDATA #IMPLIED
+          bwin     CDATA #IMPLIED
+          bwout    CDATA #IMPLIED>
+<!ATTLIST Firewall
+          action    CDATA #IMPLIED
+          value     CDATA #IMPLIED
+          ip        CDATA #IMPLIED
+          source    CDATA #IMPLIED
+          dest      CDATA #IMPLIED
+          proto     CDATA #IMPLIED
+          type      CDATA #IMPLIED
+          output    CDATA #IMPLIED
+          state     CDATA #IMPLIED
+          direction CDATA #IMPLIED
+          tos       CDATA #IMPLIED
+          priority  CDATA #IMPLIED>
+<!ATTLIST Interface
+          name      CDATA #IMPLIED
+          ipaddr    CDATA #IMPLIED
+          subnet    CDATA #IMPLIED
+          dhcpstart CDATA #IMPLIED
+          dhcpend   CDATA #IMPLIED
+          bwin      CDATA #IMPLIED
+          bwout     CDATA #IMPLIED
+          macaddr   CDATA #IMPLIED
+          gateway   CDATA #IMPLIED
+          nwaddr    CDATA #IMPLIED
+          netmask   CDATA #IMPLIED
+          ovpn      CDATA #IMPLIED
+          bcaddr    CDATA #IMPLIED>
+<!ATTLIST TOS
+          name      CDATA #IMPLIED
+          ipaddr    CDATA #IMPLIED
+          dport     CDATA #IMPLIED
+          sport     CDATA #IMPLIED
+          protocol  CDATA #IMPLIED
+          priority  CDATA #IMPLIED>
+<!ATTLIST User
+          password  CDATA #IMPLIED
+          used      CDATA #IMPLIED
+          flag      CDATA #IMPLIED>
+<!ATTLIST VOIP
+          username  CDATA #IMPLIED
+          secret    CDATA #IMPLIED
+          server    CDATA #IMPLIED
+          protocol  CDATA #IMPLIED
+          prefix    CDATA #IMPLIED
+          gkid      CDATA #IMPLIED
+          register  CDATA #IMPLIED
+          dtmf      CDATA #IMPLIED
+          fromuser  CDATA #IMPLIED
+          novideo   CDATA #IMPLIED
+          srtp      CDATA #IMPLIED>
+<!ATTLIST Filter
+          regex     CDATA #IMPLIED
+          policy    CDATA #IMPLIED
+          log       CDATA #IMPLIED>
+<!ATTLIST Collection
+          username  CDATA #IMPLIED
+          password  CDATA #IMPLIED
+          domain    CDATA #IMPLIED
+          multidrop CDATA #IMPLIED
+          envelope  CDATA #IMPLIED
+          usessl    CDATA #IMPLIED
+          protocol  CDATA #IMPLIED
+          smtp      CDATA #IMPLIED>
+<!ATTLIST LDAP
+          ReplicateDN CDATA #IMPLIED
+          AnonRead  CDATA #IMPLIED
+          Backup    CDATA #IMPLIED>
+<!ATTLIST Directory
+          open      CDATA #IMPLIED>
+<!ATTLIST Iface
+          iface     CDATA #IMPLIED>
+<!ATTLIST Route
+          dest      CDATA #IMPLIED
+          gateway   CDATA #IMPLIED
+          subnet    CDATA #IMPLIED
+          local     CDATA #IMPLIED
+          remote    CDATA #IMPLIED
+          dhcpstart CDATA #IMPLIED
+          dhcpend   CDATA #IMPLIED
+          network   CDATA #IMPLIED
+          netmask   CDATA #IMPLIED
+          bcaddr    CDATA #IMPLIED
+          iface     CDATA #IMPLIED>
+<!ATTLIST Link
+          username  CDATA #IMPLIED
+          password  CDATA #IMPLIED
+          interface CDATA #IMPLIED
+          tos       CDATA #IMPLIED
+          bwin      CDATA #IMPLIED
+          bwout     CDATA #IMPLIED
+          virtip    CDATA #IMPLIED
+          remip     CDATA #IMPLIED
+          service   CDATA #IMPLIED
+          id        CDATA #IMPLIED>
+<!ATTLIST MailBox
+          group     CDATA #IMPLIED
+          address   CDATA #IMPLIED>
+<!ATTLIST Realm
+          nostrip   CDATA #IMPLIED
+          rrobin    CDATA #IMPLIED
+          authhost  CDATA #IMPLIED
+          accthost  CDATA #IMPLIED
+          secret    CDATA #IMPLIED>
+<!ATTLIST Modem
+          connection CDATA #IMPLIED
+          speed     CDATA #IMPLIED
+          type      CDATA #IMPLIED
+          local     CDATA #IMPLIED
+          mtu       CDATA #IMPLIED
+          remote    CDATA #IMPLIED>
+<!ATTLIST Client
+          hostname  CDATA #IMPLIED
+          secret    CDATA #IMPLIED>
+<!ATTLIST Tunnel
+          crlurl    CDATA #IMPLIED
+          ipsec     CDATA #IMPLIED
+          interface CDATA #IMPLIED
+          local     CDATA #IMPLIED
+          mtu       CDATA #IMPLIED
+          remote    CDATA #IMPLIED
+          nwaddr    CDATA #IMPLIED
+          bcaddr    CDATA #IMPLIED>
+<!ATTLIST ACL
+          group     CDATA #IMPLIED
+          time      CDATA #IMPLIED
+          intime    CDATA #IMPLIED
+          policy    CDATA #IMPLIED>
+<!ATTLIST WWW
+          interface CDATA #IMPLIED
+          ipaddr    CDATA #IMPLIED>
+<!ATTLIST TimeGroup
+          group     CDATA #IMPLIED
+          start     CDATA #IMPLIED
+          end       CDATA #IMPLIED>
+<!ATTLIST IPAddress
+          subnet    CDATA #IMPLIED>
+<!ATTLIST SourceGroup
+          group     CDATA #IMPLIED>
+<!ATTLIST BlackList
+          deny     CDATA #IMPLIED>
+<!ATTLIST Peers
+          password CDATA #IMPLIED
+          context  CDATA #IMPLIED
+          ext      CDATA #IMPLIED
+          auth     CDATA #IMPLIED
+          key      CDATA #IMPLIED
+          addr     CDATA #IMPLIED>
+<!ATTLIST Replica
+          sid      CDATA #IMPLIED
+          usessl   CDATA #IMPLIED>
+<!ATTLIST ProxyFilter
+          type     CDATA #IMPLIED
+          filter   CDATA #IMPLIED>
+<!ATTLIST Mapping
+          folder   CDATA #IMPLIED
+          drive    CDATA #IMPLIED>
+<!ATTLIST ESPTunnel
+          hash     CDATA #IMPLIED
+          dhgroup  CDATA #IMPLIED
+          dest     CDATA #IMPLIED
+          cipher   CDATA #IMPLIED
+          gateway  CDATA #IMPLIED
+          local    CDATA #IMPLIED
+          nwaddr   CDATA #IMPLIED>
+<!ATTLIST FW
+          Iface   CDATA #IMPLIED>
+<!ATTLIST IP
+          descrip  CDATA #IMPLIED>
+<!ATTLIST DNS
+          descrip  CDATA #IMPLIED>
+<!ATTLIST Proxy
+          descrip  CDATA #IMPLIED>
+<!ATTLIST Email
+          descrip  CDATA #IMPLIED>
+<!ATTLIST Cron
+          descrip  CDATA #IMPLIED>
+<!ATTLIST FileServer
+          descrip  CDATA #IMPLIED>
+<!ATTLIST Radius
+          descrip  CDATA #IMPLIED>
+<!ATTLIST X509
+          descrip  CDATA #IMPLIED>
+<!ATTLIST NFS
+          descrip  CDATA #IMPLIED>
+<!ATTLIST LDAP
+          descrip  CDATA #IMPLIED>
+<!ATTLIST SQL
+          descrip  CDATA #IMPLIED>
+<!ATTLIST Reverse
+          fwdmatch CDATA #IMPLIED>
+<!ATTLIST Interface6
+          dhcpend  CDATA #IMPLIED
+          dhcpstart CDATA #IMPLIED
+          prefix   CDATA #IMPLIED
+          ipaddr   CDATA #IMPLIED
+          subnet   CDATA #IMPLIED>
+<!ATTLIST SIT
+          ipv6to4pre CDATA #IMPLIED
+          subnet   CDATA #IMPLIED>
+
