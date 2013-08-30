@@ -320,13 +320,25 @@ extern void dtsgui_xmlpasswdbox(dtsgui_pane pane, const char *title, const char 
 	p->TextBox(title, value, wxTE_PASSWORD, 1, xml, DTSGUI_FORM_DATA_XML);
 }
 
-extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr) {
+extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *checkval, const char *uncheckval, const char *xpath, const char *attr) {
 	DTSPanel *p = (DTSPanel *)pane;
 	struct xml_element *xml;
 	int ischecked = 0;
+	const char *value = NULL;
 
-	xml = p->GetNode(xpath, attr);
+	if ((xml = p->GetNode(xpath, attr))) {
+		value = getxmlvalue(xml);
+	}
+
+	if (value && checkval && !strcmp(value, checkval)) {
+		ischecked = 1;
+	}
+
 	p->CheckBox(title, ischecked, xml, DTSGUI_FORM_DATA_XML);
+
+	if (value) {
+		free((void*)value);
+	}
 }
 
 struct form_item *dtsgui_xmllistbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr) {

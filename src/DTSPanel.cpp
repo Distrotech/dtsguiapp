@@ -344,6 +344,8 @@ void DTSPanel::CheckBox(const char *title, int ischecked, void *data, enum form_
 		cbox->Disable();
 	}
 
+	cbox->SetValue((ischecked) ? true : false);
+
 	fi = create_new_fitem(cbox, DTS_WIDGET_CHECKBOX, title, (ischecked) ? "on" : "", data, dtype);
 	objunref(fi);
 }
