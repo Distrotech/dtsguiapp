@@ -37,6 +37,10 @@
 #include <wx/dialog.h>
 #include <wx/stattext.h>
 #include <wx/button.h>
+#include <wx/splitter.h>
+#include <wx/dataview.h>
+#include <wx/wizard.h>
+#include <wx/filedlg.h>
 
 #include <dtsapp.h>
 #include "dtsgui.hpp"
@@ -45,6 +49,9 @@
 #include "DTSApp.h"
 #include "DTSFrame.h"
 #include "DTSPanel.h"
+#include "DTSTreeWindow.h"
+
+static int menuid = wxID_AUTO_LOWEST;
 
 dtsgui *dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point wsize, struct point wpos, const char *title, const char *status) {
 	/*deleted on close*/
@@ -57,7 +64,7 @@ int dtsgui_run(int argc, char **argv) {
 	return wxEntry(argc, argv);
 }
 
-void dtsgui_quit(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, int type) {
+static void dtsgui_quit(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, int type) {
 	wxMenu *m = (wxMenu *)dtsmenu;
 	DTSFrame *frame = (DTSFrame *)dtsgui->appframe;
 
@@ -66,6 +73,7 @@ void dtsgui_quit(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, int type) {
 			m->Append(type, "&Quit", "Quit And Exit");
 			frame->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::OnClose, frame, wxID_EXIT);
 			break;
+
 		case wxID_SAVE:
 			m->Append(type, "&Exit", "Save And Exit");
 			frame->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::OnClose, frame, wxID_SAVE);
@@ -105,6 +113,7 @@ dtsgui_menu dtsgui_newmenu(struct dtsgui *dtsgui, const char *name) {
 		new_menu = new wxMenu;
 		menubar->Append(new_menu, name);
 	}
+
 	return new_menu;
 }
 
@@ -123,7 +132,7 @@ void dtsgui_menusep(dtsgui_menu dtsmenu) {
 	m->AppendSeparator();
 }
 
-dtsgui_menuitem dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, dtsgui_pane p) {
+void dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, dtsgui_pane p) {
 	wxMenu *m = (wxMenu *)dtsmenu;
 	DTSFrame *frame = (DTSFrame *)dtsgui->appframe;
 
@@ -131,12 +140,22 @@ dtsgui_menuitem dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, c
 
 	/*handed over to wx no need to delete*/
 	evdata *ev_data = new evdata(w);
-	static int menuid;
 
 	m->Append(menuid, hint, (p) ? getpanename(p) : "");
 	frame->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::SwitchWindow, frame, menuid, menuid, (wxObject *)ev_data);
 	menuid++;
-	return m;
+}
+
+void dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, const char *label, dtsgui_configcb cb, void *data) {
+	wxMenu *m = (wxMenu *)dtsmenu;
+	DTSFrame *frame = (DTSFrame *)dtsgui->appframe;
+
+	/*handed over to wx no need to delete*/
+	evdata *ev_data = new evdata(data, cb);
+
+	m->Append(menuid, hint, label);
+	frame->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::RunCommand, frame, menuid, menuid, (wxObject *)ev_data);
+	menuid++;
 }
 
 void newappframe(struct dtsgui *dtsgui) {
@@ -150,62 +169,185 @@ int dtsgui_confirm(struct dtsgui *dtsgui, const char *text) {
 	return f->Confirm(text);
 }
 
+void dtsgui_alert(struct dtsgui *dtsgui, const char *text) {
+	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
 
-dtsgui_pane dtsgui_newpanel(struct dtsgui *dtsgui, const char *name, int butmask, enum panel_type type) {
+	f->Alert(text);
+}
+
+dtsgui_pane dtsgui_panel(struct dtsgui *dtsgui, const char *name, int butmask,
+						 enum panel_type type, void *userdata) {
 	wxFrame *frame = (wxFrame *)dtsgui->appframe;
-	dtsgui_pane p = NULL;
+	DTSPanel *dp = NULL;
 
 	switch (type) {
 		case wx_DTSPANEL_SCROLLPANEL:
-			p = new DTSScrollPanel(frame, frame, name, butmask);
+			dp = new DTSScrollPanel(frame, frame, name, butmask);
 			break;
+
 		case wx_DTSPANEL_PANEL:
-			p = new DTSStaticPanel(frame, frame, name, butmask);
+			dp = new DTSStaticPanel(frame, frame, name, butmask);
 			break;
+
 		case wx_DTSPANEL_WINDOW:
-			p = new DTSWindow(frame);
+			dp = new DTSWindow(frame);
 //			p = new DTSWindow(frame, frame, name);
 			break;
+
 		case wx_DTSPANEL_DIALOG:
-			p = new DTSDialog(frame, name, butmask);
+			dp = new DTSDialog(frame, name, butmask);
+			break;
+
+		case wx_DTSPANEL_TREE:
+			break;
+
+		case wx_DTSPANEL_WIZARD:
+			dp = new DTSWizardWindow(name);
 			break;
 	}
-	return p;
+
+	dp->SetUserData(userdata);
+	return dp;
 }
 
-dtsgui_textbox dtsgui_newtextbox(dtsgui_pane pane, const char *title, const char *value) {
+extern void dtsgui_xmlpanel(dtsgui_pane pane, struct xml_doc *xmldoc) {
+	DTSPanel *p = (DTSPanel *)pane;
+	p->SetXMLDoc(xmldoc);
+}
+
+void dtsgui_delpane(dtsgui_pane pane) {
+	DTSPanel *p = (DTSPanel *)pane;
+	delete p;
+}
+
+extern dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title) {
+	DTSTreeWindow *tw;
+	wxFrame *frame = (wxFrame *)dtsgui->appframe;
+
+	tw = new DTSTreeWindow(frame, frame, title, 30);
+	return tw;
+}
+
+extern void dtsgui_textbox(dtsgui_pane pane, const char *title, const char *value, void *data) {
 	DTSPanel *p = (DTSPanel *)pane;
 
-	return p->TextBox(title, value);
+	p->TextBox(title, value, wxTE_LEFT, 1, data, DTSGUI_FORM_DATA_PTR);
 }
 
-dtsgui_textbox dtsgui_newtextbox_multi(dtsgui_pane pane, const char *title, const char *value) {
+extern void dtsgui_textbox_multi(dtsgui_pane pane, const char *title, const char *value, void *data) {
 	DTSPanel *p = (DTSPanel *)pane;
 
-	return p->TextBox(title, value, wxTE_MULTILINE, 5);
+	p->TextBox(title, value, wxTE_MULTILINE, 5, data,  DTSGUI_FORM_DATA_PTR);
 }
 
-dtsgui_textbox dtsgui_newpasswdbox(dtsgui_pane pane, const char *title, const char *value) {
+extern void dtsgui_passwdbox(dtsgui_pane pane, const char *title, const char *value, void *data) {
 	DTSPanel *p = (DTSPanel *)pane;
 
-	return p->TextBox(title, value, wxTE_PASSWORD);
+	p->TextBox(title, value, wxTE_PASSWORD, 1, data,  DTSGUI_FORM_DATA_PTR);
 }
 
-dtsgui_checkbox dtsgui_newcheckbox(dtsgui_pane pane, const char *title, int ischecked) {
+extern void dtsgui_checkbox(dtsgui_pane pane, const char *title, int ischecked, void *data) {
 	DTSPanel *p = (DTSPanel *)pane;
 
-	return p->CheckBox(title, ischecked);
+	p->CheckBox(title, ischecked, data,  DTSGUI_FORM_DATA_PTR);
 }
 
-dtsgui_checkbox dtsgui_newlistbox(dtsgui_pane pane, const char *title) {
+extern struct form_item *dtsgui_listbox(dtsgui_pane pane, const char *title, void *data) {
 	DTSPanel *p = (DTSPanel *)pane;
 
-	return p->ListBox(title);
+	return p->ListBox(title, data,  DTSGUI_FORM_DATA_PTR);
 }
 
-void dtsgui_listbox_add(dtsgui_listbox listbox, const char *text, void *data) {
-	wxComboBox *lbox = (wxComboBox *)listbox;
+extern struct form_item *dtsgui_combobox(dtsgui_pane pane, const char *title, void *data) {
+	DTSPanel *p = (DTSPanel *)pane;
+
+	return p->ComboBox(title, data, DTSGUI_FORM_DATA_PTR);
+}
+
+const char *getxmlvalue(struct xml_element *xml) {
+	struct xml_node *xn;
+	const char *ret, *tmp;
+
+	if (!xml || !xml->xsearch) {
+		return NULL;
+	}
+
+	xn = xml_getfirstnode(xml->xsearch, NULL);
+	if (!xml->attr) {
+		if (xn->value) {
+			ret = strdup(xn->value);
+		}
+	} else if ((tmp = xml_getattr(xn, xml->attr))) {
+			ret = strdup(tmp);
+	}
+
+	objunref(xn);
+	return ret;
+}
+
+extern void dtsgui_xmltextbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr) {
+	DTSPanel *p = (DTSPanel *)pane;
+	struct xml_element *xml;
+	const char *value = NULL;
+
+	if ((xml = p->GetNode(xpath, attr))) {
+		value = getxmlvalue(xml);
+	}
+
+	p->TextBox(title, value, wxTE_LEFT, 1, xml,  DTSGUI_FORM_DATA_XML);
+
+	if (value) {
+		free((void*)value);
+	}
+}
+
+extern void dtsgui_xmltextbox_multi(dtsgui_pane pane, const char *title, const char *xpath, const char *attr) {
+	DTSPanel *p = (DTSPanel *)pane;
+	struct xml_element *xml;
+	const char *value = NULL;
+
+	xml = p->GetNode(xpath, attr);
+	p->TextBox(title, value, wxTE_MULTILINE, 5, xml, DTSGUI_FORM_DATA_XML);
+}
+
+extern void dtsgui_xmlpasswdbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr) {
+	DTSPanel *p = (DTSPanel *)pane;
+	struct xml_element *xml;
+	const char *value = NULL;
+
+	xml = p->GetNode(xpath, attr);
+	p->TextBox(title, value, wxTE_PASSWORD, 1, xml, DTSGUI_FORM_DATA_XML);
+}
+
+extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr) {
+	DTSPanel *p = (DTSPanel *)pane;
+	struct xml_element *xml;
+	int ischecked = 0;
+
+	xml = p->GetNode(xpath, attr);
+	p->CheckBox(title, ischecked, xml, DTSGUI_FORM_DATA_XML);
+}
+
+struct form_item *dtsgui_xmllistbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr) {
+	DTSPanel *p = (DTSPanel *)pane;
+	struct xml_element *xml;
+
+	xml = p->GetNode(xpath, attr);
+	return p->ListBox(title, xml, DTSGUI_FORM_DATA_XML);
+}
+
+struct form_item *dtsgui_xmlcombobox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr) {
+	DTSPanel *p = (DTSPanel *)pane;
+	struct xml_element *xml;
+
+	xml = p->GetNode(xpath, attr);
+	return p->ComboBox(title, xml, DTSGUI_FORM_DATA_XML);
+}
+
+void dtsgui_listbox_add(struct form_item *listbox, const char *text, void *data) {
+	wxComboBox *lbox = (wxComboBox *)listbox->widget;
 	lbox->Append(text, data);
+
 	if (lbox->GetSelection() == wxNOT_FOUND) {
 		lbox->SetSelection(0);
 	}
@@ -217,9 +359,11 @@ void dtsgui_setevcallback(dtsgui_pane pane,event_callback evcb, void *data) {
 	return p->SetEventCallback(evcb, data);
 }
 
-void dtsgui_rundialog(dtsgui_pane pane) {
+void dtsgui_rundialog(dtsgui_pane pane, event_callback evcb, void *data) {
 	DTSDialog *p = (DTSDialog *)pane;
-	p->Show();
+
+	p->SetEventCallback(evcb, data);
+	p->RunDialog();
 	delete p;
 }
 
@@ -231,11 +375,147 @@ dtsgui_pane dtsgui_textpane(struct dtsgui *dtsgui, const char *title, const char
 	wxTextCtrl *eb = new wxTextCtrl(w, -1, buf, wxDefaultPosition, wxDefaultSize,
 									wxTE_MULTILINE | wxTE_RICH | wxTE_READONLY, wxDefaultValidator, wxTextCtrlNameStr);
 
-	p->AddItem(eb, wxGBPosition(0,0), wxGBSpan(10, 6), wxEXPAND|wxGROW, 0);
+	p->AddItem(eb, wxGBPosition(0,0), wxGBSpan(10, 6), wxEXPAND|wxGROW, 0, 0);
 
 	return p;
 }
 
 void *dtsgui_userdata(struct dtsgui *dtsgui) {
 	return dtsgui->userdata;
+}
+
+struct bucket_list *dtsgui_panel_items(dtsgui_pane pane) {
+	DTSDialog *p = (DTSDialog *)pane;
+	return p->GetItems();
+}
+
+struct form_item *dtsgui_panel_getname(dtsgui_pane pane, const char *name) {
+	DTSDialog *p = (DTSDialog *)pane;
+	struct bucket_list *bl = p->GetItems();
+	return (struct form_item *)bucket_list_find_key(bl, name);
+}
+
+void *dtsgui_item_data(struct form_item *fi) {
+	if (fi && fi->data.ptr) {
+		return fi->data.ptr;
+	} else {
+		return NULL;
+	}
+}
+
+void *dtsgui_item_value(struct form_item *fi) {
+	union widgets {
+		wxTextCtrl *t;
+	} w;
+	void *value = NULL;
+
+	switch(fi->type) {
+		case DTS_WIDGET_TEXTBOX:
+			w.t = (wxTextCtrl *)fi->widget;
+			value = strdup(w.t->GetValue());
+			break;
+
+		case DTS_WIDGET_CHECKBOX:
+		case DTS_WIDGET_LISTBOX:
+		case DTS_WIDGET_COMBOBOX:
+			break;
+	}
+
+	return value;
+}
+
+void dtsgui_wizard_free(void *data) {
+	struct dtsgui_wizard *dtswiz = (struct dtsgui_wizard*)data;
+
+	if (dtswiz->wiz) {
+		delete dtswiz->wiz;
+	}
+}
+
+extern struct dtsgui_wizard* dtsgui_newwizard(struct dtsgui *dtsgui, const char *title) {
+	struct dtsgui_wizard *dtswiz;
+	wxFrame *f = (wxFrame *)dtsgui->appframe;
+
+	if (!(dtswiz = (dtsgui_wizard*)objalloc(sizeof(*dtswiz),dtsgui_wizard_free))) {
+		return NULL;
+	}
+
+	dtswiz->wiz = new wxWizard();
+	dtswiz->start = NULL;
+	dtswiz->dtsgui = dtsgui;
+
+	if (!dtswiz->wiz || !dtswiz->wiz->Create(f, wxID_ANY, title, wxNullBitmap, wxDefaultPosition, wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER)) {
+		if (dtswiz->wiz) {
+			delete dtswiz->wiz;
+		}
+
+		return NULL;
+	}
+
+	return dtswiz;
+}
+
+extern dtsgui_pane dtsgui_wizard_addpage(struct dtsgui_wizard *dtswiz, const char *title, void *userdata, struct xml_doc *xmldoc) {
+	dtsgui_pane page;
+	DTSWizardWindow *dww;
+	wxWizardPageSimple *wp, *tmp;
+	wxWizardPage *last;
+
+	page = dtsgui_panel(dtswiz->dtsgui, title, 0, wx_DTSPANEL_WIZARD, userdata);
+	dww = (DTSWizardWindow*)page;
+	wp = dynamic_cast<wxWizardPageSimple *>(dww);
+
+	wp->Create(dtswiz->wiz);
+
+	if (!dtswiz->start) {
+		dtswiz->start = wp;
+	} else {
+		for(last = dtswiz->start; last->GetNext(); last=last->GetNext());
+
+		tmp = dynamic_cast<wxWizardPageSimple*>(last);
+		tmp->SetNext(wp);
+		wp->SetPrev(tmp);
+	}
+
+	if (title) {
+		dww->Title(title);
+	}
+
+	if (xmldoc) {
+		dww->SetXMLDoc(xmldoc);
+	}
+
+	return page;
+}
+
+extern int dtsgui_runwizard(struct dtsgui_wizard *dtswiz) {
+	dtswiz->wiz->GetPageAreaSizer()->Add(dtswiz->start);
+	dtswiz->wiz->Center();
+
+	return dtswiz->wiz->RunWizard(dtswiz->start);
+}
+
+const char *dtsgui_filedialog(struct dtsgui *dtsgui, const char *title, const char *path, const char *name, const char *filter, long style) {
+	wxFrame *f = (wxFrame *)dtsgui->appframe;
+	const char *filename = NULL;
+	int len;
+
+	wxFileDialog *fd = new wxFileDialog(f, title, (path) ? path : "", (name) ? name : "",
+										(filter) ? filter : wxFileSelectorDefaultWildcardStr, style);
+	if (fd->ShowModal() != wxID_CANCEL) {
+		len = strlen(fd->GetPath());
+		filename = (const char*)objalloc(len+1, NULL);
+		strcpy((char*)filename, fd->GetPath());
+	}
+
+	delete fd;
+	return filename;
+}
+
+extern const char *dtsgui_filesave(struct dtsgui *dtsgui, const char *title, const char *path, const char *name, const char *filter) {
+	return dtsgui_filedialog(dtsgui, title, path, name, filter, wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
+}
+
+extern const char *dtsgui_fileopen(struct dtsgui *dtsgui, const char *title, const char *path, const char *name, const char *filter) {
+	return dtsgui_filedialog(dtsgui, title, path, name, filter, wxFD_OPEN | wxFD_FILE_MUST_EXIST);
 }

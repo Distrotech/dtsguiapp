@@ -21,8 +21,9 @@
 
 class evdata :public wxObject {
 	public:
-		evdata(void* = NULL);
+		evdata(void* = NULL, dtsgui_configcb cb = NULL);
 		void *data;
+		dtsgui_configcb callback;
 };
 
 #endif // EVDATA_H

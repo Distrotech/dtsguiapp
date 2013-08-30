@@ -1,13 +1,13 @@
 ACLOCAL_AMFLAGS = -I m4
-AM_CFLAGS = -I$(srcdir)/include $(DEVELOPER_CFLAGS)
-AM_CXXFLAGS = -I$(srcdir)/include $(DEVELOPER_CFLAGS)
+AM_CFLAGS = -I$(srcdir)/include $(DEVELOPER_CFLAGS) -DDATA_DIR=\"$(datarootdir)/@PACKAGE@\"
+AM_CXXFLAGS = -I$(srcdir)/include $(DEVELOPER_CFLAGS) -DDATA_DIR=\"$(datarootdir)/@PACKAGE@\"
 EXTRA_DIST = include
 
 lib_LTLIBRARIES = libdtsapp_gui.la
 includeinstdir = $(includedir)/dtsapplib
 includeinst_DATA = include/dtsgui.h
 
-libdtsapp_gui_la_SOURCES = DTSApp.cpp DTSFrame.cpp DTSPanel.cpp evdata.cpp cxxapi.cpp dtsuserpw.c
+libdtsapp_gui_la_SOURCES = DTSApp.cpp DTSFrame.cpp DTSPanel.cpp DTSTreeWindow.cpp evdata.cpp cxxapi.cpp dtsuserpw.c
 libdtsapp_gui_la_LIBADD = $(WX_LIBS) $(DTSAPPLIB_LIBS)
 libdtsapp_gui_la_CFLAGS = $(AM_CFLAGS) $(WX_CFLAGS) $(DTSAPPLIB_CFLAGS)
 libdtsapp_gui_la_CXXFLAGS = $(AM_CXXFLAGS) $(WX_CXXFLAGS) $(DTSAPPLIB_CFLAGS)

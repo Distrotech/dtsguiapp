@@ -26,6 +26,7 @@
 #endif
 
 #include <wx/app.h>
+#include <wx/wizard.h>
 
 #include <dtsapp.h>
 
@@ -34,6 +35,7 @@
 
 static void free_dtsgui(void *data) {
 	struct dtsgui *dtsgui = (struct dtsgui *)data;
+
 	if (dtsgui->userdata) {
 		objunref(dtsgui->userdata);
 	}
@@ -41,6 +43,7 @@ static void free_dtsgui(void *data) {
 
 DTSApp::~DTSApp() {
 	objunref((void *)dtsgui);
+
 	if (curl) {
 		curlclose();
 	}

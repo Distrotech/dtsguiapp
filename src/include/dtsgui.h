@@ -24,6 +24,7 @@ extern "C" {
 #else
 /*application struct*/
 typedef struct dtsgui dtsgui;
+typedef struct dtsgui_wizard dtsgui_wizard;
 #endif
 
 /*menu controls*/
@@ -36,13 +37,11 @@ typedef void *dtsgui_notebook;
 typedef void *dtsgui_treeview;
 
 /*form controls*/
-typedef void *dtsgui_textbox;
-typedef void *dtsgui_checkbox;
-typedef void *dtsgui_listbox;
+typedef struct form_item form_item;
 
 /*callbacks*/
 typedef int (*dtsgui_configcb)(struct dtsgui *, void *userdata);
-typedef void (*event_callback)(dtsgui_pane, int, void *);
+typedef void (*event_callback)(dtsgui_pane, int type, int id, void *);
 
 struct point {
 	int x;
@@ -63,7 +62,16 @@ enum panel_type {
 	wx_DTSPANEL_WINDOW,
 	wx_DTSPANEL_PANEL,
 	wx_DTSPANEL_SCROLLPANEL,
-	wx_DTSPANEL_DIALOG
+	wx_DTSPANEL_DIALOG,
+	wx_DTSPANEL_TREE,
+	wx_DTSPANEL_WIZARD
+};
+
+enum widget_type {
+	DTS_WIDGET_TEXTBOX,
+	DTS_WIDGET_CHECKBOX,
+	DTS_WIDGET_LISTBOX,
+	DTS_WIDGET_COMBOBOX
 };
 
 #define wx_PANEL_BUTTON_NAV		wx_PANEL_BUTTON_FIRST | wx_PANEL_BUTTON_BACK | wx_PANEL_BUTTON_FWD | wx_PANEL_BUTTON_LAST
@@ -72,41 +80,72 @@ enum panel_type {
 #define wx_PANEL_BUTTON_ALL		wx_PANEL_BUTTON_ACTION | wx_PANEL_BUTTON_NAV
 
 /*application config and control*/
-dtsgui *dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point wsize, struct point wpos, const char *title, const char *status);
+dtsgui *dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point wsize,
+					  struct point wpos, const char *title, const char *status);
 int dtsgui_run(int argc, char **argv);
 void *dtsgui_userdata(struct dtsgui *dtsgui);
 
 /*menu configuration*/
 dtsgui_menu dtsgui_newmenu(struct dtsgui *dtsgui, const char *name);
-dtsgui_menuitem dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, dtsgui_pane pane);
+void dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, const char *label, dtsgui_configcb, void *data);
+void dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, dtsgui_pane pane);
 void dtsgui_menusep(dtsgui_menu dtsmenu);
 void dtsgui_about(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *text);
 void dtsgui_close(dtsgui_menu dtsmenu, struct dtsgui *dtsgui);
 void dtsgui_exit(dtsgui_menu dtsmenu, struct dtsgui *dtsgui);
 
 /*view config*/
-dtsgui_pane dtsgui_newpanel(struct dtsgui *dtsgui, const char *name, int butmask, enum panel_type type);
+dtsgui_pane dtsgui_panel(struct dtsgui *dtsgui, const char *name, int butmask, enum panel_type type, void *userdata);
+void dtsgui_xmlpanel(dtsgui_pane pane, struct xml_doc *xmldoc);
+void dtsgui_delpane(dtsgui_pane pane);
 dtsgui_pane dtsgui_textpane(struct dtsgui *dtsgui, const char *title, const char *buf);
-void dtsgui_rundialog(dtsgui_pane pane);
+dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title);
+void dtsgui_rundialog(dtsgui_pane pane, event_callback evcb, void *data);
 
-/*form items*/
-dtsgui_textbox dtsgui_newtextbox(dtsgui_pane pane, const char *title, const char *value);
-dtsgui_textbox dtsgui_newtextbox_multi(dtsgui_pane pane, const char *title, const char *value);
-dtsgui_listbox dtsgui_newpasswdbox(dtsgui_pane pane, const char *title, const char *value);
-dtsgui_checkbox dtsgui_newcheckbox(dtsgui_pane pane, const char *title, int ischecked);
-dtsgui_checkbox dtsgui_newlistbox(dtsgui_pane pane, const char *title);
+/*form items
+ *list/combo box must be unrefed when all items added
+ */
+extern void dtsgui_textbox(dtsgui_pane pane, const char *title, const char *value, void *data);
+extern void dtsgui_textbox_multi(dtsgui_pane pane, const char *title, const char *value, void *data);
+extern void dtsgui_passwdbox(dtsgui_pane pane, const char *title, const char *value, void *data);
+extern void dtsgui_checkbox(dtsgui_pane pane, const char *title, int ischecked, void *data);
+struct form_item *dtsgui_listbox(dtsgui_pane pane, const char *title, void *data);
+struct form_item *dtsgui_combobox(dtsgui_pane pane, const char *title, void *data);
+
+/*XML form items - see above for need to unref list/combo boxes*/
+extern void dtsgui_xmltextbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
+extern void dtsgui_xmltextbox_multi(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
+extern void dtsgui_xmlpasswdbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
+extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
+struct form_item *dtsgui_xmllistbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
+struct form_item *dtsgui_xmlcombobox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
 
 /*add item to list*/
-void dtsgui_listbox_add(dtsgui_listbox, const char *text, void *data);
+void dtsgui_listbox_add(struct form_item *lbox, const char *text, void *data);
 
 /* returns auth struct needs to be un-ref'd*/
 struct basic_auth *dtsgui_pwdialog(const char *user, const char *passwd,void *data);
 
-/*confirm box*/
+/*message box's*/
 int dtsgui_confirm(struct dtsgui *dtsgui, const char *text);
+void dtsgui_alert(struct dtsgui *dtsgui, const char *text);
 
 /*set callback for a pane*/
 void dtsgui_setevcallback(dtsgui_pane pane,event_callback evcb, void *data);
+
+/* get bucket list of form items*/
+struct bucket_list *dtsgui_panel_items(dtsgui_pane pane);
+void *dtsgui_item_data(struct form_item *fi);
+void *dtsgui_item_value(struct form_item *fi);
+
+/*Wizards*/
+struct dtsgui_wizard* dtsgui_newwizard(struct dtsgui *dtsgui, const char *title);
+dtsgui_pane dtsgui_wizard_addpage(struct dtsgui_wizard *dtswiz, const char *title, void *userdata, struct xml_doc *xmldoc);
+int dtsgui_runwizard(struct dtsgui_wizard *dtswiz);
+
+/* returned values need to be unref'd*/
+const char *dtsgui_filesave(struct dtsgui *dtsgui, const char *title, const char *path, const char *name, const char *filter);
+const char *dtsgui_fileopen(struct dtsgui *dtsgui, const char *title, const char *path, const char *name, const char *filter);
 
 #ifdef __cplusplus
 }

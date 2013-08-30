@@ -2446,7 +2446,7 @@ ac_config_headers="$ac_config_headers config.h"
 #x:y:z z <= x
 #so.x.z.y
 
-LT_LIBVER=0:0:0
+LT_LIBVER=0:1:0
 
 
 # Checks for programs.
@@ -15811,7 +15811,7 @@ fi
 
 
 if test "x$enable_dev_mode" = "xyes" ; then
- DEVELOPER_CFLAGS="-g -Wall -Werror -pedantic-errors -Wno-long-long -Wno-unused-local-typedefs"
+ DEVELOPER_CFLAGS="-g -Wall -Werror -pedantic-errors -Wno-long-long -Wno-unused-local-typedefs -Wno-variadic-macros"
 fi;
 
 
@@ -16230,7 +16230,7 @@ fi
 
 # Checks for library functions.
 
-ac_config_files="$ac_config_files Makefile src/Makefile src/libdtsapp_gui.pc"
+ac_config_files="$ac_config_files Makefile src/Makefile share/Makefile src/libdtsapp_gui.pc"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -17343,6 +17343,7 @@ do
     "libtool") CONFIG_COMMANDS="$CONFIG_COMMANDS libtool" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
+    "share/Makefile") CONFIG_FILES="$CONFIG_FILES share/Makefile" ;;
     "src/libdtsapp_gui.pc") CONFIG_FILES="$CONFIG_FILES src/libdtsapp_gui.pc" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;

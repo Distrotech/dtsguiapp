@@ -18,8 +18,10 @@
 
 #include <wx/object.h>
 
+#include "dtsgui.h"
 #include "evdata.h"
 
-evdata::evdata(void *userdata) {
+evdata::evdata(void *userdata, dtsgui_configcb cb) {
 	data = userdata;
+	callback = cb;
 }
