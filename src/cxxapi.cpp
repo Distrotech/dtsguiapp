@@ -249,19 +249,19 @@ extern void dtsgui_passwdbox(dtsgui_pane pane, const char *title, const char *va
 extern void dtsgui_checkbox(dtsgui_pane pane, const char *title, int ischecked, void *data) {
 	DTSPanel *p = (DTSPanel *)pane;
 
-	p->CheckBox(title, ischecked, data,  DTSGUI_FORM_DATA_PTR);
+	p->CheckBox(title, ischecked, NULL, NULL, data,  DTSGUI_FORM_DATA_PTR);
 }
 
 extern struct form_item *dtsgui_listbox(dtsgui_pane pane, const char *title, void *data) {
 	DTSPanel *p = (DTSPanel *)pane;
 
-	return p->ListBox(title, data,  DTSGUI_FORM_DATA_PTR);
+	return p->ListBox(title, NULL, data,  DTSGUI_FORM_DATA_PTR);
 }
 
 extern struct form_item *dtsgui_combobox(dtsgui_pane pane, const char *title, void *data) {
 	DTSPanel *p = (DTSPanel *)pane;
 
-	return p->ComboBox(title, data, DTSGUI_FORM_DATA_PTR);
+	return p->ComboBox(title, NULL, data, DTSGUI_FORM_DATA_PTR);
 }
 
 const char *getxmlvalue(struct xml_element *xml) {
@@ -348,7 +348,7 @@ extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *
 		ischecked = 1;
 	}
 
-	p->CheckBox(title, ischecked, xml, DTSGUI_FORM_DATA_XML);
+	p->CheckBox(title, ischecked, checkval, uncheckval, xml, DTSGUI_FORM_DATA_XML);
 
 	if (value) {
 		free((void*)value);
@@ -357,26 +357,49 @@ extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *
 
 struct form_item *dtsgui_xmllistbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr) {
 	DTSPanel *p = (DTSPanel *)pane;
+	const char *value = NULL;
 	struct xml_element *xml;
+	struct form_item *fi;
 
-	xml = p->GetNode(xpath, attr);
-	return p->ListBox(title, xml, DTSGUI_FORM_DATA_XML);
+	if ((xml = p->GetNode(xpath, attr))) {
+		value = getxmlvalue(xml);
+	}
+	fi = p->ListBox(title, value, xml, DTSGUI_FORM_DATA_XML);
+
+	if (value) {
+		free((void*)value);
+	}
+
+	return fi;
 }
 
 struct form_item *dtsgui_xmlcombobox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr) {
 	DTSPanel *p = (DTSPanel *)pane;
+	const char *value = NULL;
 	struct xml_element *xml;
+	struct form_item *fi;
 
-	xml = p->GetNode(xpath, attr);
-	return p->ComboBox(title, xml, DTSGUI_FORM_DATA_XML);
+	if ((xml = p->GetNode(xpath, attr))) {
+		value = getxmlvalue(xml);
+	}
+
+	fi = p->ComboBox(title, value, xml, DTSGUI_FORM_DATA_XML);
+
+	if (value) {
+		free((void*)value);
+	}
+
+	return fi;
 }
 
-void dtsgui_listbox_add(struct form_item *listbox, const char *text, void *data) {
+void dtsgui_listbox_add(struct form_item *listbox, const char *text, const char *value) {
 	wxComboBox *lbox = (wxComboBox *)listbox->widget;
-	lbox->Append(text, data);
+	lbox->Append(text, (void*)value);
 
 	if (lbox->GetSelection() == wxNOT_FOUND) {
 		lbox->SetSelection(0);
+	} else if (listbox->value && value && !strcmp(listbox->value, value)) {
+		lbox->SetSelection(lbox->GetCount()-1);
 	}
 }
 
@@ -545,4 +568,9 @@ extern const char *dtsgui_filesave(struct dtsgui *dtsgui, const char *title, con
 
 extern const char *dtsgui_fileopen(struct dtsgui *dtsgui, const char *title, const char *path, const char *name, const char *filter) {
 	return dtsgui_filedialog(dtsgui, title, path, name, filter, wxFD_OPEN | wxFD_FILE_MUST_EXIST);
+}
+
+extern void dtsgui_xmlpanel_update(dtsgui_pane pane) {
+	DTSPanel *p = (DTSPanel*)pane;
+	p->Update_XML();
 }
