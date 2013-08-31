@@ -51,6 +51,7 @@ void pwevent(dtsgui_pane p, int type, int event, void *data) {
 		}
 
 		stop_bucket_loop(bloop);
+		objunref(il);
 	}
 }
 

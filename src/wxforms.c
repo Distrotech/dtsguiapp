@@ -68,11 +68,12 @@ struct xml_doc *loadxmlconf(struct dtsgui *dtsgui) {
 }
 
 int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struct xml_doc *xmldoc) {
+	const char *cos[] = {"Internal Extensions", "Local PSTN", "Long Distance PSTN", "Cellular", "Premium", "International"};
 	dtsgui_pane dp[12], pg;
 	struct dtsgui_wizard *twiz;
 	struct form_item *ilist;
 	const char *newfile;
-	int res;
+	int res, cnt;
 
 	twiz = dtsgui_newwizard(dtsgui, "System Configuration Wizard");
 
@@ -86,7 +87,7 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	dp[7] = dtsgui_wizard_addpage(twiz, "Extensions", NULL, xmldoc);
 	dp[8] = dtsgui_wizard_addpage(twiz, "PBX Setup", NULL, xmldoc);
 	dp[9] = dtsgui_wizard_addpage(twiz, "Attendant", NULL, xmldoc);
-	dp[10] = dtsgui_wizard_addpage(twiz, "TrukSetup", NULL, xmldoc);
+	dp[10] = dtsgui_wizard_addpage(twiz, "Trunk Setup", NULL, xmldoc);
 	dp[11] = dtsgui_wizard_addpage(twiz, "Least Cost Routing", NULL, xmldoc);
 
 	pg=dp[0];
@@ -137,50 +138,51 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	dtsgui_xmlcheckbox(pg, "Domain Controller", NULL, NULL, NULL, NULL);
 
 	pg=dp[6];
+	/*XXX USE TMP VAL and set later unckeced could be 3G... ext int/pppoe*/
 	ilist = dtsgui_xmlcombobox(pg, "External Interface", NULL, NULL);
 	dtsgui_listbox_add(ilist, "br0", NULL);
 	dtsgui_listbox_add(ilist, "ethB", NULL);
 	dtsgui_listbox_add(ilist, "br0.100", NULL);
 	dtsgui_listbox_add(ilist, "3G", NULL);
 	objunref(ilist);
-	/*XXX USE TMP VAL and set later unckeced could be 3G...*/
 	dtsgui_xmlcheckbox(pg, "External Device Is PPPoE", "ADSL", "Dialup", "/config/IP/Dialup/Option[@option = 'Connection']", NULL);
 	dtsgui_xmltextbox(pg, "Number/Service/APN", "/config/IP/Dialup/Option[@option = 'Number']", NULL);
 	dtsgui_xmltextbox(pg, "Username", "/config/IP/Dialup/Option[@option = 'Username']", NULL);
 	dtsgui_xmltextbox(pg, "Password", "/config/IP/Dialup/Option[@option = 'Password']", NULL);
 	dtsgui_xmltextbox(pg, "MTU", "/config/IP/Dialup/Option[@option = 'MTU']", NULL);
 
+
 	pg=dp[7];
-	ilist = dtsgui_xmllistbox(pg, "Default Extension Permision", NULL, NULL);
-	dtsgui_listbox_add(ilist, "Internal Extensions", NULL);
-	dtsgui_listbox_add(ilist, "Local PSTN", NULL);
-	dtsgui_listbox_add(ilist, "Long Distance PSTN", NULL);
-	dtsgui_listbox_add(ilist, "Cellular", NULL);
-	dtsgui_listbox_add(ilist, "Premium", NULL);
-	dtsgui_listbox_add(ilist, "International", NULL);
+	ilist = dtsgui_xmllistbox(pg, "Default Extension Permision", "/config/IP/VOIP/ASTDB/Option[@option = 'Context']", NULL);
+	dtsgui_listbox_add(ilist, cos[0], "0");
+	dtsgui_listbox_add(ilist, cos[1], "1");
+	dtsgui_listbox_add(ilist, cos[2], "2");
+	dtsgui_listbox_add(ilist, cos[3], "3");
+	dtsgui_listbox_add(ilist, cos[4], "4");
+	dtsgui_listbox_add(ilist, cos[5], "5");
 	objunref(ilist);
-	ilist = dtsgui_xmllistbox(pg, "Default Auth Extension Permision", NULL, NULL);
-	dtsgui_listbox_add(ilist, "Internal Extensions", NULL);
-	dtsgui_listbox_add(ilist, "Local PSTN", NULL);
-	dtsgui_listbox_add(ilist, "Long Distance PSTN", NULL);
-	dtsgui_listbox_add(ilist, "Cellular", NULL);
-	dtsgui_listbox_add(ilist, "Premium", NULL);
-	dtsgui_listbox_add(ilist, "International", NULL);
+	ilist = dtsgui_xmllistbox(pg, "Default Auth Extension Permision", "/config/IP/VOIP/ASTDB/Option[@option = 'AuthContext']", NULL);
+	dtsgui_listbox_add(ilist, cos[0], "0");
+	dtsgui_listbox_add(ilist, cos[1], "1");
+	dtsgui_listbox_add(ilist, cos[2], "2");
+	dtsgui_listbox_add(ilist, cos[3], "3");
+	dtsgui_listbox_add(ilist, cos[4], "4");
+	dtsgui_listbox_add(ilist, cos[5], "5");
 	objunref(ilist);
-	ilist = dtsgui_xmllistbox(pg, "Default After Hours Extension Permision", NULL, NULL);
-	dtsgui_listbox_add(ilist, "Internal Extensions", NULL);
-	dtsgui_listbox_add(ilist, "Local PSTN", NULL);
-	dtsgui_listbox_add(ilist, "Long Distance PSTN", NULL);
-	dtsgui_listbox_add(ilist, "Cellular", NULL);
-	dtsgui_listbox_add(ilist, "Premium", NULL);
-	dtsgui_listbox_add(ilist, "International", NULL);
+	ilist = dtsgui_xmllistbox(pg, "Default After Hours Extension Permision", "/config/IP/VOIP/ASTDB/Option[@option = 'DEFALOCK']", NULL);
+	dtsgui_listbox_add(ilist, cos[0], "0");
+	dtsgui_listbox_add(ilist, cos[1], "1");
+	dtsgui_listbox_add(ilist, cos[2], "2");
+	dtsgui_listbox_add(ilist, cos[3], "3");
+	dtsgui_listbox_add(ilist, cos[4], "4");
+	dtsgui_listbox_add(ilist, cos[5], "5");
 	objunref(ilist);
-	ilist = dtsgui_xmllistbox(pg, "Snom Network Port Config", "/config/IP/VOIP/ASTDB/Option[@option = '']", NULL);
-	dtsgui_listbox_add(ilist, "100Mb/s Full Duplex", NULL);
-	dtsgui_listbox_add(ilist, "100Mb/s Half Duplex", NULL);
-	dtsgui_listbox_add(ilist, "10Mb/s Full Duplex", NULL);
-	dtsgui_listbox_add(ilist, "10Mb/s Half Duplex", NULL);
-	dtsgui_listbox_add(ilist, "Auto", NULL);
+	ilist = dtsgui_xmllistbox(pg, "Snom Network Port Config", "/config/IP/VOIP/ASTDB/Option[@option = 'SnomNet']", NULL);
+	dtsgui_listbox_add(ilist, "100Mb/s Full Duplex", "100full");
+	dtsgui_listbox_add(ilist, "100Mb/s Half Duplex", "100half");
+	dtsgui_listbox_add(ilist, "10Mb/s Full Duplex", "10full");
+	dtsgui_listbox_add(ilist, "10Mb/s Half Duplex", "10half");
+	dtsgui_listbox_add(ilist, "Auto", "auto");
 	objunref(ilist);
 	dtsgui_xmltextbox(pg, "Voip Vlan Interface", "/config/IP/VOIP/ASTDB/Option[@option = 'AutoVLAN']", NULL);
 	dtsgui_xmltextbox(pg, "Default Extension Prefix", "/config/IP/VOIP/ASTDB/Option[@option = 'DefaultPrefix']", NULL);
@@ -196,13 +198,13 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	pg=dp[8];
 	dtsgui_xmltextbox(pg, "Local Area Code", "/config/IP/VOIP/ASTDB/Option[@option = 'AreaCode']", NULL);
 	dtsgui_xmltextbox(pg, "Local Extension Prefix", "/config/IP/VOIP/ASTDB/Option[@option = 'ExCode']", NULL);
-	ilist = dtsgui_xmllistbox(pg, "ISDN PRI Framing [T1-E1]", NULL, NULL);
-	dtsgui_listbox_add(ilist, "ccs - esf", NULL);
-	dtsgui_listbox_add(ilist, "cas - d4/Superframe", NULL);
+	ilist = dtsgui_xmllistbox(pg, "ISDN PRI Framing [T1-E1]", "/config/IP/VOIP/ASTDB/Option[@option = 'PRIframing']", NULL);
+	dtsgui_listbox_add(ilist, "ccs - esf", "ccs");
+	dtsgui_listbox_add(ilist, "cas - d4/Superframe", "cas");
 	objunref(ilist);
-	ilist = dtsgui_xmllistbox(pg, "ISDN PRI Coding [T1-E1]", NULL, NULL);
-	dtsgui_listbox_add(ilist, "hdb3 - b8zs", NULL);
-	dtsgui_listbox_add(ilist, "ami", NULL);
+	ilist = dtsgui_xmllistbox(pg, "ISDN PRI Coding [T1-E1]", "/config/IP/VOIP/ASTDB/Option[@option = 'PRIcoding']", NULL);
+	dtsgui_listbox_add(ilist, "hdb3 - b8zs", "hdb3");
+	dtsgui_listbox_add(ilist, "ami", "ami");
 	objunref(ilist);
 	dtsgui_xmlcheckbox(pg, "Calls To Internal Extensions Follow Forward Rules", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'LocalFwd']", NULL);
 	dtsgui_xmlcheckbox(pg, "Hangup Calls To Unknown Numbers/DDI", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'UNKDEF']", NULL);
@@ -238,9 +240,9 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	dtsgui_xmlcheckbox(pg, "Extensions Are On Gateway By Default", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'REMDEF']", NULL);
 
 	pg=dp[11];
-	ilist = dtsgui_xmllistbox(pg, "Protocol", NULL, NULL);
-	dtsgui_listbox_add(ilist, "SIP", NULL);
-	dtsgui_listbox_add(ilist, "IAX2", NULL);
+	ilist = dtsgui_xmllistbox(pg, "Protocol", "/config/IP/VOIP", "protocol");
+	dtsgui_listbox_add(ilist, "SIP", "SIP");
+	dtsgui_listbox_add(ilist, "IAX2", "IAX2");
 	objunref(ilist);
 	dtsgui_xmlcheckbox(pg, "Use DTMF INFO (SIP)", "info", "rfc2833", "/config/IP/VOIP", "dtmf");
 	dtsgui_xmlcheckbox(pg, "Use SRTP (SIP)", "true", "false", "/config/IP/VOIP", "srtp");
@@ -250,17 +252,23 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 
 	res = dtsgui_runwizard(twiz);
 
-	if (!filename && res) {
-		do {
-			newfile = dtsgui_filesave(dtsgui, "Save New Customer Config To File", NULL, "newcustomer.xml", "XML Configuration|*.xml");
-		} while (!newfile && !dtsgui_confirm(dtsgui, "No file selected !!!\nDo you want to continue (And loose settings)"));
-
-		if (newfile) {
-			xml_savefile(xmldoc, newfile, 1, 9);
-			objunref((void*)newfile);
+	if (res) {
+		cnt = sizeof(dp)/sizeof(dp[0])-1;
+		for(; cnt >= 0;cnt--) {
+			dtsgui_xmlpanel_update(dp[cnt]);
 		}
-	} else if (filename && res) {
-		xml_savefile(xmldoc, filename, 1, 9);
+		if (!filename) {
+			do {
+				newfile = dtsgui_filesave(dtsgui, "Save New Customer Config To File", NULL, "newcustomer.xml", "XML Configuration|*.xml");
+			} while (!newfile && !dtsgui_confirm(dtsgui, "No file selected !!!\nDo you want to continue (And loose settings)"));
+
+			if (newfile) {
+				xml_savefile(xmldoc, newfile, 1, 9);
+				objunref((void*)newfile);
+			}
+		} else if (filename) {
+			xml_savefile(xmldoc, filename, 1, 9);
+		}
 	}
 
 	objunref(twiz);

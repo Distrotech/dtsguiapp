@@ -44,12 +44,15 @@ void free_fitem(void *data) {
 	if (fi->name) {
 		free((void *)fi->name);
 	}
+	if (fi->value) {
+		free((void *)fi->value);
+	}
 	if (fi->data.ptr) {
 		objunref(fi->data.ptr);
 	}
 }
 
-struct form_item *DTSPanel::create_new_fitem(void *widget, enum widget_type type, const char *name, const char *value, void *data, enum form_data_type dtype) {
+struct form_item *DTSPanel::create_new_fitem(void *widget, enum widget_type type, const char *name, const char *value, const char *value2, void *data, enum form_data_type dtype) {
 	struct form_item *fi;
 
 	if (!(fi = (struct form_item *)objalloc(sizeof(*fi),free_fitem))) {
@@ -61,11 +64,18 @@ struct form_item *DTSPanel::create_new_fitem(void *widget, enum widget_type type
 	fi->data.ptr = data;
 	fi->dtype = dtype;
 	ALLOC_CONST(fi->name, name);
+	if (value) {
+		ALLOC_CONST(fi->value, value);
+	}
+	if (value2) {
+		ALLOC_CONST(fi->value2, value2);
+	}
 	addtobucket(fitems, fi);
 	return fi;
 }
 
 struct bucket_list *DTSPanel::GetItems(void) {
+	objref(fitems);
 	return fitems;
 }
 
@@ -323,7 +333,7 @@ void DTSPanel::TextBox(const char *title, wxString defval, int flags, int rows, 
 		tbox->Disable();
 	}
 
-	fi = create_new_fitem(tbox, DTS_WIDGET_TEXTBOX, title, defval, data, dtype);
+	fi = create_new_fitem(tbox, DTS_WIDGET_TEXTBOX, title, NULL, NULL, data, dtype);
 	objunref(fi);
 }
 
@@ -331,7 +341,7 @@ void DTSPanel::PasswdBox(const char *title, wxString defval, int flags, void *da
 	TextBox(title, defval, flags | wxTE_PASSWORD, 1, data);
 }
 
-void DTSPanel::CheckBox(const char *title, int ischecked, void *data, enum form_data_type dtype) {
+void DTSPanel::CheckBox(const char *title, int ischecked, const char *checkval, const char *uncheckval, void *data, enum form_data_type dtype) {
 	wxStaticText *text = new wxStaticText(panel, -1, title);
 	wxCheckBox *cbox = new wxCheckBox(panel, -1, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT);
 	struct form_item *fi;
@@ -346,11 +356,11 @@ void DTSPanel::CheckBox(const char *title, int ischecked, void *data, enum form_
 
 	cbox->SetValue((ischecked) ? true : false);
 
-	fi = create_new_fitem(cbox, DTS_WIDGET_CHECKBOX, title, (ischecked) ? "on" : "", data, dtype);
+	fi = create_new_fitem(cbox, DTS_WIDGET_CHECKBOX, title, checkval, uncheckval, data, dtype);
 	objunref(fi);
 }
 
-struct form_item *DTSPanel::ListBox(const char *title, void *data, enum form_data_type dtype) {
+struct form_item *DTSPanel::ListBox(const char *title, const char *value, void *data, enum form_data_type dtype) {
 	wxStaticText *text = new wxStaticText(panel, -1, title);
 	wxChoice *lbox = new wxComboBox(panel, -1, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL, wxCB_READONLY);
 
@@ -362,10 +372,10 @@ struct form_item *DTSPanel::ListBox(const char *title, void *data, enum form_dat
 		lbox->Disable();
 	}
 
-	return create_new_fitem(lbox, DTS_WIDGET_LISTBOX, title, NULL, data, dtype);
+	return create_new_fitem(lbox, DTS_WIDGET_LISTBOX, title, value, NULL, data, dtype);
 }
 
-struct form_item *DTSPanel::ComboBox(const char *title, void *data, enum form_data_type dtype) {
+struct form_item *DTSPanel::ComboBox(const char *title, const char *value, void *data, enum form_data_type dtype) {
 	wxStaticText *text = new wxStaticText(panel, -1, title);
 	wxChoice *lbox = new wxComboBox(panel, -1, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL, wxTE_PROCESS_ENTER);
 
@@ -381,7 +391,7 @@ struct form_item *DTSPanel::ComboBox(const char *title, void *data, enum form_da
 		lbox->Disable();
 	}
 
-	return create_new_fitem(lbox, DTS_WIDGET_COMBOBOX, title, NULL, data, dtype);
+	return create_new_fitem(lbox, DTS_WIDGET_COMBOBOX, title, value, NULL, data, dtype);
 }
 
 void DTSPanel::Buttons(void) {
@@ -415,6 +425,69 @@ void DTSPanel::SetUserData(void *data) {
 
 void *DTSPanel::GetUserData(void) {
 	return userdata;
+}
+
+void DTSPanel::Update_XML() {
+	struct bucket_loop *bloop;
+	struct form_item *fi;
+	struct xml_element *xml;
+	struct xml_node *xn;
+	const char *value, *tmp;
+	wxTextCtrl *tbox;
+	wxCheckBox *cbox;
+	wxComboBox *lbox;
+
+	objref(fitems);
+	bloop = init_bucket_loop(fitems);
+	while (bloop && (fi = (struct form_item*)next_bucket_loop(bloop))) {
+		if (!fi->data.ptr || (fi->dtype != DTSGUI_FORM_DATA_XML)) {
+			objunref(fi);
+			continue;
+		}
+
+		xml = fi->data.xml;
+
+		switch (fi->type) {
+			case DTS_WIDGET_TEXTBOX:
+				tbox = (wxTextCtrl*)fi->widget;
+				value = strdup(tbox->GetValue().ToUTF8());
+				break;
+			case DTS_WIDGET_CHECKBOX:
+				cbox = (wxCheckBox*)fi->widget;
+				tmp = (cbox->GetValue()) ? fi->value : fi->value2;
+				if (tmp) {
+					value = strdup(tmp);
+				} else {
+					value = NULL;
+				}
+				break;
+			case DTS_WIDGET_LISTBOX:
+			case DTS_WIDGET_COMBOBOX:
+				lbox = (wxComboBox*)fi->widget;
+				if (!(value = strdup((const char*)lbox->GetClientData(lbox->GetSelection())))) {
+					value = strdup(lbox->GetValue().ToUTF8());
+				}
+				break;
+			default:
+				value = NULL;
+		}
+
+		if ((xn = xml_getfirstnode(xml->xsearch, NULL))) {
+			if (xml->attr) {
+				xml_setattr(xmldoc, xn, xml->attr, (value) ? value : "");
+			} else {
+				xml_modify(xmldoc, xn, (value) ? value : "");
+			}
+			objunref(xn);
+		}
+
+		if (value) {
+			free((void*)value);
+		}
+		objunref(fi);
+	}
+	stop_bucket_loop(bloop);
+	objunref(fitems);
 }
 
 DTSScrollPanel::DTSScrollPanel(wxWindow *parent,wxFrame *frame, wxString status, int butmask)
