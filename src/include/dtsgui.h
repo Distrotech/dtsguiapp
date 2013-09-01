@@ -102,6 +102,7 @@ dtsgui_pane dtsgui_textpane(struct dtsgui *dtsgui, const char *title, const char
 dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title);
 void dtsgui_rundialog(dtsgui_pane pane, event_callback evcb, void *data);
 void dtsgui_xmlpanel_update(dtsgui_pane pane);
+void *dtsgui_paneldata(dtsgui_pane pane);
 
 /*form items
  *list/combo box must be unrefed when all items added
@@ -137,7 +138,8 @@ void dtsgui_setevcallback(dtsgui_pane pane,event_callback evcb, void *data);
 /* get bucket list of form items*/
 struct bucket_list *dtsgui_panel_items(dtsgui_pane pane);
 void *dtsgui_item_data(struct form_item *fi);
-void *dtsgui_item_value(struct form_item *fi);
+const char *dtsgui_item_name(struct form_item *fi);
+const char *dtsgui_item_value(struct form_item *fi);
 
 /*Wizards*/
 struct dtsgui_wizard* dtsgui_newwizard(struct dtsgui *dtsgui, const char *title);

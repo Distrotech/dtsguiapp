@@ -49,8 +49,6 @@ struct xml_doc *loadxmlconf(struct dtsgui *dtsgui) {
 	struct xml_doc *xmldoc = NULL;
 
 	auth = dtsgui_pwdialog("admin", "", dtsgui);
-	objunref(auth);
-
 	if (!(cbuf = curl_geturl("https://callshop.distrotech.co.za:666/cshop", auth, dtsgui_pwdialog, dtsgui))) {
 		objunref(auth);
 		return NULL;
@@ -69,6 +67,7 @@ struct xml_doc *loadxmlconf(struct dtsgui *dtsgui) {
 
 int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struct xml_doc *xmldoc) {
 	const char *cos[] = {"Internal Extensions", "Local PSTN", "Long Distance PSTN", "Cellular", "Premium", "International"};
+	const char *cosv[] = {"0", "1", "2", "3", "4", "5"};
 	dtsgui_pane dp[12], pg;
 	struct dtsgui_wizard *twiz;
 	struct form_item *ilist;
@@ -154,28 +153,19 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 
 	pg=dp[7];
 	ilist = dtsgui_xmllistbox(pg, "Default Extension Permision", "/config/IP/VOIP/ASTDB/Option[@option = 'Context']", NULL);
-	dtsgui_listbox_add(ilist, cos[0], "0");
-	dtsgui_listbox_add(ilist, cos[1], "1");
-	dtsgui_listbox_add(ilist, cos[2], "2");
-	dtsgui_listbox_add(ilist, cos[3], "3");
-	dtsgui_listbox_add(ilist, cos[4], "4");
-	dtsgui_listbox_add(ilist, cos[5], "5");
+	for(cnt=0;cnt <= 5; cnt++) {
+		dtsgui_listbox_add(ilist, cos[cnt], cosv[cnt]);
+	}
 	objunref(ilist);
 	ilist = dtsgui_xmllistbox(pg, "Default Auth Extension Permision", "/config/IP/VOIP/ASTDB/Option[@option = 'AuthContext']", NULL);
-	dtsgui_listbox_add(ilist, cos[0], "0");
-	dtsgui_listbox_add(ilist, cos[1], "1");
-	dtsgui_listbox_add(ilist, cos[2], "2");
-	dtsgui_listbox_add(ilist, cos[3], "3");
-	dtsgui_listbox_add(ilist, cos[4], "4");
-	dtsgui_listbox_add(ilist, cos[5], "5");
+	for(cnt=0;cnt <= 5; cnt++) {
+		dtsgui_listbox_add(ilist, cos[cnt], cosv[cnt]);
+	}
 	objunref(ilist);
 	ilist = dtsgui_xmllistbox(pg, "Default After Hours Extension Permision", "/config/IP/VOIP/ASTDB/Option[@option = 'DEFALOCK']", NULL);
-	dtsgui_listbox_add(ilist, cos[0], "0");
-	dtsgui_listbox_add(ilist, cos[1], "1");
-	dtsgui_listbox_add(ilist, cos[2], "2");
-	dtsgui_listbox_add(ilist, cos[3], "3");
-	dtsgui_listbox_add(ilist, cos[4], "4");
-	dtsgui_listbox_add(ilist, cos[5], "5");
+	for(cnt=0;cnt <= 5; cnt++) {
+		dtsgui_listbox_add(ilist, cos[cnt], cosv[cnt]);
+	}
 	objunref(ilist);
 	ilist = dtsgui_xmllistbox(pg, "Snom Network Port Config", "/config/IP/VOIP/ASTDB/Option[@option = 'SnomNet']", NULL);
 	dtsgui_listbox_add(ilist, "100Mb/s Full Duplex", "100full");

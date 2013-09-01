@@ -445,7 +445,7 @@ struct form_item *dtsgui_panel_getname(dtsgui_pane pane, const char *name) {
 	return (struct form_item *)bucket_list_find_key(bl, name);
 }
 
-void *dtsgui_item_data(struct form_item *fi) {
+extern void *dtsgui_item_data(struct form_item *fi) {
 	if (fi && fi->data.ptr) {
 		return fi->data.ptr;
 	} else {
@@ -453,24 +453,26 @@ void *dtsgui_item_data(struct form_item *fi) {
 	}
 }
 
-void *dtsgui_item_value(struct form_item *fi) {
+extern const char *dtsgui_item_name(struct form_item *fi) {
+	return fi->name;
+}
+
+extern 	const char *dtsgui_item_value(struct form_item *fi) {
+	const char *value;
 	union widgets {
 		wxTextCtrl *t;
 	} w;
-	void *value = NULL;
 
 	switch(fi->type) {
 		case DTS_WIDGET_TEXTBOX:
 			w.t = (wxTextCtrl *)fi->widget;
-			value = strdup(w.t->GetValue());
+			value = strdup(w.t->GetValue().ToUTF8());
 			break;
-
 		case DTS_WIDGET_CHECKBOX:
 		case DTS_WIDGET_LISTBOX:
 		case DTS_WIDGET_COMBOBOX:
 			break;
 	}
-
 	return value;
 }
 
@@ -573,4 +575,10 @@ extern const char *dtsgui_fileopen(struct dtsgui *dtsgui, const char *title, con
 extern void dtsgui_xmlpanel_update(dtsgui_pane pane) {
 	DTSPanel *p = (DTSPanel*)pane;
 	p->Update_XML();
+}
+
+
+extern void *dtsgui_paneldata(dtsgui_pane pane) {
+	DTSPanel *p = (DTSPanel*)pane;
+	return p->GetUserData();
 }
