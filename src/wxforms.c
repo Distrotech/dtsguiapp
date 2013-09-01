@@ -57,7 +57,7 @@ struct xml_doc *loadxmlconf(struct dtsgui *dtsgui) {
 	curl_ungzip(cbuf);
 
 	if (cbuf && cbuf->c_type && !strcmp("application/xml", cbuf->c_type)) {
-		xmldoc = xml_loadbuf(cbuf->body, cbuf->bsize);
+		xmldoc = xml_loadbuf(cbuf->body, cbuf->bsize, 1);
 	}
 
 	objunref(cbuf);
