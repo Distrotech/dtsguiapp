@@ -43,26 +43,132 @@ void xml_config(struct xml_doc *xmldoc) {
 	objunref(xmlbuf);
 }
 
-struct xml_doc *loadxmlconf(struct dtsgui *dtsgui) {
-	struct basic_auth *auth;
-	struct curlbuf *cbuf;
-	struct xml_doc *xmldoc = NULL;
 
-	auth = dtsgui_pwdialog("admin", "", dtsgui);
-	if (!(cbuf = curl_geturl("https://callshop.distrotech.co.za:666/cshop", auth, dtsgui_pwdialog, dtsgui))) {
-		objunref(auth);
-		return NULL;
+void set_temp_xml(struct xml_doc *xmldoc) {
+	struct xml_search *xs;
+	struct xml_node *xn, *xn2;
+	const char *hdir, *sdir, *extif, *conn;
+	int domc;
+
+	xml_createpath(xmldoc, "/config/tmp/dcon");
+	xml_createpath(xmldoc, "/config/tmp/extif");
+
+	xs = xml_xpath(xmldoc, "/config/FileServer", NULL);
+	xn = xml_getfirstnode(xs, NULL);
+
+	hdir = xml_getattr(xn, "homedir");
+	sdir = xml_getattr(xn, "sharedir");
+
+	if (hdir && sdir && strcmp(hdir, "") && strcmp(sdir, "")) {
+		domc = 1;
+	} else {
+		domc = 0;
 	}
 
-	curl_ungzip(cbuf);
+	objunref(xn);
+	objunref(xs);
 
-	if (cbuf && cbuf->c_type && !strcmp("application/xml", cbuf->c_type)) {
-		xmldoc = xml_loadbuf(cbuf->body, cbuf->bsize, 1);
+	xs = xml_xpath(xmldoc, "/config/tmp/dcon", NULL);
+	xn = xml_getfirstnode(xs, NULL);
+
+	if (domc) {
+		xml_modify(xmldoc, xn, "1");
+	} else {
+		xml_modify(xmldoc, xn, "0");
 	}
 
-	objunref(cbuf);
-	objunref(auth);
-	return xmldoc;
+	objunref(xn);
+	objunref(xs);
+
+	xs = xml_xpath(xmldoc, "/config/tmp/extif", NULL);
+	xn2 = xml_getfirstnode(xs, NULL);
+	objunref(xs);
+
+	xs = xml_xpath(xmldoc, "/config/IP/SysConf/Option[@option = 'External']", NULL);
+	xn = xml_getfirstnode(xs, NULL);
+	objunref(xs);
+	extif = strdup(xn->value);
+	xml_setattr(xmldoc, xn2, "External", extif);
+	objunref(xn);
+
+	xs = xml_xpath(xmldoc, "/config/IP/Dialup/Option[@option = 'Connection']", NULL);
+	xn = xml_getfirstnode(xs, NULL);
+	objunref(xs);
+	conn = strdup(xn->value);
+	xml_setattr(xmldoc, xn2, "Connection", conn);
+	if (!strcmp(xn->value, "ADSL")) {
+		xml_modify(xmldoc, xn2, extif);
+		xml_setattr(xmldoc, xn2, "pppoe", "ADSL");
+	} else {
+		if (!strcmp(extif, "Dialup")) {
+			xml_modify(xmldoc, xn2, conn);
+		} else {
+			xml_modify(xmldoc, xn2, extif);
+		}
+		xml_setattr(xmldoc, xn2, "pppoe", "Dialup");
+	}
+	objunref(xn);
+	objunref(xn2);
+
+	if (extif) {
+		free((void*)extif);
+	}
+	if (conn) {
+		free((void*)conn);
+	}
+}
+
+void rem_temp_xml(struct xml_doc *xmldoc) {
+	struct xml_search *xs;
+	struct xml_node *xn, *xn2, *xn3;
+
+	xs = xml_xpath(xmldoc, "/config/tmp/dcon", NULL);
+	xn = xml_getfirstnode(xs, NULL);
+	objunref(xs);
+
+	xs = xml_xpath(xmldoc, "/config/FileServer", NULL);
+	xn2 = xml_getfirstnode(xs, NULL);
+	if (xn && xn->value && !strcmp("1", xn->value)) {
+		xml_setattr(xmldoc, xn2, "homedir", "U");
+		xml_setattr(xmldoc, xn2, "sharedir", "S");
+	} else {
+		xml_setattr(xmldoc, xn2, "homedir", "");
+		xml_setattr(xmldoc, xn2, "sharedir", "");
+	}
+
+	objunref(xn);
+	objunref(xn2);
+	objunref(xs);
+
+	xs = xml_xpath(xmldoc, "/config/tmp/extif", NULL);
+	xn = xml_getfirstnode(xs, NULL);
+	objunref(xs);
+
+	xs = xml_xpath(xmldoc, "/config/IP/SysConf/Option[@option = 'External']", NULL);
+	xn2 = xml_getfirstnode(xs, NULL);
+	objunref(xs);
+
+	xs = xml_xpath(xmldoc, "/config/IP/Dialup/Option[@option = 'Connection']", NULL);
+	xn3 = xml_getfirstnode(xs, NULL);
+	objunref(xs);
+
+	if (!strcmp(xn->value, "3G") || !strcmp(xn->value, "3GIPW") || !strcmp(xn->value, "Dialup") || !strcmp(xn->value, "Leased")) {
+		xml_modify(xmldoc, xn2, "Dialup");
+		xml_modify(xmldoc, xn3, xn->value);
+	} else {
+		xml_modify(xmldoc, xn2, xn->value);
+		xml_modify(xmldoc, xn3, xml_getattr(xn, "pppoe"));
+	}
+	objunref(xn);
+	objunref(xn2);
+	objunref(xn3);
+
+	xs = xml_xpath(xmldoc, "/config/tmp", NULL);
+	xn = xml_getfirstnode(xs, NULL);
+	xml_delete(xn);
+
+	objunref(xn);
+	objunref(xs);
 }
 
 int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struct xml_doc *xmldoc) {
@@ -73,6 +179,8 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	struct form_item *ilist;
 	const char *newfile;
 	int res, cnt;
+
+	set_temp_xml(xmldoc);
 
 	twiz = dtsgui_newwizard(dtsgui, "System Configuration Wizard");
 
@@ -134,17 +242,16 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	dtsgui_xmltextbox(pg, "Aliases", "/config/FileServer/Config/Option[@option = 'netbios name']", NULL);
 	dtsgui_xmltextbox(pg, "Domain Controllers", "/config/FileServer/Setup/Option[@option = 'ADSServer']", NULL);
 	dtsgui_xmltextbox(pg, "Realm [If Joining ADS]", "/config/FileServer/Setup/Option[@option = 'ADSRealm']", NULL);
-	dtsgui_xmlcheckbox(pg, "Domain Controller", NULL, NULL, NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Domain Controller", "1", "0", "/config/tmp/dcon", NULL);
 
 	pg=dp[6];
-	/*XXX USE TMP VAL and set later unckeced could be 3G... ext int/pppoe*/
-	ilist = dtsgui_xmlcombobox(pg, "External Interface", NULL, NULL);
-	dtsgui_listbox_add(ilist, "br0", NULL);
-	dtsgui_listbox_add(ilist, "ethB", NULL);
-	dtsgui_listbox_add(ilist, "br0.100", NULL);
-	dtsgui_listbox_add(ilist, "3G", NULL);
+	ilist = dtsgui_xmlcombobox(pg, "External Interface", "/config/tmp/extif", NULL);
+	dtsgui_listbox_add(ilist, "br0", "br0");
+	dtsgui_listbox_add(ilist, "ethB", "ethB");
+	dtsgui_listbox_add(ilist, "br0.100", "br0.100");
+	dtsgui_listbox_add(ilist, "3G", "3G");
 	objunref(ilist);
-	dtsgui_xmlcheckbox(pg, "External Device Is PPPoE", "ADSL", "Dialup", "/config/IP/Dialup/Option[@option = 'Connection']", NULL);
+	dtsgui_xmlcheckbox(pg, "External Device Is PPPoE", "ADSL", "Dialup", "/config/tmp/extif", "pppoe");
 	dtsgui_xmltextbox(pg, "Number/Service/APN", "/config/IP/Dialup/Option[@option = 'Number']", NULL);
 	dtsgui_xmltextbox(pg, "Username", "/config/IP/Dialup/Option[@option = 'Username']", NULL);
 	dtsgui_xmltextbox(pg, "Password", "/config/IP/Dialup/Option[@option = 'Password']", NULL);
@@ -247,6 +354,9 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 		for(; cnt >= 0;cnt--) {
 			dtsgui_xmlpanel_update(dp[cnt]);
 		}
+
+		rem_temp_xml(xmldoc);
+
 		if (!filename) {
 			do {
 				newfile = dtsgui_filesave(dtsgui, "Save New Customer Config To File", NULL, "newcustomer.xml", "XML Configuration|*.xml");
@@ -382,22 +492,23 @@ int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
 
 	if (!data || !objref(appdata)) {
 		return 0;
-
 	}
 
 	/* menus*/
 	file_menu(dtsgui);
 	help_menu(dtsgui);
 
+	objunref(appdata);
 	return 1;
 
 	/*load xml config via http*/
-	if (!(appdata->xmldoc = loadxmlconf(dtsgui))) {
+	if (!(appdata->xmldoc = dtsgui_loadxmlurl(dtsgui, "admin", "", "https://callshop.distrotech.co.za:666/cshop"))) {
 		objunref(appdata);
 		dtsgui_confirm(dtsgui, "Config DL Failed (as expected after 3 tries)\nHello Dave\n\nWould You Like To Play .... Thermo Nuclear War ?");
 		return 1;
 	}
 
+	objunref(appdata);
 	return 1;
 }
 
