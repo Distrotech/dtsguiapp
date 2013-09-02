@@ -150,6 +150,8 @@ int dtsgui_runwizard(struct dtsgui_wizard *dtswiz);
 const char *dtsgui_filesave(struct dtsgui *dtsgui, const char *title, const char *path, const char *name, const char *filter);
 const char *dtsgui_fileopen(struct dtsgui *dtsgui, const char *title, const char *path, const char *name, const char *filter);
 
+struct xml_doc *dtsgui_loadxmlurl(struct dtsgui *dtsgui, const char *user, const char *passwd, const char *url);
+
 #ifdef __cplusplus
 }
 #endif

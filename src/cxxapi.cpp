@@ -582,3 +582,25 @@ extern void *dtsgui_paneldata(dtsgui_pane pane) {
 	DTSPanel *p = (DTSPanel*)pane;
 	return p->GetUserData();
 }
+
+extern struct xml_doc *dtsgui_loadxmlurl(struct dtsgui *dtsgui, const char *user, const char *passwd, const char *url) {
+	struct curlbuf *cbuf;
+	struct xml_doc *xmldoc = NULL;
+	struct basic_auth *auth;
+
+	auth = dtsgui_pwdialog(user, passwd, dtsgui);
+	if (!(cbuf = curl_geturl(url, auth, dtsgui_pwdialog, dtsgui))) {
+		objunref(auth);
+		return NULL;
+	}
+
+	curl_ungzip(cbuf);
+
+	if (cbuf && cbuf->c_type && !strcmp("application/xml", cbuf->c_type)) {
+		xmldoc = xml_loadbuf(cbuf->body, cbuf->bsize, 1);
+	}
+
+	objunref(cbuf);
+	objunref(auth);
+	return xmldoc;
+}
