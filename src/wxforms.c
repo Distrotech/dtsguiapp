@@ -18,9 +18,17 @@
 
 #include <stdint.h>
 #include <stdlib.h>
+#include <stddef.h>
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
+
+#ifdef __WIN32
+#define UNICODE 1
+#include <winsock2.h>
+#include <dirent.h>
+#include <shlobj.h>
+#endif
 
 #include <dtsapp.h>
 
@@ -28,11 +36,12 @@
 
 #ifndef DATA_DIR
 #define DATA_DIR	"/usr/share/dtsguiapp"
-#endif // DATA_DIR
+#endif
 
 struct app_data {
 	struct dtsgui *dtsgui;
 	struct xml_doc *xmldoc;
+	const char *datadir;
 };
 
 void xml_config(struct xml_doc *xmldoc) {
@@ -42,7 +51,6 @@ void xml_config(struct xml_doc *xmldoc) {
 	printf("%s\n", xml_getbuffer(xmlbuf));
 	objunref(xmlbuf);
 }
-
 
 void set_temp_xml(struct xml_doc *xmldoc) {
 	struct xml_search *xs;
@@ -379,10 +387,12 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 }
 
 int newsys_wizard(struct dtsgui *dtsgui, void *data) {
-	const char defconf[PATH_MAX];
+	char defconf[PATH_MAX];
 	struct xml_doc *xmldoc;
+	struct app_data *appdata;
 
-	snprintf((char*)defconf, PATH_MAX-1, "%s/default.xml", DATA_DIR);
+	appdata = dtsgui_userdata(dtsgui);
+	snprintf(defconf, PATH_MAX-1, "%s/default.xml", appdata->datadir);
 	if (!is_file(defconf)) {
 		dtsgui_alert(dtsgui, "Default configuration not found.\nCheck Installation.");
 		return 0;
@@ -515,6 +525,10 @@ int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
 void free_appdata(void *data) {
 	struct app_data *appdata = data;
 
+	if (appdata->datadir) {
+		free((void*)appdata->datadir);
+	}
+
 	if (appdata->dtsgui) {
 		objunref(appdata->dtsgui);
 	}
@@ -529,16 +543,27 @@ int main(int argc, char **argv) {
 	struct point wpos = {50, 50};
 	struct app_data *appdata;
 	int res;
-	const char xmlcat[PATH_MAX];
+	char apppath[PATH_MAX];
 
 	if (!(appdata = objalloc(sizeof(*appdata), free_appdata))) {
 		return -1;
 	}
 
-	snprintf((char*)xmlcat, PATH_MAX-1, "%s/catalog.xml", DATA_DIR);
-	if (is_file(xmlcat)) {
-		setenv("XML_CATALOG_FILES", xmlcat, 1);
+#ifdef __WIN32
+	getwin32folder(CSIDL_COMMON_APPDATA, apppath);
+	appdata->datadir = malloc(strlen(apppath)+12);
+	snprintf((char*)appdata->datadir, strlen(apppath)+12, "%s\\Distrotech", apppath);
+	chdir(appdata->datadir);
+	_putenv("XML_DEBUG_CATALOG=\"\"");
+	_putenv("XML_CATALOG_FILES=catalog.xml");
+#else
+	appdata->datadir = strdup(DATA_DIR);
+	snprintf(apppath, strlen(appdata->datadir)+13, "%s/catalog.xml", appdata->datadir);
+	if (is_file(apppath)) {
+		setenv("XML_CATALOG_FILES", apppath, 1);
 	}
+	setenv("XML_DEBUG_CATALOG", "", 0);
+#endif
 
 	startthreads();
 	xml_init();

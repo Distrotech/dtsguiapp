@@ -187,6 +187,8 @@ DTSPanel::DTSPanel(wxFrame *mainwin, wxString statusmsg, int butmask) {
 	SetName(status);
 	panel = NULL;
 	dtsevthandler = NULL;
+	xmldoc = NULL;
+	fgs = NULL;
 	memcpy(buttons, def_buttons, sizeof(def_buttons));;
 	fitems = (struct bucket_list *)create_bucketlist(0, fitems_hash);
 }

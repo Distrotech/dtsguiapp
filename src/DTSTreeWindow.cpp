@@ -7,6 +7,7 @@
 #include <wx/dataview.h>
 #include <wx/wizard.h>
 
+#include <stdint.h>
 #include <dtsapp.h>
 #include "dtsgui.hpp"
 

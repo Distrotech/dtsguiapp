@@ -152,6 +152,10 @@ const char *dtsgui_fileopen(struct dtsgui *dtsgui, const char *title, const char
 
 struct xml_doc *dtsgui_loadxmlurl(struct dtsgui *dtsgui, const char *user, const char *passwd, const char *url);
 
+#ifdef __WIN32
+void getwin32folder(int csidl, char *path);
+#endif
+
 #ifdef __cplusplus
 }
 #endif

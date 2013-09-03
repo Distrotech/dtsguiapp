@@ -20,6 +20,7 @@
 #define UNICODE 1
 #include <winsock2.h>
 #include <windows.h>
+#include <shlobj.h>
 #endif
 
 #include <stdint.h>
@@ -458,7 +459,7 @@ extern const char *dtsgui_item_name(struct form_item *fi) {
 }
 
 extern 	const char *dtsgui_item_value(struct form_item *fi) {
-	const char *value;
+	const char *value = NULL;
 	union widgets {
 		wxTextCtrl *t;
 	} w;
@@ -604,3 +605,9 @@ extern struct xml_doc *dtsgui_loadxmlurl(struct dtsgui *dtsgui, const char *user
 	objunref(auth);
 	return xmldoc;
 }
+
+#ifdef __WIN32
+void getwin32folder(int csidl, char *path) {
+	SHGetFolderPathA(NULL, csidl, NULL, 0, path);
+}	
+#endif
