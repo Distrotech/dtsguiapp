@@ -649,6 +649,7 @@ WX_CXXFLAGS
 WX_CFLAGS
 WX_CPPFLAGS
 WX_CONFIG_PATH
+DEVELOPER_CXXFLAGS
 DEVELOPER_CFLAGS
 DTSAPPLIB_LIBS
 DTSAPPLIB_CFLAGS
@@ -15812,7 +15813,9 @@ fi
 
 if test "x$enable_dev_mode" = "xyes" ; then
  DEVELOPER_CFLAGS="-g -Wall -Werror -pedantic-errors -Wno-long-long -Wno-unused-local-typedefs -Wno-variadic-macros"
+ DEVELOPER_CXXFLAGS="-g -Wall -Werror -pedantic-errors -Wno-long-long -Wno-unused-local-typedefs -Wno-variadic-macros -Wno-conversion-null"
 fi;
+
 
 
 

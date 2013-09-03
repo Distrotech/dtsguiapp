@@ -35,8 +35,10 @@ AC_ARG_ENABLE([world-peace], AS_HELP_STRING([--enable-world-peace], [Yeah right 
 
 if test "x$enable_dev_mode" = "xyes" ; then
  DEVELOPER_CFLAGS="-g -Wall -Werror -pedantic-errors -Wno-long-long -Wno-unused-local-typedefs -Wno-variadic-macros"
+ DEVELOPER_CXXFLAGS="-g -Wall -Werror -pedantic-errors -Wno-long-long -Wno-unused-local-typedefs -Wno-variadic-macros -Wno-conversion-null"
 fi;
 AC_SUBST(DEVELOPER_CFLAGS)
+AC_SUBST(DEVELOPER_CXXFLAGS)
 
 WX_CONFIG_OPTIONS
 WX_CONFIG_CHECK([2.9.4], [wxWin=1])

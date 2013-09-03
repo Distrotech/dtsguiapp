@@ -1,6 +1,6 @@
 ACLOCAL_AMFLAGS = -I m4
 AM_CFLAGS = -I$(srcdir)/include $(DEVELOPER_CFLAGS) -DDATA_DIR=\"$(datarootdir)/@PACKAGE@\"
-AM_CXXFLAGS = -I$(srcdir)/include $(DEVELOPER_CFLAGS) -DDATA_DIR=\"$(datarootdir)/@PACKAGE@\"
+AM_CXXFLAGS = -I$(srcdir)/include $(DEVELOPER_CXXFLAGS) -DDATA_DIR=\"$(datarootdir)/@PACKAGE@\"
 EXTRA_DIST = include
 
 lib_LTLIBRARIES = libdtsapp_gui.la
