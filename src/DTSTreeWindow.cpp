@@ -6,6 +6,7 @@
 #include <wx/scrolwin.h>
 #include <wx/dataview.h>
 #include <wx/wizard.h>
+#include <wx/notebook.h>
 
 #include <stdint.h>
 #include <dtsapp.h>
@@ -16,7 +17,7 @@
 
 DTSTreeWindow::DTSTreeWindow(wxWindow *parent, wxFrame *frame, wxString stat_msg, int pos)
 	:wxSplitterWindow(parent, -1, wxDefaultPosition, wxDefaultSize),
-	 DTSPanel(frame, stat_msg, 0) {
+	 DTSObject(stat_msg) {
 
 	int w, h, p;
 
@@ -29,7 +30,6 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, wxFrame *frame, wxString stat_msg
 	c_pane = new wxWindow(sw, wxID_ANY);
 
 	panel = static_cast<wxWindow *>(sw);
-	status = stat_msg;
 	type = wx_DTSPANEL_TREE;
 
 	SplitVertically(t_pane, c_pane);
@@ -84,7 +84,16 @@ DTSTreeWindow::~DTSTreeWindow() {
 }
 
 bool DTSTreeWindow::Show(bool show) {
-
-	ShowPanel(show);
 	return wxSplitterWindow::Show(show);
 }
+
+DTSTabWindow::DTSTabWindow(wxFrame *frame, wxString stat_msg)
+	:wxNotebook((wxWindow*)frame, -1),
+	DTSObject(stat_msg) {
+
+	wxNotebook *nb = static_cast<wxNotebook*>(this);
+
+	panel = static_cast<wxWindow *>(nb);
+	type = wx_DTSPANEL_TAB;
+}
+
