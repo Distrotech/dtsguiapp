@@ -72,7 +72,7 @@ void test_posturl(struct dtsgui *dtsgui, const char *user, const char *passwd, c
 	}*/
 
 	if (cbuf && cbuf->body) {
-		printf("%s\n", cbuf->body);
+		dtsgui_alert(dtsgui, (char*)cbuf->body);
 	}
 
 	objunref(cbuf);
@@ -506,24 +506,30 @@ void pbx_settings(dtsgui_tabview tabv) {
 	int cnt;
 
 
-	dp[0] = dtsgui_addpage(tabv, "Routing", 0, wx_DTSPANEL_PANEL, NULL);
-	dp[1] = dtsgui_addpage(tabv, "mISDN", 0, wx_DTSPANEL_PANEL, NULL);
-	dp[2] = dtsgui_addpage(tabv, "E1", 0, wx_DTSPANEL_PANEL, NULL);
-	dp[3] = dtsgui_addpage(tabv, "Defaults", 0, wx_DTSPANEL_PANEL, NULL);
-	dp[4] = dtsgui_addpage(tabv, "IVR Password", 0, wx_DTSPANEL_PANEL, NULL);
-	dp[5] = dtsgui_addpage(tabv, "Location", 0, wx_DTSPANEL_PANEL, NULL);
-	dp[6] = dtsgui_addpage(tabv, "Inbound", 0, wx_DTSPANEL_PANEL, NULL);
-	dp[7] = dtsgui_addpage(tabv, "Num Plan", 0, wx_DTSPANEL_PANEL, NULL);
-	dp[8] = dtsgui_addpage(tabv, "Auto Add", 0, wx_DTSPANEL_PANEL, NULL);
-	dp[9] = dtsgui_addpage(tabv, "Save", wx_PANEL_BUTTON_YES, wx_DTSPANEL_PANEL, NULL);
+	dp[0] = dtsgui_addpage(tabv, "Routing", 0, wx_DTSPANEL_PANEL, NULL, NULL);
+	dp[1] = dtsgui_addpage(tabv, "mISDN", 0, wx_DTSPANEL_PANEL, NULL, NULL);
+	dp[2] = dtsgui_addpage(tabv, "E1", 0, wx_DTSPANEL_PANEL, NULL, NULL);
+	dp[3] = dtsgui_addpage(tabv, "Defaults", 0, wx_DTSPANEL_PANEL, NULL, NULL);
+	dp[4] = dtsgui_addpage(tabv, "IVR Password", 0, wx_DTSPANEL_PANEL, NULL, NULL);
+	dp[5] = dtsgui_addpage(tabv, "Location", 0, wx_DTSPANEL_PANEL, NULL, NULL);
+	dp[6] = dtsgui_addpage(tabv, "Inbound", 0, wx_DTSPANEL_PANEL, NULL, NULL);
+	dp[7] = dtsgui_addpage(tabv, "Num Plan", 0, wx_DTSPANEL_PANEL, NULL, NULL);
+	dp[8] = dtsgui_addpage(tabv, "Auto Add", 0, wx_DTSPANEL_PANEL, NULL, NULL);
+	dp[9] = dtsgui_addpage(tabv, "Save", wx_PANEL_BUTTON_YES, wx_DTSPANEL_PANEL, NULL, NULL);
 
-/*	dtsgui_textbox(p, "TextBox", "text", "Text", NULL);
-	dtsgui_setevcallback(dp[10], handle_test, &dp);*/
+/*	dtsgui_textbox(p, "TextBox", "text", "Text", NULL);*/
+	dtsgui_setevcallback(dp[9], handle_test, &dp);
 
 	cnt = sizeof(dp)/sizeof(dp[0])-1;
 	for(; cnt >= 0;cnt--) {
 		dtsgui_showpanel(dp[cnt]);
 	}
+}
+
+int post_test(struct dtsgui *dtsgui, void *data) {
+	test_posturl(dtsgui, NULL, NULL, "https://sip1.speakezi.co.za:666/auth/test.php");
+
+	return 1;
 }
 
 void file_menu(struct dtsgui *dtsgui) {
@@ -545,6 +551,7 @@ void file_menu(struct dtsgui *dtsgui) {
 	testpanel(dtsgui, file);
 	tree = dtsgui_treewindow(dtsgui, "Tree Window");
 	dtsgui_newmenuitem(file, dtsgui, "T&ree", tree);
+	dtsgui_newmenucb(file, dtsgui, "Test &Post", "Send POST request to callshop server (requires callshop user)", post_test, NULL);
 
 	dtsgui_menusep(file);
 	dtsgui_close(file, dtsgui);
@@ -569,8 +576,6 @@ int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
 	if (!data || !objref(appdata)) {
 		return 0;
 	}
-
-/*	test_posturl(dtsgui, NULL, NULL, "https://sip1.speakezi.co.za:666/auth/test.php");*/
 
 	/* menus*/
 	file_menu(dtsgui);
