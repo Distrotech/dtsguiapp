@@ -19,6 +19,7 @@ class DTSTreeWindow: public DTSObject, public virtual wxSplitterWindow {
 class DTSTabWindow: public DTSObject, public virtual wxNotebook {
 	public:
 		DTSTabWindow(wxFrame *frame = NULL, wxString stat_msg = wxEmptyString);
+		bool Show(bool = true);
 };
 
 #endif // DTSTREEWINDOW_H

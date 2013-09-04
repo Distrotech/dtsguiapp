@@ -66,6 +66,7 @@ class DTSObject: public virtual wxWindow {
 		wxWindow *GetPanel();
 		panel_type type;
 	protected:
+		wxFrame *frame;
 		wxString status;
 		wxWindow *panel;
 };
@@ -97,7 +98,6 @@ class DTSPanel: public DTSObject {
 		void Buttons(void);
 		DTSPanelEvent *dtsevthandler;
 		int button_mask;
-		wxFrame *frame;
 	private:
 		struct form_item *create_new_fitem(void *widget, enum widget_type type, const char *name, const char *value = NULL, const char *value2 = NULL, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
 		wxGridBagSizer *fgs;

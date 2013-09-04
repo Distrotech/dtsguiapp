@@ -164,6 +164,7 @@ void DTSPanelEvent::BindCombo(wxWindow *win, int w_id) {
 DTSObject::DTSObject(wxString st) {
 	status = st;
 	panel = NULL;
+	frame = NULL;
 	SetName(status);
 }
 
