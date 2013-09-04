@@ -27,41 +27,25 @@
 
 
 void pwevent(dtsgui_pane p, int type, int event, void *data) {
-	struct bucket_loop *bloop;
-	struct bucket_list *il;
-	struct form_item *fi;
 	struct basic_auth *auth;
-	const char *name;
 
 
 	if (event == wx_PANEL_BUTTON_YES) {
 		if (!(auth = dtsgui_paneldata(p))) {
 			return;
 		}
-
-		il = dtsgui_panel_items(p);
-		bloop = init_bucket_loop(il);
-
-		while (bloop && (fi = next_bucket_loop(bloop))) {
-			name = dtsgui_item_name(fi);
-
-			if (!strcmp("Username", name)) {
-				if (auth->user) {
-					free((void*)auth->user);
-				}
-				auth->user = dtsgui_item_value(fi);
-			} else if (!strcmp("Password", name)) {
-				if (auth->passwd) {
-					free((void*)auth->passwd);
-				}
-				auth->passwd = dtsgui_item_value(fi);
-			}
-
-			objunref(fi);
+		if (auth->user) {
+			free((void*)auth->user);
+			auth->user = NULL;
+		}
+		if (auth->passwd) {
+			memset((void*)auth->passwd, 0, strlen(auth->passwd));
+			free((void*)auth->passwd);
+			auth->passwd = NULL;
 		}
 
-		stop_bucket_loop(bloop);
-		objunref(il);
+		auth->user = dtsgui_findvalue(p, "uname");
+		auth->passwd = dtsgui_findvalue(p, "pwd");
 	}
 }
 
@@ -75,8 +59,8 @@ struct basic_auth *dtsgui_pwdialog(const char *user, const char *passwd, void *d
 	}
 
 	pwbox = dtsgui_panel(dtsgui, "Athentification", wx_PANEL_BUTTON_ACTION, wx_DTSPANEL_DIALOG, bauth);
-	dtsgui_textbox(pwbox, "Username", bauth->user, NULL);
-	dtsgui_passwdbox(pwbox, "Password", bauth->passwd, NULL);
+	dtsgui_textbox(pwbox, "Username", "uname", bauth->user, NULL);
+	dtsgui_passwdbox(pwbox, "Password", "pwd", bauth->passwd, NULL);
 	objref(bauth);
 	dtsgui_rundialog(pwbox, pwevent, NULL);
 

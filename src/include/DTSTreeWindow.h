@@ -1,7 +1,7 @@
 #ifndef DTSTREEWINDOW_H
 #define DTSTREEWINDOW_H
 
-class DTSTreeWindow: public DTSPanel, public virtual wxSplitterWindow {
+class DTSTreeWindow: public DTSObject, public virtual wxSplitterWindow {
 	public:
 		DTSTreeWindow(wxWindow *parent = NULL, wxFrame *frame = NULL, wxString stat_msg = wxEmptyString, int pos = 30);
 		~DTSTreeWindow();
@@ -14,6 +14,11 @@ class DTSTreeWindow: public DTSPanel, public virtual wxSplitterWindow {
 		wxDataViewTreeCtrl *tree;
 		wxBoxSizer *sizer;
 		wxWindow *a_window;
+};
+
+class DTSTabWindow: public DTSObject, public virtual wxNotebook {
+	public:
+		DTSTabWindow(wxFrame *frame = NULL, wxString stat_msg = wxEmptyString);
 };
 
 #endif // DTSTREEWINDOW_H

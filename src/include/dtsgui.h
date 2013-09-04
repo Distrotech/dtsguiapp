@@ -35,6 +35,7 @@ typedef void *dtsgui_menuitem;
 typedef void *dtsgui_pane;
 typedef void *dtsgui_notebook;
 typedef void *dtsgui_treeview;
+typedef void *dtsgui_tabview;
 
 /*form controls*/
 typedef struct form_item form_item;
@@ -64,7 +65,8 @@ enum panel_type {
 	wx_DTSPANEL_SCROLLPANEL,
 	wx_DTSPANEL_DIALOG,
 	wx_DTSPANEL_TREE,
-	wx_DTSPANEL_WIZARD
+	wx_DTSPANEL_WIZARD,
+	wx_DTSPANEL_TAB
 };
 
 enum widget_type {
@@ -100,6 +102,9 @@ void dtsgui_xmlpanel(dtsgui_pane pane, struct xml_doc *xmldoc);
 void dtsgui_delpane(dtsgui_pane pane);
 dtsgui_pane dtsgui_textpane(struct dtsgui *dtsgui, const char *title, const char *buf);
 dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title);
+dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title);
+dtsgui_pane dtsgui_addpage(dtsgui_tabview tv, const char *name, int butmask, enum panel_type type, void *userdata);
+void dtsgui_showpanel(dtsgui_pane pane);
 void dtsgui_rundialog(dtsgui_pane pane, event_callback evcb, void *data);
 void dtsgui_xmlpanel_update(dtsgui_pane pane);
 void *dtsgui_paneldata(dtsgui_pane pane);
@@ -107,20 +112,20 @@ void *dtsgui_paneldata(dtsgui_pane pane);
 /*form items
  *list/combo box must be unrefed when all items added
  */
-extern void dtsgui_textbox(dtsgui_pane pane, const char *title, const char *value, void *data);
-extern void dtsgui_textbox_multi(dtsgui_pane pane, const char *title, const char *value, void *data);
-extern void dtsgui_passwdbox(dtsgui_pane pane, const char *title, const char *value, void *data);
-extern void dtsgui_checkbox(dtsgui_pane pane, const char *title, int ischecked, void *data);
-struct form_item *dtsgui_listbox(dtsgui_pane pane, const char *title, void *data);
-struct form_item *dtsgui_combobox(dtsgui_pane pane, const char *title, void *data);
+extern void dtsgui_textbox(dtsgui_pane pane, const char *title, const char *name, const char *value, void *data);
+extern void dtsgui_textbox_multi(dtsgui_pane pane, const char *title, const char *name, const char *value, void *data);
+extern void dtsgui_passwdbox(dtsgui_pane pane, const char *title, const char *name, const char *value, void *data);
+extern void dtsgui_checkbox(dtsgui_pane pane, const char *title, const char *name, int ischecked, void *data);
+struct form_item *dtsgui_listbox(dtsgui_pane pane, const char *title, const char *name, void *data);
+struct form_item *dtsgui_combobox(dtsgui_pane pane, const char *title, const char *name, void *data);
 
 /*XML form items - see above for need to unref list/combo boxes*/
-extern void dtsgui_xmltextbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
-extern void dtsgui_xmltextbox_multi(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
-extern void dtsgui_xmlpasswdbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
-extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *checkval, const char *uncheckval, const char *xpath, const char *attr);
-struct form_item *dtsgui_xmllistbox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
-struct form_item *dtsgui_xmlcombobox(dtsgui_pane pane, const char *title, const char *xpath, const char *attr);
+extern void dtsgui_xmltextbox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *attr);
+extern void dtsgui_xmltextbox_multi(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *attr);
+extern void dtsgui_xmlpasswdbox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *attr);
+extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *name, const char *checkval, const char *uncheckval, const char *xpath, const char *attr);
+struct form_item *dtsgui_xmllistbox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *attr);
+struct form_item *dtsgui_xmlcombobox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *attr);
 
 /*add item to list*/
 void dtsgui_listbox_add(struct form_item *lbox, const char *text, const char *value);
@@ -140,6 +145,8 @@ struct bucket_list *dtsgui_panel_items(dtsgui_pane pane);
 void *dtsgui_item_data(struct form_item *fi);
 const char *dtsgui_item_name(struct form_item *fi);
 const char *dtsgui_item_value(struct form_item *fi);
+struct form_item *dtsgui_finditem(dtsgui_pane p, const char *name);
+const char *dtsgui_findvalue(dtsgui_pane p, const char *name);
 
 /*Wizards*/
 struct dtsgui_wizard* dtsgui_newwizard(struct dtsgui *dtsgui, const char *title);
