@@ -7,6 +7,7 @@
 #include <wx/dataview.h>
 #include <wx/wizard.h>
 #include <wx/notebook.h>
+#include <wx/frame.h>
 
 #include <stdint.h>
 #include <dtsapp.h>
@@ -24,6 +25,8 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, wxFrame *frame, wxString stat_msg
 	wxSplitterWindow *sw = static_cast<wxSplitterWindow*>(this);
 	wxBoxSizer *p_sizer = new wxBoxSizer(wxHORIZONTAL);
 	wxBoxSizer *treesizer = new wxBoxSizer(wxVERTICAL);
+
+	this->frame = frame;
 
 	p_sizer->Add(sw, 1,wxEXPAND,0);
 	t_pane = new wxPanel(sw, wxID_ANY);
@@ -84,6 +87,9 @@ DTSTreeWindow::~DTSTreeWindow() {
 }
 
 bool DTSTreeWindow::Show(bool show) {
+	if (show && frame) {
+		frame->SetStatusText(status);
+	}
 	return wxSplitterWindow::Show(show);
 }
 
@@ -95,5 +101,12 @@ DTSTabWindow::DTSTabWindow(wxFrame *frame, wxString stat_msg)
 
 	panel = static_cast<wxWindow *>(nb);
 	type = wx_DTSPANEL_TAB;
+	this->frame = frame;
 }
 
+bool DTSTabWindow::Show(bool show) {
+	if (show && frame) {
+		frame->SetStatusText(status);
+	}
+	return wxNotebook::Show(show);
+}
