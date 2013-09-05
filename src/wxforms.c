@@ -502,27 +502,66 @@ void testpanel(struct dtsgui *dtsgui, dtsgui_menu menu) {
 }
 
 void pbx_settings(dtsgui_tabview tabv) {
-	dtsgui_pane dp[10];
+	dtsgui_pane dp[10], pg;
+	struct form_item *lb;
 	int cnt;
 
 
-	dp[0] = dtsgui_addpage(tabv, "Routing", 0, wx_DTSPANEL_PANEL, NULL, NULL);
-	dp[1] = dtsgui_addpage(tabv, "mISDN", 0, wx_DTSPANEL_PANEL, NULL, NULL);
-	dp[2] = dtsgui_addpage(tabv, "E1", 0, wx_DTSPANEL_PANEL, NULL, NULL);
-	dp[3] = dtsgui_addpage(tabv, "Defaults", 0, wx_DTSPANEL_PANEL, NULL, NULL);
-	dp[4] = dtsgui_addpage(tabv, "IVR Password", 0, wx_DTSPANEL_PANEL, NULL, NULL);
-	dp[5] = dtsgui_addpage(tabv, "Location", 0, wx_DTSPANEL_PANEL, NULL, NULL);
-	dp[6] = dtsgui_addpage(tabv, "Inbound", 0, wx_DTSPANEL_PANEL, NULL, NULL);
-	dp[7] = dtsgui_addpage(tabv, "Num Plan", 0, wx_DTSPANEL_PANEL, NULL, NULL);
-	dp[8] = dtsgui_addpage(tabv, "Auto Add", 0, wx_DTSPANEL_PANEL, NULL, NULL);
-	dp[9] = dtsgui_addpage(tabv, "Save", wx_PANEL_BUTTON_YES, wx_DTSPANEL_PANEL, NULL, NULL);
+	dp[0] = dtsgui_addpage(tabv, "Routing", 0, NULL, NULL);
+	dp[1] = dtsgui_addpage(tabv, "mISDN", 0, NULL, NULL);
+	dp[2] = dtsgui_addpage(tabv, "E1", 0, NULL, NULL);
+	dp[3] = dtsgui_addpage(tabv, "Defaults", 0, NULL, NULL);
+	dp[4] = dtsgui_addpage(tabv, "IVR Password", 0, NULL, NULL);
+	dp[5] = dtsgui_addpage(tabv, "Location", 0, NULL, NULL);
+	dp[6] = dtsgui_addpage(tabv, "Inbound", 0, NULL, NULL);
+	dp[7] = dtsgui_addpage(tabv, "Num Plan", 0, NULL, NULL);
+	dp[8] = dtsgui_addpage(tabv, "Auto Add", 0, NULL, NULL);
+	dp[9] = dtsgui_addpage(tabv, "Save", wx_PANEL_BUTTON_YES, NULL, NULL);
 
-/*	dtsgui_textbox(p, "TextBox", "text", "Text", NULL);*/
+	pg = dp[0];
+	lb = dtsgui_xmllistbox(pg, "PSTN Trunk", "Trunk", NULL, NULL);
+	objunref(lb);
+	lb = dtsgui_xmllistbox(pg, "PSTN Second Trunk", "Trunk2", NULL, NULL);
+	objunref(lb);
+	lb = dtsgui_xmllistbox(pg, "PSTN Third Trunk", "Trunk3", NULL, NULL);
+	objunref(lb);
+	lb = dtsgui_xmllistbox(pg, "PSTN Fourth Trunk", "Trunk4", NULL, NULL);
+	objunref(lb);
+	lb = dtsgui_xmllistbox(pg, "Forward Trunk", "FTrunk", NULL, NULL);
+	objunref(lb);
+	lb = dtsgui_xmllistbox(pg, "GSM Trunk", "CellGateway", NULL, NULL);
+	objunref(lb);
+	lb = dtsgui_xmllistbox(pg, "Level To Route Calls", "IPContext", NULL, NULL);
+	objunref(lb);
+	lb = dtsgui_xmllistbox(pg, "Number Plan For Routing", "IntLocal", NULL, NULL);
+	objunref(lb);
+	dtsgui_xmltextbox(pg, "Maximum Concurency On Voip Trunk", "VLIMIT", NULL, NULL);
+	dtsgui_xmltextbox(pg, "Prefix Trunk Calls With", "TrunkPre", NULL, NULL);
+	dtsgui_xmltextbox(pg, "Number Of Digits To Strip On Trunk", "TrunkStrip", NULL, NULL);
+	dtsgui_xmltextbox(pg, "Maximum Call Length On Analogue Trunks (mins)", "MaxAna", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Apply Call Limt To All Trunks", "MaxAll", "1", "0", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Allow VOIP Fallover When Trunk Is Unavailable", "VoipFallover", "1", "0", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Allow International Trunk Failover When Voip Fails", "", "1", "0", NULL, NULL); /*XXX*/
+	dtsgui_xmlcheckbox(pg, "Use ENUM Lookups On Outgoing Calls", "NoEnum", "0", "1", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Use Configured GSM Routers", "GSMRoute", "1", "0", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Allow Trunk Failover When Using Configured GSM Routers", "GSMTrunk", "1", "0", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Calls To Internal Extensions Follow Forward Rules", "LocalFwd", "1", "0", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Inbound Calls Forwarded To Reception If No Voicemail", "Default_9", "1", "0", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Disable Billing Engine", "PPDIS", "1", "0", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Allow DISA Passthrough On Trunks", "DISADDI", "1", "0", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Disable Native Bridging On Outbound", "NoBridge", "1", "0", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Disable access to invalid accounts", "ValidAcc", "1", "0", NULL, NULL);
+
+/*
+	dtsgui_xmlcheckbox(pg, "", "", "1", "0", NULL, NULL);
+	dtsgui_xmltextbox(pg, "", "", NULL, NULL);
+*/
+
 	dtsgui_setevcallback(dp[9], handle_test, &dp);
 
 	cnt = sizeof(dp)/sizeof(dp[0])-1;
 	for(; cnt >= 0;cnt--) {
-		dtsgui_showpanel(dp[cnt]);
+		dtsgui_showpanel(dp[cnt], !cnt);
 	}
 }
 
