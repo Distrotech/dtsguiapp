@@ -346,6 +346,16 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	dtsgui_listbox_add(ilist, "hdb3 - b8zs", "hdb3");
 	dtsgui_listbox_add(ilist, "ami", "ami");
 	objunref(ilist);
+	ilist = dtsgui_xmllistbox(pg, "Line Build Out", NULL, "/config/IP/VOIP/ASTDB/Option[@option = 'PRIlbo']", NULL);
+	dtsgui_listbox_add(ilist, "0 db (CSU) / 0-133 feet (DSX-1)", "0");
+	dtsgui_listbox_add(ilist, "133-266 feet (DSX-1)", "1");
+	dtsgui_listbox_add(ilist, "266-399 feet (DSX-1)", "2");
+	dtsgui_listbox_add(ilist, "399-533 feet (DSX-1)", "3");
+	dtsgui_listbox_add(ilist, "533-655 feet (DSX-1)", "4");
+	dtsgui_listbox_add(ilist, "-7.5db (CSU)", "5");
+	dtsgui_listbox_add(ilist, "-15db (CSU)", "6");
+	dtsgui_listbox_add(ilist, "-22.5db (CSU)", "7");
+	objunref(ilist);
 	dtsgui_xmlcheckbox(pg, "Calls To Internal Extensions Follow Forward Rules", NULL, "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'LocalFwd']", NULL);
 	dtsgui_xmlcheckbox(pg, "Hangup Calls To Unknown Numbers/DDI", NULL, "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'UNKDEF']", NULL);
 	dtsgui_xmlcheckbox(pg, "ISDN BRI Immeadiate Routeing (No MSN/DDI)", NULL, "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'mISDNimm']", NULL);
@@ -353,7 +363,6 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	dtsgui_xmlcheckbox(pg, "ISDN Allow Automatic Setting Of CLI (DDI Required)", NULL, "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'AutoCLI']", NULL);
 	dtsgui_xmlcheckbox(pg, "ISDN PRI CRC4 Checking (E1 Only)", NULL, "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'PRIcrc4']", NULL);
 
-	/*XXXX PRI CONFIG LBO*/
 	pg=dp[9];
 	dtsgui_xmltextbox(pg, "Queue Timeout Checked Every 18s", NULL, "/config/IP/VOIP/ASTDB/Option[@option = 'AATimeout']", NULL);
 	dtsgui_xmltextbox(pg, "Auto Attendant Mailbox/Forward On No Agent/Timeout", NULL, "/config/IP/VOIP/ASTDB/Option[@option = 'AANext']", NULL);
@@ -502,7 +511,7 @@ void testpanel(struct dtsgui *dtsgui, dtsgui_menu menu) {
 }
 
 void pbx_settings(dtsgui_tabview tabv) {
-	dtsgui_pane dp[10], pg;
+	dtsgui_pane dp[11], pg;
 	struct form_item *lb;
 	int cnt;
 
@@ -510,13 +519,14 @@ void pbx_settings(dtsgui_tabview tabv) {
 	dp[0] = dtsgui_addpage(tabv, "Routing", 0, NULL, NULL);
 	dp[1] = dtsgui_addpage(tabv, "mISDN", 0, NULL, NULL);
 	dp[2] = dtsgui_addpage(tabv, "E1", 0, NULL, NULL);
-	dp[3] = dtsgui_addpage(tabv, "Defaults", 0, NULL, NULL);
-	dp[4] = dtsgui_addpage(tabv, "IVR Password", 0, NULL, NULL);
-	dp[5] = dtsgui_addpage(tabv, "Location", 0, NULL, NULL);
-	dp[6] = dtsgui_addpage(tabv, "Inbound", 0, NULL, NULL);
-	dp[7] = dtsgui_addpage(tabv, "Num Plan", 0, NULL, NULL);
-	dp[8] = dtsgui_addpage(tabv, "Auto Add", 0, NULL, NULL);
-	dp[9] = dtsgui_addpage(tabv, "Save", wx_PANEL_BUTTON_YES, NULL, NULL);
+	dp[3] = dtsgui_addpage(tabv, "MFC/R2", 0, NULL, NULL);
+	dp[4] = dtsgui_addpage(tabv, "Defaults", 0, NULL, NULL);
+	dp[5] = dtsgui_addpage(tabv, "IVR Password", 0, NULL, NULL);
+	dp[6] = dtsgui_addpage(tabv, "Location", 0, NULL, NULL);
+	dp[7] = dtsgui_addpage(tabv, "Inbound", 0, NULL, NULL);
+	dp[8] = dtsgui_addpage(tabv, "Num Plan", 0, NULL, NULL);
+	dp[9] = dtsgui_addpage(tabv, "Auto Add", 0, NULL, NULL);
+	dp[10] = dtsgui_addpage(tabv, "Save", wx_PANEL_BUTTON_YES, NULL, NULL);
 
 	pg = dp[0];
 	lb = dtsgui_xmllistbox(pg, "PSTN Trunk", "Trunk", NULL, NULL);
@@ -552,12 +562,93 @@ void pbx_settings(dtsgui_tabview tabv) {
 	dtsgui_xmlcheckbox(pg, "Disable Native Bridging On Outbound", "NoBridge", "1", "0", NULL, NULL);
 	dtsgui_xmlcheckbox(pg, "Disable access to invalid accounts", "ValidAcc", "1", "0", NULL, NULL);
 
+	pg = dp[1];
+	dtsgui_xmltextbox(pg, "Isdn Ports To Use (Group 1)", "mISDNports", NULL, NULL);
+	dtsgui_xmltextbox(pg, "Isdn Ports To Use (Group 2)", "mISDNports2", NULL, NULL);
+	dtsgui_xmltextbox(pg, "Isdn Ports To Use (Group 3)", "mISDNports3", NULL, NULL);
+	dtsgui_xmltextbox(pg, "Isdn Ports To Use (Group 4)", "mISDNports4", NULL, NULL);
+	dtsgui_xmltextbox(pg, "Isdn Ports To Use (In Only)", "mISDNinports", NULL, NULL);
+	dtsgui_xmltextbox(pg, "Isdn Ports To Use (Forwarding)", "mISDNfwdports", NULL, NULL);
+	dtsgui_xmltextbox(pg, "RX Gain", "mISDNgainrx", NULL, NULL);
+	dtsgui_xmltextbox(pg, "TX Gain", "mISDNgaintx", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Immeadiate Routing (No MSN/DDI)", "mISDNimm", "1", "0", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Use Round Robin Routing", "mISDNrr", "1", "0", NULL, NULL);
+
+	pg = dp[2];
+	lb = dtsgui_xmllistbox(pg, "Line Build Out", NULL, NULL, NULL);
+	dtsgui_listbox_add(lb, "0 db (CSU) / 0-133 feet (DSX-1)", "0");
+	dtsgui_listbox_add(lb, "133-266 feet (DSX-1)", "1");
+	dtsgui_listbox_add(lb, "266-399 feet (DSX-1)", "2");
+	dtsgui_listbox_add(lb, "399-533 feet (DSX-1)", "3");
+	dtsgui_listbox_add(lb, "533-655 feet (DSX-1)", "4");
+	dtsgui_listbox_add(lb, "-7.5db (CSU)", "5");
+	dtsgui_listbox_add(lb, "-15db (CSU)", "6");
+	dtsgui_listbox_add(lb, "-22.5db (CSU)", "7");
+	objunref(lb);
+	lb = dtsgui_xmllistbox(pg, "PRI Framing (E1 - T1)", NULL, NULL, NULL);
+	dtsgui_listbox_add(lb, "cas - d4/sf/superframe", "cas");
+	dtsgui_listbox_add(lb, "ccs - esf", "ccs");
+	objunref(lb);
+	lb = dtsgui_xmllistbox(pg, "PRI Coding (E1 - T1)", NULL, NULL, NULL);
+	dtsgui_listbox_add(lb, "ami", "ami");
+	dtsgui_listbox_add(lb, "hdb3", "hdb3 - b8zs");
+	objunref(lb);
+	dtsgui_xmlcheckbox(pg, "CRC4 Checking (E1 Only)", "PRIcrc4", "1", "0", NULL, NULL);
+
+	pg = dp[3];
+	lb = dtsgui_xmllistbox(pg, "Variant", NULL, NULL, NULL);
+	dtsgui_listbox_add(lb, "itu", "ITU Standard");
+	dtsgui_listbox_add(lb, "ar", "Argentina");
+	dtsgui_listbox_add(lb, "br", "Brazil");
+	dtsgui_listbox_add(lb, "cn", "China");
+	dtsgui_listbox_add(lb, "cz", "Czech Republic");
+	dtsgui_listbox_add(lb, "co", "Columbia");
+	dtsgui_listbox_add(lb, "ec", "Ecuador");
+	dtsgui_listbox_add(lb, "mx", "Mexico");
+	dtsgui_listbox_add(lb, "ph", "Philippines");
+	dtsgui_listbox_add(lb, "ve", "Venezuela");
+	objunref(lb);
+	lb = dtsgui_xmllistbox(pg, "Caller Category", NULL, NULL, NULL);
+	dtsgui_listbox_add(lb, "National Subscriber", "national_subscriber");
+	dtsgui_listbox_add(lb, "National Priority Subscriber", "national_priority_subscriber");
+	dtsgui_listbox_add(lb, "International Subscriber", "international_subscriber");
+	dtsgui_listbox_add(lb, "International Priority Subscriber", "international_priority_subscriber");
+	dtsgui_listbox_add(lb, "Collect Call", "collect_call");
+	objunref(lb);
+	dtsgui_xmltextbox(pg, "Max ANI Digits", "E1mfcr2_max_ani", NULL, NULL);
+	dtsgui_xmltextbox(pg, "Max DNIS Digits", "E1mfcr2_max_dnis", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "ANI Before DNIS", "E1mfcr2_get_ani_first", "1", "0", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Allow Collect Calls (BR:llamadas por cobrar)", "E1mfcr2_allow_collect_calls", "1", "0", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Block Collect Calls With Double Answer", "E1mfcr2_double_answer", "1", "0", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Immeadiate Answer", "E1mfcr2_immediate_accept", "1", "0", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Forced Release (BR)", "E1mfcr2_forced_release", "1", "0", NULL, NULL);
+	dtsgui_xmlcheckbox(pg, "Accept Call With Charge", "E1mfcr2_charge_calls", "1", "0", NULL, NULL);
+
+	pg=dp[7];
+	lb = dtsgui_xmllistbox(pg, "Default Attendant", "Attendant", NULL, NULL);
+	dtsgui_listbox_add(lb, "Auto Attendant", "0"); /*XXX Add Extensions List*/
+	objunref(lb);
+	lb = dtsgui_xmllistbox(pg, "Auto Attendant Queue", "AttendantQ", NULL, NULL);
+	dtsgui_listbox_add(lb, "Default Auto Attendant (Simple Ring All)", "799"); /*XXX Addd ACD List*/
+	dtsgui_listbox_add(lb, "No Default Attendant", "-1");
+	objunref(lb);
+	lb = dtsgui_xmllistbox(pg, "Default Fax Terminal", "FAXT", NULL, NULL);
+	dtsgui_listbox_add(lb, "Auto Fax Detect & Receive", "");
+	objunref(lb);
+	dtsgui_xmlcheckbox(pg, "Enable Inbound FAX Detect", "IFAXD", "1", "0", NULL, NULL);
+
+
 /*
 	dtsgui_xmlcheckbox(pg, "", "", "1", "0", NULL, NULL);
 	dtsgui_xmltextbox(pg, "", "", NULL, NULL);
+
+
+	lb = dtsgui_xmllistbox(pg, "", "", NULL, NULL);
+	dtsgui_listbox_add(lb, "", "");
+	objunref(lb);
 */
 
-	dtsgui_setevcallback(dp[9], handle_test, &dp);
+	dtsgui_setevcallback(dp[10], handle_test, &dp);
 
 	cnt = sizeof(dp)/sizeof(dp[0])-1;
 	for(; cnt >= 0;cnt--) {
