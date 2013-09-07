@@ -89,8 +89,9 @@ void *dtsgui_userdata(struct dtsgui *dtsgui);
 
 /*menu configuration*/
 dtsgui_menu dtsgui_newmenu(struct dtsgui *dtsgui, const char *name);
-void dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, const char *label, dtsgui_configcb, void *data);
-void dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, dtsgui_pane pane);
+dtsgui_menuitem dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, const char *label, dtsgui_configcb, void *data);
+dtsgui_menuitem dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, dtsgui_pane pane);
+void dtsgui_menuenable(dtsgui_menuitem dmi, int enable);
 void dtsgui_menusep(dtsgui_menu dtsmenu);
 void dtsgui_about(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *text);
 void dtsgui_close(dtsgui_menu dtsmenu, struct dtsgui *dtsgui);
@@ -126,6 +127,7 @@ extern void dtsgui_xmlpasswdbox(dtsgui_pane pane, const char *title, const char 
 extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *name, const char *checkval, const char *uncheckval, const char *xpath, const char *attr);
 struct form_item *dtsgui_xmllistbox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *attr);
 struct form_item *dtsgui_xmlcombobox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *attr);
+void dtsgui_item_xmlcreate(dtsgui_pane pane, const char *path, const char *node, const char *attr);
 
 /*add item to list*/
 void dtsgui_listbox_add(struct form_item *lbox, const char *text, const char *value);

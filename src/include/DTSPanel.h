@@ -88,6 +88,7 @@ class DTSPanel: public DTSObject {
 		void *GetUserData(void);
 		struct bucket_list *GetItems(void);
 		void SetXMLDoc(struct xml_doc *xmldoc);
+		struct xml_doc *GetXMLDoc(void);
 		void Update_XML();
 		struct xml_element *GetNode(const char *xpath, const char *attr);
 		int buttons[6];

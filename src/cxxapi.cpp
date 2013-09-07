@@ -134,30 +134,34 @@ void dtsgui_menusep(dtsgui_menu dtsmenu) {
 	m->AppendSeparator();
 }
 
-void dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, dtsgui_pane p) {
+dtsgui_menuitem dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, dtsgui_pane p) {
 	wxMenu *m = (wxMenu *)dtsmenu;
 	DTSFrame *frame = (DTSFrame *)dtsgui->appframe;
+	wxMenuItem *mi;
 
 	wxWindow *w = (p) ? getpanewindow(p) : NULL;
 
 	/*handed over to wx no need to delete*/
 	evdata *ev_data = new evdata(w);
 
-	m->Append(menuid, hint, (p) ? getpanename(p) : "");
+	mi = m->Append(menuid, hint, (p) ? getpanename(p) : "");
 	frame->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::SwitchWindow, frame, menuid, menuid, (wxObject *)ev_data);
 	menuid++;
+	return mi;
 }
 
-void dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, const char *label, dtsgui_configcb cb, void *data) {
+dtsgui_menuitem dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, const char *label, dtsgui_configcb cb, void *data) {
 	wxMenu *m = (wxMenu *)dtsmenu;
 	DTSFrame *frame = (DTSFrame *)dtsgui->appframe;
+	wxMenuItem *mi;
 
 	/*handed over to wx no need to delete*/
 	evdata *ev_data = new evdata(data, cb);
 
-	m->Append(menuid, hint, label);
+	mi = m->Append(menuid, hint, label);
 	frame->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::RunCommand, frame, menuid, menuid, (wxObject *)ev_data);
 	menuid++;
+	return mi;
 }
 
 void newappframe(struct dtsgui *dtsgui) {
@@ -670,6 +674,52 @@ extern struct xml_doc *dtsgui_loadxmlurl(struct dtsgui *dtsgui, const char *user
 	objunref(cbuf);
 	objunref(auth);
 	return xmldoc;
+}
+
+extern void dtsgui_item_xmlcreate(dtsgui_pane pane, const char *path, const char *node, const char *attr) {
+		struct bucket_list *il;
+		struct bucket_loop *bl;
+		struct form_item *fi;
+		struct xml_node *xn;
+		struct xml_doc *xmldoc;
+		DTSPanel *p = (DTSPanel*)pane;
+		wxWindow *w;
+		void *data;
+		char *xpath;
+		int len;
+
+		if (!(xmldoc = p->GetXMLDoc())) {
+			return;
+		}
+
+		il = dtsgui_panel_items(pane);
+		bl = init_bucket_loop(il);
+		while(il && bl && (fi = (struct form_item *)next_bucket_loop(bl))) {
+			if (strlen(fi->name) && !(data = fi->data.xml)) {
+				if ((xn = xml_addnode(xmldoc, path, node, "", attr, fi->name))) {
+					len = strlen(fi->name)+strlen(path)+strlen(node)+strlen(attr)+10;
+					xpath = (char*)malloc(len);
+					snprintf(xpath, len, "%s/%s[@%s = '%s']", path, node, attr, fi->name);
+					if ((fi->data.xml = p->GetNode(xpath, NULL))) {
+						fi->dtype = DTSGUI_FORM_DATA_XML;
+						w = (wxWindow*)fi->widget;
+						w->Enable(true);
+					}
+					free(xpath);
+					objunref(xn);
+				}
+			}
+			objunref(fi);
+		}
+		stop_bucket_loop(bl);
+		objunref(il);
+		objunref(xmldoc);
+}
+
+
+void dtsgui_menuenable(dtsgui_menuitem dmi, int enable) {
+	wxMenuItem *mi = (wxMenuItem*)dmi;
+	mi->Enable((enable) ? true : false);
 }
 
 #ifdef __WIN32

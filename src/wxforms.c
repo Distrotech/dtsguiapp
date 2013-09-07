@@ -42,6 +42,13 @@ struct app_data {
 	struct dtsgui *dtsgui;
 	struct xml_doc *xmldoc;
 	const char *datadir;
+	const char *openconf;
+	dtsgui_menuitem editconf;
+};
+
+struct listitem {
+	const char *name;
+	const char *value;
 };
 
 void test_posturl(struct dtsgui *dtsgui, const char *user, const char *passwd, const char *url) {
@@ -215,8 +222,12 @@ void rem_temp_xml(struct xml_doc *xmldoc) {
 }
 
 int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struct xml_doc *xmldoc) {
-	const char *cos[] = {"Internal Extensions", "Local PSTN", "Long Distance PSTN", "Cellular", "Premium", "International"};
-	const char *cosv[] = {"0", "1", "2", "3", "4", "5"};
+	struct listitem cos[] = {{"Internal Extensions", "0"},
+							 {"Local PSTN", "1"},
+							 {"Long Distance PSTN", "2"},
+							 {"Cellular", "3"},
+							 {"Premium", "4"},
+							 {"International", "5"}};
 	dtsgui_pane dp[12], pg;
 	struct dtsgui_wizard *twiz;
 	struct form_item *ilist;
@@ -304,17 +315,17 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 	pg=dp[7];
 	ilist = dtsgui_xmllistbox(pg, "Default Extension Permision", NULL, "/config/IP/VOIP/ASTDB/Option[@option = 'Context']", NULL);
 	for(cnt=0;cnt <= 5; cnt++) {
-		dtsgui_listbox_add(ilist, cos[cnt], cosv[cnt]);
+		dtsgui_listbox_add(ilist, cos[cnt].name, cos[cnt].value);
 	}
 	objunref(ilist);
 	ilist = dtsgui_xmllistbox(pg, "Default Auth Extension Permision", NULL, "/config/IP/VOIP/ASTDB/Option[@option = 'AuthContext']", NULL);
 	for(cnt=0;cnt <= 5; cnt++) {
-		dtsgui_listbox_add(ilist, cos[cnt], cosv[cnt]);
+		dtsgui_listbox_add(ilist, cos[cnt].name, cos[cnt].value);
 	}
 	objunref(ilist);
 	ilist = dtsgui_xmllistbox(pg, "Default After Hours Extension Permision", NULL, "/config/IP/VOIP/ASTDB/Option[@option = 'DEFALOCK']", NULL);
 	for(cnt=0;cnt <= 5; cnt++) {
-		dtsgui_listbox_add(ilist, cos[cnt], cosv[cnt]);
+		dtsgui_listbox_add(ilist, cos[cnt].name, cos[cnt].value);
 	}
 	objunref(ilist);
 	ilist = dtsgui_xmllistbox(pg, "Snom Network Port Config", NULL, "/config/IP/VOIP/ASTDB/Option[@option = 'SnomNet']", NULL);
@@ -511,34 +522,32 @@ void testpanel(struct dtsgui *dtsgui, dtsgui_menu menu) {
 }
 
 void pbx_settings(struct dtsgui *dtsgui, dtsgui_tabview tabv) {
-	struct trunk {
-		const char *name;
-		const char *value;
-	};
+	struct listitem trunks[] = {{"Linux Modular ISDN Group 1", "mISDN/g:out/"},
+								{"Linux Modular ISDN Group 2", "mISDN/g:out2/"},
+								{"Linux Modular ISDN Group 3", "mISDN/g:out3/"},
+								{"Linux Modular ISDN Group 4", "mISDN/g:out4/"},
+								{"Digium Trunk Group 1", "DAHDI/r1/"},
+								{"Digium Trunk Group 2", "DAHDI/r2/"},
+								{"Digium Trunk Group 3", "DAHDI/r3/"},
+								{"Digium Trunk Group 4", "DAHDI/r4/"},
+								{"Woomera Trunk Group 1", "WOOMERA/g1/"},
+								{"Woomera Trunk Group 2", "WOOMERA/g2/"},
+								{"Woomera Trunk Group 3", "WOOMERA/g3/"},
+								{"Woomera Trunk Group 4", "WOOMERA/g4/"}};
 
-	struct trunk trunks[] = {{"Linux Modular ISDN Group 1", "mISDN/g:out/"},
-							 {"Linux Modular ISDN Group 2", "mISDN/g:out2/"},
-							 {"Linux Modular ISDN Group 3", "mISDN/g:out3/"},
-							 {"Linux Modular ISDN Group 4", "mISDN/g:out4/"},
-							 {"Digium Trunk Group 1", "DAHDI/r1/"},
-							 {"Digium Trunk Group 2", "DAHDI/r2/"},
-							 {"Digium Trunk Group 3", "DAHDI/r3/"},
-							 {"Digium Trunk Group 4", "DAHDI/r4/"},
-							 {"Woomera Trunk Group 1", "WOOMERA/g1/"},
-							 {"Woomera Trunk Group 2", "WOOMERA/g2/"},
-							 {"Woomera Trunk Group 3", "WOOMERA/g3/"},
-							 {"Woomera Trunk Group 4", "WOOMERA/g4/"},
-							};
+	struct listitem cos[] = {{"Internal Extensions", "0"},
+							 {"Local PSTN", "1"},
+							 {"Long Distance PSTN", "2"},
+							 {"Cellular", "3"},
+							 {"Premium", "4"},
+							 {"International", "5"}};
 
-	const char *cos[] = {"Internal Extensions", "Local PSTN", "Long Distance PSTN", "Cellular", "Premium", "International"};
-	const char *cosv[] = {"0", "1", "2", "3", "4", "5"};
 	char defconf[PATH_MAX];
 	struct xml_doc *xmldoc;
 	struct app_data *appdata;
 	dtsgui_pane dp[11], pg;
 	struct form_item *lb;
 	int cnt, i;
-
 
 	appdata = dtsgui_userdata(dtsgui);
 	snprintf(defconf, PATH_MAX-1, "%s/default.xml", appdata->datadir);
@@ -624,7 +633,7 @@ void pbx_settings(struct dtsgui *dtsgui, dtsgui_tabview tabv) {
 	dtsgui_xmltextbox(pg, "Maximum Call Length On Analogue Trunks (mins)", "MaxAna", "/config/IP/VOIP/ASTDB/Option[@option = 'MaxAna']", NULL);
 	dtsgui_xmlcheckbox(pg, "Apply Call Limt To All Trunks", "MaxAll", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'MaxAll']", NULL);
 	dtsgui_xmlcheckbox(pg, "Allow VOIP Fallover When Trunk Is Unavailable", "VoipFallover", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'VoipFallover']", NULL);
-	dtsgui_xmlcheckbox(pg, "Allow International Trunk Failover When Voip Fails", "", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = '']", NULL); /*XXX*/
+	dtsgui_xmlcheckbox(pg, "Allow International Trunk Failover When Voip Fails", "IntFallover", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'IntFallover']", NULL);
 	dtsgui_xmlcheckbox(pg, "Use ENUM Lookups On Outgoing Calls", "NoEnum", "0", "1", "/config/IP/VOIP/ASTDB/Option[@option = 'NoEnum']", NULL);
 	dtsgui_xmlcheckbox(pg, "Use Configured GSM Routers", "GSMRoute", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'GSMRoute']", NULL);
 	dtsgui_xmlcheckbox(pg, "Allow Trunk Failover When Using Configured GSM Routers", "GSMTrunk", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'GSMTrunk']", NULL);
@@ -700,17 +709,17 @@ void pbx_settings(struct dtsgui *dtsgui, dtsgui_tabview tabv) {
 	pg = dp[4];
 	lb = dtsgui_xmllistbox(pg, "Default Extension Permision", "Context", "/config/IP/VOIP/ASTDB/Option[@option = 'Context']", NULL);
 	for(cnt=0;cnt <= 5; cnt++) {
-		dtsgui_listbox_add(lb, cos[cnt], cosv[cnt]);
+		dtsgui_listbox_add(lb, cos[cnt].name, cos[cnt].value);
 	}
 	objunref(lb);
 	lb = dtsgui_xmllistbox(pg, "Default Auth Extension Permision", "AuthContext", "/config/IP/VOIP/ASTDB/Option[@option = 'AuthContext']", NULL);
 	for(cnt=0;cnt <= 5; cnt++) {
-		dtsgui_listbox_add(lb, cos[cnt], cosv[cnt]);
+		dtsgui_listbox_add(lb, cos[cnt].name, cos[cnt].value);
 	}
 	objunref(lb);
 	lb = dtsgui_xmllistbox(pg, "Default After Hours Extension Permision", "DEFALOCK", "/config/IP/VOIP/ASTDB/Option[@option = 'DEFALOCK']", NULL);
 	for(cnt=0;cnt <= 5; cnt++) {
-		dtsgui_listbox_add(lb, cos[cnt], cosv[cnt]);
+		dtsgui_listbox_add(lb, cos[cnt].name, cos[cnt].value);
 	}
 	objunref(lb);
 	lb = dtsgui_xmllistbox(pg, "Valid Line Authentication", "LINEAUTH", "/config/IP/VOIP/ASTDB/Option[@option = 'LINEAUTH']", NULL);
@@ -766,7 +775,7 @@ void pbx_settings(struct dtsgui *dtsgui, dtsgui_tabview tabv) {
 	dtsgui_listbox_add(lb, "No Default Attendant", "-1");
 	objunref(lb);
 	lb = dtsgui_xmllistbox(pg, "Default Fax Terminal", "FAXT", "/config/IP/VOIP/ASTDB/Option[@option = 'FAXT']", NULL);
-	dtsgui_listbox_add(lb, "Auto Fax Detect & Receive", "");
+	dtsgui_listbox_add(lb, "Auto Fax Detect & Receive", ""); /*XXX ADD Fax Capable Devices*/
 	objunref(lb);
 	dtsgui_xmlcheckbox(pg, "Enable Inbound FAX Detect", "IFAXD", "1", "0", "/config/IP/VOIP/ASTDB/Option[@option = 'IFAXD']", NULL);
 
@@ -793,9 +802,14 @@ void pbx_settings(struct dtsgui *dtsgui, dtsgui_tabview tabv) {
 
 	dtsgui_setevcallback(dp[10], handle_test, &dp);
 
-	cnt = sizeof(dp)/sizeof(dp[0])-1;
-	for(; cnt >= 0;cnt--) {
-		dtsgui_showpanel(dp[cnt], !cnt);
+	cnt = sizeof(dp)/sizeof(dp[0]);
+
+	for(i = 0; i < cnt;i++) {
+		dtsgui_item_xmlcreate(dp[i], "/config/IP/VOIP/ASTDB", "Option", "option");
+	}
+
+	for(i = 0; i < cnt;i++) {
+		dtsgui_showpanel(dp[i], !i);
 	}
 	objunref(xmldoc);
 }
@@ -810,15 +824,20 @@ void file_menu(struct dtsgui *dtsgui) {
 	dtsgui_menu file;
 	dtsgui_treeview tree;
 	dtsgui_tabview tabv;
+	struct app_data *appdata;
+
+	appdata = dtsgui_userdata(dtsgui);
 
 	file = dtsgui_newmenu(dtsgui, "&File");
 
-	dtsgui_newmenucb(file, dtsgui, "&New System", "New System Configuration Wizard", newsys_wizard, NULL);
-	dtsgui_newmenucb(file, dtsgui, "&Edit Saved System", "Reconfigure Saved System File", editsys_wizard, NULL);
-	dtsgui_menusep(file);
+	dtsgui_newmenucb(file, dtsgui, "&New System (Wizard)", "New System Configuration Wizard", newsys_wizard, NULL);
+	appdata->editconf = dtsgui_newmenucb(file, dtsgui, "&Edit Saved System (Wizard)", "Reconfigure Saved System File With Wizard ", editsys_wizard, NULL);
 
+	dtsgui_menusep(file);
 	tabv = dtsgui_tabwindow(dtsgui, "PBX Setup");
+
 	dtsgui_newmenuitem(file, dtsgui, "P&BX Configuration", tabv);
+
 	pbx_settings(dtsgui, tabv);
 
 	dtsgui_menusep(file);
