@@ -36,6 +36,8 @@
 
 #include "DTSPanel.h"
 
+#define PADING	10
+
 static const int def_buttons[6] = {wxID_FIRST, wxID_BACKWARD, wxID_FORWARD, wxID_LAST, wxID_APPLY, wxID_REFRESH};
 
 void free_fitem(void *data) {
@@ -298,7 +300,7 @@ void DTSPanel::Title(const char *title) {
 	font.SetPointSize(font.GetPointSize()+2);
 	font.SetWeight(wxFONTWEIGHT_BOLD);
 	text->SetFont(font);
-	AddItem(text, wxGBPosition(g_row, 0), wxGBSpan(1, 6), wxALIGN_CENTER_HORIZONTAL | wxLEFT | wxRIGHT, 10);
+	AddItem(text, wxGBPosition(g_row, 0), wxGBSpan(1, 6), wxALIGN_CENTER_HORIZONTAL | wxLEFT | wxRIGHT, PADING);
 
 	g_row++;
 }
@@ -306,6 +308,11 @@ void DTSPanel::Title(const char *title) {
 void DTSPanel::SetXMLDoc(struct xml_doc *xd) {
 	objref(xd);
 	xmldoc = xd;
+}
+
+struct xml_doc *DTSPanel::GetXMLDoc(void) {
+	objref(xmldoc);
+	return xmldoc;
 }
 
 void free_xmlelement(void *data) {
@@ -340,8 +347,8 @@ void DTSPanel::TextBox(const char *title, const char *name, wxString defval, int
 	wxTextCtrl *tbox = new wxTextCtrl(panel, -1, defval, wxPoint(-1, -1), wxSize(-1, -1), flags);
 	struct form_item *fi;
 
-	AddItem(text, wxGBPosition(g_row, 0), wxGBSpan(rows, 3), wxLEFT | wxRIGHT, 10);
-	AddItem(tbox, wxGBPosition(g_row, 3), wxGBSpan(rows,3), wxEXPAND | wxGROW | wxLEFT | wxRIGHT, 10,	(rows > 1) ? 1 : -1);
+	AddItem(text, wxGBPosition(g_row, 0), wxGBSpan(rows, 3), wxLEFT | wxRIGHT, PADING);
+	AddItem(tbox, wxGBPosition(g_row, 3), wxGBSpan(rows,3), wxEXPAND | wxGROW | wxLEFT | wxRIGHT, PADING,	(rows > 1) ? 1 : -1);
 	g_row += rows;
 
 	if ((dtype == DTSGUI_FORM_DATA_XML) && !data) {
@@ -361,8 +368,8 @@ void DTSPanel::CheckBox(const char *title, const char *name, int ischecked, cons
 	wxCheckBox *cbox = new wxCheckBox(panel, -1, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxALIGN_RIGHT);
 	struct form_item *fi;
 
-	AddItem(text, wxGBPosition(g_row, 0), wxGBSpan(1, 3), wxLEFT | wxRIGHT, 10);
-	AddItem(cbox, wxGBPosition(g_row, 3), wxGBSpan(1, 3), wxLEFT | wxRIGHT, 10);
+	AddItem(text, wxGBPosition(g_row, 0), wxGBSpan(1, 3), wxLEFT | wxRIGHT, PADING);
+	AddItem(cbox, wxGBPosition(g_row, 3), wxGBSpan(1, 3), wxLEFT | wxRIGHT, PADING);
 	g_row++;
 
 	if ((dtype == DTSGUI_FORM_DATA_XML) && !data) {
@@ -379,8 +386,8 @@ struct form_item *DTSPanel::ListBox(const char *title, const char *name, const c
 	wxStaticText *text = new wxStaticText(panel, -1, title);
 	wxChoice *lbox = new wxComboBox(panel, -1, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL, wxCB_READONLY);
 
-	AddItem(text, wxGBPosition(g_row, 0), wxGBSpan(1, 3), wxLEFT | wxRIGHT, 10);
-	AddItem(lbox, wxGBPosition(g_row, 3), wxGBSpan(1, 3), wxEXPAND | wxGROW | wxLEFT | wxRIGHT, 10);
+	AddItem(text, wxGBPosition(g_row, 0), wxGBSpan(1, 3), wxLEFT | wxRIGHT, PADING);
+	AddItem(lbox, wxGBPosition(g_row, 3), wxGBSpan(1, 3), wxEXPAND | wxGROW | wxLEFT | wxRIGHT, PADING);
 	g_row++;
 
 	if ((dtype == DTSGUI_FORM_DATA_XML) && !data) {
@@ -394,8 +401,8 @@ struct form_item *DTSPanel::ComboBox(const char *title, const char *name, const 
 	wxStaticText *text = new wxStaticText(panel, -1, title);
 	wxChoice *lbox = new wxComboBox(panel, -1, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL, wxTE_PROCESS_ENTER);
 
-	AddItem(text, wxGBPosition(g_row, 0), wxGBSpan(1, 3), wxLEFT | wxRIGHT, 10);
-	AddItem(lbox, wxGBPosition(g_row, 3), wxGBSpan(1, 3), wxEXPAND | wxGROW | wxLEFT | wxRIGHT, 10);
+	AddItem(text, wxGBPosition(g_row, 0), wxGBSpan(1, 3), wxLEFT | wxRIGHT, PADING);
+	AddItem(lbox, wxGBPosition(g_row, 3), wxGBSpan(1, 3), wxEXPAND | wxGROW | wxLEFT | wxRIGHT, PADING);
 	g_row++;
 
 	if (dtsevthandler) {
@@ -422,7 +429,7 @@ void DTSPanel::Buttons(void) {
 		if (button_mask & (1 << i)) {
 			wxButton *button = new wxButton(panel, b);
 			dtsevthandler->BindButton(panel, b);
-			AddItem(button, wxGBPosition(g_row, i), wxDefaultSpan, wxALIGN_BOTTOM | wxALL, 10);
+			AddItem(button, wxGBPosition(g_row, i), wxDefaultSpan, wxALIGN_BOTTOM | wxALL, PADING);
 		}
 	}
 
@@ -554,10 +561,12 @@ DTSDialog::DTSDialog(wxFrame *frame, wxString name, int butmask) {
 	dialog = new wxDialog(frame, -1, name);
 	sizer = new wxBoxSizer(wxHORIZONTAL);
 	dialog->SetSizer(sizer);
+	dialog->SetAffirmativeId(buttons[4]);
 
 	panel = dynamic_cast<wxPanel *>(this);
 	panel->Create(dialog, -1);
 	panel->SetName(name);
+
 
 	SetupWin();
 }
