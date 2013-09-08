@@ -65,15 +65,16 @@ class DTSObject: public virtual wxWindow {
 		wxString GetName();
 		wxWindow *GetPanel();
 		panel_type type;
+		DTSFrame *GetFrame();
 	protected:
-		wxFrame *frame;
+		DTSFrame *frame;
 		wxString status;
 		wxWindow *panel;
 };
 
 class DTSPanel: public DTSObject {
 	public:
-		DTSPanel(wxFrame* = NULL, wxString = wxEmptyString, int = 0);
+		DTSPanel(DTSFrame* = NULL, wxString = wxEmptyString, int = 0);
 		~DTSPanel();
 		void Title(const char *title);
 		void TextBox(const char *, const char *, wxString = wxEmptyString, int flags = wxTE_LEFT, int rows = 1, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
@@ -111,26 +112,26 @@ class DTSPanel: public DTSObject {
 
 class DTSStaticPanel: public DTSPanel, public virtual wxPanel  {
 	public:
-		DTSStaticPanel(wxWindow *,wxFrame* = NULL, wxString = wxEmptyString, int = 0);
+		DTSStaticPanel(wxWindow *,DTSFrame* = NULL, wxString = wxEmptyString, int = 0);
 		DTSStaticPanel();
 		virtual bool Show(bool = true);
 };
 
 class DTSScrollPanel: public DTSPanel, public virtual wxScrolledWindow {
 	public:
-		DTSScrollPanel(wxWindow *, wxFrame* = NULL, wxString = wxEmptyString, int = 0);
+		DTSScrollPanel(wxWindow *, DTSFrame* = NULL, wxString = wxEmptyString, int = 0);
 		virtual bool Show(bool);
 };
 
 class DTSWindow: public DTSPanel, public virtual wxWindow {
 	public:
-		DTSWindow(wxWindow *, wxFrame* = NULL, wxString = wxEmptyString);
+		DTSWindow(wxWindow *, DTSFrame* = NULL, wxString = wxEmptyString);
 		bool Show(bool = true);
 };
 
 class DTSDialog: public DTSStaticPanel {
 	public:
-		DTSDialog(wxFrame* = NULL, wxString = wxEmptyString, int = wx_PANEL_BUTTON_ACTION);
+		DTSDialog(DTSFrame* = NULL, wxString = wxEmptyString, int = wx_PANEL_BUTTON_ACTION);
 		bool Show(bool = true);
 		void RunDialog(void);
 	private:
