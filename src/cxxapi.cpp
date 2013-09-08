@@ -183,7 +183,7 @@ void dtsgui_alert(struct dtsgui *dtsgui, const char *text) {
 
 dtsgui_pane dtsgui_panel(struct dtsgui *dtsgui, const char *name, int butmask,
 						 enum panel_type type, void *userdata) {
-	wxFrame *frame = (wxFrame *)dtsgui->appframe;
+	DTSFrame *frame = (DTSFrame *)dtsgui->appframe;
 	DTSPanel *dp = NULL;
 
 	switch (type) {
@@ -224,7 +224,7 @@ void dtsgui_delpane(dtsgui_pane pane) {
 
 extern dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title) {
 	DTSTreeWindow *tw;
-	wxFrame *frame = (wxFrame *)dtsgui->appframe;
+	DTSFrame *frame = (DTSFrame *)dtsgui->appframe;
 
 	tw = new DTSTreeWindow(frame, frame, title, 30);
 	return tw;
@@ -232,7 +232,7 @@ extern dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *titl
 
 extern dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title) {
 	DTSTabWindow *tw;
-	wxFrame *frame = (wxFrame *)dtsgui->appframe;
+	DTSFrame *frame = (DTSFrame *)dtsgui->appframe;
 
 	tw = new DTSTabWindow(frame, title);
 	return tw;
@@ -462,7 +462,7 @@ void dtsgui_rundialog(dtsgui_pane pane, event_callback evcb, void *data) {
 }
 
 dtsgui_pane dtsgui_textpane(struct dtsgui *dtsgui, const char *title, const char *buf) {
-	wxFrame *f = (wxFrame *)dtsgui->appframe;
+	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
 	DTSStaticPanel *p = new DTSStaticPanel(f, f, title);
 	wxWindow *w = p->GetPanel();
 
@@ -551,7 +551,7 @@ void dtsgui_wizard_free(void *data) {
 
 extern struct dtsgui_wizard* dtsgui_newwizard(struct dtsgui *dtsgui, const char *title) {
 	struct dtsgui_wizard *dtswiz;
-	wxFrame *f = (wxFrame *)dtsgui->appframe;
+	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
 
 	if (!(dtswiz = (dtsgui_wizard*)objalloc(sizeof(*dtswiz),dtsgui_wizard_free))) {
 		return NULL;
@@ -613,7 +613,7 @@ extern int dtsgui_runwizard(struct dtsgui_wizard *dtswiz) {
 }
 
 const char *dtsgui_filedialog(struct dtsgui *dtsgui, const char *title, const char *path, const char *name, const char *filter, long style) {
-	wxFrame *f = (wxFrame *)dtsgui->appframe;
+	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
 	const char *filename = NULL;
 	int len;
 

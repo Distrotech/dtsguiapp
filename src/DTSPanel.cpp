@@ -34,6 +34,7 @@
 #include <dtsapp.h>
 #include "dtsgui.hpp"
 
+#include "DTSFrame.h"
 #include "DTSPanel.h"
 
 #define PADING	10
@@ -178,7 +179,11 @@ wxWindow *DTSObject::GetPanel() {
 	return panel;
 }
 
-DTSPanel::DTSPanel(wxFrame *mainwin, wxString statusmsg, int butmask)
+DTSFrame *DTSObject::GetFrame() {
+	return frame;
+}
+
+DTSPanel::DTSPanel(DTSFrame *mainwin, wxString statusmsg, int butmask)
 	:DTSObject(statusmsg) {
 	button_mask = butmask;
 	userdata = NULL;
@@ -508,7 +513,7 @@ void DTSPanel::Update_XML() {
 	objunref(fitems);
 }
 
-DTSScrollPanel::DTSScrollPanel(wxWindow *parent,wxFrame *frame, wxString status, int butmask)
+DTSScrollPanel::DTSScrollPanel(wxWindow *parent,DTSFrame *frame, wxString status, int butmask)
 	:wxScrolledWindow(parent, wxID_ANY),
 	 DTSPanel(frame, status, butmask) {
 	type = wx_DTSPANEL_SCROLLPANEL;
@@ -522,7 +527,7 @@ bool DTSScrollPanel::Show(bool show) {
 	return wxScrolledWindow::Show(show);
 }
 
-DTSStaticPanel::DTSStaticPanel(wxWindow *parent,wxFrame *frame, wxString status, int butmask)
+DTSStaticPanel::DTSStaticPanel(wxWindow *parent,DTSFrame *frame, wxString status, int butmask)
 	:wxPanel(parent, wxID_ANY),
 	 DTSPanel(frame, status, butmask) {
 	type = wx_DTSPANEL_PANEL;
@@ -539,7 +544,7 @@ bool DTSStaticPanel::Show(bool show) {
 	return wxPanel::Show(show);
 }
 
-DTSWindow::DTSWindow(wxWindow *parent, wxFrame *frame, wxString status)
+DTSWindow::DTSWindow(wxWindow *parent, DTSFrame *frame, wxString status)
 	:wxWindow(parent, -1),
 	 DTSPanel(frame, status) {
 	type = wx_DTSPANEL_WINDOW;
@@ -551,7 +556,7 @@ bool DTSWindow::Show(bool show) {
 	return wxWindow::Show(show);
 }
 
-DTSDialog::DTSDialog(wxFrame *frame, wxString name, int butmask) {
+DTSDialog::DTSDialog(DTSFrame *frame, wxString name, int butmask) {
 	type = wx_DTSPANEL_DIALOG;
 
 	button_mask = butmask;
