@@ -464,10 +464,9 @@ void dtsgui_rundialog(dtsgui_pane pane, event_callback evcb, void *data) {
 dtsgui_pane dtsgui_textpane(struct dtsgui *dtsgui, const char *title, const char *buf) {
 	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
 	DTSStaticPanel *p = new DTSStaticPanel(f, f, title);
-	wxWindow *w = p->GetPanel();
+	wxPanel *wxp = static_cast<wxPanel*>(p);
 
-	wxTextCtrl *eb = new wxTextCtrl(w, -1, buf, wxDefaultPosition, wxDefaultSize,
-									wxTE_MULTILINE | wxTE_RICH | wxTE_READONLY, wxDefaultValidator, wxTextCtrlNameStr);
+	wxTextCtrl *eb = new wxTextCtrl(wxp, -1, buf, wxDefaultPosition, wxDefaultSize,wxTE_MULTILINE | wxTE_READONLY);
 
 	p->AddItem(eb, wxGBPosition(0,0), wxGBSpan(10, 6), wxEXPAND|wxGROW, 0, 0);
 

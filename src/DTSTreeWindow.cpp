@@ -138,14 +138,17 @@ void DTSTreeWindowEvent::MoveDown(wxDataViewItem p_cont) {
 }
 
 void DTSTreeWindowEvent::Float(wxDataViewItemArray items, wxDataViewItem p_cont, wxDataViewItem f_item, int i) {
+	bool iscontainer;
+
+	iscontainer = vm->IsContainer(f_item);
 	if (i == 0) {
-		if (a_cont == f_item) {
+		if (iscontainer) {
 			tree->PrependContainer(p_cont, vm->GetItemText(f_item), -1, tree->IsExpanded(f_item), vm->GetItemData(f_item));
 		} else {
 			tree->PrependItem(p_cont, vm->GetItemText(f_item), -1, vm->GetItemData(f_item));
 		}
 	} else {
-		if (a_cont == f_item) {
+		if (iscontainer) {
 			tree->InsertContainer(p_cont, items[i], vm->GetItemText(f_item), -1, tree->IsExpanded(f_item), vm->GetItemData(f_item));
 		} else {
 			tree->InsertItem(p_cont, items[i], vm->GetItemText(f_item), -1, vm->GetItemData(f_item));
