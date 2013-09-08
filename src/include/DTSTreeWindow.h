@@ -37,16 +37,18 @@ class DTSTreeWindow: public DTSObject, public virtual wxSplitterWindow {
 		void ShowRMenu(bool cont, int cnt, bool first, bool last);
 		bool Show(bool = true);
 		wxDataViewTreeCtrl *GetTreeCtrl();
+		void TreeResize();
 	protected:
 		void SetWindow(wxWindow *window);
 	private:
-		wxPanel *t_pane;
+		wxScrolledWindow *t_pane;
 		wxWindow *c_pane;
 		wxDataViewTreeCtrl *tree;
 		wxBoxSizer *sizer;
 		wxWindow *a_window;
 		DTSTreeWindowEvent *dtsevthandler;
 		struct treemenu *rmenu;
+		wxBoxSizer *treesizer;
 };
 
 class DTSTabWindow: public DTSObject, public virtual wxNotebook {

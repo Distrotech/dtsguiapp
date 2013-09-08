@@ -74,6 +74,8 @@ void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
 			printf("DRAG\n");
 		}
 		printf("Right Click\n");
+	} else if (evid == wxEVT_DATAVIEW_ITEM_EDITING_DONE) {
+		parent->TreeResize();
 	}
 }
 
@@ -237,7 +239,7 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, wxString stat_ms
 	int w, h, p;
 	wxSplitterWindow *sw = static_cast<wxSplitterWindow*>(this);
 	wxBoxSizer *p_sizer = new wxBoxSizer(wxHORIZONTAL);
-	wxBoxSizer *treesizer = new wxBoxSizer(wxVERTICAL);
+	treesizer = new wxBoxSizer(wxVERTICAL);
 	wxDataViewItem root;
 
 	if ((rmenu = (struct treemenu*)objalloc(sizeof(*rmenu), free_menu))) {
@@ -254,7 +256,7 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, wxString stat_ms
 	this->frame = frame;
 
 	p_sizer->Add(sw, 1,wxEXPAND,0);
-	t_pane = new wxPanel(sw, wxID_ANY);
+	t_pane = new wxScrolledWindow(sw, wxID_ANY);
 	c_pane = new wxWindow(sw, wxID_ANY);
 
 	panel = static_cast<wxWindow *>(sw);
@@ -265,6 +267,7 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, wxString stat_ms
 	SetMinimumPaneSize(20);
 
 	t_pane->SetSizer(treesizer);
+	t_pane->SetScrollRate(10, 10);
 	tree = new wxDataViewTreeCtrl(t_pane, wxID_ANY);
 	dtsevthandler = new DTSTreeWindowEvent(NULL, NULL, this);
 	treesizer->Add(tree, 1,wxEXPAND,0);
@@ -295,6 +298,7 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, wxString stat_ms
 
 	tree->Bind(wxEVT_DATAVIEW_SELECTION_CHANGED, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
 	tree->Bind(wxEVT_DATAVIEW_ITEM_CONTEXT_MENU, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
+	tree->Bind(wxEVT_DATAVIEW_ITEM_EDITING_DONE, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
 	frame->Bind(wxEVT_DATAVIEW_ITEM_BEGIN_DRAG, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
 	tree->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSTreeWindowEvent::MenuEvent, dtsevthandler);
 
@@ -304,11 +308,20 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, wxString stat_ms
 	tree->EnableDragSource(wxDF_UNICODETEXT);
 	tree->EnableDropTarget(wxDF_UNICODETEXT);
 
+	treesizer->SetSizeHints(t_pane);
+	tree->GetColumn(0)->SetWidth(wxCOL_WIDTH_AUTOSIZE);
+	treesizer->FitInside(t_pane);
+	treesizer->Layout();
 	Show(false);
 }
 
 wxDataViewTreeCtrl *DTSTreeWindow::GetTreeCtrl() {
 	return tree;
+}
+
+void DTSTreeWindow::TreeResize() {
+	tree->GetColumn(0)->SetHidden(true);
+	tree->GetColumn(0)->SetHidden(false);
 }
 
 void DTSTreeWindow::SetWindow(wxWindow *window) {
@@ -351,8 +364,12 @@ DTSTreeWindow::~DTSTreeWindow() {
 }
 
 bool DTSTreeWindow::Show(bool show) {
-	if (show && frame) {
-		frame->SetStatusText(status);
+	if (show) {
+		TreeResize();
+		if (frame) {
+			frame->SetStatusText(status);
+		}
+
 	}
 	return wxSplitterWindow::Show(show);
 }
