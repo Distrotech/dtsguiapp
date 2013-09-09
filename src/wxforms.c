@@ -43,9 +43,9 @@ struct app_data {
 	struct xml_doc *xmldoc;
 	const char *datadir;
 	const char *openconf;
+	dtsgui_menuitem n_wiz;
 	dtsgui_menuitem e_wiz;
 	dtsgui_menuitem c_open;
-	dtsgui_menuitem c_save;
 	dtsgui_menu cfg_menu;
 };
 
@@ -224,7 +224,7 @@ void rem_temp_xml(struct xml_doc *xmldoc) {
 	objunref(xn);
 }
 
-int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struct xml_doc *xmldoc) {
+int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struct xml_doc *xmldoc, int save) {
 	struct listitem cos[] = {{"Internal Extensions", "0"},
 							 {"Local PSTN", "1"},
 							 {"Long Distance PSTN", "2"},
@@ -423,7 +423,7 @@ int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struc
 
 		rem_temp_xml(xmldoc);
 
-		if (!filename) {
+		if (!filename && save) {
 			do {
 				newfile = dtsgui_filesave(dtsgui, "Save New Customer Config To File", NULL, "newcustomer.xml", "XML Configuration|*.xml");
 			} while (!newfile && !dtsgui_confirm(dtsgui, "No file selected !!!\nDo you want to continue (And loose settings)"));
@@ -461,7 +461,7 @@ int newsys_wizard(struct dtsgui *dtsgui, void *data) {
 		return 0;
 	}
 
-	return system_wizard(dtsgui, data, NULL, xmldoc);
+	return system_wizard(dtsgui, data, NULL, xmldoc, 1);
 }
 
 int editsys_wizard(struct dtsgui *dtsgui, void *data) {
@@ -477,7 +477,15 @@ int editsys_wizard(struct dtsgui *dtsgui, void *data) {
 		return 0;
 	}
 
-	return system_wizard(dtsgui, data, filename, xmldoc);
+	return system_wizard(dtsgui, data, filename, xmldoc, 1);
+}
+
+int reconfig_wizard(struct dtsgui *dtsgui, void *data) {
+	struct app_data *appdata;
+
+	appdata = dtsgui_userdata(dtsgui);
+
+	return system_wizard(dtsgui, data, NULL, appdata->xmldoc, 0);
 }
 
 void handle_test(dtsgui_pane p, int type, int event, void *data) {
@@ -829,8 +837,8 @@ int open_config(struct dtsgui *dtsgui, void *data) {
 	dtsgui_reconfig(dtsgui);
 	dtsgui_menuenable(appdata->cfg_menu, 1);
 	dtsgui_menuitemenable(appdata->e_wiz, 0);
+	dtsgui_menuitemenable(appdata->n_wiz, 0);
 	dtsgui_menuitemenable(appdata->c_open, 0);
-	dtsgui_menuitemenable(appdata->c_save, 1);
 	dtsgui_titleappend(dtsgui, "Default Configuration");
 	return 1;
 }
@@ -842,8 +850,8 @@ int save_config(struct dtsgui *dtsgui, void *data) {
 /*	dtsgui_reconfig(dtsgui);*/
 	dtsgui_menuenable(appdata->cfg_menu, 0);
 	dtsgui_menuitemenable(appdata->e_wiz, 1);
+	dtsgui_menuitemenable(appdata->n_wiz, 1);
 	dtsgui_menuitemenable(appdata->c_open, 1);
-	dtsgui_menuitemenable(appdata->c_save, 0);
 	dtsgui_titleappend(dtsgui, NULL);
 	return 1;
 }
@@ -857,14 +865,11 @@ void file_menu(struct dtsgui *dtsgui) {
 
 	file = dtsgui_newmenu(dtsgui, "&File");
 
-	dtsgui_newmenucb(file, dtsgui, "&New System (Wizard)", "New System Configuration Wizard", newsys_wizard, NULL);
+	appdata->n_wiz = dtsgui_newmenucb(file, dtsgui, "&New System (Wizard)", "New System Configuration Wizard", newsys_wizard, NULL);
 	appdata->e_wiz = dtsgui_newmenucb(file, dtsgui, "&Edit Saved System (Wizard)", "Reconfigure Saved System File With Wizard ", editsys_wizard, NULL);
 
 	dtsgui_menusep(file);
 	appdata->c_open = dtsgui_newmenucb(file, dtsgui, "&Open Config", "Open System Config (File/URL)", open_config, NULL);
-	appdata->c_save = dtsgui_newmenucb(file, dtsgui, "&Save Config", "Save/Close System Config (File/URL)", save_config, NULL);
-	dtsgui_menuitemenable(appdata->c_save, 0);
-/*	dtsgui_newmenucb(file, dtsgui, "&Open Config", "Open System Config (File/URL)", open_config, NULL);*/
 
 	dtsgui_menusep(file);
 	testpanel(dtsgui, file);
@@ -885,9 +890,15 @@ void config_menu(struct dtsgui *dtsgui) {
 	appdata = dtsgui_userdata(dtsgui);
 	appdata->cfg_menu = dtsgui_newmenu(dtsgui, "&Config");
 
+	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&Reconfigure Wizard", "Run System Reconfigure Wizard.", reconfig_wizard, NULL);
+
 	tabv = dtsgui_tabwindow(dtsgui, "PBX Setup");
 	dtsgui_newmenuitem(appdata->cfg_menu, dtsgui, "P&BX Configuration", tabv);
 	pbx_settings(dtsgui, tabv);
+
+	dtsgui_menusep(appdata->cfg_menu);
+	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&Save Config", "Save/Close System Config (File/URL)", save_config, NULL);
+
 	dtsgui_menuenable(appdata->cfg_menu, 0);
 }
 
