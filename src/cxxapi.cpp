@@ -77,7 +77,7 @@ static void dtsgui_quit(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, int type) {
 			break;
 
 		case wxID_SAVE:
-			m->Append(type, "&Exit", "Save And Exit");
+			m->Append(type, "E&xit", "Save And Exit");
 			frame->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::OnClose, frame, wxID_SAVE);
 			break;
 	}
@@ -728,11 +728,15 @@ void dtsgui_titleappend(struct dtsgui *dtsgui, const char *text) {
 	char *newtitle;
 	int len;
 
-	len = strlen(dtsgui->title)+strlen(text)+4;
-	newtitle=(char*)malloc(len);
-	snprintf(newtitle, len, "%s [%s]", dtsgui->title, text);
-
+	if (text) {
+		len = strlen(dtsgui->title)+strlen(text)+4;
+		newtitle=(char*)malloc(len);
+		snprintf(newtitle, len, "%s [%s]", dtsgui->title, text);
+	} else {
+		newtitle = (char*)dtsgui->title;
+	}
 	f->SetTitle(newtitle);
+
 }
 
 void dtsgui_menuitemenable(dtsgui_menuitem dmi, int enable) {
@@ -757,6 +761,10 @@ void dtsgui_menuenable(dtsgui_menu dm, int enable) {
 	}
 }
 
+void dtsgui_setblank(struct dtsgui *dtsgui) {
+	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
+	f->SetWindow(NULL);
+}
 
 void dtsgui_reconfig(struct dtsgui *dtsgui) {
 	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
