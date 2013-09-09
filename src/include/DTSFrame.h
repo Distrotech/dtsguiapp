@@ -33,9 +33,9 @@ class DTSFrame: public wxFrame {
 		void OnAbort(wxCloseEvent &event);
 		void OnAbout(wxCommandEvent &event);
 		void SendDTSEvent(int eid, wxObject *evobj);
-	private:
-		void OnOpenConfig(wxCommandEvent &event);
 		void SetWindow(wxWindow *window);
+	private:
+		void OnDTSEvent(wxCommandEvent &event);
 		wxBoxSizer *sizer;
 		wxWindow *blank;
 		wxWindow *a_window;

@@ -88,6 +88,7 @@ int dtsgui_run(int argc, char **argv);
 void *dtsgui_userdata(struct dtsgui *dtsgui);
 void dtsgui_titleappend(struct dtsgui *dtsgui, const char *text);
 void dtsgui_reconfig(struct dtsgui *dtsgui);
+void dtsgui_setblank(struct dtsgui *dtsgui);
 
 /*menu configuration*/
 dtsgui_menu dtsgui_newmenu(struct dtsgui *dtsgui, const char *name);

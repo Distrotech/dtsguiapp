@@ -563,7 +563,6 @@ void pbx_settings(struct dtsgui *dtsgui, dtsgui_tabview tabv) {
 		dtsgui_alert(dtsgui, "Default configuration failed to load.\nCheck Installation.");
 		return;
 	}
-	dtsgui_titleappend(dtsgui, "Default Configuration");
 
 	dp[0] = dtsgui_addpage(tabv, "Routing", 0, NULL, appdata->xmldoc);
 	dp[1] = dtsgui_addpage(tabv, "mISDN", 0, NULL, appdata->xmldoc);
@@ -832,6 +831,7 @@ int open_config(struct dtsgui *dtsgui, void *data) {
 	dtsgui_menuitemenable(appdata->e_wiz, 0);
 	dtsgui_menuitemenable(appdata->c_open, 0);
 	dtsgui_menuitemenable(appdata->c_save, 1);
+	dtsgui_titleappend(dtsgui, "Default Configuration");
 	return 1;
 }
 
@@ -844,6 +844,7 @@ int save_config(struct dtsgui *dtsgui, void *data) {
 	dtsgui_menuitemenable(appdata->e_wiz, 1);
 	dtsgui_menuitemenable(appdata->c_open, 1);
 	dtsgui_menuitemenable(appdata->c_save, 0);
+	dtsgui_titleappend(dtsgui, NULL);
 	return 1;
 }
 

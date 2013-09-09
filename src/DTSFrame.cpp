@@ -61,7 +61,7 @@ DTSFrame::DTSFrame(const wxString &title, const wxPoint &pos, const wxSize &size
 
 	abortconfirm = true;
 	Bind(wxEVT_CLOSE_WINDOW, &DTSFrame::OnAbort, this);
-	Bind(DTS_APP_EVENT, &DTSFrame::OnOpenConfig, this);
+	Bind(DTS_APP_EVENT, &DTSFrame::OnDTSEvent, this);
 
 	Show(true);
 	Raise();
@@ -101,6 +101,10 @@ void DTSFrame::Alert(wxString text) {
 	alert->Destroy();
 }
 
+void DTSFrame::OnDTSEvent(wxCommandEvent &event) {
+	event.Skip(true);
+}
+
 void DTSFrame::OnAbort(wxCloseEvent &event) {
 	if (abortconfirm && !Confirm("Are You Sure You Want To Abort ?")) {
 		event.Veto();
@@ -108,13 +112,6 @@ void DTSFrame::OnAbort(wxCloseEvent &event) {
 		event.Skip(true);
 	}
 }
-
-void DTSFrame::OnOpenConfig(wxCommandEvent &event) {
-//	Alert("BOO");
-	printf("DTS Event In Frame\n");
-	event.Skip(true);
-}
-
 
 void DTSFrame::OnClose(wxCommandEvent &event) {
 	bool confirm;
@@ -152,6 +149,10 @@ void DTSFrame::SetWindow(wxWindow *window) {
 		return;
 	}
 
+	if (!window) {
+		window = blank;
+	}
+
 	sizer->Detach(0);
 	a_window->Show(false);
 	sizer->Add(window, 1, wxALL | wxEXPAND);
@@ -187,6 +188,7 @@ void DTSFrame::RunCommand(wxCommandEvent &event) {
 	evdat = (evdata *)event.m_callbackUserData;
 
 	if (evdat->callback) {
+		SetWindow(NULL);
 		evdat->callback(dtsgui, evdat->data);
 	}
 }
