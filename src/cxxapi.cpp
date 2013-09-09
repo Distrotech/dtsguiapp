@@ -244,7 +244,8 @@ extern dtsgui_pane dtsgui_addpage(dtsgui_tabview tv, const char *name, int butma
 	wxBookCtrlBase *parent = dynamic_cast<wxBookCtrlBase*>(tw);
 	wxPanel *np;
 
-	dp = new DTSScrollPanel(parent, NULL, name, butmask);
+	dp = new DTSScrollPanel(parent, tw->GetFrame(), name, butmask);
+	dp->type = wx_DTSPANEL_TAB;
 
 	if (name) {
 		dp->Title(name);
@@ -453,6 +454,12 @@ void dtsgui_setevcallback(dtsgui_pane pane,event_callback evcb, void *data) {
 	return p->SetEventCallback(evcb, data);
 }
 
+void dtsgui_configcallback(dtsgui_pane pane,dtsgui_configcb cb, void *data) {
+	DTSPanel *p = (DTSPanel *)pane;
+
+	p->SetConfigCallback(cb, data);
+}
+
 void dtsgui_rundialog(dtsgui_pane pane, event_callback evcb, void *data) {
 	DTSDialog *p = (DTSDialog *)pane;
 
@@ -482,11 +489,11 @@ struct bucket_list *dtsgui_panel_items(dtsgui_pane pane) {
 	return p->GetItems();
 }
 
-struct form_item *dtsgui_panel_getname(dtsgui_pane pane, const char *name) {
+/*struct form_item *dtsgui_panel_getname(dtsgui_pane pane, const char *name) {
 	DTSDialog *p = (DTSDialog *)pane;
 	struct bucket_list *bl = p->GetItems();
 	return (struct form_item *)bucket_list_find_key(bl, name);
-}
+}*/
 
 extern void *dtsgui_item_data(struct form_item *fi) {
 	if (fi && fi->data.ptr) {
@@ -716,9 +723,44 @@ extern void dtsgui_item_xmlcreate(dtsgui_pane pane, const char *path, const char
 }
 
 
-void dtsgui_menuenable(dtsgui_menuitem dmi, int enable) {
+void dtsgui_titleappend(struct dtsgui *dtsgui, const char *text) {
+	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
+	char *newtitle;
+	int len;
+
+	len = strlen(dtsgui->title)+strlen(text)+4;
+	newtitle=(char*)malloc(len);
+	snprintf(newtitle, len, "%s [%s]", dtsgui->title, text);
+
+	f->SetTitle(newtitle);
+}
+
+void dtsgui_menuitemenable(dtsgui_menuitem dmi, int enable) {
 	wxMenuItem *mi = (wxMenuItem*)dmi;
 	mi->Enable((enable) ? true : false);
+}
+
+void dtsgui_menuenable(dtsgui_menu dm, int enable) {
+	bool state =  (enable) ? true : false;
+	wxMenuItemList items;
+	wxMenuItem *mi;
+	int cnt,i;
+
+	wxMenu *m = (wxMenu*)dm;
+
+	items = m->GetMenuItems();
+	cnt = m->GetMenuItemCount();
+
+	for(i=0; i < cnt;i++) {
+		mi = items[i];
+		mi->Enable(state);
+	}
+}
+
+
+void dtsgui_reconfig(struct dtsgui *dtsgui) {
+	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
+	f->SendDTSEvent(1, NULL);
 }
 
 #ifdef __WIN32

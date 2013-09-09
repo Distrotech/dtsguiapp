@@ -20,6 +20,8 @@
 
 #include "dtsgui.h"
 
+wxDECLARE_EVENT(DTS_APP_EVENT, wxCommandEvent);
+
 struct dtsgui {
 	struct point wsize;
 	struct point wpos;

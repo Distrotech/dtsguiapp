@@ -19,10 +19,11 @@
 #ifndef DTSPANEL_H
 #define DTSPANEL_H
 
-typedef class DTSPanel DTSPanel;
+typedef class DTSObject DTSObject;
 
 struct xml_element {
 	struct xml_search *xsearch;
+	const char *xpath;
 	const char  *attr;
 };
 
@@ -48,15 +49,18 @@ struct form_item {
 
 class DTSPanelEvent: public wxEvtHandler {
 	public:
-		DTSPanelEvent(void *userdata = NULL, event_callback evcb = NULL, DTSPanel *win = NULL);
+		DTSPanelEvent(DTSObject *win = NULL);
 		void BindButton(wxWindow *win, int button);
+		void BindDTSEvent(DTSFrame *frame);
 		void BindCombo(wxWindow *win, int button);
 		void OnButton(wxCommandEvent &event);
 		void OnCombo(wxCommandEvent &event);
+		void OnDTSEvent(wxCommandEvent &event);
+		void SetCallback(event_callback evcb = NULL, void *userdata = NULL);
 	private:
 		void *data;
 		event_callback evcb;
-		DTSPanel *parent;
+		DTSObject *parent;
 };
 
 class DTSObject: public virtual wxWindow {
@@ -66,10 +70,15 @@ class DTSObject: public virtual wxWindow {
 		wxWindow *GetPanel();
 		panel_type type;
 		DTSFrame *GetFrame();
+		int buttons[6];
+		void EventHandler(int eid, wxCommandEvent *event);
+		struct bucket_list *GetItems(void);
 	protected:
 		DTSFrame *frame;
 		wxString status;
 		wxWindow *panel;
+		DTSPanelEvent *dtsevthandler;
+		struct bucket_list *fitems;
 };
 
 class DTSPanel: public DTSObject {
@@ -84,21 +93,18 @@ class DTSPanel: public DTSObject {
 		struct form_item *ComboBox(const char *title, const char *name, const char *value, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
 		void AddItem(wxWindow *item, const wxGBPosition pos, const wxGBSpan span = wxDefaultSpan, int flags = 0, int border = 0,	int growrow = -1);
 		void SetEventCallback(event_callback evcb, void *userdata = NULL);
-		void EventHandler(int eid, wxCommandEvent *event);
+		void SetConfigCallback(dtsgui_configcb cb, void *userdata = NULL);
 		void SetUserData(void *data);
 		void *GetUserData(void);
-		struct bucket_list *GetItems(void);
 		void SetXMLDoc(struct xml_doc *xmldoc);
 		struct xml_doc *GetXMLDoc(void);
 		void Update_XML();
 		struct xml_element *GetNode(const char *xpath, const char *attr);
-		int buttons[6];
 		bool ShowPanel(bool = true);
 	protected:
 		void SetSizerSize(wxSize, wxWindow*);
 		void SetupWin();
 		void Buttons(void);
-		DTSPanelEvent *dtsevthandler;
 		int button_mask;
 	private:
 		struct form_item *create_new_fitem(void *widget, enum widget_type type, const char *name, const char *value = NULL, const char *value2 = NULL, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
@@ -107,7 +113,8 @@ class DTSPanel: public DTSObject {
 		int g_row;
 		void *userdata;
 		struct xml_doc  *xmldoc;
-		struct bucket_list *fitems;
+		dtsgui_configcb configcb;
+		void *config_data;
 };
 
 class DTSStaticPanel: public DTSPanel, public virtual wxPanel  {
