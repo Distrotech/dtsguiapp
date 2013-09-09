@@ -32,6 +32,8 @@
 #include "evdata.h"
 #include "DTSFrame.h"
 
+wxDEFINE_EVENT(DTS_APP_EVENT, wxCommandEvent);
+
 DTSFrame::DTSFrame(const wxString &title, const wxPoint &pos, const wxSize &size, struct dtsgui *dtsgui)
 	: wxFrame(NULL, wxID_ANY, title, pos, size) {
 	/*deleted on close*/
@@ -59,6 +61,8 @@ DTSFrame::DTSFrame(const wxString &title, const wxPoint &pos, const wxSize &size
 
 	abortconfirm = true;
 	Bind(wxEVT_CLOSE_WINDOW, &DTSFrame::OnAbort, this);
+	Bind(DTS_APP_EVENT, &DTSFrame::OnOpenConfig, this);
+
 	Show(true);
 	Raise();
 }
@@ -105,6 +109,13 @@ void DTSFrame::OnAbort(wxCloseEvent &event) {
 	}
 }
 
+void DTSFrame::OnOpenConfig(wxCommandEvent &event) {
+//	Alert("BOO");
+	printf("DTS Event In Frame\n");
+	event.Skip(true);
+}
+
+
 void DTSFrame::OnClose(wxCommandEvent &event) {
 	bool confirm;
 	int eid;
@@ -143,7 +154,7 @@ void DTSFrame::SetWindow(wxWindow *window) {
 
 	sizer->Detach(0);
 	a_window->Show(false);
-	sizer->Prepend(window, 1, wxALL | wxEXPAND);
+	sizer->Add(window, 1, wxALL | wxEXPAND);
 
 	if (window == blank) {
 		SetStatusText(status);
@@ -179,3 +190,12 @@ void DTSFrame::RunCommand(wxCommandEvent &event) {
 		evdat->callback(dtsgui, evdat->data);
 	}
 }
+
+void DTSFrame::SendDTSEvent(int eid, wxObject *evobj) {
+	wxCommandEvent event(DTS_APP_EVENT, eid);
+	event.SetEventObject(evobj);
+	event.ShouldPropagate();
+	ProcessWindowEvent(event);
+}
+
+

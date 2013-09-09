@@ -55,11 +55,6 @@ void free_fitem(void *data) {
 	}
 }
 
-struct bucket_list *DTSPanel::GetItems(void) {
-	objref(fitems);
-	return fitems;
-}
-
 static int fitems_hash(const void *data, int key) {
 	int ret = 0;
 
@@ -75,10 +70,15 @@ static int fitems_hash(const void *data, int key) {
 	return(ret);
 }
 
-DTSPanelEvent::DTSPanelEvent(void *userdata, event_callback ev_cb, DTSPanel *win) {
+DTSPanelEvent::DTSPanelEvent(DTSObject *win) {
+	evcb = NULL;
+	data = NULL;
+	parent = win;
+}
+
+void DTSPanelEvent::SetCallback(event_callback ev_cb, void *userdata) {
 	data = userdata;
 	evcb = ev_cb;
-	parent = win;
 }
 
 void DTSPanelEvent::OnButton(wxCommandEvent &event) {
@@ -155,6 +155,22 @@ void DTSPanelEvent::OnCombo(wxCommandEvent &event) {
 	}
 }
 
+void DTSPanelEvent::OnDTSEvent(wxCommandEvent &event) {
+	int  eid, etype;
+	printf("Got DTS EVent\n");
+
+	eid=event.GetId();
+	if (evcb) {
+		etype = event.GetEventType();
+		evcb((void *)parent, etype, eid, data);
+	}
+	event.Skip(true);
+}
+
+void DTSPanelEvent::BindDTSEvent(DTSFrame *frame) {
+	frame->Bind(DTS_APP_EVENT, &DTSPanelEvent::OnDTSEvent, this);
+}
+
 void DTSPanelEvent::BindButton(wxWindow *win, int button) {
 	win->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &DTSPanelEvent::OnButton, this, button, button, NULL);
 }
@@ -183,6 +199,14 @@ DTSFrame *DTSObject::GetFrame() {
 	return frame;
 }
 
+struct bucket_list *DTSObject::GetItems(void) {
+	objref(fitems);
+	return fitems;
+}
+
+void DTSObject::EventHandler(int eid, wxCommandEvent *event) {
+}
+
 DTSPanel::DTSPanel(DTSFrame *mainwin, wxString statusmsg, int butmask)
 	:DTSObject(statusmsg) {
 	button_mask = butmask;
@@ -193,6 +217,10 @@ DTSPanel::DTSPanel(DTSFrame *mainwin, wxString statusmsg, int butmask)
 	frame = mainwin;
 	memcpy(buttons, def_buttons, sizeof(def_buttons));;
 	fitems = (struct bucket_list *)create_bucketlist(0, fitems_hash);
+	dtsevthandler = new DTSPanelEvent(this);
+	if (dtsevthandler && frame) {
+		dtsevthandler->BindDTSEvent(frame);
+	}
 }
 
 DTSPanel::~DTSPanel() {
@@ -233,10 +261,6 @@ struct form_item *DTSPanel::create_new_fitem(void *widget, enum widget_type type
 	return fi;
 }
 
-void DTSPanel::EventHandler(int eid, wxCommandEvent *event) {
-}
-
-
 void DTSPanel::SetSizerSize(wxSize minsize, wxWindow *parent) {
 	if (parent) {
 		fgs->FitInside(parent);
@@ -260,12 +284,19 @@ void DTSPanel::SetupWin(void) {
 }
 
 void DTSPanel::SetEventCallback(event_callback evcb, void *userdata) {
-	dtsevthandler = new DTSPanelEvent(userdata, evcb, this);
+	if (dtsevthandler) {
+		dtsevthandler->SetCallback(evcb, userdata);
+	}
+}
+
+void DTSPanel::SetConfigCallback(dtsgui_configcb cb, void *userdata) {
+	configcb = cb;
+	config_data = userdata;
 }
 
 bool DTSPanel::ShowPanel(bool show) {
 	if (show) {
-		if (frame) {
+		if (frame && (type != wx_DTSPANEL_TAB)) {
 			frame->SetStatusText(status);
 		}
 
@@ -326,6 +357,10 @@ void free_xmlelement(void *data) {
 	if (xml->xsearch) {
 		objunref(xml->xsearch);
 	}
+
+	if (xml->xpath) {
+		free((void*)xml->xpath);
+	}
 }
 
 struct xml_element *DTSPanel::GetNode(const char *xpath, const char *attr) {
@@ -339,6 +374,8 @@ struct xml_element *DTSPanel::GetNode(const char *xpath, const char *attr) {
 		objunref(xml);
 		return NULL;
 	}
+
+	ALLOC_CONST(xml->xpath, xpath);
 
 	if (attr) {
 		xml->attr = strdup(attr);

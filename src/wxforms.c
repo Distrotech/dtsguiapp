@@ -43,7 +43,10 @@ struct app_data {
 	struct xml_doc *xmldoc;
 	const char *datadir;
 	const char *openconf;
-	dtsgui_menuitem editconf;
+	dtsgui_menuitem e_wiz;
+	dtsgui_menuitem c_open;
+	dtsgui_menuitem c_save;
+	dtsgui_menu cfg_menu;
 };
 
 struct listitem {
@@ -543,7 +546,7 @@ void pbx_settings(struct dtsgui *dtsgui, dtsgui_tabview tabv) {
 							 {"International", "5"}};
 
 	char defconf[PATH_MAX];
-	struct xml_doc *xmldoc;
+
 	struct app_data *appdata;
 	dtsgui_pane dp[11], pg;
 	struct form_item *lb;
@@ -556,22 +559,23 @@ void pbx_settings(struct dtsgui *dtsgui, dtsgui_tabview tabv) {
 		return;
 	}
 
-	if (!(xmldoc = xml_loaddoc(defconf, 1))) {
+	if (!(appdata->xmldoc = xml_loaddoc(defconf, 1))) {
 		dtsgui_alert(dtsgui, "Default configuration failed to load.\nCheck Installation.");
 		return;
 	}
+	dtsgui_titleappend(dtsgui, "Default Configuration");
 
-	dp[0] = dtsgui_addpage(tabv, "Routing", 0, NULL, xmldoc);
-	dp[1] = dtsgui_addpage(tabv, "mISDN", 0, NULL, xmldoc);
-	dp[2] = dtsgui_addpage(tabv, "E1", 0, NULL, xmldoc);
-	dp[3] = dtsgui_addpage(tabv, "MFC/R2", 0, NULL, xmldoc);
-	dp[4] = dtsgui_addpage(tabv, "Defaults", 0, NULL, xmldoc);
-	dp[5] = dtsgui_addpage(tabv, "IVR Password", 0, NULL, xmldoc);
-	dp[6] = dtsgui_addpage(tabv, "Location", 0, NULL, xmldoc);
-	dp[7] = dtsgui_addpage(tabv, "Inbound", 0, NULL, xmldoc);
-	dp[8] = dtsgui_addpage(tabv, "Num Plan", 0, NULL, xmldoc);
-	dp[9] = dtsgui_addpage(tabv, "Auto Add", 0, NULL, xmldoc);
-	dp[10] = dtsgui_addpage(tabv, "Save", wx_PANEL_BUTTON_YES, NULL, xmldoc);
+	dp[0] = dtsgui_addpage(tabv, "Routing", 0, NULL, appdata->xmldoc);
+	dp[1] = dtsgui_addpage(tabv, "mISDN", 0, NULL, appdata->xmldoc);
+	dp[2] = dtsgui_addpage(tabv, "E1", 0, NULL, appdata->xmldoc);
+	dp[3] = dtsgui_addpage(tabv, "MFC/R2", 0, NULL, appdata->xmldoc);
+	dp[4] = dtsgui_addpage(tabv, "Defaults", 0, NULL, appdata->xmldoc);
+	dp[5] = dtsgui_addpage(tabv, "IVR Password", 0, NULL, appdata->xmldoc);
+	dp[6] = dtsgui_addpage(tabv, "Location", 0, NULL, appdata->xmldoc);
+	dp[7] = dtsgui_addpage(tabv, "Inbound", 0, NULL, appdata->xmldoc);
+	dp[8] = dtsgui_addpage(tabv, "Num Plan", 0, NULL, appdata->xmldoc);
+	dp[9] = dtsgui_addpage(tabv, "Auto Add", 0, NULL, appdata->xmldoc);
+	dp[10] = dtsgui_addpage(tabv, "Save", wx_PANEL_BUTTON_YES, NULL, appdata->xmldoc);
 
 	pg = dp[0];
 	lb = dtsgui_xmllistbox(pg, "PSTN Trunk", "Trunk", "/config/IP/VOIP/ASTDB/Option[@option = 'Trunk']", NULL);
@@ -811,7 +815,6 @@ void pbx_settings(struct dtsgui *dtsgui, dtsgui_tabview tabv) {
 	for(i = 0; i < cnt;i++) {
 		dtsgui_showpanel(dp[i], !i);
 	}
-	objunref(xmldoc);
 }
 
 int post_test(struct dtsgui *dtsgui, void *data) {
@@ -820,10 +823,33 @@ int post_test(struct dtsgui *dtsgui, void *data) {
 	return 1;
 }
 
+int open_config(struct dtsgui *dtsgui, void *data) {
+	struct app_data *appdata;
+
+	appdata = dtsgui_userdata(dtsgui);
+	dtsgui_reconfig(dtsgui);
+	dtsgui_menuenable(appdata->cfg_menu, 1);
+	dtsgui_menuitemenable(appdata->e_wiz, 0);
+	dtsgui_menuitemenable(appdata->c_open, 0);
+	dtsgui_menuitemenable(appdata->c_save, 1);
+	return 1;
+}
+
+int save_config(struct dtsgui *dtsgui, void *data) {
+	struct app_data *appdata;
+
+	appdata = dtsgui_userdata(dtsgui);
+/*	dtsgui_reconfig(dtsgui);*/
+	dtsgui_menuenable(appdata->cfg_menu, 0);
+	dtsgui_menuitemenable(appdata->e_wiz, 1);
+	dtsgui_menuitemenable(appdata->c_open, 1);
+	dtsgui_menuitemenable(appdata->c_save, 0);
+	return 1;
+}
+
 void file_menu(struct dtsgui *dtsgui) {
 	dtsgui_menu file;
 	dtsgui_treeview tree;
-	dtsgui_tabview tabv;
 	struct app_data *appdata;
 
 	appdata = dtsgui_userdata(dtsgui);
@@ -831,14 +857,13 @@ void file_menu(struct dtsgui *dtsgui) {
 	file = dtsgui_newmenu(dtsgui, "&File");
 
 	dtsgui_newmenucb(file, dtsgui, "&New System (Wizard)", "New System Configuration Wizard", newsys_wizard, NULL);
-	appdata->editconf = dtsgui_newmenucb(file, dtsgui, "&Edit Saved System (Wizard)", "Reconfigure Saved System File With Wizard ", editsys_wizard, NULL);
+	appdata->e_wiz = dtsgui_newmenucb(file, dtsgui, "&Edit Saved System (Wizard)", "Reconfigure Saved System File With Wizard ", editsys_wizard, NULL);
 
 	dtsgui_menusep(file);
-	tabv = dtsgui_tabwindow(dtsgui, "PBX Setup");
-
-	dtsgui_newmenuitem(file, dtsgui, "P&BX Configuration", tabv);
-
-	pbx_settings(dtsgui, tabv);
+	appdata->c_open = dtsgui_newmenucb(file, dtsgui, "&Open Config", "Open System Config (File/URL)", open_config, NULL);
+	appdata->c_save = dtsgui_newmenucb(file, dtsgui, "&Save Config", "Save/Close System Config (File/URL)", save_config, NULL);
+	dtsgui_menuitemenable(appdata->c_save, 0);
+/*	dtsgui_newmenucb(file, dtsgui, "&Open Config", "Open System Config (File/URL)", open_config, NULL);*/
 
 	dtsgui_menusep(file);
 	testpanel(dtsgui, file);
@@ -846,9 +871,23 @@ void file_menu(struct dtsgui *dtsgui) {
 	dtsgui_newmenuitem(file, dtsgui, "T&ree", tree);
 	dtsgui_newmenucb(file, dtsgui, "Test &Post", "Send POST request to callshop server (requires callshop user)", post_test, NULL);
 
+
 	dtsgui_menusep(file);
 	dtsgui_close(file, dtsgui);
 	dtsgui_exit(file, dtsgui);
+}
+
+void config_menu(struct dtsgui *dtsgui) {
+	dtsgui_tabview tabv;
+	struct app_data *appdata;
+
+	appdata = dtsgui_userdata(dtsgui);
+	appdata->cfg_menu = dtsgui_newmenu(dtsgui, "&Config");
+
+	tabv = dtsgui_tabwindow(dtsgui, "PBX Setup");
+	dtsgui_newmenuitem(appdata->cfg_menu, dtsgui, "P&BX Configuration", tabv);
+	pbx_settings(dtsgui, tabv);
+	dtsgui_menuenable(appdata->cfg_menu, 0);
 }
 
 void help_menu(struct dtsgui *dtsgui) {
@@ -872,6 +911,7 @@ int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
 
 	/* menus*/
 	file_menu(dtsgui);
+	config_menu(dtsgui);
 	help_menu(dtsgui);
 
 	objunref(appdata);

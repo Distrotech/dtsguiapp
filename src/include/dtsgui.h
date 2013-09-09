@@ -86,12 +86,15 @@ dtsgui *dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct po
 					  struct point wpos, const char *title, const char *status);
 int dtsgui_run(int argc, char **argv);
 void *dtsgui_userdata(struct dtsgui *dtsgui);
+void dtsgui_titleappend(struct dtsgui *dtsgui, const char *text);
+void dtsgui_reconfig(struct dtsgui *dtsgui);
 
 /*menu configuration*/
 dtsgui_menu dtsgui_newmenu(struct dtsgui *dtsgui, const char *name);
 dtsgui_menuitem dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, const char *label, dtsgui_configcb, void *data);
 dtsgui_menuitem dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, dtsgui_pane pane);
-void dtsgui_menuenable(dtsgui_menuitem dmi, int enable);
+void dtsgui_menuitemenable(dtsgui_menuitem dmi, int enable);
+void dtsgui_menuenable(dtsgui_menu dm, int enable);
 void dtsgui_menusep(dtsgui_menu dtsmenu);
 void dtsgui_about(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *text);
 void dtsgui_close(dtsgui_menu dtsmenu, struct dtsgui *dtsgui);
@@ -141,6 +144,7 @@ void dtsgui_alert(struct dtsgui *dtsgui, const char *text);
 
 /*set callback for a pane*/
 void dtsgui_setevcallback(dtsgui_pane pane,event_callback evcb, void *data);
+void dtsgui_configcallback(dtsgui_pane pane,dtsgui_configcb cb, void *data);
 
 /* get bucket list of form items*/
 struct bucket_list *dtsgui_panel_items(dtsgui_pane pane);
