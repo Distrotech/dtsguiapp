@@ -43,6 +43,9 @@ static void free_dtsgui(void *data) {
 
 DTSApp::~DTSApp() {
 	objunref((void *)dtsgui);
+	if (dtsgui->userdata) {
+		objunref(dtsgui->userdata);
+	}
 
 	if (curl) {
 		curlclose();
@@ -56,9 +59,13 @@ struct dtsgui *DTSApp::CreateFrame(dtsgui_configcb confcallback_cb,void *data, s
 	dtsgui->title = title;
 	dtsgui->status = status;
 	dtsgui->cb = confcallback_cb;
-	dtsgui->userdata = data;
 	objref((void *)dtsgui);
-	objref(data);
+	if (data) {
+		dtsgui->userdata = data;
+		objref(data);
+	} else {
+		dtsgui->userdata = NULL;
+	}
 	return dtsgui;
 }
 

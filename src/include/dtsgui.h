@@ -37,12 +37,14 @@ typedef void *dtsgui_notebook;
 typedef void *dtsgui_treeview;
 typedef void *dtsgui_tabview;
 
-/*form controls*/
+/*forward def*/
 typedef struct form_item form_item;
+typedef struct dynamic_panel dynamic_panel;
 
 /*callbacks*/
 typedef int (*dtsgui_configcb)(struct dtsgui *, void *userdata);
 typedef void (*event_callback)(dtsgui_pane, int type, int id, void *);
+typedef dtsgui_pane (*dtsgui_dynpanel)(struct dtsgui *, const char *title, void *);
 
 struct point {
 	int x;
@@ -93,6 +95,7 @@ void dtsgui_setblank(struct dtsgui *dtsgui);
 /*menu configuration*/
 dtsgui_menu dtsgui_newmenu(struct dtsgui *dtsgui, const char *name);
 dtsgui_menuitem dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, const char *label, dtsgui_configcb, void *data);
+dtsgui_menuitem dtsgui_newmenudyn(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *title, const char *hint, dtsgui_dynpanel cb,void *data, struct dynamic_panel **d_pane);
 dtsgui_menuitem dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, dtsgui_pane pane);
 void dtsgui_menuitemenable(dtsgui_menuitem dmi, int enable);
 void dtsgui_menuenable(dtsgui_menu dm, int enable);
