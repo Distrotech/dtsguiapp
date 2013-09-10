@@ -188,7 +188,7 @@ extern dtsgui_menuitem dtsgui_newmenudyn(dtsgui_menu dtsmenu, struct dtsgui *dts
 	}
 
 	mi = m->Append(menuid, hint, (title) ? title : "");
-	frame->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::DynamicPanel, frame, menuid, menuid, (wxObject *)ev_data);
+	frame->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::DynamicPanelEvent, frame, menuid, menuid, (wxObject *)ev_data);
 	menuid++;
 	return mi;
 }
@@ -798,6 +798,25 @@ void dtsgui_setblank(struct dtsgui *dtsgui) {
 void dtsgui_reconfig(struct dtsgui *dtsgui) {
 	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
 	f->SendDTSEvent(1, NULL);
+}
+
+void dtsgui_createdyn(struct dtsgui *dtsgui, struct dynamic_panel *dpane) {
+	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
+	f->DynamicPanel(dpane);
+}
+
+void dtsgui_closedyn(struct dtsgui *dtsgui, struct dynamic_panel *dpane) {
+	DTSObject *p;
+
+	if (!dtsgui || !dpane) {
+		return;
+	}
+	p = (DTSObject*)dpane->panel;
+//	p->Reparent(NULL);
+
+	delete p;
+
+	dpane->panel = NULL;
 }
 
 #ifdef __WIN32

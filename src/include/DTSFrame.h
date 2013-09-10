@@ -27,7 +27,7 @@ class DTSFrame: public wxFrame {
 		void SetAbout(const char *a_text);
 		void SwitchWindow(wxCommandEvent &event);
 		void RunCommand(wxCommandEvent &event);
-		void DynamicPanel(wxCommandEvent &event);
+		void DynamicPanelEvent(wxCommandEvent &event);
 		bool Confirm(wxString text);
 		void Alert(wxString text);
 		void OnClose(wxCommandEvent &event);
@@ -35,6 +35,7 @@ class DTSFrame: public wxFrame {
 		void OnAbout(wxCommandEvent &event);
 		void SendDTSEvent(int eid, wxObject *evobj);
 		void SetWindow(wxWindow *window);
+		bool DynamicPanel(struct dynamic_panel *p_dyn);
 	private:
 		void OnDTSEvent(wxCommandEvent &event);
 		wxBoxSizer *sizer;
