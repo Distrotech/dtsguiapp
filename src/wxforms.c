@@ -878,7 +878,6 @@ int save_config(struct dtsgui *dtsgui, void *data) {
 
 void file_menu(struct dtsgui *dtsgui) {
 	dtsgui_menu file;
-	dtsgui_treeview tree;
 	struct app_data *appdata;
 
 	appdata = dtsgui_userdata(dtsgui);
@@ -890,12 +889,6 @@ void file_menu(struct dtsgui *dtsgui) {
 
 	dtsgui_menusep(file);
 	appdata->c_open = dtsgui_newmenucb(file, dtsgui, "&Open Config File", "Open System Config From A File", open_config, NULL);
-
-	dtsgui_menusep(file);
-	testpanel(dtsgui, file);
-	tree = dtsgui_treewindow(dtsgui, "Tree Window");
-	dtsgui_newmenuitem(file, dtsgui, "T&ree", tree);
-	dtsgui_newmenucb(file, dtsgui, "Test &Post", "Send POST request to callshop server (requires callshop user)", post_test, NULL);
 
 
 	dtsgui_menusep(file);
@@ -910,7 +903,7 @@ void config_menu(struct dtsgui *dtsgui) {
 	appdata = dtsgui_userdata(dtsgui);
 	appdata->cfg_menu = dtsgui_newmenu(dtsgui, "&Config");
 
-	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&Reconfigure Wizard", "Run System Reconfigure Wizard.", reconfig_wizard, NULL);
+	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&Reconfigure&Wizard", "Run System Reconfigure Wizard.", reconfig_wizard, NULL);
 	dtsgui_newmenudyn(appdata->cfg_menu, dtsgui, "PBX Setup", "P&BX Configuration", pbx_settings, NULL, &dyn_cfg);
 	if (dyn_cfg) {
 		appdata->dyn_cfg = dyn_cfg;
@@ -934,6 +927,19 @@ void help_menu(struct dtsgui *dtsgui) {
 	dtsgui_about(help, dtsgui, "This is a test application!!!!");
 }
 
+void test_menu(struct dtsgui *dtsgui) {
+	dtsgui_menu test;
+	dtsgui_treeview tree;
+
+	test = dtsgui_newmenu(dtsgui, "&Testing");
+
+	testpanel(dtsgui, test);
+	tree = dtsgui_treewindow(dtsgui, "Tree Window");
+	dtsgui_newmenuitem(test, dtsgui, "T&ree", tree);
+	dtsgui_newmenucb(test, dtsgui, "Test &Post", "Send POST request to callshop server (requires callshop user)", post_test, NULL);
+
+}
+
 int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
 	struct app_data *appdata = data;
 
@@ -945,6 +951,7 @@ int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
 	file_menu(dtsgui);
 	config_menu(dtsgui);
 	help_menu(dtsgui);
+	test_menu(dtsgui);
 
 	objunref(appdata);
 	return 1;
