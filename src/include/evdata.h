@@ -19,11 +19,21 @@
 #ifndef EVDATA_H
 #define EVDATA_H
 
+struct dynamic_panel {
+	dtsgui_pane panel;
+	dtsgui_dynpanel cb;
+	const char *title;
+	void *data;
+};
+
 class evdata :public wxObject {
 	public:
-		evdata(void* = NULL, dtsgui_configcb cb = NULL);
+		evdata(void* = NULL, dtsgui_configcb cb = NULL, int uref = 0);
+		~evdata();
 		void *data;
 		dtsgui_configcb callback;
+	private:
+		int unref;
 };
 
 #endif // EVDATA_H

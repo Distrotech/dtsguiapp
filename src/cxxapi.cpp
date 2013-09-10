@@ -164,6 +164,35 @@ dtsgui_menuitem dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, con
 	return mi;
 }
 
+extern dtsgui_menuitem dtsgui_newmenudyn(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *title, const char *hint, dtsgui_dynpanel cb,void *data, struct dynamic_panel **d_pane) {
+	struct dynamic_panel *p_dyn;
+	wxMenu *m = (wxMenu *)dtsmenu;
+	DTSFrame *frame = (DTSFrame *)dtsgui->appframe;
+	wxMenuItem *mi;
+
+	if (!(p_dyn = (struct dynamic_panel*)objalloc(sizeof(*p_dyn),NULL))) {
+		return NULL;
+	}
+
+	p_dyn->data = data;
+	p_dyn->panel = NULL;
+	ALLOC_CONST(p_dyn->title, title);
+	p_dyn->cb = cb;
+
+	/*handed over to wx no need to delete*/
+	evdata *ev_data = new evdata(p_dyn, NULL, 1);
+
+	if (d_pane) {
+		objref(p_dyn);
+		*d_pane = p_dyn;
+	}
+
+	mi = m->Append(menuid, hint, (title) ? title : "");
+	frame->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::DynamicPanel, frame, menuid, menuid, (wxObject *)ev_data);
+	menuid++;
+	return mi;
+}
+
 void newappframe(struct dtsgui *dtsgui) {
 	new DTSFrame(dtsgui->title, wxPoint(dtsgui->wpos.x, dtsgui->wpos.y),
 				 wxSize(dtsgui->wsize.x, dtsgui->wsize.y), dtsgui);

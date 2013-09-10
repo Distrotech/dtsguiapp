@@ -24,6 +24,9 @@
 #include <wx/msgdlg.h>
 #include <wx/sizer.h>
 #include <wx/wizard.h>
+#include <wx/gbsizer.h>
+#include <wx/textctrl.h>
+#include <wx/scrolwin.h>
 
 #include <dtsapp.h>
 
@@ -31,6 +34,7 @@
 
 #include "evdata.h"
 #include "DTSFrame.h"
+#include "DTSPanel.h"
 
 wxDEFINE_EVENT(DTS_APP_EVENT, wxCommandEvent);
 
@@ -177,6 +181,35 @@ void DTSFrame::SwitchWindow(wxCommandEvent &event) {
 		window = blank;
 	}
 
+	if (window != a_window) {
+		SetWindow(window);
+	}
+}
+
+void DTSFrame::DynamicPanel(wxCommandEvent &event) {
+	wxWindow *window;
+	class evdata *evdat;
+	struct dynamic_panel *p_dyn;
+	DTSObject *p;
+
+	evdat = (evdata *)event.m_callbackUserData;
+
+	if (!evdat || !evdat->data || !(p_dyn = (struct dynamic_panel*)evdat->data) || !p_dyn->cb ) {
+		SetWindow(NULL);
+		return;
+	}
+
+	if (!p_dyn->panel && !(p_dyn->panel = p_dyn->cb(dtsgui, p_dyn->title, p_dyn->data))) {
+		SetWindow(NULL);
+		return;
+	}
+
+	if (!(p = (DTSObject *)p_dyn->panel)) {
+		SetWindow(NULL);
+		return;
+	}
+
+	window = p->GetPanel();
 	if (window != a_window) {
 		SetWindow(window);
 	}

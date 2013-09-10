@@ -16,12 +16,22 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <stdint.h>
 #include <wx/object.h>
+
+#include <dtsapp.h>
 
 #include "dtsgui.h"
 #include "evdata.h"
 
-evdata::evdata(void *userdata, dtsgui_configcb cb) {
+evdata::evdata(void *userdata, dtsgui_configcb cb, int uref) {
 	data = userdata;
 	callback = cb;
+	unref = uref;
+}
+
+evdata::~evdata() {
+	if (unref) {
+		objunref(data);
+	}
 }

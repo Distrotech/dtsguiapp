@@ -47,6 +47,7 @@ struct app_data {
 	dtsgui_menuitem e_wiz;
 	dtsgui_menuitem c_open;
 	dtsgui_menu cfg_menu;
+	struct dynamic_panel *dyn_cfg;
 };
 
 struct listitem {
@@ -532,7 +533,7 @@ void testpanel(struct dtsgui *dtsgui, dtsgui_menu menu) {
 	dtsgui_newmenuitem(menu, dtsgui, "&Test", p);
 }
 
-void pbx_settings(struct dtsgui *dtsgui, dtsgui_tabview tabv) {
+dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct listitem trunks[] = {{"Linux Modular ISDN Group 1", "mISDN/g:out/"},
 								{"Linux Modular ISDN Group 2", "mISDN/g:out2/"},
 								{"Linux Modular ISDN Group 3", "mISDN/g:out3/"},
@@ -554,23 +555,26 @@ void pbx_settings(struct dtsgui *dtsgui, dtsgui_tabview tabv) {
 							 {"International", "5"}};
 
 	char defconf[PATH_MAX];
-
+	dtsgui_tabview tabv;
 	struct app_data *appdata;
 	dtsgui_pane dp[11], pg;
 	struct form_item *lb;
 	int cnt, i;
 
+	tabv = dtsgui_tabwindow(dtsgui, title);
+
 	appdata = dtsgui_userdata(dtsgui);
 	snprintf(defconf, PATH_MAX-1, "%s/default.xml", appdata->datadir);
 	if (!is_file(defconf)) {
 		dtsgui_alert(dtsgui, "Default configuration not found.\nCheck Installation.");
-		return;
+		return NULL;
 	}
 
 	if (!(appdata->xmldoc = xml_loaddoc(defconf, 1))) {
 		dtsgui_alert(dtsgui, "Default configuration failed to load.\nCheck Installation.");
-		return;
+		return NULL;
 	}
+
 
 	dp[0] = dtsgui_addpage(tabv, "Routing", 0, NULL, appdata->xmldoc);
 	dp[1] = dtsgui_addpage(tabv, "mISDN", 0, NULL, appdata->xmldoc);
@@ -822,6 +826,8 @@ void pbx_settings(struct dtsgui *dtsgui, dtsgui_tabview tabv) {
 	for(i = 0; i < cnt;i++) {
 		dtsgui_showpanel(dp[i], !i);
 	}
+
+	return tabv;
 }
 
 int post_test(struct dtsgui *dtsgui, void *data) {
@@ -884,17 +890,17 @@ void file_menu(struct dtsgui *dtsgui) {
 }
 
 void config_menu(struct dtsgui *dtsgui) {
-	dtsgui_tabview tabv;
 	struct app_data *appdata;
+	struct dynamic_panel *dyn_cfg = NULL;
 
 	appdata = dtsgui_userdata(dtsgui);
 	appdata->cfg_menu = dtsgui_newmenu(dtsgui, "&Config");
 
 	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&Reconfigure Wizard", "Run System Reconfigure Wizard.", reconfig_wizard, NULL);
-
-	tabv = dtsgui_tabwindow(dtsgui, "PBX Setup");
-	dtsgui_newmenuitem(appdata->cfg_menu, dtsgui, "P&BX Configuration", tabv);
-	pbx_settings(dtsgui, tabv);
+	dtsgui_newmenudyn(appdata->cfg_menu, dtsgui, "PBX Setup", "P&BX Configuration", pbx_settings, NULL, &dyn_cfg);
+	if (dyn_cfg) {
+		appdata->dyn_cfg = dyn_cfg;
+	}
 
 	dtsgui_menusep(appdata->cfg_menu);
 	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&Save Config", "Save/Close System Config (File/URL)", save_config, NULL);
@@ -953,6 +959,10 @@ void free_appdata(void *data) {
 
 	if (appdata->xmldoc) {
 		objunref(appdata->xmldoc);
+	}
+
+	if (appdata->dyn_cfg) {
+		objunref(appdata->dyn_cfg);
 	}
 }
 
