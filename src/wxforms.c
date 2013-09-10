@@ -22,6 +22,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
+#include <unistd.h>
 
 #ifdef __WIN32
 #define UNICODE 1
@@ -554,27 +555,14 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 							 {"Premium", "4"},
 							 {"International", "5"}};
 
-	char defconf[PATH_MAX];
 	dtsgui_tabview tabv;
 	struct app_data *appdata;
 	dtsgui_pane dp[11], pg;
 	struct form_item *lb;
 	int cnt, i;
 
-	tabv = dtsgui_tabwindow(dtsgui, title);
-
 	appdata = dtsgui_userdata(dtsgui);
-	snprintf(defconf, PATH_MAX-1, "%s/default.xml", appdata->datadir);
-	if (!is_file(defconf)) {
-		dtsgui_alert(dtsgui, "Default configuration not found.\nCheck Installation.");
-		return NULL;
-	}
-
-	if (!(appdata->xmldoc = xml_loaddoc(defconf, 1))) {
-		dtsgui_alert(dtsgui, "Default configuration failed to load.\nCheck Installation.");
-		return NULL;
-	}
-
+	tabv = dtsgui_tabwindow(dtsgui, title);
 
 	dp[0] = dtsgui_addpage(tabv, "Routing", 0, NULL, appdata->xmldoc);
 	dp[1] = dtsgui_addpage(tabv, "mISDN", 0, NULL, appdata->xmldoc);
@@ -838,14 +826,36 @@ int post_test(struct dtsgui *dtsgui, void *data) {
 
 int open_config(struct dtsgui *dtsgui, void *data) {
 	struct app_data *appdata;
+	const char *filename;
+	int i;
 
 	appdata = dtsgui_userdata(dtsgui);
+
+	if (!(filename = dtsgui_fileopen(dtsgui, "Select Customer Configuration To Open", NULL, "", "XML Configuration|*.xml"))) {
+		return 0;
+	}
+
+	if (!(appdata->xmldoc = xml_loaddoc(filename, 1	))) {
+		dtsgui_alert(dtsgui, "Configuration failed to load.\n");
+		return 0;
+	}
+
 	dtsgui_reconfig(dtsgui);
-	dtsgui_menuenable(appdata->cfg_menu, 1);
+
+	dtsgui_createdyn(dtsgui, appdata->dyn_cfg);
+
+	for(i=0; i < 20;i++ ){
+		if (appdata->dyn_cfg) {
+			break;
+		}
+		usleep(200000);
+	}
+
 	dtsgui_menuitemenable(appdata->e_wiz, 0);
 	dtsgui_menuitemenable(appdata->n_wiz, 0);
 	dtsgui_menuitemenable(appdata->c_open, 0);
-	dtsgui_titleappend(dtsgui, "Default Configuration");
+	dtsgui_menuenable(appdata->cfg_menu, 1);
+	dtsgui_titleappend(dtsgui, filename);
 	return 1;
 }
 
@@ -859,6 +869,10 @@ int save_config(struct dtsgui *dtsgui, void *data) {
 	dtsgui_menuitemenable(appdata->n_wiz, 1);
 	dtsgui_menuitemenable(appdata->c_open, 1);
 	dtsgui_titleappend(dtsgui, NULL);
+	if (appdata->dyn_cfg) {
+		dtsgui_closedyn(dtsgui, appdata->dyn_cfg);
+	}
+	objunref(appdata->xmldoc);
 	return 1;
 }
 
@@ -875,7 +889,7 @@ void file_menu(struct dtsgui *dtsgui) {
 	appdata->e_wiz = dtsgui_newmenucb(file, dtsgui, "&Edit Saved System (Wizard)", "Reconfigure Saved System File With Wizard ", editsys_wizard, NULL);
 
 	dtsgui_menusep(file);
-	appdata->c_open = dtsgui_newmenucb(file, dtsgui, "&Open Config", "Open System Config (File/URL)", open_config, NULL);
+	appdata->c_open = dtsgui_newmenucb(file, dtsgui, "&Open Config File", "Open System Config From A File", open_config, NULL);
 
 	dtsgui_menusep(file);
 	testpanel(dtsgui, file);

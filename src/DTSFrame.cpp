@@ -186,7 +186,15 @@ void DTSFrame::SwitchWindow(wxCommandEvent &event) {
 	}
 }
 
-void DTSFrame::DynamicPanel(wxCommandEvent &event) {
+bool DTSFrame::DynamicPanel(struct dynamic_panel *p_dyn) {
+	if (p_dyn->panel || (p_dyn->panel = p_dyn->cb(dtsgui, p_dyn->title, p_dyn->data))) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+void DTSFrame::DynamicPanelEvent(wxCommandEvent &event) {
 	wxWindow *window;
 	class evdata *evdat;
 	struct dynamic_panel *p_dyn;
@@ -199,7 +207,7 @@ void DTSFrame::DynamicPanel(wxCommandEvent &event) {
 		return;
 	}
 
-	if (!p_dyn->panel && !(p_dyn->panel = p_dyn->cb(dtsgui, p_dyn->title, p_dyn->data))) {
+	if (!DynamicPanel(p_dyn)) {
 		SetWindow(NULL);
 		return;
 	}
