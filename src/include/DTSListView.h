@@ -7,11 +7,11 @@ class DTSDVMListStore {
 		~DTSDVMListStore();
 		bool IsContainer() const;
 		DTSDVMListStore* GetParent();
-		int GetChildCount();
+		size_t GetChildCount();
 		void Append(DTSDVMListStore* child);
 		void Insert(DTSDVMListStore* child, size_t idx);
 		DTSDVMListStore* GetNthChild(size_t idx);
-		int GetChildIndex(DTSDVMListStore* child);
+		size_t GetChildIndex(DTSDVMListStore* child);
 		void RemoveChildReference(DTSDVMListStore* child);
 		const wxString GetTitle();
 		void SetTitle(const wxString& value);
@@ -33,7 +33,7 @@ class DTSDVMListStore {
 
 class DTSDVMListView :public wxDataViewModel {
 	public:
-		DTSDVMListView();
+		DTSDVMListView(int cols=1, bool cont_cols = true);
 		~DTSDVMListView();
 		virtual bool IsContainer( const wxDataViewItem& item) const;
 		virtual wxDataViewItem GetParent(const wxDataViewItem &item) const;
@@ -58,6 +58,8 @@ class DTSDVMListView :public wxDataViewModel {
 		void MoveChildDown(const wxDataViewItem& node);
 	protected:
 		DTSDVMListStore* root;
+		bool hascontcol;
+		int colcnt;
 };
 
 class DTSDVMCtrl :public wxDataViewCtrl {

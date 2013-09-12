@@ -28,7 +28,6 @@ enum treewinmenu {
 	DTS_TREEWIN_MENU_DELETE
 };
 
-
 DTSTreeWindowEvent::DTSTreeWindowEvent(void *userdata, event_callback ev_cb, DTSTreeWindow *win) {
 	data = userdata;
 	evcb = ev_cb;
@@ -77,7 +76,6 @@ void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
 		} else if (evid == wxEVT_DATAVIEW_ITEM_BEGIN_DRAG) {
 			printf("DRAG\n");
 		}
-		printf("Right Click\n");
 	} else if (evid == wxEVT_DATAVIEW_ITEM_EDITING_DONE) {
 		parent->TreeResize();
 	}
@@ -195,7 +193,7 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, wxString stat_ms
 
 	t_pane->SetSizer(treesizer);
 	t_pane->SetScrollRate(10, 10);
-	vm = new DTSDVMListView();
+	vm = new DTSDVMListView(1, true);
 	tree = new DTSDVMCtrl(t_pane, wxID_ANY, vm, wxDefaultPosition, wxDefaultSize, wxDV_ROW_LINES|wxDV_NO_HEADER);
 
 	dtsevthandler = new DTSTreeWindowEvent(NULL, NULL, this);
@@ -212,7 +210,25 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, wxString stat_ms
 	p = (w * pos) / 100;
 	SetSashPosition(p, true);
 
+	tree->Bind(wxEVT_DATAVIEW_SELECTION_CHANGED, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
+	tree->Bind(wxEVT_DATAVIEW_ITEM_EXPANDED, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
+	tree->Bind(wxEVT_DATAVIEW_ITEM_CONTEXT_MENU, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
+	tree->Bind(wxEVT_DATAVIEW_ITEM_EDITING_DONE, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
+	frame->Bind(wxEVT_DATAVIEW_ITEM_BEGIN_DRAG, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
+	tree->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSTreeWindowEvent::MenuEvent, dtsevthandler);
+	sw->Bind(wxEVT_SPLITTER_SASH_POS_CHANGED, &DTSTreeWindowEvent::SplitterEvent, dtsevthandler);
+
+	treesizer->SetSizeHints(t_pane);
+	treesizer->FitInside(t_pane);
+	treesizer->Layout();
+
+	tree->EnableDragSource(wxDF_UNICODETEXT);
+	tree->EnableDropTarget(wxDF_UNICODETEXT);
+
+	Show(false);
+
 	root = tree->AppendContainer(wxDataViewItem(NULL), "The Root");
+	tree->Select(root);
 
 	tree->AppendItem(root, "Child E");
 	tree->AppendContainer(root, "Root2");
@@ -229,29 +245,8 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, wxString stat_ms
 	tree->AppendItem(root4, "Child B");
 	tree->AppendItem(root4, "Child A");
 
-	tree->Bind(wxEVT_DATAVIEW_SELECTION_CHANGED, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
-	tree->Bind(wxEVT_DATAVIEW_ITEM_EXPANDED, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
-	tree->Bind(wxEVT_DATAVIEW_ITEM_CONTEXT_MENU, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
-	tree->Bind(wxEVT_DATAVIEW_ITEM_EDITING_DONE, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
-	frame->Bind(wxEVT_DATAVIEW_ITEM_BEGIN_DRAG, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
-	tree->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSTreeWindowEvent::MenuEvent, dtsevthandler);
-	sw->Bind(wxEVT_SPLITTER_SASH_POS_CHANGED, &DTSTreeWindowEvent::SplitterEvent, dtsevthandler);
-
+	/*can only expand when not empty*/
 	tree->Expand(root);
-	tree->Select(root);
-
-	tree->EnableDragSource(wxDF_UNICODETEXT);
-	tree->EnableDropTarget(wxDF_UNICODETEXT);
-
-	treesizer->SetSizeHints(t_pane);
-	treesizer->FitInside(t_pane);
-	treesizer->Layout();
-#ifdef _WIN32
-	tree->GetColumn(0)->SetWidth(p - sw->GetSashSize());
-#else
-	tree->GetColumn(0)->SetMinWidth(p - sw->GetSashSize());
-#endif // _WIN32
-	Show(false);
 }
 
 DTSDVMCtrl *DTSTreeWindow::GetTreeCtrl() {
