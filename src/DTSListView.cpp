@@ -7,6 +7,15 @@
 
 #include "DTSListView.h"
 
+bool cmp_title(DTSDVMListStore *c1,DTSDVMListStore *c2) {
+	wxString s1, s2;
+
+	s1 = c1->GetTitle();
+	s2 = c2->GetTitle();
+
+	return (s1 < s2);
+}
+
 DTSDVMListStore::DTSDVMListStore(DTSDVMListStore* parent, bool is_container, const wxString& title) {
 	this->parent = parent;
 	this->title = title;
@@ -29,7 +38,7 @@ DTSDVMListStore* DTSDVMListStore::GetParent() {
 	return parent;
 }
 
-int DTSDVMListStore::GetChildCount() {
+size_t DTSDVMListStore::GetChildCount() {
 	return children.size();
 }
 
@@ -55,29 +64,24 @@ DTSDVMListStore* DTSDVMListStore::GetNthChild(size_t idx) {
 	return children[idx];
 }
 
-int DTSDVMListStore::GetChildIndex(DTSDVMListStore* child) {
-	std::vector<DTSDVMListStore*>::iterator iter = children.begin();
-	std::vector<DTSDVMListStore*>::iterator last = children.end();
-	int idx = 0;
+size_t DTSDVMListStore::GetChildIndex(DTSDVMListStore* child) {
+	size_t idx = 0, c_cnt;
 
-	for(;((iter!=last) && (child!=*iter));iter++) {
+	c_cnt = children.size();
+	while ((idx < c_cnt) && (children[idx] != child)) {
 		idx++;
 	}
 
-	return idx;
+	return (children[idx] = child) ? idx : -1;
 }
 
 void DTSDVMListStore::RemoveChildReference(DTSDVMListStore* child) {
 	std::vector<DTSDVMListStore*>::iterator iter = children.begin();
-	std::vector<DTSDVMListStore*>::iterator last = children.end();
+	size_t idx;
 
-	while (iter!=last && (*iter)!=child) {
-		++iter;
+	if ((idx = GetChildIndex(child)) >= 0) {
+		children.erase(iter+idx);
 	}
-
-	assert(iter!=last);
-
-	children.erase(iter);
 }
 
 const wxString DTSDVMListStore::GetTitle() {
@@ -86,15 +90,6 @@ const wxString DTSDVMListStore::GetTitle() {
 
 void DTSDVMListStore::SetTitle(const wxString& value) {
 	title = value;
-}
-
-bool cmp_title(DTSDVMListStore *c1,DTSDVMListStore *c2) {
-	wxString s1, s2;
-
-	s1 = c1->GetTitle();
-	s2 = c2->GetTitle();
-
-	return (s1 < s2);
 }
 
 void DTSDVMListStore::SortChildren() {
@@ -159,15 +154,14 @@ bool DTSDVMListStore::MoveChildDown(size_t idx) {
 	return true;
 }
 
-DTSDVMListView::DTSDVMListView() {
+DTSDVMListView::DTSDVMListView(int cols, bool cont_cols) {
+	hascontcol = cont_cols;
 	root = NULL;
+	colcnt = cols;
 }
 
 DTSDVMListView::~DTSDVMListView() {
-	if (root) {
-		delete root;
-		root = NULL;
-	}
+	DeleteAll();
 }
 
 bool DTSDVMListView::IsContainer(const wxDataViewItem& item) const {
@@ -180,32 +174,19 @@ bool DTSDVMListView::IsContainer(const wxDataViewItem& item) const {
 }
 
 wxDataViewItem DTSDVMListView::GetParent(const wxDataViewItem& item) const {
+	DTSDVMListStore *node;
+
 	if (!item.IsOk()) {
 		return wxDataViewItem(NULL);
 	}
 
-	DTSDVMListStore *node = (DTSDVMListStore*)item.GetID();
-
-	if (node == root) {
+	node = (DTSDVMListStore*)item.GetID();
+	if (!node || (node == root)){
 		return wxDataViewItem(NULL);
 	}
 
 	return wxDataViewItem((void*)node->GetParent());
 }
-
-void DTSDVMListView::SortChildren(const wxDataViewItem& parent) {
-	DTSDVMListStore *node = (DTSDVMListStore*)parent.GetID();
-	wxDataViewItemArray items;
-
-	if (!node) {
-		return;
-	}
-	node->SortChildren();
-	GetChildren(parent, items);
-	ItemsDeleted(parent, items);
-	ItemsAdded(parent, items);
-}
-
 
 unsigned int DTSDVMListView::GetChildren(const wxDataViewItem& parent, wxDataViewItemArray& items) const {
 	DTSDVMListStore *node;
@@ -226,67 +207,8 @@ unsigned int DTSDVMListView::GetChildren(const wxDataViewItem& parent, wxDataVie
 	}
 }
 
-unsigned int DTSDVMListView::GetContainers(const wxDataViewItem& parent, wxDataViewItemArray& items, bool exonly) const {
-	DTSDVMListStore *node;
-	bool nok;
-
-	nok = parent.IsOk();
-	node = (DTSDVMListStore*)parent.GetID();
-
-	if (!nok && !node) {
-		if (root) {
-			items.Add(wxDataViewItem((void*)root));
-			return 1;
-		} else {
-			return 0;
-		}
-	} else {
-		return node->GetContainers(items, exonly);
-	}
-}
-
-DTSDVMListStore* DTSDVMListView::GetRoot() {
-	return root;
-}
-
-DTSDVMListStore* DTSDVMListView::SetRoot(const wxString& title) {
-	root = new DTSDVMListStore(NULL, true, title);
-	return root;
-}
-
-void DTSDVMListView::Delete(const wxDataViewItem& item) {
-	DTSDVMListStore *node = (DTSDVMListStore*) item.GetID();
-	wxDataViewItem parent;
-
-	if (!node) {
-		return;
-	}
-
-	parent = wxDataViewItem(node->GetParent());
-
-	if (!parent.IsOk()) {
-		assert(node==root);
-		delete root;
-		root = NULL;
-		Cleared();
-		return;
-	}
-
-	node->GetParent()->RemoveChildReference(node);
-	delete node;
-	ItemDeleted(parent, item);
-}
-
-void DTSDVMListView::DeleteAll(void) {
-	if (root!=NULL) {
-		delete root;
-		root = NULL;
-		Cleared();
-	}
-}
-
 unsigned int DTSDVMListView::GetColumnCount() const {
-	return 1;
+	return colcnt;
 }
 
 wxString DTSDVMListView::GetColumnType(unsigned int col) const {
@@ -314,9 +236,61 @@ bool DTSDVMListView::SetValue(const wxVariant &variant, const wxDataViewItem &it
 }
 
 bool DTSDVMListView::HasContainerColumns(const wxDataViewItem& item) const {
-	return true;
+	return hascontcol;
 }
 
+DTSDVMListStore* DTSDVMListView::GetRoot() {
+	return root;
+}
+
+DTSDVMListStore* DTSDVMListView::SetRoot(const wxString& title) {
+	root = new DTSDVMListStore(NULL, true, title);
+	return root;
+}
+
+void DTSDVMListView::Delete(const wxDataViewItem& item) {
+	DTSDVMListStore *node;
+	wxDataViewItem parent;
+
+	node = (DTSDVMListStore*)item.GetID();
+	if (!node) {
+		return;
+	}
+
+	parent = wxDataViewItem(node->GetParent());
+	if (!parent.IsOk()) {
+		DeleteAll();
+		return;
+	}
+
+	node->GetParent()->RemoveChildReference(node);
+	delete node;
+	ItemDeleted(parent, item);
+}
+
+void DTSDVMListView::DeleteAll(void) {
+	if (!root) {
+		return;
+	}
+
+	delete root;
+	root = NULL;
+	Cleared();
+}
+
+void DTSDVMListView::SortChildren(const wxDataViewItem& parent) {
+	DTSDVMListStore *node = (DTSDVMListStore*)parent.GetID();
+	wxDataViewItemArray items;
+
+	if (!node) {
+		return;
+	}
+
+	node->SortChildren();
+	GetChildren(parent, items);
+	ItemsDeleted(parent, items);
+	ItemsAdded(parent, items);
+}
 
 int DTSDVMListView::GetChildCount(wxDataViewItem& parent) {
 	DTSDVMListStore *entry;
@@ -325,7 +299,7 @@ int DTSDVMListView::GetChildCount(wxDataViewItem& parent) {
 	nok = parent.IsOk();
 	if (nok && (entry = (DTSDVMListStore*)parent.GetID())) {
 		return entry->GetChildCount();
-	} else if (root && nok) {
+	} else if (root && !nok) {
 		return root->GetChildCount();
 	} else {
 		return 0;
@@ -341,7 +315,7 @@ wxDataViewItem DTSDVMListView::GetNthChild(wxDataViewItem& parent, size_t idx) {
 
 	if (nok && entry) {
 		li = entry->GetNthChild(idx);
-	} else if (!nok && (root == entry)) {
+	} else if (!nok && root) {
 		li = root->GetNthChild(idx);
 	} else {
 		li = NULL;
@@ -358,8 +332,27 @@ void DTSDVMListView::SetExpanded(const wxDataViewItem& node, bool expanded) {
 
 	if (nok && entry) {
 		entry->SetExpanded(expanded);
-	} else if (!nok && (root == entry)) {
+	} else if (!nok && root) {
 		root->SetExpanded();
+	}
+}
+
+unsigned int DTSDVMListView::GetContainers(const wxDataViewItem& parent, wxDataViewItemArray& items, bool exonly) const {
+	DTSDVMListStore *node;
+	bool nok;
+
+	nok = parent.IsOk();
+	node = (DTSDVMListStore*)parent.GetID();
+
+	if (!nok && !node) {
+		if (root) {
+			items.Add(wxDataViewItem((void*)root));
+			return 1;
+		} else {
+			return 0;
+		}
+	} else {
+		return node->GetContainers(items, exonly);
 	}
 }
 
@@ -402,6 +395,7 @@ void DTSDVMListView::MoveChildDown(const wxDataViewItem& node) {
 		ItemsAdded(pnode, items);
 	}
 }
+
 DTSDVMCtrl::DTSDVMCtrl() {
 	model = NULL;
 }
@@ -428,6 +422,9 @@ DTSDVMCtrl::DTSDVMCtrl(wxWindow *parent, wxWindowID id, DTSDVMListView *model, c
 	col0->SetReorderable(true);
 	col0->SetAlignment(wxALIGN_LEFT);
 	AppendColumn(col0);
+#ifdef _WIN32
+	SetRowHeight(17);
+#endif // _WIN32
 }
 
 DTSDVMCtrl::~DTSDVMCtrl() {

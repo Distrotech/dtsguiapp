@@ -903,7 +903,7 @@ void config_menu(struct dtsgui *dtsgui) {
 	appdata = dtsgui_userdata(dtsgui);
 	appdata->cfg_menu = dtsgui_newmenu(dtsgui, "&Config");
 
-	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&Reconfigure&Wizard", "Run System Reconfigure Wizard.", reconfig_wizard, NULL);
+	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "Reconfigure &Wizard", "Run System Reconfigure Wizard.", reconfig_wizard, NULL);
 	dtsgui_newmenudyn(appdata->cfg_menu, dtsgui, "PBX Setup", "P&BX Configuration", pbx_settings, NULL, &dyn_cfg);
 	if (dyn_cfg) {
 		appdata->dyn_cfg = dyn_cfg;
