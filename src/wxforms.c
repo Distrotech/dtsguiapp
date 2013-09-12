@@ -844,7 +844,7 @@ int open_config(struct dtsgui *dtsgui, void *data) {
 
 	dtsgui_createdyn(dtsgui, appdata->dyn_cfg);
 
-	for(i=0; i < 20;i++ ){
+	for(i=0; i < 30;i++ ){
 		if (appdata->dyn_cfg) {
 			break;
 		}

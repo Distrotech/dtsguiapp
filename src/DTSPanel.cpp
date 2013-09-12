@@ -105,9 +105,13 @@ void DTSPanelEvent::OnButton(wxCommandEvent &event) {
 
 	parent->EventHandler(eid, &event);
 	event.Skip();
-
 }
 
+void DTSPanelEvent::OnDialog(wxCommandEvent &event) {
+	event.SetId(wxID_OK);
+	event.SetEventType(wxEVT_COMMAND_BUTTON_CLICKED);
+	OnButton(event);
+}
 
 void DTSPanelEvent::OnCombo(wxCommandEvent &event) {
 	wxComboBox *cb;
@@ -402,7 +406,7 @@ void DTSPanel::TextBox(const char *title, const char *name, wxString defval, int
 }
 
 void DTSPanel::PasswdBox(const char *title, const char *name, wxString defval, int flags, void *data, enum form_data_type) {
-	TextBox(title, name, defval, flags | wxTE_PASSWORD, 1, data);
+	TextBox(title, name, defval, flags | wxTE_PASSWORD | wxTE_PROCESS_ENTER, 1, data);
 }
 
 void DTSPanel::CheckBox(const char *title, const char *name, int ischecked, const char *checkval, const char *uncheckval, void *data, enum form_data_type dtype) {
@@ -608,7 +612,7 @@ DTSDialog::DTSDialog(DTSFrame *frame, wxString name, int butmask) {
 	panel = dynamic_cast<wxPanel *>(this);
 	panel->Create(dialog, -1);
 	panel->SetName(name);
-
+	panel->Bind(wxEVT_TEXT_ENTER, &DTSPanelEvent::OnDialog, dtsevthandler);
 
 	SetupWin();
 }
