@@ -1,3 +1,5 @@
+#include <vector>
+
 #include <wx/splitter.h>
 #include <wx/panel.h>
 #include <wx/gbsizer.h>
@@ -16,6 +18,7 @@
 
 #include "DTSFrame.h"
 #include "DTSPanel.h"
+#include "DTSListView.h"
 #include "DTSTreeWindow.h"
 
 enum treewinmenu {
@@ -37,7 +40,6 @@ DTSTreeWindowEvent::DTSTreeWindowEvent(void *userdata, event_callback ev_cb, DTS
 void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
 	DTSTreeWindow *tw;
 	wxDataViewItem p_cont, f_item, l_item;
-	wxDataViewItemArray items;
 	int evid, cnt;
 	bool cont,first = true,last = true;
 
@@ -46,6 +48,8 @@ void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
 
 	if (evid == wxEVT_DATAVIEW_SELECTION_CHANGED) {
 		printf("Got ya\n");
+	} else if (evid == wxEVT_DATAVIEW_ITEM_EXPANDED) {
+		parent->TreeResize();
 	} else if (evid == wxEVT_DATAVIEW_ITEM_CONTEXT_MENU) {
 		if ((a_item = event.GetItem())) {
 			if (vm->IsContainer(a_item)) {
@@ -58,13 +62,13 @@ void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
 				cont = false;
 			}
 
-			cnt=tree->GetChildCount(p_cont);
+			cnt=vm->GetChildCount(p_cont);
 			if (p_cont && (cnt > 1)) {
-				f_item = tree->GetNthChild(p_cont, 0);
+				f_item = vm->GetNthChild(p_cont, 0);
 				if (f_item != a_item) {
 					first = false;
 				}
-				l_item = tree->GetNthChild(p_cont, cnt-1);
+				l_item = vm->GetNthChild(p_cont, cnt-1);
 				if (l_item != a_item) {
 					last = false;
 				}
@@ -79,149 +83,72 @@ void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
 	}
 }
 
-void DTSTreeWindowEvent::MenuEvent(wxCommandEvent &event) {
-	enum treewinmenu eid;
+bool DTSTreeWindowEvent::ParentConfig(const wxDataViewItem parent, wxDataViewItemArray &cont, wxDataViewItemArray &sel) {
+	bool expand;
+	unsigned int cont_cnt, cnt;
+
+	/* Get enabled/selection state of parent*/
+	expand = tree->IsExpanded(parent);
+	tree->GetSelections(sel);
+
+	/*mark expanded containers*/
+	cont_cnt = vm->GetContainers(parent, cont, false);
+	for (cnt=0; cnt < cont_cnt;cnt++) {
+		vm->SetExpanded(cont[cnt], tree->IsExpanded(cont[cnt]));
+	}
+	return expand;
+}
+
+void DTSTreeWindowEvent::MenuEvent(wxCommandEvent &event) {	enum treewinmenu eid;
+	wxDataViewItemArray items, sel;
 	wxDataViewItem p_cont;
 	DTSFrame *frame;
+	bool expand;
 
 	p_cont = (a_cont == a_item) ? vm->GetParent(a_cont) : a_cont;
 
 	eid=(treewinmenu)event.GetId();
 	switch(eid) {
 		case DTS_TREEWIN_MENU_MOVEDOWN:
-			MoveDown(p_cont);
+			expand = ParentConfig(p_cont, items, sel);
+			vm->MoveChildDown(a_item);
+			tree->ReloadParent(p_cont, expand, items, sel);
 			break;
 		case DTS_TREEWIN_MENU_MOVEUP:
-			MoveUp(p_cont);
+			expand = ParentConfig(p_cont, items, sel);
+			vm->MoveChildUp(a_item);
+			tree->ReloadParent(p_cont, expand, items, sel);
 			break;
 		case DTS_TREEWIN_MENU_DELETE:
 			frame = parent->GetFrame();
 			if (frame->Confirm("Are you sure you want to delete this item")) {
-				tree->DeleteItem(a_item);
+				vm->Delete(a_item);
 			}
 			break;
 		case DTS_TREEWIN_MENU_SORT:
-			Sort(p_cont);
+			expand = ParentConfig(p_cont, items, sel);
+			vm->SortChildren(a_cont);
+			tree->ReloadParent(a_cont, expand, items, sel);
 			break;
 	}
 }
 
-void DTSTreeWindowEvent::MoveDown(wxDataViewItem p_cont) {
-	wxDataViewItemArray items;
-	int cnt,i;
+void DTSTreeWindowEvent::SplitterEvent(wxSplitterEvent& event) {
+	DTSTreeWindow *tw;
+	int psize;
+	int evid;
 
-	cnt = vm->GetChildren(p_cont, items);
-	if (a_item == items[cnt-1]) {
-		return;
+	tw = (DTSTreeWindow*)parent;
+	evid = event.GetEventType();
+
+	if (evid == wxEVT_SPLITTER_SASH_POS_CHANGED) {
+		psize = tw->GetTreePaneSize();
+#ifdef _WIN32
+		tree->GetColumn(0)->SetWidth(psize);
+#else
+		tree->GetColumn(0)->SetMinWidth(psize);
+#endif // _WIN32
 	}
-	for(i=0; i < cnt;i++) {
-		if (items[i] == a_item) {
-			break;
-		}
-	}
-	i+=2;
-	if (i > cnt) {
-		return;
-	}
-	if (i == cnt) {
-		if (a_cont == a_item) {
-			tree->AppendContainer(p_cont, vm->GetItemText(a_item), -1, tree->IsExpanded(a_item), vm->GetItemData(a_item));
-		} else {
-			tree->AppendItem(p_cont, vm->GetItemText(a_item), -1, vm->GetItemData(a_item));
-		}
-	} else {
-		if (a_cont == a_item) {
-			tree->InsertContainer(p_cont, items[i], vm->GetItemText(a_item), -1, tree->IsExpanded(a_item), vm->GetItemData(a_item));
-		} else {
-			tree->InsertItem(p_cont, items[i], vm->GetItemText(a_item), -1, vm->GetItemData(a_item));
-		}
-	}
-	tree->DeleteItem(a_item);
-}
-
-void DTSTreeWindowEvent::Float(wxDataViewItemArray items, wxDataViewItem p_cont, wxDataViewItem f_item, int i) {
-	bool iscontainer;
-
-	iscontainer = vm->IsContainer(f_item);
-	if (i == 0) {
-		if (iscontainer) {
-			tree->PrependContainer(p_cont, vm->GetItemText(f_item), -1, tree->IsExpanded(f_item), vm->GetItemData(f_item));
-		} else {
-			tree->PrependItem(p_cont, vm->GetItemText(f_item), -1, vm->GetItemData(f_item));
-		}
-	} else {
-		if (iscontainer) {
-			tree->InsertContainer(p_cont, items[i], vm->GetItemText(f_item), -1, tree->IsExpanded(f_item), vm->GetItemData(f_item));
-		} else {
-			tree->InsertItem(p_cont, items[i], vm->GetItemText(f_item), -1, vm->GetItemData(f_item));
-		}
-	}
-	tree->DeleteItem(f_item);
-}
-
-void DTSTreeWindowEvent::MoveUp(wxDataViewItem p_cont) {
-	wxDataViewItemArray items;
-	int cnt,i;
-
-	cnt = vm->GetChildren(p_cont, items);
-	if (a_item == items[0]) {
-		return;
-	}
-	for(i=0; i < cnt;i++) {
-		if (items[i] == a_item) {
-			break;
-		}
-	}
-	i--;
-	if (i < 0) {
-		return;
-	}
-	Float(items, p_cont, a_item, i);
-}
-
-void DTSTreeWindowEvent::Sort(wxDataViewItem p_cont) {
-	wxDataViewItemArray items;
-	wxDataViewItem tmp;
-	wxString tocmp[2];
-	int cnt,i,j;
-
-	cnt = vm->GetChildren(p_cont, items);
-
-	/*Sort Items*/
-	do {
-		j = 0;
-		for(i=0; i < cnt-1;i++) {
-			if (vm->IsContainer(items[i])) {
-				continue;
-			}
-			tocmp[0] = vm->GetItemText(items[i]);
-			tocmp[1] = vm->GetItemText(items[i+1]);
-			if (tocmp[0].Cmp(tocmp[1]) > 0) {
-				j = 1;
-				Float(items, p_cont, items[i+1], i);
-				items[i] = tree->GetNthChild(p_cont, i);
-				items[i+1] = tree->GetNthChild(p_cont, i+1);
-			}
-		}
-	} while (j);
-
-	/*Sort Containers*/
-	do {
-		j = 0;
-		for(i=0; i < cnt-1;i++) {
-			if (!vm->IsContainer(items[i])) {
-				continue;
-			}
-			tocmp[0] = vm->GetItemText(items[i]);
-			tocmp[1] = vm->GetItemText(items[i+1]);
-			if (tocmp[0].Cmp(tocmp[1]) > 0) {
-				j = 1;
-				Float(items, p_cont, items[i+1], i);
-				items[i] = tree->GetNthChild(p_cont, i);
-				items[i+1] = tree->GetNthChild(p_cont, i+1);
-			}
-		}
-	} while (j);
 }
 
 void free_menu(void *data) {
@@ -240,7 +167,7 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, wxString stat_ms
 	wxSplitterWindow *sw = static_cast<wxSplitterWindow*>(this);
 	wxBoxSizer *p_sizer = new wxBoxSizer(wxHORIZONTAL);
 	treesizer = new wxBoxSizer(wxVERTICAL);
-	wxDataViewItem root;
+	wxDataViewItem root, root4;
 
 	if ((rmenu = (struct treemenu*)objalloc(sizeof(*rmenu), free_menu))) {
 		wxMenu *menu;
@@ -268,7 +195,9 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, wxString stat_ms
 
 	t_pane->SetSizer(treesizer);
 	t_pane->SetScrollRate(10, 10);
-	tree = new wxDataViewTreeCtrl(t_pane, wxID_ANY);
+	vm = new DTSDVMListView();
+	tree = new DTSDVMCtrl(t_pane, wxID_ANY, vm, wxDefaultPosition, wxDefaultSize, wxDV_ROW_LINES|wxDV_NO_HEADER);
+
 	dtsevthandler = new DTSTreeWindowEvent(NULL, NULL, this);
 	treesizer->Add(tree, 1,wxEXPAND,0);
 
@@ -283,24 +212,30 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, wxString stat_ms
 	p = (w * pos) / 100;
 	SetSashPosition(p, true);
 
-	tree->GetParent();
+	root = tree->AppendContainer(wxDataViewItem(NULL), "The Root");
 
-	root = tree->AppendContainer(wxDataViewItem(0), "The Root");
-
-	tree->AppendContainer(root, "Root2");
-	tree->AppendContainer(root, "Root3");
-	tree->AppendContainer(root, "Root4");
 	tree->AppendItem(root, "Child E");
+	tree->AppendContainer(root, "Root2");
 	tree->AppendItem(root, "Child D");
+	tree->AppendContainer(root, "Root3");
 	tree->AppendItem(root, "Child C");
+	root4 = tree->AppendContainer(root, "Root4");
 	tree->AppendItem(root, "Child B");
 	tree->AppendItem(root, "Child A");
 
+	tree->AppendItem(root4, "Child E");
+	tree->AppendItem(root4, "Child D");
+	tree->AppendItem(root4, "Child C");
+	tree->AppendItem(root4, "Child B");
+	tree->AppendItem(root4, "Child A");
+
 	tree->Bind(wxEVT_DATAVIEW_SELECTION_CHANGED, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
+	tree->Bind(wxEVT_DATAVIEW_ITEM_EXPANDED, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
 	tree->Bind(wxEVT_DATAVIEW_ITEM_CONTEXT_MENU, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
 	tree->Bind(wxEVT_DATAVIEW_ITEM_EDITING_DONE, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
 	frame->Bind(wxEVT_DATAVIEW_ITEM_BEGIN_DRAG, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
 	tree->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSTreeWindowEvent::MenuEvent, dtsevthandler);
+	sw->Bind(wxEVT_SPLITTER_SASH_POS_CHANGED, &DTSTreeWindowEvent::SplitterEvent, dtsevthandler);
 
 	tree->Expand(root);
 	tree->Select(root);
@@ -309,14 +244,22 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, wxString stat_ms
 	tree->EnableDropTarget(wxDF_UNICODETEXT);
 
 	treesizer->SetSizeHints(t_pane);
-	tree->GetColumn(0)->SetWidth(wxCOL_WIDTH_AUTOSIZE);
 	treesizer->FitInside(t_pane);
 	treesizer->Layout();
+#ifdef _WIN32
+	tree->GetColumn(0)->SetWidth(p - sw->GetSashSize());
+#else
+	tree->GetColumn(0)->SetMinWidth(p - sw->GetSashSize());
+#endif // _WIN32
 	Show(false);
 }
 
-wxDataViewTreeCtrl *DTSTreeWindow::GetTreeCtrl() {
+DTSDVMCtrl *DTSTreeWindow::GetTreeCtrl() {
 	return tree;
+}
+
+int DTSTreeWindow::GetTreePaneSize() {
+	return GetSashPosition() - GetSashSize();
 }
 
 void DTSTreeWindow::TreeResize() {

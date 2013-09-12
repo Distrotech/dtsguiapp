@@ -130,7 +130,8 @@ libdtsapp_gui_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am_libdtsapp_gui_la_OBJECTS = libdtsapp_gui_la-DTSApp.lo \
 	libdtsapp_gui_la-DTSFrame.lo libdtsapp_gui_la-DTSPanel.lo \
-	libdtsapp_gui_la-DTSTreeWindow.lo libdtsapp_gui_la-evdata.lo \
+	libdtsapp_gui_la-DTSTreeWindow.lo \
+	libdtsapp_gui_la-DTSListView.lo libdtsapp_gui_la-evdata.lo \
 	libdtsapp_gui_la-cxxapi.lo libdtsapp_gui_la-dtsuserpw.lo
 libdtsapp_gui_la_OBJECTS = $(am_libdtsapp_gui_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
@@ -377,7 +378,7 @@ EXTRA_DIST = include
 lib_LTLIBRARIES = libdtsapp_gui.la
 includeinstdir = $(includedir)/dtsapplib
 includeinst_DATA = include/dtsgui.h
-libdtsapp_gui_la_SOURCES = DTSApp.cpp DTSFrame.cpp DTSPanel.cpp DTSTreeWindow.cpp evdata.cpp cxxapi.cpp dtsuserpw.c
+libdtsapp_gui_la_SOURCES = DTSApp.cpp DTSFrame.cpp DTSPanel.cpp DTSTreeWindow.cpp DTSListView.cpp evdata.cpp cxxapi.cpp dtsuserpw.c
 libdtsapp_gui_la_LIBADD = $(WX_LIBS) $(DTSAPPLIB_LIBS)
 libdtsapp_gui_la_CFLAGS = $(AM_CFLAGS) $(WX_CFLAGS) $(DTSAPPLIB_CFLAGS)
 libdtsapp_gui_la_CXXFLAGS = $(AM_CXXFLAGS) $(WX_CXXFLAGS) $(DTSAPPLIB_CFLAGS)
@@ -524,6 +525,7 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdtsapp_gui_la-DTSApp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdtsapp_gui_la-DTSFrame.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdtsapp_gui_la-DTSListView.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdtsapp_gui_la-DTSPanel.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdtsapp_gui_la-DTSTreeWindow.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdtsapp_gui_la-cxxapi.Plo@am__quote@
@@ -621,6 +623,13 @@ libdtsapp_gui_la-DTSTreeWindow.lo: DTSTreeWindow.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='DTSTreeWindow.cpp' object='libdtsapp_gui_la-DTSTreeWindow.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdtsapp_gui_la_CXXFLAGS) $(CXXFLAGS) -c -o libdtsapp_gui_la-DTSTreeWindow.lo `test -f 'DTSTreeWindow.cpp' || echo '$(srcdir)/'`DTSTreeWindow.cpp
+
+libdtsapp_gui_la-DTSListView.lo: DTSListView.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdtsapp_gui_la_CXXFLAGS) $(CXXFLAGS) -MT libdtsapp_gui_la-DTSListView.lo -MD -MP -MF $(DEPDIR)/libdtsapp_gui_la-DTSListView.Tpo -c -o libdtsapp_gui_la-DTSListView.lo `test -f 'DTSListView.cpp' || echo '$(srcdir)/'`DTSListView.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdtsapp_gui_la-DTSListView.Tpo $(DEPDIR)/libdtsapp_gui_la-DTSListView.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='DTSListView.cpp' object='libdtsapp_gui_la-DTSListView.lo' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdtsapp_gui_la_CXXFLAGS) $(CXXFLAGS) -c -o libdtsapp_gui_la-DTSListView.lo `test -f 'DTSListView.cpp' || echo '$(srcdir)/'`DTSListView.cpp
 
 libdtsapp_gui_la-evdata.lo: evdata.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdtsapp_gui_la_CXXFLAGS) $(CXXFLAGS) -MT libdtsapp_gui_la-evdata.lo -MD -MP -MF $(DEPDIR)/libdtsapp_gui_la-evdata.Tpo -c -o libdtsapp_gui_la-evdata.lo `test -f 'evdata.cpp' || echo '$(srcdir)/'`evdata.cpp

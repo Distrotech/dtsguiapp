@@ -57,6 +57,7 @@ class DTSPanelEvent: public wxEvtHandler {
 		void OnCombo(wxCommandEvent &event);
 		void OnDTSEvent(wxCommandEvent &event);
 		void SetCallback(event_callback evcb = NULL, void *userdata = NULL);
+		void OnDialog(wxCommandEvent &event);
 	private:
 		void *data;
 		event_callback evcb;

@@ -16,16 +16,14 @@ class DTSTreeWindowEvent: public wxEvtHandler {
 		DTSTreeWindowEvent(void *userdata = NULL, event_callback evcb = NULL, DTSTreeWindow *win = NULL);
 		void TreeEvent(wxDataViewEvent &event);
 		void MenuEvent(wxCommandEvent &event);
+		void SplitterEvent(wxSplitterEvent& event);
 	private:
-		void MoveDown(wxDataViewItem p_cont);
-		void MoveUp(wxDataViewItem p_cont);
-		void Float(wxDataViewItemArray items, wxDataViewItem p_cont, wxDataViewItem f_item, int i);
-		void Sort(wxDataViewItem p_cont);
+		bool ParentConfig(const wxDataViewItem parent, wxDataViewItemArray &cont, wxDataViewItemArray &sel);
 		void *data;
 		event_callback evcb;
 		DTSTreeWindow *parent;
-		wxDataViewTreeStore *vm;
-		wxDataViewTreeCtrl *tree;
+		DTSDVMListView *vm;
+		DTSDVMCtrl *tree;
 		wxDataViewItem a_item;
 		wxDataViewItem a_cont;
 };
@@ -36,14 +34,16 @@ class DTSTreeWindow: public DTSObject, public virtual wxSplitterWindow {
 		~DTSTreeWindow();
 		void ShowRMenu(bool cont, int cnt, bool first, bool last);
 		bool Show(bool = true);
-		wxDataViewTreeCtrl *GetTreeCtrl();
+		DTSDVMCtrl *GetTreeCtrl();
 		void TreeResize();
+		int GetTreePaneSize();
 	protected:
 		void SetWindow(wxWindow *window);
 	private:
 		wxScrolledWindow *t_pane;
 		wxWindow *c_pane;
-		wxDataViewTreeCtrl *tree;
+		DTSDVMCtrl *tree;
+		DTSDVMListView *vm;
 		wxBoxSizer *sizer;
 		wxWindow *a_window;
 		DTSTreeWindowEvent *dtsevthandler;
