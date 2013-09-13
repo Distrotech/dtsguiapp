@@ -42,9 +42,10 @@ typedef struct form_item form_item;
 typedef struct dynamic_panel dynamic_panel;
 
 /*callbacks*/
-typedef int (*dtsgui_configcb)(struct dtsgui *, void *userdata);
-typedef void (*event_callback)(dtsgui_pane, int type, int id, void *);
-typedef dtsgui_pane (*dtsgui_dynpanel)(struct dtsgui *, const char *title, void *);
+typedef int (*dtsgui_configcb)(struct dtsgui *, void *);
+typedef void (*event_callback)(dtsgui_pane, int, int, void *);
+typedef dtsgui_pane (*dtsgui_dynpanel)(struct dtsgui *, const char *, void *);
+typedef void (*dtsgui_tree_cb)(struct dtsgui *, dtsgui_treeview, void *, void *);
 
 struct point {
 	int x;
@@ -109,7 +110,7 @@ dtsgui_pane dtsgui_panel(struct dtsgui *dtsgui, const char *name, int butmask, e
 void dtsgui_xmlpanel(dtsgui_pane pane, struct xml_doc *xmldoc);
 void dtsgui_delpane(dtsgui_pane pane);
 dtsgui_pane dtsgui_textpane(struct dtsgui *dtsgui, const char *title, const char *buf);
-dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title);
+dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title, dtsgui_tree_cb tree_cb);
 dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title);
 dtsgui_pane dtsgui_addpage(dtsgui_tabview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc);
 void dtsgui_showpanel(dtsgui_pane pane, int act);

@@ -16,10 +16,11 @@ bool cmp_title(DTSDVMListStore *c1,DTSDVMListStore *c2) {
 	return (s1 < s2);
 }
 
-DTSDVMListStore::DTSDVMListStore(DTSDVMListStore* parent, bool is_container, const wxString& title) {
+DTSDVMListStore::DTSDVMListStore(DTSDVMListStore* parent, bool is_container, const wxString& title, void *userdata) {
 	this->parent = parent;
 	this->title = title;
 	this->is_container = is_container;
+	this->data = userdata;
 }
 
 DTSDVMListStore::~DTSDVMListStore() {
@@ -154,6 +155,10 @@ bool DTSDVMListStore::MoveChildDown(size_t idx) {
 	return true;
 }
 
+void *DTSDVMListStore::GetUserData() {
+	return data;
+}
+
 DTSDVMListView::DTSDVMListView(int cols, bool cont_cols) {
 	hascontcol = cont_cols;
 	root = NULL;
@@ -211,6 +216,10 @@ unsigned int DTSDVMListView::GetColumnCount() const {
 	return colcnt;
 }
 
+bool DTSDVMListView::HasContainerColumns(const wxDataViewItem& item) const {
+	return hascontcol;
+}
+
 wxString DTSDVMListView::GetColumnType(unsigned int col) const {
 	return wxT("string");
 }
@@ -235,16 +244,12 @@ bool DTSDVMListView::SetValue(const wxVariant &variant, const wxDataViewItem &it
 	return false;
 }
 
-bool DTSDVMListView::HasContainerColumns(const wxDataViewItem& item) const {
-	return hascontcol;
-}
-
 DTSDVMListStore* DTSDVMListView::GetRoot() {
 	return root;
 }
 
-DTSDVMListStore* DTSDVMListView::SetRoot(const wxString& title) {
-	root = new DTSDVMListStore(NULL, true, title);
+DTSDVMListStore* DTSDVMListView::SetRoot(const wxString& title, void *userdata) {
+	root = new DTSDVMListStore(NULL, true, title, userdata);
 	return root;
 }
 
@@ -396,6 +401,18 @@ void DTSDVMListView::MoveChildDown(const wxDataViewItem& node) {
 	}
 }
 
+void *DTSDVMListView::GetUserData(const wxDataViewItem& node) {
+	DTSDVMListStore *data;
+
+	if (!node.IsOk() && root) {
+		return root->GetUserData();
+	} else if ((data = (DTSDVMListStore*)node.GetID())) {
+		return data->GetUserData();
+	} else {
+		return NULL;
+	}
+}
+
 DTSDVMCtrl::DTSDVMCtrl() {
 	model = NULL;
 }
@@ -453,64 +470,29 @@ DTSDVMListView *DTSDVMCtrl::GetStore() {
 	return model;
 }
 
-wxDataViewItem DTSDVMCtrl::AppendItem(wxDataViewItem parent, const wxString& title) {
+wxDataViewItem DTSDVMCtrl::AppendItem(wxDataViewItem parent, const wxString& title, void *userdata) {
+	return AppendNode(parent, false, title, userdata);
+}
+
+wxDataViewItem DTSDVMCtrl::AppendContainer(wxDataViewItem parent, const wxString& title, void *userdata) {
+	return AppendNode(parent, true, title, userdata);
+}
+
+wxDataViewItem DTSDVMCtrl::AppendNode(wxDataViewItem parent, bool iscont, const wxString& title, void *userdata) {
 	DTSDVMListStore *li, *node;
 	wxDataViewItem dvi;
 
 
 	if (!parent.IsOk() && !model->GetRoot()) {
-		li = model->SetRoot(title);
+		li = model->SetRoot(title, userdata);
 	} else if (!(node = (DTSDVMListStore*)parent.GetID())) {
 		return wxDataViewItem(NULL);
 	} else {
-		li= new DTSDVMListStore(node, false, title);
+		li= new DTSDVMListStore(node, iscont, title, userdata);
 		node->Append(li);
 	}
 
 	dvi = wxDataViewItem(li);
 	model->ItemAdded(parent, dvi);
 	return dvi;
-}
-
-wxDataViewItem DTSDVMCtrl::AppendContainer(wxDataViewItem parent, const wxString& title) {
-	DTSDVMListStore *li, *node;
-	wxDataViewItem dvi;
-
-
-	if (!parent.IsOk() && !model->GetRoot()) {
-		li = model->SetRoot(title);
-	} else if (!(node = (DTSDVMListStore*)parent.GetID())) {
-		return wxDataViewItem(NULL);
-	} else {
-		li= new DTSDVMListStore(node, true, title);
-		node->Append(li);
-	}
-
-	dvi = wxDataViewItem(li);
-	model->ItemAdded(parent, dvi);
-	return dvi;
-}
-
-
-void DTSDVMCtrl::ReloadParent(const wxDataViewItem parent, bool do_expand, const wxDataViewItemArray cont, const wxDataViewItemArray sel) {
-	DTSDVMListStore *data;
-	unsigned int cnt;
-
-	/*expand root if was expanded*/
-	if (do_expand) {
-		Expand(parent);
-	}
-
-	/*re select all selected*/
-	for (cnt=0; cnt < sel.size();cnt++) {
-		Select(wxDataViewItem(sel[cnt]));
-	}
-
-	/*re expand containers colapsed*/
-	for (cnt=0; cnt < cont.size();cnt++) {
-		data = (DTSDVMListStore*)cont[cnt].GetID();
-		if (data->IsExpanded()) {
-			Expand(cont[cnt]);
-		}
-	}
 }

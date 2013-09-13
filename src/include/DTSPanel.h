@@ -74,12 +74,15 @@ class DTSObject: public virtual wxWindow {
 		int buttons[6];
 		void EventHandler(int eid, wxCommandEvent *event);
 		struct bucket_list *GetItems(void);
+		void SetUserData(void *data);
+		void *GetUserData(void);
 	protected:
 		DTSFrame *frame;
 		wxString status;
 		wxWindow *panel;
 		DTSPanelEvent *dtsevthandler;
 		struct bucket_list *fitems;
+		void *userdata;
 };
 
 class DTSPanel: public DTSObject {
@@ -95,8 +98,6 @@ class DTSPanel: public DTSObject {
 		void AddItem(wxWindow *item, const wxGBPosition pos, const wxGBSpan span = wxDefaultSpan, int flags = 0, int border = 0,	int growrow = -1);
 		void SetEventCallback(event_callback evcb, void *userdata = NULL);
 		void SetConfigCallback(dtsgui_configcb cb, void *userdata = NULL);
-		void SetUserData(void *data);
-		void *GetUserData(void);
 		void SetXMLDoc(struct xml_doc *xmldoc);
 		struct xml_doc *GetXMLDoc(void);
 		void Update_XML();
@@ -112,7 +113,6 @@ class DTSPanel: public DTSObject {
 		wxGridBagSizer *fgs;
 		bool beenshown;
 		int g_row;
-		void *userdata;
 		struct xml_doc  *xmldoc;
 		dtsgui_configcb configcb;
 		void *config_data;

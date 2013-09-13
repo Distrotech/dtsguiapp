@@ -36,6 +36,7 @@ class DTSFrame: public wxFrame {
 		void SendDTSEvent(int eid, wxObject *evobj);
 		void SetWindow(wxWindow *window);
 		bool DynamicPanel(struct dynamic_panel *p_dyn);
+		struct dtsgui *GetDTSData(void);
 	private:
 		void OnDTSEvent(wxCommandEvent &event);
 		wxBoxSizer *sizer;
