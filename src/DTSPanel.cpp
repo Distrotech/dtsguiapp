@@ -211,6 +211,14 @@ struct bucket_list *DTSObject::GetItems(void) {
 void DTSObject::EventHandler(int eid, wxCommandEvent *event) {
 }
 
+void DTSObject::SetUserData(void *data) {
+	userdata = data;
+}
+
+void *DTSObject::GetUserData(void) {
+	return userdata;
+}
+
 DTSPanel::DTSPanel(DTSFrame *mainwin, wxString statusmsg, int butmask)
 	:DTSObject(statusmsg) {
 	button_mask = butmask;
@@ -481,14 +489,6 @@ void DTSPanel::Buttons(void) {
 
 	fgs->AddGrowableRow(g_row, 0);
 	g_row++;
-}
-
-void DTSPanel::SetUserData(void *data) {
-	userdata = data;
-}
-
-void *DTSPanel::GetUserData(void) {
-	return userdata;
 }
 
 void DTSPanel::Update_XML() {

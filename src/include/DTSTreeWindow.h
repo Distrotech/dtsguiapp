@@ -13,32 +13,33 @@ struct treemenu {
 
 class DTSTreeWindowEvent: public wxEvtHandler {
 	public:
-		DTSTreeWindowEvent(void *userdata = NULL, event_callback evcb = NULL, DTSTreeWindow *win = NULL);
+		DTSTreeWindowEvent(void *userdata = NULL, dtsgui_tree_cb tree_cb = NULL, struct dtsgui *dtsgui = NULL, DTSTreeWindow *win = NULL);
+		~DTSTreeWindowEvent();
 		void TreeEvent(wxDataViewEvent &event);
 		void MenuEvent(wxCommandEvent &event);
 		void SplitterEvent(wxSplitterEvent& event);
 	private:
-		bool ParentConfig(const wxDataViewItem parent, wxDataViewItemArray &cont, wxDataViewItemArray &sel);
+		void SortParent(const wxDataViewItem parent, int action);
 		void *data;
-		event_callback evcb;
+		dtsgui_tree_cb treecb;
 		DTSTreeWindow *parent;
 		DTSDVMListView *vm;
 		DTSDVMCtrl *tree;
 		wxDataViewItem a_item;
 		wxDataViewItem a_cont;
+		struct dtsgui *dtsgui;
 };
 
 class DTSTreeWindow: public DTSObject, public virtual wxSplitterWindow {
 	public:
-		DTSTreeWindow(wxWindow *parent = NULL, DTSFrame *frame = NULL, wxString stat_msg = wxEmptyString, int pos = 30);
+		DTSTreeWindow(wxWindow *parent = NULL, DTSFrame *frame = NULL, dtsgui_tree_cb tree_cb = NULL, wxString stat_msg = wxEmptyString, int pos = 30);
 		~DTSTreeWindow();
 		void ShowRMenu(bool cont, int cnt, bool first, bool last);
 		bool Show(bool = true);
 		DTSDVMCtrl *GetTreeCtrl();
 		void TreeResize();
-		int GetTreePaneSize();
-	protected:
-		void SetWindow(wxWindow *window);
+		void SetTreePaneSize();
+		wxWindow *SetWindow(wxWindow *window);
 	private:
 		wxScrolledWindow *t_pane;
 		wxWindow *c_pane;

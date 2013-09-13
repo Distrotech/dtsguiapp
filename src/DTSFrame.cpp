@@ -241,4 +241,9 @@ void DTSFrame::SendDTSEvent(int eid, wxObject *evobj) {
 	ProcessWindowEvent(event);
 }
 
-
+struct dtsgui *DTSFrame::GetDTSData(void) {
+	if (objref(dtsgui)) {
+		return dtsgui;
+	}
+	return NULL;
+}

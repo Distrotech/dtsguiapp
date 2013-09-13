@@ -28,12 +28,19 @@ enum treewinmenu {
 	DTS_TREEWIN_MENU_DELETE
 };
 
-DTSTreeWindowEvent::DTSTreeWindowEvent(void *userdata, event_callback ev_cb, DTSTreeWindow *win) {
+DTSTreeWindowEvent::DTSTreeWindowEvent(void *userdata, dtsgui_tree_cb tree_cb, struct dtsgui *dtsgui, DTSTreeWindow *win) {
 	data = userdata;
-	evcb = ev_cb;
+	treecb = tree_cb;
 	parent = win;
 	tree = win->GetTreeCtrl();
 	vm = tree->GetStore();
+	this->dtsgui = dtsgui;
+}
+
+DTSTreeWindowEvent::~DTSTreeWindowEvent() {
+	if (dtsgui) {
+		objunref(dtsgui);
+	}
 }
 
 void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
@@ -46,7 +53,10 @@ void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
 	evid = event.GetEventType();
 
 	if (evid == wxEVT_DATAVIEW_SELECTION_CHANGED) {
-		printf("Got ya\n");
+		if ((a_item = event.GetItem()) && treecb) {
+			DTSDVMListStore *ndata = (a_item.IsOk()) ? (DTSDVMListStore*)a_item.GetID() : NULL;
+			treecb(dtsgui, parent, data, ndata);
+		}
 	} else if (evid == wxEVT_DATAVIEW_ITEM_EXPANDED) {
 		parent->TreeResize();
 	} else if (evid == wxEVT_DATAVIEW_ITEM_CONTEXT_MENU) {
@@ -81,41 +91,67 @@ void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
 	}
 }
 
-bool DTSTreeWindowEvent::ParentConfig(const wxDataViewItem parent, wxDataViewItemArray &cont, wxDataViewItemArray &sel) {
-	bool expand;
+void DTSTreeWindowEvent::SortParent(const wxDataViewItem parent, int action) {
+	wxDataViewItemArray expanded, selected;
+	DTSDVMListStore *data;
 	unsigned int cont_cnt, cnt;
 
 	/* Get enabled/selection state of parent*/
-	expand = tree->IsExpanded(parent);
-	tree->GetSelections(sel);
+	tree->GetSelections(selected);
 
 	/*mark expanded containers*/
-	cont_cnt = vm->GetContainers(parent, cont, false);
+	vm->SetExpanded(parent, tree->IsExpanded(parent));
+	cont_cnt = vm->GetContainers(parent, expanded, false);
 	for (cnt=0; cnt < cont_cnt;cnt++) {
-		vm->SetExpanded(cont[cnt], tree->IsExpanded(cont[cnt]));
+		vm->SetExpanded(expanded[cnt], tree->IsExpanded(expanded[cnt]));
 	}
-	return expand;
+
+	switch(action) {
+		case DTS_TREEWIN_MENU_MOVEDOWN:
+			vm->MoveChildDown(a_item);
+			break;
+		case DTS_TREEWIN_MENU_MOVEUP:
+			vm->MoveChildUp(a_item);
+			break;
+		case DTS_TREEWIN_MENU_SORT:
+			vm->SortChildren(a_cont);
+			break;
+	}
+
+	/*re select all selected*/
+	for (cnt=0; cnt < selected.size();cnt++) {
+		tree->Select(wxDataViewItem(selected[cnt]));
+	}
+
+	/*expand root if was expanded*/
+	data = (DTSDVMListStore*)parent.GetID();
+	if (data && data->IsExpanded()) {
+		tree->Expand(parent);
+		data->SetExpanded(false);
+	}
+
+	/*re expand containers colapsed*/
+	for (cnt=0; cnt < expanded.size();cnt++) {
+		data = (DTSDVMListStore*)expanded[cnt].GetID();
+		if (data && data->IsExpanded()) {
+			tree->Expand(expanded[cnt]);
+			data->SetExpanded(false);
+		}
+	}
 }
 
 void DTSTreeWindowEvent::MenuEvent(wxCommandEvent &event) {	enum treewinmenu eid;
-	wxDataViewItemArray items, sel;
 	wxDataViewItem p_cont;
 	DTSFrame *frame;
-	bool expand;
 
 	p_cont = (a_cont == a_item) ? vm->GetParent(a_cont) : a_cont;
 
 	eid=(treewinmenu)event.GetId();
 	switch(eid) {
 		case DTS_TREEWIN_MENU_MOVEDOWN:
-			expand = ParentConfig(p_cont, items, sel);
-			vm->MoveChildDown(a_item);
-			tree->ReloadParent(p_cont, expand, items, sel);
-			break;
 		case DTS_TREEWIN_MENU_MOVEUP:
-			expand = ParentConfig(p_cont, items, sel);
-			vm->MoveChildUp(a_item);
-			tree->ReloadParent(p_cont, expand, items, sel);
+		case DTS_TREEWIN_MENU_SORT:
+			SortParent(p_cont, eid);
 			break;
 		case DTS_TREEWIN_MENU_DELETE:
 			frame = parent->GetFrame();
@@ -123,29 +159,18 @@ void DTSTreeWindowEvent::MenuEvent(wxCommandEvent &event) {	enum treewinmenu eid
 				vm->Delete(a_item);
 			}
 			break;
-		case DTS_TREEWIN_MENU_SORT:
-			expand = ParentConfig(p_cont, items, sel);
-			vm->SortChildren(a_cont);
-			tree->ReloadParent(a_cont, expand, items, sel);
-			break;
 	}
 }
 
 void DTSTreeWindowEvent::SplitterEvent(wxSplitterEvent& event) {
 	DTSTreeWindow *tw;
-	int psize;
 	int evid;
 
 	tw = (DTSTreeWindow*)parent;
 	evid = event.GetEventType();
 
 	if (evid == wxEVT_SPLITTER_SASH_POS_CHANGED) {
-		psize = tw->GetTreePaneSize();
-#ifdef _WIN32
-		tree->GetColumn(0)->SetWidth(psize);
-#else
-		tree->GetColumn(0)->SetMinWidth(psize);
-#endif // _WIN32
+		tw->SetTreePaneSize();
 	}
 }
 
@@ -157,11 +182,11 @@ void free_menu(void *data) {
 	}
 }
 
-DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, wxString stat_msg, int pos)
+DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb tree_cb, wxString stat_msg, int pos)
 	:wxSplitterWindow(parent, -1, wxDefaultPosition, wxDefaultSize),
 	 DTSObject(stat_msg) {
 
-	int w, h, p;
+	int w, h, p, psize;
 	wxSplitterWindow *sw = static_cast<wxSplitterWindow*>(this);
 	wxBoxSizer *p_sizer = new wxBoxSizer(wxHORIZONTAL);
 	treesizer = new wxBoxSizer(wxVERTICAL);
@@ -196,7 +221,7 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, wxString stat_ms
 	vm = new DTSDVMListView(1, true);
 	tree = new DTSDVMCtrl(t_pane, wxID_ANY, vm, wxDefaultPosition, wxDefaultSize, wxDV_ROW_LINES|wxDV_NO_HEADER);
 
-	dtsevthandler = new DTSTreeWindowEvent(NULL, NULL, this);
+	dtsevthandler = new DTSTreeWindowEvent(userdata, tree_cb, (frame) ? frame->GetDTSData() : NULL, this);
 	treesizer->Add(tree, 1,wxEXPAND,0);
 
 	sizer = new wxBoxSizer(wxHORIZONTAL);
@@ -247,14 +272,27 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, wxString stat_ms
 
 	/*can only expand when not empty*/
 	tree->Expand(root);
+	SetTreePaneSize();
+
+	psize = p - GetSashSize();
+#ifdef _WIN32
+	tree->GetColumn(0)->SetWidth(psize);
+#else
+	tree->GetColumn(0)->SetMinWidth(psize);
+#endif // _WIN32
 }
 
 DTSDVMCtrl *DTSTreeWindow::GetTreeCtrl() {
 	return tree;
 }
 
-int DTSTreeWindow::GetTreePaneSize() {
-	return GetSashPosition() - GetSashSize();
+void DTSTreeWindow::SetTreePaneSize() {
+	int psize = GetSashPosition() - GetSashSize();
+#ifdef _WIN32
+		tree->GetColumn(0)->SetWidth(psize);
+#else
+		tree->GetColumn(0)->SetMinWidth(psize);
+#endif // _WIN32
 }
 
 void DTSTreeWindow::TreeResize() {
@@ -262,23 +300,25 @@ void DTSTreeWindow::TreeResize() {
 	tree->GetColumn(0)->SetHidden(false);
 }
 
-void DTSTreeWindow::SetWindow(wxWindow *window) {
+wxWindow *DTSTreeWindow::SetWindow(wxWindow *window) {
+	wxWindow *oldwin;
+
 	if (!window || (window == a_window)) {
-		return;
+		return NULL;
 	}
 
-	if (a_window) {
+	if ((oldwin = a_window)) {
 		sizer->Detach(0);
 		a_window->Show(false);
-		sizer->Prepend(window, 1, wxALL | wxEXPAND);
-	} else {
-		sizer->Add(window, 1, wxALL | wxEXPAND);
 	}
+	sizer->Add(window, 1, wxALL | wxEXPAND);
 
 	window->Show(true);
 	sizer->Layout();
 	sizer->FitInside(c_pane);
 	a_window = window;
+
+	return oldwin;
 }
 
 void DTSTreeWindow::ShowRMenu(bool cont, int cnt, bool first, bool last) {

@@ -253,11 +253,11 @@ void dtsgui_delpane(dtsgui_pane pane) {
 	delete p;
 }
 
-extern dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title) {
+extern dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title, dtsgui_tree_cb tree_cb) {
 	DTSTreeWindow *tw;
 	DTSFrame *frame = (DTSFrame *)dtsgui->appframe;
 
-	tw = new DTSTreeWindow(frame, frame, title, 30);
+	tw = new DTSTreeWindow(frame, frame, tree_cb, title, 30);
 	return tw;
 }
 
