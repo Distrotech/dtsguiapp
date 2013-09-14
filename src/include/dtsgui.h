@@ -42,10 +42,10 @@ typedef struct form_item form_item;
 typedef struct dynamic_panel dynamic_panel;
 
 /*callbacks*/
-typedef int (*dtsgui_configcb)(struct dtsgui *, void *);
+typedef int (*dtsgui_configcb)(struct dtsgui*, void*);
 typedef void (*event_callback)(dtsgui_pane, int, int, void *);
-typedef dtsgui_pane (*dtsgui_dynpanel)(struct dtsgui *, const char *, void *);
-typedef void (*dtsgui_tree_cb)(struct dtsgui *, dtsgui_treeview, void *, void *);
+typedef dtsgui_pane (*dtsgui_dynpanel)(struct dtsgui*, const char*, void*);
+typedef void (*dtsgui_tree_cb)(struct dtsgui *, dtsgui_treeview, const char*, void*, void*);
 
 struct point {
 	int x;
@@ -83,6 +83,7 @@ enum widget_type {
 #define wx_PANEL_BUTTON_DIR		wx_PANEL_BUTTON_BACK | wx_PANEL_BUTTON_FWD
 #define wx_PANEL_BUTTON_ACTION	wx_PANEL_BUTTON_YES | wx_PANEL_BUTTON_NO
 #define wx_PANEL_BUTTON_ALL		wx_PANEL_BUTTON_ACTION | wx_PANEL_BUTTON_NAV
+#define wx_PANEL_BUTTON_NONE	0
 
 /*application config and control*/
 dtsgui *dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point wsize,
@@ -113,6 +114,9 @@ dtsgui_pane dtsgui_textpane(struct dtsgui *dtsgui, const char *title, const char
 dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title, dtsgui_tree_cb tree_cb);
 dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title);
 dtsgui_pane dtsgui_addpage(dtsgui_tabview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc);
+dtsgui_pane dtsgui_treepane(dtsgui_treeview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc);
+void dtsgui_treeshow(dtsgui_treeview tv, dtsgui_pane p);
+
 void dtsgui_showpanel(dtsgui_pane pane, int act);
 void dtsgui_rundialog(dtsgui_pane pane, event_callback evcb, void *data);
 void dtsgui_xmlpanel_update(dtsgui_pane pane);

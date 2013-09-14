@@ -308,7 +308,7 @@ void DTSPanel::SetConfigCallback(dtsgui_configcb cb, void *userdata) {
 
 bool DTSPanel::ShowPanel(bool show) {
 	if (show) {
-		if (frame && (type != wx_DTSPANEL_TAB)) {
+		if (frame && (type != wx_DTSPANEL_TAB) && (type != wx_DTSPANEL_TREE)) {
 			frame->SetStatusText(status);
 		}
 
