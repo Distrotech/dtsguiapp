@@ -53,10 +53,7 @@ void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
 	evid = event.GetEventType();
 
 	if (evid == wxEVT_DATAVIEW_SELECTION_CHANGED) {
-		if ((a_item = event.GetItem()) && treecb) {
-			DTSDVMListStore *ndata = (a_item.IsOk()) ? (DTSDVMListStore*)a_item.GetID() : NULL;
-			treecb(dtsgui, parent, data, ndata);
-		}
+		TreeCallback(event.GetItem());
 	} else if (evid == wxEVT_DATAVIEW_ITEM_EXPANDED) {
 		parent->TreeResize();
 	} else if (evid == wxEVT_DATAVIEW_ITEM_CONTEXT_MENU) {
@@ -174,6 +171,13 @@ void DTSTreeWindowEvent::SplitterEvent(wxSplitterEvent& event) {
 	}
 }
 
+void DTSTreeWindowEvent::TreeCallback(const wxDataViewItem item) {
+	if (item && treecb) {
+		DTSDVMListStore *ndata = (item.IsOk()) ? (DTSDVMListStore*)item.GetID() : NULL;
+		treecb(dtsgui, parent, ndata->GetTitle().ToUTF8(), data, ndata);
+	}
+}
+
 void free_menu(void *data) {
 	struct treemenu *rmenu = (struct treemenu*)data;
 
@@ -235,6 +239,14 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 	p = (w * pos) / 100;
 	SetSashPosition(p, true);
 
+	treesizer->SetSizeHints(t_pane);
+	treesizer->FitInside(t_pane);
+	treesizer->Layout();
+
+	sizer->SetSizeHints(c_pane);
+	sizer->FitInside(c_pane);
+	sizer->Layout();
+
 	tree->Bind(wxEVT_DATAVIEW_SELECTION_CHANGED, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
 	tree->Bind(wxEVT_DATAVIEW_ITEM_EXPANDED, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
 	tree->Bind(wxEVT_DATAVIEW_ITEM_CONTEXT_MENU, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
@@ -243,10 +255,6 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 	tree->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSTreeWindowEvent::MenuEvent, dtsevthandler);
 	sw->Bind(wxEVT_SPLITTER_SASH_POS_CHANGED, &DTSTreeWindowEvent::SplitterEvent, dtsevthandler);
 
-	treesizer->SetSizeHints(t_pane);
-	treesizer->FitInside(t_pane);
-	treesizer->Layout();
-
 	tree->EnableDragSource(wxDF_UNICODETEXT);
 	tree->EnableDropTarget(wxDF_UNICODETEXT);
 
@@ -254,6 +262,7 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 
 	root = tree->AppendContainer(wxDataViewItem(NULL), "The Root");
 	tree->Select(root);
+	dtsevthandler->TreeCallback(root);
 
 	tree->AppendItem(root, "Child E");
 	tree->AppendContainer(root, "Root2");
@@ -350,6 +359,10 @@ bool DTSTreeWindow::Show(bool show) {
 
 	}
 	return wxSplitterWindow::Show(show);
+}
+
+wxWindow *DTSTreeWindow::GetClientPane() {
+	return c_pane;
 }
 
 DTSTabWindow::DTSTabWindow(DTSFrame *frame, wxString stat_msg)

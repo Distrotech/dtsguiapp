@@ -23,9 +23,8 @@ class DTSDVMListStore {
 		bool MoveChildUp(size_t idx);
 		bool MoveChildDown(size_t idx);
 		void *GetUserData();
-	protected:
-		wxString title;
 	private:
+		wxString title;
 		std::vector<DTSDVMListStore*> children;
 		void *data;
 		DTSDVMListStore *parent;

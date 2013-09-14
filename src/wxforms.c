@@ -506,12 +506,8 @@ void handle_test(dtsgui_pane p, int type, int event, void *data) {
 	}
 }
 
-void testpanel(struct dtsgui *dtsgui, dtsgui_menu menu) {
-	dtsgui_pane p;
+void testpanel(dtsgui_pane p) {
 	struct form_item *l;
-
-	p = dtsgui_panel(dtsgui, "Test Panel", wx_PANEL_BUTTON_ALL, 1, NULL);
-	dtsgui_setevcallback(p, handle_test, NULL);
 
 	dtsgui_textbox(p, "TextBox", "text", "Text", NULL);
 	dtsgui_textbox_multi(p, "Multi Line", "multi", "L\nL\n", NULL);
@@ -530,8 +526,6 @@ void testpanel(struct dtsgui *dtsgui, dtsgui_menu menu) {
 	dtsgui_listbox_add(l, "Test3", NULL);
 	dtsgui_listbox_add(l, "Alt Test3", NULL);
 	objunref(l);
-
-	dtsgui_newmenuitem(menu, dtsgui, "&Test", p);
 }
 
 dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
@@ -927,17 +921,29 @@ void help_menu(struct dtsgui *dtsgui) {
 	dtsgui_about(help, dtsgui, "This is a test application!!!!");
 }
 
-void tree_do_shit(struct dtsgui *dtsgui, dtsgui_treeview self, void *tdata, void *ndata) {
-	printf("Tree Item Selected Do Some Shit\n");
+void tree_do_shit(struct dtsgui *dtsgui, dtsgui_treeview self, const char *title, void *tdata, void *ndata) {
+	dtsgui_pane p;
+
+	p = dtsgui_treepane(self, title, wx_PANEL_BUTTON_ACTION, NULL, NULL);
+	testpanel(p);
+	dtsgui_setevcallback(p, handle_test, NULL);
+	dtsgui_treeshow(self, p);
+
+	printf("Tree Item Selected Do Some Shit %s\n", title);
 }
 
 void test_menu(struct dtsgui *dtsgui) {
 	dtsgui_menu test;
 	dtsgui_treeview tree;
+	dtsgui_pane p;
 
 	test = dtsgui_newmenu(dtsgui, "&Testing");
 
-	testpanel(dtsgui, test);
+	p = dtsgui_panel(dtsgui, "Test Panel", wx_PANEL_BUTTON_ALL, 1, NULL);
+	testpanel(p);
+	dtsgui_setevcallback(p, handle_test, NULL);
+	dtsgui_newmenuitem(test, dtsgui, "&Test", p);
+
 	tree = dtsgui_treewindow(dtsgui, "Tree Window", tree_do_shit);
 	dtsgui_newmenuitem(test, dtsgui, "T&ree", tree);
 	dtsgui_newmenucb(test, dtsgui, "Test &Post", "Send POST request to callshop server (requires callshop user)", post_test, NULL);

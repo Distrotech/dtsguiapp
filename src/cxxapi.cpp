@@ -257,7 +257,7 @@ extern dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *titl
 	DTSTreeWindow *tw;
 	DTSFrame *frame = (DTSFrame *)dtsgui->appframe;
 
-	tw = new DTSTreeWindow(frame, frame, tree_cb, title, 30);
+	tw = new DTSTreeWindow(frame, frame, tree_cb, title, 25);
 	return tw;
 }
 
@@ -289,6 +289,36 @@ extern dtsgui_pane dtsgui_addpage(dtsgui_tabview tv, const char *name, int butma
 	np = dynamic_cast<wxPanel*>(dp);
 	parent->AddPage(np, name);
 	return dp;
+}
+
+extern dtsgui_pane dtsgui_treepane(dtsgui_treeview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc) {
+	DTSScrollPanel *dp;
+	DTSTreeWindow *tw = (DTSTreeWindow*)tv;
+	wxWindow *parent;
+
+	parent = tw->GetClientPane();
+	dp = new DTSScrollPanel(parent, tw->GetFrame(), name, butmask);
+	dp->type = wx_DTSPANEL_TREE;
+
+	if (name) {
+		dp->Title(name);
+	}
+
+	if (xmldoc) {
+		dp->SetXMLDoc(xmldoc);
+	}
+
+	return dp;
+}
+
+extern void dtsgui_treeshow(dtsgui_treeview tv, dtsgui_pane p) {
+	DTSScrollPanel *sp = (DTSScrollPanel*)p;
+	wxWindow *w = sp->GetPanel();
+	wxWindow *op;
+	DTSTreeWindow *tw = (DTSTreeWindow*)tv;
+
+	op = tw->SetWindow(w);
+	delete op;
 }
 
 extern void dtsgui_showpanel(dtsgui_pane pane, int act) {
