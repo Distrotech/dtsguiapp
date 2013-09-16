@@ -124,6 +124,8 @@ void *dtsgui_paneldata(dtsgui_pane pane);
 void dtsgui_closedyn(struct dtsgui *dtsgui, struct dynamic_panel *dpane);
 void dtsgui_createdyn(struct dtsgui *dtsgui, struct dynamic_panel *dpane);
 
+void dtsgui_settitle(dtsgui_pane pane, const char *title);
+
 /*form items
  *list/combo box must be unrefed when all items added
  */

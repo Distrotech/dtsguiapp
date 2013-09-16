@@ -27,6 +27,9 @@
 #include <wx/gbsizer.h>
 #include <wx/textctrl.h>
 #include <wx/scrolwin.h>
+#include <wx/stattext.h>
+#include <wx/combobox.h>
+#include <wx/toolbar.h>
 
 #include <dtsapp.h>
 
@@ -47,6 +50,8 @@ DTSFrame::DTSFrame(const wxString &title, const wxPoint &pos, const wxSize &size
 	status = dtsgui->status;
 	CreateStatusBar();
 	SetStatusText(status);
+
+	SetupToolbar();
 
 	/*deleted on close*/
 	sizer = new wxBoxSizer(wxHORIZONTAL);
@@ -246,4 +251,15 @@ struct dtsgui *DTSFrame::GetDTSData(void) {
 		return dtsgui;
 	}
 	return NULL;
+}
+
+void DTSFrame::SetupToolbar() {
+	toolbar = CreateToolBar();
+
+	wxComboBox *combo = new wxComboBox(toolbar, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(300,-1) );
+	wxStaticText *text = new wxStaticText(toolbar, wxID_ANY, "Server");
+	toolbar->AddControl(text, "Server");
+	toolbar->AddControl(combo);
+	toolbar->AddStretchableSpace();
+	toolbar->Realize();
 }

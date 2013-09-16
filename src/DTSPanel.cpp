@@ -39,7 +39,7 @@
 
 #define PADING	10
 
-static const int def_buttons[6] = {wxID_FIRST, wxID_BACKWARD, wxID_FORWARD, wxID_LAST, wxID_APPLY, wxID_REFRESH};
+static const int def_buttons[6] = {wxID_FIRST, wxID_BACKWARD, wxID_FORWARD, wxID_LAST, wxID_APPLY, wxID_UNDO};
 
 void free_fitem(void *data) {
 	struct form_item *fi = (struct form_item *)data;
@@ -225,6 +225,7 @@ DTSPanel::DTSPanel(DTSFrame *mainwin, wxString statusmsg, int butmask)
 	userdata = NULL;
 	dtsevthandler = NULL;
 	xmldoc = NULL;
+	title = NULL;
 	fgs = NULL;
 	frame = mainwin;
 	memcpy(buttons, def_buttons, sizeof(def_buttons));;
@@ -342,15 +343,29 @@ void DTSPanel::AddItem(wxWindow *item, const wxGBPosition pos, const wxGBSpan sp
 
 void DTSPanel::Title(const char *title) {
 	wxFont font;
-	wxStaticText *text = new wxStaticText(panel, -1, title);
+	wxStaticText *tit;
+	tit = new wxStaticText(panel, -1, title);
 
-	font = text->GetFont();
+	if (!this->title) {
+		this->title = tit;
+	}
+
+	font = tit->GetFont();
 	font.SetPointSize(font.GetPointSize()+2);
 	font.SetWeight(wxFONTWEIGHT_BOLD);
-	text->SetFont(font);
-	AddItem(text, wxGBPosition(g_row, 0), wxGBSpan(1, 6), wxALIGN_CENTER_HORIZONTAL | wxLEFT | wxRIGHT, PADING);
+	tit->SetFont(font);
+	AddItem(tit, wxGBPosition(g_row, 0), wxGBSpan(1, 6), wxALIGN_CENTER_HORIZONTAL | wxLEFT | wxRIGHT, PADING);
 
 	g_row++;
+}
+
+
+void DTSPanel::SetTitle(const wxString new_title, bool create) {
+	if (title) {
+		title->SetLabel(new_title);
+	} else if (create) {
+		Title(new_title);
+	}
 }
 
 void DTSPanel::SetXMLDoc(struct xml_doc *xd) {

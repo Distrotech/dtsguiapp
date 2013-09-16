@@ -928,8 +928,6 @@ void tree_do_shit(struct dtsgui *dtsgui, dtsgui_treeview self, const char *title
 	testpanel(p);
 	dtsgui_setevcallback(p, handle_test, NULL);
 	dtsgui_treeshow(self, p);
-
-	printf("Tree Item Selected Do Some Shit %s\n", title);
 }
 
 void test_menu(struct dtsgui *dtsgui) {
@@ -946,8 +944,8 @@ void test_menu(struct dtsgui *dtsgui) {
 
 	tree = dtsgui_treewindow(dtsgui, "Tree Window", tree_do_shit);
 	dtsgui_newmenuitem(test, dtsgui, "T&ree", tree);
-	dtsgui_newmenucb(test, dtsgui, "Test &Post", "Send POST request to callshop server (requires callshop user)", post_test, NULL);
 
+	dtsgui_newmenucb(test, dtsgui, "Test &Post", "Send POST request to callshop server (requires callshop user)", post_test, NULL);
 }
 
 int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
