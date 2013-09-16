@@ -851,6 +851,12 @@ void dtsgui_closedyn(struct dtsgui *dtsgui, struct dynamic_panel *dpane) {
 	dpane->panel = NULL;
 }
 
+
+void dtsgui_settitle(dtsgui_pane pane, const char *title) {
+	DTSPanel *p = (DTSPanel*)pane;
+	return p->SetTitle(title);
+}
+
 #ifdef __WIN32
 void getwin32folder(int csidl, char *path) {
 	SHGetFolderPathA(NULL, csidl, NULL, 0, path);

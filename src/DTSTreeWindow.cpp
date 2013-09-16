@@ -11,6 +11,7 @@
 #include <wx/notebook.h>
 #include <wx/frame.h>
 #include <wx/menu.h>
+#include <wx/stattext.h>
 
 #include <stdint.h>
 #include <dtsapp.h>
@@ -84,7 +85,11 @@ void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
 			printf("DRAG\n");
 		}
 	} else if (evid == wxEVT_DATAVIEW_ITEM_EDITING_DONE) {
-		parent->TreeResize();
+#ifndef _WIN32
+		DTSDVMListStore *data = (DTSDVMListStore*)event.GetItem().GetID();
+		event.SetValue(data->GetTitle());
+#endif
+		parent->SetPaneTitle(event.GetValue());
 	}
 }
 
@@ -191,6 +196,7 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 	 DTSObject(stat_msg) {
 
 	int w, h, p, psize;
+	a_window = NULL;
 	wxSplitterWindow *sw = static_cast<wxSplitterWindow*>(this);
 	wxBoxSizer *p_sizer = new wxBoxSizer(wxHORIZONTAL);
 	treesizer = new wxBoxSizer(wxVERTICAL);
@@ -307,6 +313,16 @@ void DTSTreeWindow::SetTreePaneSize() {
 void DTSTreeWindow::TreeResize() {
 	tree->GetColumn(0)->SetHidden(true);
 	tree->GetColumn(0)->SetHidden(false);
+}
+
+void DTSTreeWindow::SetPaneTitle(const wxString value) {
+	DTSPanel *p;
+
+	if ((p = dynamic_cast<DTSPanel*>(a_window))) {
+		p->SetTitle(value);
+	}
+
+	TreeResize();
 }
 
 wxWindow *DTSTreeWindow::SetWindow(wxWindow *window) {

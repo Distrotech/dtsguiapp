@@ -103,12 +103,14 @@ class DTSPanel: public DTSObject {
 		void Update_XML();
 		struct xml_element *GetNode(const char *xpath, const char *attr);
 		bool ShowPanel(bool = true);
+		void SetTitle(const wxString new_title, bool create = false);
 	protected:
 		void SetSizerSize(wxSize, wxWindow*);
 		void SetupWin();
 		void Buttons(void);
 		int button_mask;
 	private:
+		wxStaticText *title;
 		struct form_item *create_new_fitem(void *widget, enum widget_type type, const char *name, const char *value = NULL, const char *value2 = NULL, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
 		wxGridBagSizer *fgs;
 		bool beenshown;

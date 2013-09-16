@@ -38,11 +38,13 @@ class DTSFrame: public wxFrame {
 		bool DynamicPanel(struct dynamic_panel *p_dyn);
 		struct dtsgui *GetDTSData(void);
 	private:
+		void SetupToolbar(void);
 		void OnDTSEvent(wxCommandEvent &event);
 		wxBoxSizer *sizer;
 		wxWindow *blank;
 		wxWindow *a_window;
 		wxString status;
+		wxToolBar *toolbar;
 		wxString about;
 		wxMenuBar *menubar;
 		struct dtsgui *dtsgui;
