@@ -23,6 +23,9 @@ class DTSDVMListStore {
 		bool MoveChildUp(size_t idx);
 		bool MoveChildDown(size_t idx);
 		void *GetUserData();
+		bool can_edit;
+		bool can_sort;
+		bool can_delete;
 	private:
 		wxString title;
 		std::vector<DTSDVMListStore*> children;
@@ -73,10 +76,10 @@ class DTSDVMCtrl :public wxDataViewCtrl {
 		virtual bool AssociateModel(DTSDVMListView *model);
 		void Sort(const wxDataViewItem& parent);
 		DTSDVMListView *GetStore();
-		wxDataViewItem AppendItem(wxDataViewItem parent, const wxString& title, void *userdata = NULL);
-		wxDataViewItem AppendContainer(wxDataViewItem parent, const wxString& title, void *userdata = NULL);
+		wxDataViewItem AppendItem(wxDataViewItem parent, const wxString& title, bool can_edit = true, bool can_sort = true, bool can_del = false,void *userdata = NULL);
+		wxDataViewItem AppendContainer(wxDataViewItem parent, const wxString& title, bool can_edit = true, bool can_sort = true, bool can_del = false, void *userdata = NULL);
 	private:
-		wxDataViewItem AppendNode(wxDataViewItem parent, bool iscont, const wxString& title, void *userdata);
+		wxDataViewItem AppendNode(wxDataViewItem parent, const wxString& title, bool iscont, bool can_edit = true, bool can_sort = true, bool can_del = false, void *userdata = NULL);
 		DTSDVMListView *model;
 };
 

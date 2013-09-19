@@ -4,6 +4,9 @@
 
 #include <wx/dataview.h>
 #include <wx/validate.h>
+#include <stdint.h>
+
+#include <dtsapp.h>
 
 #include "DTSListView.h"
 
@@ -20,7 +23,11 @@ DTSDVMListStore::DTSDVMListStore(DTSDVMListStore* parent, bool is_container, con
 	this->parent = parent;
 	this->title = title;
 	this->is_container = is_container;
-	this->data = userdata;
+	if (userdata && objref(userdata)) {
+		this->data = userdata;
+	} else {
+		this->data = NULL;
+	}
 }
 
 DTSDVMListStore::~DTSDVMListStore() {
@@ -28,6 +35,9 @@ DTSDVMListStore::~DTSDVMListStore() {
 		DTSDVMListStore* f_child = children.back();
 		delete f_child;
 		children.pop_back();
+	}
+	if (data) {
+		objunref(data);
 	}
 }
 
@@ -156,7 +166,10 @@ bool DTSDVMListStore::MoveChildDown(size_t idx) {
 }
 
 void *DTSDVMListStore::GetUserData() {
-	return data;
+	if (data && objref(data)) {
+		return data;
+	}
+	return NULL;
 }
 
 DTSDVMListView::DTSDVMListView(int cols, bool cont_cols) {
@@ -470,15 +483,15 @@ DTSDVMListView *DTSDVMCtrl::GetStore() {
 	return model;
 }
 
-wxDataViewItem DTSDVMCtrl::AppendItem(wxDataViewItem parent, const wxString& title, void *userdata) {
-	return AppendNode(parent, false, title, userdata);
+wxDataViewItem DTSDVMCtrl::AppendItem(wxDataViewItem parent, const wxString& title, bool can_edit, bool can_sort, bool can_del,  void *userdata) {
+	return AppendNode(parent, title, false, can_edit, can_sort, can_del, userdata);
 }
 
-wxDataViewItem DTSDVMCtrl::AppendContainer(wxDataViewItem parent, const wxString& title, void *userdata) {
-	return AppendNode(parent, true, title, userdata);
+wxDataViewItem DTSDVMCtrl::AppendContainer(wxDataViewItem parent, const wxString& title, bool can_edit, bool can_sort, bool can_del,  void *userdata) {
+	return AppendNode(parent, title, true, can_edit, can_sort, can_del, userdata);
 }
 
-wxDataViewItem DTSDVMCtrl::AppendNode(wxDataViewItem parent, bool iscont, const wxString& title, void *userdata) {
+wxDataViewItem DTSDVMCtrl::AppendNode(wxDataViewItem parent, const wxString& title, bool iscont, bool can_edit, bool can_sort, bool can_del, void *userdata) {
 	DTSDVMListStore *li, *node;
 	wxDataViewItem dvi;
 
@@ -491,6 +504,10 @@ wxDataViewItem DTSDVMCtrl::AppendNode(wxDataViewItem parent, bool iscont, const 
 		li= new DTSDVMListStore(node, iscont, title, userdata);
 		node->Append(li);
 	}
+
+	li->can_delete = can_del;
+	li->can_edit = can_edit;
+	li->can_sort = can_sort;
 
 	dvi = wxDataViewItem(li);
 	model->ItemAdded(parent, dvi);

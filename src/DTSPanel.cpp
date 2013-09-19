@@ -188,7 +188,18 @@ DTSObject::DTSObject(wxString st) {
 	status = st;
 	panel = NULL;
 	frame = NULL;
+	xmldoc = NULL;
+	userdata = NULL;
 	SetName(status);
+}
+
+DTSObject::~DTSObject() {
+	if (userdata) {
+		objunref(userdata);
+	}
+	if (xmldoc) {
+		objunref(xmldoc);
+	}
 }
 
 wxString DTSObject::GetName() {
@@ -201,6 +212,18 @@ wxWindow *DTSObject::GetPanel() {
 
 DTSFrame *DTSObject::GetFrame() {
 	return frame;
+}
+
+void DTSObject::SetXMLDoc(struct xml_doc *xd) {
+	objref(xd);
+	xmldoc = xd;
+}
+
+struct xml_doc *DTSObject::GetXMLDoc(void) {
+	if (xmldoc && objref(xmldoc)) {
+		return xmldoc;
+	}
+	return NULL;
 }
 
 struct bucket_list *DTSObject::GetItems(void) {
@@ -216,15 +239,16 @@ void DTSObject::SetUserData(void *data) {
 }
 
 void *DTSObject::GetUserData(void) {
-	return userdata;
+	if (userdata && objref(userdata)) {
+		return userdata;
+	}
+	return NULL;
 }
 
 DTSPanel::DTSPanel(DTSFrame *mainwin, wxString statusmsg, int butmask)
 	:DTSObject(statusmsg) {
 	button_mask = butmask;
-	userdata = NULL;
 	dtsevthandler = NULL;
-	xmldoc = NULL;
 	title = NULL;
 	fgs = NULL;
 	frame = mainwin;
@@ -241,15 +265,7 @@ DTSPanel::~DTSPanel() {
 		delete dtsevthandler;
 	}
 
-	if (userdata) {
-		objunref(userdata);
-	}
-
 	objunref(fitems);
-
-	if (xmldoc) {
-		objunref(xmldoc);
-	}
 }
 
 struct form_item *DTSPanel::create_new_fitem(void *widget, enum widget_type type, const char *name, const char *value, const char *value2, void *data, enum form_data_type dtype) {
@@ -366,16 +382,6 @@ void DTSPanel::SetTitle(const wxString new_title, bool create) {
 	} else if (create) {
 		Title(new_title);
 	}
-}
-
-void DTSPanel::SetXMLDoc(struct xml_doc *xd) {
-	objref(xd);
-	xmldoc = xd;
-}
-
-struct xml_doc *DTSPanel::GetXMLDoc(void) {
-	objref(xmldoc);
-	return xmldoc;
 }
 
 void free_xmlelement(void *data) {
