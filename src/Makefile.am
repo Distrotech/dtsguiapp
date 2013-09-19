@@ -24,7 +24,7 @@ libdtsapp_gui_la_LDFLAGS = -version-info $(LT_LIBVER) -release $(VERSION) -no-un
 #    If any interfaces have been removed since the last public release, then set age to 0.
 
 bin_PROGRAMS = wxforms
-wxforms_SOURCES = wxforms.c
+wxforms_SOURCES = wxforms.c wizard.c pbxconfig.c testing.c netconfig.c
 wxforms_CFLAGS = $(AM_CFLAGS) $(WX_CFLAGS) $(DTSAPPLIB_CFLAGS)
 wxforms_CXXFLAGS = $(AM_CXXFLAGS) $(WX_CXXFLAGS) $(DTSAPPLIB_CFLAGS)
 wxforms_LDADD = $(WX_LIBS) $(DTSAPPLIB_LIBS) libdtsapp_gui.la

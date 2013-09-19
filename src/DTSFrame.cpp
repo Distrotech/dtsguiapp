@@ -256,10 +256,21 @@ struct dtsgui *DTSFrame::GetDTSData(void) {
 void DTSFrame::SetupToolbar() {
 	toolbar = CreateToolBar();
 
-	wxComboBox *combo = new wxComboBox(toolbar, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(300,-1) );
-	wxStaticText *text = new wxStaticText(toolbar, wxID_ANY, "Server");
-	toolbar->AddControl(text, "Server");
-	toolbar->AddControl(combo);
+	wxComboBox *server = new wxComboBox(toolbar, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize(300,-1) );
+	wxComboBox *proto = new wxComboBox(toolbar, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL, wxCB_READONLY);
+	wxStaticText *text = new wxStaticText(toolbar, wxID_ANY, "Server ");
+	wxStaticText *text2 = new wxStaticText(toolbar, wxID_ANY, "://");
+
+	toolbar->AddControl(text);
+
+	proto->Append("http");
+	proto->Append("https");
+	proto->Append("manage");
+	proto->SetSelection(2);
+
+	toolbar->AddControl(proto);
+	toolbar->AddControl(text2);
+	toolbar->AddControl(server);
 	toolbar->AddStretchableSpace();
 	toolbar->Realize();
 }

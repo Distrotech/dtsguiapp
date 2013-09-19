@@ -33,9 +33,9 @@ class DTSTreeWindowEvent: public wxEvtHandler {
 
 class DTSTreeWindow: public DTSObject, public virtual wxSplitterWindow {
 	public:
-		DTSTreeWindow(wxWindow *parent = NULL, DTSFrame *frame = NULL, dtsgui_tree_cb tree_cb = NULL, wxString stat_msg = wxEmptyString, int pos = 30);
+		DTSTreeWindow(wxWindow *parent = NULL, DTSFrame *frame = NULL, dtsgui_tree_cb tree_cb = NULL, wxString stat_msg = wxEmptyString, int pos = 30, void *u_data = NULL);
 		~DTSTreeWindow();
-		void ShowRMenu(bool cont, int cnt, bool first, bool last);
+		void ShowRMenu(bool cont, int cnt, bool first, bool last, bool c_sort, bool del);
 		bool Show(bool = true);
 		DTSDVMCtrl *GetTreeCtrl();
 		void TreeResize();
@@ -48,7 +48,7 @@ class DTSTreeWindow: public DTSObject, public virtual wxSplitterWindow {
 		wxWindow *c_pane;
 		DTSDVMCtrl *tree;
 		DTSDVMListView *vm;
-		wxBoxSizer *sizer;
+//		wxBoxSizer *sizer;
 		wxWindow *a_window;
 		DTSTreeWindowEvent *dtsevthandler;
 		struct treemenu *rmenu;

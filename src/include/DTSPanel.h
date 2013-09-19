@@ -67,6 +67,7 @@ class DTSPanelEvent: public wxEvtHandler {
 class DTSObject: public virtual wxWindow {
 	public:
 		DTSObject(wxString = wxEmptyString);
+		~DTSObject();
 		wxString GetName();
 		wxWindow *GetPanel();
 		panel_type type;
@@ -76,6 +77,8 @@ class DTSObject: public virtual wxWindow {
 		struct bucket_list *GetItems(void);
 		void SetUserData(void *data);
 		void *GetUserData(void);
+		void SetXMLDoc(struct xml_doc *xmldoc);
+		struct xml_doc *GetXMLDoc(void);
 	protected:
 		DTSFrame *frame;
 		wxString status;
@@ -83,6 +86,8 @@ class DTSObject: public virtual wxWindow {
 		DTSPanelEvent *dtsevthandler;
 		struct bucket_list *fitems;
 		void *userdata;
+		struct xml_doc  *xmldoc;
+		bool beenshown;
 };
 
 class DTSPanel: public DTSObject {
@@ -98,8 +103,6 @@ class DTSPanel: public DTSObject {
 		void AddItem(wxWindow *item, const wxGBPosition pos, const wxGBSpan span = wxDefaultSpan, int flags = 0, int border = 0,	int growrow = -1);
 		void SetEventCallback(event_callback evcb, void *userdata = NULL);
 		void SetConfigCallback(dtsgui_configcb cb, void *userdata = NULL);
-		void SetXMLDoc(struct xml_doc *xmldoc);
-		struct xml_doc *GetXMLDoc(void);
 		void Update_XML();
 		struct xml_element *GetNode(const char *xpath, const char *attr);
 		bool ShowPanel(bool = true);
@@ -113,9 +116,7 @@ class DTSPanel: public DTSObject {
 		wxStaticText *title;
 		struct form_item *create_new_fitem(void *widget, enum widget_type type, const char *name, const char *value = NULL, const char *value2 = NULL, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
 		wxGridBagSizer *fgs;
-		bool beenshown;
 		int g_row;
-		struct xml_doc  *xmldoc;
 		dtsgui_configcb configcb;
 		void *config_data;
 };

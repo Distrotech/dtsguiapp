@@ -45,6 +45,7 @@ void pwevent(dtsgui_pane p, int type, int event, void *data) {
 
 		auth->user = dtsgui_findvalue(p, "uname");
 		auth->passwd = dtsgui_findvalue(p, "pwd");
+		objunref(auth);
 	}
 }
 

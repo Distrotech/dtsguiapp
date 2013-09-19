@@ -37,6 +37,8 @@ typedef void *dtsgui_notebook;
 typedef void *dtsgui_treeview;
 typedef void *dtsgui_tabview;
 
+typedef void *dtsgui_treenode;
+
 /*forward def*/
 typedef struct form_item form_item;
 typedef struct dynamic_panel dynamic_panel;
@@ -109,13 +111,16 @@ void dtsgui_exit(dtsgui_menu dtsmenu, struct dtsgui *dtsgui);
 /*view config*/
 dtsgui_pane dtsgui_panel(struct dtsgui *dtsgui, const char *name, int butmask, enum panel_type type, void *userdata);
 void dtsgui_xmlpanel(dtsgui_pane pane, struct xml_doc *xmldoc);
+struct xml_doc *dtsgui_panelxml(dtsgui_pane pane);
 void dtsgui_delpane(dtsgui_pane pane);
 dtsgui_pane dtsgui_textpane(struct dtsgui *dtsgui, const char *title, const char *buf);
-dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title, dtsgui_tree_cb tree_cb);
+dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title, dtsgui_tree_cb tree_cb, void *userdata, struct xml_doc *xmldoc);
 dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title);
 dtsgui_pane dtsgui_addpage(dtsgui_tabview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc);
 dtsgui_pane dtsgui_treepane(dtsgui_treeview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc);
 void dtsgui_treeshow(dtsgui_treeview tv, dtsgui_pane p);
+dtsgui_treenode dtsgui_treecont(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, void *data);
+dtsgui_treenode dtsgui_treeitem(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, void *data);
 
 void dtsgui_showpanel(dtsgui_pane pane, int act);
 void dtsgui_rundialog(dtsgui_pane pane, event_callback evcb, void *data);

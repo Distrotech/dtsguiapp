@@ -248,16 +248,22 @@ extern void dtsgui_xmlpanel(dtsgui_pane pane, struct xml_doc *xmldoc) {
 	p->SetXMLDoc(xmldoc);
 }
 
+struct xml_doc *dtsgui_panelxml(dtsgui_pane pane) {
+	DTSPanel *p = (DTSPanel *)pane;
+	return p->GetXMLDoc();
+}
+
 void dtsgui_delpane(dtsgui_pane pane) {
 	DTSPanel *p = (DTSPanel *)pane;
 	delete p;
 }
 
-extern dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title, dtsgui_tree_cb tree_cb) {
+extern dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title, dtsgui_tree_cb tree_cb, void *userdata, struct xml_doc *xmldoc) {
 	DTSTreeWindow *tw;
 	DTSFrame *frame = (DTSFrame *)dtsgui->appframe;
 
 	tw = new DTSTreeWindow(frame, frame, tree_cb, title, 25);
+	tw->SetXMLDoc(xmldoc);
 	return tw;
 }
 
@@ -296,7 +302,7 @@ extern dtsgui_pane dtsgui_treepane(dtsgui_treeview tv, const char *name, int but
 	DTSTreeWindow *tw = (DTSTreeWindow*)tv;
 	wxWindow *parent;
 
-	parent = tw->GetClientPane();
+	parent = tw->GetPanel();
 	dp = new DTSScrollPanel(parent, tw->GetFrame(), name, butmask);
 	dp->type = wx_DTSPANEL_TREE;
 
@@ -845,7 +851,6 @@ void dtsgui_closedyn(struct dtsgui *dtsgui, struct dynamic_panel *dpane) {
 	}
 	p = (DTSObject*)dpane->panel;
 //	p->Reparent(NULL);
-
 	delete p;
 
 	dpane->panel = NULL;
@@ -855,6 +860,22 @@ void dtsgui_closedyn(struct dtsgui *dtsgui, struct dynamic_panel *dpane) {
 void dtsgui_settitle(dtsgui_pane pane, const char *title) {
 	DTSPanel *p = (DTSPanel*)pane;
 	return p->SetTitle(title);
+}
+
+dtsgui_treenode dtsgui_treecont(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, void *data) {
+	DTSTreeWindow *tw = (DTSTreeWindow*)tree;
+	DTSDVMCtrl *tc = tw->GetTreeCtrl();
+	wxDataViewItem root = wxDataViewItem(node);
+
+	return tc->AppendContainer(root, title, can_edit, can_sort, can_del, data);
+}
+
+dtsgui_treenode dtsgui_treeitem(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, void *data) {
+	DTSTreeWindow *tw = (DTSTreeWindow*)tree;
+	DTSDVMCtrl *tc = tw->GetTreeCtrl();
+	wxDataViewItem root = wxDataViewItem(node);
+
+	return tc->AppendItem(root, title, can_edit, can_sort, can_del, data);
 }
 
 #ifdef __WIN32
