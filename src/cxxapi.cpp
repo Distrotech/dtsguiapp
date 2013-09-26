@@ -57,6 +57,18 @@
 
 static int menuid = wxID_AUTO_LOWEST;
 
+struct tree_newnode {
+	void *data;
+	dtsgui_treeview tv;
+	dtsgui_treenode tn;
+	const char *xpath;
+	const char *node;
+	const char *vitem;
+	const char *tattr;
+	int type;
+	int flags;
+};
+
 dtsgui *dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point wsize, struct point wpos, const char *title, const char *status) {
 	/*deleted on close*/
 	DTSApp *guiapp = new DTSApp();
@@ -315,16 +327,6 @@ extern dtsgui_pane dtsgui_treepane(dtsgui_treeview tv, const char *name, int but
 	}
 
 	return dp;
-}
-
-extern void dtsgui_treeshow(dtsgui_treeview tv, dtsgui_pane p) {
-	DTSScrollPanel *sp = (DTSScrollPanel*)p;
-	wxWindow *w = sp->GetPanel();
-	wxWindow *op;
-	DTSTreeWindow *tw = (DTSTreeWindow*)tv;
-
-	op = tw->SetWindow(w);
-	delete op;
 }
 
 extern void dtsgui_showpanel(dtsgui_pane pane, int act) {
@@ -889,20 +891,20 @@ void dtsgui_settitle(dtsgui_pane pane, const char *title) {
 	return p->SetTitle(title);
 }
 
-dtsgui_treenode dtsgui_treecont(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, void *data) {
+dtsgui_treenode dtsgui_treecont(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, void *data) {
 	DTSTreeWindow *tw = (DTSTreeWindow*)tree;
 	DTSDVMCtrl *tc = tw->GetTreeCtrl();
 	wxDataViewItem root = wxDataViewItem(node);
 
-	return tc->AppendContainer(root, title, can_edit, can_sort, can_del, data);
+	return tc->AppendContainer(root, title, can_edit, can_sort, can_del, nodeid, data);
 }
 
-dtsgui_treenode dtsgui_treeitem(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, void *data) {
+dtsgui_treenode dtsgui_treeitem(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, void *data) {
 	DTSTreeWindow *tw = (DTSTreeWindow*)tree;
 	DTSDVMCtrl *tc = tw->GetTreeCtrl();
 	wxDataViewItem root = wxDataViewItem(node);
 
-	return tc->AppendItem(root, title, can_edit, can_sort, can_del, data);
+	return tc->AppendItem(root, title, can_edit, can_sort, can_del, nodeid, data);
 }
 
 struct xml_node *dtsgui_panetoxml(dtsgui_pane p, const char *xpath, const char *node, const char *nodeval, const char *attrkey) {
@@ -921,11 +923,17 @@ struct xml_node *dtsgui_panetoxml(dtsgui_pane p, const char *xpath, const char *
 	if (attrkey) {
 		aval = dtsgui_findvalue(p , attrkey);
 	}
+
+	xml_createpath(xmldoc, xpath);
 	xn = xml_addnode(xmldoc, xpath, node, val, attrkey, aval);
 
 	free((void*)val);
 	if (aval) {
 		free((void*)aval);
+	}
+
+	if (!xn) {
+		return NULL;
 	}
 
 	il = dtsgui_panel_items(p);
@@ -950,6 +958,101 @@ struct xml_node *dtsgui_panetoxml(dtsgui_pane p, const char *xpath, const char *
 	objunref(xmldoc);
 
 	return xn;
+}
+
+int dtsgui_treenodeid(dtsgui_treeview tv, dtsgui_treenode tn) {
+	wxDataViewItem item = (wxDataViewItem)tn;
+	DTSDVMCtrl *tree = (DTSDVMCtrl*)tv;
+	DTSDVMListView *store;
+
+	store = tree->GetStore();
+	return store->GetNodeID(item);
+}
+
+void dtsgui_treenodesetxml(dtsgui_treeview tv, dtsgui_treenode tn,struct xml_node *xn, const char *tattr) {
+	wxDataViewItem item = (wxDataViewItem)tn;
+	DTSDVMCtrl *tree = (DTSDVMCtrl*)tv;
+	DTSDVMListView *store;
+
+	store = tree->GetStore();
+	return store->SetXMLData(item, xn, tattr);
+}
+
+struct xml_node *dtsgui_treenodegetxml(dtsgui_treeview tv, dtsgui_treenode tn, char **buf) {
+	wxDataViewItem item = (wxDataViewItem)tn;
+	DTSDVMCtrl *tree = (DTSDVMCtrl*)tv;
+	DTSDVMListView *store;
+
+	store = tree->GetStore();
+	return store->GetXMLData(item, buf);
+}
+
+static void dtsgui_handle_newtreenode(dtsgui_pane p, int type, int event, void *data) {
+	struct tree_newnode *nn = (struct tree_newnode*)data;
+	struct xml_node *xn;
+	const char *name;
+	dtsgui_treenode tn;
+
+	switch(event) {
+		case wx_PANEL_BUTTON_YES:
+			break;
+		default:
+			return;
+	}
+
+	if (!nn || !(xn = dtsgui_panetoxml(p, nn->xpath, nn->node, nn->vitem, nn->tattr))) {
+		return;
+	}
+
+	if (nn->tattr) {
+		name = xml_getattr(xn, nn->tattr);
+	} else {
+		name = xn->value;
+	}
+	if (nn->flags & DTS_TREE_NEW_NODE_CONTAINER) {
+		tn = dtsgui_treecont(nn->tv, nn->tn, name, nn->flags & DTS_TREE_NEW_NODE_EDIT, nn->flags & DTS_TREE_NEW_NODE_SORT, nn->flags & DTS_TREE_NEW_NODE_DELETE, nn->type, nn->data);
+	} else {
+		tn = dtsgui_treeitem(nn->tv, nn->tn, name, nn->flags & DTS_TREE_NEW_NODE_EDIT, nn->flags & DTS_TREE_NEW_NODE_SORT, nn->flags & DTS_TREE_NEW_NODE_DELETE, nn->type, nn->data);
+	}
+	dtsgui_treenodesetxml(nn->tv, tn, xn, nn->tattr);
+}
+
+static void free_tree_newnode(void *data) {
+	struct tree_newnode *nn = (struct tree_newnode*)data;
+
+	if (nn->xpath) {
+		free((void*)nn->xpath);
+	}
+	if (nn->node) {
+		free((void*)nn->node);
+	}
+	if (nn->vitem) {
+		free((void*)nn->vitem);
+	}
+	if (nn->tattr) {
+		free((void*)nn->tattr);
+	}
+}
+
+extern void dtsgui_newxmltreenode(dtsgui_treeview tree, dtsgui_pane p, dtsgui_treenode tn, const char *xpath, const char *node, const char *vitem, const char *tattr,
+								int nid, int flags, void *data) {
+	struct tree_newnode *nn;
+
+	if (!(nn = (struct tree_newnode*)objalloc(sizeof(*nn), free_tree_newnode))) {
+		return;
+	}
+
+	nn->data = data;
+	nn->tv = tree;
+	nn->tn = tn;
+	ALLOC_CONST(nn->xpath, xpath);
+	ALLOC_CONST(nn->node, node);
+	ALLOC_CONST(nn->vitem, vitem);
+	ALLOC_CONST(nn->tattr, tattr);
+	nn->flags = flags;
+	nn->type = nid;
+
+	dtsgui_setevcallback(p, dtsgui_handle_newtreenode, nn);
 }
 
 #ifdef __WIN32

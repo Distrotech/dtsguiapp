@@ -91,8 +91,6 @@ void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
 			d_i = (DTSDVMListStore*)a_item.GetID();
 			del = d_i->can_delete;
 			tw->ShowRMenu(cont, vm->GetChildCount(a_cont), first, last, c_sort, del);
-		} else if (evid == wxEVT_DATAVIEW_ITEM_BEGIN_DRAG) {
-			printf("DRAG\n");
 		}
 	} else if (evid == wxEVT_DATAVIEW_ITEM_START_EDITING) {
 		DTSDVMListStore *data = (DTSDVMListStore*)event.GetItem().GetID();
@@ -193,14 +191,24 @@ void DTSTreeWindowEvent::SplitterEvent(wxSplitterEvent& event) {
 }
 
 void DTSTreeWindowEvent::TreeCallback(const wxDataViewItem item, enum tree_cbtype type) {
-	void *tdata = NULL;;
+	void *tdata = NULL;
+	DTSPanel *sp;
+	wxWindow *op, *w;
 
 	if (item && treecb) {
 		DTSDVMListStore *ndata = (item.IsOk()) ? (DTSDVMListStore*)item.GetID() : NULL;
 		if (objref(data)) {
 			tdata = data;
 		}
-		treecb(dtsgui, parent, type, ndata->GetTitle().ToUTF8(), tdata, (ndata) ? ndata->GetUserData() : NULL);
+		if ((sp = (DTSPanel*)treecb(dtsgui, parent, item, type, ndata->GetTitle().ToUTF8(), tdata))) {
+			w = sp->GetPanel();
+			op = parent->SetWindow(w);
+			delete op;
+		}
+
+		if (tdata) {
+			objunref(tdata);
+		}
 	}
 }
 
