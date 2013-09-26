@@ -19,10 +19,13 @@ bool cmp_title(DTSDVMListStore *c1,DTSDVMListStore *c2) {
 	return (s1 < s2);
 }
 
-DTSDVMListStore::DTSDVMListStore(DTSDVMListStore* parent, bool is_container, const wxString& title, void *userdata) {
+DTSDVMListStore::DTSDVMListStore(DTSDVMListStore* parent, bool is_container, const wxString& title, int nodeid, void *userdata) {
+	xml = NULL;
+	tattr = NULL;
 	this->parent = parent;
 	this->title = title;
 	this->is_container = is_container;
+	this->nodeid = nodeid;
 	if (userdata && objref(userdata)) {
 		this->data = userdata;
 	} else {
@@ -38,6 +41,12 @@ DTSDVMListStore::~DTSDVMListStore() {
 	}
 	if (data) {
 		objunref(data);
+	}
+	if (xml) {
+		objunref(xml);
+	}
+	if (tattr) {
+		free((void*)tattr);
 	}
 }
 
@@ -172,6 +181,33 @@ void *DTSDVMListStore::GetUserData() {
 	return NULL;
 }
 
+int DTSDVMListStore::GetNodeID() {
+	return nodeid;
+}
+
+void DTSDVMListStore::SetXMLData(struct xml_node *xnode, const char *tattr) {
+	if (xnode && objref(xnode)) {
+		this->xml = xnode;
+	}
+	if (tattr) {
+		this->tattr = strdup(tattr);
+	}
+}
+
+struct xml_node *DTSDVMListStore::GetXMLData(char **buff) {
+	int len;
+
+	if (xml && objref(xml)) {
+		return xml;
+	}
+	if (tattr) {
+		len = strlen(tattr)+1;
+		*buff = (char*)objalloc(len, NULL);
+		memcpy(*buff, tattr, len);
+	}
+	return NULL;
+}
+
 DTSDVMListView::DTSDVMListView(int cols, bool cont_cols) {
 	hascontcol = cont_cols;
 	root = NULL;
@@ -261,8 +297,8 @@ DTSDVMListStore* DTSDVMListView::GetRoot() {
 	return root;
 }
 
-DTSDVMListStore* DTSDVMListView::SetRoot(const wxString& title, void *userdata) {
-	root = new DTSDVMListStore(NULL, true, title, userdata);
+DTSDVMListStore* DTSDVMListView::SetRoot(const wxString& title, int nodeid, void *userdata) {
+	root = new DTSDVMListStore(NULL, true, title, nodeid, userdata);
 	return root;
 }
 
@@ -426,6 +462,39 @@ void *DTSDVMListView::GetUserData(const wxDataViewItem& node) {
 	}
 }
 
+int DTSDVMListView::GetNodeID(const wxDataViewItem& node) {
+	DTSDVMListStore *data;
+
+	if (!node.IsOk() && root) {
+		return root->GetNodeID();
+	} else if ((data = (DTSDVMListStore*)node.GetID())) {
+		return data->GetNodeID();
+	} else {
+		return -1;
+	}
+}
+
+void DTSDVMListView::SetXMLData(const wxDataViewItem& node, struct xml_node *xnode, const char *tattr) {
+	DTSDVMListStore *data;
+
+	if (!node.IsOk() && root) {
+		root->SetXMLData(xnode, tattr);
+	} else if ((data = (DTSDVMListStore*)node.GetID())) {
+		data->SetXMLData(xnode, tattr);
+	}
+}
+
+struct xml_node *DTSDVMListView::GetXMLData(const wxDataViewItem& node, char **buf) {
+	DTSDVMListStore *data;
+
+	if (!node.IsOk() && root) {
+		return root->GetXMLData(buf);
+	} else if ((data = (DTSDVMListStore*)node.GetID())) {
+		return data->GetXMLData(buf);
+	}
+	return NULL;
+}
+
 DTSDVMCtrl::DTSDVMCtrl() {
 	model = NULL;
 }
@@ -483,25 +552,25 @@ DTSDVMListView *DTSDVMCtrl::GetStore() {
 	return model;
 }
 
-wxDataViewItem DTSDVMCtrl::AppendItem(wxDataViewItem parent, const wxString& title, bool can_edit, bool can_sort, bool can_del,  void *userdata) {
-	return AppendNode(parent, title, false, can_edit, can_sort, can_del, userdata);
+wxDataViewItem DTSDVMCtrl::AppendItem(wxDataViewItem parent, const wxString& title, bool can_edit, bool can_sort, bool can_del, int nodeid, void *userdata) {
+	return AppendNode(parent, title, false, can_edit, can_sort, can_del, nodeid, userdata);
 }
 
-wxDataViewItem DTSDVMCtrl::AppendContainer(wxDataViewItem parent, const wxString& title, bool can_edit, bool can_sort, bool can_del,  void *userdata) {
-	return AppendNode(parent, title, true, can_edit, can_sort, can_del, userdata);
+wxDataViewItem DTSDVMCtrl::AppendContainer(wxDataViewItem parent, const wxString& title, bool can_edit, bool can_sort, bool can_del, int nodeid, void *userdata) {
+	return AppendNode(parent, title, true, can_edit, can_sort, can_del, nodeid, userdata);
 }
 
-wxDataViewItem DTSDVMCtrl::AppendNode(wxDataViewItem parent, const wxString& title, bool iscont, bool can_edit, bool can_sort, bool can_del, void *userdata) {
+wxDataViewItem DTSDVMCtrl::AppendNode(wxDataViewItem parent, const wxString& title, bool iscont, bool can_edit, bool can_sort, bool can_del, int nodeid, void *userdata) {
 	DTSDVMListStore *li, *node;
 	wxDataViewItem dvi;
 
 
 	if (!parent.IsOk() && !model->GetRoot()) {
-		li = model->SetRoot(title, userdata);
+		li = model->SetRoot(title, nodeid, userdata);
 	} else if (!(node = (DTSDVMListStore*)parent.GetID())) {
 		return wxDataViewItem(NULL);
 	} else {
-		li= new DTSDVMListStore(node, iscont, title, userdata);
+		li= new DTSDVMListStore(node, iscont, title, nodeid, userdata);
 		node->Append(li);
 	}
 

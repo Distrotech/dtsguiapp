@@ -3,7 +3,7 @@
 
 class DTSDVMListStore {
 	public:
-		DTSDVMListStore(DTSDVMListStore* parent, bool is_container, const wxString &title, void *userdata = NULL);
+		DTSDVMListStore(DTSDVMListStore* parent, bool is_container, const wxString &title, int nodeid = -1, void *userdata = NULL);
 		~DTSDVMListStore();
 		bool IsContainer() const;
 		DTSDVMListStore* GetParent();
@@ -26,13 +26,19 @@ class DTSDVMListStore {
 		bool can_edit;
 		bool can_sort;
 		bool can_delete;
+		int GetNodeID();
+		void SetXMLData(struct xml_node *xnode, const char *tattr);
+		struct xml_node *GetXMLData(char **buff);
 	private:
-		wxString title;
 		std::vector<DTSDVMListStore*> children;
-		void *data;
 		DTSDVMListStore *parent;
+		struct xml_node *xml;
+		const char *tattr;
 		bool is_container;
+		wxString title;
 		bool expanded;
+		void *data;
+		int nodeid;
 };
 
 class DTSDVMListView :public wxDataViewModel {
@@ -50,7 +56,7 @@ class DTSDVMListView :public wxDataViewModel {
 		virtual bool SetValue(const wxVariant &variant, const wxDataViewItem &item, unsigned int col);
 
 		DTSDVMListStore* GetRoot();
-		DTSDVMListStore* SetRoot(const wxString& title, void *userdata = NULL);
+		DTSDVMListStore* SetRoot(const wxString& title, int nodeid = -1, void *userdata = NULL);
 		void Delete(const wxDataViewItem& item);
 		void DeleteAll(void);
 		void SortChildren(const wxDataViewItem& parent);
@@ -61,6 +67,9 @@ class DTSDVMListView :public wxDataViewModel {
 		void MoveChildUp(const wxDataViewItem& node);
 		void MoveChildDown(const wxDataViewItem& node);
 		void *GetUserData(const wxDataViewItem& node);
+		int GetNodeID(const wxDataViewItem& node);
+		void SetXMLData(const wxDataViewItem& node, struct xml_node *xnode, const char *tattr);
+		struct xml_node *GetXMLData(const wxDataViewItem& node, char **buff);
 	protected:
 		DTSDVMListStore* root;
 		bool hascontcol;
@@ -76,10 +85,10 @@ class DTSDVMCtrl :public wxDataViewCtrl {
 		virtual bool AssociateModel(DTSDVMListView *model);
 		void Sort(const wxDataViewItem& parent);
 		DTSDVMListView *GetStore();
-		wxDataViewItem AppendItem(wxDataViewItem parent, const wxString& title, bool can_edit = true, bool can_sort = true, bool can_del = false,void *userdata = NULL);
-		wxDataViewItem AppendContainer(wxDataViewItem parent, const wxString& title, bool can_edit = true, bool can_sort = true, bool can_del = false, void *userdata = NULL);
+		wxDataViewItem AppendItem(wxDataViewItem parent, const wxString& title, bool can_edit = true, bool can_sort = true, bool can_del = false, int nodeid = -1, void *userdata = NULL);
+		wxDataViewItem AppendContainer(wxDataViewItem parent, const wxString& title, bool can_edit = true, bool can_sort = true, bool can_del = false, int nodeid = -1, void *userdata = NULL);
 	private:
-		wxDataViewItem AppendNode(wxDataViewItem parent, const wxString& title, bool iscont, bool can_edit = true, bool can_sort = true, bool can_del = false, void *userdata = NULL);
+		wxDataViewItem AppendNode(wxDataViewItem parent, const wxString& title, bool iscont, bool can_edit = true, bool can_sort = true, bool can_del = false, int nodeid = -1, void *userdata = NULL);
 		DTSDVMListView *model;
 };
 

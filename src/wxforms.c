@@ -192,36 +192,6 @@ void help_menu(struct dtsgui *dtsgui) {
 	dtsgui_about(help, dtsgui, "This is a test application!!!!");
 }
 
-void free_treedata(void *data) {
-	struct tree_data *td = data;
-
-	if (td->node) {
-		objunref(td->node);
-	}
-	if (td->tattr) {
-		free((void*)td->tattr);
-	}
-}
-
-struct tree_data *gettreedata(dtsgui_treeview tree, struct xml_node *xn, const char *tattr, enum node_id nid) {
-	struct tree_data *td;
-
-	if (!(td = objalloc(sizeof(*td), free_treedata))) {
-		return NULL;
-	}
-	td->nodeid = nid;
-	if (xn && objref(xn)) {
-		td->node = xn;
-		if (tattr) {
-			ALLOC_CONST(td->tattr, tattr);
-		}
-	}
-	if (tree) {
-		td->tree = tree;
-	}
-	return td;
-}
-
 int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
 	struct app_data *appdata = data;
 
