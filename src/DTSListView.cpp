@@ -195,17 +195,19 @@ void DTSDVMListStore::SetXMLData(struct xml_node *xnode, const char *tattr) {
 }
 
 struct xml_node *DTSDVMListStore::GetXMLData(char **buff) {
+	struct xml_node *xn = NULL;
 	int len;
 
+
 	if (xml && objref(xml)) {
-		return xml;
+		xn = xml;
 	}
-	if (tattr) {
+	if (buff && tattr) {
 		len = strlen(tattr)+1;
 		*buff = (char*)objalloc(len, NULL);
 		memcpy(*buff, tattr, len);
 	}
-	return NULL;
+	return xn;
 }
 
 DTSDVMListView::DTSDVMListView(int cols, bool cont_cols) {
