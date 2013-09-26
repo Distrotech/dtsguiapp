@@ -504,15 +504,35 @@ struct form_item *dtsgui_xmlcombobox(dtsgui_pane pane, const char *title, const 
 	return fi;
 }
 
+void dtsgui_listbox_addxml(struct form_item *lb, struct xml_doc *xmldoc, const char *xpath, const char *nattr, const char *vattr) {
+	struct xml_search *xs;
+	struct xml_node *xn;
+	void *iter;
+	const char *name, *value;
+
+	xs = xml_xpath(xmldoc, xpath, nattr);
+	for(xn = xml_getfirstnode(xs, &iter); xn ; xn = xml_getnextnode(iter)) {
+		name = (nattr) ? xml_getattr(xn, nattr) : xn->value;
+		value = (vattr) ? xml_getattr(xn, vattr) : xn->value;
+		dtsgui_listbox_add(lb, name, value);
+		objunref(xn);
+	}
+}
+
 void dtsgui_listbox_add(struct form_item *listbox, const char *text, const char *value) {
 	wxComboBox *lbox = (wxComboBox *)listbox->widget;
-	lbox->Append(text, (void*)value);
+	lbox->Append(text, (value) ? (void*)strdup(value) : NULL);
 
 	if (lbox->GetSelection() == wxNOT_FOUND) {
 		lbox->SetSelection(0);
 	} else if (listbox->value && value && !strcmp(listbox->value, value)) {
 		lbox->SetSelection(lbox->GetCount()-1);
 	}
+}
+
+void dtsgui_listbox_set(struct form_item *listbox, int idx) {
+	wxComboBox *lbox = (wxComboBox*)listbox->widget;
+	lbox->SetSelection(idx);
 }
 
 void dtsgui_setevcallback(dtsgui_pane pane,event_callback evcb, void *data) {
@@ -589,6 +609,7 @@ extern 	const char *dtsgui_item_value(struct form_item *fi) {
 	const char *value = NULL;
 	union widgets {
 		wxTextCtrl *t;
+		wxComboBox *c;
 	} w;
 
 	switch(fi->type) {
@@ -596,9 +617,15 @@ extern 	const char *dtsgui_item_value(struct form_item *fi) {
 			w.t = (wxTextCtrl *)fi->widget;
 			value = strdup(w.t->GetValue().ToUTF8());
 			break;
-		case DTS_WIDGET_CHECKBOX:
 		case DTS_WIDGET_LISTBOX:
 		case DTS_WIDGET_COMBOBOX:
+			int pos;
+			w.c = (wxComboBox *)fi->widget;
+			pos = w.c->GetSelection();
+			value = strdup((char*)w.c->GetClientData(pos));
+			printf("%i %s\n", pos, value);
+			break;
+		case DTS_WIDGET_CHECKBOX:
 			break;
 	}
 	return value;
@@ -876,6 +903,53 @@ dtsgui_treenode dtsgui_treeitem(dtsgui_treeview tree, dtsgui_treenode node, cons
 	wxDataViewItem root = wxDataViewItem(node);
 
 	return tc->AppendItem(root, title, can_edit, can_sort, can_del, data);
+}
+
+struct xml_node *dtsgui_panetoxml(dtsgui_pane p, const char *xpath, const char *node, const char *nodeval, const char *attrkey) {
+	struct xml_node *xn;
+	struct xml_doc *xmldoc;
+	const char *val, *name, *aval = NULL;
+	struct form_item *fi;
+	struct bucket_list *il;
+	struct bucket_loop *bl;
+
+	if (!(xmldoc = dtsgui_panelxml(p))) {
+		return NULL;
+	}
+
+	val = dtsgui_findvalue(p , nodeval);
+	if (attrkey) {
+		aval = dtsgui_findvalue(p , attrkey);
+	}
+	xn = xml_addnode(xmldoc, xpath, node, val, attrkey, aval);
+
+	free((void*)val);
+	if (aval) {
+		free((void*)aval);
+	}
+
+	il = dtsgui_panel_items(p);
+	bl = init_bucket_loop(il);
+	while(il && bl && (fi = (struct form_item *)next_bucket_loop(bl))) {
+		if (!(name = dtsgui_item_name(fi))) {
+			objunref(fi);
+			continue;
+		}
+		if (!(val = dtsgui_item_value(fi))) {
+			objunref(fi);
+			continue;
+		}
+		if (strcmp(name, nodeval) && (!attrkey || strcmp(name, attrkey))) {
+			xml_setattr(xmldoc, xn, name, val);
+		}
+		free((void*)val);
+		objunref(fi);
+	}
+	stop_bucket_loop(bl);
+	objunref(il);
+	objunref(xmldoc);
+
+	return xn;
 }
 
 #ifdef __WIN32

@@ -18,7 +18,7 @@ class DTSTreeWindowEvent: public wxEvtHandler {
 		void TreeEvent(wxDataViewEvent &event);
 		void MenuEvent(wxCommandEvent &event);
 		void SplitterEvent(wxSplitterEvent& event);
-		void TreeCallback(const wxDataViewItem item);
+		void TreeCallback(const wxDataViewItem item, enum tree_cbtype cbtype);
 	private:
 		void SortParent(const wxDataViewItem parent, int action);
 		void *data;
