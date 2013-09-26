@@ -569,8 +569,8 @@ dtsgui_treeview network_tree(struct dtsgui *dtsgui) {
 	}
 	objunref(xp);
 
-	tmp = dtsgui_treeitem(tree, root, "Modem Config", 0, 0, 0, DTS_NODE_NETWORK_MODEM, NULL);
-	dtsgui_treecont(tree, tmp, "Dialup/Leased", 0, 0, 0, DTS_NODE_NETWORK_MODEM_ANA, NULL);
+	tmp = dtsgui_treecont(tree, root, "Modem Config", 0, 0, 0, DTS_NODE_NETWORK_MODEM, NULL);
+	dtsgui_treeitem(tree, tmp, "Dialup/Leased", 0, 0, 0, DTS_NODE_NETWORK_MODEM_ANA, NULL);
 	dtsgui_treecont(tree, root, "Modem Firewall Rules", 0, 1, 0, -1, NULL);
 	dtsgui_treecont(tree, root, "Additional ADSL Links", 0, 1, 0, -1, NULL);
 	dtsgui_treecont(tree, root, "ADSL Accounts", 0, 1, 0, -1, NULL);
