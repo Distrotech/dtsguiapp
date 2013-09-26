@@ -54,7 +54,7 @@ void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
 	evid = event.GetEventType();
 
 	if (evid == wxEVT_DATAVIEW_SELECTION_CHANGED) {
-		TreeCallback(event.GetItem());
+		TreeCallback(event.GetItem(), DTSGUI_TREE_CB_SELECT);
 	} else if (evid == wxEVT_DATAVIEW_ITEM_EXPANDED) {
 		parent->TreeResize();
 	} else if (evid == wxEVT_DATAVIEW_ITEM_CONTEXT_MENU) {
@@ -99,13 +99,13 @@ void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
 		if (!data->can_edit) {
 			event.Veto();
 		}
-
 	} else if (evid == wxEVT_DATAVIEW_ITEM_EDITING_DONE) {
 #ifndef _WIN32
 		DTSDVMListStore *data = (DTSDVMListStore*)event.GetItem().GetID();
 		event.SetValue(data->GetTitle());
 #endif
 		parent->SetPaneTitle(event.GetValue());
+		TreeCallback(event.GetItem(), DTSGUI_TREE_CB_EDIT);
 	}
 }
 
@@ -192,7 +192,7 @@ void DTSTreeWindowEvent::SplitterEvent(wxSplitterEvent& event) {
 	}
 }
 
-void DTSTreeWindowEvent::TreeCallback(const wxDataViewItem item) {
+void DTSTreeWindowEvent::TreeCallback(const wxDataViewItem item, enum tree_cbtype type) {
 	void *tdata = NULL;;
 
 	if (item && treecb) {
@@ -200,7 +200,7 @@ void DTSTreeWindowEvent::TreeCallback(const wxDataViewItem item) {
 		if (objref(data)) {
 			tdata = data;
 		}
-		treecb(dtsgui, parent, ndata->GetTitle().ToUTF8(), tdata, (ndata) ? ndata->GetUserData() : NULL);
+		treecb(dtsgui, parent, type, ndata->GetTitle().ToUTF8(), tdata, (ndata) ? ndata->GetUserData() : NULL);
 	}
 }
 
@@ -256,9 +256,6 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 	dtsevthandler = new DTSTreeWindowEvent(userdata, tree_cb, (frame) ? frame->GetDTSData() : NULL, this);
 	treesizer->Add(tree, 1,wxEXPAND,0);
 
-//	sizer = new wxBoxSizer(wxHORIZONTAL);
-//	c_pane->SetSizer(sizer);
-
 	p_sizer->FitInside(parent);
 	p_sizer->Layout();
 	p_sizer->SetSizeHints(sw);
@@ -270,10 +267,6 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 	treesizer->SetSizeHints(t_pane);
 	treesizer->FitInside(t_pane);
 	treesizer->Layout();
-
-//	sizer->SetSizeHints(c_pane);
-//	sizer->FitInside(c_pane);
-//	sizer->Layout();
 
 	tree->Bind(wxEVT_DATAVIEW_SELECTION_CHANGED, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
 	tree->Bind(wxEVT_DATAVIEW_ITEM_EXPANDED, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
@@ -348,18 +341,16 @@ wxWindow *DTSTreeWindow::SetWindow(wxWindow *window) {
 		return NULL;
 	}
 
-//	sizer->Detach(0);
 	if ((oldwin = a_window)) {
 		a_window->Show(false);
 	}
-//	sizer->Add(window, 1, wxALL | wxEXPAND);
 
 	ReplaceWindow(a_window, window);
-	window->Show(true);
-//	sizer->Layout();
-//	sizer->FitInside(window);
-	window->Layout();
 	a_window = window;
+	window->Show(true);
+	window->Layout();
+	window->FitInside();
+//	UpdateSize();
 
 	return oldwin;
 }
@@ -413,7 +404,7 @@ bool DTSTreeWindow::Show(bool show) {
 			root = wxDataViewItem(ds);
 			tree->Select(root);
 			tree->Expand(root);
-			dtsevthandler->TreeCallback(root);
+			dtsevthandler->TreeCallback(root, DTSGUI_TREE_CB_SELECT);
 			beenshown = true;
 		}
 

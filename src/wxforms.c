@@ -198,9 +198,12 @@ void free_treedata(void *data) {
 	if (td->node) {
 		objunref(td->node);
 	}
+	if (td->tattr) {
+		free((void*)td->tattr);
+	}
 }
 
-struct tree_data *gettreedata(dtsgui_treeview tree, struct xml_node *xn, enum node_id nid) {
+struct tree_data *gettreedata(dtsgui_treeview tree, struct xml_node *xn, const char *tattr, enum node_id nid) {
 	struct tree_data *td;
 
 	if (!(td = objalloc(sizeof(*td), free_treedata))) {
@@ -209,6 +212,9 @@ struct tree_data *gettreedata(dtsgui_treeview tree, struct xml_node *xn, enum no
 	td->nodeid = nid;
 	if (xn && objref(xn)) {
 		td->node = xn;
+		if (tattr) {
+			ALLOC_CONST(td->tattr, tattr);
+		}
 	}
 	if (tree) {
 		td->tree = tree;

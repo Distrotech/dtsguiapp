@@ -44,6 +44,24 @@ static const int def_buttons[6] = {wxID_FIRST, wxID_BACKWARD, wxID_FORWARD, wxID
 void free_fitem(void *data) {
 	struct form_item *fi = (struct form_item *)data;
 
+	switch(fi->type) {
+		case DTS_WIDGET_CHECKBOX:
+		case DTS_WIDGET_TEXTBOX:
+			break;
+		case DTS_WIDGET_LISTBOX:
+		case DTS_WIDGET_COMBOBOX:
+			wxComboBox *cbox = (wxComboBox*)fi->widget;
+			int cnt = cbox->GetCount();
+			void *val;
+
+			for(int i=0; i < cnt; i++) {
+				if ((val = cbox->GetClientData(i))) {
+					free(val);
+				}
+			}
+			break;
+	}
+
 	if (fi->name) {
 		free((void *)fi->name);
 	}
