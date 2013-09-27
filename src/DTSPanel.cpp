@@ -126,7 +126,7 @@ void DTSPanelEvent::OnButton(wxCommandEvent &event) {
 }
 
 void DTSPanelEvent::OnDialog(wxCommandEvent &event) {
-	event.SetId(wxID_OK);
+	event.SetId(parent->buttons[4]);
 	event.SetEventType(wxEVT_COMMAND_BUTTON_CLICKED);
 	OnButton(event);
 }
@@ -599,6 +599,7 @@ DTSScrollPanel::DTSScrollPanel(wxWindow *parent,DTSFrame *frame, wxString status
 	type = wx_DTSPANEL_SCROLLPANEL;
 	SetScrollRate(10, 10);
 	panel = dynamic_cast<wxPanel *>(this);
+	panel->Bind(wxEVT_TEXT_ENTER, &DTSPanelEvent::OnDialog, dtsevthandler);
 	SetupWin();
 }
 
@@ -612,6 +613,7 @@ DTSStaticPanel::DTSStaticPanel(wxWindow *parent,DTSFrame *frame, wxString status
 	 DTSPanel(frame, status, butmask) {
 	type = wx_DTSPANEL_PANEL;
 	panel = dynamic_cast<wxPanel *>(this);
+	panel->Bind(wxEVT_TEXT_ENTER, &DTSPanelEvent::OnDialog, dtsevthandler);
 	SetupWin();
 }
 
@@ -652,7 +654,6 @@ DTSDialog::DTSDialog(DTSFrame *frame, wxString name, int butmask) {
 	panel->Create(dialog, -1);
 	panel->SetName(name);
 	panel->Bind(wxEVT_TEXT_ENTER, &DTSPanelEvent::OnDialog, dtsevthandler);
-
 	SetupWin();
 }
 
@@ -676,6 +677,7 @@ DTSWizardWindow::DTSWizardWindow(wxString title) {
 	type = wx_DTSPANEL_WIZARD;
 	button_mask = 0;
 	panel = dynamic_cast<wxPanel *>(this);
+//	panel->Bind(wxEVT_TEXT_ENTER, &DTSPanelEvent::OnDialog, dtsevthandler);
 	SetupWin();
 }
 
