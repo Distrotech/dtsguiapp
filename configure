@@ -595,7 +595,7 @@ PACKAGE_STRING='dtsguiapp 0.1'
 PACKAGE_BUGREPORT='gregory@distrotech.co.za'
 PACKAGE_URL=''
 
-ac_unique_file="src/wxforms.c"
+ac_unique_file="src/cxxapi.cpp"
 # Factoring default headers for most tests.
 ac_includes_default="\
 #include <stdio.h>
@@ -16233,7 +16233,7 @@ fi
 
 # Checks for library functions.
 
-ac_config_files="$ac_config_files Makefile src/Makefile share/Makefile src/libdtsapp_gui.pc"
+ac_config_files="$ac_config_files Makefile src/Makefile app/Makefile share/Makefile src/libdtsapp_gui.pc"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -17346,6 +17346,7 @@ do
     "libtool") CONFIG_COMMANDS="$CONFIG_COMMANDS libtool" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
+    "app/Makefile") CONFIG_FILES="$CONFIG_FILES app/Makefile" ;;
     "share/Makefile") CONFIG_FILES="$CONFIG_FILES share/Makefile" ;;
     "src/libdtsapp_gui.pc") CONFIG_FILES="$CONFIG_FILES src/libdtsapp_gui.pc" ;;
 
