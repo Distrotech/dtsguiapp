@@ -53,6 +53,7 @@ typedef int (*dtsgui_configcb)(struct dtsgui*, void*);
 typedef void (*event_callback)(dtsgui_pane, int, int, void *);
 typedef dtsgui_pane (*dtsgui_dynpanel)(struct dtsgui*, const char*, void*);
 typedef dtsgui_pane (*dtsgui_tree_cb)(struct dtsgui *, dtsgui_treeview, dtsgui_treenode, enum tree_cbtype cb_type, const char*, void*);
+typedef void (*dtsgui_xmltreenode_cb)(dtsgui_treeview, dtsgui_treenode, struct xml_node*, void*);
 
 struct point {
 	int x;
@@ -134,8 +135,10 @@ dtsgui_treenode dtsgui_treecont(dtsgui_treeview tree, dtsgui_treenode node, cons
 dtsgui_treenode dtsgui_treeitem(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, void *data);
 void dtsgui_treenodesetxml(dtsgui_treeview tv, dtsgui_treenode tn,struct xml_node *xn, const char *tattr);
 struct xml_node *dtsgui_treenodegetxml(dtsgui_treeview tv, dtsgui_treenode tn, char **buf);
-extern void dtsgui_newxmltreenode(dtsgui_treeview tree, dtsgui_pane p, dtsgui_treenode tn, const char *xpath, const char *node, const char *vitem, const char *tattr,
-								int nid, int flags, void *data);
+void *dtsgui_treenodegetdata(dtsgui_treeview tv, dtsgui_treenode tn);
+const char *dtsgui_treenodeparent(dtsgui_treenode tn);
+void dtsgui_newxmltreenode(dtsgui_treeview tree, dtsgui_pane p, dtsgui_treenode tn, const char *xpath, const char *node, const char *vitem, const char *tattr,
+								int nid, int flags, dtsgui_xmltreenode_cb node_cb, void *data);
 struct xml_node *dtsgui_panetoxml(dtsgui_pane p, const char *xpath, const char *node, const char *nodeval, const char *attrkey);
 
 void dtsgui_showpanel(dtsgui_pane pane, int act);
@@ -155,7 +158,7 @@ int dtsgui_treenodeid(dtsgui_treeview tv, dtsgui_treenode tn);
 extern void dtsgui_textbox(dtsgui_pane pane, const char *title, const char *name, const char *value, void *data);
 extern void dtsgui_textbox_multi(dtsgui_pane pane, const char *title, const char *name, const char *value, void *data);
 extern void dtsgui_passwdbox(dtsgui_pane pane, const char *title, const char *name, const char *value, void *data);
-extern void dtsgui_checkbox(dtsgui_pane pane, const char *title, const char *name, int ischecked, void *data);
+extern void dtsgui_checkbox(dtsgui_pane pane, const char *title, const char *name, const char *checkval, const char *uncheck, int ischecked, void *data);
 struct form_item *dtsgui_listbox(dtsgui_pane pane, const char *title, const char *name, void *data);
 struct form_item *dtsgui_combobox(dtsgui_pane pane, const char *title, const char *name, void *data);
 
