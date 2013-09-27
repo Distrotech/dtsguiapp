@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.69])
 AC_INIT([dtsguiapp], [0.1], [gregory@distrotech.co.za])
-AC_CONFIG_SRCDIR([src/wxforms.c])
+AC_CONFIG_SRCDIR([src/cxxapi.cpp])
 AC_CONFIG_HEADERS([config.h])
 
 #x:y:z z <= x
@@ -67,6 +67,7 @@ AC_CHECK_HEADER_STDBOOL
 
 AC_CONFIG_FILES([Makefile
                  src/Makefile
+                 app/Makefile
                  share/Makefile
                  src/libdtsapp_gui.pc])
 AC_OUTPUT
