@@ -54,7 +54,11 @@ void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
 	evid = event.GetEventType();
 
 	if (evid == wxEVT_DATAVIEW_SELECTION_CHANGED) {
-		TreeCallback(event.GetItem(), DTSGUI_TREE_CB_SELECT);
+		a_item = event.GetItem();
+		TreeCallback(a_item, DTSGUI_TREE_CB_SELECT);
+		if ((vm->GetNodeID(a_item) == -1) && vm->IsContainer(a_item)) {
+			tree->Expand(a_item);
+		}
 	} else if (evid == wxEVT_DATAVIEW_ITEM_EXPANDED) {
 		parent->TreeResize();
 	} else if (evid == wxEVT_DATAVIEW_ITEM_CONTEXT_MENU) {
@@ -200,7 +204,7 @@ void DTSTreeWindowEvent::TreeCallback(const wxDataViewItem item, enum tree_cbtyp
 		if (objref(data)) {
 			tdata = data;
 		}
-		if ((sp = (DTSPanel*)treecb(dtsgui, parent, item, type, ndata->GetTitle().ToUTF8(), tdata))) {
+		if ((sp = (DTSPanel*)treecb(dtsgui, parent, item.GetID(), type, ndata->GetTitle().ToUTF8(), tdata))) {
 			w = sp->GetPanel();
 			op = parent->SetWindow(w);
 			delete op;
@@ -246,7 +250,11 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 	this->frame = frame;
 
 	p_sizer->Add(sw, 1,wxEXPAND,0);
-	t_pane = new wxScrolledWindow(sw, wxID_ANY);
+#ifdef __WIN32
+	t_pane = new wxScrolledWindow(sw, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxVSCROLL);
+#else
+	t_pane = new wxScrolledWindow(sw, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxHSCROLL|wxVSCROLL);
+#endif // _WIN32
 	a_window = new wxWindow(sw, wxID_ANY);
 
 	panel = static_cast<wxWindow *>(sw);
@@ -257,7 +265,12 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 	SetMinimumPaneSize(20);
 
 	t_pane->SetSizer(treesizer);
+#ifdef __WIN32
+	t_pane->SetScrollRate(0, 10);
+#else
 	t_pane->SetScrollRate(10, 10);
+#endif // _WIN32
+
 	vm = new DTSDVMListView(1, true);
 	tree = new DTSDVMCtrl(t_pane, wxID_ANY, vm, wxDefaultPosition, wxDefaultSize, wxDV_ROW_LINES|wxDV_NO_HEADER);
 
@@ -308,7 +321,7 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 
 	psize = p - GetSashSize();
 #ifdef _WIN32
-	tree->GetColumn(0)->SetWidth(psize);
+	tree->GetColumn(0)->SetWidth(psize - wxSYS_VSCROLL_X);
 #else
 	tree->GetColumn(0)->SetMinWidth(psize);
 #endif // _WIN32
@@ -321,7 +334,7 @@ DTSDVMCtrl *DTSTreeWindow::GetTreeCtrl() {
 void DTSTreeWindow::SetTreePaneSize() {
 	int psize = GetSashPosition() - GetSashSize();
 #ifdef _WIN32
-		tree->GetColumn(0)->SetWidth(psize);
+		tree->GetColumn(0)->SetWidth(psize - wxSYS_VSCROLL_X);
 #else
 		tree->GetColumn(0)->SetMinWidth(psize);
 #endif // _WIN32

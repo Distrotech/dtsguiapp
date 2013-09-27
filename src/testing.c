@@ -43,7 +43,7 @@ void testpanel(dtsgui_pane p) {
 
 	dtsgui_textbox(p, "TextBox", "text", "Text", NULL);
 	dtsgui_textbox_multi(p, "Multi Line", "multi", "L\nL\n", NULL);
-	dtsgui_checkbox(p, "Checkbox", "check", 1, NULL);
+	dtsgui_checkbox(p, "Checkbox", "check", "1", "0", 1, NULL);
 
 	l = dtsgui_combobox(p, "ComboBox", "combo", NULL);
 	dtsgui_listbox_add(l, "Test1", NULL);
