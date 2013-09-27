@@ -265,7 +265,7 @@ void DTSFrame::SetupToolbar() {
 
 	proto->Append("http");
 	proto->Append("https");
-	proto->Append("manage");
+	proto->Append("https [:666]");
 	proto->SetSelection(2);
 
 	toolbar->AddControl(proto);
