@@ -226,25 +226,44 @@ void DTSTreeWindowEvent::SplitterEvent(wxSplitterEvent& event) {
 
 void DTSTreeWindowEvent::TreeCallback(const wxDataViewItem item, enum tree_cbtype type) {
 	void *tdata = NULL;
-	DTSPanel *sp;
+	DTSPanel *sp = NULL;
 	wxWindow *op, *w;
+	DTSDVMListStore *ndata = (item.IsOk()) ? (DTSDVMListStore*)item.GetID() : NULL;
 
-	if (item && treecb) {
-		DTSDVMListStore *ndata = (item.IsOk()) ? (DTSDVMListStore*)item.GetID() : NULL;
-		if (objref(data)) {
-			tdata = data;
-		}
-		if ((sp = (DTSPanel*)treecb(dtsgui, parent, ndata, type, ndata->GetTitle().ToUTF8(), tdata))) {
-			ndata->ConfigPanel(sp, parent);
-			w = sp->GetPanel();
-			op = parent->SetWindow(w);
-			delete op;
-		}
+	if (!ndata) {
+		return;
+	}
 
-		if (tdata) {
-			objunref(tdata);
+	if (objref(data)) {
+		tdata = data;
+	}
+
+	if (treecb) {
+		sp = (DTSPanel*)treecb(dtsgui, parent, ndata, type, ndata->GetTitle().ToUTF8(), tdata);
+	} else {
+		switch(type) {
+			case DTSGUI_TREE_CB_SELECT:
+				sp = (DTSPanel*)dtsgui_treepane_defalt(parent, ndata);
+				break;
+			case DTSGUI_TREE_CB_EDIT:
+				dtsgui_nodesetxml(parent, ndata, ndata->GetTitle().ToUTF8());
+				break;
+			case DTSGUI_TREE_CB_DELETE:
+				break;
 		}
 	}
+
+	if (sp) {
+		ndata->ConfigPanel(sp, parent);
+		w = sp->GetPanel();
+		op = parent->SetWindow(w);
+		delete op;
+	}
+
+	if (tdata) {
+		objunref(tdata);
+	}
+
 }
 
 void free_menu(void *data) {

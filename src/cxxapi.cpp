@@ -331,6 +331,30 @@ extern dtsgui_pane dtsgui_treepane(dtsgui_treeview tv, const char *name, int but
 	return dp;
 }
 
+dtsgui_pane dtsgui_treepane_defalt(dtsgui_treeview self, dtsgui_treenode node) {
+	dtsgui_pane p = NULL;
+	DTSDVMListStore *ls = (DTSDVMListStore*)node;
+	struct xml_doc *xmldoc;
+	int nodeid;
+	const char *title = strdup(ls->GetTitle().ToUTF8());
+
+	nodeid = dtsgui_treenodeid(self, node);
+
+	if (nodeid == -1) {
+		p = dtsgui_treepane(self, NULL, 0, NULL, NULL);
+	} else {
+		xmldoc = dtsgui_panelxml(self);
+		p = dtsgui_treepane(self, title, wx_PANEL_BUTTON_ACTION, NULL, xmldoc);
+		if (xmldoc) {
+			objunref(xmldoc);
+		};
+	}
+	if (title) {
+		free((void*)title);
+	}
+	return p;
+}
+
 extern void dtsgui_showpanel(dtsgui_pane pane, int act) {
 	DTSPanel *dp = (DTSPanel*)pane;
 
@@ -1112,6 +1136,28 @@ void dtsgui_newxmltreenode(dtsgui_treeview tree, dtsgui_pane p, dtsgui_treenode 
 	nn->p_cb = p_cb;
 
 	dtsgui_setevcallback(p, dtsgui_handle_newtreenode, nn);
+}
+
+void dtsgui_nodesetxml(dtsgui_treeview tree, dtsgui_treenode node, const char *title) {
+	DTSDVMListStore *ls = (DTSDVMListStore*)node;
+	struct xml_doc *xmldoc;
+	struct xml_node *xn;
+	char *buff = NULL;
+
+	if (!(xmldoc = dtsgui_panelxml(tree))) {
+		return;
+	}
+
+	if (!(xn = ls->GetXMLData(&buff))) {
+		return;
+	}
+
+	if (buff) {
+		xml_setattr(xmldoc, xn, buff, title);
+		objunref(buff);
+	} else {
+		xml_modify(xmldoc, xn, title);
+	}
 }
 
 #ifdef __WIN32

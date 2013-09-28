@@ -19,3 +19,5 @@ autoscan.log
 configure.scan
 /src/libdtsapp_gui*
 /src/.libs
+/app/wxforms
+/app/.libs
