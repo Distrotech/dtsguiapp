@@ -402,12 +402,12 @@ const char *getxmlvalue(struct xml_element *xml) {
 	return ret;
 }
 
-extern void dtsgui_xmltextbox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *attr) {
+extern void dtsgui_xmltextbox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr) {
 	DTSPanel *p = (DTSPanel *)pane;
 	struct xml_element *xml;
 	const char *value = NULL;
 
-	if ((xml = p->GetNode(xpath, attr))) {
+	if ((xml = p->GetNode(xpath, node, fattr, fval,attr))) {
 		value = getxmlvalue(xml);
 	}
 
@@ -418,12 +418,12 @@ extern void dtsgui_xmltextbox(dtsgui_pane pane, const char *title, const char *n
 	}
 }
 
-extern void dtsgui_xmltextbox_multi(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *attr) {
+extern void dtsgui_xmltextbox_multi(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr) {
 	DTSPanel *p = (DTSPanel *)pane;
 	struct xml_element *xml;
 	const char *value = NULL;
 
-	if ((xml = p->GetNode(xpath, attr))) {
+ 	if ((xml = p->GetNode(xpath, node, fattr, fval, attr))) {
 		value = getxmlvalue(xml);
 	}
 
@@ -434,12 +434,12 @@ extern void dtsgui_xmltextbox_multi(dtsgui_pane pane, const char *title, const c
 	}
 }
 
-extern void dtsgui_xmlpasswdbox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *attr) {
+extern void dtsgui_xmlpasswdbox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr) {
 	DTSPanel *p = (DTSPanel *)pane;
 	struct xml_element *xml;
 	const char *value = NULL;
 
-	if ((xml = p->GetNode(xpath, attr))) {
+	if ((xml = p->GetNode(xpath, node, fattr, fval, attr))) {
 		value = getxmlvalue(xml);
 	}
 
@@ -450,13 +450,13 @@ extern void dtsgui_xmlpasswdbox(dtsgui_pane pane, const char *title, const char 
 	}
 }
 
-extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *name, const char *checkval, const char *uncheckval, const char *xpath, const char *attr) {
+extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *name, const char *checkval, const char *uncheckval, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr) {
 	DTSPanel *p = (DTSPanel *)pane;
 	struct xml_element *xml;
 	int ischecked = 0;
 	const char *value = NULL;
 
-	if ((xml = p->GetNode(xpath, attr))) {
+	if ((xml = p->GetNode(xpath, node, fattr, fval, attr))) {
 		value = getxmlvalue(xml);
 	}
 
@@ -471,13 +471,13 @@ extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *
 	}
 }
 
-struct form_item *dtsgui_xmllistbox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *attr) {
+struct form_item *dtsgui_xmllistbox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr) {
 	DTSPanel *p = (DTSPanel *)pane;
 	const char *value = NULL;
 	struct xml_element *xml;
 	struct form_item *fi;
 
-	if ((xml = p->GetNode(xpath, attr))) {
+	if ((xml = p->GetNode(xpath, node, fattr, fval, attr))) {
 		value = getxmlvalue(xml);
 	}
 	fi = p->ListBox(title, name, value, xml, DTSGUI_FORM_DATA_XML);
@@ -489,13 +489,13 @@ struct form_item *dtsgui_xmllistbox(dtsgui_pane pane, const char *title, const c
 	return fi;
 }
 
-struct form_item *dtsgui_xmlcombobox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *attr) {
+struct form_item *dtsgui_xmlcombobox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr) {
 	DTSPanel *p = (DTSPanel *)pane;
 	const char *value = NULL;
 	struct xml_element *xml;
 	struct form_item *fi;
 
-	if ((xml = p->GetNode(xpath, attr))) {
+	if ((xml = p->GetNode(xpath, node, fattr, fval, attr))) {
 		value = getxmlvalue(xml);
 	}
 
@@ -810,7 +810,7 @@ extern void dtsgui_item_xmlcreate(dtsgui_pane pane, const char *path, const char
 					len = strlen(fi->name)+strlen(path)+strlen(node)+strlen(attr)+10;
 					xpath = (char*)malloc(len);
 					snprintf(xpath, len, "%s/%s[@%s = '%s']", path, node, attr, fi->name);
-					if ((fi->data.xml = p->GetNode(xpath, NULL))) {
+					if ((fi->data.xml = p->GetNode(xpath, NULL, NULL, NULL, NULL))) {
 						fi->dtype = DTSGUI_FORM_DATA_XML;
 						w = (wxWindow*)fi->widget;
 						w->Enable(true);

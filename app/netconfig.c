@@ -45,75 +45,7 @@ void network_config_dns_domain_server_new(dtsgui_pane p, dtsgui_treeview self, d
 
 static const char *protocols[] = {"TCP", "UDP", "GRE", "ESP", "AH", "OSPF", "ALL"};
 
-char *createxmlnode(struct xml_doc *xmldoc, const char *xpath, const char *node, const char *val, const char *attr, const char *aval) {
-	struct xml_search *xp;
-	char *xpth;
-	int len;
-
-	len = strlen(xpath) + strlen(node) + 10;
-
-	if (attr) {
-		len+=strlen(aval)+strlen(attr);
-		xpth=malloc(len);
-		snprintf(xpth, PATH_MAX, "%s/%s[@%s = '%s']", xpath, node, attr, aval);
-	} else {
-		len+=strlen(val);
-		xpth=malloc(len);
-		snprintf(xpth, len, "%s/%s[. = '%s']", xpath, node, val);
-	}
-
-	if (!(xp = xml_xpath(xmldoc, xpth, attr))) {
-		xml_addnode(xmldoc, xpath, node, val, attr, aval);
-	} else {
-		objunref(xp);
-	}
-	return xpth;
-}
-
-void xmltextbox(dtsgui_pane p, const char *name, const char *xpath, const char *node, const char *val, const char *attr, const char *aval) {
-	struct xml_doc *xmldoc;
-	char *xpth;
-
-	if (!(xmldoc = dtsgui_panelxml(p))) {
-		return;
-	}
-
-	xpth = createxmlnode(xmldoc, xpath, node, val, attr, aval);
-
-	dtsgui_xmltextbox(p, name, (attr && aval) ? aval : node, xpth, NULL);
-	free(xpth);
-}
-
-void xmlcheckbox(dtsgui_pane p, const char *name, const char *xpath, const char *node, const char *val, const char *attr, const char *aval) {
-	struct xml_doc *xmldoc;
-	char *xpth;
-
-	if (!(xmldoc = dtsgui_panelxml(p))) {
-		return;
-	}
-
-	xpth = createxmlnode(xmldoc, xpath, node, val, attr, aval);
-
-	dtsgui_xmlcheckbox(p, name, (attr && aval) ? aval : node, "true", "", xpth, NULL);
-	free(xpth);
-}
-
-struct form_item *xmllistbox(dtsgui_pane p, const char *name, const char *xpath, const char *node, const char *val, const char *attr, const char *aval) {
-	struct xml_doc *xmldoc;
-	struct form_item *lb;
-	char *xpth;
-
-	if (!(xmldoc = dtsgui_panelxml(p))) {
-		return NULL;
-	}
-
-	xpth = createxmlnode(xmldoc, xpath, node, val, attr, aval);
-
-	lb = dtsgui_xmllistbox(p, name, (attr && aval) ? aval : node, xpth, NULL);
-	free(xpth);
-	return lb;
-}
-
+/*XXX LDAP Settings server/DN*/
 void network_config(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	struct xml_doc *xmldoc;
 	struct form_item *lb, *elb;
@@ -122,17 +54,17 @@ void network_config(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, v
 	xmldoc = dtsgui_panelxml(p);
 
 	/*XXX LDAP Settings server/DN*/
-	if ((lb = xmllistbox(p, "Internal Interface", "/config/IP/SysConf", "Option", "", "option", "Internal"))) {
+	if ((lb = dtsgui_xmllistbox(p, "Internal Interface", "Internal", "/config/IP/SysConf", "Option", "option", "Internal", NULL))) {
 		dtsgui_listbox_addxml(lb, xmldoc, "/config/IP/Interfaces/Interface", "name", NULL);
 		objunref(lb);
 	}
-	if ((elb = xmllistbox(p, "External Interface", "/config/IP/SysConf", "Option", "", "option", "External"))) {
+	if ((elb = dtsgui_xmllistbox(p, "External Interface", "External", "/config/IP/SysConf", "Option", "option", "External", NULL))) {
 		dtsgui_listbox_add(elb, "Modem", "Dialup");
 		dtsgui_listbox_addxml(elb, xmldoc, "/config/IP/Interfaces/Interface", "name", NULL);
 		extint = dtsgui_item_value(elb);
 		objunref(elb);
 	}
-	if ((lb = xmllistbox(p, "External OVPN Interface", "/config/IP/SysConf", "Option", (extint) ? extint : "", "option", "OVPNNet"))) {
+	if ((lb = dtsgui_xmllistbox(p, "External OVPN Interface", "OVPNNet", "/config/IP/SysConf", "Option", "option", "OVPNNet", NULL))) {
 		dtsgui_listbox_add(lb, "Modem", "Dialup");
 		dtsgui_listbox_addxml(lb, xmldoc, "/config/IP/Interfaces/Interface", "name", NULL);
 		objunref(lb);
@@ -142,75 +74,71 @@ void network_config(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, v
 		free((void*)extint);
 	}
 
-	xmltextbox(p, "Gateway Address", "/config/IP/SysConf", "Option", "", "option", "Nexthop");
-	xmltextbox(p, "External (Natted IP)", "/config/IP/SysConf", "Option", "", "option", "NattedIP");
-	xmltextbox(p, "IPSEC VPN Access", "/config/IP/SysConf", "Option", "", "option", "VPNNet");
-	xmltextbox(p, "Open VPN Access", "/config/IP/SysConf", "Option", "", "option", "OVPNNet");
-	xmltextbox(p, "L2TP VPN Access", "/config/IP/SysConf", "Option", "", "option", "L2TPNet");
-	xmltextbox(p, "NTP Server[s]", "/config/IP/SysConf", "Option", "196.25.1.1 196.25.1.9", "option", "NTPServer");
-	xmltextbox(p, "Bridge Interfaces", "/config/IP/SysConf", "Option", "ethA", "option", "Bridge");
-	xmltextbox(p, "Incoming Traffic Limit", "/config/IP/SysConf", "Option", "", "option", "Ingress");
-	xmltextbox(p, "Outgoing Traffic Limit", "/config/IP/SysConf", "Option", "", "option", "Egress");
+	dtsgui_xmltextbox(p, "Gateway Address", "Nexthop", "/config/IP/SysConf", "Option", "option", "Nexthop", NULL);
+	dtsgui_xmltextbox(p, "External (Natted IP)", "NattedIP", "/config/IP/SysConf", "Option", "option", "NattedIP", NULL);
+	dtsgui_xmltextbox(p, "IPSEC VPN Access", "VPNNet", "/config/IP/SysConf", "Option", "option", "VPNNet", NULL);
+	dtsgui_xmltextbox(p, "Open VPN Access", "OVPNNet", "/config/IP/SysConf", "Option", "option", "OVPNNet", NULL);
+	dtsgui_xmltextbox(p, "L2TP VPN Access", "L2TPNet", "/config/IP/SysConf", "Option", "option", "L2TPNet", NULL);
+	dtsgui_xmltextbox(p, "NTP Server[s]", "NTPServer", "/config/IP/SysConf", "Option", "option", "NTPServer", NULL);
+	dtsgui_xmltextbox(p, "Bridge Interfaces", "Bridge", "/config/IP/SysConf", "Option", "option", "Bridge", NULL);
+	dtsgui_xmltextbox(p, "Incoming Traffic Limit", "Ingress","/config/IP/SysConf", "Option", "option", "Ingress", NULL);
+	dtsgui_xmltextbox(p, "Outgoing Traffic Limit", "Egress", "/config/IP/SysConf", "Option", "option", "Egress", NULL);
 
 	dtsgui_setevcallback(p, handle_test, NULL);
 }
 
 void network_config_dns(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
-	xmltextbox(p, "Hostname", "/config/DNS/Config", "Option", "netsentry", "option", "Hostname");
-	xmltextbox(p, "Domain", "/config/DNS/Config", "Option", "company.co.za", "option", "Domain");
-	xmltextbox(p, "Aditional Search Domains", "/config/DNS/Config", "Option", "", "option", "Search");
-	xmltextbox(p, "Primary DNS", "/config/IP/SysConf", "Option", "", "option", "PrimaryDns");
-	xmltextbox(p, "Secondary DNS", "/config/IP/SysConf", "Option", "", "option", "SecondaryDns");
-	xmltextbox(p, "Primary WINS", "/config/IP/SysConf", "Option", "", "option", "PrimaryWins");
-	xmltextbox(p, "Secondary WINS", "/config/IP/SysConf", "Option", "", "option", "SecondaryWins");
-	xmltextbox(p, "DHCP Lease", "/config/IP/SysConf", "Option", "43200", "option", "DHCPLease");
-	xmltextbox(p, "DHCP Max Lease", "/config/IP/SysConf", "Option", "86400", "option", "DHCPMaxLease");
-	xmlcheckbox(p, "Use Internal Interface For DNS First", "/config/DNS/Config", "Option", "true", "option", "IntFirst");
-
+	dtsgui_xmltextbox(p, "Hostname", "Hostname", "/config/DNS/Config", "Option", "option", "Hostname", NULL);
+	dtsgui_xmltextbox(p, "Domain", "Domain", "/config/DNS/Config", "Option", "option", "Domain", NULL);
+	dtsgui_xmltextbox(p, "Aditional Search Domains", "Search", "/config/DNS/Config", "Option", "option", "Search", NULL);
+	dtsgui_xmltextbox(p, "Primary DNS", "PrimaryDns", "/config/IP/SysConf", "Option", "option", "PrimaryDns", NULL);
+	dtsgui_xmltextbox(p, "Secondary DNS", "SecondaryDns", "/config/IP/SysConf", "Option", "option", "SecondaryDns", NULL);
+	dtsgui_xmltextbox(p, "Primary WINS", "PrimaryWins", "/config/IP/SysConf", "Option", "option", "PrimaryWins", NULL);
+	dtsgui_xmltextbox(p, "Secondary WINS", "SecondaryWins", "/config/IP/SysConf", "Option", "option", "SecondaryWins", NULL);
+	dtsgui_xmltextbox(p, "DHCP Lease", "DHCPLease", "/config/IP/SysConf", "Option", "option", "DHCPLease", NULL);
+	dtsgui_xmltextbox(p, "DHCP Max Lease", "DHCPLease", "/config/IP/SysConf", "Option", "option", "DHCPMaxLease", NULL);
+	dtsgui_xmlcheckbox(p, "Use Internal Interface For DNS First", "IntFirst", "true", "", "/config/DNS/Config", "Option", "option", "IntFirst", NULL);
 	dtsgui_setevcallback(p, handle_test, NULL);
 }
 
 void network_config_dns_dyn(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
-	xmltextbox(p, "Dynamic DNS Domain", "/config/DNS/Config", "Option", "", "option", "DynZone");
-	xmltextbox(p, "Dynamic DNS Server", "/config/DNS/Config", "Option", "", "option", "DynServ");
-	xmltextbox(p, "Dynamic DNS Secret", "/config/DNS/Config", "Option", "", "option", "DynKey");
-	xmltextbox(p, "Dynamic Zone TTL", "/config/DNS/Config", "Option", "180", "option", "DynamicTTL");
-	xmlcheckbox(p, "Add CNAME For host", "/config/DNS/Config", "Option", "true", "option", "DynamicCNAME");
+	dtsgui_xmltextbox(p, "Dynamic DNS Domain", "DynZone", "/config/DNS/Config", "Option", "option", "DynZone", NULL);
+	dtsgui_xmltextbox(p, "Dynamic DNS Server", "DynServ", "/config/DNS/Config", "Option", "option", "DynServ", NULL);
+	dtsgui_xmltextbox(p, "Dynamic DNS Secret", "DynKey", "/config/DNS/Config", "Option", "option", "DynKey", NULL);
+	dtsgui_xmltextbox(p, "Dynamic Zone TTL", "DynamicTTL", "/config/DNS/Config", "Option", "option", "DynamicTTL", NULL);
+	dtsgui_xmlcheckbox(p, "Add CNAME For host", "DynamicCNAME", "true", "", "/config/DNS/Config", "Option", "option", "DynamicCNAME", NULL);
 	dtsgui_setevcallback(p, handle_test, NULL);
 }
 
 void network_config_dns_serv(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
-	xmltextbox(p, "Shared Secret For Domain Updates", "/config/DNS/Config", "Option", "", "option", "SmartKey");
 
-	xmlcheckbox(p, "Backup Zone Files", "/config/DNS/Config", "Option", "true", "option", "Backup");
-	xmlcheckbox(p, "Authorotive [Internal]", "/config/DNS/Config", "Option", "true", "option", "Auth");
-	xmlcheckbox(p, "Authorotive [External]", "/config/DNS/Config", "Option", "", "option", "AuthX");
-	xmlcheckbox(p, "Use DNS Servers Obtained From PPP", "/config/DNS/Config", "Option", "true", "option", "Usepeer");
-	xmlcheckbox(p, "Allow Recursive Lookup Externally", "/config/DNS/Config", "Option", "", "option", "ExtServ");
+	dtsgui_xmltextbox(p, "Shared Secret For Domain Updates", "SmartKey", "/config/DNS/Config", "Option", "option", "SmartKey", NULL);
+	dtsgui_xmlcheckbox(p, "Backup Zone Files", "Backup", "true", "", "/config/DNS/Config", "Option", "option", "Backup", NULL);
+	dtsgui_xmlcheckbox(p, "Authorotive [Internal]", "Auth", "true", "", "/config/DNS/Config", "Option", "option", "Auth", NULL);
+	dtsgui_xmlcheckbox(p, "Authorotive [External]", "AuthX", "true", "","/config/DNS/Config", "Option", "option", "AuthX", NULL);
+	dtsgui_xmlcheckbox(p, "Use DNS Servers Obtained From PPP", "Usepeer", "true", "", "/config/DNS/Config", "Option", "option", "Usepeer", NULL);
+	dtsgui_xmlcheckbox(p, "Allow Recursive Lookup Externally", "ExtServ", "true", "", "/config/DNS/Config", "Option", "option", "ExtServ", NULL);
 	dtsgui_setevcallback(p, handle_test, NULL);
 }
 
 void network_config_dns_zone(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
-	xmltextbox(p, "SOA Serial", "/config/DNS/Config", "Option", "1", "option", "Serial");
-	xmltextbox(p, "SOA Refresh", "/config/DNS/Config", "Option", "3600", "option", "Refresh");
-	xmltextbox(p, "SOA Retry", "/config/DNS/Config", "Option", "1800", "option", "Retry");
-	xmltextbox(p, "SOA Expire", "/config/DNS/Config", "Option", "604800", "option", "Expire");
-	xmltextbox(p, "Default TTL", "/config/DNS/Config", "Option", "3600", "option", "DefaultTTL");
+	dtsgui_xmltextbox(p, "SOA Serial", "Serial", "/config/DNS/Config", "Option", "option", "Serial", NULL);
+	dtsgui_xmltextbox(p, "SOA Refresh", "Refresh", "/config/DNS/Config", "Option", "option", "Refresh", NULL);
+	dtsgui_xmltextbox(p, "SOA Retry", "Retry", "/config/DNS/Config", "Option", "option", "Retry", NULL);
+	dtsgui_xmltextbox(p, "SOA Expire", "Expire", "/config/DNS/Config", "Option", "option", "Expire", NULL);
+	dtsgui_xmltextbox(p, "Default TTL", "DefaultTTL", "/config/DNS/Config", "Option", "option", "DefaultTTL", NULL);
 
 	dtsgui_setevcallback(p, handle_test, NULL);
 }
 
 void network_config_dns_host(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
-	const char *xpre = "/config/DNS/Hosts/Host";
-	char xpath[PATH_MAX];
+	const char *xpre = "/config/DNS/Hosts";
 	struct xml_node *xn;
 
 	xn = dtsgui_treenodegetxml(self, node, NULL);
 
-	snprintf(xpath, PATH_MAX, "%s[. = '%s']", xpre, xn->value);
-
-	dtsgui_xmltextbox(p, "IP Address", "ipaddr", xpath, "ipaddr");
-	dtsgui_xmltextbox(p, "MAC Address", "macaddr", xpath, "macaddr");
+	dtsgui_xmltextbox(p, "IP Address", "ipaddr", xpre, "Host", NULL, xn->value, "ipaddr");
+	dtsgui_xmltextbox(p, "MAC Address", "macaddr", xpre, "Host", NULL, xn->value, "macaddr");
 
 	dtsgui_setevcallback(p, handle_test, NULL);
 }
@@ -229,17 +157,15 @@ void network_config_dns_domain_node(dtsgui_treeview tv, dtsgui_treenode tn, stru
 }
 
 void network_config_dns_domain(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
-	const char *xpre = "/config/DNS/Hosted/Domain";
-	char xpath[PATH_MAX];
+	const char *xpre = "/config/DNS/Hosted";
 	const char *domain;
 	struct xml_node *xn;
 
 	xn = dtsgui_treenodegetxml(self, node, NULL);
 	domain = xml_getattr(xn, "domain");
-	snprintf(xpath, PATH_MAX, "%s[@domain = '%s']", xpre, domain);
 
-	dtsgui_xmltextbox(p, "TSIG Key [Master]", "key", xpath, "key");
-	dtsgui_xmlcheckbox(p, "Internal Domain", "internal", "true", "", xpath, "internal");
+	dtsgui_xmltextbox(p, "TSIG Key [Master]", "key", xpre, "Domain", "domain", domain, "key");
+	dtsgui_xmlcheckbox(p, "Internal Domain", "internal", "true", "", xpre, "Domain", "domain", domain, "internal");
 
 	dtsgui_setevcallback(p, handle_test, NULL);
 }
@@ -256,7 +182,6 @@ void network_config_dns_domain_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_t
 
 void network_config_dns_domain_server(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre;
-	char xpath[PATH_MAX];
 	struct xml_node *xn;
 
 	xn = dtsgui_treenodegetxml(self, node, NULL);
@@ -265,8 +190,7 @@ void network_config_dns_domain_server(dtsgui_pane p, dtsgui_treeview self, dtsgu
 		return;
 	}
 
-	snprintf(xpath, PATH_MAX, "%s/NameServer[. = '%s']", xpre, xn->value);
-	dtsgui_xmltextbox(p, "Name Server IP Address", "master", xpath, NULL);
+	dtsgui_xmltextbox(p, "Name Server IP Address", "master", xpre, "NameServer", NULL, xn->value, NULL);
 	dtsgui_setevcallback(p, handle_test, NULL);
 }
 
@@ -293,22 +217,20 @@ void network_config_dns_domain_server_new(dtsgui_pane p, dtsgui_treeview self, d
 }
 
 void network_iface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
-	const char *xpre = "/config/IP/Interfaces/Interface";
-	char xpath[PATH_MAX];
+	const char *xpre = "/config/IP/Interfaces";
 	struct xml_node *xn;
 
 	xn = dtsgui_treenodegetxml(self, node, NULL);
-	snprintf(xpath, PATH_MAX, "%s[. = '%s']", xpre, xn->value);
 
-	dtsgui_xmltextbox(p, "Interface", "iface", xpath, NULL);
-	dtsgui_xmltextbox(p, "IP Address", "ipaddr", xpath, "ipaddr");
-	dtsgui_xmltextbox(p, "IP Subnet Bits", "subnet", xpath, "subnet");
-	dtsgui_xmltextbox(p, "DHCP Gateway", "gateway", xpath, "gateway");
-	dtsgui_xmltextbox(p, "MAC Address", "macaddr", xpath, "macaddr");
-	dtsgui_xmltextbox(p, "DHCP Start Address", "dhcpstart", xpath, "dhcpstart");
-	dtsgui_xmltextbox(p, "DHCP End Address", "dhcpend", xpath, "dhcpend");
-	dtsgui_xmltextbox(p, "Bandwidth In", "bwin", xpath, "bwin");
-	dtsgui_xmltextbox(p, "Bandwidth Out", "bwout", xpath, "bwout");
+	dtsgui_xmltextbox(p, "Interface", "iface", xpre, "Interface", NULL, xn->value, NULL);
+	dtsgui_xmltextbox(p, "IP Address", "ipaddr", xpre, "Interface", NULL, xn->value, "ipaddr");
+	dtsgui_xmltextbox(p, "IP Subnet Bits", "subnet", xpre, "Interface", NULL, xn->value, "subnet");
+	dtsgui_xmltextbox(p, "DHCP Gateway", "gateway", xpre, "Interface", NULL, xn->value, "gateway");
+	dtsgui_xmltextbox(p, "MAC Address", "macaddr", xpre, "Interface", NULL, xn->value, "macaddr");
+	dtsgui_xmltextbox(p, "DHCP Start Address", "dhcpstart", xpre, "Interface", NULL, xn->value, "dhcpstart");
+	dtsgui_xmltextbox(p, "DHCP End Address", "dhcpend", xpre, "Interface", NULL, xn->value, "dhcpend");
+	dtsgui_xmltextbox(p, "Bandwidth In", "bwin", xpre, "Interface", NULL, xn->value, "bwin");
+	dtsgui_xmltextbox(p, "Bandwidth Out", "bwout", xpre, "Interface", NULL, xn->value, "bwout");
 
 	dtsgui_setevcallback(p, handle_test, NULL);
 }
@@ -331,22 +253,19 @@ void network_newiface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node,
 }
 
 void network_wifi(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
-	const char *xpre = "/config/IP/WiFi";
-	char xpath[PATH_MAX];
+	const char *xpre = "/config/IP";
 	struct form_item *lb;
 	struct xml_node *xn;
 
 	xn = dtsgui_treenodegetxml(self, node, NULL);
 
-	snprintf(xpath, PATH_MAX, "%s[. = '%s']", xpre, xn->value);
-
-	lb = dtsgui_xmlcombobox(p, "WiFi Configuration", "type", xpath, "type");
+	lb = dtsgui_xmlcombobox(p, "WiFi Configuration", "type", xpre, "WiFi", NULL, xn->value, "type");
 	dtsgui_listbox_add(lb, "Access Point", "AP");
 	dtsgui_listbox_add(lb, "WiFi Client", "Client");
 	dtsgui_listbox_add(lb, "Hotspot", "Hotspot");
 	objunref(lb);
 
-	lb = dtsgui_xmlcombobox(p, "WiFi Mode", "mode", xpath, "mode");
+	lb = dtsgui_xmlcombobox(p, "WiFi Mode", "mode", xpre, "WiFi", NULL, xn->value, "mode");
 	dtsgui_listbox_add(lb, "802.11a", "0");
 	dtsgui_listbox_add(lb, "802.11b [ch 1/6/11/14]", "1");
 	dtsgui_listbox_add(lb, "802.11g [ch 1/5/9/13]", "2");
@@ -354,16 +273,16 @@ void network_wifi(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, voi
 	dtsgui_listbox_add(lb, "802.11n 40Mhz [ch 3/11]", "4");
 	objunref(lb);
 
-	lb = dtsgui_xmlcombobox(p, "WiFi Auth Type", "auth", xpath, "auth");
+	lb = dtsgui_xmlcombobox(p, "WiFi Auth Type", "auth", xpre, "WiFi", NULL, xn->value, "auth");
 	dtsgui_listbox_add(lb, "WiFi Protected Access", "WPA");
 	dtsgui_listbox_add(lb, "Extensible Authentication Protocol", "EAP");
 	dtsgui_listbox_add(lb, "None", "None");
 	objunref(lb);
 
-	dtsgui_xmltextbox(p, "Channel", "channel", xpath, "channel");
-	dtsgui_xmltextbox(p, "Key (WPA)", "key", xpath, "key");
-	dtsgui_xmltextbox(p, "Regulatory Domain", "regdom", xpath, "regdom");
-	dtsgui_xmltextbox(p, "TX Power", "txpower", xpath, "txpower");
+	dtsgui_xmltextbox(p, "Channel", "channel", xpre, "WiFi", NULL, xn->value, "channel");
+	dtsgui_xmltextbox(p, "Key (WPA)", "key", xpre, "WiFi", NULL, xn->value, "key");
+	dtsgui_xmltextbox(p, "Regulatory Domain", "regdom", xpre, "WiFi", NULL, xn->value, "regdom");
+	dtsgui_xmltextbox(p, "TX Power", "txpower", xpre, "WiFi", NULL, xn->value, "txpower");
 
 	dtsgui_setevcallback(p, handle_test, NULL);
 }
@@ -411,20 +330,17 @@ void network_newwifi(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, 
 }
 
 void network_wan(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
-	const char *xpre = "/config/IP/Routes/Route";
-	char xpath[PATH_MAX];
+	const char *xpre = "/config/IP/Routes";
 	struct xml_node *xn;
 
 	xn = dtsgui_treenodegetxml(self, node, NULL);
 
-	snprintf(xpath, PATH_MAX, "%s[. = '%s']", xpre, xn->value);
-
-	dtsgui_xmltextbox(p, "Network", "network", xpath, "network");
-	dtsgui_xmltextbox(p, "Subnet Bits", "subnet", xpath, "subnet");
-	dtsgui_xmltextbox(p, "Gateway [Local]", "gateway", xpath, "gateway");
-	dtsgui_xmltextbox(p, "DHCP Start Address", "dhcpstart", xpath, "dhcpstart");
-	dtsgui_xmltextbox(p, "DHCP End Address", "dhcpend", xpath, "dhcpend");
-	dtsgui_xmltextbox(p, "Gateway [Remote]", "remote", xpath, "remote");
+	dtsgui_xmltextbox(p, "Network", "network", xpre, "Route", NULL, xn->value, "network");
+	dtsgui_xmltextbox(p, "Subnet Bits", "subnet", xpre, "Route", NULL, xn->value, "subnet");
+	dtsgui_xmltextbox(p, "Gateway [Local]", "gateway", xpre, "Route", NULL, xn->value, "gateway");
+	dtsgui_xmltextbox(p, "DHCP Start Address", "dhcpstart", xpre, "Route", NULL, xn->value, "dhcpstart");
+	dtsgui_xmltextbox(p, "DHCP End Address", "dhcpend", xpre, "Route", NULL, xn->value, "dhcpend");
+	dtsgui_xmltextbox(p, "Gateway [Remote]", "remote", xpre, "Route", NULL, xn->value, "remote");
 
 	dtsgui_setevcallback(p, handle_test, NULL);
 }
@@ -444,17 +360,14 @@ void network_newwan(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, v
 }
 
 void network_route(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
-	const char *xpre = "/config/IP/GenRoutes/Route";
-	char xpath[PATH_MAX];
+	const char *xpre = "/config/IP/GenRoutes";
 	struct xml_node *xn;
 
 	xn = dtsgui_treenodegetxml(self, node, NULL);
 
-	snprintf(xpath, PATH_MAX, "%s[. = '%s']", xpre, xn->value);
-
-	dtsgui_xmltextbox(p, "Network", "network", xpath, "network");
-	dtsgui_xmltextbox(p, "Subnet Bits", "subnet", xpath, "subnet");
-	dtsgui_xmltextbox(p, "Gateway", "gateway", xpath, "gateway");
+	dtsgui_xmltextbox(p, "Network", "network", xpre, "Route", NULL, xn->value, "network");
+	dtsgui_xmltextbox(p, "Subnet Bits", "subnet", xpre, "Route", NULL, xn->value, "subnet");
+	dtsgui_xmltextbox(p, "Gateway", "gateway", xpre, "Route", NULL, xn->value, "gateway");
 
 	dtsgui_setevcallback(p, handle_test, NULL);
 }
@@ -473,7 +386,7 @@ void network_modem(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, vo
 	struct form_item *lb;
 
 	/*XXX LDAP Settings server/DN*/
-	if ((lb = xmllistbox(p, "Connection Type", "/config/IP/Dialup", "Option", "Dialup", "option", "Connection"))) {
+	if ((lb = dtsgui_xmllistbox(p, "Connection Type", "Connection", "/config/IP/Dialup", "Option", "option", "Connection", NULL))) {
 		dtsgui_listbox_add(lb, "Dialup", "Dialup");
 		dtsgui_listbox_add(lb, "Leased", "Leased");
 		dtsgui_listbox_add(lb, "ADSL", "ADSL");
@@ -482,7 +395,26 @@ void network_modem(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, vo
 		objunref(lb);
 	}
 
-	if ((lb = xmllistbox(p, "Comm Port ", "/config/IP/Dialup", "Option", "COM1", "option", "ComPort"))) {
+	dtsgui_xmltextbox(p, "Holdoff Time", "Holdoff", "/config/IP/Dialup", "Option", "option", "Holdoff", NULL);
+	dtsgui_xmltextbox(p, "MTU/MRU", "MTU", "/config/IP/Dialup", "Option", "option", "MTU", NULL);
+	dtsgui_xmltextbox(p, "Idle Timeout", "IdleTimeout", "/config/IP/Dialup", "Option", "option", "IdleTimeout", NULL);
+	dtsgui_xmltextbox(p, "Fail Limit", "MaxFail", "/config/IP/Dialup", "Option", "option", "MaxFail", NULL);
+	dtsgui_xmltextbox(p, "Connect Dely", "ConnectDelay", "/config/IP/Dialup", "Option", "option", "ConnectDelay", NULL);
+
+	dtsgui_xmltextbox(p, "Number/Service ID/APN", "Number", "/config/IP/Dialup", "Option", "option", "Number", NULL);
+	dtsgui_xmltextbox(p, "Username", "Username", "/config/IP/Dialup", "Option", "option", "Username", NULL);
+	dtsgui_xmltextbox(p, "Password", "Password", "/config/IP/Dialup", "Option", "option", "Password", NULL);
+
+	dtsgui_xmlcheckbox(p, "BSD Compression", "BSD", "true", "", "/config/IP/Dialup", "Option", "option", "BSD", NULL);
+	dtsgui_xmlcheckbox(p, "Deflate Compression", "Deflate", "true", "", "/config/IP/Dialup", "Option", "option", "Deflate", NULL);
+
+	dtsgui_setevcallback(p, handle_test, NULL);
+}
+
+void network_modem_ana(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
+	struct form_item *lb;
+
+	if ((lb = dtsgui_xmllistbox(p, "Comm Port ", "ComPort", "/config/IP/Dialup", "Option", "option", "ComPort", NULL))) {
 		dtsgui_listbox_add(lb, "COM1", "COM1");
 		dtsgui_listbox_add(lb, "COM2", "COM2");
 		dtsgui_listbox_add(lb, "COM3", "COM3");
@@ -494,27 +426,7 @@ void network_modem(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, vo
 		objunref(lb);
 	}
 
-	xmltextbox(p, "Holdoff Time", "/config/IP/Dialup", "Option", "", "option", "Holdoff");
-	xmltextbox(p, "MTU/MRU", "/config/IP/Dialup", "Option", "", "option", "MTU");
-	xmltextbox(p, "Idle Timeout", "/config/IP/Dialup", "Option", "120", "option", "IdleTimeout");
-	xmltextbox(p, "Fail Limit", "/config/IP/Dialup", "Option", "5", "option", "MaxFail");
-	xmltextbox(p, "Connect Dely", "/config/IP/Dialup", "Option", "", "option", "ConnectDelay");
-
-	xmltextbox(p, "Number/Service ID/APN", "/config/IP/Dialup", "Option", "TelkomSA", "opFlowControltion", "Number");
-	xmltextbox(p, "Username", "/config/IP/Dialup", "Option", "", "option", "Username");
-	xmltextbox(p, "Password", "/config/IP/Dialup", "Option", "", "option", "Password");
-
-	xmlcheckbox(p, "BSD Compression", "/config/IP/Dialup", "Option", "", "option", "BSD");
-	xmlcheckbox(p, "Deflate Compression", "/config/IP/Dialup", "Option", "", "option", "Deflate");
-
-	dtsgui_setevcallback(p, handle_test, NULL);
-}
-
-void network_modem_ana(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
-	struct form_item *lb;
-
-	/*XXX LDAP Settings server/DN*/
-	if ((lb = xmllistbox(p, "Port Speed", "/config/IP/Dialup", "Option", "38400", "option", "Speed"))) {
+	if ((lb = dtsgui_xmllistbox(p, "Port Speed", "Speed", "/config/IP/Dialup", "Option", "option", "Speed", NULL))) {
 		dtsgui_listbox_add(lb, "115200", "115200");
 		dtsgui_listbox_add(lb, "57600", "57600");
 		dtsgui_listbox_add(lb, "38400", "38400");
@@ -523,7 +435,7 @@ void network_modem_ana(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node
 		objunref(lb);
 	}
 
-	if ((lb = xmllistbox(p, "Flow Control ", "/config/IP/Dialup", "Option", "crtscts", "option", "FlowControl"))) {
+	if ((lb = dtsgui_xmllistbox(p, "Flow Control ", "FlowControl", "/config/IP/Dialup", "Option", "option", "FlowControl", NULL))) {
 		dtsgui_listbox_add(lb, "Hardware (RTS/CTS)", "crtscts");
 		dtsgui_listbox_add(lb, "Software (Xon/Xoff)", "xonxoff");
 		dtsgui_listbox_add(lb, "Hardware (DTR/CTS)", "cdtrcts");
@@ -531,39 +443,36 @@ void network_modem_ana(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node
 		objunref(lb);
 	}
 
-	xmltextbox(p, "Local Address", "/config/IP/Dialup", "Option", "10.0.0.1", "option", "Address");
-	xmltextbox(p, "Remote Address", "/config/IP/Dialup", "Option", "10.0.0.2", "option", "Gateway");
+	dtsgui_xmltextbox(p, "Local Address", "Address", "/config/IP/Dialup", "Option", "option", "Address", NULL);
+	dtsgui_xmltextbox(p, "Remote Address", "Gateway", "/config/IP/Dialup", "Option", "option", "Gateway", NULL);
 
-	xmltextbox(p, "Init String 1", "/config/IP/Dialup", "Option", "AT&F", "option", "Init1");
-	xmltextbox(p, "Init String 2", "/config/IP/Dialup", "Option", "ATL1M1", "option", "Init2");
-	xmltextbox(p, "Dial String", "/config/IP/Dialup", "Option", "ATDT", "option", "DialString");
+	dtsgui_xmltextbox(p, "Init String 1", "Init1", "/config/IP/Dialup", "Option", "option", "Init1", NULL);
+	dtsgui_xmltextbox(p, "Init String 2", "Init2", "/config/IP/Dialup", "Option", "option", "Init2", NULL);
+	dtsgui_xmltextbox(p, "Dial String", "DialString", "/config/IP/Dialup", "Option", "option", "DialString", NULL);
 
-	xmlcheckbox(p, "Abort On No Carrier", "/config/IP/Dialup", "Option", "true", "option", "NoCarrier");
-	xmlcheckbox(p, "Abort On No Dialtone", "/config/IP/Dialup", "Option", "true", "option", "NoDialtone");
-	xmlcheckbox(p, "Abort On Error", "/config/IP/Dialup", "Option", "true", "option", "Error");
-	xmlcheckbox(p, "Abort On Busy", "/config/IP/Dialup", "Option", "true", "option", "Busy");
+	dtsgui_xmlcheckbox(p, "Abort On No Carrier", "NoCarrier", "true", "","/config/IP/Dialup", "Option", "option", "NoCarrier", NULL);
+	dtsgui_xmlcheckbox(p, "Abort On No Dialtone", "NoDialtone", "true", "", "/config/IP/Dialup", "Option", "option", "NoDialtone", NULL);
+	dtsgui_xmlcheckbox(p, "Abort On Error", "Error", "true", "", "/config/IP/Dialup", "Option", "option", "Error", NULL);
+	dtsgui_xmlcheckbox(p, "Abort On Busy", "Busy", "true", "", "/config/IP/Dialup", "Option", "option", "Busy", NULL);
 
 	dtsgui_setevcallback(p, handle_test, NULL);
 }
 
 void network_adsl_link(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
-	const char *xpre = "/config/IP/ADSL/Links/Link";
-	char xpath[PATH_MAX];
+	const char *xpre = "/config/IP/ADSL/Links";
 	struct xml_node *xn;
 
 	xn = dtsgui_treenodegetxml(self, node, NULL);
 
-	snprintf(xpath, PATH_MAX, "%s[. = '%s']", xpre, xn->value);
-
-	dtsgui_xmltextbox(p, "Interface", "interface", xpath, "interface");
-	dtsgui_xmltextbox(p, "PPPoE Service (AC/Service)", "service", xpath, "service");
-	dtsgui_xmltextbox(p, "Username", "username", xpath, "username");
-	dtsgui_xmltextbox(p, "Password", "password", xpath, "password");
-	dtsgui_xmltextbox(p, "Bandwidth In", "bwin", xpath, "bwin");
-	dtsgui_xmltextbox(p, "Bandwidth Out", "bwout", xpath, "bwout");
-	dtsgui_xmltextbox(p, "TOS Match", "tos", xpath, "tos");
-	dtsgui_xmltextbox(p, "Virtual IP", "virtip", xpath, "virtip");
-	dtsgui_xmltextbox(p, "Remote IP", "remip", xpath, "remip");
+	dtsgui_xmltextbox(p, "Interface", "interface", xpre, "Link", NULL, xn->value, "interface");
+	dtsgui_xmltextbox(p, "PPPoE Service (AC/Service)", "service", xpre, "Link", NULL, xn->value, "service");
+	dtsgui_xmltextbox(p, "Username", "username", xpre, "Link", NULL, xn->value, "username");
+	dtsgui_xmltextbox(p, "Password", "password", xpre, "Link", NULL, xn->value, "password");
+	dtsgui_xmltextbox(p, "Bandwidth In", "bwin", xpre, "Link", NULL, xn->value, "bwin");
+	dtsgui_xmltextbox(p, "Bandwidth Out", "bwout", xpre, "Link", NULL, xn->value, "bwout");
+	dtsgui_xmltextbox(p, "TOS Match", "tos", xpre, "Link", NULL, xn->value, "tos");
+	dtsgui_xmltextbox(p, "Virtual IP", "virtip", xpre, "Link", NULL, xn->value, "virtip");
+	dtsgui_xmltextbox(p, "Remote IP", "remip", xpre, "Link", NULL, xn->value, "remip");
 
 
 	dtsgui_setevcallback(p, handle_test, NULL);
@@ -586,15 +495,12 @@ void network_adsl_link_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode 
 }
 
 void network_adsl_user(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
-	const char *xpre = "/config/IP/ADSL/Users/User";
-	char xpath[PATH_MAX];
+	const char *xpre = "/config/IP/ADSL/Users";
 	struct xml_node *xn;
 
 	xn = dtsgui_treenodegetxml(self, node, NULL);
 
-	snprintf(xpath, PATH_MAX, "%s[. = '%s']", xpre, xn->value);
-
-	dtsgui_xmltextbox(p, "Password", "password", xpath, "password");
+	dtsgui_xmltextbox(p, "Password", "password", xpre, "User", NULL, xn->value , "password");
 
 	dtsgui_setevcallback(p, handle_test, NULL);
 }
@@ -610,27 +516,26 @@ void network_adsl_user_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode 
 void network_tos(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	struct form_item *lb;
 	int pcnt, i;
-	const char *xpre = "/config/IP/QOS/TOS";
-	char xpath[PATH_MAX];
+	const char *xpre = "/config/IP/QOS";
+	const char *name;
 	struct xml_node *xn;
 
 	xn = dtsgui_treenodegetxml(self, node, NULL);
+	name = xml_getattr(xn, "name");
 
-	snprintf(xpath, PATH_MAX, "%s[@name = '%s']", xpre, xml_getattr(xn, "name"));
+	dtsgui_xmltextbox(p, "Destination Address", "ipaddr", xpre, "TOS", "name", name, "ipaddr");
 
-	dtsgui_xmltextbox(p, "Destination Address", "ipaddr", xpath, "ipaddr");
-
-	lb = dtsgui_xmllistbox(p, "Protocol", "protocol", xpath, "protocol");
+	lb = dtsgui_xmllistbox(p, "Protocol", "protocol", xpre, "TOS", "name", name, "protocol");
 	pcnt = sizeof(protocols)/sizeof(protocols[0]);
 	for(i = 0;i < pcnt;i ++) {
 		dtsgui_listbox_add(lb, protocols[i], protocols[i]);
 	}
 	objunref(lb);
 
-	dtsgui_xmltextbox(p, "Destination Port", "dport", xpath, "dport");
-	dtsgui_xmltextbox(p, "Source Port", "sport", xpath, "sport");
+	dtsgui_xmltextbox(p, "Destination Port", "dport", xpre, "TOS", "name", name, "dport");
+	dtsgui_xmltextbox(p, "Source Port", "sport", xpre, "TOS", "name", name, "sport");
 
-	lb = dtsgui_xmllistbox(p, "TOS Setting", "tos", xpath, NULL);
+	lb = dtsgui_xmllistbox(p, "TOS Setting", "tos", xpre, "TOS", "name", name, NULL);
 	dtsgui_listbox_add(lb, "Normal-Service", "Normal-Service");
 	dtsgui_listbox_add(lb, "Minimize-Cost", "Minimize-Cost");
 	dtsgui_listbox_add(lb, "Maximize-Reliability", "Maximize-Reliability");
@@ -638,7 +543,7 @@ void network_tos(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void
 	dtsgui_listbox_add(lb, "Minimize-Delay", "Minimize-Delay");
 	objunref(lb);
 
-	lb = dtsgui_xmllistbox(p, "Priority", "priority", xpath, "priority");
+	lb = dtsgui_xmllistbox(p, "Priority", "priority", xpre, "TOS", "name", name, "priority");
 	dtsgui_listbox_add(lb, "High", "High");
 	dtsgui_listbox_add(lb, "Med", "Med");
 	dtsgui_listbox_add(lb, "Low", "Low");
