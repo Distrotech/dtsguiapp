@@ -26,6 +26,7 @@
 
 #include <dtsapp.h>
 
+#include "dtsgui.h"
 #include "DTSListView.h"
 
 bool cmp_title(DTSDVMListStore *c1,DTSDVMListStore *c2) {
@@ -37,13 +38,14 @@ bool cmp_title(DTSDVMListStore *c1,DTSDVMListStore *c2) {
 	return (s1 < s2);
 }
 
-DTSDVMListStore::DTSDVMListStore(DTSDVMListStore* parent, bool is_container, const wxString& title, int nodeid, void *userdata) {
+DTSDVMListStore::DTSDVMListStore(DTSDVMListStore* parent, bool is_container, const wxString& title, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *userdata) {
 	xml = NULL;
 	tattr = NULL;
 	this->parent = parent;
 	this->title = title;
 	this->is_container = is_container;
 	this->nodeid = nodeid;
+	this->p_cb = p_cb;
 	if (userdata && objref(userdata)) {
 		this->data = userdata;
 	} else {
@@ -228,6 +230,13 @@ struct xml_node *DTSDVMListStore::GetXMLData(char **buff) {
 	return xn;
 }
 
+void DTSDVMListStore::ConfigPanel(dtsgui_pane p, dtsgui_treeview tw) {
+	if (!p_cb) {
+		return;
+	}
+	p_cb(p, tw, this, data);
+}
+
 DTSDVMListView::DTSDVMListView(int cols, bool cont_cols) {
 	hascontcol = cont_cols;
 	root = NULL;
@@ -317,8 +326,8 @@ DTSDVMListStore* DTSDVMListView::GetRoot() {
 	return root;
 }
 
-DTSDVMListStore* DTSDVMListView::SetRoot(const wxString& title, int nodeid, void *userdata) {
-	root = new DTSDVMListStore(NULL, true, title, nodeid, userdata);
+DTSDVMListStore* DTSDVMListView::SetRoot(const wxString& title, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *userdata) {
+	root = new DTSDVMListStore(NULL, true, title, nodeid, p_cb, userdata);
 	return root;
 }
 
@@ -572,25 +581,25 @@ DTSDVMListView *DTSDVMCtrl::GetStore() {
 	return model;
 }
 
-wxDataViewItem DTSDVMCtrl::AppendItem(wxDataViewItem parent, const wxString& title, bool can_edit, bool can_sort, bool can_del, int nodeid, void *userdata) {
-	return AppendNode(parent, title, false, can_edit, can_sort, can_del, nodeid, userdata);
+wxDataViewItem DTSDVMCtrl::AppendItem(wxDataViewItem parent, const wxString& title, bool can_edit, bool can_sort, bool can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *userdata) {
+	return AppendNode(parent, title, false, can_edit, can_sort, can_del, nodeid, p_cb, userdata);
 }
 
-wxDataViewItem DTSDVMCtrl::AppendContainer(wxDataViewItem parent, const wxString& title, bool can_edit, bool can_sort, bool can_del, int nodeid, void *userdata) {
-	return AppendNode(parent, title, true, can_edit, can_sort, can_del, nodeid, userdata);
+wxDataViewItem DTSDVMCtrl::AppendContainer(wxDataViewItem parent, const wxString& title, bool can_edit, bool can_sort, bool can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *userdata) {
+	return AppendNode(parent, title, true, can_edit, can_sort, can_del, nodeid, p_cb, userdata);
 }
 
-wxDataViewItem DTSDVMCtrl::AppendNode(wxDataViewItem parent, const wxString& title, bool iscont, bool can_edit, bool can_sort, bool can_del, int nodeid, void *userdata) {
+wxDataViewItem DTSDVMCtrl::AppendNode(wxDataViewItem parent, const wxString& title, bool iscont, bool can_edit, bool can_sort, bool can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *userdata) {
 	DTSDVMListStore *li, *node;
 	wxDataViewItem dvi;
 
 
 	if (!parent.IsOk() && !model->GetRoot()) {
-		li = model->SetRoot(title, nodeid, userdata);
+		li = model->SetRoot(title, nodeid, p_cb, userdata);
 	} else if (!(node = (DTSDVMListStore*)parent.GetID())) {
 		return wxDataViewItem(NULL);
 	} else {
-		li= new DTSDVMListStore(node, iscont, title, nodeid, userdata);
+		li= new DTSDVMListStore(node, iscont, title, nodeid, p_cb, userdata);
 		node->Append(li);
 	}
 
