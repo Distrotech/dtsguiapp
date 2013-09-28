@@ -115,9 +115,17 @@ void DTSTreeWindowEvent::TreeEvent(wxDataViewEvent &event) {
 			tw->ShowRMenu(cont, vm->GetChildCount(a_cont), first, last, c_sort, del);
 		}
 	} else if (evid == wxEVT_DATAVIEW_ITEM_START_EDITING) {
+		a_item = event.GetItem();
 		DTSDVMListStore *data = (DTSDVMListStore*)event.GetItem().GetID();
 		if (!data->can_edit) {
 			event.Veto();
+			if (data->IsContainer()) {
+				if (tree->IsExpanded(a_item)) {
+					tree->Collapse(a_item);
+				} else {
+					tree->Expand(a_item);
+				}
+			}
 		}
 	} else if (evid == wxEVT_DATAVIEW_ITEM_EDITING_DONE) {
 #ifndef _WIN32
@@ -178,22 +186,26 @@ void DTSTreeWindowEvent::SortParent(const wxDataViewItem parent, int action) {
 	}
 }
 
-void DTSTreeWindowEvent::MenuEvent(wxCommandEvent &event) {	enum treewinmenu eid;
+void DTSTreeWindowEvent::MenuEvent(wxCommandEvent &event) {
+	enum treewinmenu eid;
 	wxDataViewItem p_cont;
 	DTSFrame *frame;
-
-	p_cont = (a_cont == a_item) ? vm->GetParent(a_cont) : a_cont;
 
 	eid=(treewinmenu)event.GetId();
 	switch(eid) {
 		case DTS_TREEWIN_MENU_MOVEDOWN:
 		case DTS_TREEWIN_MENU_MOVEUP:
 		case DTS_TREEWIN_MENU_SORT:
+			p_cont = (a_cont == a_item) ? vm->GetParent(a_cont) : a_cont;
 			SortParent(p_cont, eid);
 			break;
 		case DTS_TREEWIN_MENU_DELETE:
 			frame = parent->GetFrame();
 			if (frame->Confirm("Are you sure you want to delete this item")) {
+				p_cont = vm->GetParent(a_item);
+				tree->Select(p_cont);
+				TreeCallback(p_cont, DTSGUI_TREE_CB_SELECT);
+				TreeCallback(a_item, DTSGUI_TREE_CB_DELETE);
 				vm->Delete(a_item);
 			}
 			break;
@@ -222,7 +234,8 @@ void DTSTreeWindowEvent::TreeCallback(const wxDataViewItem item, enum tree_cbtyp
 		if (objref(data)) {
 			tdata = data;
 		}
-		if ((sp = (DTSPanel*)treecb(dtsgui, parent, item.GetID(), type, ndata->GetTitle().ToUTF8(), tdata))) {
+		if ((sp = (DTSPanel*)treecb(dtsgui, parent, ndata, type, ndata->GetTitle().ToUTF8(), tdata))) {
+			ndata->ConfigPanel(sp, parent);
 			w = sp->GetPanel();
 			op = parent->SetWindow(w);
 			delete op;

@@ -62,6 +62,7 @@ struct tree_newnode {
 	dtsgui_treeview tv;
 	dtsgui_treenode tn;
 	dtsgui_xmltreenode_cb node_cb;
+	dtsgui_treeviewpanel_cb p_cb;
 	const char *xpath;
 	const char *node;
 	const char *vitem;
@@ -898,20 +899,20 @@ void dtsgui_settitle(dtsgui_pane pane, const char *title) {
 	return p->SetTitle(title);
 }
 
-dtsgui_treenode dtsgui_treecont(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, void *data) {
+dtsgui_treenode dtsgui_treecont(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *data) {
 	DTSTreeWindow *tw = (DTSTreeWindow*)tree;
 	DTSDVMCtrl *tc = tw->GetTreeCtrl();
 	wxDataViewItem root = wxDataViewItem(node);
 
-	return tc->AppendContainer(root, title, can_edit, can_sort, can_del, nodeid, data).GetID();
+	return tc->AppendContainer(root, title, can_edit, can_sort, can_del, nodeid, p_cb, data).GetID();
 }
 
-dtsgui_treenode dtsgui_treeitem(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, void *data) {
+dtsgui_treenode dtsgui_treeitem(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *data) {
 	DTSTreeWindow *tw = (DTSTreeWindow*)tree;
 	DTSDVMCtrl *tc = tw->GetTreeCtrl();
 	wxDataViewItem root = wxDataViewItem(node);
 
-	return tc->AppendItem(root, title, can_edit, can_sort, can_del, nodeid, data).GetID();
+	return tc->AppendItem(root, title, can_edit, can_sort, can_del, nodeid, p_cb, data).GetID();
 }
 
 struct xml_node *dtsgui_panetoxml(dtsgui_pane p, const char *xpath, const char *node, const char *nodeval, const char *attrkey) {
@@ -1033,6 +1034,9 @@ const char *dtsgui_treenodeparent(dtsgui_treenode tn) {
 
 static void dtsgui_handle_newtreenode(dtsgui_pane p, int type, int event, void *data) {
 	struct tree_newnode *nn = (struct tree_newnode*)data;
+	DTSTreeWindow *tw = (DTSTreeWindow*)nn->tv;
+	DTSDVMCtrl *tree = tw->GetTreeCtrl();
+	wxDataViewItem parent;
 	struct xml_node *xn;
 	const char *name;
 	dtsgui_treenode tn;
@@ -1054,11 +1058,17 @@ static void dtsgui_handle_newtreenode(dtsgui_pane p, int type, int event, void *
 		name = xn->value;
 	}
 	if (nn->flags & DTS_TREE_NEW_NODE_CONTAINER) {
-		tn = dtsgui_treecont(nn->tv, nn->tn, name, nn->flags & DTS_TREE_NEW_NODE_EDIT, nn->flags & DTS_TREE_NEW_NODE_SORT, nn->flags & DTS_TREE_NEW_NODE_DELETE, nn->type, nn->data);
+		tn = dtsgui_treecont(nn->tv, nn->tn, name, nn->flags & DTS_TREE_NEW_NODE_EDIT, nn->flags & DTS_TREE_NEW_NODE_SORT, nn->flags & DTS_TREE_NEW_NODE_DELETE, nn->type, nn->p_cb, nn->data);
 	} else {
-		tn = dtsgui_treeitem(nn->tv, nn->tn, name, nn->flags & DTS_TREE_NEW_NODE_EDIT, nn->flags & DTS_TREE_NEW_NODE_SORT, nn->flags & DTS_TREE_NEW_NODE_DELETE, nn->type, nn->data);
+		tn = dtsgui_treeitem(nn->tv, nn->tn, name, nn->flags & DTS_TREE_NEW_NODE_EDIT, nn->flags & DTS_TREE_NEW_NODE_SORT, nn->flags & DTS_TREE_NEW_NODE_DELETE, nn->type, nn->p_cb, nn->data);
 	}
 	dtsgui_treenodesetxml(nn->tv, tn, xn, nn->tattr);
+
+	parent = wxDataViewItem(nn->tn);
+	if (!tree->IsExpanded(parent)) {
+		tree->Expand(parent);
+	}
+
 	if (nn->node_cb) {
 		nn->node_cb(nn->tv, tn, xn, nn->data);
 	}
@@ -1082,7 +1092,7 @@ static void free_tree_newnode(void *data) {
 }
 
 void dtsgui_newxmltreenode(dtsgui_treeview tree, dtsgui_pane p, dtsgui_treenode tn, const char *xpath, const char *node, const char *vitem, const char *tattr,
-								int nid, int flags, dtsgui_xmltreenode_cb node_cb, void *data) {
+								int nid, int flags, dtsgui_xmltreenode_cb node_cb, void *data, dtsgui_treeviewpanel_cb p_cb) {
 	struct tree_newnode *nn;
 
 	if (!(nn = (struct tree_newnode*)objalloc(sizeof(*nn), free_tree_newnode))) {
@@ -1099,6 +1109,7 @@ void dtsgui_newxmltreenode(dtsgui_treeview tree, dtsgui_pane p, dtsgui_treenode 
 	nn->flags = flags;
 	nn->type = nid;
 	nn->node_cb = node_cb;
+	nn->p_cb = p_cb;
 
 	dtsgui_setevcallback(p, dtsgui_handle_newtreenode, nn);
 }
