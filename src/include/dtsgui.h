@@ -133,6 +133,9 @@ dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title, dtsg
 dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title);
 dtsgui_pane dtsgui_addpage(dtsgui_tabview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc);
 dtsgui_pane dtsgui_treepane(dtsgui_treeview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc);
+dtsgui_pane dtsgui_treepane_defalt(dtsgui_treeview self, dtsgui_treenode node);
+void dtsgui_nodesetxml(dtsgui_treeview tree, dtsgui_treenode node, const char *title);
+
 dtsgui_treenode dtsgui_treecont(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb,void *data);
 dtsgui_treenode dtsgui_treeitem(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *data);
 void dtsgui_treenodesetxml(dtsgui_treeview tv, dtsgui_treenode tn,struct xml_node *xn, const char *tattr);

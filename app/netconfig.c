@@ -47,11 +47,9 @@ static const char *protocols[] = {"TCP", "UDP", "GRE", "ESP", "AH", "OSPF", "ALL
 
 /*XXX LDAP Settings server/DN*/
 void network_config(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
-	struct xml_doc *xmldoc;
+	struct xml_doc *xmldoc = dtsgui_panelxml(p);
 	struct form_item *lb, *elb;
 	const char *extint = NULL;
-
-	xmldoc = dtsgui_panelxml(p);
 
 	/*XXX LDAP Settings server/DN*/
 	if ((lb = dtsgui_xmllistbox(p, "Internal Interface", "Internal", "/config/IP/SysConf", "Option", "option", "Internal", NULL))) {
@@ -133,9 +131,7 @@ void network_config_dns_zone(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenod
 
 void network_config_dns_host(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/DNS/Hosts";
-	struct xml_node *xn;
-
-	xn = dtsgui_treenodegetxml(self, node, NULL);
+	struct xml_node *xn = dtsgui_treenodegetxml(self, node, NULL);
 
 	dtsgui_xmltextbox(p, "IP Address", "ipaddr", xpre, "Host", NULL, xn->value, "ipaddr");
 	dtsgui_xmltextbox(p, "MAC Address", "macaddr", xpre, "Host", NULL, xn->value, "macaddr");
@@ -159,9 +155,8 @@ void network_config_dns_domain_node(dtsgui_treeview tv, dtsgui_treenode tn, stru
 void network_config_dns_domain(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/DNS/Hosted";
 	const char *domain;
-	struct xml_node *xn;
+	struct xml_node *xn = dtsgui_treenodegetxml(self, node, NULL);
 
-	xn = dtsgui_treenodegetxml(self, node, NULL);
 	domain = xml_getattr(xn, "domain");
 
 	dtsgui_xmltextbox(p, "TSIG Key [Master]", "key", xpre, "Domain", "domain", domain, "key");
@@ -182,9 +177,7 @@ void network_config_dns_domain_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_t
 
 void network_config_dns_domain_server(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre;
-	struct xml_node *xn;
-
-	xn = dtsgui_treenodegetxml(self, node, NULL);
+	struct xml_node *xn = dtsgui_treenodegetxml(self, node, NULL);
 
 	if (!(xpre = dtsgui_treenodegetdata(self, node))) {
 		return;
@@ -218,9 +211,7 @@ void network_config_dns_domain_server_new(dtsgui_pane p, dtsgui_treeview self, d
 
 void network_iface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/IP/Interfaces";
-	struct xml_node *xn;
-
-	xn = dtsgui_treenodegetxml(self, node, NULL);
+	struct xml_node *xn = dtsgui_treenodegetxml(self, node, NULL);
 
 	dtsgui_xmltextbox(p, "Interface", "iface", xpre, "Interface", NULL, xn->value, NULL);
 	dtsgui_xmltextbox(p, "IP Address", "ipaddr", xpre, "Interface", NULL, xn->value, "ipaddr");
@@ -255,9 +246,7 @@ void network_newiface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node,
 void network_wifi(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/IP";
 	struct form_item *lb;
-	struct xml_node *xn;
-
-	xn = dtsgui_treenodegetxml(self, node, NULL);
+	struct xml_node *xn = dtsgui_treenodegetxml(self, node, NULL);
 
 	lb = dtsgui_xmlcombobox(p, "WiFi Configuration", "type", xpre, "WiFi", NULL, xn->value, "type");
 	dtsgui_listbox_add(lb, "Access Point", "AP");
@@ -289,9 +278,7 @@ void network_wifi(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, voi
 
 void network_newwifi(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	struct form_item *lb;
-	struct xml_doc *xmldoc;
-
-	xmldoc = dtsgui_panelxml(p);
+	struct xml_doc *xmldoc = dtsgui_panelxml(p);
 
 	lb = dtsgui_listbox(p, "WiFi Interface", "iface", NULL);
 	dtsgui_listbox_addxml(lb, xmldoc, "/config/IP/Interfaces/Interface", "name", NULL);
@@ -331,9 +318,7 @@ void network_newwifi(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, 
 
 void network_wan(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/IP/Routes";
-	struct xml_node *xn;
-
-	xn = dtsgui_treenodegetxml(self, node, NULL);
+	struct xml_node *xn = dtsgui_treenodegetxml(self, node, NULL);
 
 	dtsgui_xmltextbox(p, "Network", "network", xpre, "Route", NULL, xn->value, "network");
 	dtsgui_xmltextbox(p, "Subnet Bits", "subnet", xpre, "Route", NULL, xn->value, "subnet");
@@ -361,9 +346,7 @@ void network_newwan(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, v
 
 void network_route(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/IP/GenRoutes";
-	struct xml_node *xn;
-
-	xn = dtsgui_treenodegetxml(self, node, NULL);
+	struct xml_node *xn = dtsgui_treenodegetxml(self, node, NULL);
 
 	dtsgui_xmltextbox(p, "Network", "network", xpre, "Route", NULL, xn->value, "network");
 	dtsgui_xmltextbox(p, "Subnet Bits", "subnet", xpre, "Route", NULL, xn->value, "subnet");
@@ -460,11 +443,15 @@ void network_modem_ana(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node
 
 void network_adsl_link(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/IP/ADSL/Links";
-	struct xml_node *xn;
+	struct xml_node *xn = dtsgui_treenodegetxml(self, node, NULL);
+	struct xml_doc *xmldoc = dtsgui_panelxml(p);
+	struct form_item *elb;
 
-	xn = dtsgui_treenodegetxml(self, node, NULL);
+	if ((elb = dtsgui_xmllistbox(p, "Interface", "interface", xpre, "Link", NULL, xn->value, "interface"))) {
+		dtsgui_listbox_addxml(elb, xmldoc, "/config/IP/Interfaces/Interface", "name", NULL);
+		objunref(elb);
+	}
 
-	dtsgui_xmltextbox(p, "Interface", "interface", xpre, "Link", NULL, xn->value, "interface");
 	dtsgui_xmltextbox(p, "PPPoE Service (AC/Service)", "service", xpre, "Link", NULL, xn->value, "service");
 	dtsgui_xmltextbox(p, "Username", "username", xpre, "Link", NULL, xn->value, "username");
 	dtsgui_xmltextbox(p, "Password", "password", xpre, "Link", NULL, xn->value, "password");
@@ -479,8 +466,14 @@ void network_adsl_link(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node
 }
 
 void network_adsl_link_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
+	struct xml_doc *xmldoc = dtsgui_panelxml(p);
+	struct form_item *elb;
+
 	dtsgui_textbox(p, "Link Name", "name", "", NULL);
-	dtsgui_textbox(p, "Interface", "interface", "", NULL);
+	if ((elb = dtsgui_listbox(p, "Interface", "interface", NULL))) {
+		dtsgui_listbox_addxml(elb, xmldoc, "/config/IP/Interfaces/Interface", "name", NULL);
+		objunref(elb);
+	}
 	dtsgui_textbox(p, "PPPoE Service (AC/Service)", "service", "", NULL);
 	dtsgui_textbox(p, "Username", "username", "", NULL);
 	dtsgui_textbox(p, "Password", "password", "", NULL);
@@ -496,9 +489,7 @@ void network_adsl_link_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode 
 
 void network_adsl_user(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/IP/ADSL/Users";
-	struct xml_node *xn;
-
-	xn = dtsgui_treenodegetxml(self, node, NULL);
+	struct xml_node *xn = dtsgui_treenodegetxml(self, node, NULL);
 
 	dtsgui_xmltextbox(p, "Password", "password", xpre, "User", NULL, xn->value , "password");
 
@@ -518,9 +509,8 @@ void network_tos(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void
 	int pcnt, i;
 	const char *xpre = "/config/IP/QOS";
 	const char *name;
-	struct xml_node *xn;
+	struct xml_node *xn = dtsgui_treenodegetxml(self, node, NULL);
 
-	xn = dtsgui_treenodegetxml(self, node, NULL);
 	name = xml_getattr(xn, "name");
 
 	dtsgui_xmltextbox(p, "Destination Address", "ipaddr", xpre, "TOS", "name", name, "ipaddr");
@@ -588,87 +578,11 @@ void network_tos_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, 
 								DTS_TREE_NEW_NODE_DELETE | DTS_TREE_NEW_NODE_EDIT | DTS_TREE_NEW_NODE_SORT, NULL, NULL, network_tos);
 }
 
-void node_edit(dtsgui_treeview tree, dtsgui_treenode node, const char *title) {
-	struct xml_doc *xmldoc;
-	struct xml_node *xn;
-	char *buff = NULL;
-
-	if (!(xmldoc = dtsgui_panelxml(tree))) {
-		return;
-	}
-
-	if (!(xn = dtsgui_treenodegetxml(tree, node, &buff))) {
-		return;
-	}
-
-	if (buff) {
-		xml_setattr(xmldoc, xn, buff, title);
-		objunref(buff);
-	} else {
-		xml_modify(xmldoc, xn, title);
-	}
-}
-
-dtsgui_pane newtreepane(dtsgui_treeview self, dtsgui_treenode node, const char *title) {
-	dtsgui_pane p = NULL;
-	struct xml_doc *xmldoc;
-	enum node_id nodeid;
-
-	nodeid = dtsgui_treenodeid(self, node);
-
-	if (nodeid == -1) {
-		p = dtsgui_treepane(self, NULL, 0, NULL, NULL);
-		dtsgui_setevcallback(p, handle_test, NULL);
-		return p;
-	}
-
-	xmldoc = dtsgui_panelxml(self);
-	if (!(p = dtsgui_treepane(self, title, wx_PANEL_BUTTON_ACTION, NULL, xmldoc))) {
-		return NULL;
-	}
-	if (xmldoc) {
-		objunref(xmldoc);
-	}
-	return p;
-}
-
-dtsgui_pane tree_do_shit(struct dtsgui *dtsgui, dtsgui_treeview self, dtsgui_treenode node, enum tree_cbtype cb_type, const char *title, void *td) {
-	switch(cb_type) {
-		case DTSGUI_TREE_CB_SELECT:
-			return newtreepane(self, node, title);
-		case DTSGUI_TREE_CB_EDIT:
-			node_edit(self, node, title);
-			return NULL;
-		case DTSGUI_TREE_CB_DELETE:
-			return NULL;
-	}
-	return NULL;
-}
-
-
-dtsgui_treeview network_tree(struct dtsgui *dtsgui) {
-	dtsgui_treeview tree;
+void network_tree_setup(dtsgui_treeview tree, struct xml_doc *xmldoc) {
 	dtsgui_treenode root, tmp, tmp2, tln/*, tmp3*/;
-	struct app_data *appdata;
-	struct xml_doc *xmldoc;
 	struct xml_search *xp;
 	struct xml_node *xn;
 	void *iter = NULL;
-	char defconf[PATH_MAX];
-
-	appdata = dtsgui_userdata(dtsgui);
-	snprintf(defconf, PATH_MAX-1, "%s/default.xml", appdata->datadir);
-	if (!is_file(defconf)) {
-		dtsgui_alert(dtsgui, "Default configuration not found.\nCheck Installation.");
-		return 0;
-	}
-
-	if (!(xmldoc = xml_loaddoc(defconf, 1))) {
-		dtsgui_alert(dtsgui, "Default configuration failed to loDynamicTTLad.\nCheck Installation.");
-		return 0;
-	}
-
-	tree = dtsgui_treewindow(dtsgui, "Tree Window", tree_do_shit, NULL, xmldoc);
 
 	root = dtsgui_treecont(tree, NULL, "Global IP Settings", 0, 0, 0, DTS_NODE_NETWORK_CONFIG, network_config, NULL);
 	tln = dtsgui_treecont(tree, root, "DNS/DHCP Settings", 0, 0, 0, DTS_NODE_NETWORK_CONFIG_DNS, network_config_dns, NULL);
@@ -799,6 +713,27 @@ dtsgui_treeview network_tree(struct dtsgui *dtsgui) {
 	dtsgui_treecont(tree, tln, "VOIP Registrations", 0, 0, 0, -1, NULL, NULL);
 	dtsgui_treecont(tree, tln, "FAX Config", 0, 0, 0, -1, NULL, NULL);
 	dtsgui_treecont(tree, root, "Secuity Certificate Config", 0, 0, 0, -1, NULL, NULL);
+}
 
+dtsgui_treeview network_tree(struct dtsgui *dtsgui) {
+	dtsgui_treeview tree;
+	struct app_data *appdata;
+	struct xml_doc *xmldoc;
+	char defconf[PATH_MAX];
+
+	appdata = dtsgui_userdata(dtsgui);
+	snprintf(defconf, PATH_MAX-1, "%s/default.xml", appdata->datadir);
+	if (!is_file(defconf)) {
+		dtsgui_alert(dtsgui, "Default configuration not found.\nCheck Installation.");
+		return 0;
+	}
+
+	if (!(xmldoc = xml_loaddoc(defconf, 1))) {
+		dtsgui_alert(dtsgui, "Default configuration failed to loDynamicTTLad.\nCheck Installation.");
+		return 0;
+	}
+
+	tree = dtsgui_treewindow(dtsgui, "Tree Window", NULL, NULL, xmldoc);
+	network_tree_setup(tree, xmldoc);
 	return tree;
 }
