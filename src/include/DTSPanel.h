@@ -104,7 +104,7 @@ class DTSPanel: public DTSObject {
 		void SetEventCallback(event_callback evcb, void *userdata = NULL);
 		void SetConfigCallback(dtsgui_configcb cb, void *userdata = NULL);
 		void Update_XML();
-		struct xml_element *GetNode(const char *xpath, const char *attr);
+		struct xml_element *GetNode(const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr);
 		bool ShowPanel(bool = true);
 		void SetTitle(const wxString new_title, bool create = false);
 	protected:

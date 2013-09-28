@@ -414,19 +414,61 @@ void free_xmlelement(void *data) {
 	}
 }
 
-struct xml_element *DTSPanel::GetNode(const char *xpath, const char *attr) {
+struct xml_element *DTSPanel::GetNode(const char *ppath, const char *node, const char *fattr, const char *fval, const char *attr) {
 	struct xml_element *xml = NULL;
+	struct xml_node *xn;
+	int len;
 
-	if (!xmldoc || !xpath || (!(xml = (struct xml_element*)objalloc(sizeof(*xml),free_xmlelement)))) {
+	if (!xmldoc || !ppath || (!(xml = (struct xml_element*)objalloc(sizeof(*xml),free_xmlelement)))) {
 		return NULL;
 	}
 
-	if (!(xml->xsearch = xml_xpath(xmldoc, xpath, attr))) {
-		objunref(xml);
-		return NULL;
+	if (node) {
+		len = strlen(ppath) + strlen(node) + 2;
+		if (fval) {
+			if (fattr) {
+				len+= strlen(fattr) + strlen(fval)+8;
+				xml->xpath = (const char*)malloc(len);
+				snprintf((char*)xml->xpath, len, "%s/%s[@%s = '%s']", ppath, node, fattr, fval);
+			} else {
+				len+= strlen(fval)+8;
+				xml->xpath = (const char*)malloc(len);
+				snprintf((char*)xml->xpath, len, "%s/%s[. = '%s']", ppath, node, fval);
+			}
+		} else {
+			xml->xpath = (const char*)malloc(len);
+			snprintf((char*)xml->xpath, len, "%s/%s", ppath, node);
+		}
+	} else {
+		len = strlen(ppath) + 1;
+		if (fval) {
+			if (fattr) {
+				len+= strlen(fattr) + strlen(fval)+8;
+				xml->xpath = (const char*)malloc(len);
+				snprintf((char*)xml->xpath, len, "%s[@%s = '%s']", ppath, fattr, fval);
+			} else {
+				len+= strlen(fval)+8;
+				xml->xpath = (const char*)malloc(len);
+				snprintf((char*)xml->xpath, len, "%s[. = '%s']", ppath, fval);
+			}
+		} else {
+			ALLOC_CONST(xml->xpath, ppath);
+		}
 	}
 
-	ALLOC_CONST(xml->xpath, xpath);
+	if (!(xml->xsearch = xml_xpath(xmldoc, xml->xpath, attr))) {
+		if (ppath && node && fval) {
+			xml_createpath(xmldoc, ppath);
+			if ((xn = xml_addnode(xmldoc, ppath, node, (fattr) ? "" : fval, fattr, (fattr) ? fval : NULL))) {
+				xml->xsearch = xml_xpath(xmldoc, xml->xpath, attr);
+				objunref(xn);
+			}
+		}
+		if (!xml->xsearch) {
+			objunref(xml);
+			return NULL;
+		}
+	}
 
 	if (attr) {
 		xml->attr = strdup(attr);
