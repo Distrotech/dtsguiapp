@@ -227,7 +227,7 @@ void DTSTreeWindowEvent::SplitterEvent(wxSplitterEvent& event) {
 void DTSTreeWindowEvent::TreeCallback(const wxDataViewItem item, enum tree_cbtype type) {
 	void *tdata = NULL;
 	DTSPanel *sp = NULL;
-	wxWindow *op, *w;
+	wxWindow *op;
 	DTSDVMListStore *ndata = (item.IsOk()) ? (DTSDVMListStore*)item.GetID() : NULL;
 
 	if (!ndata) {
@@ -255,8 +255,7 @@ void DTSTreeWindowEvent::TreeCallback(const wxDataViewItem item, enum tree_cbtyp
 
 	if (sp) {
 		ndata->ConfigPanel(sp, parent);
-		w = sp->GetPanel();
-		op = parent->SetWindow(w, item);
+		op = parent->SetWindow(sp, item);
 		delete op;
 	}
 
@@ -270,9 +269,11 @@ void DTSTreeWindowEvent::OnButton(wxCommandEvent &event) {
 	dtsgui_treenode tn = parent->GetActiveNode();
 	wxDataViewItem item;
 	int eid = event.GetId();
+	DTSPanel *pane = parent->GetClientPane();
 
 	switch(eid) {
 		case wx_PANEL_BUTTON_YES:
+			pane->Update_XML();
 			break;
 		case wx_PANEL_BUTTON_NO:
 			item = wxDataViewItem(tn);
@@ -302,6 +303,7 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 	wxBoxSizer *p_sizer = new wxBoxSizer(wxHORIZONTAL);
 	treesizer = new wxBoxSizer(wxVERTICAL);
 	wxDataViewItem root, root4;
+	wxWindow *aw;
 
 	if ((rmenu = (struct treemenu*)objalloc(sizeof(*rmenu), free_menu))) {
 		wxMenu *menu;
@@ -323,12 +325,13 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 #else
 	t_pane = new wxScrolledWindow(sw, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxHSCROLL|wxVSCROLL);
 #endif // _WIN32
-	a_window = new wxWindow(sw, wxID_ANY);
-
 	panel = static_cast<wxWindow *>(sw);
+
+	a_window = new DTSWindow(panel, frame);
+	aw = a_window->GetPanel();
 	type = wx_DTSPANEL_TREE;
 
-	SplitVertically(t_pane, a_window);
+	SplitVertically(t_pane, aw);
 	SetSashGravity(0.5);
 	SetMinimumPaneSize(20);
 
@@ -427,8 +430,9 @@ dtsgui_treenode DTSTreeWindow::GetActiveNode() {
 	return a_node;
 }
 
-wxWindow *DTSTreeWindow::SetWindow(wxWindow *window, const wxDataViewItem& item) {
-	wxWindow *oldwin;
+wxWindow *DTSTreeWindow::SetWindow(DTSPanel *window, const wxDataViewItem& item) {
+	DTSPanel *oldwin;
+	wxWindow *nw, *cw;
 
 	if (!window || (window == a_window)) {
 		return NULL;
@@ -438,12 +442,15 @@ wxWindow *DTSTreeWindow::SetWindow(wxWindow *window, const wxDataViewItem& item)
 		a_window->Show(false);
 	}
 
-	ReplaceWindow(a_window, window);
+	nw = window->GetPanel();
+	cw = a_window->GetPanel();
+
+	ReplaceWindow(cw, nw);
 	a_window = window;
 	a_node = item.GetID();
-	window->Show(true);
-	window->Layout();
-	window->FitInside();
+	nw->Show(true);
+	nw->Layout();
+	nw->FitInside();
 	return oldwin;
 }
 
@@ -505,7 +512,7 @@ bool DTSTreeWindow::Show(bool show) {
 	return wxSplitterWindow::Show(show);
 }
 
-wxWindow *DTSTreeWindow::GetClientPane() {
+DTSPanel *DTSTreeWindow::GetClientPane() {
 	return a_window;
 }
 
