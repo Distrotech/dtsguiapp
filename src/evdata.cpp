@@ -25,7 +25,11 @@
 #include "evdata.h"
 
 evdata::evdata(void *userdata, dtsgui_configcb cb, int uref) {
-	data = userdata;
+	if (userdata && uref) {
+		data = (objref(userdata)) ? userdata : NULL;
+	} else {
+		data = userdata;
+	}
 	callback = cb;
 	unref = uref;
 }

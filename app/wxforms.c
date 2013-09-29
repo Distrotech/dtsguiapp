@@ -272,6 +272,7 @@ int main(int argc, char **argv) {
 
 	appdata->dtsgui = dtsgui_config(guiconfig_cb, appdata, wsize, wpos, "Distrotech System App", "Welcome to Distrotech App!");
 	res = dtsgui_run(argc, argv);
+	objunref(appdata->dtsgui);
 	objunref(appdata);
 
 	xslt_close();

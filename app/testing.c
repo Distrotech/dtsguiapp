@@ -40,7 +40,7 @@
 #define DATA_DIR	"/usr/share/dtsguiapp"
 #endif
 
-void handle_test(dtsgui_pane p, int type, int event, void *data) {
+int handle_test(dtsgui_pane p, int type, int event, void *data) {
 	switch(event) {
 		case wx_PANEL_BUTTON_YES:
 			printf("Ok\n");
@@ -54,6 +54,7 @@ void handle_test(dtsgui_pane p, int type, int event, void *data) {
 			printf("Other %i\n", event);
 			break;
 	}
+	return 1;
 }
 
 void testpanel(dtsgui_pane p) {

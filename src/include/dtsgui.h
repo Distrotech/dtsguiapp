@@ -51,7 +51,7 @@ enum tree_cbtype {
 
 /*callbacks*/
 typedef int (*dtsgui_configcb)(struct dtsgui*, void*);
-typedef void (*event_callback)(dtsgui_pane, int, int, void *);
+typedef int (*event_callback)(dtsgui_pane, int, int, void *);
 typedef dtsgui_pane (*dtsgui_dynpanel)(struct dtsgui*, const char*, void*);
 typedef dtsgui_pane (*dtsgui_tree_cb)(struct dtsgui *, dtsgui_treeview, dtsgui_treenode, enum tree_cbtype cb_type, const char*, void*);
 typedef void (*dtsgui_xmltreenode_cb)(dtsgui_treeview, dtsgui_treenode, struct xml_node*, void*);
@@ -138,9 +138,9 @@ void dtsgui_nodesetxml(dtsgui_treeview tree, dtsgui_treenode node, const char *t
 
 dtsgui_treenode dtsgui_treecont(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb,void *data);
 dtsgui_treenode dtsgui_treeitem(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *data);
-void dtsgui_treenodesetxml(dtsgui_treeview tv, dtsgui_treenode tn,struct xml_node *xn, const char *tattr);
-struct xml_node *dtsgui_treenodegetxml(dtsgui_treeview tv, dtsgui_treenode tn, char **buf);
-void *dtsgui_treenodegetdata(dtsgui_treeview tv, dtsgui_treenode tn);
+void dtsgui_treenodesetxml(dtsgui_treenode tn,struct xml_node *xn, const char *tattr);
+struct xml_node *dtsgui_treenodegetxml(dtsgui_treenode tn, char **buf);
+void *dtsgui_treenodegetdata(dtsgui_treenode tn);
 const char *dtsgui_treenodeparent(dtsgui_treenode tn);
 void dtsgui_newxmltreenode(dtsgui_treeview tree, dtsgui_pane p, dtsgui_treenode tn, const char *xpath, const char *node, const char *vitem, const char *tattr,
 								int nid, int flags, dtsgui_xmltreenode_cb node_cb, void *data, dtsgui_treeviewpanel_cb p_cb);
@@ -155,7 +155,7 @@ void dtsgui_createdyn(struct dtsgui *dtsgui, struct dynamic_panel *dpane);
 
 void dtsgui_settitle(dtsgui_pane pane, const char *title);
 
-int dtsgui_treenodeid(dtsgui_treeview tv, dtsgui_treenode tn);
+int dtsgui_treenodeid(dtsgui_treenode tn);
 
 /*form items
  *list/combo box must be unrefed when all items added
@@ -174,7 +174,6 @@ extern void dtsgui_xmlpasswdbox(dtsgui_pane pane, const char *title, const char 
 extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *name, const char *checkval, const char *uncheckval, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr);
 struct form_item *dtsgui_xmllistbox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr);
 struct form_item *dtsgui_xmlcombobox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr);
-void dtsgui_item_xmlcreate(dtsgui_pane pane, const char *path, const char *node, const char *attr);
 
 /*add item to list*/
 void dtsgui_listbox_add(struct form_item *lbox, const char *text, const char *value);

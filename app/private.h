@@ -75,9 +75,8 @@ int newsys_wizard(struct dtsgui *dtsgui, void *data);
 dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data);
 
 /*testing.c*/
-void handle_test(dtsgui_pane p, int type, int event, void *data);
+int handle_test(dtsgui_pane p, int type, int event, void *data);
 int post_test(struct dtsgui *dtsgui, void *data);
-void handle_test(dtsgui_pane p, int type, int event, void *data);
 void test_menu(struct dtsgui *dtsgui);
 void testpanel(dtsgui_pane p);
 

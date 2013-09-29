@@ -50,6 +50,7 @@ struct form_item {
 class DTSPanelEvent: public wxEvtHandler {
 	public:
 		DTSPanelEvent(DTSObject *win = NULL);
+		~DTSPanelEvent();
 		void BindButton(wxWindow *win, int button);
 		void BindDTSEvent(DTSFrame *frame);
 		void BindCombo(wxWindow *win, int button);
