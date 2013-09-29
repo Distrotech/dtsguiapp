@@ -387,15 +387,15 @@ void network_modem(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, vo
 		objunref(lb);
 	}
 
+	dtsgui_xmltextbox(p, "Number/Service ID/APN", "Number", "/config/IP/Dialup", "Option", "option", "Number", NULL);
+	dtsgui_xmltextbox(p, "Username", "Username", "/config/IP/Dialup", "Option", "option", "Username", NULL);
+	dtsgui_xmltextbox(p, "Password", "Password", "/config/IP/Dialup", "Option", "option", "Password", NULL);
+
 	dtsgui_xmltextbox(p, "Holdoff Time", "Holdoff", "/config/IP/Dialup", "Option", "option", "Holdoff", NULL);
 	dtsgui_xmltextbox(p, "MTU/MRU", "MTU", "/config/IP/Dialup", "Option", "option", "MTU", NULL);
 	dtsgui_xmltextbox(p, "Idle Timeout", "IdleTimeout", "/config/IP/Dialup", "Option", "option", "IdleTimeout", NULL);
 	dtsgui_xmltextbox(p, "Fail Limit", "MaxFail", "/config/IP/Dialup", "Option", "option", "MaxFail", NULL);
 	dtsgui_xmltextbox(p, "Connect Dely", "ConnectDelay", "/config/IP/Dialup", "Option", "option", "ConnectDelay", NULL);
-
-	dtsgui_xmltextbox(p, "Number/Service ID/APN", "Number", "/config/IP/Dialup", "Option", "option", "Number", NULL);
-	dtsgui_xmltextbox(p, "Username", "Username", "/config/IP/Dialup", "Option", "option", "Username", NULL);
-	dtsgui_xmltextbox(p, "Password", "Password", "/config/IP/Dialup", "Option", "option", "Password", NULL);
 
 	dtsgui_xmlcheckbox(p, "BSD Compression", "BSD", "true", "", "/config/IP/Dialup", "Option", "option", "BSD", NULL);
 	dtsgui_xmlcheckbox(p, "Deflate Compression", "Deflate", "true", "", "/config/IP/Dialup", "Option", "option", "Deflate", NULL);
@@ -725,25 +725,29 @@ void network_tree_setup(dtsgui_treeview tree, struct xml_doc *xmldoc) {
 	dtsgui_treecont(tree, root, "Secuity Certificate Config", 0, 0, 0, -1, NULL, NULL);
 }
 
-dtsgui_treeview network_tree(struct dtsgui *dtsgui) {
+dtsgui_pane advanced_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_treeview tree;
 	struct app_data *appdata;
 	struct xml_doc *xmldoc;
 	char defconf[PATH_MAX];
 
 	appdata = dtsgui_userdata(dtsgui);
-	snprintf(defconf, PATH_MAX-1, "%s/default.xml", appdata->datadir);
-	if (!is_file(defconf)) {
-		dtsgui_alert(dtsgui, "Default configuration not found.\nCheck Installation.");
-		return 0;
+	if (!appdata->xmldoc) {
+		snprintf(defconf, PATH_MAX-1, "%s/default.xml", appdata->datadir);
+		if (!is_file(defconf)) {
+			dtsgui_alert(dtsgui, "Default configuration not found.\nCheck Installation.");
+			return 0;
+		}
+
+		if (!(xmldoc = xml_loaddoc(defconf, 1))) {
+			dtsgui_alert(dtsgui, "Default configuration failed to load.\nCheck Installation.");
+			return 0;
+		}
+	} else {
+		xmldoc = appdata->xmldoc;
 	}
 
-	if (!(xmldoc = xml_loaddoc(defconf, 1))) {
-		dtsgui_alert(dtsgui, "Default configuration failed to loDynamicTTLad.\nCheck Installation.");
-		return 0;
-	}
-
-	tree = dtsgui_treewindow(dtsgui, "Tree Window", NULL, NULL, xmldoc);
+	tree = dtsgui_treewindow(dtsgui, title, NULL, data, xmldoc);
 	network_tree_setup(tree, xmldoc);
 	return tree;
 }

@@ -91,7 +91,7 @@ void test_menu(struct dtsgui *dtsgui) {
 	dtsgui_setevcallback(p, handle_test, NULL);
 	dtsgui_newmenuitem(test, dtsgui, "&Test", p);
 
-	tree = network_tree(dtsgui);
+	tree = advanced_config(dtsgui, "Tree Window", NULL);
 	dtsgui_newmenuitem(test, dtsgui, "T&ree", tree);
 
 	dtsgui_newmenucb(test, dtsgui, "Test &Post", "Send POST request to callshop server (requires callshop user)", post_test, NULL);
