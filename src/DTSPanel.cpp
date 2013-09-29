@@ -601,6 +601,11 @@ void DTSPanel::Update_XML() {
 	wxCheckBox *cbox;
 	wxComboBox *lbox;
 
+
+	if (!xmldoc) {
+		return;
+	}
+
 	objref(fitems);
 	bloop = init_bucket_loop(fitems);
 	while (bloop && (fi = (struct form_item*)next_bucket_loop(bloop))) {
@@ -691,6 +696,7 @@ DTSWindow::DTSWindow(wxWindow *parent, DTSFrame *frame, wxString status)
 	:wxWindow(parent, -1),
 	 DTSPanel(frame, status) {
 	type = wx_DTSPANEL_WINDOW;
+	panel = dynamic_cast<wxWindow *>(this);
 	SetupWin();
 }
 

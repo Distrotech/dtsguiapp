@@ -59,17 +59,17 @@ class DTSTreeWindow: public DTSObject, public virtual wxSplitterWindow {
 		DTSDVMCtrl *GetTreeCtrl();
 		void TreeResize();
 		void SetTreePaneSize();
-		wxWindow *GetClientPane();
+		DTSPanel *GetClientPane();
 		void SetPaneTitle(const wxString value);
 		void Select(const wxDataViewItem& item);
-		wxWindow *SetWindow(wxWindow *window, const wxDataViewItem& item);
+		wxWindow *SetWindow(DTSPanel *window, const wxDataViewItem& item);
 		dtsgui_treenode GetActiveNode();
 	private:
 		wxScrolledWindow *t_pane;
 		wxWindow *c_pane;
 		DTSDVMCtrl *tree;
 		DTSDVMListView *vm;
-		wxWindow *a_window;
+		DTSPanel *a_window;
 		dtsgui_treenode a_node;
 		DTSTreeWindowEvent *dtsevthandler;
 		struct treemenu *rmenu;

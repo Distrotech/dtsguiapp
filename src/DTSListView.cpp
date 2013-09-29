@@ -334,6 +334,7 @@ DTSDVMListStore* DTSDVMListView::SetRoot(const wxString& title, int nodeid, dtsg
 void DTSDVMListView::Delete(const wxDataViewItem& item) {
 	DTSDVMListStore *node;
 	wxDataViewItem parent;
+	struct xml_node *xn;
 
 	node = (DTSDVMListStore*)item.GetID();
 	if (!node) {
@@ -344,6 +345,11 @@ void DTSDVMListView::Delete(const wxDataViewItem& item) {
 	if (!parent.IsOk()) {
 		DeleteAll();
 		return;
+	}
+
+	if ((xn = node->GetXMLData(NULL))) {
+		xml_delete(xn);
+		objunref(xn);
 	}
 
 	node->GetParent()->RemoveChildReference(node);
