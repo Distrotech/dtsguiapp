@@ -410,6 +410,7 @@ extern int newsys_wizard(struct dtsgui *dtsgui, void *data) {
 extern int editsys_wizard(struct dtsgui *dtsgui, void *data) {
 	struct xml_doc *xmldoc;
 	const char *filename;
+	int res;
 
 	if (!(filename = dtsgui_fileopen(dtsgui, "Select Customer Configuration To Edit", NULL, "", "XML Configuration|*.xml"))) {
 		return 0;
@@ -420,7 +421,10 @@ extern int editsys_wizard(struct dtsgui *dtsgui, void *data) {
 		return 0;
 	}
 
-	return system_wizard(dtsgui, data, filename, xmldoc, 1);
+	res = system_wizard(dtsgui, data, filename, xmldoc, 1);
+	objunref((void*)filename);
+
+	return res;
 }
 
 extern int reconfig_wizard(struct dtsgui *dtsgui, void *data) {

@@ -314,10 +314,6 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	cnt = sizeof(dp)/sizeof(dp[0]);
 
 	for(i = 0; i < cnt;i++) {
-		dtsgui_item_xmlcreate(dp[i], "/config/IP/VOIP/ASTDB", "Option", "option");
-	}
-
-	for(i = 0; i < cnt;i++) {
 		dtsgui_showpanel(dp[i], !i);
 	}
 
