@@ -58,7 +58,8 @@ struct app_data {
 	dtsgui_menuitem e_wiz;
 	dtsgui_menuitem c_open;
 	dtsgui_menu cfg_menu;
-	struct dynamic_panel *dyn_cfg;
+	struct dynamic_panel *pbx_cfg;
+	struct dynamic_panel *main_cfg;
 };
 
 struct listitem {
@@ -75,12 +76,11 @@ int newsys_wizard(struct dtsgui *dtsgui, void *data);
 dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data);
 
 /*testing.c*/
-int handle_test(dtsgui_pane p, int type, int event, void *data);
 int post_test(struct dtsgui *dtsgui, void *data);
 void test_menu(struct dtsgui *dtsgui);
 void testpanel(dtsgui_pane p);
 
 /*netconfig.c*/
-dtsgui_treeview network_tree(struct dtsgui *dtsgui);
+dtsgui_pane advanced_config(struct dtsgui *dtsgui, const char *title, void *data);
 
 #endif /*PRIVATE_H_INCLUDED*/

@@ -107,10 +107,11 @@ int open_config(struct dtsgui *dtsgui, void *data) {
 
 	dtsgui_reconfig(dtsgui);
 
-	dtsgui_createdyn(dtsgui, appdata->dyn_cfg);
+	dtsgui_createdyn(dtsgui, appdata->pbx_cfg);
+	dtsgui_createdyn(dtsgui, appdata->main_cfg);
 
 	for(i=0; i < 30;i++ ){
-		if (appdata->dyn_cfg) {
+		if (appdata->pbx_cfg && appdata->main_cfg) {
 			break;
 		}
 		usleep(200000);
@@ -134,10 +135,14 @@ int save_config(struct dtsgui *dtsgui, void *data) {
 	dtsgui_menuitemenable(appdata->n_wiz, 1);
 	dtsgui_menuitemenable(appdata->c_open, 1);
 	dtsgui_titleappend(dtsgui, NULL);
-	if (appdata->dyn_cfg) {
-		dtsgui_closedyn(dtsgui, appdata->dyn_cfg);
+	if (appdata->pbx_cfg) {
+		dtsgui_closedyn(dtsgui, appdata->pbx_cfg);
+	}
+	if (appdata->main_cfg) {
+		dtsgui_closedyn(dtsgui, appdata->main_cfg);
 	}
 	objunref(appdata->xmldoc);
+	appdata->xmldoc = NULL;
 	return 1;
 }
 
@@ -163,15 +168,21 @@ void file_menu(struct dtsgui *dtsgui) {
 
 void config_menu(struct dtsgui *dtsgui) {
 	struct app_data *appdata;
-	struct dynamic_panel *dyn_cfg = NULL;
+	struct dynamic_panel *pbx_cfg = NULL;
+	struct dynamic_panel *main_cfg = NULL;
 
 	appdata = dtsgui_userdata(dtsgui);
 	appdata->cfg_menu = dtsgui_newmenu(dtsgui, "&Config");
 
 	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "Reconfigure &Wizard", "Run System Reconfigure Wizard.", reconfig_wizard, NULL);
-	dtsgui_newmenudyn(appdata->cfg_menu, dtsgui, "PBX Setup", "P&BX Configuration", pbx_settings, NULL, &dyn_cfg);
-	if (dyn_cfg) {
-		appdata->dyn_cfg = dyn_cfg;
+	dtsgui_newmenudyn(appdata->cfg_menu, dtsgui, "PBX Setup", "P&BX Configuration", pbx_settings, NULL, &pbx_cfg);
+	if (pbx_cfg) {
+		appdata->pbx_cfg = pbx_cfg;
+	}
+
+	dtsgui_newmenudyn(appdata->cfg_menu, dtsgui, "Advanced Config", "&Advanced Configuration", advanced_config, NULL, &main_cfg);
+	if (main_cfg) {
+		appdata->main_cfg = main_cfg;
 	}
 
 	dtsgui_menusep(appdata->cfg_menu);
@@ -203,7 +214,7 @@ int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
 	file_menu(dtsgui);
 	config_menu(dtsgui);
 	help_menu(dtsgui);
-	test_menu(dtsgui);
+/*	test_menu(dtsgui);*/
 
 	objunref(appdata);
 	return 1;
@@ -234,8 +245,12 @@ void free_appdata(void *data) {
 		objunref(appdata->xmldoc);
 	}
 
-	if (appdata->dyn_cfg) {
-		objunref(appdata->dyn_cfg);
+	if (appdata->pbx_cfg) {
+		objunref(appdata->pbx_cfg);
+	}
+
+	if (appdata->main_cfg) {
+		objunref(appdata->main_cfg);
 	}
 }
 
