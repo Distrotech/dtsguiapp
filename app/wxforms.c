@@ -42,93 +42,11 @@
 #endif
 
 
-struct curlprog {
-	dtsgui_progress pd;
-	int pause;
-	void *data;
-};
-
-void free_curlprog(void *data) {
-	struct curlprog *curl_pd = data;
-
-	if (curl_pd->pd) {
-		dtsgui_progress_end(curl_pd->pd);
-	}
-
-	if (curl_pd->data) {
-		objunref(curl_pd->data);
-	}
-}
-
-void *curlstartprog(void *data) {
-	struct curlprog *curl_pd;
-
-	if (!(curl_pd = objalloc(sizeof(*curl_pd), free_curlprog))){
-		return NULL;
-	}
-	curl_pd->pd = NULL;
-	if (data && objref(data)) {
-		curl_pd->data = data;
-	} else {
-		curl_pd->data = NULL;
-	}
-	curl_pd->pause = 0;
-	return curl_pd;
-}
-
-int curlprogress(void *data, double dltotal, double dlnow, double ultotal, double ulnow) {
-	struct curlprog *curl_pd = data;
-	struct dtsgui *dtsgui = curl_pd->data;
-	int val, tot, cur;
-
-	if (!curl_pd || curl_pd->pause) {
-		return 0;
-	}
-
-	tot = dltotal+ultotal;
-	cur = ulnow+dlnow;
-
-	val = (tot && cur) ? (1000/tot) * cur : 1;
-	val = ceil(val);
-
-	if (!curl_pd->pd) {
-		curl_pd->pd = dtsgui_progress_start(dtsgui, "Web Transfer Progress", 1000);
-	};
-
-	if (curl_pd->pd) {
-		printf("%i\n", val);
-		if (!dtsgui_progress_update(curl_pd->pd, val, NULL)) {
-			return 1;
-		}
-	}
-
-	return 0;
-}
-
-void curlprogress_pause(void *data, int pause) {
-	struct curlprog *curl_pd = data;
-
-	switch(pause) {
-		case 0:
-			curl_pd->pause = pause;
-			break;
-		case 1:
-			curl_pd->pause = pause;
-			dtsgui_progress_end(curl_pd->pd);
-			curl_pd->pd = NULL;
-			break;
-		case -1:
-			objunref(curl_pd);
-			break;
-	}
-}
 
 void test_posturl(struct dtsgui *dtsgui, const char *user, const char *passwd, const char *url) {
 	struct curlbuf *cbuf;
 	struct basic_auth *auth;
 	struct curl_post *post;
-
-	curl_setprogress(curlprogress, curlprogress_pause, curlstartprog, dtsgui);
 
 	if (user && passwd) {
 		auth = dtsgui_pwdialog(user, passwd, dtsgui);
@@ -177,7 +95,7 @@ int post_test(struct dtsgui *dtsgui, void *data) {
 int open_config(struct dtsgui *dtsgui, void *data) {
 	struct app_data *appdata;
 	const char *filename;
-	int i;
+/*	int i;*/
 
 	appdata = dtsgui_userdata(dtsgui);
 
@@ -196,12 +114,13 @@ int open_config(struct dtsgui *dtsgui, void *data) {
 	dtsgui_createdyn(dtsgui, appdata->main_cfg);
 	dtsgui_createdyn(dtsgui, appdata->net_cfg);
 
-	for(i=0; i < 30;i++ ){
+/*	for(i=0; i < 10000;i++ ){
+		printf("%p %p %p %i\n", appdata->pbx_cfg, appdata->main_cfg, appdata->net_cfg, i);
 		if (appdata->pbx_cfg && appdata->main_cfg && appdata->net_cfg) {
 			break;
 		}
-		usleep(200000);
-	}
+		usleep(2000);
+	}*/
 
 	dtsgui_menuitemenable(appdata->e_wiz, 0);
 	dtsgui_menuitemenable(appdata->n_wiz, 0);
