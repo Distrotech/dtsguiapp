@@ -538,6 +538,10 @@ DTSTabWindowEvent::DTSTabWindowEvent(void *userdata, DTSTabWindow *win) {
 DTSTabWindowEvent::~DTSTabWindowEvent() {
 }
 
+void DTSTabWindowEvent::RightMenu(wxCommandEvent &event) {
+	printf("MENU\n");
+}
+
 void DTSTabWindowEvent::PageChanged(wxBookCtrlEvent &event) {
 	wxWindow *w;
 	int p = event.GetSelection();
@@ -566,6 +570,7 @@ DTSTabWindow::DTSTabWindow(DTSFrame *frame, wxString stat_msg)
 	dtsevthandler = dtsevt;
 
 	nb->Bind(wxEVT_NOTEBOOK_PAGE_CHANGED, &DTSTabWindowEvent::PageChanged, dtsevt);
+	nb->Bind(wxEVT_CONTEXT_MENU, &DTSTabWindowEvent::RightMenu, dtsevt);
 
 	Show(false);
 }

@@ -81,6 +81,7 @@ class DTSTabWindowEvent: public wxEvtHandler {
 		DTSTabWindowEvent(void *userdata = NULL, DTSTabWindow *win = NULL);
 		~DTSTabWindowEvent();
 		void PageChanged(wxBookCtrlEvent &event);
+		void RightMenu(wxCommandEvent &event);
 	private:
 		void *data;
 		DTSTabWindow *tw;

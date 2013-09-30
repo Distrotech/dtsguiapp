@@ -66,7 +66,10 @@ struct dtsgui *DTSApp::CreateFrame(dtsgui_configcb confcallback_cb,void *data, s
 }
 
 bool DTSApp::OnInit() {
+	/*start up curl and add progress bits*/
 	curl = curlinit();
+	curl_setprogress(curl_progress_function, curl_progress_ctrl, curl_startprogress, dtsgui);
+
 	/*deleted on close*/
 	newappframe(dtsgui);
 	return (dtsgui->cb(dtsgui, dtsgui->userdata));

@@ -7,7 +7,7 @@ lib_LTLIBRARIES = libdtsapp_gui.la
 includeinstdir = $(includedir)/dtsapplib
 includeinst_DATA = include/dtsgui.h
 
-libdtsapp_gui_la_SOURCES = DTSApp.cpp DTSFrame.cpp DTSPanel.cpp DTSTreeWindow.cpp DTSListView.cpp evdata.cpp cxxapi.cpp dtsuserpw.c
+libdtsapp_gui_la_SOURCES = DTSApp.cpp DTSFrame.cpp DTSPanel.cpp DTSTreeWindow.cpp DTSListView.cpp evdata.cpp cxxapi.cpp dtsuserpw.c wxcurlprogress.c
 libdtsapp_gui_la_LIBADD = $(WX_LIBS) $(DTSAPPLIB_LIBS)
 libdtsapp_gui_la_CFLAGS = $(AM_CFLAGS) $(WX_CFLAGS) $(DTSAPPLIB_CFLAGS)
 libdtsapp_gui_la_CXXFLAGS = $(AM_CXXFLAGS) $(WX_CXXFLAGS) $(DTSAPPLIB_CFLAGS)
