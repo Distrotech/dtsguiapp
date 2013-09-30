@@ -23,6 +23,7 @@
 #include <string.h>
 #include <limits.h>
 #include <unistd.h>
+#include <math.h>
 
 #ifdef __WIN32
 #define UNICODE 1
@@ -44,7 +45,6 @@
 struct curlprog {
 	dtsgui_progress pd;
 	int pause;
-	int upload;
 	void *data;
 };
 
@@ -73,24 +73,23 @@ void *curlstartprog(void *data) {
 		curl_pd->data = NULL;
 	}
 	curl_pd->pause = 0;
-	curl_pd->upload = 0;
 	return curl_pd;
 }
 
 int curlprogress(void *data, double dltotal, double dlnow, double ultotal, double ulnow) {
 	struct curlprog *curl_pd = data;
 	struct dtsgui *dtsgui = curl_pd->data;
-	int val;
+	int val, tot, cur;
 
 	if (!curl_pd || curl_pd->pause) {
 		return 0;
 	}
 
-	if (curl_pd->upload) {
-		val = (ultotal) ? (1000/ultotal) * ulnow : 0;
-	} else {
-		val = (dltotal) ? (1000/dltotal) * dlnow : 0;
-	}
+	tot = dltotal+ultotal;
+	cur = ulnow+dlnow;
+
+	val = (tot && cur) ? (1000/tot) * cur : 1;
+	val = ceil(val);
 
 	if (!curl_pd->pd) {
 		curl_pd->pd = dtsgui_progress_start(dtsgui, "Web Transfer Progress", 1000);
@@ -195,9 +194,10 @@ int open_config(struct dtsgui *dtsgui, void *data) {
 
 	dtsgui_createdyn(dtsgui, appdata->pbx_cfg);
 	dtsgui_createdyn(dtsgui, appdata->main_cfg);
+	dtsgui_createdyn(dtsgui, appdata->net_cfg);
 
 	for(i=0; i < 30;i++ ){
-		if (appdata->pbx_cfg && appdata->main_cfg) {
+		if (appdata->pbx_cfg && appdata->main_cfg && appdata->net_cfg) {
 			break;
 		}
 		usleep(200000);
@@ -226,6 +226,9 @@ int save_config(struct dtsgui *dtsgui, void *data) {
 	}
 	if (appdata->main_cfg) {
 		dtsgui_closedyn(dtsgui, appdata->main_cfg);
+	}
+	if (appdata->net_cfg) {
+		dtsgui_closedyn(dtsgui, appdata->net_cfg);
 	}
 	objunref(appdata->xmldoc);
 	appdata->xmldoc = NULL;
@@ -256,6 +259,7 @@ void config_menu(struct dtsgui *dtsgui) {
 	struct app_data *appdata;
 	struct dynamic_panel *pbx_cfg = NULL;
 	struct dynamic_panel *main_cfg = NULL;
+	struct dynamic_panel *net_cfg = NULL;
 
 	appdata = dtsgui_userdata(dtsgui);
 	appdata->cfg_menu = dtsgui_newmenu(dtsgui, "&Config");
@@ -264,6 +268,11 @@ void config_menu(struct dtsgui *dtsgui) {
 	dtsgui_newmenudyn(appdata->cfg_menu, dtsgui, "PBX Setup", "P&BX Configuration", pbx_settings, NULL, &pbx_cfg);
 	if (pbx_cfg) {
 		appdata->pbx_cfg = pbx_cfg;
+	}
+
+	dtsgui_newmenudyn(appdata->cfg_menu, dtsgui, "Inteface Configuration", "&Interface Configuration", iface_config, NULL, &net_cfg);
+	if (net_cfg) {
+		appdata->net_cfg = net_cfg;
 	}
 
 	dtsgui_newmenudyn(appdata->cfg_menu, dtsgui, "Advanced Config", "&Advanced Configuration", advanced_config, NULL, &main_cfg);
@@ -333,6 +342,10 @@ void free_appdata(void *data) {
 
 	if (appdata->pbx_cfg) {
 		objunref(appdata->pbx_cfg);
+	}
+
+	if (appdata->net_cfg) {
+		objunref(appdata->net_cfg);
 	}
 
 	if (appdata->main_cfg) {

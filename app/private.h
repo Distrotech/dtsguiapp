@@ -59,6 +59,7 @@ struct app_data {
 	dtsgui_menuitem c_open;
 	dtsgui_menu cfg_menu;
 	struct dynamic_panel *pbx_cfg;
+	struct dynamic_panel *net_cfg;
 	struct dynamic_panel *main_cfg;
 };
 
@@ -82,5 +83,9 @@ void testpanel(dtsgui_pane p);
 
 /*netconfig.c*/
 dtsgui_pane advanced_config(struct dtsgui *dtsgui, const char *title, void *data);
+void network_iface_pane(dtsgui_pane p, const char *iface);
+
+/*iface*/
+dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data);
 
 #endif /*PRIVATE_H_INCLUDED*/

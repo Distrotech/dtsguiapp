@@ -223,6 +223,7 @@ DTSObject::DTSObject(wxString st) {
 	frame = NULL;
 	xmldoc = NULL;
 	userdata = NULL;
+	dtsevthandler = NULL;
 	SetName(status);
 }
 
@@ -232,6 +233,9 @@ DTSObject::~DTSObject() {
 	}
 	if (xmldoc) {
 		objunref(xmldoc);
+	}
+	if (dtsevthandler) {
+		delete dtsevthandler;
 	}
 }
 
@@ -285,6 +289,8 @@ void *DTSObject::GetUserData(void) {
 
 DTSPanel::DTSPanel(DTSFrame *mainwin, wxString statusmsg, int butmask)
 	:DTSObject(statusmsg) {
+	DTSPanelEvent *dtsevt;
+
 	button_mask = butmask;
 	dtsevthandler = NULL;
 	title = NULL;
@@ -292,16 +298,15 @@ DTSPanel::DTSPanel(DTSFrame *mainwin, wxString statusmsg, int butmask)
 	frame = mainwin;
 	memcpy(buttons, def_buttons, sizeof(def_buttons));;
 	fitems = (struct bucket_list *)create_bucketlist(0, fitems_hash);
-	dtsevthandler = new DTSPanelEvent(this);
-	if (dtsevthandler && frame) {
-		dtsevthandler->BindDTSEvent(frame);
+	dtsevt = new DTSPanelEvent(this);
+	dtsevthandler = dtsevt;
+
+	if (dtsevt && frame) {
+		dtsevt->BindDTSEvent(frame);
 	}
 }
 
 DTSPanel::~DTSPanel() {
-	if (dtsevthandler) {
-		delete dtsevthandler;
-	}
 	if (fitems) {
 		objunref(fitems);
 	}
@@ -352,8 +357,10 @@ void DTSPanel::SetupWin(void) {
 }
 
 void DTSPanel::SetEventCallback(event_callback evcb, void *userdata) {
+	DTSPanelEvent *dtsevt = (DTSPanelEvent*)dtsevthandler;
+
 	if (dtsevthandler) {
-		dtsevthandler->SetCallback(evcb, userdata);
+		dtsevt->SetCallback(evcb, userdata);
 	}
 }
 
@@ -555,6 +562,7 @@ struct form_item *DTSPanel::ListBox(const char *title, const char *name, const c
 }
 
 struct form_item *DTSPanel::ComboBox(const char *title, const char *name, const char *value, void *data, enum form_data_type dtype) {
+	DTSPanelEvent *dtsevt = (DTSPanelEvent*)dtsevthandler;
 	wxStaticText *text = new wxStaticText(panel, -1, title);
 	wxChoice *lbox = new wxComboBox(panel, -1, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL, wxTE_PROCESS_ENTER);
 
@@ -563,7 +571,7 @@ struct form_item *DTSPanel::ComboBox(const char *title, const char *name, const 
 	g_row++;
 
 	if (dtsevthandler) {
-		dtsevthandler->BindCombo(panel, lbox->GetId());
+		dtsevt->BindCombo(panel, lbox->GetId());
 	}
 
 	if ((dtype == DTSGUI_FORM_DATA_XML) && !data) {
@@ -574,6 +582,7 @@ struct form_item *DTSPanel::ComboBox(const char *title, const char *name, const 
 }
 
 void DTSPanel::Buttons(void) {
+	DTSPanelEvent *dtsevt = (DTSPanelEvent*)dtsevthandler;
 	int i, b;
 
 	if (!button_mask || !dtsevthandler) {
@@ -585,7 +594,7 @@ void DTSPanel::Buttons(void) {
 
 		if (button_mask & (1 << i)) {
 			wxButton *button = new wxButton(panel, b);
-			dtsevthandler->BindButton(panel, b);
+			dtsevt->BindButton(panel, b);
 			AddItem(button, wxGBPosition(g_row, i), wxDefaultSpan, wxALIGN_BOTTOM | wxALL, PADING);
 		}
 	}
@@ -665,10 +674,12 @@ void DTSPanel::Update_XML() {
 DTSScrollPanel::DTSScrollPanel(wxWindow *parent,DTSFrame *frame, wxString status, int butmask)
 	:wxScrolledWindow(parent, wxID_ANY),
 	 DTSPanel(frame, status, butmask) {
+	DTSPanelEvent *dtsevt = (DTSPanelEvent*)dtsevthandler;
+
 	type = wx_DTSPANEL_SCROLLPANEL;
 	SetScrollRate(10, 10);
 	panel = dynamic_cast<wxPanel *>(this);
-	panel->Bind(wxEVT_TEXT_ENTER, &DTSPanelEvent::OnDialog, dtsevthandler);
+	panel->Bind(wxEVT_TEXT_ENTER, &DTSPanelEvent::OnDialog, dtsevt);
 	SetupWin();
 }
 
@@ -680,9 +691,10 @@ bool DTSScrollPanel::Show(bool show) {
 DTSStaticPanel::DTSStaticPanel(wxWindow *parent,DTSFrame *frame, wxString status, int butmask)
 	:wxPanel(parent, wxID_ANY),
 	 DTSPanel(frame, status, butmask) {
+	DTSPanelEvent *dtsevt = (DTSPanelEvent*)dtsevthandler;
 	type = wx_DTSPANEL_PANEL;
 	panel = dynamic_cast<wxPanel *>(this);
-	panel->Bind(wxEVT_TEXT_ENTER, &DTSPanelEvent::OnDialog, dtsevthandler);
+	panel->Bind(wxEVT_TEXT_ENTER, &DTSPanelEvent::OnDialog, dtsevt);
 	SetupWin();
 }
 
@@ -709,6 +721,7 @@ bool DTSWindow::Show(bool show) {
 }
 
 DTSDialog::DTSDialog(DTSFrame *frame, wxString name, int butmask) {
+	DTSPanelEvent *dtsevt = (DTSPanelEvent*)dtsevthandler;
 	type = wx_DTSPANEL_DIALOG;
 
 	button_mask = butmask;
@@ -723,7 +736,7 @@ DTSDialog::DTSDialog(DTSFrame *frame, wxString name, int butmask) {
 	panel = dynamic_cast<wxPanel *>(this);
 	panel->Create(dialog, -1);
 	panel->SetName(name);
-	panel->Bind(wxEVT_TEXT_ENTER, &DTSPanelEvent::OnDialog, dtsevthandler);
+	panel->Bind(wxEVT_TEXT_ENTER, &DTSPanelEvent::OnDialog, dtsevt);
 	SetupWin();
 }
 

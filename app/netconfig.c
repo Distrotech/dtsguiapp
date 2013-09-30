@@ -212,19 +212,24 @@ void network_config_dns_domain_server_new(dtsgui_pane p, dtsgui_treeview self, d
 	objunref((void*)domain);
 }
 
-void network_iface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
+void network_iface_pane(dtsgui_pane p, const char *iface) {
 	const char *xpre = "/config/IP/Interfaces";
+
+	dtsgui_xmltextbox(p, "Interface", "iface", xpre, "Interface", NULL, iface, NULL);
+	dtsgui_xmltextbox(p, "IP Address", "ipaddr", xpre, "Interface", NULL, iface, "ipaddr");
+	dtsgui_xmltextbox(p, "IP Subnet Bits", "subnet", xpre, "Interface", NULL, iface, "subnet");
+	dtsgui_xmltextbox(p, "DHCP Gateway", "gateway", xpre, "Interface", NULL, iface, "gateway");
+	dtsgui_xmltextbox(p, "MAC Address", "macaddr", xpre, "Interface", NULL, iface, "macaddr");
+	dtsgui_xmltextbox(p, "DHCP Start Address", "dhcpstart", xpre, "Interface", NULL, iface, "dhcpstart");
+	dtsgui_xmltextbox(p, "DHCP End Address", "dhcpend", xpre, "Interface", NULL, iface, "dhcpend");
+	dtsgui_xmltextbox(p, "Bandwidth In", "bwin", xpre, "Interface", NULL, iface, "bwin");
+	dtsgui_xmltextbox(p, "Bandwidth Out", "bwout", xpre, "Interface", NULL, iface, "bwout");
+}
+
+void network_iface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
 
-	dtsgui_xmltextbox(p, "Interface", "iface", xpre, "Interface", NULL, xn->value, NULL);
-	dtsgui_xmltextbox(p, "IP Address", "ipaddr", xpre, "Interface", NULL, xn->value, "ipaddr");
-	dtsgui_xmltextbox(p, "IP Subnet Bits", "subnet", xpre, "Interface", NULL, xn->value, "subnet");
-	dtsgui_xmltextbox(p, "DHCP Gateway", "gateway", xpre, "Interface", NULL, xn->value, "gateway");
-	dtsgui_xmltextbox(p, "MAC Address", "macaddr", xpre, "Interface", NULL, xn->value, "macaddr");
-	dtsgui_xmltextbox(p, "DHCP Start Address", "dhcpstart", xpre, "Interface", NULL, xn->value, "dhcpstart");
-	dtsgui_xmltextbox(p, "DHCP End Address", "dhcpend", xpre, "Interface", NULL, xn->value, "dhcpend");
-	dtsgui_xmltextbox(p, "Bandwidth In", "bwin", xpre, "Interface", NULL, xn->value, "bwin");
-	dtsgui_xmltextbox(p, "Bandwidth Out", "bwout", xpre, "Interface", NULL, xn->value, "bwout");
+	network_iface_pane(p, xn->value);
 	objunref(xn);
 }
 

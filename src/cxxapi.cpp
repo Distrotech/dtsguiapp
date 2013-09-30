@@ -323,11 +323,10 @@ extern dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title)
 	return tw;
 }
 
-extern dtsgui_pane dtsgui_addpage(dtsgui_tabview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc) {
+extern dtsgui_pane dtsgui_newtabpage(dtsgui_tabview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc) {
 	DTSScrollPanel *dp = NULL;
 	DTSTabWindow *tw = (DTSTabWindow*)tv;
 	wxBookCtrlBase *parent = dynamic_cast<wxBookCtrlBase*>(tw);
-	wxPanel *np;
 
 	dp = new DTSScrollPanel(parent, tw->GetFrame(), name, butmask);
 	dp->type = wx_DTSPANEL_TAB;
@@ -339,10 +338,17 @@ extern dtsgui_pane dtsgui_addpage(dtsgui_tabview tv, const char *name, int butma
 	if (xmldoc) {
 		dp->SetXMLDoc(xmldoc);
 	}
-
-	np = dynamic_cast<wxPanel*>(dp);
-	parent->AddPage(np, name);
 	return dp;
+}
+
+void dtsgui_addtabpage(dtsgui_tabview tv, dtsgui_pane p) {
+	DTSPanel *dp = (DTSPanel*)p;
+	DTSTabWindow *tw = (DTSTabWindow*)tv;
+	wxBookCtrlBase *parent = static_cast<wxBookCtrlBase*>(tw);
+	wxWindow *nw;
+
+	nw = dp->GetPanel();
+	parent->AddPage(nw, dp->GetName());
 }
 
 extern dtsgui_pane dtsgui_treepane(dtsgui_treeview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc) {
@@ -387,19 +393,6 @@ dtsgui_pane dtsgui_treepane_defalt(dtsgui_treeview self, dtsgui_treenode node) {
 		free((void*)title);
 	}
 	return p;
-}
-
-extern void dtsgui_showpanel(dtsgui_pane pane, int act) {
-	DTSPanel *dp = (DTSPanel*)pane;
-
-	dp->Show(true);
-
-
-#ifdef _WIN32
-	if (!act) {
-		dp->Show(false);
-	}
-#endif
 }
 
 extern void dtsgui_textbox(dtsgui_pane pane, const char *title, const char *name, const char *value, void *data) {

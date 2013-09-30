@@ -84,7 +84,7 @@ class DTSObject: public virtual wxWindow {
 		DTSFrame *frame;
 		wxString status;
 		wxWindow *panel;
-		DTSPanelEvent *dtsevthandler;
+		wxEvtHandler *dtsevthandler;
 		struct bucket_list *fitems;
 		void *userdata;
 		struct xml_doc  *xmldoc;
