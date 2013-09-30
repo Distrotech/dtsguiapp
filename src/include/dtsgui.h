@@ -131,7 +131,7 @@ struct xml_doc *dtsgui_panelxml(dtsgui_pane pane);
 void dtsgui_delpane(dtsgui_pane pane);
 dtsgui_pane dtsgui_textpane(struct dtsgui *dtsgui, const char *title, const char *buf);
 dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title, dtsgui_tree_cb tree_cb, void *userdata, struct xml_doc *xmldoc);
-dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title);
+dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title, void *data);
 dtsgui_pane dtsgui_newtabpage(dtsgui_tabview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc);
 void dtsgui_addtabpage(dtsgui_tabview tv, dtsgui_pane p);
 
@@ -189,7 +189,7 @@ struct basic_auth *dtsgui_pwdialog(const char *user, const char *passwd,void *da
 int dtsgui_confirm(struct dtsgui *dtsgui, const char *text);
 void dtsgui_alert(struct dtsgui *dtsgui, const char *text);
 
-dtsgui_progress dtsgui_progress_start(struct dtsgui *dtsgui, const char *text, int maxval);
+dtsgui_progress dtsgui_progress_start(struct dtsgui *dtsgui, const char *text, int maxval, int quit);
 int dtsgui_progress_update(dtsgui_progress pdlg, int newval, const char* newtext);
 void dtsgui_progress_end(dtsgui_progress pdlg);
 

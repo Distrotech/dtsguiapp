@@ -68,7 +68,7 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	int cnt, i;
 
 	appdata = dtsgui_userdata(dtsgui);
-	tabv = dtsgui_tabwindow(dtsgui, title);
+	tabv = dtsgui_tabwindow(dtsgui, title, NULL);
 
 	dp[0] = dtsgui_newtabpage(tabv, "Routing", 0, NULL, appdata->xmldoc);
 	dp[1] = dtsgui_newtabpage(tabv, "mISDN", 0, NULL, appdata->xmldoc);

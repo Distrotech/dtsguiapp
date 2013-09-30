@@ -83,7 +83,7 @@ int progress_test(struct dtsgui *dtsgui, void *data) {
 	dtsgui_progress pdlg;
 	int i;
 
-	pdlg = dtsgui_progress_start(dtsgui, "Testing Progress Bar", 1000);
+	pdlg = dtsgui_progress_start(dtsgui, "Testing Progress Bar", 1000, 1);
 	for(i=0; i <10;i++) {
 		if (!dtsgui_progress_update(pdlg, ((1000/10) * (i+1)), NULL)) {
 			break;

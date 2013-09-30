@@ -89,7 +89,8 @@ class DTSTabWindowEvent: public wxEvtHandler {
 
 class DTSTabWindow: public DTSObject, public virtual wxNotebook {
 	public:
-		DTSTabWindow(DTSFrame *frame = NULL, wxString stat_msg = wxEmptyString);
+		DTSTabWindow(DTSFrame *frame = NULL, wxString stat_msg = wxEmptyString, void *u_data = NULL);
+		~DTSTabWindow();
 		bool Show(bool = true);
 };
 

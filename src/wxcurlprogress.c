@@ -74,7 +74,7 @@ int curl_progress_function(void *data, double dltotal, double dlnow, double ulto
 	val = ceil(val);
 
 	if (!curl_pd->pd) {
-		curl_pd->pd = dtsgui_progress_start(dtsgui, "Web Transfer Progress", 1000);
+		curl_pd->pd = dtsgui_progress_start(dtsgui, "Web Transfer Progress", 1000, 1);
 	};
 
 	if (curl_pd->pd && !dtsgui_progress_update(curl_pd->pd, val, NULL)) {
