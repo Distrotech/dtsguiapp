@@ -40,10 +40,96 @@
 #define DATA_DIR	"/usr/share/dtsguiapp"
 #endif
 
+
+struct curlprog {
+	dtsgui_progress pd;
+	int pause;
+	int upload;
+	void *data;
+};
+
+void free_curlprog(void *data) {
+	struct curlprog *curl_pd = data;
+
+	if (curl_pd->pd) {
+		dtsgui_progress_end(curl_pd->pd);
+	}
+
+	if (curl_pd->data) {
+		objunref(curl_pd->data);
+	}
+}
+
+void *curlstartprog(void *data) {
+	struct curlprog *curl_pd;
+
+	if (!(curl_pd = objalloc(sizeof(*curl_pd), free_curlprog))){
+		return NULL;
+	}
+	curl_pd->pd = NULL;
+	if (data && objref(data)) {
+		curl_pd->data = data;
+	} else {
+		curl_pd->data = NULL;
+	}
+	curl_pd->pause = 0;
+	curl_pd->upload = 0;
+	return curl_pd;
+}
+
+int curlprogress(void *data, double dltotal, double dlnow, double ultotal, double ulnow) {
+	struct curlprog *curl_pd = data;
+	struct dtsgui *dtsgui = curl_pd->data;
+	int val;
+
+	if (!curl_pd || curl_pd->pause) {
+		return 0;
+	}
+
+	if (curl_pd->upload) {
+		val = (ultotal) ? (1000/ultotal) * ulnow : 0;
+	} else {
+		val = (dltotal) ? (1000/dltotal) * dlnow : 0;
+	}
+
+	if (!curl_pd->pd) {
+		curl_pd->pd = dtsgui_progress_start(dtsgui, "Web Transfer Progress", 1000);
+	};
+
+	if (curl_pd->pd) {
+		printf("%i\n", val);
+		if (!dtsgui_progress_update(curl_pd->pd, val, NULL)) {
+			return 1;
+		}
+	}
+
+	return 0;
+}
+
+void curlprogress_pause(void *data, int pause) {
+	struct curlprog *curl_pd = data;
+
+	switch(pause) {
+		case 0:
+			curl_pd->pause = pause;
+			break;
+		case 1:
+			curl_pd->pause = pause;
+			dtsgui_progress_end(curl_pd->pd);
+			curl_pd->pd = NULL;
+			break;
+		case -1:
+			objunref(curl_pd);
+			break;
+	}
+}
+
 void test_posturl(struct dtsgui *dtsgui, const char *user, const char *passwd, const char *url) {
 	struct curlbuf *cbuf;
 	struct basic_auth *auth;
 	struct curl_post *post;
+
+	curl_setprogress(curlprogress, curlprogress_pause, curlstartprog, dtsgui);
 
 	if (user && passwd) {
 		auth = dtsgui_pwdialog(user, passwd, dtsgui);
@@ -214,7 +300,7 @@ int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
 	file_menu(dtsgui);
 	config_menu(dtsgui);
 	help_menu(dtsgui);
-/*	test_menu(dtsgui);*/
+	test_menu(dtsgui);
 
 	objunref(appdata);
 	return 1;

@@ -30,6 +30,7 @@
 #include <wx/stattext.h>
 #include <wx/combobox.h>
 #include <wx/toolbar.h>
+#include <wx/progdlg.h>
 
 #include <dtsapp.h>
 
@@ -108,6 +109,22 @@ void DTSFrame::Alert(wxString text) {
 								  wxOK | wxICON_EXCLAMATION);
 	alert->ShowModal();
 	alert->Destroy();
+}
+
+wxProgressDialog *DTSFrame::StartProgress(wxString text, int maxval) {
+	wxProgressDialog *pdlg;
+
+	pdlg = new wxProgressDialog("Progress", text, maxval, NULL, wxPD_APP_MODAL | wxPD_AUTO_HIDE | wxPD_CAN_ABORT | wxPD_ELAPSED_TIME);
+	pdlg->Show();
+	return pdlg;
+}
+
+int DTSFrame::UpdateProgress(wxProgressDialog *pdlg, int cval, const wxString& newtext) {
+	if (pdlg->Update(cval, newtext)) {
+		return 1;
+	} else {
+		return 0;
+	}
 }
 
 void DTSFrame::OnDTSEvent(wxCommandEvent &event) {

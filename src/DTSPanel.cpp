@@ -30,6 +30,7 @@
 #include <wx/stattext.h>
 #include <wx/button.h>
 #include <wx/wizard.h>
+#include <wx/progdlg.h>
 
 #include <dtsapp.h>
 #include "dtsgui.hpp"
@@ -123,8 +124,10 @@ void DTSPanelEvent::OnButton(wxCommandEvent &event) {
 			break;
 		}
 	}
-	event.SetId(eid);
 
+	if (parent->type != wx_DTSPANEL_DIALOG) {
+		event.SetId(eid);
+	}
 	parent->EventHandler(eid, &event);
 
 	if (evcb) {
