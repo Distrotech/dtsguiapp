@@ -70,17 +70,17 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	appdata = dtsgui_userdata(dtsgui);
 	tabv = dtsgui_tabwindow(dtsgui, title);
 
-	dp[0] = dtsgui_addpage(tabv, "Routing", 0, NULL, appdata->xmldoc);
-	dp[1] = dtsgui_addpage(tabv, "mISDN", 0, NULL, appdata->xmldoc);
-	dp[2] = dtsgui_addpage(tabv, "E1", 0, NULL, appdata->xmldoc);
-	dp[3] = dtsgui_addpage(tabv, "MFC/R2", 0, NULL, appdata->xmldoc);
-	dp[4] = dtsgui_addpage(tabv, "Defaults", 0, NULL, appdata->xmldoc);
-	dp[5] = dtsgui_addpage(tabv, "IVR Password", 0, NULL, appdata->xmldoc);
-	dp[6] = dtsgui_addpage(tabv, "Location", 0, NULL, appdata->xmldoc);
-	dp[7] = dtsgui_addpage(tabv, "Inbound", 0, NULL, appdata->xmldoc);
-	dp[8] = dtsgui_addpage(tabv, "Num Plan", 0, NULL, appdata->xmldoc);
-	dp[9] = dtsgui_addpage(tabv, "Auto Add", 0, NULL, appdata->xmldoc);
-	dp[10] = dtsgui_addpage(tabv, "Save", wx_PANEL_BUTTON_YES, NULL, appdata->xmldoc);
+	dp[0] = dtsgui_newtabpage(tabv, "Routing", 0, NULL, appdata->xmldoc);
+	dp[1] = dtsgui_newtabpage(tabv, "mISDN", 0, NULL, appdata->xmldoc);
+	dp[2] = dtsgui_newtabpage(tabv, "E1", 0, NULL, appdata->xmldoc);
+	dp[3] = dtsgui_newtabpage(tabv, "MFC/R2", 0, NULL, appdata->xmldoc);
+	dp[4] = dtsgui_newtabpage(tabv, "Defaults", 0, NULL, appdata->xmldoc);
+	dp[5] = dtsgui_newtabpage(tabv, "IVR Password", 0, NULL, appdata->xmldoc);
+	dp[6] = dtsgui_newtabpage(tabv, "Location", 0, NULL, appdata->xmldoc);
+	dp[7] = dtsgui_newtabpage(tabv, "Inbound", 0, NULL, appdata->xmldoc);
+	dp[8] = dtsgui_newtabpage(tabv, "Num Plan", 0, NULL, appdata->xmldoc);
+	dp[9] = dtsgui_newtabpage(tabv, "Auto Add", 0, NULL, appdata->xmldoc);
+	dp[10] = dtsgui_newtabpage(tabv, "Save", wx_PANEL_BUTTON_YES, NULL, appdata->xmldoc);
 
 	pg = dp[0];
 	lb = dtsgui_xmllistbox(pg, "PSTN Trunk", "Trunk", "/config/IP/VOIP/ASTDB" , "Option", "option", "Trunk", NULL);
@@ -152,6 +152,7 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_xmlcheckbox(pg, "Allow DISA Passthrough On Trunks", "DISADDI", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "DISADDI", NULL);
 	dtsgui_xmlcheckbox(pg, "Disable Native Bridging On Outbound", "NoBridge", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "NoBridge", NULL);
 	dtsgui_xmlcheckbox(pg, "Disable access to invalid accounts", "ValidAcc", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "ValidAcc", NULL);
+	dtsgui_addtabpage(tabv, pg);
 
 	pg = dp[1];
 	dtsgui_xmltextbox(pg, "Isdn Ports To Use (Group 1)", "mISDNports", "/config/IP/VOIP/ASTDB", "Option", "option", "mISDNports", NULL);
@@ -164,6 +165,7 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_xmltextbox(pg, "TX Gain", "mISDNgaintx", "/config/IP/VOIP/ASTDB", "Option", "option", "mISDNgaintx", NULL);
 	dtsgui_xmlcheckbox(pg, "Immeadiate Routing (No MSN/DDI)", "mISDNimm", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "mISDNimm", NULL);
 	dtsgui_xmlcheckbox(pg, "Use Round Robin Routing", "mISDNrr", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "mISDNrr", NULL);
+	dtsgui_addtabpage(tabv, pg);
 
 	pg = dp[2];
 	lb = dtsgui_xmllistbox(pg, "Line Build Out", "PRIlbo","/config/IP/VOIP/ASTDB", "Option", "option", "PRIlbo", NULL);
@@ -185,6 +187,7 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_listbox_add(lb, "hdb3 - b8zs", "hdb3");
 	objunref(lb);
 	dtsgui_xmlcheckbox(pg, "CRC4 Checking (E1 Only)", "PRIcrc4", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "PRIcrc4", NULL);
+	dtsgui_addtabpage(tabv, pg);
 
 	pg = dp[3];
 	lb = dtsgui_xmllistbox(pg, "Variant", "E1mfcr2_variant", "/config/IP/VOIP/ASTDB", "Option", "option", "E1mfcr2_variant", NULL);
@@ -214,6 +217,7 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_xmlcheckbox(pg, "Immeadiate Answer", "E1mfcr2_immediate_accept", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "E1mfcr2_immediate_accept", NULL);
 	dtsgui_xmlcheckbox(pg, "Forced Release (BR)", "E1mfcr2_forced_release", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "E1mfcr2_forced_release", NULL);
 	dtsgui_xmlcheckbox(pg, "Accept Call With Charge", "E1mfcr2_charge_calls", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "E1mfcr2_charge_calls", NULL);
+	dtsgui_addtabpage(tabv, pg);
 
 	pg = dp[4];
 	lb = dtsgui_xmllistbox(pg, "Default Extension Permision", "Context", "/config/IP/VOIP/ASTDB", "Option", "option", "Context", NULL);
@@ -261,9 +265,11 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_xmlcheckbox(pg, "Add Billing Group To CLI (Inbound)", "AddGroup", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "AddGroup", NULL);
 	dtsgui_xmlcheckbox(pg, "Follow DDI If Exten (Inbound)", "FollowDDI", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "FollowDDI", NULL);
 	dtsgui_xmlcheckbox(pg, "Authorise Only When Registered By Default (SIP)", "DEFAUTHREG", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "DEFAUTHREG", NULL);
+	dtsgui_addtabpage(tabv, pg);
 
 	pg=dp[5];
 	dtsgui_xmlpasswdbox(pg, "Admin Password", "AdminPass", "/config/IP/VOIP/ASTDB", "Option", "option", "AdminPass", NULL);
+	dtsgui_addtabpage(tabv, pg);
 
 	pg=dp[6];
 	dtsgui_xmltextbox(pg, "Local Country Code", "CountryCode", "/config/IP/VOIP/ASTDB", "Option", "option", "CountryCode", NULL);
@@ -274,6 +280,7 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_xmltextbox(pg, "National Number Length (0 To Disable)", "NatLength", "/config/IP/VOIP/ASTDB", "Option", "option", "NatLength", NULL);
 	dtsgui_xmltextbox(pg, "National Access Code", "LocalAccess", "/config/IP/VOIP/ASTDB", "Option", "option", "LocalAccess", NULL);
 	dtsgui_xmltextbox(pg, "International Access Code", "IntAccess", "/config/IP/VOIP/ASTDB", "Option", "option", "IntAccess", NULL);
+	dtsgui_addtabpage(tabv, pg);
 
 	pg=dp[7];
 	lb = dtsgui_xmllistbox(pg, "Default Attendant", "Attendant", "/config/IP/VOIP/ASTDB", "Option", "option", "Attendant", NULL);
@@ -287,6 +294,7 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_listbox_add(lb, "Auto Fax Detect & Receive", ""); /*XXX ADD Fax Capable Devices*/
 	objunref(lb);
 	dtsgui_xmlcheckbox(pg, "Enable Inbound FAX Detect", "IFAXD", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "IFAXD", NULL);
+	dtsgui_addtabpage(tabv, pg);
 
 	pg = dp[8];
 	dtsgui_xmltextbox(pg, "4 Digit Telco Number Pattern", "InternalPat", "/config/IP/VOIP/ASTDB", "Option", "option", "InternalPat", NULL);
@@ -300,6 +308,7 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_xmltextbox(pg, "GSM Router Trunk Failover Allow Pattern", "GSMFOPat", "/config/IP/VOIP/ASTDB", "Option", "option", "GSMFOPat", NULL);
 	dtsgui_xmltextbox(pg, "Inbound Local Call Pattern (Trunk Forward)", "TRUNKDDIPat", "/config/IP/VOIP/ASTDB", "Option", "option", "TRUNKDDIPat", NULL);
 	dtsgui_xmltextbox(pg, "DDI Limit Pattern (Accepted DDI More Than 4 Digits)", "DDIPAT", "/config/IP/VOIP/ASTDB", "Option", "option", "DDIPAT", NULL);
+	dtsgui_addtabpage(tabv, pg);
 
 	pg = dp[9];
 	dtsgui_xmltextbox(pg, "Start Exten.", "AutoStart", "/config/IP/VOIP/ASTDB", "Option", "option", "AutoStart", NULL);
@@ -308,14 +317,10 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_xmltextbox(pg, "STUN Server (Linksys)", "AutoSTUN", "/config/IP/VOIP/ASTDB", "Option", "option", "AutoSTUN", NULL);
 	dtsgui_xmlcheckbox(pg, "Lock Settings (Snom)", "AutoLock", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "AutoLock", NULL);
 	dtsgui_xmlcheckbox(pg, "Require Authorisation", "AutoAuth", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "AutoAuth", NULL);
+	dtsgui_addtabpage(tabv, pg);
 
 	dtsgui_setevcallback(dp[10], NULL, &dp);
-
-	cnt = sizeof(dp)/sizeof(dp[0]);
-
-	for(i = 0; i < cnt;i++) {
-		dtsgui_showpanel(dp[i], !i);
-	}
+	dtsgui_addtabpage(tabv, dp[10]);
 
 	return tabv;
 }

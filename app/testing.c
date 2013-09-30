@@ -88,7 +88,11 @@ int progress_test(struct dtsgui *dtsgui, void *data) {
 		if (!dtsgui_progress_update(pdlg, ((1000/10) * (i+1)), NULL)) {
 			break;
 		}
+#ifdef __WIN32
+		Sleep(1000);
+#else
 		sleep(1);
+#endif
 	}
 	dtsgui_progress_end(pdlg);
 	return 1;

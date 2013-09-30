@@ -20,6 +20,7 @@
 #define DTSTREEWINDOW_H
 
 typedef class DTSTreeWindow DTSTreeWindow;
+typedef class DTSTabWindow DTSTabWindow;
 
 struct treemenu {
 	wxMenu *menu;
@@ -71,9 +72,18 @@ class DTSTreeWindow: public DTSObject, public virtual wxSplitterWindow {
 		DTSDVMListView *vm;
 		DTSPanel *a_window;
 		dtsgui_treenode a_node;
-		DTSTreeWindowEvent *dtsevthandler;
 		struct treemenu *rmenu;
 		wxBoxSizer *treesizer;
+};
+
+class DTSTabWindowEvent: public wxEvtHandler {
+	public:
+		DTSTabWindowEvent(void *userdata = NULL, DTSTabWindow *win = NULL);
+		~DTSTabWindowEvent();
+		void PageChanged(wxBookCtrlEvent &event);
+	private:
+		void *data;
+		DTSTabWindow *tw;
 };
 
 class DTSTabWindow: public DTSObject, public virtual wxNotebook {

@@ -31,6 +31,7 @@
 #include <wx/menu.h>
 #include <wx/stattext.h>
 #include <wx/progdlg.h>
+#include <wx/bookctrl.h>
 
 #include <stdint.h>
 #include <dtsapp.h>
@@ -300,6 +301,7 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 
 	int w, h, p, psize;
 	a_window = NULL;
+	DTSTreeWindowEvent *dtsevt;
 	wxSplitterWindow *sw = static_cast<wxSplitterWindow*>(this);
 	wxBoxSizer *p_sizer = new wxBoxSizer(wxHORIZONTAL);
 	treesizer = new wxBoxSizer(wxVERTICAL);
@@ -346,7 +348,8 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 	vm = new DTSDVMListView(1, true);
 	tree = new DTSDVMCtrl(t_pane, wxID_ANY, vm, wxDefaultPosition, wxDefaultSize, wxDV_ROW_LINES|wxDV_NO_HEADER);
 
-	dtsevthandler = new DTSTreeWindowEvent(userdata, tree_cb, (frame) ? frame->GetDTSData() : NULL, this);
+	dtsevt = new DTSTreeWindowEvent(userdata, tree_cb, (frame) ? frame->GetDTSData() : NULL, this);
+	dtsevthandler = dtsevt;
 	treesizer->Add(tree, 1,wxEXPAND,0);
 
 	p_sizer->FitInside(parent);
@@ -361,15 +364,15 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 	treesizer->FitInside(t_pane);
 	treesizer->Layout();
 
-	tree->Bind(wxEVT_DATAVIEW_SELECTION_CHANGED, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
-	tree->Bind(wxEVT_DATAVIEW_ITEM_EXPANDED, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
-	tree->Bind(wxEVT_DATAVIEW_ITEM_CONTEXT_MENU, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
-	tree->Bind(wxEVT_DATAVIEW_ITEM_EDITING_DONE, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
-	tree->Bind(wxEVT_DATAVIEW_ITEM_START_EDITING, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
-	frame->Bind(wxEVT_DATAVIEW_ITEM_BEGIN_DRAG, &DTSTreeWindowEvent::TreeEvent, dtsevthandler);
-	tree->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSTreeWindowEvent::MenuEvent, dtsevthandler);
-	sw->Bind(wxEVT_SPLITTER_SASH_POS_CHANGED, &DTSTreeWindowEvent::SplitterEvent, dtsevthandler);
-	sw->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &DTSTreeWindowEvent::OnButton, dtsevthandler);
+	tree->Bind(wxEVT_DATAVIEW_SELECTION_CHANGED, &DTSTreeWindowEvent::TreeEvent, dtsevt);
+	tree->Bind(wxEVT_DATAVIEW_ITEM_EXPANDED, &DTSTreeWindowEvent::TreeEvent, dtsevt);
+	tree->Bind(wxEVT_DATAVIEW_ITEM_CONTEXT_MENU, &DTSTreeWindowEvent::TreeEvent, dtsevt);
+	tree->Bind(wxEVT_DATAVIEW_ITEM_EDITING_DONE, &DTSTreeWindowEvent::TreeEvent, dtsevt);
+	tree->Bind(wxEVT_DATAVIEW_ITEM_START_EDITING, &DTSTreeWindowEvent::TreeEvent, dtsevt);
+	frame->Bind(wxEVT_DATAVIEW_ITEM_BEGIN_DRAG, &DTSTreeWindowEvent::TreeEvent, dtsevt);
+	tree->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSTreeWindowEvent::MenuEvent, dtsevt);
+	sw->Bind(wxEVT_SPLITTER_SASH_POS_CHANGED, &DTSTreeWindowEvent::SplitterEvent, dtsevt);
+	sw->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &DTSTreeWindowEvent::OnButton, dtsevt);
 	tree->EnableDragSource(wxDF_UNICODETEXT);
 	tree->EnableDropTarget(wxDF_UNICODETEXT);
 
@@ -486,7 +489,6 @@ void DTSTreeWindow::ShowRMenu(bool cont, int cnt, bool first, bool last, bool c_
 DTSTreeWindow::~DTSTreeWindow() {
 	delete t_pane;
 	delete a_window;
-	delete dtsevthandler;
 	objunref(rmenu);
 }
 
@@ -528,20 +530,69 @@ void DTSTreeWindow::Select(const wxDataViewItem& item) {
 	tree->ProcessWindowEvent(event);
 }
 
+DTSTabWindowEvent::DTSTabWindowEvent(void *userdata, DTSTabWindow *win) {
+	data = userdata;
+	tw = win;
+}
+
+DTSTabWindowEvent::~DTSTabWindowEvent() {
+}
+
+void DTSTabWindowEvent::PageChanged(wxBookCtrlEvent &event) {
+	wxWindow *w;
+	int p = event.GetSelection();
+
+	if (p != wxNOT_FOUND) {
+		w = tw->GetPage(p);
+		w->FitInside();
+		w->Layout();
+		w->Refresh();
+	}
+}
+
 DTSTabWindow::DTSTabWindow(DTSFrame *frame, wxString stat_msg)
 	:wxNotebook((wxWindow*)frame, -1),
 	DTSObject(stat_msg) {
 
-	wxNotebook *nb = static_cast<wxNotebook*>(this);
+	DTSTabWindowEvent *dtsevt;
+	wxNotebook *nb = (wxNotebook*)this;
 
 	panel = static_cast<wxWindow *>(nb);
+
 	type = wx_DTSPANEL_TAB;
 	this->frame = frame;
+
+	dtsevt = new DTSTabWindowEvent(userdata, this);
+	dtsevthandler = dtsevt;
+
+	nb->Bind(wxEVT_NOTEBOOK_PAGE_CHANGED, &DTSTabWindowEvent::PageChanged, dtsevt);
+
+	Show(false);
 }
 
 bool DTSTabWindow::Show(bool show) {
+	wxWindow *w;
+	int i, cnt;
+	bool res;
+
 	if (show && frame) {
 		frame->SetStatusText(status);
 	}
-	return wxNotebook::Show(show);
+
+	res = wxNotebook::Show(show);
+
+	if (!beenshown && show && res) {
+		cnt = GetPageCount();
+		for(i = 0; i < cnt;i++) {
+			w = GetPage(i);
+			w->Show(true);
+#ifdef __WIN32
+			if (i) {
+				w->Show(false);
+			}
+#endif // __WIN32
+		}
+		beenshown = true;
+	}
+	return res;
 }
