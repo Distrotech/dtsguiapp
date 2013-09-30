@@ -38,6 +38,7 @@ typedef void *dtsgui_treeview;
 typedef void *dtsgui_tabview;
 
 typedef void *dtsgui_treenode;
+typedef void *dtsgui_progress;
 
 /*forward def*/
 typedef struct form_item form_item;
@@ -186,6 +187,11 @@ struct basic_auth *dtsgui_pwdialog(const char *user, const char *passwd,void *da
 /*message box's*/
 int dtsgui_confirm(struct dtsgui *dtsgui, const char *text);
 void dtsgui_alert(struct dtsgui *dtsgui, const char *text);
+
+dtsgui_progress dtsgui_progress_start(struct dtsgui *dtsgui, const char *text, int maxval);
+int dtsgui_progress_update(dtsgui_progress pdlg, int newval, const char* newtext);
+void dtsgui_progress_end(dtsgui_progress pdlg);
+
 
 /*set callback for a pane*/
 void dtsgui_setevcallback(dtsgui_pane pane,event_callback evcb, void *data);

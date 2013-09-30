@@ -47,7 +47,7 @@ int pwevent(dtsgui_pane p, int type, int event, void *data) {
 		auth->passwd = dtsgui_findvalue(p, "pwd");
 		objunref(auth);
 	}
-	return 0;
+	return 1;
 }
 
 struct basic_auth *dtsgui_pwdialog(const char *user, const char *passwd, void *data) {

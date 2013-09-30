@@ -30,6 +30,7 @@
 #include <wx/frame.h>
 #include <wx/menu.h>
 #include <wx/stattext.h>
+#include <wx/progdlg.h>
 
 #include <stdint.h>
 #include <dtsapp.h>

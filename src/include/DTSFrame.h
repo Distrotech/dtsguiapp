@@ -30,6 +30,8 @@ class DTSFrame: public wxFrame {
 		void DynamicPanelEvent(wxCommandEvent &event);
 		bool Confirm(wxString text);
 		void Alert(wxString text);
+		wxProgressDialog *StartProgress(wxString text, int maxval);
+		int UpdateProgress(wxProgressDialog *pdlg, int cval, const wxString& newtext = wxEmptyString);
 		void OnClose(wxCommandEvent &event);
 		void OnAbort(wxCloseEvent &event);
 		void OnAbout(wxCommandEvent &event);

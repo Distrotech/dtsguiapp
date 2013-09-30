@@ -44,6 +44,7 @@
 #include <wx/wizard.h>
 #include <wx/filedlg.h>
 #include <wx/notebook.h>
+#include <wx/progdlg.h>
 
 #include <dtsapp.h>
 #include "dtsgui.hpp"
@@ -225,6 +226,39 @@ void dtsgui_alert(struct dtsgui *dtsgui, const char *text) {
 	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
 
 	f->Alert(text);
+}
+
+dtsgui_progress dtsgui_progress_start(struct dtsgui *dtsgui, const char *text, int maxval) {
+	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
+
+	return f->StartProgress(text, maxval);
+}
+
+int dtsgui_progress_update(dtsgui_progress pdlg, int newval, const char* newtext) {
+	wxProgressDialog *pd = (wxProgressDialog*)pdlg;
+	wxString ntxt;
+
+	if (newtext) {
+		ntxt = newtext;
+	} else {
+		ntxt = wxEmptyString;
+	}
+
+	if (pd->Update(newval, ntxt)) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+void dtsgui_progress_end(dtsgui_progress pdlg) {
+	wxProgressDialog *pd = (wxProgressDialog*)pdlg;
+
+	pd->Show(false);
+
+	if (pd) {
+		delete pd;
+	}
 }
 
 dtsgui_pane dtsgui_panel(struct dtsgui *dtsgui, const char *name, int butmask,
