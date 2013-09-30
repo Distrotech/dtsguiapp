@@ -111,10 +111,16 @@ void DTSFrame::Alert(wxString text) {
 	alert->Destroy();
 }
 
-wxProgressDialog *DTSFrame::StartProgress(wxString text, int maxval) {
+wxProgressDialog *DTSFrame::StartProgress(wxString text, int maxval, int quit) {
 	wxProgressDialog *pdlg;
+	int flags;
 
-	pdlg = new wxProgressDialog("Progress", text, maxval, NULL, wxPD_APP_MODAL | wxPD_AUTO_HIDE | wxPD_CAN_ABORT | wxPD_ELAPSED_TIME);
+	flags = wxPD_APP_MODAL | wxPD_AUTO_HIDE | wxPD_ELAPSED_TIME;
+	if (quit) {
+		flags |= wxPD_CAN_ABORT;
+	}
+
+	pdlg = new wxProgressDialog("Progress", text, maxval, NULL, flags);
 	pdlg->Show();
 	return pdlg;
 }

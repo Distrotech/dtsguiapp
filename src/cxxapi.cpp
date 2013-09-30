@@ -228,10 +228,10 @@ void dtsgui_alert(struct dtsgui *dtsgui, const char *text) {
 	f->Alert(text);
 }
 
-dtsgui_progress dtsgui_progress_start(struct dtsgui *dtsgui, const char *text, int maxval) {
+dtsgui_progress dtsgui_progress_start(struct dtsgui *dtsgui, const char *text, int maxval, int quit) {
 	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
 
-	return f->StartProgress(text, maxval);
+	return f->StartProgress(text, maxval, quit);
 }
 
 int dtsgui_progress_update(dtsgui_progress pdlg, int newval, const char* newtext) {
@@ -315,11 +315,10 @@ extern dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *titl
 	return tw;
 }
 
-extern dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title) {
+extern dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title, void *data) {
 	DTSTabWindow *tw;
 	DTSFrame *frame = (DTSFrame *)dtsgui->appframe;
-
-	tw = new DTSTabWindow(frame, title);
+	tw = new DTSTabWindow(frame, title, data);
 	return tw;
 }
 

@@ -40,7 +40,7 @@ dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data) {
 		return NULL;
 	}
 
-	tabv = dtsgui_tabwindow(dtsgui, title);
+	tabv = dtsgui_tabwindow(dtsgui, title, NULL);
 
 	for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
 		name = xml_getattr(xn, "name");

@@ -50,7 +50,11 @@ enum treewinmenu {
 };
 
 DTSTreeWindowEvent::DTSTreeWindowEvent(void *userdata, dtsgui_tree_cb tree_cb, struct dtsgui *dtsgui, DTSTreeWindow *win) {
-	data = userdata;
+	if (userdata && objref(userdata)) {
+		data = userdata;
+	} else {
+		data = NULL;
+	}
 	treecb = tree_cb;
 	parent = win;
 	tree = win->GetTreeCtrl();
@@ -61,6 +65,9 @@ DTSTreeWindowEvent::DTSTreeWindowEvent(void *userdata, dtsgui_tree_cb tree_cb, s
 DTSTreeWindowEvent::~DTSTreeWindowEvent() {
 	if (dtsgui) {
 		objunref(dtsgui);
+	}
+	if (data) {
+		objunref(data);
 	}
 }
 
@@ -319,7 +326,11 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 		rmenu->mdelete = menu->Append(DTS_TREEWIN_MENU_DELETE, "Delete");
 	}
 
-	userdata = u_data;
+	if (u_data && objref(u_data)) {
+		userdata = u_data;
+	} else {
+		userdata = NULL;
+	}
 	this->frame = frame;
 
 	p_sizer->Add(sw, 1,wxEXPAND,0);
@@ -490,6 +501,9 @@ DTSTreeWindow::~DTSTreeWindow() {
 	delete t_pane;
 	delete a_window;
 	objunref(rmenu);
+	if (userdata) {
+		objunref(userdata);
+	}
 }
 
 bool DTSTreeWindow::Show(bool show) {
@@ -531,11 +545,18 @@ void DTSTreeWindow::Select(const wxDataViewItem& item) {
 }
 
 DTSTabWindowEvent::DTSTabWindowEvent(void *userdata, DTSTabWindow *win) {
-	data = userdata;
+	if (userdata && objref(userdata)) {
+		data = userdata;
+	} else {
+		data = NULL;
+	}
 	tw = win;
 }
 
 DTSTabWindowEvent::~DTSTabWindowEvent() {
+	if (data) {
+		objunref(data);
+	}
 }
 
 void DTSTabWindowEvent::RightMenu(wxCommandEvent &event) {
@@ -554,7 +575,7 @@ void DTSTabWindowEvent::PageChanged(wxBookCtrlEvent &event) {
 	}
 }
 
-DTSTabWindow::DTSTabWindow(DTSFrame *frame, wxString stat_msg)
+DTSTabWindow::DTSTabWindow(DTSFrame *frame, wxString stat_msg, void *u_data)
 	:wxNotebook((wxWindow*)frame, -1),
 	DTSObject(stat_msg) {
 
@@ -566,6 +587,10 @@ DTSTabWindow::DTSTabWindow(DTSFrame *frame, wxString stat_msg)
 	type = wx_DTSPANEL_TAB;
 	this->frame = frame;
 
+	if (u_data && objref(u_data)) {
+		userdata = u_data;
+	}
+
 	dtsevt = new DTSTabWindowEvent(userdata, this);
 	dtsevthandler = dtsevt;
 
@@ -573,6 +598,13 @@ DTSTabWindow::DTSTabWindow(DTSFrame *frame, wxString stat_msg)
 	nb->Bind(wxEVT_CONTEXT_MENU, &DTSTabWindowEvent::RightMenu, dtsevt);
 
 	Show(false);
+}
+
+
+DTSTabWindow::~DTSTabWindow() {
+	if (userdata) {
+		objunref(userdata);
+	}
 }
 
 bool DTSTabWindow::Show(bool show) {
