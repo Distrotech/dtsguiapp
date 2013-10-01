@@ -389,7 +389,7 @@ static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename
 	return res;
 }
 
-extern dtsgui_pane newsys_wizard(struct dtsgui *dtsgui, void *data) {
+extern dtsgui_pane newsys_wizard(struct dtsgui *dtsgui, const char *title, void *data) {
 	char defconf[PATH_MAX];
 	struct xml_doc *xmldoc;
 	struct app_data *appdata;
@@ -410,7 +410,7 @@ extern dtsgui_pane newsys_wizard(struct dtsgui *dtsgui, void *data) {
 	return NULL;
 }
 
-extern dtsgui_pane editsys_wizard(struct dtsgui *dtsgui, void *data) {
+extern dtsgui_pane editsys_wizard(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct xml_doc *xmldoc;
 	const char *filename;
 
@@ -429,7 +429,7 @@ extern dtsgui_pane editsys_wizard(struct dtsgui *dtsgui, void *data) {
 	return NULL;
 }
 
-dtsgui_pane reconfig_wizard(struct dtsgui *dtsgui, void *data) {
+dtsgui_pane reconfig_wizard(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct app_data *appdata;
 	struct xml_doc *xmldoc = NULL;
 

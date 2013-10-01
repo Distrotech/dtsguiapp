@@ -233,9 +233,7 @@ void network_iface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, vo
 	objunref(xn);
 }
 
-void network_newiface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
-	int flg;
-
+void network_iface_new_pane(dtsgui_pane p) {
 	dtsgui_textbox(p, "Interface", "iface", "", NULL);
 	dtsgui_textbox(p, "Name", "name", "", NULL);
 	dtsgui_textbox(p, "IP Address", "ipaddr", "0", NULL);
@@ -246,6 +244,12 @@ void network_newiface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node,
 	dtsgui_textbox(p, "DHCP End Address", "dhcpend", "-", NULL);
 	dtsgui_textbox(p, "Bandwidth In", "bwin", "", NULL);
 	dtsgui_textbox(p, "Bandwidth Out", "bwout", "", NULL);
+}
+
+void network_newiface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
+	int flg;
+
+	network_iface_new_pane(p);
 
 	flg = DTS_TREE_NEW_NODE_CONTAINER | DTS_TREE_NEW_NODE_DELETE | DTS_TREE_NEW_NODE_EDIT | DTS_TREE_NEW_NODE_SORT;
 	dtsgui_newxmltreenode(self, p, node, "/config/IP/Interfaces", "Interface", "iface", "name", DTS_NODE_NETWORK_IFACE,
@@ -395,7 +399,9 @@ void network_modem(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, vo
 	dtsgui_xmltextbox(p, "Number/Service ID/APN", "Number", "/config/IP/Dialup", "Option", "option", "Number", NULL);
 	dtsgui_xmltextbox(p, "Username", "Username", "/config/IP/Dialup", "Option", "option", "Username", NULL);
 	dtsgui_xmltextbox(p, "Password", "Password", "/config/IP/Dialup", "Option", "option", "Password", NULL);
+}
 
+void network_modem_adv(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	dtsgui_xmltextbox(p, "Holdoff Time", "Holdoff", "/config/IP/Dialup", "Option", "option", "Holdoff", NULL);
 	dtsgui_xmltextbox(p, "MTU/MRU", "MTU", "/config/IP/Dialup", "Option", "option", "MTU", NULL);
 	dtsgui_xmltextbox(p, "Idle Timeout", "IdleTimeout", "/config/IP/Dialup", "Option", "option", "IdleTimeout", NULL);
@@ -682,7 +688,8 @@ void network_tree_setup(dtsgui_treeview tree, struct xml_doc *xmldoc) {
 	objunref(iter);
 	iter = NULL;
 
-	tln = dtsgui_treecont(tree, root, "PPP Connection Config", 0, 0, 0, DTS_NODE_NETWORK_MODEM, network_modem, NULL);
+	tln = dtsgui_treecont(tree, root, "PPP Config (DSL/3G)", 0, 0, 0, DTS_NODE_NETWORK_MODEM, network_modem, NULL);
+	dtsgui_treeitem(tree, tln, "Advanced Settings", 0, 0, 0, DTS_NODE_NETWORK_MODEM_ADV, network_modem_adv, NULL);
 	dtsgui_treeitem(tree, tln, "Dialup/Leased", 0, 0, 0, DTS_NODE_NETWORK_MODEM_ANA, network_modem_ana, NULL);
 	dtsgui_treecont(tree, tln, "Modem Firewall Rules", 0, 1, 0, -1, NULL, NULL);
 

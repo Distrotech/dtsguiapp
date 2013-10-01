@@ -44,7 +44,7 @@ dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data) {
 
 	tabv = dtsgui_tabwindow(dtsgui, title, NULL);
 
-	cnt = xml_nodecount(xp);
+	cnt = xml_nodecount(xp)+1;
 	pb = dtsgui_progress_start(dtsgui, "Interface Configuration Loading", cnt, 0);
 
 	for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
@@ -55,6 +55,12 @@ dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data) {
 		objunref(xn);
 		dtsgui_progress_update(pb, pbval++, NULL);
 	}
+
+	p = dtsgui_newtabpage(tabv, "Add", wx_PANEL_BUTTON_ACTION, NULL, NULL);
+	network_iface_new_pane(p);
+	dtsgui_addtabpage(tabv, p);
+
+	dtsgui_progress_update(pb, pbval++, NULL);
 	dtsgui_progress_end(pb);
 
 	if (iter) {

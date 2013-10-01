@@ -26,7 +26,6 @@ class DTSFrame: public wxFrame {
 		~DTSFrame();
 		void SetAbout(const char *a_text);
 		void SwitchWindow(wxCommandEvent &event);
-		void RunCommand(wxCommandEvent &event);
 		void DynamicPanelEvent(wxCommandEvent &event);
 		bool Confirm(wxString text);
 		void Alert(wxString text);
@@ -37,7 +36,6 @@ class DTSFrame: public wxFrame {
 		void OnAbout(wxCommandEvent &event);
 		void SendDTSEvent(int eid, wxObject *evobj);
 		void SetWindow(wxWindow *window);
-		bool DynamicPanel(struct dynamic_panel *p_dyn);
 		struct dtsgui *GetDTSData(void);
 	private:
 		void SetupToolbar(void);
