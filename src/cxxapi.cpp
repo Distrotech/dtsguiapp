@@ -181,13 +181,23 @@ dtsgui_menuitem dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, con
 	return mi;
 }
 
+
+void free_dynamic(void *data) {
+	struct dynamic_panel *dpane = (struct dynamic_panel*)data;
+	DTSObject *p;
+
+	if ((p = (DTSObject*)dpane->panel)) {
+		delete p;
+	}
+}
+
 extern dtsgui_menuitem dtsgui_newmenudyn(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *title, const char *hint, dtsgui_dynpanel cb,void *data, struct dynamic_panel **d_pane) {
 	struct dynamic_panel *p_dyn;
 	wxMenu *m = (wxMenu *)dtsmenu;
 	DTSFrame *frame = (DTSFrame *)dtsgui->appframe;
 	wxMenuItem *mi;
 
-	if (!(p_dyn = (struct dynamic_panel*)objalloc(sizeof(*p_dyn),NULL))) {
+	if (!(p_dyn = (struct dynamic_panel*)objalloc(sizeof(*p_dyn), free_dynamic))) {
 		return NULL;
 	}
 
@@ -325,9 +335,10 @@ extern dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title,
 extern dtsgui_pane dtsgui_newtabpage(dtsgui_tabview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc) {
 	DTSScrollPanel *dp = NULL;
 	DTSTabWindow *tw = (DTSTabWindow*)tv;
-	wxBookCtrlBase *parent = dynamic_cast<wxBookCtrlBase*>(tw);
+	wxWindow *nb = tw->GetPanel();
+	DTSFrame *f = tw->GetFrame();
 
-	dp = new DTSScrollPanel(parent, tw->GetFrame(), name, butmask);
+	dp = new DTSScrollPanel(nb, f, name, butmask);
 	dp->type = wx_DTSPANEL_TAB;
 
 	if (name) {
@@ -343,11 +354,9 @@ extern dtsgui_pane dtsgui_newtabpage(dtsgui_tabview tv, const char *name, int bu
 void dtsgui_addtabpage(dtsgui_tabview tv, dtsgui_pane p) {
 	DTSPanel *dp = (DTSPanel*)p;
 	DTSTabWindow *tw = (DTSTabWindow*)tv;
-	wxBookCtrlBase *parent = static_cast<wxBookCtrlBase*>(tw);
-	wxWindow *nw;
+	wxBookCtrlBase *nb = static_cast<wxBookCtrlBase*>(tw);
 
-	nw = dp->GetPanel();
-	parent->AddPage(nw, dp->GetName());
+	nb->AddPage(dp->GetPanel(), dp->GetName());
 }
 
 extern dtsgui_pane dtsgui_treepane(dtsgui_treeview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc) {
@@ -879,24 +888,6 @@ void dtsgui_reconfig(struct dtsgui *dtsgui) {
 	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
 	f->SendDTSEvent(1, NULL);
 }
-
-void dtsgui_createdyn(struct dtsgui *dtsgui, struct dynamic_panel *dpane) {
-	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
-	f->DynamicPanel(dpane);
-}
-
-void dtsgui_closedyn(struct dtsgui *dtsgui, struct dynamic_panel *dpane) {
-	DTSObject *p;
-
-	if (!dtsgui || !dpane) {
-		return;
-	}
-	p = (DTSObject*)dpane->panel;
-	delete p;
-
-	dpane->panel = NULL;
-}
-
 
 void dtsgui_settitle(dtsgui_pane pane, const char *title) {
 	DTSPanel *p = (DTSPanel*)pane;

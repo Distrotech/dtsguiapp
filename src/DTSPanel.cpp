@@ -224,6 +224,7 @@ DTSObject::DTSObject(wxString st) {
 	xmldoc = NULL;
 	userdata = NULL;
 	dtsevthandler = NULL;
+	beenshown = false;
 	SetName(status);
 }
 
