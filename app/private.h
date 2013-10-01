@@ -40,6 +40,7 @@ enum node_id {
 	DTS_NODE_NETWORK_ROUTE_NEW,
 	DTS_NODE_NETWORK_ROUTE,
 	DTS_NODE_NETWORK_MODEM,
+	DTS_NODE_NETWORK_MODEM_ADV,
 	DTS_NODE_NETWORK_MODEM_ANA,
 	DTS_NODE_NETWORK_ADSL_LINK_NEW,
 	DTS_NODE_NETWORK_ADSL_LINK,
@@ -58,9 +59,6 @@ struct app_data {
 	dtsgui_menuitem e_wiz;
 	dtsgui_menuitem c_open;
 	dtsgui_menu cfg_menu;
-	struct dynamic_panel *pbx_cfg;
-	struct dynamic_panel *net_cfg;
-	struct dynamic_panel *main_cfg;
 };
 
 struct listitem {
@@ -69,21 +67,22 @@ struct listitem {
 };
 
 /*wizard.c*/
-dtsgui_pane reconfig_wizard(struct dtsgui *dtsgui, void *data);
-dtsgui_pane editsys_wizard(struct dtsgui *dtsgui, void *data);
-dtsgui_pane newsys_wizard(struct dtsgui *dtsgui, void *data);
+dtsgui_pane reconfig_wizard(struct dtsgui *dtsgui, const char *title, void *data);
+dtsgui_pane editsys_wizard(struct dtsgui *dtsgui, const char *title, void *data);
+dtsgui_pane newsys_wizard(struct dtsgui *dtsgui, const char *title, void *data);
 
 /*pbxconfig.c*/
 dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data);
 
 /*testing.c*/
-dtsgui_pane post_test(struct dtsgui *dtsgui, void *data);
+dtsgui_pane post_test(struct dtsgui *dtsgui, const char *title, void *data);
 void test_menu(struct dtsgui *dtsgui);
 void testpanel(dtsgui_pane p);
 
 /*netconfig.c*/
 dtsgui_pane advanced_config(struct dtsgui *dtsgui, const char *title, void *data);
 void network_iface_pane(dtsgui_pane p, const char *iface);
+void network_iface_new_pane(dtsgui_pane p);
 
 /*iface*/
 dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data);

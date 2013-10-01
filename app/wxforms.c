@@ -86,13 +86,13 @@ void xml_config(struct xml_doc *xmldoc) {
 	objunref(xmlbuf);
 }
 
-dtsgui_pane post_test(struct dtsgui *dtsgui, void *data) {
+dtsgui_pane post_test(struct dtsgui *dtsgui, const char *title, void *data) {
 	test_posturl(dtsgui, NULL, NULL, "https://sip1.speakezi.co.za:666/auth/test.php");
 
 	return NULL;
 }
 
-dtsgui_pane open_config(struct dtsgui *dtsgui, void *data) {
+dtsgui_pane open_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct app_data *appdata;
 	const char *filename;
 
@@ -117,7 +117,7 @@ dtsgui_pane open_config(struct dtsgui *dtsgui, void *data) {
 	return NULL;
 }
 
-dtsgui_pane save_config(struct dtsgui *dtsgui, void *data) {
+dtsgui_pane save_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct app_data *appdata;
 
 	appdata = dtsgui_userdata(dtsgui);
@@ -133,7 +133,7 @@ dtsgui_pane save_config(struct dtsgui *dtsgui, void *data) {
 }
 
 
-dtsgui_pane view_config_xml(struct dtsgui *dtsgui, void *data) {
+dtsgui_pane view_config_xml(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct app_data *appdata;
 	struct xml_doc *xmldoc = NULL;
 	dtsgui_pane p;
@@ -149,7 +149,7 @@ dtsgui_pane view_config_xml(struct dtsgui *dtsgui, void *data) {
 	return p;
 }
 
-dtsgui_pane view_config_conf(struct dtsgui *dtsgui, void *data) {
+dtsgui_pane view_config_conf(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct app_data *appdata;
 	struct xml_doc *xmldoc;
 	struct xslt_doc *xsltdoc;
@@ -179,7 +179,7 @@ dtsgui_pane view_config_conf(struct dtsgui *dtsgui, void *data) {
 	return p;
 }
 
-dtsgui_pane export_config(struct dtsgui *dtsgui, void *data) {
+dtsgui_pane export_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct app_data *appdata;
 	struct xml_doc *xmldoc;
 	struct xslt_doc *xsltdoc;
@@ -230,28 +230,15 @@ void file_menu(struct dtsgui *dtsgui) {
 
 void config_menu(struct dtsgui *dtsgui) {
 	struct app_data *appdata;
-	struct dynamic_panel *pbx_cfg = NULL;
-	struct dynamic_panel *main_cfg = NULL;
-	struct dynamic_panel *net_cfg = NULL;
 
 	appdata = dtsgui_userdata(dtsgui);
 	appdata->cfg_menu = dtsgui_newmenu(dtsgui, "&Config");
 
 	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "Reconfigure &Wizard", "Run System Reconfigure Wizard.", 1, reconfig_wizard, NULL);
-	dtsgui_newmenudyn(appdata->cfg_menu, dtsgui, "PBX Setup", "P&BX Configuration", pbx_settings, NULL, &pbx_cfg);
-	if (pbx_cfg) {
-		appdata->pbx_cfg = pbx_cfg;
-	}
 
-	dtsgui_newmenudyn(appdata->cfg_menu, dtsgui, "Inteface Configuration", "&Interface Configuration", iface_config, NULL, &net_cfg);
-	if (net_cfg) {
-		appdata->net_cfg = net_cfg;
-	}
-
-	dtsgui_newmenudyn(appdata->cfg_menu, dtsgui, "Advanced Config", "&Advanced Configuration", advanced_config, NULL, &main_cfg);
-	if (main_cfg) {
-		appdata->main_cfg = main_cfg;
-	}
+	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "P&BX Configuration", "PBX Setup", 0, pbx_settings, NULL);
+	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&Interface Configuration", "Inteface Configuration", 0, iface_config, NULL);
+	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&Advanced Configuration", "Advanced Config", 0, advanced_config, NULL);
 
 	dtsgui_menusep(appdata->cfg_menu);
 	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&Save And Close Config", "Save/Close System Config (File/URL)", 1, save_config, NULL);
@@ -317,18 +304,6 @@ void free_appdata(void *data) {
 
 	if (appdata->xmldoc) {
 		objunref(appdata->xmldoc);
-	}
-
-	if (appdata->pbx_cfg) {
-		objunref(appdata->pbx_cfg);
-	}
-
-	if (appdata->net_cfg) {
-		objunref(appdata->net_cfg);
-	}
-
-	if (appdata->main_cfg) {
-		objunref(appdata->main_cfg);
 	}
 }
 
