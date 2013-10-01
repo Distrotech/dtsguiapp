@@ -167,13 +167,13 @@ dtsgui_menuitem dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, c
 	return mi;
 }
 
-dtsgui_menuitem dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, const char *label, dtsgui_configcb cb, void *data) {
+dtsgui_menuitem dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, const char *label, int blank, dtsgui_menucb cb, void *data) {
 	wxMenu *m = (wxMenu *)dtsmenu;
 	DTSFrame *frame = (DTSFrame *)dtsgui->appframe;
 	wxMenuItem *mi;
 
 	/*handed over to wx no need to delete*/
-	evdata *ev_data = new evdata(data, cb);
+	evdata *ev_data = new evdata(data, cb, blank);
 
 	mi = m->Append(menuid, hint, label);
 	frame->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::RunCommand, frame, menuid, menuid, (wxObject *)ev_data);
@@ -207,7 +207,7 @@ extern dtsgui_menuitem dtsgui_newmenudyn(dtsgui_menu dtsmenu, struct dtsgui *dts
 	p_dyn->cb = cb;
 
 	/*evdata ref's data*/
-	evdata *ev_data = new evdata(p_dyn, NULL, 1);
+	evdata *ev_data = new evdata(p_dyn, NULL, 0, 1);
 
 	if (d_pane) {
 		*d_pane = p_dyn;
@@ -623,7 +623,7 @@ dtsgui_pane dtsgui_textpane(struct dtsgui *dtsgui, const char *title, const char
 	DTSStaticPanel *p = new DTSStaticPanel(f, f, title);
 	wxPanel *wxp = static_cast<wxPanel*>(p);
 
-	wxTextCtrl *eb = new wxTextCtrl(wxp, -1, buf, wxDefaultPosition, wxDefaultSize,wxTE_MULTILINE | wxTE_READONLY);
+	wxTextCtrl *eb = new wxTextCtrl(wxp, -1, buf, wxDefaultPosition, wxDefaultSize,wxTE_MULTILINE | wxHSCROLL | wxTE_READONLY);
 
 	p->AddItem(eb, wxGBPosition(0,0), wxGBSpan(10, 6), wxEXPAND|wxGROW, 0, 0);
 
@@ -879,7 +879,7 @@ void dtsgui_menuenable(dtsgui_menu dm, int enable) {
 	}
 }
 
-void dtsgui_setblank(struct dtsgui *dtsgui) {
+void dtsgui_setwindow(struct dtsgui *dtsgui, dtsgui_pane p) {
 	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
 	f->SetWindow(NULL);
 }

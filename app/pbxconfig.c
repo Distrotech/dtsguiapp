@@ -65,7 +65,8 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct app_data *appdata;
 	dtsgui_pane dp[11], pg;
 	struct form_item *lb;
-	int cnt, i;
+	dtsgui_progress pb;
+	int cnt, i, pbval = 0;
 
 	appdata = dtsgui_userdata(dtsgui);
 	tabv = dtsgui_tabwindow(dtsgui, title, NULL);
@@ -82,10 +83,13 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dp[9] = dtsgui_newtabpage(tabv, "Auto Add", 0, NULL, appdata->xmldoc);
 	dp[10] = dtsgui_newtabpage(tabv, "Save", wx_PANEL_BUTTON_YES, NULL, appdata->xmldoc);
 
+	cnt = sizeof(trunks)/sizeof(trunks[0]);
+	pb = dtsgui_progress_start(dtsgui, "PBX Configuration Loading", cnt, 0);
+	dtsgui_progress_update(pb, pbval++, NULL);
+
 	pg = dp[0];
 	lb = dtsgui_xmllistbox(pg, "PSTN Trunk", "Trunk", "/config/IP/VOIP/ASTDB" , "Option", "option", "Trunk", NULL);
 	dtsgui_listbox_add(lb, "Do Not Use 1 Trunk", "NONE");
-	cnt = sizeof(trunks)/sizeof(trunks[0]);
 	for(i=0;i < cnt;i++) {
 		dtsgui_listbox_add(lb, trunks[i].name, trunks[i].value);
 	}
@@ -153,6 +157,7 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_xmlcheckbox(pg, "Disable Native Bridging On Outbound", "NoBridge", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "NoBridge", NULL);
 	dtsgui_xmlcheckbox(pg, "Disable access to invalid accounts", "ValidAcc", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "ValidAcc", NULL);
 	dtsgui_addtabpage(tabv, pg);
+	dtsgui_progress_update(pb, pbval++, NULL);
 
 	pg = dp[1];
 	dtsgui_xmltextbox(pg, "Isdn Ports To Use (Group 1)", "mISDNports", "/config/IP/VOIP/ASTDB", "Option", "option", "mISDNports", NULL);
@@ -166,6 +171,7 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_xmlcheckbox(pg, "Immeadiate Routing (No MSN/DDI)", "mISDNimm", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "mISDNimm", NULL);
 	dtsgui_xmlcheckbox(pg, "Use Round Robin Routing", "mISDNrr", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "mISDNrr", NULL);
 	dtsgui_addtabpage(tabv, pg);
+	dtsgui_progress_update(pb, pbval++, NULL);
 
 	pg = dp[2];
 	lb = dtsgui_xmllistbox(pg, "Line Build Out", "PRIlbo","/config/IP/VOIP/ASTDB", "Option", "option", "PRIlbo", NULL);
@@ -188,6 +194,7 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	objunref(lb);
 	dtsgui_xmlcheckbox(pg, "CRC4 Checking (E1 Only)", "PRIcrc4", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "PRIcrc4", NULL);
 	dtsgui_addtabpage(tabv, pg);
+	dtsgui_progress_update(pb, pbval++, NULL);
 
 	pg = dp[3];
 	lb = dtsgui_xmllistbox(pg, "Variant", "E1mfcr2_variant", "/config/IP/VOIP/ASTDB", "Option", "option", "E1mfcr2_variant", NULL);
@@ -218,6 +225,7 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_xmlcheckbox(pg, "Forced Release (BR)", "E1mfcr2_forced_release", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "E1mfcr2_forced_release", NULL);
 	dtsgui_xmlcheckbox(pg, "Accept Call With Charge", "E1mfcr2_charge_calls", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "E1mfcr2_charge_calls", NULL);
 	dtsgui_addtabpage(tabv, pg);
+	dtsgui_progress_update(pb, pbval++, NULL);
 
 	pg = dp[4];
 	lb = dtsgui_xmllistbox(pg, "Default Extension Permision", "Context", "/config/IP/VOIP/ASTDB", "Option", "option", "Context", NULL);
@@ -266,10 +274,12 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_xmlcheckbox(pg, "Follow DDI If Exten (Inbound)", "FollowDDI", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "FollowDDI", NULL);
 	dtsgui_xmlcheckbox(pg, "Authorise Only When Registered By Default (SIP)", "DEFAUTHREG", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "DEFAUTHREG", NULL);
 	dtsgui_addtabpage(tabv, pg);
+	dtsgui_progress_update(pb, pbval++, NULL);
 
 	pg=dp[5];
 	dtsgui_xmlpasswdbox(pg, "Admin Password", "AdminPass", "/config/IP/VOIP/ASTDB", "Option", "option", "AdminPass", NULL);
 	dtsgui_addtabpage(tabv, pg);
+	dtsgui_progress_update(pb, pbval++, NULL);
 
 	pg=dp[6];
 	dtsgui_xmltextbox(pg, "Local Country Code", "CountryCode", "/config/IP/VOIP/ASTDB", "Option", "option", "CountryCode", NULL);
@@ -281,6 +291,7 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_xmltextbox(pg, "National Access Code", "LocalAccess", "/config/IP/VOIP/ASTDB", "Option", "option", "LocalAccess", NULL);
 	dtsgui_xmltextbox(pg, "International Access Code", "IntAccess", "/config/IP/VOIP/ASTDB", "Option", "option", "IntAccess", NULL);
 	dtsgui_addtabpage(tabv, pg);
+	dtsgui_progress_update(pb, pbval++, NULL);
 
 	pg=dp[7];
 	lb = dtsgui_xmllistbox(pg, "Default Attendant", "Attendant", "/config/IP/VOIP/ASTDB", "Option", "option", "Attendant", NULL);
@@ -295,6 +306,7 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	objunref(lb);
 	dtsgui_xmlcheckbox(pg, "Enable Inbound FAX Detect", "IFAXD", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "IFAXD", NULL);
 	dtsgui_addtabpage(tabv, pg);
+	dtsgui_progress_update(pb, pbval++, NULL);
 
 	pg = dp[8];
 	dtsgui_xmltextbox(pg, "4 Digit Telco Number Pattern", "InternalPat", "/config/IP/VOIP/ASTDB", "Option", "option", "InternalPat", NULL);
@@ -309,6 +321,7 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_xmltextbox(pg, "Inbound Local Call Pattern (Trunk Forward)", "TRUNKDDIPat", "/config/IP/VOIP/ASTDB", "Option", "option", "TRUNKDDIPat", NULL);
 	dtsgui_xmltextbox(pg, "DDI Limit Pattern (Accepted DDI More Than 4 Digits)", "DDIPAT", "/config/IP/VOIP/ASTDB", "Option", "option", "DDIPAT", NULL);
 	dtsgui_addtabpage(tabv, pg);
+	dtsgui_progress_update(pb, pbval++, NULL);
 
 	pg = dp[9];
 	dtsgui_xmltextbox(pg, "Start Exten.", "AutoStart", "/config/IP/VOIP/ASTDB", "Option", "option", "AutoStart", NULL);
@@ -318,9 +331,13 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_xmlcheckbox(pg, "Lock Settings (Snom)", "AutoLock", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "AutoLock", NULL);
 	dtsgui_xmlcheckbox(pg, "Require Authorisation", "AutoAuth", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "AutoAuth", NULL);
 	dtsgui_addtabpage(tabv, pg);
+	dtsgui_progress_update(pb, pbval++, NULL);
 
 	dtsgui_setevcallback(dp[10], NULL, &dp);
 	dtsgui_addtabpage(tabv, dp[10]);
+	dtsgui_progress_update(pb, pbval++, NULL);
 
+
+	dtsgui_progress_end(pb);
 	return tabv;
 }

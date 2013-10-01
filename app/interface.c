@@ -33,6 +33,8 @@ dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	const char *name;
 	dtsgui_pane *p;
 	void *iter = NULL;
+	dtsgui_progress pb;
+	int pbval = 0, cnt;
 
 	appdata = dtsgui_userdata(dtsgui);
 	xmldoc = appdata->xmldoc;
@@ -42,13 +44,18 @@ dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data) {
 
 	tabv = dtsgui_tabwindow(dtsgui, title, NULL);
 
+	cnt = xml_nodecount(xp);
+	pb = dtsgui_progress_start(dtsgui, "Interface Configuration Loading", cnt, 0);
+
 	for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
 		name = xml_getattr(xn, "name");
 		p = dtsgui_newtabpage(tabv, name, wx_PANEL_BUTTON_ACTION, NULL, xmldoc);
 		network_iface_pane(p, xn->value);
 		dtsgui_addtabpage(tabv, p);
 		objunref(xn);
+		dtsgui_progress_update(pb, pbval++, NULL);
 	}
+	dtsgui_progress_end(pb);
 
 	if (iter) {
 		objunref(iter);

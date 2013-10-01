@@ -69,15 +69,15 @@ struct listitem {
 };
 
 /*wizard.c*/
-int reconfig_wizard(struct dtsgui *dtsgui, void *data);
-int editsys_wizard(struct dtsgui *dtsgui, void *data);
-int newsys_wizard(struct dtsgui *dtsgui, void *data);
+dtsgui_pane reconfig_wizard(struct dtsgui *dtsgui, void *data);
+dtsgui_pane editsys_wizard(struct dtsgui *dtsgui, void *data);
+dtsgui_pane newsys_wizard(struct dtsgui *dtsgui, void *data);
 
 /*pbxconfig.c*/
 dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data);
 
 /*testing.c*/
-int post_test(struct dtsgui *dtsgui, void *data);
+dtsgui_pane post_test(struct dtsgui *dtsgui, void *data);
 void test_menu(struct dtsgui *dtsgui);
 void testpanel(dtsgui_pane p);
 
