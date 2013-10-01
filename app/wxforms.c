@@ -86,25 +86,25 @@ void xml_config(struct xml_doc *xmldoc) {
 	objunref(xmlbuf);
 }
 
-int post_test(struct dtsgui *dtsgui, void *data) {
+dtsgui_pane post_test(struct dtsgui *dtsgui, void *data) {
 	test_posturl(dtsgui, NULL, NULL, "https://sip1.speakezi.co.za:666/auth/test.php");
 
-	return 1;
+	return NULL;
 }
 
-int open_config(struct dtsgui *dtsgui, void *data) {
+dtsgui_pane open_config(struct dtsgui *dtsgui, void *data) {
 	struct app_data *appdata;
 	const char *filename;
 
 	appdata = dtsgui_userdata(dtsgui);
 
 	if (!(filename = dtsgui_fileopen(dtsgui, "Select Customer Configuration To Open", NULL, "", "XML Configuration|*.xml"))) {
-		return 0;
+		return NULL;
 	}
 
 	if (!(appdata->xmldoc = xml_loaddoc(filename, 1	))) {
 		dtsgui_alert(dtsgui, "Configuration failed to load.\n");
-		return 0;
+		return NULL;
 	}
 
 	dtsgui_reconfig(dtsgui);
@@ -114,10 +114,10 @@ int open_config(struct dtsgui *dtsgui, void *data) {
 	dtsgui_menuitemenable(appdata->c_open, 0);
 	dtsgui_menuenable(appdata->cfg_menu, 1);
 	dtsgui_titleappend(dtsgui, filename);
-	return 1;
+	return NULL;
 }
 
-int save_config(struct dtsgui *dtsgui, void *data) {
+dtsgui_pane save_config(struct dtsgui *dtsgui, void *data) {
 	struct app_data *appdata;
 
 	appdata = dtsgui_userdata(dtsgui);
@@ -129,7 +129,83 @@ int save_config(struct dtsgui *dtsgui, void *data) {
 	dtsgui_titleappend(dtsgui, NULL);
 	objunref(appdata->xmldoc);
 	appdata->xmldoc = NULL;
-	return 1;
+	return NULL;
+}
+
+
+dtsgui_pane view_config_xml(struct dtsgui *dtsgui, void *data) {
+	struct app_data *appdata;
+	struct xml_doc *xmldoc = NULL;
+	dtsgui_pane p;
+	void *xmlbuf;
+
+	appdata = dtsgui_userdata(dtsgui);
+	xmldoc = appdata->xmldoc;
+
+	xmlbuf = xml_doctobuffer(xmldoc);
+	p = dtsgui_textpane(dtsgui, "XML Configuration", xml_getbuffer(xmlbuf));
+	objunref(xmlbuf);
+
+	return p;
+}
+
+dtsgui_pane view_config_conf(struct dtsgui *dtsgui, void *data) {
+	struct app_data *appdata;
+	struct xml_doc *xmldoc;
+	struct xslt_doc *xsltdoc;
+	dtsgui_pane p = NULL;
+	char xsltfile[PATH_MAX];
+	void *xmlbuf;
+
+	appdata = dtsgui_userdata(dtsgui);
+	xmldoc = appdata->xmldoc;
+
+	snprintf(xsltfile, PATH_MAX-1, "%s/xml2conf.xsl", appdata->datadir);
+	if (!is_file(xsltfile)) {
+		dtsgui_alert(dtsgui, "XSLT Transform Not Found");
+		return NULL;
+	}
+
+	if (!(xsltdoc = xslt_open(xsltfile))) {
+		dtsgui_alert(dtsgui, "XSLT Open Failed");
+		return NULL;
+	}
+
+	xmlbuf = xslt_apply_buffer(xmldoc, xsltdoc);
+	p = dtsgui_textpane(dtsgui, "Configuration in .conf format", xml_getbuffer(xmlbuf));
+
+	objunref(xsltdoc);
+	objunref(xmlbuf);
+	return p;
+}
+
+dtsgui_pane export_config(struct dtsgui *dtsgui, void *data) {
+	struct app_data *appdata;
+	struct xml_doc *xmldoc;
+	struct xslt_doc *xsltdoc;
+	char xsltfile[PATH_MAX];
+	const char *newfile;
+
+	appdata = dtsgui_userdata(dtsgui);
+	xmldoc = appdata->xmldoc;
+
+	snprintf(xsltfile, PATH_MAX-1, "%s/xml2conf.xsl", appdata->datadir);
+	if (!is_file(xsltfile)) {
+		dtsgui_alert(dtsgui, "XSLT Transform Not Found");
+		return NULL;
+	}
+
+	if (!(xsltdoc = xslt_open(xsltfile))) {
+		dtsgui_alert(dtsgui, "XSLT Open Failed");
+		return NULL;
+	}
+
+	newfile = dtsgui_filesave(dtsgui, "Export Config To File", NULL, "firewall.conf", "System Configuration (.conf)|*.conf");
+	if (newfile) {
+		xslt_apply(xmldoc, xsltdoc, newfile, 0);
+	}
+
+	return NULL;
 }
 
 void file_menu(struct dtsgui *dtsgui) {
@@ -140,11 +216,11 @@ void file_menu(struct dtsgui *dtsgui) {
 
 	file = dtsgui_newmenu(dtsgui, "&File");
 
-	appdata->n_wiz = dtsgui_newmenucb(file, dtsgui, "&New System (Wizard)", "New System Configuration Wizard", newsys_wizard, NULL);
-	appdata->e_wiz = dtsgui_newmenucb(file, dtsgui, "&Edit Saved System (Wizard)", "Reconfigure Saved System File With Wizard ", editsys_wizard, NULL);
+	appdata->n_wiz = dtsgui_newmenucb(file, dtsgui, "&New System (Wizard)", "New System Configuration Wizard", 1, newsys_wizard, NULL);
+	appdata->e_wiz = dtsgui_newmenucb(file, dtsgui, "&Edit Saved System (Wizard)", "Reconfigure Saved System File With Wizard ", 1, editsys_wizard, NULL);
 
 	dtsgui_menusep(file);
-	appdata->c_open = dtsgui_newmenucb(file, dtsgui, "&Open Config File", "Open System Config From A File", open_config, NULL);
+	appdata->c_open = dtsgui_newmenucb(file, dtsgui, "&Open Config File", "Open System Config From A File", 1, open_config, NULL);
 
 
 	dtsgui_menusep(file);
@@ -161,7 +237,7 @@ void config_menu(struct dtsgui *dtsgui) {
 	appdata = dtsgui_userdata(dtsgui);
 	appdata->cfg_menu = dtsgui_newmenu(dtsgui, "&Config");
 
-	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "Reconfigure &Wizard", "Run System Reconfigure Wizard.", reconfig_wizard, NULL);
+	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "Reconfigure &Wizard", "Run System Reconfigure Wizard.", 1, reconfig_wizard, NULL);
 	dtsgui_newmenudyn(appdata->cfg_menu, dtsgui, "PBX Setup", "P&BX Configuration", pbx_settings, NULL, &pbx_cfg);
 	if (pbx_cfg) {
 		appdata->pbx_cfg = pbx_cfg;
@@ -178,8 +254,14 @@ void config_menu(struct dtsgui *dtsgui) {
 	}
 
 	dtsgui_menusep(appdata->cfg_menu);
-	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&Save Config", "Save/Close System Config (File/URL)", save_config, NULL);
+	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&Save And Close Config", "Save/Close System Config (File/URL)", 1, save_config, NULL);
+	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "E&xport Config", "Export Configuration as a .conf file", 0, export_config, NULL);
 
+	dtsgui_menusep(appdata->cfg_menu);
+	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&View Config (XML)", "View Current Config File In XML Format.", 0, view_config_xml, NULL);
+	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "View &Config (CONF)", "View Current Config File Converted to .conf Format.", 0, view_config_conf, NULL);
+
+	/*initially greyed out*/
 	dtsgui_menuenable(appdata->cfg_menu, 0);
 }
 

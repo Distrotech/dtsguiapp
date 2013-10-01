@@ -313,7 +313,7 @@ static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename
 	dtsgui_listbox_add(ilist, "-15db (CSU)", "6");
 	dtsgui_listbox_add(ilist, "-22.5db (CSU)", "7");
 	objunref(ilist);
-	dtsgui_xmlcheckbox(pg, "Calls To Internal Extensions Follow Forward Rules", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "LocalFwd", NULL);
+	dtsgui_xmlcheckbox(pg, "Calls To Internal Extensions Follow Forward Rules", NULL, "1", "0", "the /config/IP/VOIP/ASTDB", "Option", "option", "LocalFwd", NULL);
 	dtsgui_xmlcheckbox(pg, "Hangup Calls To Unknown Numbers/DDI", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "UNKDEF", NULL);
 	dtsgui_xmlcheckbox(pg, "ISDN BRI Immeadiate Routeing (No MSN/DDI)", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "mISDNimm", NULL);
 	dtsgui_xmlcheckbox(pg, "ISDN BRI Use Round Robin Routing", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "mISDNrr", NULL);
@@ -378,6 +378,8 @@ static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename
 		} else if (filename) {
 			xml_savefile(xmldoc, filename, 1, 9);
 		}
+	} else {
+		rem_temp_xml(xmldoc);
 	}
 
 	objunref(twiz);
@@ -387,7 +389,7 @@ static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename
 	return res;
 }
 
-extern int newsys_wizard(struct dtsgui *dtsgui, void *data) {
+extern dtsgui_pane newsys_wizard(struct dtsgui *dtsgui, void *data) {
 	char defconf[PATH_MAX];
 	struct xml_doc *xmldoc;
 	struct app_data *appdata;
@@ -404,13 +406,13 @@ extern int newsys_wizard(struct dtsgui *dtsgui, void *data) {
 		return 0;
 	}
 
-	return system_wizard(dtsgui, data, NULL, xmldoc, 1);
+	system_wizard(dtsgui, data, NULL, xmldoc, 1);
+	return NULL;
 }
 
-extern int editsys_wizard(struct dtsgui *dtsgui, void *data) {
+extern dtsgui_pane editsys_wizard(struct dtsgui *dtsgui, void *data) {
 	struct xml_doc *xmldoc;
 	const char *filename;
-	int res;
 
 	if (!(filename = dtsgui_fileopen(dtsgui, "Select Customer Configuration To Edit", NULL, "", "XML Configuration|*.xml"))) {
 		return 0;
@@ -421,16 +423,21 @@ extern int editsys_wizard(struct dtsgui *dtsgui, void *data) {
 		return 0;
 	}
 
-	res = system_wizard(dtsgui, data, filename, xmldoc, 1);
+	system_wizard(dtsgui, data, filename, xmldoc, 1);
 	objunref((void*)filename);
 
-	return res;
+	return NULL;
 }
 
-extern int reconfig_wizard(struct dtsgui *dtsgui, void *data) {
+dtsgui_pane reconfig_wizard(struct dtsgui *dtsgui, void *data) {
 	struct app_data *appdata;
+	struct xml_doc *xmldoc = NULL;
 
 	appdata = dtsgui_userdata(dtsgui);
+	if (appdata->xmldoc && objref(appdata->xmldoc)) {
+		xmldoc = appdata->xmldoc;
+	}
 
-	return system_wizard(dtsgui, data, NULL, appdata->xmldoc, 0);
+	system_wizard(dtsgui, data, NULL, xmldoc, 0);
+	return NULL;
 }

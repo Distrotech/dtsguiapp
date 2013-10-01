@@ -79,7 +79,7 @@ void testpanel(dtsgui_pane p) {
 	objunref(l);
 }
 
-int progress_test(struct dtsgui *dtsgui, void *data) {
+dtsgui_pane progress_test(struct dtsgui *dtsgui, void *data) {
 	dtsgui_progress pdlg;
 	int i;
 
@@ -95,7 +95,7 @@ int progress_test(struct dtsgui *dtsgui, void *data) {
 #endif
 	}
 	dtsgui_progress_end(pdlg);
-	return 1;
+	return NULL;
 }
 
 void test_menu(struct dtsgui *dtsgui) {
@@ -113,7 +113,7 @@ void test_menu(struct dtsgui *dtsgui) {
 	tree = advanced_config(dtsgui, "Tree Window", NULL);
 	dtsgui_newmenuitem(test, dtsgui, "T&ree", tree);
 
-	dtsgui_newmenucb(test, dtsgui, "Test &Post", "Send POST request to callshop server (requires callshop user)", post_test, NULL);
-	dtsgui_newmenucb(test, dtsgui, "Progress Test", "Progress Test", progress_test, NULL);
+	dtsgui_newmenucb(test, dtsgui, "Test &Post", "Send POST request to callshop server (requires callshop user)", 0, post_test, NULL);
+	dtsgui_newmenucb(test, dtsgui, "Progress Test", "Progress Test", 0, progress_test, NULL);
 }
 

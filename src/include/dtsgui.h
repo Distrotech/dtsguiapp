@@ -52,6 +52,7 @@ enum tree_cbtype {
 
 /*callbacks*/
 typedef int (*dtsgui_configcb)(struct dtsgui*, void*);
+typedef dtsgui_pane (*dtsgui_menucb)(struct dtsgui*, void*);
 typedef int (*event_callback)(dtsgui_pane, int, int, void *);
 typedef dtsgui_pane (*dtsgui_dynpanel)(struct dtsgui*, const char*, void*);
 typedef dtsgui_pane (*dtsgui_tree_cb)(struct dtsgui *, dtsgui_treeview, dtsgui_treenode, enum tree_cbtype cb_type, const char*, void*);
@@ -110,11 +111,11 @@ int dtsgui_run(int argc, char **argv);
 void *dtsgui_userdata(struct dtsgui *dtsgui);
 void dtsgui_titleappend(struct dtsgui *dtsgui, const char *text);
 void dtsgui_reconfig(struct dtsgui *dtsgui);
-void dtsgui_setblank(struct dtsgui *dtsgui);
+void dtsgui_setwindow(struct dtsgui *dtsgui, dtsgui_pane p);
 
 /*menu configuration*/
 dtsgui_menu dtsgui_newmenu(struct dtsgui *dtsgui, const char *name);
-dtsgui_menuitem dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, const char *label, dtsgui_configcb, void *data);
+dtsgui_menuitem dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, const char *label, int blank, dtsgui_menucb, void *data);
 dtsgui_menuitem dtsgui_newmenudyn(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *title, const char *hint, dtsgui_dynpanel cb,void *data, struct dynamic_panel **d_pane);
 dtsgui_menuitem dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, dtsgui_pane pane);
 void dtsgui_menuitemenable(dtsgui_menuitem dmi, int enable);
