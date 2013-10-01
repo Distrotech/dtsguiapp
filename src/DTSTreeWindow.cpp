@@ -582,7 +582,7 @@ DTSTabWindow::DTSTabWindow(DTSFrame *frame, wxString stat_msg, void *u_data)
 	DTSTabWindowEvent *dtsevt;
 	wxNotebook *nb = (wxNotebook*)this;
 
-	panel = static_cast<wxWindow *>(nb);
+	panel = dynamic_cast<wxBookCtrlBase*>(this);
 
 	type = wx_DTSPANEL_TAB;
 	this->frame = frame;
@@ -600,11 +600,11 @@ DTSTabWindow::DTSTabWindow(DTSFrame *frame, wxString stat_msg, void *u_data)
 	Show(false);
 }
 
-
 DTSTabWindow::~DTSTabWindow() {
 	if (userdata) {
 		objunref(userdata);
 	}
+	DeleteAllPages();
 }
 
 bool DTSTabWindow::Show(bool show) {

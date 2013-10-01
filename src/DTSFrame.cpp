@@ -177,17 +177,16 @@ void DTSFrame::OnAbout(wxCommandEvent &event) {
 }
 
 void DTSFrame::SetWindow(wxWindow *window) {
-	if (window == a_window) {
-		return;
-	}
-
 	if (!window) {
 		window = blank;
 	}
 
-	sizer->Detach(0);
+	if (window == a_window) {
+		return;
+	}
+
 	a_window->Show(false);
-	sizer->Add(window, 1, wxALL | wxEXPAND);
+	sizer->Replace(a_window, window);
 
 	if (window == blank) {
 		SetStatusText(status);
@@ -215,6 +214,19 @@ void DTSFrame::SwitchWindow(wxCommandEvent &event) {
 }
 
 bool DTSFrame::DynamicPanel(struct dynamic_panel *p_dyn) {
+	DTSObject *dp  = (DTSObject*)p_dyn->panel;
+	wxWindow *w = (dp) ? dp->GetPanel() : NULL;
+
+
+	if (w && (w == a_window)) {
+		return true;
+	}
+
+	if (w) {
+		delete w;
+	}
+	p_dyn->panel = NULL;
+
 	if (p_dyn->panel || (p_dyn->panel = p_dyn->cb(dtsgui, p_dyn->title, p_dyn->data))) {
 		return true;
 	} else {
@@ -240,15 +252,9 @@ void DTSFrame::DynamicPanelEvent(wxCommandEvent &event) {
 		return;
 	}
 
-	if (!(p = (DTSObject *)p_dyn->panel)) {
-		SetWindow(NULL);
-		return;
-	}
-
+	p = (DTSObject*)p_dyn->panel;
 	window = p->GetPanel();
-	if (window != a_window) {
-		SetWindow(window);
-	}
+	SetWindow(window);
 }
 
 void DTSFrame::RunCommand(wxCommandEvent &event) {

@@ -95,7 +95,6 @@ int post_test(struct dtsgui *dtsgui, void *data) {
 int open_config(struct dtsgui *dtsgui, void *data) {
 	struct app_data *appdata;
 	const char *filename;
-	dtsgui_progress pb;
 
 	appdata = dtsgui_userdata(dtsgui);
 
@@ -108,25 +107,13 @@ int open_config(struct dtsgui *dtsgui, void *data) {
 		return 0;
 	}
 
-
-	pb = dtsgui_progress_start(dtsgui, "Opening Config File", 8, 0);
 	dtsgui_reconfig(dtsgui);
-
-	dtsgui_progress_update(pb, 1, NULL);
-	dtsgui_createdyn(dtsgui, appdata->pbx_cfg);
-	dtsgui_progress_update(pb, 3, NULL);
-	dtsgui_createdyn(dtsgui, appdata->main_cfg);
-	dtsgui_progress_update(pb, 5, NULL);
-	dtsgui_createdyn(dtsgui, appdata->net_cfg);
-	dtsgui_progress_update(pb, 7, NULL);
 
 	dtsgui_menuitemenable(appdata->e_wiz, 0);
 	dtsgui_menuitemenable(appdata->n_wiz, 0);
 	dtsgui_menuitemenable(appdata->c_open, 0);
 	dtsgui_menuenable(appdata->cfg_menu, 1);
 	dtsgui_titleappend(dtsgui, filename);
-	dtsgui_progress_update(pb, 8, NULL);
-	dtsgui_progress_end(pb);
 	return 1;
 }
 
@@ -140,15 +127,6 @@ int save_config(struct dtsgui *dtsgui, void *data) {
 	dtsgui_menuitemenable(appdata->n_wiz, 1);
 	dtsgui_menuitemenable(appdata->c_open, 1);
 	dtsgui_titleappend(dtsgui, NULL);
-	if (appdata->pbx_cfg) {
-		dtsgui_closedyn(dtsgui, appdata->pbx_cfg);
-	}
-	if (appdata->main_cfg) {
-		dtsgui_closedyn(dtsgui, appdata->main_cfg);
-	}
-	if (appdata->net_cfg) {
-		dtsgui_closedyn(dtsgui, appdata->net_cfg);
-	}
 	objunref(appdata->xmldoc);
 	appdata->xmldoc = NULL;
 	return 1;
