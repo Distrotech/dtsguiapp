@@ -212,7 +212,8 @@ void network_config_dns_domain_server_new(dtsgui_pane p, dtsgui_treeview self, d
 	objunref((void*)domain);
 }
 
-void network_iface_pane(dtsgui_pane p, const char *iface) {
+void network_iface_pane(dtsgui_pane p, void *data) {
+	const char *iface = data;
 	const char *xpre = "/config/IP/Interfaces";
 
 	dtsgui_xmltextbox(p, "Interface", "iface", xpre, "Interface", NULL, iface, NULL);
@@ -229,11 +230,11 @@ void network_iface_pane(dtsgui_pane p, const char *iface) {
 void network_iface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
 
-	network_iface_pane(p, xn->value);
+	network_iface_pane(p, (void*)xn->value);
 	objunref(xn);
 }
 
-void network_iface_new_pane(dtsgui_pane p) {
+void network_iface_new_pane(dtsgui_pane p, void *data) {
 	dtsgui_textbox(p, "Interface", "iface", "", NULL);
 	dtsgui_textbox(p, "Name", "name", "", NULL);
 	dtsgui_textbox(p, "IP Address", "ipaddr", "0", NULL);
@@ -249,7 +250,7 @@ void network_iface_new_pane(dtsgui_pane p) {
 void network_newiface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	int flg;
 
-	network_iface_new_pane(p);
+	network_iface_new_pane(p, data);
 
 	flg = DTS_TREE_NEW_NODE_CONTAINER | DTS_TREE_NEW_NODE_DELETE | DTS_TREE_NEW_NODE_EDIT | DTS_TREE_NEW_NODE_SORT;
 	dtsgui_newxmltreenode(self, p, node, "/config/IP/Interfaces", "Interface", "iface", "name", DTS_NODE_NETWORK_IFACE,

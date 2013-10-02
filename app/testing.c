@@ -80,12 +80,11 @@ void testpanel(dtsgui_pane p) {
 }
 
 dtsgui_pane progress_test(struct dtsgui *dtsgui, const char *title, void *data) {
-	dtsgui_progress pdlg;
 	int i;
 
-	pdlg = dtsgui_progress_start(dtsgui, "Testing Progress Bar", 1000, 1);
+	dtsgui_progress_start(dtsgui, "Testing Progress Bar", 1000, 1);
 	for(i=0; i <10;i++) {
-		if (!dtsgui_progress_update(pdlg, ((1000/10) * (i+1)), NULL)) {
+		if (!dtsgui_progress_update(dtsgui, ((1000/10) * (i+1)), NULL)) {
 			break;
 		}
 #ifdef __WIN32
@@ -94,7 +93,7 @@ dtsgui_pane progress_test(struct dtsgui *dtsgui, const char *title, void *data) 
 		sleep(1);
 #endif
 	}
-	dtsgui_progress_end(pdlg);
+	dtsgui_progress_end(dtsgui);
 	return NULL;
 }
 

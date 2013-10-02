@@ -31,6 +31,8 @@
 #include <wx/combobox.h>
 #include <wx/toolbar.h>
 #include <wx/progdlg.h>
+#include <wx/gauge.h>
+#include <wx/notebook.h>
 
 #include <dtsapp.h>
 
@@ -52,6 +54,9 @@ DTSFrame::DTSFrame(const wxString &title, const wxPoint &pos, const wxSize &size
 	CreateStatusBar();
 	SetStatusText(status);
 
+//	pbar = new wxGauge(toolbar, wxID_ANY, 1000);
+	pbar = NULL;
+	pdia = NULL;
 	SetupToolbar();
 
 	/*deleted on close*/
@@ -110,25 +115,64 @@ void DTSFrame::Alert(wxString text) {
 	alert->Destroy();
 }
 
-wxProgressDialog *DTSFrame::StartProgress(wxString text, int maxval, int quit) {
-	wxProgressDialog *pdlg;
+int DTSFrame::StartProgress(const wxString &text, int maxval, int quit) {
 	int flags;
 
-	flags = wxPD_APP_MODAL | wxPD_AUTO_HIDE | wxPD_ELAPSED_TIME;
-	if (quit) {
-		flags |= wxPD_CAN_ABORT;
-	}
-
-	pdlg = new wxProgressDialog("Progress", text, maxval, NULL, flags);
-	pdlg->Show();
-	return pdlg;
-}
-
-int DTSFrame::UpdateProgress(wxProgressDialog *pdlg, int cval, const wxString& newtext) {
-	if (pdlg->Update(cval, newtext)) {
+	if (!quit && pbar) {
+		pbar->SetRange(maxval);
+		pbar->Show();
 		return 1;
 	} else {
+		flags = wxPD_APP_MODAL | wxPD_AUTO_HIDE | wxPD_ELAPSED_TIME;
+		if (quit) {
+			flags |= wxPD_CAN_ABORT;
+		}
+		if ((pdia = new wxProgressDialog("Progress", text, maxval, NULL, flags))) {
+			pdia->Show();
+			return 1;
+		}
+	}
+	return 0;
+}
+
+int DTSFrame::UpdateProgress(int cval, const wxString &text) {
+	if (pbar) {
+		pbar->SetValue(cval);
+	}
+	if (pdia) {
+		if (pdia->Update(cval, text)) {
+			return 1;
+		} else {
+			return 0;
+		}
+	} else {
 		return 0;
+	}
+}
+
+int DTSFrame::IncProgress(int ival, const wxString &text) {
+	if (pbar) {
+		pbar->SetValue(pbar->GetValue()+ival);
+	}
+	if (pdia) {
+		if (pdia->Update(pdia->GetValue()+ival, text)) {
+			return 1;
+		} else {
+			return 0;
+		}
+	} else {
+		return 0;
+	}
+}
+
+void DTSFrame::EndProgress(void) {
+	if (pdia) {
+		pdia->Hide();
+		delete pdia;
+		pdia = NULL;
+	}
+	if (pbar) {
+		pbar->Hide();
 	}
 }
 
@@ -279,5 +323,9 @@ void DTSFrame::SetupToolbar() {
 	toolbar->AddControl(text2);
 	toolbar->AddControl(server);
 	toolbar->AddStretchableSpace();
+	if (pbar) {
+		toolbar->AddControl(pbar);
+		pbar->Hide();
+	}
 	toolbar->Realize();
 }

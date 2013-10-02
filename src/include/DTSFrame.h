@@ -29,8 +29,10 @@ class DTSFrame: public wxFrame {
 		void DynamicPanelEvent(wxCommandEvent &event);
 		bool Confirm(wxString text);
 		void Alert(wxString text);
-		wxProgressDialog *StartProgress(wxString text, int maxval, int quit);
-		int UpdateProgress(wxProgressDialog *pdlg, int cval, const wxString& newtext = wxEmptyString);
+		int StartProgress(const wxString &text, int maxval, int quit);
+		void EndProgress(void);
+		int UpdateProgress(int cval, const wxString &msg);
+		int IncProgress(int ival, const wxString &msg);
 		void OnClose(wxCommandEvent &event);
 		void OnAbort(wxCloseEvent &event);
 		void OnAbout(wxCommandEvent &event);
@@ -49,6 +51,8 @@ class DTSFrame: public wxFrame {
 		wxMenuBar *menubar;
 		struct dtsgui *dtsgui;
 		bool abortconfirm;
+		wxGauge *pbar;
+		wxProgressDialog *pdia;
 };
 
 #endif // DTSFRAME_H

@@ -559,8 +559,53 @@ DTSTabWindowEvent::~DTSTabWindowEvent() {
 	}
 }
 
+void DTSTabWindowEvent::OnButton(wxCommandEvent &event) {
+	DTSTabPage *pane = dynamic_cast<DTSTabPage*>(tw->GetCurrentPage()), *newp;
+	wxBookCtrlBase *nb = static_cast<wxBookCtrlBase*>(tw);
+	DTSObject *d;
+	wxWindow *w;
+	int pg;
+	int eid = event.GetId();
+
+	switch(eid) {
+		case wx_PANEL_BUTTON_YES:
+			pane->Update_XML();
+			break;
+		case wx_PANEL_BUTTON_NO:
+			pg = tw->GetSelection();
+
+			d = (DTSObject*)pane;
+			tw->RemovePage(pg);
+
+			newp = new DTSTabPage(tw, d->GetFrame(), d->GetName(), pg);
+			*newp = *pane;
+			nb->InsertPage(pg, newp->GetPanel(), d->GetName(), true);
+			delete pane;
+			w = newp->GetPanel();
+			w->Show();
+			tw->SetSelection(pg);
+			return;
+		default:
+			break;
+	}
+	event.Skip(true);
+}
+
+
 void DTSTabWindowEvent::RightMenu(wxCommandEvent &event) {
 	printf("MENU\n");
+}
+
+void DTSTabWindowEvent::PageChange(wxBookCtrlEvent &event) {
+	wxWindow *w;
+	DTSTabPage *tp;
+	int p = event.GetSelection();
+
+	if (p != wxNOT_FOUND) {
+		w = tw->GetPage(p);
+		tp = dynamic_cast<DTSTabPage*>(w);
+		tp->ConfigPane();
+	}
 }
 
 void DTSTabWindowEvent::PageChanged(wxBookCtrlEvent &event) {
@@ -594,7 +639,6 @@ DTSTabWindow::DTSTabWindow(DTSFrame *frame, wxString stat_msg, void *u_data)
 	dtsevt = new DTSTabWindowEvent(userdata, this);
 	dtsevthandler = dtsevt;
 
-	nb->Bind(wxEVT_NOTEBOOK_PAGE_CHANGED, &DTSTabWindowEvent::PageChanged, dtsevt);
 	nb->Bind(wxEVT_CONTEXT_MENU, &DTSTabWindowEvent::RightMenu, dtsevt);
 
 	Show(false);
@@ -608,9 +652,14 @@ DTSTabWindow::~DTSTabWindow() {
 }
 
 bool DTSTabWindow::Show(bool show) {
+	wxNotebook *nb = (wxNotebook*)this;
+	DTSTabWindowEvent *dtsevt = (DTSTabWindowEvent*)dtsevthandler;
 	wxWindow *w;
 	int i, cnt;
 	bool res;
+#ifdef __WIN32
+	DTSTabPage *tp;
+#endif // __WIN32
 
 	if (show && frame) {
 		frame->SetStatusText(status);
@@ -622,14 +671,22 @@ bool DTSTabWindow::Show(bool show) {
 		cnt = GetPageCount();
 		for(i = 0; i < cnt;i++) {
 			w = GetPage(i);
-			w->Show(true);
 #ifdef __WIN32
+			tp = dynamic_cast<DTSTabPage*>(w);
+			tp->ConfigPane();
+			w->Show(true);
 			if (i) {
 				w->Show(false);
 			}
+#else
+			w->Show(true);
 #endif // __WIN32
 		}
 		beenshown = true;
+		nb->Bind(wxEVT_NOTEBOOK_PAGE_CHANGING, &DTSTabWindowEvent::PageChange, dtsevt);
+		nb->Bind(wxEVT_NOTEBOOK_PAGE_CHANGED, &DTSTabWindowEvent::PageChanged, dtsevt);
+		nb->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &DTSTabWindowEvent::OnButton, dtsevt);
+
 	}
 	return res;
 }
