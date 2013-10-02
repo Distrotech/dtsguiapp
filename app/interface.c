@@ -18,6 +18,7 @@
 
 #include <stdlib.h>
 #include <stdint.h>
+#include <string.h>
 
 #include <dtsapp.h>
 
@@ -31,41 +32,33 @@ dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct xml_search *xp;
 	struct xml_node *xn;
 	const char *name;
-	dtsgui_pane *p;
+	char *pdata;
 	void *iter = NULL;
-	dtsgui_progress pb;
-	int pbval = 0, cnt;
+	int nl;
 
 	appdata = dtsgui_userdata(dtsgui);
 	xmldoc = appdata->xmldoc;
+	objref(xmldoc);
 	if (!(xp = xml_xpath(xmldoc, "/config/IP/Interfaces/Interface", "name"))) {
 		return NULL;
 	}
 
 	tabv = dtsgui_tabwindow(dtsgui, title, NULL);
 
-	cnt = xml_nodecount(xp)+1;
-	pb = dtsgui_progress_start(dtsgui, "Interface Configuration Loading", cnt, 0);
-
 	for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
 		name = xml_getattr(xn, "name");
-		p = dtsgui_newtabpage(tabv, name, wx_PANEL_BUTTON_ACTION, NULL, xmldoc);
-		network_iface_pane(p, xn->value);
-		dtsgui_addtabpage(tabv, p);
+		nl = strlen(xn->value)+1;
+		pdata = objalloc(nl, NULL);
+		memcpy(pdata, xn->value, nl);
+		dtsgui_newtabpage(tabv, name, wx_PANEL_BUTTON_ACTION, NULL, xmldoc, network_iface_pane, pdata);
+		objunref(pdata);
 		objunref(xn);
-		dtsgui_progress_update(pb, pbval++, NULL);
 	}
-
-	p = dtsgui_newtabpage(tabv, "Add", wx_PANEL_BUTTON_ACTION, NULL, NULL);
-	network_iface_new_pane(p);
-	dtsgui_addtabpage(tabv, p);
-
-	dtsgui_progress_update(pb, pbval++, NULL);
-	dtsgui_progress_end(pb);
+	dtsgui_newtabpage(tabv, "Add", wx_PANEL_BUTTON_ACTION, NULL, xmldoc, network_iface_new_pane, NULL);
 
 	if (iter) {
 		objunref(iter);
 	}
-
+	objunref(xmldoc);
 	return tabv;
 }

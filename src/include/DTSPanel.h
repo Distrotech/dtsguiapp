@@ -135,6 +135,19 @@ class DTSScrollPanel: public DTSPanel, public virtual wxScrolledWindow {
 		virtual bool Show(bool);
 };
 
+class DTSTabPage: public DTSScrollPanel {
+	public:
+		DTSTabPage(wxBookCtrlBase*, DTSFrame* = NULL, wxString = wxEmptyString, int = 0, int = -1, dtsgui_tabpanel_cb  = NULL, void* = NULL, struct xml_doc* = NULL);
+		~DTSTabPage();
+		void ConfigPane();
+		virtual bool Show(bool);
+		DTSTabPage &operator=(const DTSTabPage &orig);
+	private:
+		dtsgui_tabpanel_cb cb;
+		void *cdata;
+		bool hasconfig;
+};
+
 class DTSWindow: public DTSPanel, public virtual wxWindow {
 	public:
 		DTSWindow(wxWindow *, DTSFrame* = NULL, wxString = wxEmptyString);

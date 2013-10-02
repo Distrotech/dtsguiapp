@@ -25,17 +25,13 @@
 #include "dtsgui.h"
 
 struct curlprog {
-	dtsgui_progress pd;
+	int pd;
 	int pause;
 	void *data;
 };
 
 static void free_curlprog(void *data) {
 	struct curlprog *curl_pd = data;
-
-	if (curl_pd->pd) {
-		dtsgui_progress_end(curl_pd->pd);
-	}
 
 	if (curl_pd->data) {
 		objunref(curl_pd->data);
@@ -48,7 +44,7 @@ void *curl_startprogress(void *data) {
 	if (!(curl_pd = objalloc(sizeof(*curl_pd), free_curlprog))){
 		return NULL;
 	}
-	curl_pd->pd = NULL;
+	curl_pd->pd = 0;
 	if (data && objref(data)) {
 		curl_pd->data = data;
 	} else {
@@ -77,7 +73,7 @@ int curl_progress_function(void *data, double dltotal, double dlnow, double ulto
 		curl_pd->pd = dtsgui_progress_start(dtsgui, "Web Transfer Progress", 1000, 1);
 	};
 
-	if (curl_pd->pd && !dtsgui_progress_update(curl_pd->pd, val, NULL)) {
+	if (curl_pd->pd && !dtsgui_progress_update(dtsgui, val, NULL)) {
 		return 1;
 	}
 
@@ -92,11 +88,12 @@ void curl_progress_ctrl(void *data, int pause) {
 			curl_pd->pause = pause;
 			break;
 		case 1:
+			dtsgui_progress_end(curl_pd->data);
 			curl_pd->pause = pause;
-			dtsgui_progress_end(curl_pd->pd);
-			curl_pd->pd = NULL;
+			curl_pd->pd = 0;
 			break;
 		case -1:
+			dtsgui_progress_end(curl_pd->data);
 			objunref(curl_pd);
 			break;
 	}

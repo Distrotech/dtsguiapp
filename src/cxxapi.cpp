@@ -208,37 +208,27 @@ void dtsgui_alert(struct dtsgui *dtsgui, const char *text) {
 	f->Alert(text);
 }
 
-dtsgui_progress dtsgui_progress_start(struct dtsgui *dtsgui, const char *text, int maxval, int quit) {
+int dtsgui_progress_start(struct dtsgui *dtsgui, const char *text, int maxval, int quit) {
 	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
 
 	return f->StartProgress(text, maxval, quit);
 }
 
-int dtsgui_progress_update(dtsgui_progress pdlg, int newval, const char* newtext) {
-	wxProgressDialog *pd = (wxProgressDialog*)pdlg;
-	wxString ntxt;
+int dtsgui_progress_update(struct dtsgui *dtsgui, int newval, const char* newtext) {
+	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
 
-	if (newtext) {
-		ntxt = newtext;
-	} else {
-		ntxt = wxEmptyString;
-	}
-
-	if (pd->Update(newval, ntxt)) {
-		return 1;
-	} else {
-		return 0;
-	}
+	return f->UpdateProgress(newval, newtext);
 }
 
-void dtsgui_progress_end(dtsgui_progress pdlg) {
-	wxProgressDialog *pd = (wxProgressDialog*)pdlg;
+int dtsgui_progress_increment(struct dtsgui *dtsgui, int ival, const char* newtext) {
+	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
 
-	pd->Show(false);
+	return f->IncProgress(ival, newtext);
+}
 
-	if (pd) {
-		delete pd;
-	}
+void dtsgui_progress_end(struct dtsgui *dtsgui) {
+	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
+	f->EndProgress();
 }
 
 dtsgui_pane dtsgui_panel(struct dtsgui *dtsgui, const char *name, int butmask,
@@ -302,31 +292,15 @@ extern dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title,
 	return tw;
 }
 
-extern dtsgui_pane dtsgui_newtabpage(dtsgui_tabview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc) {
-	DTSScrollPanel *dp = NULL;
-	DTSTabWindow *tw = (DTSTabWindow*)tv;
-	wxWindow *nb = tw->GetPanel();
-	DTSFrame *f = tw->GetFrame();
-
-	dp = new DTSScrollPanel(nb, f, name, butmask);
-	dp->type = wx_DTSPANEL_TAB;
-
-	if (name) {
-		dp->Title(name);
-	}
-
-	if (xmldoc) {
-		dp->SetXMLDoc(xmldoc);
-	}
-	return dp;
-}
-
-void dtsgui_addtabpage(dtsgui_tabview tv, dtsgui_pane p) {
-	DTSPanel *dp = (DTSPanel*)p;
+extern dtsgui_pane dtsgui_newtabpage(dtsgui_tabview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc, dtsgui_tabpanel_cb cb, void *cdata) {
+	DTSTabPage *dp = NULL;
 	DTSTabWindow *tw = (DTSTabWindow*)tv;
 	wxBookCtrlBase *nb = static_cast<wxBookCtrlBase*>(tw);
+	DTSFrame *f = tw->GetFrame();
 
-	nb->AddPage(dp->GetPanel(), dp->GetName());
+	dp = new DTSTabPage(nb, f, name, -1, butmask, cb, cdata, xmldoc);
+
+	return dp;
 }
 
 extern dtsgui_pane dtsgui_treepane(dtsgui_treeview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc) {
