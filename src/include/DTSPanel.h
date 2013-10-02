@@ -137,9 +137,10 @@ class DTSScrollPanel: public DTSPanel, public virtual wxScrolledWindow {
 
 class DTSTabPage: public DTSScrollPanel {
 	public:
-		DTSTabPage(wxBookCtrlBase*, DTSFrame* = NULL, wxString = wxEmptyString, int = 0, int = -1, dtsgui_tabpanel_cb  = NULL, void* = NULL, struct xml_doc* = NULL);
+		DTSTabPage(wxBookCtrlBase*, DTSFrame* = NULL, wxString = wxEmptyString, bool = false, int = 0, dtsgui_tabpanel_cb  = NULL, void* = NULL, struct xml_doc* = NULL);
 		~DTSTabPage();
 		void ConfigPane();
+		void InsertPage(int pos);
 		virtual bool Show(bool);
 		DTSTabPage &operator=(const DTSTabPage &orig);
 	private:

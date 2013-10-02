@@ -212,7 +212,7 @@ void pbxconf_global(dtsgui_pane pg, void *data) {
 	dtsgui_xmlcheckbox(pg, "Require Extension Number With PIN", "ADVPIN", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "ADVPIN", NULL);
 	dtsgui_xmlcheckbox(pg, "Authorise Only When Registered By Default (SIP)", "DEFAUTHREG", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "DEFAUTHREG", NULL);
 	dtsgui_xmlcheckbox(pg, "Calls To Internal Extensions Follow Forward Rules", "LocalFwd", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "LocalFwd", NULL);
-	}
+}
 
 void pbxconf_acd(dtsgui_pane pg, void *data) {
 	dtsgui_xmltextbox(pg, "Default ACD Queue Timeout", "QTimeout", "/config/IP/VOIP/ASTDB", "Option", "option", "QTimeout", NULL);
