@@ -45,6 +45,7 @@
 #include <wx/filedlg.h>
 #include <wx/notebook.h>
 #include <wx/progdlg.h>
+#include <wx/toolbar.h>
 
 #include <dtsapp.h>
 #include "dtsgui.hpp"
@@ -58,19 +59,6 @@
 
 static int menuid = wxID_AUTO_LOWEST;
 
-struct tree_newnode {
-	void *data;
-	dtsgui_treeview tv;
-	dtsgui_treenode tn;
-	dtsgui_xmltreenode_cb node_cb;
-	dtsgui_treeviewpanel_cb p_cb;
-	const char *xpath;
-	const char *node;
-	const char *vitem;
-	const char *tattr;
-	int type;
-	int flags;
-};
 
 dtsgui *dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point wsize, struct point wpos, const char *title, const char *status) {
 	/*deleted on close*/
@@ -300,6 +288,29 @@ extern dtsgui_pane dtsgui_newtabpage(dtsgui_tabview tv, const char *name, int bu
 
 	dp = new DTSTabPage(nb, f, name, true, butmask, cb, cdata, xmldoc);
 
+	if (userdata) {
+		dp->SetUserData(userdata);
+	}
+
+	return dp;
+}
+
+extern dtsgui_pane dtsgui_tabpage_insert(dtsgui_tabview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc, dtsgui_tabpanel_cb cb, void *cdata, int pos, int undo) {
+	DTSTabPage *dp = NULL;
+	DTSTabWindow *tw = (DTSTabWindow*)tv;
+	wxBookCtrlBase *nb = static_cast<wxBookCtrlBase*>(tw);
+	DTSFrame *f = tw->GetFrame();
+
+	if (!(dp = new DTSTabPage(nb, f, name, false, butmask, cb, cdata, xmldoc))) {
+		return NULL;
+	}
+	dp->InsertPage(pos);
+
+	if (undo) {
+		tw->Undo(undo);
+		tw->SetSelection(pos);
+	}
+
 	return dp;
 }
 
@@ -527,13 +538,16 @@ void dtsgui_listbox_addxml(struct form_item *lb, struct xml_doc *xmldoc, const c
 }
 
 void dtsgui_listbox_add(struct form_item *listbox, const char *text, const char *value) {
-	wxComboBox *lbox = (wxComboBox *)listbox->widget;
-	lbox->Append(text, (value) ? (void*)strdup(value) : NULL);
+	int idx;
 
-	if (lbox->GetSelection() == wxNOT_FOUND) {
+	wxComboBox *lbox = (wxComboBox *)listbox->widget;
+	idx = lbox->Append(text, (value) ? (void*)strdup(value) : NULL);
+
+	if ((listbox->idx == -1) && listbox->value && value && !strcmp(listbox->value, value)) {
+		listbox->idx = idx;
+		lbox->SetSelection(idx);
+	} else if (idx == 0) {
 		lbox->SetSelection(0);
-	} else if (listbox->value && value && !strcmp(listbox->value, value)) {
-		lbox->SetSelection(lbox->GetCount()-1);
 	}
 }
 
@@ -838,6 +852,11 @@ void dtsgui_settitle(dtsgui_pane pane, const char *title) {
 	return p->SetTitle(title);
 }
 
+void dtsgui_setstatus(dtsgui_pane pane, const char *status) {
+	DTSPanel *p = (DTSPanel*)pane;
+	return p->SetStatus(status);
+}
+
 dtsgui_treenode dtsgui_treecont(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *data) {
 	DTSTreeWindow *tw = (DTSTreeWindow*)tree;
 	DTSDVMCtrl *tc = tw->GetTreeCtrl();
@@ -1074,6 +1093,112 @@ void dtsgui_nodesetxml(dtsgui_treeview tree, dtsgui_treenode node, const char *t
 	}
 	objunref(xn);
 	objunref(xmldoc);
+}
+
+extern int dtsgui_handle_newxmltabpane(dtsgui_pane p, int type, int event, void *data) {
+	struct tab_newpane *tn = (struct tab_newpane*)data;
+	struct xml_node *xn;
+	const char *name;
+
+	switch(event) {
+		case wx_PANEL_BUTTON_YES:
+			break;
+		default:
+			return 1;
+	}
+
+	if (!tn || !(xn = dtsgui_panetoxml(p, tn->xpath, tn->node, tn->vitem, tn->tattr))) {
+		return 1;
+	}
+
+	if (tn->tattr) {
+		name = xml_getattr(xn, tn->tattr);
+	} else {
+		name = xn->value;
+	}
+
+	if (name) {
+		dtsgui_setstatus(p, name);
+	}
+
+	dtsgui_newtabpage(tn->tabv, name, wx_PANEL_BUTTON_ACTION, tn->data, tn->xmldoc, tn->cb, tn->cdata);
+	return 0;
+}
+
+void free_newtpane(void *data) {
+	struct tab_newpane *tn = (struct tab_newpane*)data;
+
+	if (tn->data) {
+		objunref(tn->data);
+	}
+
+	if (tn->cdata) {
+		objunref(tn->cdata);
+	}
+
+	if (tn->xmldoc) {
+		objunref(tn->xmldoc);
+	}
+
+	if (tn->xpath) {
+		free((void*)tn->xpath);
+	}
+	if (tn->node) {
+		free((void*)tn->node);
+	}
+	if (tn->vitem) {
+		free((void*)tn->vitem);
+	}
+	if (tn->tattr) {
+		free((void*)tn->tattr);
+	}
+}
+
+void dtsgui_newxmltabpane(dtsgui_tabview tabv, dtsgui_pane p, const char *xpath, const char *node, const char *vitem, const char *tattr, event_callback evcb, dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, void *data) {
+	struct tab_newpane *tn;
+	DTSTabWindow *nb = (DTSTabWindow*)tabv;
+
+	if (!(tn = (struct tab_newpane*)objalloc(sizeof(*tn), free_newtpane))) {
+		return;
+	}
+
+	if (data && objref(data)) {
+		tn->data = data;
+	}
+
+	if (cdata && objref(cdata)) {
+		tn->cdata = cdata;
+	}
+
+	tn->tabv = tabv;
+	if (xmldoc && objref(xmldoc)) {
+		tn->xmldoc = xmldoc;
+	}
+
+	ALLOC_CONST(tn->xpath, xpath);
+	ALLOC_CONST(tn->node, node);
+	ALLOC_CONST(tn->vitem, vitem);
+	ALLOC_CONST(tn->tattr, tattr);
+
+	tn->last = nb->GetPageCount() -1;
+
+	tn->cb = cb;
+	dtsgui_setevcallback(p, evcb, tn);
+	objunref(tn);
+}
+
+void dtsgui_set_toolbar(struct dtsgui *dtsgui, int show) {
+	DTSFrame *f = (DTSFrame *)dtsgui->appframe;
+	wxToolBar *tb = f->GetToolBar();
+
+	tb->Show((show) ? true : false);
+	f->Layout();
+}
+
+void dtsgui_setuptoolbar(struct dtsgui *dtsgui, dtsgui_toolbar_create cb, void *data) {
+	DTSFrame *f = (DTSFrame*)dtsgui->appframe;
+
+	f->SetupToolbar(cb, data);
 }
 
 #ifdef __WIN32

@@ -320,14 +320,6 @@ void pbxconf_autoadd(dtsgui_pane pg, void *data) {
 	dtsgui_xmlcheckbox(pg, "Require Authorisation", "AutoAuth", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "AutoAuth", NULL);
 }
 
-dtsgui_pane dtsgui_setuptabpage(struct dtsgui *dtsgui, dtsgui_tabview tv, const char *title, int buttons, void *hdata, struct xml_doc *xmldoc, dtsgui_tabpanel_cb cb, void *cdata) {
-	dtsgui_pane p;
-
-	p = dtsgui_newtabpage(tv, title, buttons, hdata, xmldoc, cb, cdata);
-/*	dtsgui_progress_increment(dtsgui, 1, NULL);*/
-
-	return p;
-}
 
 dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_tabview tabv;
@@ -336,22 +328,18 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	appdata = dtsgui_userdata(dtsgui);
 	tabv = dtsgui_tabwindow(dtsgui, title, NULL);
 
-/*	dtsgui_progress_start(dtsgui, "PBX Configuration Loading", 11, 0);*/
+	dtsgui_newtabpage(tabv, "Trunks", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_trunk, NULL);
+	dtsgui_newtabpage(tabv, "Options", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_topts, NULL);
+	dtsgui_newtabpage(tabv, "mISDN", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_misdn, NULL);
+	dtsgui_newtabpage(tabv, "E1", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_e1, NULL);
+	dtsgui_newtabpage(tabv, "MFC/R2", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_mfcr2, NULL);
+	dtsgui_newtabpage(tabv, "Global", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_global, NULL);
+	dtsgui_newtabpage(tabv, "ACD", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_acd, NULL);
+	dtsgui_newtabpage(tabv, "Exten", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_default, NULL);
+	dtsgui_newtabpage(tabv, "Location", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_location, NULL);
+	dtsgui_newtabpage(tabv, "Inbound", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_incoming, NULL);
+	dtsgui_newtabpage(tabv, "Num Plan", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_numplan, NULL);
+	dtsgui_newtabpage(tabv, "Auto Add", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_autoadd, NULL);
 
-	dtsgui_setuptabpage(dtsgui, tabv, "Trunks", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_trunk, NULL);
-	dtsgui_setuptabpage(dtsgui, tabv, "Options", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_topts, NULL);
-	dtsgui_setuptabpage(dtsgui, tabv, "mISDN", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_misdn, NULL);
-	dtsgui_setuptabpage(dtsgui, tabv, "E1", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_e1, NULL);
-	dtsgui_setuptabpage(dtsgui, tabv, "MFC/R2", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_mfcr2, NULL);
-	dtsgui_setuptabpage(dtsgui, tabv, "Global", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_global, NULL);
-	dtsgui_setuptabpage(dtsgui, tabv, "ACD", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_acd, NULL);
-	dtsgui_setuptabpage(dtsgui, tabv, "Exten", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_default, NULL);
-	dtsgui_setuptabpage(dtsgui, tabv, "Location", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_location, NULL);
-	dtsgui_setuptabpage(dtsgui, tabv, "Inbound", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_incoming, NULL);
-	dtsgui_setuptabpage(dtsgui, tabv, "Num Plan", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_numplan, NULL);
-	dtsgui_setuptabpage(dtsgui, tabv, "Auto Add", wx_PANEL_BUTTON_ACTION, NULL, appdata->xmldoc, pbxconf_autoadd, NULL);
-
-
-/*	dtsgui_progress_end(dtsgui);*/
 	return tabv;
 }

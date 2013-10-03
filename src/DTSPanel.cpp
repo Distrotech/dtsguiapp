@@ -332,6 +332,7 @@ struct form_item *DTSPanel::create_new_fitem(void *widget, enum widget_type type
 	if (value2) {
 		ALLOC_CONST(fi->value2, value2);
 	}
+	fi->idx = -1;
 	addtobucket(fitems, fi);
 	return fi;
 }
@@ -428,6 +429,10 @@ void DTSPanel::SetTitle(const wxString new_title, bool create) {
 	} else if (create) {
 		Title(new_title);
 	}
+}
+
+void DTSPanel::SetStatus(const wxString new_status) {
+	status = new_status;
 }
 
 void free_xmlelement(void *data) {

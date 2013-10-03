@@ -560,22 +560,17 @@ DTSTabWindowEvent::~DTSTabWindowEvent() {
 }
 
 void DTSTabWindowEvent::OnButton(wxCommandEvent &event) {
-	DTSTabPage *pane = dynamic_cast<DTSTabPage*>(tw->GetCurrentPage()), *newp;
-	int pg;
+	DTSTabPage *pane = dynamic_cast<DTSTabPage*>(tw->GetCurrentPage());
 	int eid = event.GetId();
+	int pg = tw->GetSelection();
 
 	switch(eid) {
 		case wx_PANEL_BUTTON_YES:
 			pane->Update_XML();
-			break;
+		/*no break here will reload tab*/
 		case wx_PANEL_BUTTON_NO:
-			pg = tw->GetSelection();
-			tw->RemovePage(pg);
-
-			newp = new DTSTabPage(tw);
-			*newp = *pane;
-			delete pane;
-			newp->InsertPage(pg);
+			pg++;
+			tw->Undo(pg);
 			return;
 		default:
 			break;
@@ -640,7 +635,26 @@ DTSTabWindow::~DTSTabWindow() {
 	if (userdata) {
 		objunref(userdata);
 	}
-	DeleteAllPages();
+}
+
+
+void DTSTabWindow::Undo(int pg) {
+	DTSTabPage *pane, *newp;
+	int idx;
+
+	if (pg > 0) {
+		idx = pg-1;
+	} else {
+		idx = GetPageCount() + pg;
+	}
+
+	pane = dynamic_cast<DTSTabPage*>(GetPage(idx));
+	RemovePage(idx);
+
+	newp = new DTSTabPage(this);
+	*newp = *pane;
+	delete pane;
+	newp->InsertPage(idx);
 }
 
 bool DTSTabWindow::Show(bool show) {

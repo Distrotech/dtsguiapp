@@ -19,6 +19,11 @@
 #ifndef PRIVATE_H_INCLUDED
 #define PRIVATE_H_INCLUDED
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
 enum node_id {
 	DTS_NODE_NETWORK_CONFIG,
 	DTS_NODE_NETWORK_CONFIG_DNS,
@@ -66,6 +71,12 @@ struct listitem {
 	const char *value;
 };
 
+void xml_config(struct xml_doc *xmldoc);
+struct curlbuf *test_posturl(struct dtsgui *dtsgui, const char *user, const char *passwd, const char *url, struct curl_post *post);
+
+/*toolbar.cpp*/
+void *app_toolbar(struct dtsgui *dtsgui, void *pw, long style, int id, const char *name, void *data);
+
 /*wizard.c*/
 dtsgui_pane reconfig_wizard(struct dtsgui *dtsgui, const char *title, void *data);
 dtsgui_pane editsys_wizard(struct dtsgui *dtsgui, const char *title, void *data);
@@ -81,10 +92,13 @@ void testpanel(dtsgui_pane p);
 
 /*netconfig.c*/
 dtsgui_pane advanced_config(struct dtsgui *dtsgui, const char *title, void *data);
-void network_iface_pane(dtsgui_pane p, void *data);
+void network_iface_pane(dtsgui_pane p, const char *xpre, const char *iface);
 void network_iface_new_pane(dtsgui_pane p, void *data);
 
 /*iface*/
 dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data);
 
+#ifdef __cplusplus
+}
+#endif
 #endif /*PRIVATE_H_INCLUDED*/

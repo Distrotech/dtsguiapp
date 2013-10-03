@@ -45,6 +45,7 @@ struct form_item {
 	const char *value;
 	const char *value2;
 	void *widget;
+	int idx;
 };
 
 class DTSPanelEvent: public wxEvtHandler {
@@ -108,6 +109,7 @@ class DTSPanel: public DTSObject {
 		struct xml_element *GetNode(const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr);
 		bool ShowPanel(bool = true);
 		void SetTitle(const wxString new_title, bool create = false);
+		void SetStatus(const wxString new_status);
 	protected:
 		void SetSizerSize(wxSize, wxWindow*);
 		void SetupWin();
