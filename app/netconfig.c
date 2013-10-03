@@ -212,10 +212,7 @@ void network_config_dns_domain_server_new(dtsgui_pane p, dtsgui_treeview self, d
 	objunref((void*)domain);
 }
 
-void network_iface_pane(dtsgui_pane p, void *data) {
-	const char *iface = data;
-	const char *xpre = "/config/IP/Interfaces";
-
+void network_iface_pane(dtsgui_pane p, const char *xpre, const char *iface) {
 	dtsgui_xmltextbox(p, "Interface", "iface", xpre, "Interface", NULL, iface, NULL);
 	dtsgui_xmltextbox(p, "IP Address", "ipaddr", xpre, "Interface", NULL, iface, "ipaddr");
 	dtsgui_xmltextbox(p, "IP Subnet Bits", "subnet", xpre, "Interface", NULL, iface, "subnet");
@@ -229,14 +226,16 @@ void network_iface_pane(dtsgui_pane p, void *data) {
 
 void network_iface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
+	const char *xpre = "/config/IP/Interfaces";
+	const char *iface = data;
 
-	network_iface_pane(p, (void*)xn->value);
+	network_iface_pane(p, xpre, iface);
 	objunref(xn);
 }
 
 void network_iface_new_pane(dtsgui_pane p, void *data) {
-	dtsgui_textbox(p, "Interface", "iface", "", NULL);
 	dtsgui_textbox(p, "Name", "name", "", NULL);
+	dtsgui_textbox(p, "Interface", "iface", "", NULL);
 	dtsgui_textbox(p, "IP Address", "ipaddr", "0", NULL);
 	dtsgui_textbox(p, "IP Subnet Bits", "subnet", "32", NULL);
 	dtsgui_textbox(p, "DHCP Gateway", "gateway", "", NULL);

@@ -379,7 +379,11 @@ static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename
 			xml_savefile(xmldoc, filename, 1, 9);
 		}
 	} else {
-		rem_temp_xml(xmldoc);
+		struct xml_search *xs = xml_xpath(xmldoc, "/config/tmp", NULL);
+		struct xml_node *xn = xml_getfirstnode(xs, NULL);
+		objunref(xs);
+		xml_delete(xn);
+		objunref(xn);
 	}
 
 	objunref(twiz);
