@@ -1201,6 +1201,11 @@ void dtsgui_setuptoolbar(struct dtsgui *dtsgui, dtsgui_toolbar_create cb, void *
 	f->SetupToolbar(cb, data);
 }
 
+
+struct curlbuf *dtsgui_posturl(const char *url, curl_post *post) {
+	return curl_posturl(url, NULL, post, NULL, NULL);
+}
+
 #ifdef __WIN32
 void getwin32folder(int csidl, char *path) {
 	SHGetFolderPathA(NULL, csidl, NULL, 0, path);

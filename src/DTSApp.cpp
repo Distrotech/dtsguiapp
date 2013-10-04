@@ -69,6 +69,7 @@ bool DTSApp::OnInit() {
 	/*start up curl and add progress bits*/
 	curl = curlinit();
 	curl_setprogress(curl_progress_function, curl_progress_ctrl, curl_startprogress, dtsgui);
+	curl_setauth_cb(dtsgui_pwdialog, dtsgui);
 
 	/*deleted on close*/
 	newappframe(dtsgui);

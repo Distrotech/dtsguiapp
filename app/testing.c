@@ -97,6 +97,31 @@ dtsgui_pane progress_test(struct dtsgui *dtsgui, const char *title, void *data) 
 	return NULL;
 }
 
+dtsgui_pane post_test(struct dtsgui *dtsgui, const char *title, void *data) {
+	struct curl_post *post = curl_newpost();
+	struct curlbuf *cbuf;
+
+	curl_postitem(post, "firstname", "gregory hinton");
+	curl_postitem(post, "lastname", "nietsky");
+	curl_postitem(post, "test", "&<>@%");
+
+	cbuf = dtsgui_posturl("https://sip1.speakezi.co.za:666/auth/test.php", post);
+/*
+	curl_ungzip(cbuf);
+
+	if (cbuf && cbuf->c_type && !strcmp("application/xml", cbuf->c_type)) {
+		xmldoc = xml_loadbuf(cbuf->body, cbuf->bsize, 1);
+	}*/
+
+	if (cbuf && cbuf->body) {
+		dtsgui_alert(dtsgui, (char*)cbuf->body);
+	}
+	if (cbuf) {
+		objunref(cbuf);
+	}
+	return NULL;
+}
+
 void test_menu(struct dtsgui *dtsgui) {
 	dtsgui_treeview tree;
 	dtsgui_menu test;
