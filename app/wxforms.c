@@ -41,58 +41,12 @@
 #define DATA_DIR	"/usr/share/dtsguiapp"
 #endif
 
-
-
-struct curlbuf *test_posturl(struct dtsgui *dtsgui, const char *user, const char *passwd, const char *url, struct curl_post *post) {
-	struct curlbuf *cbuf;
-	struct basic_auth *auth;
-
-	if (user && passwd) {
-		auth = dtsgui_pwdialog(user, passwd, dtsgui);
-	} else {
-		auth = NULL;
-	}
-
-	if (!(cbuf = curl_posturl(url, auth, post, dtsgui_pwdialog, dtsgui))) {
-		objunref(auth);
-		return NULL;
-	}
-
-	objunref(auth);
-	return cbuf;
-}
-
 void xml_config(struct xml_doc *xmldoc) {
 	void *xmlbuf;
 
 	xmlbuf = xml_doctobuffer(xmldoc);
 	printf("%s\n", xml_getbuffer(xmlbuf));
 	objunref(xmlbuf);
-}
-
-dtsgui_pane post_test(struct dtsgui *dtsgui, const char *title, void *data) {
-	struct curl_post *post = curl_newpost();
-	struct curlbuf *cbuf;
-
-	curl_postitem(post, "firstname", "gregory hinton");
-	curl_postitem(post, "lastname", "nietsky");
-	curl_postitem(post, "test", "&<>@%");
-
-	cbuf = test_posturl(dtsgui, NULL, NULL, "https://sip1.speakezi.co.za:666/auth/test.php", post);
-/*
-	curl_ungzip(cbuf);
-
-	if (cbuf && cbuf->c_type && !strcmp("application/xml", cbuf->c_type)) {
-		xmldoc = xml_loadbuf(cbuf->body, cbuf->bsize, 1);
-	}*/
-
-	if (cbuf && cbuf->body) {
-		dtsgui_alert(dtsgui, (char*)cbuf->body);
-	}
-	if (cbuf) {
-		objunref(cbuf);
-	}
-	return NULL;
 }
 
 dtsgui_pane open_config(struct dtsgui *dtsgui, const char *title, void *data) {

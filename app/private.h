@@ -72,7 +72,6 @@ struct listitem {
 };
 
 void xml_config(struct xml_doc *xmldoc);
-struct curlbuf *test_posturl(struct dtsgui *dtsgui, const char *user, const char *passwd, const char *url, struct curl_post *post);
 
 /*toolbar.cpp*/
 void *app_toolbar(struct dtsgui *dtsgui, void *pw, long style, int id, const char *name, void *data);
@@ -86,7 +85,6 @@ dtsgui_pane newsys_wizard(struct dtsgui *dtsgui, const char *title, void *data);
 dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data);
 
 /*testing.c*/
-dtsgui_pane post_test(struct dtsgui *dtsgui, const char *title, void *data);
 void test_menu(struct dtsgui *dtsgui);
 void testpanel(dtsgui_pane p);
 
