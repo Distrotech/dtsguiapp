@@ -45,6 +45,10 @@ void network_config_dns_domain_server_new(dtsgui_pane p, dtsgui_treeview self, d
 
 static const char *protocols[] = {"TCP", "UDP", "GRE", "ESP", "AH", "OSPF", "ALL"};
 
+void customer_info(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
+	wizz_custinfo(p);
+}
+
 /*XXX LDAP Settings server/DN*/
 void network_config(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	struct xml_doc *xmldoc = dtsgui_panelxml(p);
@@ -601,13 +605,14 @@ void network_tos_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, 
 }
 
 void network_tree_setup(dtsgui_treeview tree, struct xml_doc *xmldoc) {
-	dtsgui_treenode root, tmp, tmp2, tln/*, tmp3*/;
+	dtsgui_treenode cust, ipconf, tmp, tmp2, tln/*, tmp3*/;
 	struct xml_search *xp;
 	struct xml_node *xn;
 	void *iter = NULL;
 
-	root = dtsgui_treecont(tree, NULL, "Global IP Settings", 0, 0, 0, DTS_NODE_NETWORK_CONFIG, network_config, NULL);
-	tln = dtsgui_treecont(tree, root, "DNS/DHCP Settings", 0, 0, 0, DTS_NODE_NETWORK_CONFIG_DNS, network_config_dns, NULL);
+	cust = dtsgui_treecont(tree, NULL, "Customer Information", 0, 0, 0, DTS_NODE_CUSTOMER, customer_info, NULL);
+	ipconf = dtsgui_treecont(tree, cust, "Global IP Settings", 0, 0, 0, DTS_NODE_NETWORK_CONFIG, network_config, NULL);
+	tln = dtsgui_treecont(tree, ipconf, "DNS/DHCP Settings", 0, 0, 0, DTS_NODE_NETWORK_CONFIG_DNS, network_config_dns, NULL);
 	dtsgui_treeitem(tree, tln, "Dynamic DNS", 0, 0, 0, DTS_NODE_NETWORK_CONFIG_DNS_DYN, network_config_dns_dyn, NULL);
 	dtsgui_treeitem(tree, tln, "DNS Server Options", 0, 0, 0, DTS_NODE_NETWORK_CONFIG_DNS_SERV, network_config_dns_serv, NULL);
 	dtsgui_treeitem(tree, tln, "DNS Zone Defaults", 0, 0, 0, DTS_NODE_NETWORK_CONFIG_DNS_ZONE, network_config_dns_zone, NULL);
@@ -641,7 +646,7 @@ void network_tree_setup(dtsgui_treeview tree, struct xml_doc *xmldoc) {
 	objunref(iter);
 	iter = NULL;
 
-	tln = dtsgui_treecont(tree, root, "Network Interfaces", 0, 0, 0, -1, NULL, NULL);
+	tln = dtsgui_treecont(tree, ipconf, "Network Interfaces", 0, 0, 0, -1, NULL, NULL);
 	tmp = dtsgui_treecont(tree, tln, "Ethernet Interfaces", 0, 1, 0, DTS_NODE_NETWORK_IFACE_NEW, network_newiface, NULL);
 
 	xp = xml_xpath(xmldoc, "/config/IP/Interfaces/Interface", "name");
@@ -665,7 +670,7 @@ void network_tree_setup(dtsgui_treeview tree, struct xml_doc *xmldoc) {
 	objunref(iter);
 	iter = NULL;
 
-	tln = dtsgui_treecont(tree, root, "Static Routes", 0, 0, 0, -1, NULL, NULL);
+	tln = dtsgui_treecont(tree, ipconf, "Static Routes", 0, 0, 0, -1, NULL, NULL);
 	tmp = dtsgui_treecont(tree, tln, "Wan Routing/Nodes", 0, 1, 0, DTS_NODE_NETWORK_WAN_NEW, network_newwan, NULL);
 	xp = xml_xpath(xmldoc, "/config/IP/Routes/Route", NULL);
 	for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
@@ -688,7 +693,7 @@ void network_tree_setup(dtsgui_treeview tree, struct xml_doc *xmldoc) {
 	objunref(iter);
 	iter = NULL;
 
-	tln = dtsgui_treecont(tree, root, "PPP Config (DSL/3G)", 0, 0, 0, DTS_NODE_NETWORK_MODEM, network_modem, NULL);
+	tln = dtsgui_treecont(tree, ipconf, "PPP Config (DSL/3G)", 0, 0, 0, DTS_NODE_NETWORK_MODEM, network_modem, NULL);
 	dtsgui_treeitem(tree, tln, "Advanced Settings", 0, 0, 0, DTS_NODE_NETWORK_MODEM_ADV, network_modem_adv, NULL);
 	dtsgui_treeitem(tree, tln, "Dialup/Leased", 0, 0, 0, DTS_NODE_NETWORK_MODEM_ANA, network_modem_ana, NULL);
 	dtsgui_treecont(tree, tln, "Modem Firewall Rules", 0, 1, 0, -1, NULL, NULL);
@@ -715,7 +720,7 @@ void network_tree_setup(dtsgui_treeview tree, struct xml_doc *xmldoc) {
 	objunref(iter);
 	iter = NULL;
 
-	tmp = dtsgui_treecont(tree, root, "Default TOS", 0, 1, 0, DTS_NODE_NETWORK_TOS_NEW, network_tos_new, NULL);
+	tmp = dtsgui_treecont(tree, ipconf, "Default TOS", 0, 1, 0, DTS_NODE_NETWORK_TOS_NEW, network_tos_new, NULL);
 	xp = xml_xpath(xmldoc, "/config/IP/QOS/TOS", NULL);
 	for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
 		tmp2 = dtsgui_treeitem(tree, tmp, xml_getattr(xn, "name"), 1, 1, 1, DTS_NODE_NETWORK_TOS, network_tos, NULL);
@@ -726,15 +731,15 @@ void network_tree_setup(dtsgui_treeview tree, struct xml_doc *xmldoc) {
 	objunref(iter);
 	iter = NULL;
 
-	tln = dtsgui_treecont(tree, root, "VPN Configuration", 0, 0, 0, -1, NULL, NULL);
+	tln = dtsgui_treecont(tree, ipconf, "VPN Configuration", 0, 0, 0, -1, NULL, NULL);
 	dtsgui_treecont(tree, tln, "GRE VPN Tunnels", 0, 1, 0, -1, NULL, NULL);
 	dtsgui_treecont(tree, tln, "ESP VPN Tunnels", 0, 1, 0, -1, NULL, NULL);
 	dtsgui_treecont(tree, tln, "ESP Remote Access", 0, 1, 0, -1, NULL, NULL);
 
-	tln = dtsgui_treecont(tree, root, "Voice & FAX Over IP", 0, 0, 0, -1, NULL, NULL);
+	tln = dtsgui_treecont(tree, ipconf, "Voice & FAX Over IP", 0, 0, 0, -1, NULL, NULL);
 	dtsgui_treecont(tree, tln, "VOIP Registrations", 0, 0, 0, -1, NULL, NULL);
 	dtsgui_treecont(tree, tln, "FAX Config", 0, 0, 0, -1, NULL, NULL);
-	dtsgui_treecont(tree, root, "Secuity Certificate Config", 0, 0, 0, -1, NULL, NULL);
+	dtsgui_treecont(tree, ipconf, "Secuity Certificate Config", 0, 0, 0, -1, NULL, NULL);
 }
 
 dtsgui_pane advanced_config(struct dtsgui *dtsgui, const char *title, void *data) {
