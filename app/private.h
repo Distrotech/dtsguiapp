@@ -25,6 +25,7 @@ extern "C" {
 
 
 enum node_id {
+	DTS_NODE_CUSTOMER,
 	DTS_NODE_NETWORK_CONFIG,
 	DTS_NODE_NETWORK_CONFIG_DNS,
 	DTS_NODE_NETWORK_CONFIG_DNS_DYN,
@@ -71,8 +72,6 @@ struct listitem {
 	const char *value;
 };
 
-void xml_config(struct xml_doc *xmldoc);
-
 /*toolbar.cpp*/
 void *app_toolbar(struct dtsgui *dtsgui, void *pw, long style, int id, const char *name, void *data);
 
@@ -80,13 +79,13 @@ void *app_toolbar(struct dtsgui *dtsgui, void *pw, long style, int id, const cha
 dtsgui_pane reconfig_wizard(struct dtsgui *dtsgui, const char *title, void *data);
 dtsgui_pane editsys_wizard(struct dtsgui *dtsgui, const char *title, void *data);
 dtsgui_pane newsys_wizard(struct dtsgui *dtsgui, const char *title, void *data);
+void wizz_custinfo(dtsgui_pane *pg);
 
 /*pbxconfig.c*/
 dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data);
 
 /*testing.c*/
 void test_menu(struct dtsgui *dtsgui);
-void testpanel(dtsgui_pane p);
 
 /*netconfig.c*/
 dtsgui_pane advanced_config(struct dtsgui *dtsgui, const char *title, void *data);

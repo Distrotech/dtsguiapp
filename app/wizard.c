@@ -167,37 +167,7 @@ static void rem_temp_xml(struct xml_doc *xmldoc) {
 	objunref(xn);
 }
 
-static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struct xml_doc *xmldoc, int save) {
-	struct listitem cos[] = {{"Internal Extensions", "0"},
-							 {"Local PSTN", "1"},
-							 {"Long Distance PSTN", "2"},
-							 {"Cellular", "3"},
-							 {"Premium", "4"},
-							 {"International", "5"}};
-	dtsgui_pane dp[12], pg;
-	struct dtsgui_wizard *twiz;
-	struct form_item *ilist;
-	const char *newfile;
-	int res, cnt;
-
-	set_temp_xml(xmldoc);
-
-	twiz = dtsgui_newwizard(dtsgui, "System Configuration Wizard");
-
-	dp[0] = dtsgui_wizard_addpage(twiz, "Customer Information", NULL, xmldoc);
-	dp[1] = dtsgui_wizard_addpage(twiz, "Network/IP Information", NULL, xmldoc);
-	dp[2] = dtsgui_wizard_addpage(twiz, "Dynamic DNS", NULL, xmldoc);
-	dp[3] = dtsgui_wizard_addpage(twiz, "DNS", NULL, xmldoc);
-	dp[4] = dtsgui_wizard_addpage(twiz, "X.509", NULL, xmldoc);
-	dp[5] = dtsgui_wizard_addpage(twiz, "Fileserver", NULL, xmldoc);
-	dp[6] = dtsgui_wizard_addpage(twiz, "Firewall", NULL, xmldoc);
-	dp[7] = dtsgui_wizard_addpage(twiz, "Extensions", NULL, xmldoc);
-	dp[8] = dtsgui_wizard_addpage(twiz, "PBX Setup", NULL, xmldoc);
-	dp[9] = dtsgui_wizard_addpage(twiz, "Attendant", NULL, xmldoc);
-	dp[10] = dtsgui_wizard_addpage(twiz, "Trunk Setup", NULL, xmldoc);
-	dp[11] = dtsgui_wizard_addpage(twiz, "Least Cost Routing", NULL, xmldoc);
-
-	pg=dp[0];
+void wizz_custinfo(dtsgui_pane *pg) {
 	dtsgui_xmltextbox(pg, "Customer Name", NULL, "/config/Customer", "Option", "option", "Name", NULL);
 	dtsgui_xmltextbox(pg, "Contact Person", NULL, "/config/Customer", "Option", "option", "Contact", NULL);
 	dtsgui_xmltextbox(pg, "Email Address", NULL, "/config/Customer", "Option", "option", "Email", NULL);
@@ -206,29 +176,33 @@ static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename
 	dtsgui_xmltextbox(pg, "Customer Tel", NULL, "/config/Customer", "Option", "option", "Tel", NULL);
 	dtsgui_xmltextbox(pg, "Customer Company ID", NULL, "/config/Customer", "Option", "option", "ID", NULL);
 	dtsgui_xmltextbox(pg, "VAT No.", NULL, "/config/Customer", "Option", "option", "VAT", NULL);
+}
 
-	pg=dp[1];
+void wizz_netinfo(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "IPv4 Address", NULL, "/config/IP/Interfaces/Interface[/config/IP/SysConf/Option[@option = 'Internal'] = .]", NULL, NULL, NULL, "ipaddr");
 	dtsgui_xmltextbox(pg, "IPv4 Subnet Length", NULL, "/config/IP/Interfaces/Interface[/config/IP/SysConf/Option[@option = 'Internal'] = .]", NULL, NULL, NULL, "subnet");
 	dtsgui_xmltextbox(pg, "Domain Name", NULL, "/config/DNS/Config", "Option", "option", "Domain", NULL);
 	dtsgui_xmltextbox(pg, "Default Gateway", NULL, "/config/IP/SysConf", "Option", "option", "Nexthop", NULL);
 	dtsgui_xmltextbox(pg, "SMTP Gateway", NULL, "/config/Email/Config", "Option", "option", "Smarthost", NULL);
 	dtsgui_xmltextbox(pg, "NTP Server", NULL, "/config/IP/SysConf", "Option", "option", "NTPServer", NULL);
+}
 
-	pg=dp[2];
+void wizz_dyndns(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "Dynamic DNS Server", NULL, "/config/DNS/Config", "Option", "option", "DynServ", NULL);
 	dtsgui_xmltextbox(pg, "Dynamic DNS Zone", NULL, "/config/DNS/Config", "Option", "option", "DynZone", NULL);
 	dtsgui_xmltextbox(pg, "Dynamic DNS KEY", NULL, "/config/DNS/Config", "Option", "option", "DynKey", NULL);
+}
 
-	pg=dp[3];
+void wizz_dnsinfo(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "Primary DNS", NULL, "/config/IP/SysConf", "Option", "option", "PrimaryDns", NULL);
 	dtsgui_xmltextbox(pg, "Secondary DNS", NULL, "/config/IP/SysConf", "Option", "option", "SecondaryDns", NULL);
 	dtsgui_xmltextbox(pg, "Primary WINS", NULL, "/config/IP/SysConf", "Option", "option", "PrimaryWins", NULL);
 	dtsgui_xmltextbox(pg, "Secondary WINS", NULL, "/config/IP/SysConf", "Option", "option", "SecondaryWins", NULL);
 	dtsgui_xmltextbox(pg, "Primary MX", NULL, "/config/Email/Config", "Option", "option", "MailExchange1", NULL);
 	dtsgui_xmltextbox(pg, "Secondary MX", NULL, "/config/Email/Config", "Option", "option", "MailExchange2", NULL);
+}
 
-	pg=dp[4];
+void wizz_x509(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "Country Code", NULL, "/config/X509", "Option", "option", "Country", NULL);
 	dtsgui_xmltextbox(pg, "Province/State", NULL, "/config/X509", "Option", "option", "State", NULL);
 	dtsgui_xmltextbox(pg, "City", NULL, "/config/X509", "Option", "option", "City", NULL);
@@ -236,15 +210,19 @@ static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename
 	dtsgui_xmltextbox(pg, "Division", NULL, "/config/X509", "Option", "option", "Division", NULL);
 	dtsgui_xmltextbox(pg, "Name", NULL, "/config/X509", "Option", "option", "Name", NULL);
 	dtsgui_xmltextbox(pg, "Email", NULL, "/config/X509", "Option", "option", "Email", NULL);
+}
 
-	pg=dp[5];
+void wizz_samba(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "Workgroup/Domain", NULL, "/config/FileServer/Setup", "Option", "option", "Domain", NULL);
 	dtsgui_xmltextbox(pg, "Aliases", NULL, "/config/FileServer/Config", "Option", "option", "netbios name", NULL);
 	dtsgui_xmltextbox(pg, "Domain Controllers", NULL, "/config/FileServer/Setup", "Option", "option", "ADSServer", NULL);
 	dtsgui_xmltextbox(pg, "Realm [If Joining ADS]", NULL, "/config/FileServer/Setup", "Option", "option", "ADSRealm", NULL);
 	dtsgui_xmlcheckbox(pg, "Domain Controller", NULL, "1", "0", "/config/tmp", "dcon", NULL, NULL, NULL);
+}
 
-	pg=dp[6];
+void wizz_network(dtsgui_pane pg) {
+	struct form_item *ilist;
+
 	ilist = dtsgui_xmlcombobox(pg, "External Interface", NULL, "/config/tmp", "extif", NULL, NULL, NULL);
 	dtsgui_listbox_add(ilist, "br0", "br0");
 	dtsgui_listbox_add(ilist, "ethB", "ethB");
@@ -256,9 +234,19 @@ static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename
 	dtsgui_xmltextbox(pg, "Username", NULL, "/config/IP/Dialup", "Option", "option", "Username", NULL);
 	dtsgui_xmltextbox(pg, "Password", NULL, "/config/IP/Dialup", "Option", "option", "Password", NULL);
 	dtsgui_xmltextbox(pg, "MTU", NULL, "/config/IP/Dialup", "Option", "option", "MTU", NULL);
+}
 
+void wizz_exten(dtsgui_pane pg) {
+	struct form_item *ilist;
+	struct listitem cos[] = {{"Internal Extensions", "0"},
+							 {"Local PSTN", "1"},
+							 {"Long Distance PSTN", "2"},
+							 {"Cellular", "3"},
+							 {"Premium", "4"},
+							 {"International", "5"}};
 
-	pg=dp[7];
+	int cnt;
+
 	ilist = dtsgui_xmllistbox(pg, "Default Extension Permision", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "Context", NULL);
 	for(cnt=0;cnt <= 5; cnt++) {
 		dtsgui_listbox_add(ilist, cos[cnt].name, cos[cnt].value);
@@ -291,8 +279,11 @@ static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename
 	dtsgui_xmlcheckbox(pg, "Enable Voice Mail", NULL, "0", "1", "/config/IP/VOIP/ASTDB", "Option", "option", "DEFNOVMAIL", NULL);
 	dtsgui_xmlcheckbox(pg, "Enable Call Logging", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "DEFRECORD", NULL);
 	dtsgui_xmlcheckbox(pg, "Require Extension Number With PIN", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "ADVPIN", NULL);
+}
 
-	pg=dp[8];
+void wizz_location(dtsgui_pane pg) {
+	struct form_item *ilist;
+
 	dtsgui_xmltextbox(pg, "Local Area Code", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "AreaCode", NULL);
 	dtsgui_xmltextbox(pg, "Local Extension Prefix", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "ExCode", NULL);
 	ilist = dtsgui_xmllistbox(pg, "ISDN PRI Framing [T1-E1]", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "PRIframing", NULL);
@@ -319,16 +310,20 @@ static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename
 	dtsgui_xmlcheckbox(pg, "ISDN BRI Use Round Robin Routing", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "mISDNrr", NULL);
 	dtsgui_xmlcheckbox(pg, "ISDN Allow Automatic Setting Of CLI (DDI Required)", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "AutoCLI", NULL);
 	dtsgui_xmlcheckbox(pg, "ISDN PRI CRC4 Checking (E1 Only)", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "PRIcrc4", NULL);
+}
 
-	pg=dp[9];
+void wizz_acd(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "Queue Timeout Checked Every 18s", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "AATimeout", NULL);
 	dtsgui_xmltextbox(pg, "Auto Attendant Mailbox/Forward On No Agent/Timeout", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "AANext", NULL);
 	dtsgui_xmltextbox(pg, "IVR Delay Between Digits", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "AADelay", NULL);
 	dtsgui_xmlcheckbox(pg, "Disable Default Auto Attendant Prompts", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "AANOPROMPT", NULL);
 	dtsgui_xmlcheckbox(pg, "Music On Hold When Calling Reception", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "AAMOH", NULL);
 	dtsgui_xmlcheckbox(pg, "Record Inbound Calls", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "AAREC", NULL);
+}
 
-	pg=dp[10];
+void wizz_trunk(dtsgui_pane pg) {
+	struct form_item *ilist;
+
 	ilist = dtsgui_xmllistbox(pg, "Primary Trunk", NULL, NULL, NULL, NULL, NULL, NULL);
 	dtsgui_listbox_add(ilist, "None", NULL);
 	dtsgui_listbox_add(ilist, "ISDN PRI", NULL);
@@ -344,8 +339,11 @@ static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename
 	objunref(ilist);
 	dtsgui_xmltextbox(pg, "No. Of Gateway Ports", NULL, NULL, NULL, NULL, NULL, NULL);
 	dtsgui_xmlcheckbox(pg, "Extensions Are On Gateway By Default", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "REMDEF", NULL);
+}
 
-	pg=dp[11];
+void wizz_voip(dtsgui_pane pg) {
+	struct form_item *ilist;
+
 	ilist = dtsgui_xmllistbox(pg, "Protocol", NULL, "/config/IP", "VOIP", NULL, NULL, "protocol");
 	dtsgui_listbox_add(ilist, "SIP", "SIP");
 	dtsgui_listbox_add(ilist, "IAX2", "IAX2");
@@ -355,6 +353,43 @@ static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename
 	dtsgui_xmlcheckbox(pg, "Use From User (SIP [Disables Sending CLI])", NULL, "true", "false", "/config/IP", "VOIP", NULL, NULL, "fromuser");
 	dtsgui_xmlcheckbox(pg, "Disable Video", NULL, "true", "false", "/config/IP", "VOIP", NULL, NULL, "novideo");
 	dtsgui_xmlcheckbox(pg, "Register To Server", NULL, "true", "false", "/config/IP", "VOIP", NULL, NULL, "register");
+}
+
+static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struct xml_doc *xmldoc, int save) {
+	dtsgui_pane dp[12];
+	struct dtsgui_wizard *twiz;
+	const char *newfile;
+	int res, cnt;
+
+	set_temp_xml(xmldoc);
+
+	twiz = dtsgui_newwizard(dtsgui, "System Configuration Wizard");
+
+	dp[0] = dtsgui_wizard_addpage(twiz, "Customer Information", NULL, xmldoc);
+	dp[1] = dtsgui_wizard_addpage(twiz, "Network/IP Information", NULL, xmldoc);
+	dp[2] = dtsgui_wizard_addpage(twiz, "Dynamic DNS", NULL, xmldoc);
+	dp[3] = dtsgui_wizard_addpage(twiz, "DNS", NULL, xmldoc);
+	dp[4] = dtsgui_wizard_addpage(twiz, "X.509", NULL, xmldoc);
+	dp[5] = dtsgui_wizard_addpage(twiz, "Fileserver", NULL, xmldoc);
+	dp[6] = dtsgui_wizard_addpage(twiz, "Firewall", NULL, xmldoc);
+	dp[7] = dtsgui_wizard_addpage(twiz, "Extensions", NULL, xmldoc);
+	dp[8] = dtsgui_wizard_addpage(twiz, "PBX Setup", NULL, xmldoc);
+	dp[9] = dtsgui_wizard_addpage(twiz, "Attendant", NULL, xmldoc);
+	dp[10] = dtsgui_wizard_addpage(twiz, "Trunk Setup", NULL, xmldoc);
+	dp[11] = dtsgui_wizard_addpage(twiz, "Least Cost Routing", NULL, xmldoc);
+
+	wizz_custinfo(dp[0]);
+	wizz_netinfo(dp[1]);
+	wizz_dyndns(dp[2]);
+	wizz_dnsinfo(dp[3]);
+	wizz_x509(dp[4]);
+	wizz_samba(dp[5]);
+	wizz_network(dp[6]);
+	wizz_exten(dp[7]);
+	wizz_location(dp[8]);
+	wizz_acd(dp[9]);
+	wizz_trunk(dp[10]);
+	wizz_voip(dp[11]);
 
 	res = dtsgui_runwizard(twiz);
 
