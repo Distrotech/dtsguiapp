@@ -19,8 +19,6 @@
 #ifndef DTSAPP_H
 #define DTSAPP_H
 
-void newappframe(struct dtsgui *dtsgui);
-
 class DTSApp : public wxApp {
 	public:
 		~DTSApp();

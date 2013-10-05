@@ -128,7 +128,6 @@ void test_menu(struct dtsgui *dtsgui) {
 	dtsgui_pane p;
 
 	test = dtsgui_newmenu(dtsgui, "&Testing");
-
 	p = dtsgui_panel(dtsgui, "Test Panel", wx_PANEL_BUTTON_ALL, 1, NULL);
 	testpanel(p);
 	dtsgui_setevcallback(p, handle_test, NULL);

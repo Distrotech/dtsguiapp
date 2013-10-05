@@ -265,7 +265,7 @@ const char *dtsgui_fileopen(struct dtsgui *dtsgui, const char *title, const char
 
 /*utils*/
 struct curlbuf *dtsgui_posturl(const char *url, curl_post *post);
-struct xml_doc *dtsgui_loadxmlurl(struct dtsgui *dtsgui, const char *user, const char *passwd, const char *url);
+extern struct xml_doc *dtsgui_buf2xml(struct curlbuf *cbuf);
 
 #ifdef __WIN32
 void getwin32folder(int csidl, char *path);

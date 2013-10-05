@@ -24,13 +24,22 @@
 wxDECLARE_EVENT(DTS_APP_EVENT, wxCommandEvent);
 
 struct dtsgui {
-	struct point wsize;
-	struct point wpos;
-	const char *title;
-	const char *status;
-	void *appframe;
-	dtsgui_configcb cb;
-	void *userdata;
+	public:
+		int SetupAPPFrame(void);
+		void Setup(const char *title, const char *stat, struct point w_size, struct point w_pos, dtsgui_configcb confcallback_cb , void *userdata);
+		void *GetUserData(void);
+		void SetStatusText(void);
+		void AppendTitle(const char *text);
+		void UnRef(void);
+		class DTSFrame *GetFrame(void);
+	private:
+		class DTSFrame *appframe;
+		const char *title;
+		const char *status;
+		dtsgui_configcb cb;
+		void *userdata;
+		struct point wsize;
+		struct point wpos;
 };
 
 struct dtsgui_wizard {

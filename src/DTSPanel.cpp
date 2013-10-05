@@ -515,7 +515,6 @@ void DTSPanel::Title(const char *title) {
 	g_row++;
 }
 
-
 void DTSPanel::SetTitle(const wxString new_title, bool create) {
 	if (title) {
 		title->SetLabel(new_title);
@@ -810,7 +809,7 @@ DTSTabPage::DTSTabPage(wxBookCtrlBase *parent, DTSFrame *frame, wxString status,
 		SetXMLDoc(xmldoc);
 	}
 	hasconfig = false;
-	SetTitle(status);
+	SetTitle(status, 1);
 	if (addpage) {
 		parent->AddPage(panel, status);
 	}
