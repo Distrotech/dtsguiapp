@@ -347,8 +347,8 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 	panel = static_cast<wxWindow *>(sw);
 
 	a_window = new DTSWindow(panel, frame);
+	a_window->type = wx_DTSPANEL_TREE;
 	aw = a_window->GetPanel();
-	type = wx_DTSPANEL_TREE;
 
 	SplitVertically(t_pane, aw);
 	SetSashGravity(0.5);

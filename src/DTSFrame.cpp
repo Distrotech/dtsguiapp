@@ -47,24 +47,18 @@ wxDEFINE_EVENT(DTS_APP_EVENT, wxCommandEvent);
 DTSFrame::DTSFrame(const wxString &title, const wxPoint &pos, const wxSize &size, struct dtsgui *dtsgui)
 	: wxFrame(NULL, wxID_ANY, title, pos, size) {
 
-	if (!dtsgui) {
+	if (!dtsgui || !objref(dtsgui)) {
 		return;
 	}
 
-	if (objref(dtsgui)) {
-		objlock(dtsgui);
-		dtsgui->appframe = this;
-		objunlock(dtsgui);
-		this->dtsgui = dtsgui;
-	}
+	this->dtsgui = dtsgui;
 
 	/*deleted on close*/
 	menubar = new wxMenuBar;
 	SetMenuBar(menubar);
 
-	status = dtsgui->status;
 	CreateStatusBar();
-	SetStatusText(status);
+
 	tbcb = NULL;
 	tb_data = NULL;
 
@@ -79,8 +73,6 @@ DTSFrame::DTSFrame(const wxString &title, const wxPoint &pos, const wxSize &size
 	SetMinSize(size);
 
 	blank = new wxWindow(this, -1);
-	wxBoxSizer *sizer2 = new wxBoxSizer(wxHORIZONTAL);
-	blank->SetSizer(sizer2);
 	sizer->Add(blank, 1, wxALL | wxEXPAND);
 	a_window = blank;
 	blank->Show(true);
@@ -249,7 +241,7 @@ void DTSFrame::SetWindow(wxWindow *window) {
 	sizer->Replace(a_window, window);
 
 	if (window == blank) {
-		SetStatusText(status);
+		dtsgui->SetStatusText();
 	}
 
 	window->Show(true);
@@ -357,4 +349,8 @@ void DTSFrame::SetupToolbar(dtsgui_toolbar_create cb, void *data) {
 		pbar->Hide();
 	}
 	toolbar->Realize();
+}
+
+wxMenuBar *DTSFrame::GetMenuBar() {
+	return menubar;
 }

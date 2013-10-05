@@ -59,10 +59,7 @@ struct xml_doc *DTSXMLComboBox::GetXMLDoc(const wxString& val, struct xml_node *
 		return NULL;
 	}
 
-	curl_ungzip(cbuf);
-	if (cbuf && cbuf->c_type && !strcmp("application/xml", cbuf->c_type)) {
-		xmldoc = xml_loadbuf(cbuf->body, cbuf->bsize, 0);
-	}
+	xmldoc = dtsgui_buf2xml(cbuf);
 	objunref(cbuf);
 
 	return xmldoc;

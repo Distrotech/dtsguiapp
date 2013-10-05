@@ -300,12 +300,9 @@ void help_menu(struct dtsgui *dtsgui) {
 }
 
 int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
-	struct app_data *appdata = data;
-
 	if (!data) {
 		return 0;
 	}
-
 	dtsgui_setuptoolbar(dtsgui, app_toolbar, NULL);
 
 	/* menus*/
@@ -314,16 +311,6 @@ int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
 	help_menu(dtsgui);
 	test_menu(dtsgui);
 
-	return 1;
-
-	/*load xml config via http*/
-	if (!(appdata->xmldoc = dtsgui_loadxmlurl(dtsgui, "admin", "", "https://callshop.distrotech.co.za:666/cshop"))) {
-		objunref(appdata);
-		dtsgui_confirm(dtsgui, "Config DL Failed (as expected after 3 tries)\nHello Dave\n\nWould You Like To Play .... Thermo Nuclear War ?");
-		return 1;
-	}
-
-	objunref(appdata);
 	return 1;
 }
 

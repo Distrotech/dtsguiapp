@@ -46,7 +46,6 @@ class DTSFrame: public wxFrame {
 		wxBoxSizer *sizer;
 		wxWindow *blank;
 		wxWindow *a_window;
-		wxString status;
 		wxToolBar *toolbar;
 		wxString about;
 		wxMenuBar *menubar;
