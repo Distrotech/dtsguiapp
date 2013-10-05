@@ -26,7 +26,7 @@ enum server_state {
 
 class DTSXMLComboBox: public wxComboBox {
 	public:
-		DTSXMLComboBox(wxWindow *parent, wxString url, wxString xpath, struct curl_post*(*getpost)(const wxString&), size_t minlen);
+		DTSXMLComboBox(wxWindow *parent, int id, wxString url, wxString xpath, struct curl_post*(*getpost)(const wxString&), size_t minlen);
 		~DTSXMLComboBox();
 		bool HasXMLList();
 	private:

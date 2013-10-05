@@ -57,7 +57,6 @@ enum node_id {
 };
 
 struct app_data {
-	struct dtsgui *dtsgui;
 	struct xml_doc *xmldoc;
 	const char *datadir;
 	const char *openconf;
@@ -71,6 +70,8 @@ struct listitem {
 	const char *name;
 	const char *value;
 };
+
+struct xml_doc *app_getxmldoc(struct dtsgui *dtsgui);
 
 /*toolbar.cpp*/
 void *app_toolbar(struct dtsgui *dtsgui, void *pw, long style, int id, const char *name, void *data);

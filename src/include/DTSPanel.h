@@ -61,6 +61,8 @@ class DTSPanelEvent: public wxEvtHandler {
 		void SetCallback(event_callback evcb = NULL, void *userdata = NULL);
 		void OnDialog(wxCommandEvent &event);
 	private:
+		void **refobj;
+		int RunCallBack(int etype, int eid, void *cb_data);
 		void *data;
 		event_callback evcb;
 		DTSObject *parent;
@@ -72,16 +74,17 @@ class DTSObject: public virtual wxWindow {
 		~DTSObject();
 		wxString GetName();
 		wxWindow *GetPanel();
-		panel_type type;
 		DTSFrame *GetFrame();
-		int buttons[6];
 		void EventHandler(int eid, wxCommandEvent *event);
 		struct bucket_list *GetItems(void);
 		void SetUserData(void *data);
 		void *GetUserData(void);
 		void SetXMLDoc(struct xml_doc *xmldoc);
 		struct xml_doc *GetXMLDoc(void);
+		panel_type type;
+		int buttons[6];
 	protected:
+		void **refobj;
 		DTSFrame *frame;
 		wxString status;
 		wxWindow *panel;
@@ -96,7 +99,6 @@ class DTSPanel: public DTSObject {
 	public:
 		DTSPanel(DTSFrame* = NULL, wxString = wxEmptyString, int = 0);
 		~DTSPanel();
-		void Title(const char *title);
 		void TextBox(const char *, const char *, wxString = wxEmptyString, int flags = wxTE_LEFT, int rows = 1, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
 		void PasswdBox(const char *, const char *, wxString = wxEmptyString, int flags = wxTE_LEFT, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
 		void CheckBox(const char *title, const char *name, int ischecked, const char *checkval, const char *uncheckval, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
@@ -111,6 +113,7 @@ class DTSPanel: public DTSObject {
 		void SetTitle(const wxString new_title, bool create = false);
 		void SetStatus(const wxString new_status);
 	protected:
+		void Title(const char *title);
 		void SetSizerSize(wxSize, wxWindow*);
 		void SetupWin();
 		void Buttons(void);
@@ -160,6 +163,7 @@ class DTSWindow: public DTSPanel, public virtual wxWindow {
 class DTSDialog: public DTSStaticPanel {
 	public:
 		DTSDialog(DTSFrame* = NULL, wxString = wxEmptyString, int = wx_PANEL_BUTTON_ACTION);
+		~DTSDialog();
 		bool Show(bool = true);
 		void RunDialog(void);
 	private:

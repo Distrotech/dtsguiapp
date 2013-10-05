@@ -59,7 +59,11 @@ DTSTreeWindowEvent::DTSTreeWindowEvent(void *userdata, dtsgui_tree_cb tree_cb, s
 	parent = win;
 	tree = win->GetTreeCtrl();
 	vm = tree->GetStore();
-	this->dtsgui = dtsgui;
+	if (dtsgui && objref(dtsgui)) {
+		this->dtsgui = dtsgui;
+	} else {
+		this->dtsgui = NULL;
+	}
 }
 
 DTSTreeWindowEvent::~DTSTreeWindowEvent() {
@@ -307,6 +311,7 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 	 DTSObject(stat_msg) {
 
 	int w, h, p, psize;
+	struct dtsgui *udata;
 	a_window = NULL;
 	DTSTreeWindowEvent *dtsevt;
 	wxSplitterWindow *sw = static_cast<wxSplitterWindow*>(this);
@@ -359,7 +364,11 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 	vm = new DTSDVMListView(1, true);
 	tree = new DTSDVMCtrl(t_pane, wxID_ANY, vm, wxDefaultPosition, wxDefaultSize, wxDV_ROW_LINES|wxDV_NO_HEADER);
 
-	dtsevt = new DTSTreeWindowEvent(userdata, tree_cb, (frame) ? frame->GetDTSData() : NULL, this);
+	udata = (frame) ? frame->GetDTSData() : NULL;
+	dtsevt = new DTSTreeWindowEvent(userdata, tree_cb, udata, this);
+	if (udata) {
+		objunref(udata);
+	}
 	dtsevthandler = dtsevt;
 	treesizer->Add(tree, 1,wxEXPAND,0);
 

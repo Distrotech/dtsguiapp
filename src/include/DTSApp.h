@@ -24,7 +24,7 @@ void newappframe(struct dtsgui *dtsgui);
 class DTSApp : public wxApp {
 	public:
 		~DTSApp();
-		struct dtsgui *CreateFrame(dtsgui_configcb confcallback_cb, void *data, struct point wsize, struct point wpos, const char *title, const char *status);
+		void CreateFrame(dtsgui_configcb confcallback_cb, void *data, struct point wsize, struct point wpos, const char *title, const char *status);
 		virtual bool OnInit();
 		void ShowFrame();
 	private:

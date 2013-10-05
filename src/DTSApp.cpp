@@ -42,15 +42,24 @@ static void free_dtsgui(void *data) {
 }
 
 DTSApp::~DTSApp() {
-	objunref((void *)dtsgui);
+	if (dtsgui && dtsgui->userdata && !objlock(dtsgui)) {
+		objunref(dtsgui->userdata);
+		dtsgui->userdata = NULL;
+		objunlock(dtsgui);
+	}
+	if (dtsgui) {
+		objunref((void *)dtsgui);
+	}
 
 	if (curl) {
 		curlclose();
 	}
 }
 
-struct dtsgui *DTSApp::CreateFrame(dtsgui_configcb confcallback_cb,void *data, struct point wsize, struct point wpos, const char *title, const char *status) {
-	dtsgui = (struct dtsgui *)objalloc(sizeof(struct dtsgui), free_dtsgui);
+void DTSApp::CreateFrame(dtsgui_configcb confcallback_cb,void *data, struct point wsize, struct point wpos, const char *title, const char *status) {
+	if (!(dtsgui = (struct dtsgui *)objalloc(sizeof(struct dtsgui), free_dtsgui))) {
+		return;
+	}
 	dtsgui->wsize = wsize;
 	dtsgui->wpos = wpos;
 	dtsgui->title = title;
@@ -61,11 +70,12 @@ struct dtsgui *DTSApp::CreateFrame(dtsgui_configcb confcallback_cb,void *data, s
 	} else {
 		dtsgui->userdata = NULL;
 	}
-	objref((void *)dtsgui);
-	return dtsgui;
 }
 
 bool DTSApp::OnInit() {
+	void *data = NULL;
+	bool res;
+
 	/*start up curl and add progress bits*/
 	curl = curlinit();
 	curl_setprogress(curl_progress_function, curl_progress_ctrl, curl_startprogress, dtsgui);
@@ -73,5 +83,14 @@ bool DTSApp::OnInit() {
 
 	/*deleted on close*/
 	newappframe(dtsgui);
-	return (dtsgui->cb(dtsgui, dtsgui->userdata));
+
+	if (dtsgui->userdata && objref(dtsgui->userdata)) {
+		data = dtsgui->userdata;
+	}
+
+	res = dtsgui->cb(dtsgui, data);
+	if (data) {
+		objunref(data);
+	}
+	return res;
 }

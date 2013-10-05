@@ -46,6 +46,18 @@ wxDEFINE_EVENT(DTS_APP_EVENT, wxCommandEvent);
 
 DTSFrame::DTSFrame(const wxString &title, const wxPoint &pos, const wxSize &size, struct dtsgui *dtsgui)
 	: wxFrame(NULL, wxID_ANY, title, pos, size) {
+
+	if (!dtsgui) {
+		return;
+	}
+
+	if (objref(dtsgui)) {
+		objlock(dtsgui);
+		dtsgui->appframe = this;
+		objunlock(dtsgui);
+		this->dtsgui = dtsgui;
+	}
+
 	/*deleted on close*/
 	menubar = new wxMenuBar;
 	SetMenuBar(menubar);
@@ -65,9 +77,6 @@ DTSFrame::DTSFrame(const wxString &title, const wxPoint &pos, const wxSize &size
 	this->SetSizer(sizer);
 
 	SetMinSize(size);
-	dtsgui->appframe = this;
-	objref(dtsgui);
-	this->dtsgui = dtsgui;
 
 	blank = new wxWindow(this, -1);
 	wxBoxSizer *sizer2 = new wxBoxSizer(wxHORIZONTAL);
@@ -292,9 +301,12 @@ void DTSFrame::DynamicPanelEvent(wxCommandEvent &event) {
 		p_dyn->w = NULL;
 	}
 
-	if ((p = (DTSObject*)p_dyn->cb(dtsgui, p_dyn->title, p_dyn->data))) {
-		p_dyn->w = p->GetPanel();
-		SetWindow(p_dyn->w);
+	if (objref(dtsgui)) {
+		if ((p = (DTSObject*)p_dyn->cb(dtsgui, p_dyn->title, p_dyn->data))) {
+			p_dyn->w = p->GetPanel();
+			SetWindow(p_dyn->w);
+		}
+		objunref(dtsgui);
 	}
 }
 
@@ -306,7 +318,7 @@ void DTSFrame::SendDTSEvent(int eid, wxObject *evobj) {
 }
 
 struct dtsgui *DTSFrame::GetDTSData(void) {
-	if (objref(dtsgui)) {
+	if (dtsgui && objref(dtsgui)) {
 		return dtsgui;
 	}
 	return NULL;
@@ -316,7 +328,9 @@ wxToolBar *DTSFrame::OnCreateToolBar(long style, wxWindowID id, const wxString& 
 	wxToolBar *tb;
 
 	if (tbcb) {
+		objref(dtsgui);
 		tb = (wxToolBar*)tbcb(dtsgui, this, style, id, name, tb_data);
+		objunref(dtsgui);
 	} else {
 		tb = new wxToolBar(this, id, wxDefaultPosition, wxDefaultSize, style, name);
 	}

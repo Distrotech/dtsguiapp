@@ -49,61 +49,108 @@ void xml_config(struct xml_doc *xmldoc) {
 	objunref(xmlbuf);
 }
 
+
+struct xml_doc *app_getxmldoc(struct dtsgui *dtsgui) {
+	struct app_data *appdata;
+	struct xml_doc *xmldoc;
+
+	if (!(appdata = dtsgui_userdata(dtsgui))) {
+		return NULL;
+	}
+
+	objlock(appdata);
+	if (appdata->xmldoc && objref(appdata->xmldoc)) {
+		xmldoc = appdata->xmldoc;
+	} else {
+		objunlock(appdata);
+		objunref(appdata);
+		return NULL;
+	}
+	objunlock(appdata);
+	objunref(appdata);
+	return xmldoc;
+}
+
 dtsgui_pane open_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct app_data *appdata;
 	const char *filename;
 
-	appdata = dtsgui_userdata(dtsgui);
 
 	if (!(filename = dtsgui_fileopen(dtsgui, "Select Customer Configuration To Open", NULL, "", "XML Configuration|*.xml"))) {
 		return NULL;
 	}
 
+	if (!(appdata = dtsgui_userdata(dtsgui))) {
+		objunref((void*)filename);
+		return  NULL;
+	}
+
+	objlock(appdata);
 	if (!(appdata->xmldoc = xml_loaddoc(filename, 1	))) {
+		objunlock(appdata);
+		objunref(appdata);
+		objunref((void*)filename);
 		dtsgui_alert(dtsgui, "Configuration failed to load.\n");
 		return NULL;
 	}
+	objunlock(appdata);
+	objunref((void*)filename);
 
 	dtsgui_reconfig(dtsgui);
 
+	objlock(appdata);
 	dtsgui_menuitemenable(appdata->e_wiz, 0);
 	dtsgui_menuitemenable(appdata->n_wiz, 0);
 	dtsgui_menuitemenable(appdata->c_open, 0);
 	dtsgui_menuenable(appdata->cfg_menu, 1);
+	objunlock(appdata);
+
 	dtsgui_titleappend(dtsgui, filename);
 	dtsgui_set_toolbar(dtsgui, 0);
+	objunref(appdata);
+
 	return NULL;
 }
 
 dtsgui_pane save_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct app_data *appdata;
 
-	appdata = dtsgui_userdata(dtsgui);
-/*	dtsgui_reconfig(dtsgui);*/
+	if (!(appdata = dtsgui_userdata(dtsgui))) {
+		return NULL;
+	}
+	/*	dtsgui_reconfig(dtsgui);*/
+	dtsgui_titleappend(dtsgui, NULL);
+
+	objlock(appdata);
 	dtsgui_menuenable(appdata->cfg_menu, 0);
 	dtsgui_menuitemenable(appdata->e_wiz, 1);
 	dtsgui_menuitemenable(appdata->n_wiz, 1);
 	dtsgui_menuitemenable(appdata->c_open, 1);
-	dtsgui_titleappend(dtsgui, NULL);
+
 	objunref(appdata->xmldoc);
 	appdata->xmldoc = NULL;
+	objunlock(appdata);
+	objunref(appdata);
+
 	dtsgui_set_toolbar(dtsgui, 1);
+
 	return NULL;
 }
 
-
 dtsgui_pane view_config_xml(struct dtsgui *dtsgui, const char *title, void *data) {
-	struct app_data *appdata;
 	struct xml_doc *xmldoc = NULL;
 	dtsgui_pane p;
 	void *xmlbuf;
 
-	appdata = dtsgui_userdata(dtsgui);
-	xmldoc = appdata->xmldoc;
+	if (!(xmldoc = app_getxmldoc(dtsgui))) {
+		return NULL;
+	}
 
 	xmlbuf = xml_doctobuffer(xmldoc);
 	p = dtsgui_textpane(dtsgui, "XML Configuration", xml_getbuffer(xmlbuf));
+
 	objunref(xmlbuf);
+	objunref(xmldoc);
 
 	return p;
 }
@@ -116,17 +163,24 @@ dtsgui_pane view_config_conf(struct dtsgui *dtsgui, const char *title, void *dat
 	char xsltfile[PATH_MAX];
 	void *xmlbuf;
 
-	appdata = dtsgui_userdata(dtsgui);
-	xmldoc = appdata->xmldoc;
-
+	if (!(appdata = dtsgui_userdata(dtsgui))) {
+		return NULL;
+	}
 	snprintf(xsltfile, PATH_MAX-1, "%s/xml2conf.xsl", appdata->datadir);
+	objunref(appdata);
+
 	if (!is_file(xsltfile)) {
 		dtsgui_alert(dtsgui, "XSLT Transform Not Found");
 		return NULL;
 	}
 
+	if (!(xmldoc = app_getxmldoc(dtsgui))) {
+		return NULL;
+	}
+
 	if (!(xsltdoc = xslt_open(xsltfile))) {
 		dtsgui_alert(dtsgui, "XSLT Open Failed");
+		objunref(xmldoc);
 		return NULL;
 	}
 
@@ -135,6 +189,7 @@ dtsgui_pane view_config_conf(struct dtsgui *dtsgui, const char *title, void *dat
 
 	objunref(xsltdoc);
 	objunref(xmlbuf);
+	objunref(xmldoc);
 	return p;
 }
 
@@ -145,10 +200,12 @@ dtsgui_pane export_config(struct dtsgui *dtsgui, const char *title, void *data) 
 	char xsltfile[PATH_MAX];
 	const char *newfile;
 
-	appdata = dtsgui_userdata(dtsgui);
-	xmldoc = appdata->xmldoc;
-
+	if (!(appdata = dtsgui_userdata(dtsgui))) {
+		return NULL;
+	}
 	snprintf(xsltfile, PATH_MAX-1, "%s/xml2conf.xsl", appdata->datadir);
+	objunref(appdata);
+
 	if (!is_file(xsltfile)) {
 		dtsgui_alert(dtsgui, "XSLT Transform Not Found");
 		return NULL;
@@ -159,11 +216,19 @@ dtsgui_pane export_config(struct dtsgui *dtsgui, const char *title, void *data) 
 		return NULL;
 	}
 
+	if (!(xmldoc = app_getxmldoc(dtsgui))) {
+		objunref(xsltdoc);
+		return NULL;
+	}
+
 	newfile = dtsgui_filesave(dtsgui, "Export Config To File", NULL, "firewall.conf", "System Configuration (.conf)|*.conf");
 	if (newfile) {
 		xslt_apply(xmldoc, xsltdoc, newfile, 0);
+		objunref((void*)newfile);
 	}
 
+	objunref(xsltdoc);
+	objunref(xmldoc);
 	return NULL;
 }
 
@@ -171,26 +236,35 @@ void file_menu(struct dtsgui *dtsgui) {
 	dtsgui_menu file;
 	struct app_data *appdata;
 
-	appdata = dtsgui_userdata(dtsgui);
+	if (!(appdata = dtsgui_userdata(dtsgui))) {
+		return;
+	}
 
 	file = dtsgui_newmenu(dtsgui, "&File");
 
+	objlock(appdata);
 	appdata->n_wiz = dtsgui_newmenucb(file, dtsgui, "&New System (Wizard)", "New System Configuration Wizard", 1, newsys_wizard, NULL);
 	appdata->e_wiz = dtsgui_newmenucb(file, dtsgui, "&Edit Saved System (Wizard)", "Reconfigure Saved System File With Wizard ", 1, editsys_wizard, NULL);
 
 	dtsgui_menusep(file);
 	appdata->c_open = dtsgui_newmenucb(file, dtsgui, "&Open Config File", "Open System Config From A File", 1, open_config, NULL);
-
+	objunlock(appdata);
 
 	dtsgui_menusep(file);
 	dtsgui_close(file, dtsgui);
 	dtsgui_exit(file, dtsgui);
+
+	objunref(appdata);
 }
 
 void config_menu(struct dtsgui *dtsgui) {
 	struct app_data *appdata;
 
-	appdata = dtsgui_userdata(dtsgui);
+	if (!(appdata = dtsgui_userdata(dtsgui))) {
+		return;
+	}
+
+	objlock(appdata);
 	appdata->cfg_menu = dtsgui_newmenu(dtsgui, "&Config");
 
 	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "Reconfigure &Wizard", "Run System Reconfigure Wizard.", 1, reconfig_wizard, NULL);
@@ -209,6 +283,8 @@ void config_menu(struct dtsgui *dtsgui) {
 
 	/*initially greyed out*/
 	dtsgui_menuenable(appdata->cfg_menu, 0);
+	objunlock(appdata);
+	objunref(appdata);
 }
 
 void help_menu(struct dtsgui *dtsgui) {
@@ -226,7 +302,7 @@ void help_menu(struct dtsgui *dtsgui) {
 int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
 	struct app_data *appdata = data;
 
-	if (!data || !objref(appdata)) {
+	if (!data) {
 		return 0;
 	}
 
@@ -238,7 +314,6 @@ int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
 	help_menu(dtsgui);
 	test_menu(dtsgui);
 
-	objunref(appdata);
 	return 1;
 
 	/*load xml config via http*/
@@ -257,10 +332,6 @@ void free_appdata(void *data) {
 
 	if (appdata->datadir) {
 		free((void*)appdata->datadir);
-	}
-
-	if (appdata->dtsgui) {
-		objunref(appdata->dtsgui);
 	}
 
 	if (appdata->xmldoc) {
@@ -299,9 +370,8 @@ int main(int argc, char **argv) {
 	xml_init();
 	xslt_init();
 
-	appdata->dtsgui = dtsgui_config(guiconfig_cb, appdata, wsize, wpos, "Distrotech System App", "Welcome to Distrotech App!");
+	dtsgui_config(guiconfig_cb, appdata, wsize, wpos, "Distrotech System App", "Welcome to Distrotech App!");
 	res = dtsgui_run(argc, argv);
-	objunref(appdata->dtsgui);
 	objunref(appdata);
 
 	xslt_close();
