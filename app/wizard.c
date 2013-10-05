@@ -83,6 +83,7 @@ static void set_temp_xml(struct xml_doc *xmldoc) {
 	xs = xml_xpath(xmldoc, "/config/IP/SysConf/Option[@option = 'External']", NULL);
 	xn = xml_getfirstnode(xs, NULL);
 	objunref(xs);
+
 	extif = strdup(xn->value);
 	xml_setattr(xmldoc, xn2, "External", extif);
 	objunref(xn);
@@ -90,6 +91,7 @@ static void set_temp_xml(struct xml_doc *xmldoc) {
 	xs = xml_xpath(xmldoc, "/config/IP/Dialup/Option[@option = 'Connection']", NULL);
 	xn = xml_getfirstnode(xs, NULL);
 	objunref(xs);
+
 	conn = strdup(xn->value);
 	xml_setattr(xmldoc, xn2, "Connection", conn);
 	if (!strcmp(xn->value, "ADSL")) {
@@ -252,16 +254,19 @@ void wizz_exten(dtsgui_pane pg) {
 		dtsgui_listbox_add(ilist, cos[cnt].name, cos[cnt].value);
 	}
 	objunref(ilist);
+
 	ilist = dtsgui_xmllistbox(pg, "Default Auth Extension Permision", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "AuthContext", NULL);
 	for(cnt=0;cnt <= 5; cnt++) {
 		dtsgui_listbox_add(ilist, cos[cnt].name, cos[cnt].value);
 	}
 	objunref(ilist);
+
 	ilist = dtsgui_xmllistbox(pg, "Default After Hours Extension Permision", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "DEFALOCK", NULL);
 	for(cnt=0;cnt <= 5; cnt++) {
 		dtsgui_listbox_add(ilist, cos[cnt].name, cos[cnt].value);
 	}
 	objunref(ilist);
+
 	ilist = dtsgui_xmllistbox(pg, "Snom Network Port Config", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "SnomNet", NULL);
 	dtsgui_listbox_add(ilist, "100Mb/s Full Duplex", "100full");
 	dtsgui_listbox_add(ilist, "100Mb/s Half Duplex", "100half");
@@ -269,6 +274,7 @@ void wizz_exten(dtsgui_pane pg) {
 	dtsgui_listbox_add(ilist, "10Mb/s Half Duplex", "10half");
 	dtsgui_listbox_add(ilist, "Auto", "auto");
 	objunref(ilist);
+
 	dtsgui_xmltextbox(pg, "Voip Vlan Interface", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "AutoVLAN", NULL);
 	dtsgui_xmltextbox(pg, "Default Extension Prefix", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "DefaultPrefix", NULL);
 	dtsgui_xmltextbox(pg, "Auto Config Start", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "AutoStart", NULL);
@@ -286,14 +292,17 @@ void wizz_location(dtsgui_pane pg) {
 
 	dtsgui_xmltextbox(pg, "Local Area Code", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "AreaCode", NULL);
 	dtsgui_xmltextbox(pg, "Local Extension Prefix", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "ExCode", NULL);
+
 	ilist = dtsgui_xmllistbox(pg, "ISDN PRI Framing [T1-E1]", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "PRIframing", NULL);
 	dtsgui_listbox_add(ilist, "ccs - esf", "ccs");
 	dtsgui_listbox_add(ilist, "cas - d4/Superframe", "cas");
 	objunref(ilist);
+
 	ilist = dtsgui_xmllistbox(pg, "ISDN PRI Coding [T1-E1]", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "PRIcoding", NULL);
 	dtsgui_listbox_add(ilist, "hdb3 - b8zs", "hdb3");
 	dtsgui_listbox_add(ilist, "ami", "ami");
 	objunref(ilist);
+
 	ilist = dtsgui_xmllistbox(pg, "Line Build Out", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "PRIlbo", NULL);
 	dtsgui_listbox_add(ilist, "0 db (CSU) / 0-133 feet (DSX-1)", "0");
 	dtsgui_listbox_add(ilist, "133-266 feet (DSX-1)", "1");
@@ -304,6 +313,7 @@ void wizz_location(dtsgui_pane pg) {
 	dtsgui_listbox_add(ilist, "-15db (CSU)", "6");
 	dtsgui_listbox_add(ilist, "-22.5db (CSU)", "7");
 	objunref(ilist);
+
 	dtsgui_xmlcheckbox(pg, "Calls To Internal Extensions Follow Forward Rules", NULL, "1", "0", "the /config/IP/VOIP/ASTDB", "Option", "option", "LocalFwd", NULL);
 	dtsgui_xmlcheckbox(pg, "Hangup Calls To Unknown Numbers/DDI", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "UNKDEF", NULL);
 	dtsgui_xmlcheckbox(pg, "ISDN BRI Immeadiate Routeing (No MSN/DDI)", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "mISDNimm", NULL);
@@ -330,6 +340,7 @@ void wizz_trunk(dtsgui_pane pg) {
 	dtsgui_listbox_add(ilist, "ISDN BRI", NULL);
 	dtsgui_listbox_add(ilist, "Analogue", NULL);
 	objunref(ilist);
+
 	dtsgui_xmltextbox(pg, "No. Of Trunk Ports", NULL, NULL, NULL, NULL, NULL, NULL);
 	ilist = dtsgui_xmllistbox(pg, "Gateway Trunk", NULL, NULL, NULL, NULL, NULL,NULL);
 	dtsgui_listbox_add(ilist, "None", NULL);
@@ -337,6 +348,7 @@ void wizz_trunk(dtsgui_pane pg) {
 	dtsgui_listbox_add(ilist, "ISDN BRI", NULL);
 	dtsgui_listbox_add(ilist, "Analogue", NULL);
 	objunref(ilist);
+
 	dtsgui_xmltextbox(pg, "No. Of Gateway Ports", NULL, NULL, NULL, NULL, NULL, NULL);
 	dtsgui_xmlcheckbox(pg, "Extensions Are On Gateway By Default", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "REMDEF", NULL);
 }
@@ -348,6 +360,7 @@ void wizz_voip(dtsgui_pane pg) {
 	dtsgui_listbox_add(ilist, "SIP", "SIP");
 	dtsgui_listbox_add(ilist, "IAX2", "IAX2");
 	objunref(ilist);
+
 	dtsgui_xmlcheckbox(pg, "Use DTMF INFO (SIP)", NULL, "info", "rfc2833", "/config/IP", "VOIP", NULL, NULL, "dtmf");
 	dtsgui_xmlcheckbox(pg, "Use SRTP (SIP)", NULL, "true", "false", "/config/IP", "VOIP", NULL, NULL, "srtp");
 	dtsgui_xmlcheckbox(pg, "Use From User (SIP [Disables Sending CLI])", NULL, "true", "false", "/config/IP", "VOIP", NULL, NULL, "fromuser");
@@ -433,16 +446,20 @@ extern dtsgui_pane newsys_wizard(struct dtsgui *dtsgui, const char *title, void 
 	struct xml_doc *xmldoc;
 	struct app_data *appdata;
 
-	appdata = dtsgui_userdata(dtsgui);
+	if (!(appdata = dtsgui_userdata(dtsgui))) {
+		return NULL;
+	}
 	snprintf(defconf, PATH_MAX-1, "%s/default.xml", appdata->datadir);
+	objunref(appdata);
+
 	if (!is_file(defconf)) {
 		dtsgui_alert(dtsgui, "Default configuration not found.\nCheck Installation.");
-		return 0;
+		return NULL;
 	}
 
 	if (!(xmldoc = xml_loaddoc(defconf, 1))) {
 		dtsgui_alert(dtsgui, "Default configuration failed to load.\nCheck Installation.");
-		return 0;
+		return NULL;
 	}
 
 	system_wizard(dtsgui, data, NULL, xmldoc, 1);
@@ -454,12 +471,13 @@ extern dtsgui_pane editsys_wizard(struct dtsgui *dtsgui, const char *title, void
 	const char *filename;
 
 	if (!(filename = dtsgui_fileopen(dtsgui, "Select Customer Configuration To Edit", NULL, "", "XML Configuration|*.xml"))) {
-		return 0;
+		return NULL;
 	}
 
 	if (!(xmldoc = xml_loaddoc(filename, 1	))) {
+		objunref((void*)filename);
 		dtsgui_alert(dtsgui, "Configuration failed to load.\n");
-		return 0;
+		return NULL;
 	}
 
 	system_wizard(dtsgui, data, filename, xmldoc, 1);
@@ -469,12 +487,10 @@ extern dtsgui_pane editsys_wizard(struct dtsgui *dtsgui, const char *title, void
 }
 
 dtsgui_pane reconfig_wizard(struct dtsgui *dtsgui, const char *title, void *data) {
-	struct app_data *appdata;
-	struct xml_doc *xmldoc = NULL;
+	struct xml_doc *xmldoc;
 
-	appdata = dtsgui_userdata(dtsgui);
-	if (appdata->xmldoc && objref(appdata->xmldoc)) {
-		xmldoc = appdata->xmldoc;
+	if (!(xmldoc = app_getxmldoc(dtsgui))) {
+		return NULL;
 	}
 
 	system_wizard(dtsgui, data, NULL, xmldoc, 0);

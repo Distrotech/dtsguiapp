@@ -133,8 +133,8 @@ enum widget_type {
 #define wx_PANEL_BUTTON_ALL		wx_PANEL_BUTTON_ACTION | wx_PANEL_BUTTON_NAV
 #define wx_PANEL_BUTTON_NONE	0
 
-/*application config and control*/
-dtsgui *dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point wsize,
+/*app frame config and control*/
+void dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point wsize,
 					  struct point wpos, const char *title, const char *status);
 int dtsgui_run(int argc, char **argv);
 void *dtsgui_userdata(struct dtsgui *dtsgui);
@@ -143,34 +143,48 @@ void dtsgui_reconfig(struct dtsgui *dtsgui);
 void dtsgui_setwindow(struct dtsgui *dtsgui, dtsgui_pane p);
 void dtsgui_setuptoolbar(struct dtsgui *dtsgui, dtsgui_toolbar_create cb, void *data);
 void dtsgui_set_toolbar(struct dtsgui *dtsgui, int show);
+void dtsgui_setstatus(dtsgui_pane pane, const char *status);
 
 /*menu configuration*/
 dtsgui_menu dtsgui_newmenu(struct dtsgui *dtsgui, const char *name);
 dtsgui_menuitem dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, const char *title, int blank, dtsgui_dynpanel cb, void *data);
 dtsgui_menuitem dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, dtsgui_pane pane);
+
+/*menu enable/disable*/
 void dtsgui_menuitemenable(dtsgui_menuitem dmi, int enable);
 void dtsgui_menuenable(dtsgui_menu dm, int enable);
+
+/*predefined menus*/
 void dtsgui_menusep(dtsgui_menu dtsmenu);
 void dtsgui_about(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *text);
 void dtsgui_close(dtsgui_menu dtsmenu, struct dtsgui *dtsgui);
 void dtsgui_exit(dtsgui_menu dtsmenu, struct dtsgui *dtsgui);
 
-/*view config*/
+/*panel config*/
 dtsgui_pane dtsgui_panel(struct dtsgui *dtsgui, const char *name, int butmask, enum panel_type type, void *userdata);
-void dtsgui_xmlpanel(dtsgui_pane pane, struct xml_doc *xmldoc);
-struct xml_doc *dtsgui_panelxml(dtsgui_pane pane);
-void dtsgui_delpane(dtsgui_pane pane);
 dtsgui_pane dtsgui_textpane(struct dtsgui *dtsgui, const char *title, const char *buf);
-dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title, dtsgui_tree_cb tree_cb, void *userdata, struct xml_doc *xmldoc);
+void dtsgui_settitle(dtsgui_pane pane, const char *title); /*unused*/
+void dtsgui_delpane(dtsgui_pane pane);
+void *dtsgui_paneldata(dtsgui_pane pane);
+void dtsgui_setevcallback(dtsgui_pane pane,event_callback evcb, void *data);
+void dtsgui_configcallback(dtsgui_pane pane,dtsgui_configcb cb, void *data); /*unused*/
+
+/*panel xml set/get*/
+void dtsgui_panel_setxml(dtsgui_pane pane, struct xml_doc *xmldoc);
+struct xml_doc *dtsgui_panelxml(dtsgui_pane pane);
+void dtsgui_xmlpanel_update(dtsgui_pane pane);
+
+/*tab page*/
 dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title, void *data);
 dtsgui_pane dtsgui_newtabpage(dtsgui_tabview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc, dtsgui_tabpanel_cb cb, void *cdata);
 dtsgui_pane dtsgui_tabpage_insert(dtsgui_tabview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc, dtsgui_tabpanel_cb cb, void *cdata, int pos, int undo);
+void dtsgui_newxmltabpane(dtsgui_tabview tabv, dtsgui_pane p, const char *xpath, const char *node, const char *vitem, const char *tattr, event_callback evcb, dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, void *data);
 
-
+/*tree pane*/
+dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title, dtsgui_tree_cb tree_cb, void *userdata, struct xml_doc *xmldoc);
 dtsgui_pane dtsgui_treepane(dtsgui_treeview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc);
 dtsgui_pane dtsgui_treepane_defalt(dtsgui_treeview self, dtsgui_treenode node);
 void dtsgui_nodesetxml(dtsgui_treeview tree, dtsgui_treenode node, const char *title);
-
 dtsgui_treenode dtsgui_treecont(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb,void *data);
 dtsgui_treenode dtsgui_treeitem(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *data);
 void dtsgui_treenodesetxml(dtsgui_treenode tn,struct xml_node *xn, const char *tattr);
@@ -179,17 +193,14 @@ void *dtsgui_treenodegetdata(dtsgui_treenode tn);
 const char *dtsgui_treenodeparent(dtsgui_treenode tn);
 void dtsgui_newxmltreenode(dtsgui_treeview tree, dtsgui_pane p, dtsgui_treenode tn, const char *xpath, const char *node, const char *vitem, const char *tattr,
 								int nid, int flags, dtsgui_xmltreenode_cb node_cb, void *data, dtsgui_treeviewpanel_cb p_cb);
-struct xml_node *dtsgui_panetoxml(dtsgui_pane p, const char *xpath, const char *node, const char *nodeval, const char *attrkey);
-void dtsgui_newxmltabpane(dtsgui_tabview tabv, dtsgui_pane p, const char *xpath, const char *node, const char *vitem, const char *tattr, event_callback evcb, dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, void *data);
-
-void dtsgui_rundialog(dtsgui_pane pane, event_callback evcb, void *data);
-void dtsgui_xmlpanel_update(dtsgui_pane pane);
-void *dtsgui_paneldata(dtsgui_pane pane);
-
-void dtsgui_settitle(dtsgui_pane pane, const char *title);
-void dtsgui_setstatus(dtsgui_pane pane, const char *status);
-
 int dtsgui_treenodeid(dtsgui_treenode tn);
+
+/*convert panel elements to a xml node with attributes*/
+struct xml_node *dtsgui_panetoxml(dtsgui_pane p, const char *xpath, const char *node, const char *nodeval, const char *attrkey);
+
+
+/*run modal dialog*/
+void dtsgui_rundialog(dtsgui_pane pane, event_callback evcb, void *data);
 
 /*form items
  *list/combo box must be unrefed when all items added
@@ -209,6 +220,14 @@ extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *
 struct form_item *dtsgui_xmllistbox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr);
 struct form_item *dtsgui_xmlcombobox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr);
 
+/*XML form items - see above for need to unref list/combo boxes*/
+extern void dtsgui_xnode_textbox(dtsgui_pane pane, const char *title, const char *attr);
+extern void dtsgui_xnode_textbox_multi(dtsgui_pane pane, const char *title, const char *attr);
+extern void dtsgui_xnode_passwdbox(dtsgui_pane pane, const char *title, const char *attr);
+extern void dtsgui_xnode_checkbox(dtsgui_pane pane, const char *title, const char *checkval, const char *uncheckval, const char *attr);
+struct form_item *dtsgui_xnode_listbox(dtsgui_pane pane, const char *title, const char *attr);
+struct form_item *dtsgui_xnode_combobox(dtsgui_pane pane, const char *title, const char *attr);
+
 /*add item to list*/
 void dtsgui_listbox_add(struct form_item *lbox, const char *text, const char *value);
 void dtsgui_listbox_addxml(struct form_item *lb, struct xml_doc *xmldoc, const char *xpath, const char *nattr, const char *vattr);
@@ -221,15 +240,11 @@ struct basic_auth *dtsgui_pwdialog(const char *user, const char *passwd,void *da
 int dtsgui_confirm(struct dtsgui *dtsgui, const char *text);
 void dtsgui_alert(struct dtsgui *dtsgui, const char *text);
 
+/*progress bar*/
 int dtsgui_progress_start(struct dtsgui *dtsgui, const char *text, int maxval, int quit);
 int dtsgui_progress_update(struct dtsgui *dtsgui, int newval, const char* newtext);
 int dtsgui_progress_increment(struct dtsgui *dtsgui, int ival, const char* newtext);
 void dtsgui_progress_end(struct dtsgui *dtsgui);
-
-
-/*set callback for a pane*/
-void dtsgui_setevcallback(dtsgui_pane pane,event_callback evcb, void *data);
-void dtsgui_configcallback(dtsgui_pane pane,dtsgui_configcb cb, void *data);
 
 /* get bucket list of form items*/
 struct bucket_list *dtsgui_panel_items(dtsgui_pane pane);
@@ -248,10 +263,9 @@ int dtsgui_runwizard(struct dtsgui_wizard *dtswiz);
 const char *dtsgui_filesave(struct dtsgui *dtsgui, const char *title, const char *path, const char *name, const char *filter);
 const char *dtsgui_fileopen(struct dtsgui *dtsgui, const char *title, const char *path, const char *name, const char *filter);
 
-struct xml_doc *dtsgui_loadxmlurl(struct dtsgui *dtsgui, const char *user, const char *passwd, const char *url);
-
 /*utils*/
 struct curlbuf *dtsgui_posturl(const char *url, curl_post *post);
+struct xml_doc *dtsgui_loadxmlurl(struct dtsgui *dtsgui, const char *user, const char *passwd, const char *url);
 
 #ifdef __WIN32
 void getwin32folder(int csidl, char *path);

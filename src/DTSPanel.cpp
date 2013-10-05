@@ -91,22 +91,52 @@ static int fitems_hash(const void *data, int key) {
 }
 
 DTSPanelEvent::DTSPanelEvent(DTSObject *win) {
+	refobj = (void**)objalloc(sizeof(void*), NULL);
+	*refobj = this;
 	evcb = NULL;
 	data = NULL;
 	parent = win;
 }
 
 DTSPanelEvent::~DTSPanelEvent() {
+	objlock(refobj);
 	if (data) {
 		objunref(data);
+		data = NULL;
 	}
+	objunlock(refobj);
+	objunref(refobj);
 }
 
 void DTSPanelEvent::SetCallback(event_callback ev_cb, void *userdata) {
+	objlock(refobj);
+	if (data) {
+		objunref(data);
+		data = NULL;
+	}
+
 	if (userdata && objref(userdata)) {
 		data = userdata;
 	}
 	evcb = ev_cb;
+	objunlock(refobj);
+}
+
+int DTSPanelEvent::RunCallBack(int etype, int eid, void *cb_data) {
+	void *cbdata = NULL;
+	int res;
+
+	if (cb_data && objref(cb_data)) {
+		cbdata = cb_data;
+	}
+
+	/*pass fresh ref to callback*/
+	res = evcb((void *)parent, etype, eid, cbdata);
+
+	if (cbdata) {
+		objunref(cbdata);
+	}
+	return res;
 }
 
 void DTSPanelEvent::OnButton(wxCommandEvent &event) {
@@ -119,21 +149,23 @@ void DTSPanelEvent::OnButton(wxCommandEvent &event) {
 
 	eid=event.GetId();
 
+	/*convert wxbutton info to own id's and pass this on except for dialog*/
 	for(i = 0; i < 6; i++) {
 		if (parent->buttons[i] == eid) {
 			eid = 1 << i;
 			break;
 		}
 	}
-
 	if (parent->type != wx_DTSPANEL_DIALOG) {
 		event.SetId(eid);
 	}
+
+	/*maybe oneday there will be a default*/
 	parent->EventHandler(eid, &event);
 
 	if (evcb) {
 		etype = event.GetEventType();
-		if (evcb((void *)parent, etype, eid, data)) {
+		if (RunCallBack(etype, eid, data)) {
 			event.Skip(true);
 		}
 	} else {
@@ -142,6 +174,7 @@ void DTSPanelEvent::OnButton(wxCommandEvent &event) {
 }
 
 void DTSPanelEvent::OnDialog(wxCommandEvent &event) {
+	/*translate enter into OK/Apply*/
 	event.SetId(parent->buttons[4]);
 	event.SetEventType(wxEVT_COMMAND_BUTTON_CLICKED);
 	OnButton(event);
@@ -180,13 +213,12 @@ void DTSPanelEvent::OnCombo(wxCommandEvent &event) {
 		eid=event.GetId();
 
 		if (evcb) {
-			evcb((void *)parent, etype, eid, fi);
+			RunCallBack(etype, eid, fi);
 
 			if (etype == wxEVT_COMMAND_TEXT_ENTER) {
 				cb->Popup();
 			}
 		}
-
 		objunref(fi);
 	} else {
 		event.Skip(true);
@@ -200,7 +232,7 @@ void DTSPanelEvent::OnDTSEvent(wxCommandEvent &event) {
 	eid=event.GetId();
 	if (evcb) {
 		etype = event.GetEventType();
-		evcb((void *)parent, etype, eid, data);
+		RunCallBack(etype, eid, data);
 	}
 	event.Skip(true);
 }
@@ -219,6 +251,8 @@ void DTSPanelEvent::BindCombo(wxWindow *win, int w_id) {
 }
 
 DTSObject::DTSObject(wxString st) {
+	refobj = (void**)objalloc(sizeof(void*), NULL);
+	*refobj = this;
 	status = st;
 	panel = NULL;
 	frame = NULL;
@@ -230,19 +264,31 @@ DTSObject::DTSObject(wxString st) {
 }
 
 DTSObject::~DTSObject() {
+	objlock(refobj);
 	if (userdata) {
 		objunref(userdata);
+		userdata = NULL;
 	}
 	if (xmldoc) {
 		objunref(xmldoc);
+		xmldoc = NULL;
 	}
 	if (dtsevthandler) {
 		delete dtsevthandler;
+		dtsevthandler = NULL;
 	}
+	objunlock(refobj);
+	objunref(refobj);
 }
 
 wxString DTSObject::GetName() {
-	return status;
+	wxString st;
+
+	objlock(refobj);
+	st = status;
+	objunlock(refobj);
+
+	return st;
 }
 
 wxWindow *DTSObject::GetPanel() {
@@ -254,16 +300,29 @@ DTSFrame *DTSObject::GetFrame() {
 }
 
 void DTSObject::SetXMLDoc(struct xml_doc *xd) {
+	objlock(refobj);
+
+	if (xmldoc) {
+		objunref(xmldoc);
+		xmldoc = NULL;
+	}
+
 	if (xd && objref(xd)) {
 		xmldoc = xd;
 	}
+
+	objunlock(refobj);
 }
 
 struct xml_doc *DTSObject::GetXMLDoc(void) {
+	struct xml_doc *xd = NULL;
+
+	objlock(refobj);
 	if (xmldoc && objref(xmldoc)) {
-		return xmldoc;
+		xd = xmldoc;
 	}
-	return NULL;
+	objunlock(refobj);
+	return xd;
 }
 
 struct bucket_list *DTSObject::GetItems(void) {
@@ -277,16 +336,25 @@ void DTSObject::EventHandler(int eid, wxCommandEvent *event) {
 }
 
 void DTSObject::SetUserData(void *data) {
+	objlock(refobj);
+	if (userdata) {
+		objunref(userdata);
+		userdata = NULL;
+	}
 	if (data && objref(data)) {
 		userdata = data;
 	}
+	objunlock(refobj);
 }
 
 void *DTSObject::GetUserData(void) {
+	void *ud = NULL;
+	objlock(refobj);
 	if (userdata && objref(userdata)) {
-		return userdata;
+		ud = userdata;
 	}
-	return NULL;
+	objunlock(refobj);
+	return ud;
 }
 
 DTSPanel::DTSPanel(DTSFrame *mainwin, wxString statusmsg, int butmask)
@@ -294,6 +362,8 @@ DTSPanel::DTSPanel(DTSFrame *mainwin, wxString statusmsg, int butmask)
 	DTSPanelEvent *dtsevt;
 
 	button_mask = butmask;
+	config_data = NULL;
+	configcb = NULL;
 	dtsevthandler = NULL;
 	title = NULL;
 	fgs = NULL;
@@ -309,9 +379,16 @@ DTSPanel::DTSPanel(DTSFrame *mainwin, wxString statusmsg, int butmask)
 }
 
 DTSPanel::~DTSPanel() {
+	objlock(refobj);
 	if (fitems) {
 		objunref(fitems);
+		fitems = NULL;
 	}
+	if (config_data) {
+		objunref(config_data);
+		config_data = NULL;
+	}
+	objunlock(refobj);
 }
 
 struct form_item *DTSPanel::create_new_fitem(void *widget, enum widget_type type, const char *name, const char *value, const char *value2, void *data, enum form_data_type dtype) {
@@ -355,7 +432,9 @@ void DTSPanel::SetupWin(void) {
 
 	beenshown = false;
 	g_row = 0;
+	objlock(refobj);
 	w->SetName(status);
+	objunlock(refobj);
 	w->Show(false);
 }
 
@@ -368,8 +447,18 @@ void DTSPanel::SetEventCallback(event_callback evcb, void *userdata) {
 }
 
 void DTSPanel::SetConfigCallback(dtsgui_configcb cb, void *userdata) {
+	objlock(refobj);
+
+	if (config_data) {
+		objunref(config_data);
+		config_data = NULL;
+	}
 	configcb = cb;
-	config_data = userdata;
+	if (userdata && objref(userdata)) {
+		config_data = userdata;
+	}
+
+	objunlock(refobj);
 }
 
 bool DTSPanel::ShowPanel(bool show) {
@@ -407,17 +496,21 @@ void DTSPanel::AddItem(wxWindow *item, const wxGBPosition pos, const wxGBSpan sp
 void DTSPanel::Title(const char *title) {
 	wxFont font;
 	wxStaticText *tit;
-	tit = new wxStaticText(panel, -1, title);
 
-	if (!this->title) {
-		this->title = tit;
+	if (this->title) {
+		return;
 	}
+
+	tit = new wxStaticText(panel, -1, title);
+	this->title = tit;
+
 
 	font = tit->GetFont();
 	font.SetPointSize(font.GetPointSize()+2);
 	font.SetWeight(wxFONTWEIGHT_BOLD);
 	tit->SetFont(font);
 	AddItem(tit, wxGBPosition(g_row, 0), wxGBSpan(1, 6), wxALIGN_CENTER_HORIZONTAL | wxLEFT | wxRIGHT, PADING);
+
 
 	g_row++;
 }
@@ -432,7 +525,9 @@ void DTSPanel::SetTitle(const wxString new_title, bool create) {
 }
 
 void DTSPanel::SetStatus(const wxString new_status) {
+	objlock(refobj);
 	status = new_status;
+	objunlock(refobj);
 }
 
 void free_xmlelement(void *data) {
@@ -452,10 +547,15 @@ void free_xmlelement(void *data) {
 
 struct xml_element *DTSPanel::GetNode(const char *ppath, const char *node, const char *fattr, const char *fval, const char *attr) {
 	struct xml_element *xml = NULL;
+	struct xml_doc *xd;
 	struct xml_node *xn;
 	int len;
 
-	if (!xmldoc || !ppath || (!(xml = (struct xml_element*)objalloc(sizeof(*xml),free_xmlelement)))) {
+
+	if (!(xd = GetXMLDoc()) || !ppath || (!(xml = (struct xml_element*)objalloc(sizeof(*xml),free_xmlelement)))) {
+		if (xd) {
+			objunref(xd);
+		}
 		return NULL;
 	}
 
@@ -492,11 +592,11 @@ struct xml_element *DTSPanel::GetNode(const char *ppath, const char *node, const
 		}
 	}
 
-	if (!(xml->xsearch = xml_xpath(xmldoc, xml->xpath, attr))) {
+	if (!(xml->xsearch = xml_xpath(xd, xml->xpath, attr))) {
 		if (ppath && node && fval) {
-			xml_createpath(xmldoc, ppath);
-			if ((xn = xml_addnode(xmldoc, ppath, node, (fattr) ? "" : fval, fattr, (fattr) ? fval : NULL))) {
-				xml->xsearch = xml_xpath(xmldoc, xml->xpath, attr);
+			xml_createpath(xd, ppath);
+			if ((xn = xml_addnode(xd, ppath, node, (fattr) ? "" : fval, fattr, (fattr) ? fval : NULL))) {
+				xml->xsearch = xml_xpath(xd, xml->xpath, attr);
 				objunref(xn);
 			}
 		}
@@ -509,6 +609,7 @@ struct xml_element *DTSPanel::GetNode(const char *ppath, const char *node, const
 	if (attr) {
 		xml->attr = strdup(attr);
 	}
+	objunref(xd);
 
 	return xml;
 }
@@ -709,16 +810,18 @@ DTSTabPage::DTSTabPage(wxBookCtrlBase *parent, DTSFrame *frame, wxString status,
 		SetXMLDoc(xmldoc);
 	}
 	hasconfig = false;
-	Title(status);
+	SetTitle(status);
 	if (addpage) {
 		parent->AddPage(panel, status);
 	}
 }
 
 DTSTabPage::~DTSTabPage() {
+	objlock(refobj);
 	if (cdata) {
 		objunref(cdata);
 	}
+	objunlock(refobj);
 }
 
 bool DTSTabPage::Show(bool show) {
@@ -728,7 +831,14 @@ bool DTSTabPage::Show(bool show) {
 void DTSTabPage::ConfigPane() {
 	if (!hasconfig) {
 		if (cb) {
-			cb(this, cdata);
+			void *dat = NULL;
+			if (cdata && objref(cdata)) {
+				dat = cdata;
+			}
+			cb(this, dat);
+			if (dat) {
+				objunref(dat);
+			}
 		}
 		hasconfig = true;
 		ShowPanel();
@@ -738,7 +848,9 @@ void DTSTabPage::ConfigPane() {
 void DTSTabPage::InsertPage(int pos) {
 	wxBookCtrlBase *nb = dynamic_cast<wxBookCtrlBase*>(panel->GetParent());
 
+	objlock(refobj);
 	nb->InsertPage(pos, panel, status);
+	objunlock(refobj);
 	panel->Show();
 	nb->SetSelection(pos);
 }
@@ -750,13 +862,32 @@ DTSTabPage &DTSTabPage::operator=(const DTSTabPage &orig) {
 		return *this;
 	}
 
+	/*deadlock avoidance*/
+	objlock(orig.refobj);
+	while(!objtrylock(this->refobj)) {
+		objunlock(orig.refobj);
+		usleep(1000);
+		objlock(orig.refobj);
+	}
 	button_mask = orig.button_mask;
+	if (cdata) {
+		objunref(cdata);
+		cdata = NULL;
+	}
 	if (orig.cdata && objref(orig.cdata)) {
 		cdata = orig.cdata;
 	}
-
 	cb = orig.cb;
-	SetXMLDoc(orig.xmldoc);
+
+	if (xmldoc) {
+		objunref(xmldoc);
+		xmldoc = NULL;
+	}
+	if (orig.xmldoc && objref(orig.xmldoc)) {
+		xmldoc = orig.xmldoc;
+	} else {
+		xmldoc = NULL;
+	}
 	status = orig.status;
 	SetTitle(status);
 	panel->SetName(status);
@@ -765,7 +896,8 @@ DTSTabPage &DTSTabPage::operator=(const DTSTabPage &orig) {
 	if (dtsevt && frame) {
 		dtsevt->BindDTSEvent(frame);
 	}
-
+	objunlock(this->refobj);
+	objunlock(orig.refobj);
 	return *this;
 }
 
@@ -809,6 +941,7 @@ DTSDialog::DTSDialog(DTSFrame *frame, wxString name, int butmask) {
 	buttons[4] = wxID_OK;
 	buttons[5] = wxID_CANCEL;
 
+	/*this is deleted by app*/
 	dialog = new wxDialog(frame, -1, name);
 	sizer = new wxBoxSizer(wxHORIZONTAL);
 	dialog->SetSizer(sizer);
@@ -819,6 +952,9 @@ DTSDialog::DTSDialog(DTSFrame *frame, wxString name, int butmask) {
 	panel->SetName(name);
 	panel->Bind(wxEVT_TEXT_ENTER, &DTSPanelEvent::OnDialog, dtsevt);
 	SetupWin();
+}
+
+DTSDialog::~DTSDialog() {
 }
 
 bool DTSDialog::Show(bool show) {

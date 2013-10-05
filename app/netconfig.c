@@ -186,9 +186,7 @@ void network_config_dns_domain_server(dtsgui_pane p, dtsgui_treeview self, dtsgu
 	}
 
 	dtsgui_xmltextbox(p, "Name Server IP Address", "master", xpre, "NameServer", NULL, xn->value, NULL);
-	if (xpre) {
-		objunref((void*)xpre);
-	}
+	objunref((void*)xpre);
 	objunref(xn);
 }
 
@@ -463,9 +461,18 @@ void network_modem_ana(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node
 
 void network_adsl_link(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/IP/ADSL/Links";
-	struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
-	struct xml_doc *xmldoc = dtsgui_panelxml(p);
+	struct xml_node *xn;
+	struct xml_doc *xmldoc;
 	struct form_item *elb;
+
+	if (!(xn = dtsgui_treenodegetxml(node, NULL))) {
+		return;
+	}
+
+	if (!(xmldoc = dtsgui_panelxml(p))) {
+		objunref(xn);
+		return;
+	}
 
 	if ((elb = dtsgui_xmllistbox(p, "Interface", "interface", xpre, "Link", NULL, xn->value, "interface"))) {
 		dtsgui_listbox_addxml(elb, xmldoc, "/config/IP/Interfaces/Interface", "name", NULL);
@@ -535,7 +542,11 @@ void network_tos(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void
 	int pcnt, i;
 	const char *xpre = "/config/IP/QOS";
 	const char *name;
-	struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
+	struct xml_node *xn;
+
+	if (!(xn = dtsgui_treenodegetxml(node, NULL))) {
+		return;
+	}
 
 	name = xml_getattr(xn, "name");
 
@@ -744,27 +755,31 @@ void network_tree_setup(dtsgui_treeview tree, struct xml_doc *xmldoc) {
 
 dtsgui_pane advanced_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_treeview tree;
-	struct app_data *appdata;
 	struct xml_doc *xmldoc;
+	struct app_data *appdata;
 	char defconf[PATH_MAX];
 
-	appdata = dtsgui_userdata(dtsgui);
-	if (!appdata->xmldoc) {
+	/*get default for test window*/
+	if (!(xmldoc = app_getxmldoc(dtsgui))) {
+		if (!(appdata = dtsgui_userdata(dtsgui))) {
+			return NULL;
+		}
 		snprintf(defconf, PATH_MAX-1, "%s/default.xml", appdata->datadir);
+		objunref(appdata);
+
 		if (!is_file(defconf)) {
 			dtsgui_alert(dtsgui, "Default configuration not found.\nCheck Installation.");
-			return 0;
+			return NULL;
 		}
 
 		if (!(xmldoc = xml_loaddoc(defconf, 1))) {
 			dtsgui_alert(dtsgui, "Default configuration failed to load.\nCheck Installation.");
-			return 0;
+			return NULL;
 		}
-	} else {
-		xmldoc = appdata->xmldoc;
 	}
 
 	tree = dtsgui_treewindow(dtsgui, title, NULL, data, xmldoc);
 	network_tree_setup(tree, xmldoc);
+	objunref(xmldoc);
 	return tree;
 }

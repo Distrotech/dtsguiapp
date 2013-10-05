@@ -27,7 +27,7 @@
 #include "DTSXMLComboBox.h"
 
 
-DTSXMLComboBox::DTSXMLComboBox(wxWindow *parent, wxString url, wxString xpath, struct curl_post*(*getpost)(const wxString&), size_t minlen) {
+DTSXMLComboBox::DTSXMLComboBox(wxWindow *parent, int id, wxString url, wxString xpath, struct curl_post*(*getpost)(const wxString&), size_t minlen) {
 	sflags = 0;
 
 	this->minlen = minlen;
@@ -35,7 +35,7 @@ DTSXMLComboBox::DTSXMLComboBox(wxWindow *parent, wxString url, wxString xpath, s
 	this->xpath = xpath;
 	this->getpost = getpost;
 
-	Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL, wxTE_PROCESS_ENTER | wxCB_DROPDOWN);
+	Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL, wxTE_PROCESS_ENTER | wxCB_DROPDOWN);
 	Append(wxEmptyString, (void*)NULL);
 
 	Bind(wxEVT_TEXT_ENTER, &DTSXMLComboBox::HandleEvent, this);

@@ -32,8 +32,10 @@
 class DTSAPPToolBar: public wxToolBar {
 	public:
 		DTSAPPToolBar(struct dtsgui *dtsgui, wxWindow *parent, long style, wxWindowID id, wxString name, void *data);
+		~DTSAPPToolBar();
 		static struct curl_post *GetPostInfo(const wxString& val);
 	private:
+		int itemid;
 		void HandleEvent(wxCommandEvent &event);
 		DTSXMLComboBox *server;
 		wxComboBox *proto;
@@ -42,13 +44,20 @@ class DTSAPPToolBar: public wxToolBar {
 
 
 DTSAPPToolBar::DTSAPPToolBar(struct dtsgui *dtsgui, wxWindow *parent, long style, wxWindowID id, wxString name, void *data) {
+	int servid;
+
 	if (dtsgui && objref(dtsgui)) {
 		this->dtsgui = (struct dtsgui*)dtsgui;
+	} else {
+		this->dtsgui = NULL;
 	}
 
+	itemid = wxID_AUTO_LOWEST;
+
 	Create(parent, id, wxDefaultPosition, wxDefaultSize, style, name);
-	proto = new wxComboBox(this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL, wxCB_READONLY);
-	server = new DTSXMLComboBox(this, "https://sip1.speakezi.co.za:666/auth/test.php", "/servers/Server", &DTSAPPToolBar::GetPostInfo, 3);
+	proto = new wxComboBox(this, itemid++, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL, wxCB_READONLY);
+	servid = itemid++;
+	server = new DTSXMLComboBox(this, servid, "https://sip1.speakezi.co.za:666/auth/test.php", "/servers/Server", &DTSAPPToolBar::GetPostInfo, 3);
 	server->SetSize(wxSize(300,-1));
 	wxStaticText *text2 = new wxStaticText(this, wxID_ANY, "://");
 	wxStaticText *text = new wxStaticText(this, wxID_ANY, "Server ");
@@ -64,9 +73,15 @@ DTSAPPToolBar::DTSAPPToolBar(struct dtsgui *dtsgui, wxWindow *parent, long style
 	AddControl(server);
 	AddStretchableSpace();
 
-	Bind(wxEVT_TEXT_ENTER, &DTSAPPToolBar::HandleEvent, this);
-	Bind(wxEVT_COMBOBOX, &DTSAPPToolBar::HandleEvent, this);
-	Bind(wxEVT_COMBOBOX_DROPDOWN, &DTSAPPToolBar::HandleEvent, this);
+	Bind(wxEVT_TEXT_ENTER, &DTSAPPToolBar::HandleEvent, this, servid, servid, NULL);
+	Bind(wxEVT_COMBOBOX, &DTSAPPToolBar::HandleEvent, this, servid, servid, NULL);
+	Bind(wxEVT_COMBOBOX_DROPDOWN, &DTSAPPToolBar::HandleEvent, this, servid, servid, NULL);
+}
+
+DTSAPPToolBar::~DTSAPPToolBar() {
+	if (dtsgui) {
+		objunref(dtsgui);
+	}
 }
 
 struct curl_post *DTSAPPToolBar::GetPostInfo(const wxString& val) {

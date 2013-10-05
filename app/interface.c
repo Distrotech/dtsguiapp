@@ -36,6 +36,7 @@ struct iface_cdata {
 
 void free_iface_cdata(void *data) {
 	struct iface_cdata *cdata = data;
+
 	if (cdata->name) {
 		free((void*)cdata->name);
 	}
@@ -78,6 +79,7 @@ struct new_iface_data *get_newiface_data(dtsgui_tabview tv, struct xml_doc *xmld
 
 extern int handle_newxmltabpane(dtsgui_pane p, int type, int event, void *data) {
 	struct tab_newpane *tn = (struct tab_newpane*)data;
+	struct iface_cdata *ndat;
 	struct xml_node *xn;
 	const char *name;
 
@@ -98,20 +100,25 @@ extern int handle_newxmltabpane(dtsgui_pane p, int type, int event, void *data) 
 		name = xn->value;
 	}
 
+	objlock(tn);
 	if (tn->cdata) {
 		objunref(tn->cdata);
 		tn->cdata = NULL;
 	}
+	objunlock(tn);
 
 	if (xn->value) {
-		tn->cdata = get_iface_cdata(xn->value);
+		if ((ndat = get_iface_cdata(xn->value))) {
+			objlock(tn);
+			tn->cdata = ndat;
+			objunlock(tn);
+		}
 		if ((p = dtsgui_tabpage_insert(tn->tabv, name, wx_PANEL_BUTTON_ACTION, tn->data, tn->xmldoc, tn->cb, tn->cdata, tn->last, -1))) {
 			tn->last++;
 		}
 	} else {
 		xml_delete(xn);
 	}
-
 
 	objunref(xn);
 	return 0;
@@ -134,10 +141,13 @@ extern int handle_updatetabpane(dtsgui_pane p, int type, int event, void *data) 
 		return 0;
 	}
 
+	objlock(cdata);
 	if (cdata->name) {
 		free((void*)cdata->name);
+		cdata->name = NULL;
 	}
 	ALLOC_CONST(cdata->name, name);
+	objunlock(cdata);
 
 	if ((name = dtsgui_findvalue(p, "name"))) {
 		dtsgui_setstatus(p, name);
@@ -149,8 +159,12 @@ extern int handle_updatetabpane(dtsgui_pane p, int type, int event, void *data) 
 
 void network_iface_pane_cb(dtsgui_pane p, void *data) {
 	struct iface_cdata *cdata = data;
-	const char *iface = cdata->name;
+	const char *iface;
 	const char *xpre = "/config/IP/Interfaces";
+
+	objlock(cdata);
+	iface = cdata->name;
+	objunlock(cdata);
 
 	dtsgui_xmltextbox(p, "Name", "name", xpre, "Interface", NULL, iface, "name");
 	network_iface_pane(p, xpre, iface);
@@ -168,7 +182,6 @@ void network_iface_new_pane_cb(dtsgui_pane p, void *data) {
 dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_tabview tabv;
 	struct new_iface_data *nd;
-	struct app_data *appdata;
 	struct xml_doc *xmldoc;
 	struct xml_search *xp;
 	struct xml_node *xn;
@@ -176,10 +189,12 @@ dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct iface_cdata *cdata;
 	void *iter = NULL;
 
-	appdata = dtsgui_userdata(dtsgui);
-	xmldoc = appdata->xmldoc;
-	objref(xmldoc);
+	if (!(xmldoc = app_getxmldoc(dtsgui))) {
+		return NULL;
+	}
+
 	if (!(xp = xml_xpath(xmldoc, "/config/IP/Interfaces/Interface", "name"))) {
+		objunref(xmldoc);
 		return NULL;
 	}
 
@@ -192,6 +207,7 @@ dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data) {
 		objunref(cdata);
 		objunref(xn);
 	}
+
 	nd = get_newiface_data(tabv, xmldoc);
 	dtsgui_newtabpage(tabv, "Add", wx_PANEL_BUTTON_ACTION, NULL, xmldoc, network_iface_new_pane_cb, nd);
 	objunref(nd);
@@ -199,6 +215,7 @@ dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	if (iter) {
 		objunref(iter);
 	}
+	objunref(xp);
 	objunref(xmldoc);
 	return tabv;
 }

@@ -60,11 +60,11 @@
 static int menuid = wxID_AUTO_LOWEST;
 
 
-dtsgui *dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point wsize, struct point wpos, const char *title, const char *status) {
+void dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point wsize, struct point wpos, const char *title, const char *status) {
 	/*deleted on close*/
 	DTSApp *guiapp = new DTSApp();
 
-	return guiapp->CreateFrame(confcallback_cb, userdata, wsize, wpos, title, status);
+	guiapp->CreateFrame(confcallback_cb, userdata, wsize, wpos, title, status);
 }
 
 int dtsgui_run(int argc, char **argv) {
@@ -249,7 +249,7 @@ dtsgui_pane dtsgui_panel(struct dtsgui *dtsgui, const char *name, int butmask,
 	return dp;
 }
 
-extern void dtsgui_xmlpanel(dtsgui_pane pane, struct xml_doc *xmldoc) {
+extern void dtsgui_panel_setxml(dtsgui_pane pane, struct xml_doc *xmldoc) {
 	DTSPanel *p = (DTSPanel *)pane;
 	p->SetXMLDoc(xmldoc);
 }
@@ -324,7 +324,7 @@ extern dtsgui_pane dtsgui_treepane(dtsgui_treeview tv, const char *name, int but
 	dp->type = wx_DTSPANEL_TREE;
 
 	if (name) {
-		dp->Title(name);
+		dp->SetTitle(name, true);
 	}
 
 	if (xmldoc) {
@@ -589,7 +589,10 @@ dtsgui_pane dtsgui_textpane(struct dtsgui *dtsgui, const char *title, const char
 }
 
 void *dtsgui_userdata(struct dtsgui *dtsgui) {
-	return dtsgui->userdata;
+	if (dtsgui->userdata && objref(dtsgui->userdata)) {
+		return dtsgui->userdata;
+	}
+	return NULL;
 }
 
 struct bucket_list *dtsgui_panel_items(dtsgui_pane pane) {
@@ -668,6 +671,9 @@ void dtsgui_wizard_free(void *data) {
 	if (dtswiz->wiz) {
 		delete dtswiz->wiz;
 	}
+	if (dtswiz->dtsgui) {
+		objunref(dtswiz->dtsgui);
+	}
 }
 
 extern struct dtsgui_wizard* dtsgui_newwizard(struct dtsgui *dtsgui, const char *title) {
@@ -678,15 +684,18 @@ extern struct dtsgui_wizard* dtsgui_newwizard(struct dtsgui *dtsgui, const char 
 		return NULL;
 	}
 
+	if (dtsgui && objref(dtsgui)) {
+		dtswiz->dtsgui = dtsgui;
+	} else {
+		objunref(dtswiz);
+		return NULL;
+	}
+
 	dtswiz->wiz = new wxWizard();
 	dtswiz->start = NULL;
-	dtswiz->dtsgui = dtsgui;
 
 	if (!dtswiz->wiz || !dtswiz->wiz->Create(f, wxID_ANY, title, wxNullBitmap, wxDefaultPosition, wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER)) {
-		if (dtswiz->wiz) {
-			delete dtswiz->wiz;
-		}
-
+		objunref(dtswiz);
 		return NULL;
 	}
 
@@ -716,7 +725,7 @@ extern dtsgui_pane dtsgui_wizard_addpage(struct dtsgui_wizard *dtswiz, const cha
 	}
 
 	if (title) {
-		dww->Title(title);
+		dww->SetTitle(title, true);
 	}
 
 	if (xmldoc) {
