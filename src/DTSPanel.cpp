@@ -34,6 +34,7 @@
 #include <wx/notebook.h>
 
 #include <dtsapp.h>
+#include "dtsgui.h"
 #include "dtsgui.hpp"
 
 #include "DTSFrame.h"
@@ -124,15 +125,25 @@ void DTSPanelEvent::SetCallback(event_callback ev_cb, void *userdata) {
 
 int DTSPanelEvent::RunCallBack(int etype, int eid, void *cb_data) {
 	void *cbdata = NULL;
+	DTSFrame *f;
+	struct dtsgui *dtsgui = NULL;
 	int res;
 
 	if (cb_data && objref(cb_data)) {
 		cbdata = cb_data;
 	}
 
-	/*pass fresh ref to callback*/
-	res = evcb((void *)parent, etype, eid, cbdata);
+	/*get app data*/
+	if ((f = parent->GetFrame())) {
+		dtsgui = f->GetDTSData();
+	}
 
+	/*pass fresh ref to callback*/
+	res = evcb(dtsgui, (void *)parent, etype, eid, cbdata);
+
+	if (dtsgui) {
+		objunref(dtsgui);
+	}
 	if (cbdata) {
 		objunref(cbdata);
 	}
@@ -227,7 +238,6 @@ void DTSPanelEvent::OnCombo(wxCommandEvent &event) {
 
 void DTSPanelEvent::OnDTSEvent(wxCommandEvent &event) {
 	int  eid, etype;
-	printf("Got DTS EVent\n");
 
 	eid=event.GetId();
 	if (evcb) {
@@ -476,10 +486,6 @@ bool DTSPanel::ShowPanel(bool show) {
 			}
 			beenshown = true;
 		}
-	}
-
-	if (dtsevthandler) {
-		printf("Do Something\n");
 	}
 
 	return show;
@@ -865,7 +871,11 @@ DTSTabPage &DTSTabPage::operator=(const DTSTabPage &orig) {
 	objlock(orig.refobj);
 	while(!objtrylock(this->refobj)) {
 		objunlock(orig.refobj);
+#ifdef __WIN32
+		Sleep(1);
+#else
 		usleep(1000);
+#endif
 		objlock(orig.refobj);
 	}
 	button_mask = orig.button_mask;

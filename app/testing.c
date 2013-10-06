@@ -40,18 +40,44 @@
 #define DATA_DIR	"/usr/share/dtsguiapp"
 #endif
 
-int handle_test(dtsgui_pane p, int type, int event, void *data) {
+void post_items(struct dtsgui *dtsgui, dtsgui_pane p) {
+	struct curl_post *post;
+	struct curlbuf *cbuf;
+	const char *url;
+
+	url = dtsgui_paneldata(p);
+	post = dtsgui_pane2post(p);
+	cbuf = dtsgui_posturl(url, post);
+
+	if (cbuf && cbuf->body) {
+		dtsgui_alert(dtsgui, (char*)cbuf->body);
+	}
+
+	if (cbuf) {
+		objunref(cbuf);
+	}
+	objunref((void*)url);
+}
+
+int handle_test(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
 	switch(event) {
 		case wx_PANEL_BUTTON_YES:
-			printf("Ok\n");
+			post_items(dtsgui, p);
 			break;
-
 		case wx_PANEL_BUTTON_NO:
-			printf("Cancel\n");
+			dtsgui_alert(dtsgui, "Undo");
 			break;
-
-		default:
-			printf("Other %i\n", event);
+		case wx_PANEL_BUTTON_FIRST:
+			dtsgui_alert(dtsgui, "First");
+			break;
+		case wx_PANEL_BUTTON_LAST:
+			dtsgui_alert(dtsgui, "Last");
+			break;
+		case wx_PANEL_BUTTON_BACK:
+			dtsgui_alert(dtsgui, "Back");
+			break;
+		case wx_PANEL_BUTTON_FWD:
+			dtsgui_alert(dtsgui, "Forward");
 			break;
 	}
 	return 1;
@@ -79,64 +105,16 @@ void testpanel(dtsgui_pane p) {
 	objunref(l);
 }
 
-dtsgui_pane progress_test(struct dtsgui *dtsgui, const char *title, void *data) {
-	int i;
-
-	dtsgui_progress_start(dtsgui, "Testing Progress Bar", 1000, 1);
-	for(i=0; i <10;i++) {
-		if (!dtsgui_progress_update(dtsgui, ((1000/10) * (i+1)), NULL)) {
-			break;
-		}
-#ifdef __WIN32
-		Sleep(1000);
-#else
-		sleep(1);
-#endif
-	}
-	dtsgui_progress_end(dtsgui);
-	return NULL;
-}
-
-dtsgui_pane post_test(struct dtsgui *dtsgui, const char *title, void *data) {
-	struct curl_post *post = curl_newpost();
-	struct curlbuf *cbuf;
-
-	curl_postitem(post, "firstname", "gregory hinton");
-	curl_postitem(post, "lastname", "nietsky");
-	curl_postitem(post, "test", "&<>@%");
-
-	cbuf = dtsgui_posturl("https://sip1.speakezi.co.za:666/auth/test.php", post);
-/*
-	curl_ungzip(cbuf);
-
-	if (cbuf && cbuf->c_type && !strcmp("application/xml", cbuf->c_type)) {
-		xmldoc = xml_loadbuf(cbuf->body, cbuf->bsize, 1);
-	}*/
-
-	if (cbuf && cbuf->body) {
-		dtsgui_alert(dtsgui, (char*)cbuf->body);
-	}
-	if (cbuf) {
-		objunref(cbuf);
-	}
-	return NULL;
-}
-
-void test_menu(struct dtsgui *dtsgui) {
-	dtsgui_treeview tree;
-	dtsgui_menu test;
+void test_menu(struct dtsgui *dtsgui, dtsgui_menu menu, const char *url) {
+	void *purl;
 	dtsgui_pane p;
 
-	test = dtsgui_newmenu(dtsgui, "&Testing");
-	p = dtsgui_panel(dtsgui, "Test Panel", wx_PANEL_BUTTON_ALL, 1, NULL);
+	purl = dtsgui_char2obj(url);
+	p = dtsgui_panel(dtsgui, "Test Panel", "Test Panel", wx_PANEL_BUTTON_ALL, 1, purl);
+	objunref(purl);
 	testpanel(p);
+
 	dtsgui_setevcallback(p, handle_test, NULL);
-	dtsgui_newmenuitem(test, dtsgui, "&Test", p);
-
-	tree = advanced_config(dtsgui, "Tree Window", NULL);
-	dtsgui_newmenuitem(test, dtsgui, "T&ree", tree);
-
-	dtsgui_newmenucb(test, dtsgui, "Test &Post", "Send POST request to callshop server (requires callshop user)", 0, post_test, NULL);
-	dtsgui_newmenucb(test, dtsgui, "Progress Test", "Progress Test", 0, progress_test, NULL);
+	dtsgui_newmenuitem(menu, dtsgui, "&Test", p);
 }
 

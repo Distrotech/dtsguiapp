@@ -77,7 +77,7 @@ struct new_iface_data *get_newiface_data(dtsgui_tabview tv, struct xml_doc *xmld
 }
 
 
-extern int handle_newxmltabpane(dtsgui_pane p, int type, int event, void *data) {
+extern int handle_newxmltabpane(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
 	struct tab_newpane *tn = (struct tab_newpane*)data;
 	struct iface_cdata *ndat;
 	struct xml_node *xn;
@@ -124,7 +124,7 @@ extern int handle_newxmltabpane(dtsgui_pane p, int type, int event, void *data) 
 	return 0;
 }
 
-extern int handle_updatetabpane(dtsgui_pane p, int type, int event, void *data) {
+extern int handle_updatetabpane(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
 	struct iface_cdata *cdata = data;
 	const char *name;
 

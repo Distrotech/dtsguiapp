@@ -48,6 +48,7 @@
 #include <wx/toolbar.h>
 
 #include <dtsapp.h>
+#include "dtsgui.h"
 #include "dtsgui.hpp"
 
 #include "evdata.h"
@@ -210,7 +211,7 @@ void dtsgui_progress_end(struct dtsgui *dtsgui) {
 	f->EndProgress();
 }
 
-dtsgui_pane dtsgui_panel(struct dtsgui *dtsgui, const char *name, int butmask,
+dtsgui_pane dtsgui_panel(struct dtsgui *dtsgui, const char *name, const char *title, int butmask,
 						 enum panel_type type, void *userdata) {
 	DTSFrame *frame = dtsgui->GetFrame();
 	DTSPanel *dp = NULL;
@@ -234,6 +235,9 @@ dtsgui_pane dtsgui_panel(struct dtsgui *dtsgui, const char *name, int butmask,
 		case wx_DTSPANEL_WIZARD:
 			dp = new DTSWizardWindow(name);
 			break;
+	}
+	if (title) {
+		dp->SetTitle(title, true);
 	}
 
 	dp->SetUserData(userdata);
@@ -627,6 +631,7 @@ extern struct form_item *dtsgui_finditem(dtsgui_pane p, const char *name) {
 }
 
 extern 	const char *dtsgui_item_value(struct form_item *fi) {
+	void *tmp;
 	const char *value = NULL;
 	union widgets {
 		wxTextCtrl *t;
@@ -648,7 +653,11 @@ extern 	const char *dtsgui_item_value(struct form_item *fi) {
 			int pos;
 			w.l = (wxComboBox *)fi->widget;
 			pos = w.l->GetSelection();
-			value = strdup((char*)w.l->GetClientData(pos));
+			if ((pos !=  wxNOT_FOUND) && w.l->HasClientData() && (tmp = w.l->GetClientData(pos))) {
+				value = strdup((char*)tmp);
+			} else {
+				value = strdup(w.l->GetValue().ToUTF8());
+			}
 			break;
 		case DTS_WIDGET_CHECKBOX:
 			w.c = (wxCheckBox *)fi->widget;
@@ -716,7 +725,7 @@ extern dtsgui_pane dtsgui_wizard_addpage(struct dtsgui_wizard *dtswiz, const cha
 	wxWizardPageSimple *wp, *tmp;
 	wxWizardPage *last;
 
-	page = dtsgui_panel(dtswiz->dtsgui, title, 0, wx_DTSPANEL_WIZARD, userdata);
+	page = dtsgui_panel(dtswiz->dtsgui, title, NULL, 0, wx_DTSPANEL_WIZARD, userdata);
 	dww = (DTSWizardWindow*)page;
 	wp = dynamic_cast<wxWizardPageSimple *>(dww);
 
@@ -954,7 +963,7 @@ const char *dtsgui_treenodeparent(dtsgui_treenode tn) {
 	return val;
 }
 
-static int dtsgui_handle_newtreenode(dtsgui_pane p, int type, int event, void *data) {
+static int dtsgui_handle_newtreenode(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
 	struct tree_newnode *nn = (struct tree_newnode*)data;
 	DTSTreeWindow *tw = (DTSTreeWindow*)nn->tv;
 	DTSDVMCtrl *tree = tw->GetTreeCtrl();
@@ -1189,6 +1198,58 @@ extern struct xml_doc *dtsgui_buf2xml(struct curlbuf *cbuf) {
 		xmldoc = xml_loadbuf(cbuf->body, cbuf->bsize, 1);
 	}
 	return xmldoc;
+}
+
+void *dtsgui_char2obj(const char *orig) {
+	int len = strlen(orig) + 1;
+	void *nobj;
+
+	if ((nobj = objalloc(len, NULL))) {
+		memcpy(nobj, orig, len);
+	}
+	return nobj;
+}
+
+struct curl_post *dtsgui_pane2post(dtsgui_pane p) {
+	struct bucket_list *bl;
+	struct bucket_loop *bloop;
+	struct curl_post *post;
+	struct form_item *fi;
+	const char *name;
+	const char *val;
+
+	if (!(bl = dtsgui_panel_items(p))) {
+		return NULL;
+	}
+	if (!(bloop = init_bucket_loop(bl))) {
+		objunlock(bl);
+		return NULL;
+	}
+
+	if (!(post = curl_newpost())) {
+		stop_bucket_loop(bloop);
+		objunlock(bl);
+		return NULL;
+	}
+
+	while((fi = (struct form_item*)next_bucket_loop(bloop))) {
+		if (!(name = dtsgui_item_name(fi))) {
+			objunref(fi);
+			continue;
+		}
+		val = dtsgui_item_value(fi);
+		if (val) {
+			curl_postitem(post, name, val);
+			free((void*)val);
+		} else {
+			curl_postitem(post, name, "");
+		}
+		objunref(fi);
+	}
+	stop_bucket_loop(bloop);
+	objunref(bl);
+
+	return post;
 }
 
 struct curlbuf *dtsgui_posturl(const char *url, curl_post *post) {
