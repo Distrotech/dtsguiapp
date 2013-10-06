@@ -33,16 +33,11 @@
 
 #include <dtsapp.h>
 
+#include "dtsgui.h"
 #include "dtsgui.hpp"
 
 #include "DTSApp.h"
 #include "DTSFrame.h"
-
-static void free_dtsgui(void *data) {
-	struct dtsgui *dtsgui = (struct dtsgui *)data;
-
-	dtsgui->UnRef();
-}
 
 void dtsgui::Setup(const char *title, const char *stat, struct point w_size, struct point w_pos, dtsgui_configcb confcallback_cb , void *data) {
 	wsize = w_size;
@@ -90,18 +85,20 @@ void *dtsgui::GetUserData() {
 	return ud;
 }
 
-void dtsgui::UnRef() {
-	if (userdata) {
-		objunref(userdata);
-		userdata = NULL;
+void dtsgui::UnRef(void *data) {
+	struct dtsgui *dtsgui = (struct dtsgui *)data;
+
+	if (dtsgui->userdata) {
+		objunref(dtsgui->userdata);
+		dtsgui->userdata = NULL;
 	}
-	if (status) {
-		free((void*)status);
-		status = NULL;
+	if (dtsgui->status) {
+		free((void*)dtsgui->status);
+		dtsgui->status = NULL;
 	}
-	if (title) {
-		free((void*)title);
-		title = NULL;
+	if (dtsgui->title) {
+		free((void*)dtsgui->title);
+		dtsgui->title = NULL;
 	}
 }
 
@@ -112,7 +109,6 @@ void dtsgui::SetStatusText(void) {
 	}
 	objunlock(this);
 }
-
 
 void dtsgui::AppendTitle(const char *text) {
 	char *newtitle;
@@ -143,34 +139,31 @@ class DTSFrame *dtsgui::GetFrame(void) {
 }
 
 DTSApp::~DTSApp() {
-	if (dtsgui) {
-		objlock(dtsgui);
-		dtsgui->UnRef();
-		objunlock(dtsgui);
-		objunref((void *)dtsgui);
-	}
-
 	if (curl) {
 		curlclose();
+		curl = 0;
+	}
+	if (dtsgui) {
+		objunref((void *)dtsgui);
 	}
 }
 
 void DTSApp::CreateFrame(dtsgui_configcb confcallback_cb,void *data, struct point wsize, struct point wpos, const char *title, const char *status) {
-	if (!(dtsgui = (struct dtsgui *)objalloc(sizeof(struct dtsgui), free_dtsgui))) {
+	if (!(dtsgui = (struct dtsgui *)objalloc(sizeof(struct dtsgui), &dtsgui::UnRef))) {
 		return;
 	}
 	dtsgui->Setup(title, status, wsize, wpos, confcallback_cb, data);
 }
 
 bool DTSApp::OnInit() {
-	bool res;
+	if (!dtsgui) {
+		return false;
+	}
 
 	/*start up curl and add progress bits*/
 	curl = curlinit();
 	curl_setprogress(curl_progress_function, curl_progress_ctrl, curl_startprogress, dtsgui);
 	curl_setauth_cb(dtsgui_pwdialog, dtsgui);
 
-	/*deleted on close*/
-	res = dtsgui->SetupAPPFrame();
-	return res;
+	return dtsgui->SetupAPPFrame();
 }

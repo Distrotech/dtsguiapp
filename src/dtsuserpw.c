@@ -26,7 +26,7 @@
 #include "dtsgui.h"
 
 
-int pwevent(dtsgui_pane p, int type, int event, void *data) {
+int pwevent(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
 	struct basic_auth *auth;
 
 	if (event == wx_PANEL_BUTTON_YES) {
@@ -59,7 +59,7 @@ struct basic_auth *dtsgui_pwdialog(const char *user, const char *passwd, void *d
 		return NULL;
 	}
 
-	pwbox = dtsgui_panel(dtsgui, "Athentification", wx_PANEL_BUTTON_ACTION, wx_DTSPANEL_DIALOG, bauth);
+	pwbox = dtsgui_panel(dtsgui, "Athentification", NULL, wx_PANEL_BUTTON_ACTION, wx_DTSPANEL_DIALOG, bauth);
 	dtsgui_textbox(pwbox, "Username", "uname", bauth->user, NULL);
 	dtsgui_passwdbox(pwbox, "Password", "pwd", bauth->passwd, NULL);
 	dtsgui_rundialog(pwbox, pwevent, NULL);

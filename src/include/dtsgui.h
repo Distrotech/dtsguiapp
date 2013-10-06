@@ -53,7 +53,7 @@ enum tree_cbtype {
 /*callbacks*/
 typedef int (*dtsgui_configcb)(struct dtsgui*, void*);
 typedef dtsgui_pane (*dtsgui_menucb)(struct dtsgui*, void*);
-typedef int (*event_callback)(dtsgui_pane, int, int, void *);
+typedef int (*event_callback)(struct dtsgui*, dtsgui_pane, int, int, void *);
 typedef dtsgui_pane (*dtsgui_dynpanel)(struct dtsgui*, const char*, void*);
 typedef dtsgui_pane (*dtsgui_tree_cb)(struct dtsgui *, dtsgui_treeview, dtsgui_treenode, enum tree_cbtype cb_type, const char*, void*);
 typedef void (*dtsgui_xmltreenode_cb)(dtsgui_treeview, dtsgui_treenode, struct xml_node*, void*);
@@ -161,7 +161,7 @@ void dtsgui_close(dtsgui_menu dtsmenu, struct dtsgui *dtsgui);
 void dtsgui_exit(dtsgui_menu dtsmenu, struct dtsgui *dtsgui);
 
 /*panel config*/
-dtsgui_pane dtsgui_panel(struct dtsgui *dtsgui, const char *name, int butmask, enum panel_type type, void *userdata);
+dtsgui_pane dtsgui_panel(struct dtsgui *dtsgui, const char *name, const char *title, int butmask, enum panel_type type, void *userdata);
 dtsgui_pane dtsgui_textpane(struct dtsgui *dtsgui, const char *title, const char *buf);
 void dtsgui_settitle(dtsgui_pane pane, const char *title); /*unused*/
 void dtsgui_delpane(dtsgui_pane pane);
@@ -265,7 +265,9 @@ const char *dtsgui_fileopen(struct dtsgui *dtsgui, const char *title, const char
 
 /*utils*/
 struct curlbuf *dtsgui_posturl(const char *url, curl_post *post);
-extern struct xml_doc *dtsgui_buf2xml(struct curlbuf *cbuf);
+struct xml_doc *dtsgui_buf2xml(struct curlbuf *cbuf);
+struct curl_post *dtsgui_pane2post(dtsgui_pane p);
+void *dtsgui_char2obj(const char *orig);
 
 #ifdef __WIN32
 void getwin32folder(int csidl, char *path);

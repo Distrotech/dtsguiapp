@@ -86,7 +86,7 @@ void wizz_custinfo(dtsgui_pane *pg);
 dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data);
 
 /*testing.c*/
-void test_menu(struct dtsgui *dtsgui);
+void test_menu(struct dtsgui *dtsgui, dtsgui_menu menu, const char *url);
 
 /*netconfig.c*/
 dtsgui_pane advanced_config(struct dtsgui *dtsgui, const char *title, void *data);

@@ -35,12 +35,15 @@
 #include <wx/notebook.h>
 
 #include <dtsapp.h>
+#include <wx/app.h>
 
+#include "dtsgui.h"
 #include "dtsgui.hpp"
 
 #include "evdata.h"
 #include "DTSFrame.h"
 #include "DTSPanel.h"
+#include "DTSApp.h"
 
 wxDEFINE_EVENT(DTS_APP_EVENT, wxCommandEvent);
 
