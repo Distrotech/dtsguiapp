@@ -76,15 +76,18 @@ struct new_iface_data *get_newiface_data(dtsgui_tabview tv, struct xml_doc *xmld
 	return nd;
 }
 
-
 extern int handle_newxmltabpane(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
 	struct tab_newpane *tn = (struct tab_newpane*)data;
 	struct iface_cdata *ndat;
 	struct xml_node *xn;
 	const char *name;
 
+	if (type != wx_PANEL_EVENT_BUTTON) {
+		return 0;
+	}
+
 	switch(event) {
-		case wx_PANEL_BUTTON_YES:
+		case wx_PANEL_EVENT_BUTTON_YES:
 			break;
 		default:
 			return 1;
@@ -128,10 +131,14 @@ extern int handle_updatetabpane(struct dtsgui *dtsgui, dtsgui_pane p, int type, 
 	struct iface_cdata *cdata = data;
 	const char *name;
 
+	if (type != wx_PANEL_EVENT_BUTTON) {
+		return 0;
+	}
+
 	switch(event) {
-		case wx_PANEL_BUTTON_YES:
+		case wx_PANEL_EVENT_BUTTON_YES:
 			break;
-		case wx_PANEL_BUTTON_NO:
+		case wx_PANEL_EVENT_BUTTON_NO:
 			return 1;
 		default:
 			return 1;

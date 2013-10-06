@@ -826,9 +826,9 @@ void dtsgui_setwindow(struct dtsgui *dtsgui, dtsgui_pane p) {
 	f->SetWindow(NULL);
 }
 
-void dtsgui_reconfig(struct dtsgui *dtsgui) {
+void dtsgui_sendevent(struct dtsgui *dtsgui, int eid) {
 	DTSFrame *f =  dtsgui->GetFrame();
-	f->SendDTSEvent(1, NULL);
+	f->SendDTSEvent(eid, NULL);
 }
 
 void dtsgui_settitle(dtsgui_pane pane, const char *title) {
@@ -973,8 +973,12 @@ static int dtsgui_handle_newtreenode(struct dtsgui *dtsgui, dtsgui_pane p, int t
 	const char *name;
 	dtsgui_treenode tn;
 
+	if (type != wx_PANEL_EVENT_BUTTON) {
+		return 0;
+	}
+
 	switch(event) {
-		case wx_PANEL_BUTTON_YES:
+		case wx_PANEL_EVENT_BUTTON_YES:
 			break;
 		default:
 			return 1;
@@ -1088,7 +1092,7 @@ extern int dtsgui_handle_newxmltabpane(dtsgui_pane p, int type, int event, void 
 	const char *name;
 
 	switch(event) {
-		case wx_PANEL_BUTTON_YES:
+		case wx_PANEL_EVENT_BUTTON_YES:
 			break;
 		default:
 			return 1;

@@ -95,12 +95,19 @@ struct tab_newpane {
 
 /*buttons YES / No may be YES/NO APPLY/REFRESH OK/CANCEL*/
 enum panel_buttons {
-	wx_PANEL_BUTTON_FIRST	= 1 << 0,
-	wx_PANEL_BUTTON_BACK	= 1 << 1,
-	wx_PANEL_BUTTON_FWD		= 1 << 2,
-	wx_PANEL_BUTTON_LAST	= 1 << 3,
-	wx_PANEL_BUTTON_YES		= 1 << 4,
-	wx_PANEL_BUTTON_NO		= 1 << 5
+	wx_PANEL_EVENT_BUTTON_FIRST		= 1 << 0,
+	wx_PANEL_EVENT_BUTTON_BACK		= 1 << 1,
+	wx_PANEL_EVENT_BUTTON_FWD		= 1 << 2,
+	wx_PANEL_EVENT_BUTTON_LAST		= 1 << 3,
+	wx_PANEL_EVENT_BUTTON_YES		= 1 << 4,
+	wx_PANEL_EVENT_BUTTON_NO		= 1 << 5
+};
+
+enum panel_events {
+	wx_PANEL_EVENT_BUTTON			= 1 << 0,
+	wx_PANEL_EVENT_COMBO_ENTER		= 1 << 1,
+	wx_PANEL_EVENT_COMBO_UPDATE		= 1 << 2,
+	wx_PANEL_EVENT_DTS				= 1 << 3
 };
 
 enum tree_newnode_flags {
@@ -127,11 +134,11 @@ enum widget_type {
 	DTS_WIDGET_COMBOBOX
 };
 
-#define wx_PANEL_BUTTON_NAV		wx_PANEL_BUTTON_FIRST | wx_PANEL_BUTTON_BACK | wx_PANEL_BUTTON_FWD | wx_PANEL_BUTTON_LAST
-#define wx_PANEL_BUTTON_DIR		wx_PANEL_BUTTON_BACK | wx_PANEL_BUTTON_FWD
-#define wx_PANEL_BUTTON_ACTION	wx_PANEL_BUTTON_YES | wx_PANEL_BUTTON_NO
+#define wx_PANEL_BUTTON_NAV		wx_PANEL_EVENT_BUTTON_FIRST | wx_PANEL_EVENT_BUTTON_BACK | wx_PANEL_EVENT_BUTTON_FWD | wx_PANEL_EVENT_BUTTON_LAST
+#define wx_PANEL_BUTTON_DIR		wx_PANEL_EVENT_BUTTON_BACK | wx_PANEL_EVENT_BUTTON_FWD
+#define wx_PANEL_BUTTON_ACTION	wx_PANEL_EVENT_BUTTON_YES | wx_PANEL_EVENT_BUTTON_NO
 #define wx_PANEL_BUTTON_ALL		wx_PANEL_BUTTON_ACTION | wx_PANEL_BUTTON_NAV
-#define wx_PANEL_BUTTON_NONE	0
+#define wx_PANEL_EVENT_BUTTON_NONE	0
 
 /*app frame config and control*/
 void dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point wsize,
@@ -139,7 +146,7 @@ void dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point
 int dtsgui_run(int argc, char **argv);
 void *dtsgui_userdata(struct dtsgui *dtsgui);
 void dtsgui_titleappend(struct dtsgui *dtsgui, const char *text);
-void dtsgui_reconfig(struct dtsgui *dtsgui);
+void dtsgui_sendevent(struct dtsgui *dtsgui, int eid);
 void dtsgui_setwindow(struct dtsgui *dtsgui, dtsgui_pane p);
 void dtsgui_setuptoolbar(struct dtsgui *dtsgui, dtsgui_toolbar_create cb, void *data);
 void dtsgui_set_toolbar(struct dtsgui *dtsgui, int show);
