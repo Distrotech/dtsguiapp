@@ -98,7 +98,8 @@ PROGRAMS = $(bin_PROGRAMS)
 am_wxforms_OBJECTS = wxforms-wxforms.$(OBJEXT) \
 	wxforms-wizard.$(OBJEXT) wxforms-pbxconfig.$(OBJEXT) \
 	wxforms-testing.$(OBJEXT) wxforms-netconfig.$(OBJEXT) \
-	wxforms-interface.$(OBJEXT) wxforms-toolbar.$(OBJEXT)
+	wxforms-interface.$(OBJEXT) wxforms-toolbar.$(OBJEXT) \
+	wxforms-config.$(OBJEXT)
 wxforms_OBJECTS = $(am_wxforms_OBJECTS)
 am__DEPENDENCIES_1 =
 wxforms_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
@@ -334,7 +335,7 @@ ACLOCAL_AMFLAGS = -I m4
 AM_CFLAGS = -I$(srcdir)/../src/include $(DEVELOPER_CFLAGS) -I. -DDATA_DIR=\"$(datarootdir)/@PACKAGE@\"
 AM_CXXFLAGS = -I$(srcdir)/../src/include $(DEVELOPER_CXXFLAGS) -I. -DDATA_DIR=\"$(datarootdir)/@PACKAGE@\"
 EXTRA_DIST = include
-wxforms_SOURCES = wxforms.c wizard.c pbxconfig.c testing.c netconfig.c interface.c toolbar.cpp
+wxforms_SOURCES = wxforms.c wizard.c pbxconfig.c testing.c netconfig.c interface.c toolbar.cpp config.c
 wxforms_CFLAGS = $(AM_CFLAGS) $(WX_CFLAGS) $(DTSAPPLIB_CFLAGS)
 wxforms_CXXFLAGS = $(AM_CXXFLAGS) $(WX_CXXFLAGS) $(DTSAPPLIB_CFLAGS)
 wxforms_LDADD = $(WX_LIBS) $(DTSAPPLIB_LIBS) ../src/libdtsapp_gui.la
@@ -432,6 +433,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wxforms-config.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wxforms-interface.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wxforms-netconfig.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/wxforms-pbxconfig.Po@am__quote@
@@ -544,6 +546,20 @@ wxforms-interface.obj: interface.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='interface.c' object='wxforms-interface.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(wxforms_CFLAGS) $(CFLAGS) -c -o wxforms-interface.obj `if test -f 'interface.c'; then $(CYGPATH_W) 'interface.c'; else $(CYGPATH_W) '$(srcdir)/interface.c'; fi`
+
+wxforms-config.o: config.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(wxforms_CFLAGS) $(CFLAGS) -MT wxforms-config.o -MD -MP -MF $(DEPDIR)/wxforms-config.Tpo -c -o wxforms-config.o `test -f 'config.c' || echo '$(srcdir)/'`config.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/wxforms-config.Tpo $(DEPDIR)/wxforms-config.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='config.c' object='wxforms-config.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(wxforms_CFLAGS) $(CFLAGS) -c -o wxforms-config.o `test -f 'config.c' || echo '$(srcdir)/'`config.c
+
+wxforms-config.obj: config.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(wxforms_CFLAGS) $(CFLAGS) -MT wxforms-config.obj -MD -MP -MF $(DEPDIR)/wxforms-config.Tpo -c -o wxforms-config.obj `if test -f 'config.c'; then $(CYGPATH_W) 'config.c'; else $(CYGPATH_W) '$(srcdir)/config.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/wxforms-config.Tpo $(DEPDIR)/wxforms-config.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='config.c' object='wxforms-config.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(wxforms_CFLAGS) $(CFLAGS) -c -o wxforms-config.obj `if test -f 'config.c'; then $(CYGPATH_W) 'config.c'; else $(CYGPATH_W) '$(srcdir)/config.c'; fi`
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<

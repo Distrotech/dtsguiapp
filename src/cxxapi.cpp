@@ -974,7 +974,7 @@ static int dtsgui_handle_newtreenode(struct dtsgui *dtsgui, dtsgui_pane p, int t
 	dtsgui_treenode tn;
 
 	if (type != wx_PANEL_EVENT_BUTTON) {
-		return 0;
+		return 1;
 	}
 
 	switch(event) {

@@ -231,11 +231,15 @@ void DTSPanelEvent::OnCombo(wxCommandEvent &event) {
 		eid=event.GetId();
 
 		if (dtype && evcb) {
-			RunCallBack(dtype, eid, fi);
+			if (RunCallBack(dtype, eid, fi)) {
+				event.Skip(true);
+			}
 		}
+
 		if (etype == wxEVT_COMMAND_TEXT_ENTER) {
 			cb->Popup();
 		}
+
 		objunref(fi);
 	} else {
 		event.Skip(true);
@@ -245,8 +249,8 @@ void DTSPanelEvent::OnCombo(wxCommandEvent &event) {
 void DTSPanelEvent::OnDTSEvent(wxCommandEvent &event) {
 	int  eid;
 
-	eid=event.GetId();
 	if (evcb) {
+		eid=event.GetId();
 		RunCallBack(wx_PANEL_EVENT_DTS, eid, data);
 	}
 	event.Skip(true);
