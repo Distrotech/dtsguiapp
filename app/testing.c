@@ -60,23 +60,27 @@ void post_items(struct dtsgui *dtsgui, dtsgui_pane p) {
 }
 
 int handle_test(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
+	if (type != wx_PANEL_EVENT_BUTTON) {
+		return 0;
+	}
+
 	switch(event) {
-		case wx_PANEL_BUTTON_YES:
+		case wx_PANEL_EVENT_BUTTON_YES:
 			post_items(dtsgui, p);
 			break;
-		case wx_PANEL_BUTTON_NO:
+		case wx_PANEL_EVENT_BUTTON_NO:
 			dtsgui_alert(dtsgui, "Undo");
 			break;
-		case wx_PANEL_BUTTON_FIRST:
+		case wx_PANEL_EVENT_BUTTON_FIRST:
 			dtsgui_alert(dtsgui, "First");
 			break;
-		case wx_PANEL_BUTTON_LAST:
+		case wx_PANEL_EVENT_BUTTON_LAST:
 			dtsgui_alert(dtsgui, "Last");
 			break;
-		case wx_PANEL_BUTTON_BACK:
+		case wx_PANEL_EVENT_BUTTON_BACK:
 			dtsgui_alert(dtsgui, "Back");
 			break;
-		case wx_PANEL_BUTTON_FWD:
+		case wx_PANEL_EVENT_BUTTON_FWD:
 			dtsgui_alert(dtsgui, "Forward");
 			break;
 	}

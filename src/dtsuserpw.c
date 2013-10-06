@@ -29,7 +29,7 @@
 int pwevent(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
 	struct basic_auth *auth;
 
-	if (event == wx_PANEL_BUTTON_YES) {
+	if (event == wx_PANEL_EVENT_BUTTON_YES) {
 		if (!(auth = dtsgui_paneldata(p))) {
 			return 0;
 		}

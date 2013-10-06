@@ -286,10 +286,10 @@ void DTSTreeWindowEvent::OnButton(wxCommandEvent &event) {
 	DTSPanel *pane = parent->GetClientPane();
 
 	switch(eid) {
-		case wx_PANEL_BUTTON_YES:
+		case wx_PANEL_EVENT_BUTTON_YES:
 			pane->Update_XML();
 			break;
-		case wx_PANEL_BUTTON_NO:
+		case wx_PANEL_EVENT_BUTTON_NO:
 			item = wxDataViewItem(tn);
 			parent->Select(item);
 			return;
@@ -575,10 +575,10 @@ void DTSTabWindowEvent::OnButton(wxCommandEvent &event) {
 	int pg = tw->GetSelection();
 
 	switch(eid) {
-		case wx_PANEL_BUTTON_YES:
+		case wx_PANEL_EVENT_BUTTON_YES:
 			pane->Update_XML();
 		/*no break here will reload tab*/
-		case wx_PANEL_BUTTON_NO:
+		case wx_PANEL_EVENT_BUTTON_NO:
 			pg++;
 			tw->Undo(pg);
 			return;

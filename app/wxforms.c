@@ -96,7 +96,7 @@ dtsgui_pane open_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	objunlock(appdata);
 	objunref((void*)filename);
 
-	dtsgui_reconfig(dtsgui);
+	dtsgui_sendevent(dtsgui, 1);
 
 	objlock(appdata);
 	dtsgui_menuitemenable(appdata->e_wiz, 0);
@@ -118,7 +118,7 @@ dtsgui_pane save_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	if (!(appdata = dtsgui_userdata(dtsgui))) {
 		return NULL;
 	}
-	/*	dtsgui_reconfig(dtsgui);*/
+	/*	dtsgui_sendevent(dtsgui);*/
 	dtsgui_titleappend(dtsgui, NULL);
 
 	objlock(appdata);

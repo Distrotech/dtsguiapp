@@ -151,7 +151,7 @@ int DTSPanelEvent::RunCallBack(int etype, int eid, void *cb_data) {
 }
 
 void DTSPanelEvent::OnButton(wxCommandEvent &event) {
-	int eid, i, etype;
+	int eid, i;
 
 	if (!parent) {
 		event.Skip(true);
@@ -175,8 +175,7 @@ void DTSPanelEvent::OnButton(wxCommandEvent &event) {
 	parent->EventHandler(eid, &event);
 
 	if (evcb) {
-		etype = event.GetEventType();
-		if (RunCallBack(etype, eid, data)) {
+		if (RunCallBack(wx_PANEL_EVENT_BUTTON, eid, data)) {
 			event.Skip(true);
 		}
 	} else {
@@ -196,7 +195,7 @@ void DTSPanelEvent::OnCombo(wxCommandEvent &event) {
 	struct bucket_list *bl;
 	struct bucket_loop *bloop;
 	struct form_item *fi;
-	int eid, etype;
+	int eid, etype, dtype;
 
 	if (!parent) {
 		event.Skip(true);
@@ -206,6 +205,14 @@ void DTSPanelEvent::OnCombo(wxCommandEvent &event) {
 	bl = parent->GetItems();
 	cb = (wxComboBox *)event.GetEventObject();
 	etype = event.GetEventType();
+
+	if (etype == wxEVT_COMMAND_TEXT_ENTER) {
+		dtype = wx_PANEL_EVENT_COMBO_ENTER;
+	} else if (etype == wxEVT_COMMAND_TEXT_UPDATED) {
+		dtype = wx_PANEL_EVENT_COMBO_UPDATE;
+	} else {
+		dtype = 0;
+	}
 
 	bloop = init_bucket_loop(bl);
 
@@ -223,12 +230,11 @@ void DTSPanelEvent::OnCombo(wxCommandEvent &event) {
 	if (fi) {
 		eid=event.GetId();
 
-		if (evcb) {
-			RunCallBack(etype, eid, fi);
-
-			if (etype == wxEVT_COMMAND_TEXT_ENTER) {
-				cb->Popup();
-			}
+		if (dtype && evcb) {
+			RunCallBack(dtype, eid, fi);
+		}
+		if (etype == wxEVT_COMMAND_TEXT_ENTER) {
+			cb->Popup();
 		}
 		objunref(fi);
 	} else {
@@ -237,12 +243,11 @@ void DTSPanelEvent::OnCombo(wxCommandEvent &event) {
 }
 
 void DTSPanelEvent::OnDTSEvent(wxCommandEvent &event) {
-	int  eid, etype;
+	int  eid;
 
 	eid=event.GetId();
 	if (evcb) {
-		etype = event.GetEventType();
-		RunCallBack(etype, eid, data);
+		RunCallBack(wx_PANEL_EVENT_DTS, eid, data);
 	}
 	event.Skip(true);
 }
