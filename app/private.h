@@ -96,6 +96,12 @@ void network_iface_new_pane(dtsgui_pane p, void *data);
 /*iface*/
 dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data);
 
+/*config.c*/
+dtsgui_pane open_config(struct dtsgui *dtsgui, const char *title, void *data);
+dtsgui_pane save_config(struct dtsgui *dtsgui, const char *title, void *data);
+dtsgui_pane export_config(struct dtsgui *dtsgui, const char *title, void *data);
+dtsgui_pane view_config_conf(struct dtsgui *dtsgui, const char *title, void *data);
+dtsgui_pane view_config_xml(struct dtsgui *dtsgui, const char *title, void *data);
 #ifdef __cplusplus
 }
 #endif

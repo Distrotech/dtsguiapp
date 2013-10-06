@@ -83,7 +83,7 @@ extern int handle_newxmltabpane(struct dtsgui *dtsgui, dtsgui_pane p, int type, 
 	const char *name;
 
 	if (type != wx_PANEL_EVENT_BUTTON) {
-		return 0;
+		return 1;
 	}
 
 	switch(event) {
@@ -132,7 +132,7 @@ extern int handle_updatetabpane(struct dtsgui *dtsgui, dtsgui_pane p, int type, 
 	const char *name;
 
 	if (type != wx_PANEL_EVENT_BUTTON) {
-		return 0;
+		return 1;
 	}
 
 	switch(event) {

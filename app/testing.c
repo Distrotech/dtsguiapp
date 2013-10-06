@@ -17,11 +17,6 @@
 */
 
 #include <stdint.h>
-#include <stdlib.h>
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
-#include <limits.h>
 #include <unistd.h>
 
 #ifdef __WIN32
@@ -61,7 +56,7 @@ void post_items(struct dtsgui *dtsgui, dtsgui_pane p) {
 
 int handle_test(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
 	if (type != wx_PANEL_EVENT_BUTTON) {
-		return 0;
+		return 1;
 	}
 
 	switch(event) {

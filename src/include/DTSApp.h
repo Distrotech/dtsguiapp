@@ -19,7 +19,6 @@
 #ifndef DTSAPP_H
 #define DTSAPP_H
 
-
 struct dtsgui {
 	public:
 		int SetupAPPFrame(void);
