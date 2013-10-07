@@ -19,6 +19,8 @@
 #ifndef DTSLISTVIEW_HPP_INCLUDED
 #define DTSLISTVIEW_HPP_INCLUDED
 
+typedef class wxDataViewItemArray wxDataViewItemArray;
+
 class DTSDVMListStore {
 	public:
 		DTSDVMListStore(DTSDVMListStore* parent, bool is_container, const wxString &title, int nodeid = -1, dtsgui_treeviewpanel_cb p_cb = NULL, void *userdata = NULL);

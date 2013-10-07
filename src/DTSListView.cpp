@@ -19,10 +19,9 @@
 #include <vector>
 #include <algorithm>
 #include <stdlib.h>
+#include <stdint.h>
 
 #include <wx/dataview.h>
-#include <wx/validate.h>
-#include <stdint.h>
 
 #include <dtsapp.h>
 
@@ -216,16 +215,12 @@ void DTSDVMListStore::SetXMLData(struct xml_node *xnode, const char *tattr) {
 
 struct xml_node *DTSDVMListStore::GetXMLData(char **buff) {
 	struct xml_node *xn = NULL;
-	int len;
-
 
 	if (xml && objref(xml)) {
 		xn = xml;
 	}
 	if (buff && tattr) {
-		len = strlen(tattr)+1;
-		*buff = (char*)objalloc(len, NULL);
-		memcpy(*buff, tattr, len);
+		*buff = (char*)dtsgui_char2obj(tattr);
 	}
 	return xn;
 }

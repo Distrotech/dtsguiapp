@@ -102,6 +102,8 @@ dtsgui_pane save_config(struct dtsgui *dtsgui, const char *title, void *data);
 dtsgui_pane export_config(struct dtsgui *dtsgui, const char *title, void *data);
 dtsgui_pane view_config_conf(struct dtsgui *dtsgui, const char *title, void *data);
 dtsgui_pane view_config_xml(struct dtsgui *dtsgui, const char *title, void *data);
+void config_menu(struct dtsgui *dtsgui);
+
 #ifdef __cplusplus
 }
 #endif

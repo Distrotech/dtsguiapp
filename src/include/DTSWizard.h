@@ -16,26 +16,22 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef EVDATA_H
-#define EVDATA_H
+#ifndef DTSWIZARD_H_INCLUDED
+#define DTSWIZARD_H_INCLUDED
 
-typedef class wxWindow wxWindow;
+typedef class wxWizard wxWizard;
+typedef class DTSWizardWindow DTSWizardWindow;
 
-struct dynamic_panel {
-	dtsgui_dynpanel cb;
-	const char *title;
-	void *data;
-	int blank;
-	wxWindow *w;
-};
-
-class evdata :public wxObject {
+class dtsgui_wizard {
 	public:
-		evdata(void*, int uref = 0);
-		~evdata();
-		void *data;
+		DTS_OJBREF_CLASS(dtsgui_wizard);
+		dtsgui_wizard(class dtsgui *dtsgui, wxWindow *f, const wxString &title);
+		DTSWizardWindow *AddPage(const char *title, struct xml_doc *xmldoc, void *userdata);
+		int RunWizard();
 	private:
-		int unref;
+		wxWizard *wiz;
+		wxWizardPageSimple *start;
+		struct dtsgui *dtsgui;
 };
 
-#endif // EVDATA_H
+#endif // DTSWIZARD_H_INCLUDED

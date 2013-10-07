@@ -51,7 +51,7 @@ int pwevent(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *dat
 }
 
 struct basic_auth *dtsgui_pwdialog(const char *user, const char *passwd, void *data) {
-	struct dtsgui *dtsgui = (struct dtsgui *)data;
+	struct dtsgui *dtsgui = (struct dtsgui*)data;
 	struct basic_auth *bauth;
 	dtsgui_pane pwbox;
 

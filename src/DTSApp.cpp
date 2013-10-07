@@ -26,10 +26,6 @@
 #endif
 
 #include <wx/app.h>
-#include <wx/wizard.h>
-#include <wx/frame.h>
-#include <wx/progdlg.h>
-#include <wx/gauge.h>
 
 #include <dtsapp.h>
 
@@ -39,9 +35,10 @@
 #include "DTSApp.h"
 #include "DTSFrame.h"
 
-void dtsgui::Setup(const char *title, const char *stat, struct point w_size, struct point w_pos, dtsgui_configcb confcallback_cb , void *data) {
+dtsgui::dtsgui(const char *title, const char *stat, struct point w_size, struct point w_pos, dtsgui_configcb confcallback_cb , void *data) {
 	wsize = w_size;
 	wpos = w_pos;
+
 	cb = confcallback_cb;
 	if (data && objref(data)) {
 		userdata = data;
@@ -50,6 +47,21 @@ void dtsgui::Setup(const char *title, const char *stat, struct point w_size, str
 	}
 	ALLOC_CONST(this->status, stat);
 	ALLOC_CONST(this->title, title);
+}
+
+dtsgui::~dtsgui() {
+	if (userdata) {
+		objunref(userdata);
+		userdata = NULL;
+	}
+	if (status) {
+		free((void*)status);
+		status = NULL;
+	}
+	if (title) {
+		free((void*)title);
+		title = NULL;
+	}
 }
 
 int dtsgui::SetupAPPFrame() {
@@ -83,23 +95,6 @@ void *dtsgui::GetUserData() {
 	objunlock(this);
 
 	return ud;
-}
-
-void dtsgui::UnRef(void *data) {
-	struct dtsgui *dtsgui = (struct dtsgui *)data;
-
-	if (dtsgui->userdata) {
-		objunref(dtsgui->userdata);
-		dtsgui->userdata = NULL;
-	}
-	if (dtsgui->status) {
-		free((void*)dtsgui->status);
-		dtsgui->status = NULL;
-	}
-	if (dtsgui->title) {
-		free((void*)dtsgui->title);
-		dtsgui->title = NULL;
-	}
 }
 
 void dtsgui::SetStatusText(void) {
@@ -138,6 +133,15 @@ class DTSFrame *dtsgui::GetFrame(void) {
 	return appframe;
 }
 
+DTSApp::DTSApp(dtsgui_configcb confcallback_cb,void *data, struct point wsize, struct point wpos, const char *title, const char *status) {
+	dtsgui = new class dtsgui(title, status, wsize, wpos, confcallback_cb, data);
+
+	/*start up curl and add progress bits*/
+	curl = curlinit();
+	curl_setprogress(curl_progress_function, curl_progress_ctrl, curl_startprogress, dtsgui);
+	curl_setauth_cb(dtsgui_pwdialog, dtsgui);
+}
+
 DTSApp::~DTSApp() {
 	if (curl) {
 		curlclose();
@@ -148,22 +152,10 @@ DTSApp::~DTSApp() {
 	}
 }
 
-void DTSApp::CreateFrame(dtsgui_configcb confcallback_cb,void *data, struct point wsize, struct point wpos, const char *title, const char *status) {
-	if (!(dtsgui = (struct dtsgui *)objalloc(sizeof(struct dtsgui), &dtsgui::UnRef))) {
-		return;
-	}
-	dtsgui->Setup(title, status, wsize, wpos, confcallback_cb, data);
-}
-
 bool DTSApp::OnInit() {
 	if (!dtsgui) {
 		return false;
 	}
-
-	/*start up curl and add progress bits*/
-	curl = curlinit();
-	curl_setprogress(curl_progress_function, curl_progress_ctrl, curl_startprogress, dtsgui);
-	curl_setauth_cb(dtsgui_pwdialog, dtsgui);
 
 	return dtsgui->SetupAPPFrame();
 }

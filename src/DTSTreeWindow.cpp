@@ -17,27 +17,25 @@
 */
 
 #include <vector>
+#include <stdint.h>
 
-#include <wx/splitter.h>
-#include <wx/panel.h>
 #include <wx/gbsizer.h>
 #include <wx/textctrl.h>
-#include <wx/dialog.h>
+#include <wx/panel.h>
 #include <wx/scrolwin.h>
-#include <wx/dataview.h>
 #include <wx/wizard.h>
-#include <wx/notebook.h>
-#include <wx/frame.h>
-#include <wx/menu.h>
-#include <wx/stattext.h>
-#include <wx/progdlg.h>
-#include <wx/bookctrl.h>
 
-#include <stdint.h>
+#include <wx/dataview.h>
+#include <wx/splitter.h>
+#include <wx/notebook.h>
+
+#include <wx/menu.h>
+
 #include <dtsapp.h>
 #include "dtsgui.h"
 #include "dtsgui.hpp"
 
+#include "pitems.h"
 #include "DTSFrame.h"
 #include "DTSPanel.h"
 #include "DTSListView.h"
@@ -50,7 +48,7 @@ enum treewinmenu {
 	DTS_TREEWIN_MENU_DELETE
 };
 
-DTSTreeWindowEvent::DTSTreeWindowEvent(void *userdata, dtsgui_tree_cb tree_cb, struct dtsgui *dtsgui, DTSTreeWindow *win) {
+DTSTreeWindowEvent::DTSTreeWindowEvent(void *userdata, dtsgui_tree_cb tree_cb, class dtsgui *dtsgui, DTSTreeWindow *win) {
 	if (userdata && objref(userdata)) {
 		data = userdata;
 	} else {
@@ -312,7 +310,7 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 	 DTSObject(stat_msg) {
 
 	int w, h, p, psize;
-	struct dtsgui *udata;
+	class dtsgui *udata;
 	a_window = NULL;
 	DTSTreeWindowEvent *dtsevt;
 	wxSplitterWindow *sw = static_cast<wxSplitterWindow*>(this);

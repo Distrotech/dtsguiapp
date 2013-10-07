@@ -20,6 +20,16 @@
 #define DTSGUI_H_INCLUDED
 
 #ifdef __cplusplus
+#define DTS_OJBREF_CLASS(classtype)	void *operator new(size_t sz) {\
+			return objalloc(sz, &classtype::unref);\
+		}\
+		void operator delete(void *obj) {\
+		}\
+		static void unref(void *data) {\
+			delete (classtype*)data;\
+		}\
+		~classtype()
+
 extern "C" {
 #else
 /*application struct*/

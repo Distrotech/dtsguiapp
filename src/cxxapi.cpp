@@ -27,45 +27,39 @@
 #include <vector>
 
 #include <wx/app.h>
-#include <wx/frame.h>
-#include <wx/sizer.h>
-#include <wx/menu.h>
-#include <wx/scrolwin.h>
 #include <wx/gbsizer.h>
-#include <wx/panel.h>
 #include <wx/textctrl.h>
-#include <wx/checkbox.h>
-#include <wx/combobox.h>
-#include <wx/dialog.h>
-#include <wx/stattext.h>
-#include <wx/button.h>
-#include <wx/splitter.h>
-#include <wx/dataview.h>
+#include <wx/panel.h>
+#include <wx/scrolwin.h>
 #include <wx/wizard.h>
-#include <wx/filedlg.h>
+
+#include <wx/dataview.h>
+#include <wx/splitter.h>
 #include <wx/notebook.h>
-#include <wx/progdlg.h>
+
+#include <wx/menu.h>
+#include <wx/filedlg.h>
 #include <wx/toolbar.h>
 
 #include <dtsapp.h>
 #include "dtsgui.h"
 #include "dtsgui.hpp"
 
+#include "pitems.h"
 #include "evdata.h"
 #include "DTSApp.h"
 #include "DTSFrame.h"
 #include "DTSPanel.h"
 #include "DTSListView.h"
 #include "DTSTreeWindow.h"
+#include "DTSWizard.h"
 
 static int menuid = wxID_AUTO_LOWEST;
 
 
 void dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point wsize, struct point wpos, const char *title, const char *status) {
 	/*deleted on close*/
-	DTSApp *guiapp = new DTSApp();
-
-	guiapp->CreateFrame(confcallback_cb, userdata, wsize, wpos, title, status);
+	new DTSApp(confcallback_cb, userdata, wsize, wpos, title, status);
 }
 
 int dtsgui_run(int argc, char **argv) {
@@ -389,35 +383,13 @@ extern struct form_item *dtsgui_combobox(dtsgui_pane pane, const char *title, co
 	return p->ComboBox(title, name, NULL, data, DTSGUI_FORM_DATA_PTR);
 }
 
-const char *getxmlvalue(struct xml_element *xml) {
-	struct xml_node *xn;
-	const char *ret = NULL;
-	const char *tmp;
-
-	if (!xml || !xml->xsearch) {
-		return NULL;
-	}
-
-	xn = xml_getfirstnode(xml->xsearch, NULL);
-	if (!xml->attr) {
-		if (xn->value) {
-			ret = strdup(xn->value);
-		}
-	} else if ((tmp = xml_getattr(xn, xml->attr))) {
-			ret = strdup(tmp);
-	}
-
-	objunref(xn);
-	return ret;
-}
-
 extern void dtsgui_xmltextbox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr) {
 	DTSPanel *p = (DTSPanel *)pane;
 	struct xml_element *xml;
 	const char *value = NULL;
 
 	if ((xml = p->GetNode(xpath, node, fattr, fval,attr))) {
-		value = getxmlvalue(xml);
+		value = xml->GetValue();
 	}
 
 	p->TextBox(title, name, value, wxTE_LEFT | wxTE_PROCESS_ENTER, 1, xml,  DTSGUI_FORM_DATA_XML);
@@ -433,7 +405,7 @@ extern void dtsgui_xmltextbox_multi(dtsgui_pane pane, const char *title, const c
 	const char *value = NULL;
 
  	if ((xml = p->GetNode(xpath, node, fattr, fval, attr))) {
-		value = getxmlvalue(xml);
+		value = xml->GetValue();
 	}
 
 	p->TextBox(title, name, value, wxTE_MULTILINE, 5, xml, DTSGUI_FORM_DATA_XML);
@@ -449,7 +421,7 @@ extern void dtsgui_xmlpasswdbox(dtsgui_pane pane, const char *title, const char 
 	const char *value = NULL;
 
 	if ((xml = p->GetNode(xpath, node, fattr, fval, attr))) {
-		value = getxmlvalue(xml);
+		value = xml->GetValue();
 	}
 
 	p->TextBox(title, name, value, wxTE_PASSWORD | wxTE_PROCESS_ENTER, 1, xml, DTSGUI_FORM_DATA_XML);
@@ -466,7 +438,7 @@ extern void dtsgui_xmlcheckbox(dtsgui_pane pane, const char *title, const char *
 	const char *value = NULL;
 
 	if ((xml = p->GetNode(xpath, node, fattr, fval, attr))) {
-		value = getxmlvalue(xml);
+		value = xml->GetValue();
 	}
 
 	if (value && checkval && !strcmp(value, checkval)) {
@@ -487,7 +459,7 @@ struct form_item *dtsgui_xmllistbox(dtsgui_pane pane, const char *title, const c
 	struct form_item *fi;
 
 	if ((xml = p->GetNode(xpath, node, fattr, fval, attr))) {
-		value = getxmlvalue(xml);
+		value = xml->GetValue();
 	}
 	fi = p->ListBox(title, name, value, xml, DTSGUI_FORM_DATA_XML);
 
@@ -505,7 +477,7 @@ struct form_item *dtsgui_xmlcombobox(dtsgui_pane pane, const char *title, const 
 	struct form_item *fi;
 
 	if ((xml = p->GetNode(xpath, node, fattr, fval, attr))) {
-		value = getxmlvalue(xml);
+		value = xml->GetValue();
 	}
 
 	fi = p->ComboBox(title, name, value, xml, DTSGUI_FORM_DATA_XML);
@@ -540,22 +512,11 @@ void dtsgui_listbox_addxml(struct form_item *lb, struct xml_doc *xmldoc, const c
 }
 
 void dtsgui_listbox_add(struct form_item *listbox, const char *text, const char *value) {
-	int idx;
-
-	wxComboBox *lbox = (wxComboBox *)listbox->widget;
-	idx = lbox->Append(text, (value) ? (void*)strdup(value) : NULL);
-
-	if ((listbox->idx == -1) && listbox->value && value && !strcmp(listbox->value, value)) {
-		listbox->idx = idx;
-		lbox->SetSelection(idx);
-	} else if (idx == 0) {
-		lbox->SetSelection(0);
-	}
+	listbox->Append(text, value);
 }
 
 void dtsgui_listbox_set(struct form_item *listbox, int idx) {
-	wxComboBox *lbox = (wxComboBox*)listbox->widget;
-	lbox->SetSelection(idx);
+	listbox->SetSelection(idx);
 }
 
 void dtsgui_setevcallback(dtsgui_pane pane,event_callback evcb, void *data) {
@@ -600,23 +561,15 @@ struct bucket_list *dtsgui_panel_items(dtsgui_pane pane) {
 }
 
 extern void *dtsgui_item_data(struct form_item *fi) {
-	void *fp = NULL;
-
 	if (!fi) {
 		return NULL;
 	}
 
-	objlock(fi);
-	if (fi->data.ptr && objref(fi->data.ptr)) {
-		fp = fi->data.ptr;
-	}
-	objunlock(fi);
-
-	return fp;
+	return fi->GetData();
 }
 
 extern const char *dtsgui_item_name(struct form_item *fi) {
-	return fi->name;
+	return fi->GetName();
 }
 
 extern struct form_item *dtsgui_finditem(dtsgui_pane p, const char *name) {
@@ -631,45 +584,11 @@ extern struct form_item *dtsgui_finditem(dtsgui_pane p, const char *name) {
 }
 
 extern 	const char *dtsgui_item_value(struct form_item *fi) {
-	void *tmp;
-	const char *value = NULL;
-	union widgets {
-		wxTextCtrl *t;
-		wxComboBox *l;
-		wxCheckBox *c;
-	} w;
-
 	if (!fi) {
 		return NULL;
 	}
 
-	switch(fi->type) {
-		case DTS_WIDGET_TEXTBOX:
-			w.t = (wxTextCtrl *)fi->widget;
-			value = strdup(w.t->GetValue().ToUTF8());
-			break;
-		case DTS_WIDGET_LISTBOX:
-		case DTS_WIDGET_COMBOBOX:
-			int pos;
-			w.l = (wxComboBox *)fi->widget;
-			pos = w.l->GetSelection();
-			if ((pos !=  wxNOT_FOUND) && w.l->HasClientData() && (tmp = w.l->GetClientData(pos))) {
-				value = strdup((char*)tmp);
-			} else {
-				value = strdup(w.l->GetValue().ToUTF8());
-			}
-			break;
-		case DTS_WIDGET_CHECKBOX:
-			w.c = (wxCheckBox *)fi->widget;
-			if (w.c->IsChecked()) {
-				value = (fi->value) ? strdup(fi->value) : NULL;
-			} else {
-				value = (fi->value2) ? strdup(fi->value2) : NULL;
-			}
-			break;
-	}
-
-	return value;
+	return fi->GetValue();
 }
 
 extern const char *dtsgui_findvalue(dtsgui_pane p, const char *name) {
@@ -677,103 +596,41 @@ extern const char *dtsgui_findvalue(dtsgui_pane p, const char *name) {
 	const char *val;
 
 	fi = dtsgui_finditem(p, name);
-	val = dtsgui_item_value(fi);
+	val = fi->GetValue();
 	objunref(fi);
 	return val;
 }
 
-void dtsgui_wizard_free(void *data) {
-	struct dtsgui_wizard *dtswiz = (struct dtsgui_wizard*)data;
-
-	if (dtswiz->wiz) {
-		delete dtswiz->wiz;
-	}
-	if (dtswiz->dtsgui) {
-		objunref(dtswiz->dtsgui);
-	}
-}
 
 extern struct dtsgui_wizard* dtsgui_newwizard(struct dtsgui *dtsgui, const char *title) {
-	struct dtsgui_wizard *dtswiz;
-	DTSFrame *f = dtsgui->GetFrame();
+	class dtsgui_wizard *dtswiz;
+	wxWindow *f = dtsgui->GetFrame();
 
-	if (!(dtswiz = (dtsgui_wizard*)objalloc(sizeof(*dtswiz),dtsgui_wizard_free))) {
-		return NULL;
-	}
-
-	if (dtsgui && objref(dtsgui)) {
-		dtswiz->dtsgui = dtsgui;
-	} else {
-		objunref(dtswiz);
-		return NULL;
-	}
-
-	dtswiz->wiz = new wxWizard();
-	dtswiz->start = NULL;
-
-	if (!dtswiz->wiz || !dtswiz->wiz->Create(f, wxID_ANY, title, wxNullBitmap, wxDefaultPosition, wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER)) {
-		objunref(dtswiz);
-		return NULL;
-	}
+	dtswiz = new dtsgui_wizard(dtsgui, f, title);
 
 	return dtswiz;
 }
 
 extern dtsgui_pane dtsgui_wizard_addpage(struct dtsgui_wizard *dtswiz, const char *title, void *userdata, struct xml_doc *xmldoc) {
-	dtsgui_pane page;
-	DTSWizardWindow *dww;
-	wxWizardPageSimple *wp, *tmp;
-	wxWizardPage *last;
-
-	page = dtsgui_panel(dtswiz->dtsgui, title, NULL, 0, wx_DTSPANEL_WIZARD, userdata);
-	dww = (DTSWizardWindow*)page;
-	wp = dynamic_cast<wxWizardPageSimple *>(dww);
-
-	wp->Create(dtswiz->wiz);
-
-	if (!dtswiz->start) {
-		dtswiz->start = wp;
-	} else {
-		for(last = dtswiz->start; last->GetNext(); last=last->GetNext());
-
-		tmp = dynamic_cast<wxWizardPageSimple*>(last);
-		tmp->SetNext(wp);
-		wp->SetPrev(tmp);
-	}
-
-	if (title) {
-		dww->SetTitle(title, true);
-	}
-
-	if (xmldoc) {
-		dww->SetXMLDoc(xmldoc);
-	}
-
-	return page;
+	return dtswiz->AddPage(title, xmldoc, userdata);
 }
 
 extern int dtsgui_runwizard(struct dtsgui_wizard *dtswiz) {
-	dtswiz->wiz->GetPageAreaSizer()->Add(dtswiz->start);
-	dtswiz->wiz->Center();
-
-	return dtswiz->wiz->RunWizard(dtswiz->start);
+	return dtswiz->RunWizard();
 }
 
 const char *dtsgui_filedialog(struct dtsgui *dtsgui, const char *title, const char *path, const char *name, const char *filter, long style) {
 	DTSFrame *f = dtsgui->GetFrame();
-	const char *filename = NULL;
-	int len;
+	void *filename = NULL;
 
 	wxFileDialog *fd = new wxFileDialog(f, title, (path) ? path : "", (name) ? name : "",
 										(filter) ? filter : wxFileSelectorDefaultWildcardStr, style);
 	if (fd->ShowModal() != wxID_CANCEL) {
-		len = strlen(fd->GetPath());
-		filename = (const char*)objalloc(len+1, NULL);
-		strcpy((char*)filename, fd->GetPath());
+		filename = dtsgui_char2obj(fd->GetPath().ToUTF8());
 	}
 
 	delete fd;
-	return filename;
+	return (const char*)filename;
 }
 
 extern const char *dtsgui_filesave(struct dtsgui *dtsgui, const char *title, const char *path, const char *name, const char *filter) {
@@ -901,7 +758,7 @@ struct xml_node *dtsgui_panetoxml(dtsgui_pane p, const char *xpath, const char *
 			objunref(fi);
 			continue;
 		}
-		if (!(val = dtsgui_item_value(fi))) {
+		if (!(val = fi->GetValue())) {
 			objunref(fi);
 			continue;
 		}
@@ -1241,7 +1098,7 @@ struct curl_post *dtsgui_pane2post(dtsgui_pane p) {
 			objunref(fi);
 			continue;
 		}
-		val = dtsgui_item_value(fi);
+		val = fi->GetValue();
 		if (val) {
 			curl_postitem(post, name, val);
 			free((void*)val);
