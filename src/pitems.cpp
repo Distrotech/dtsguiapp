@@ -129,7 +129,7 @@ form_item::~form_item() {
 }
 
 class xml_element *form_item::GetXMLData() {
-	struct xml_element *ret = NULL;
+	class xml_element *ret = NULL;
 	objlock(this);
 	if ((dtype == DTSGUI_FORM_DATA_XML) && data.xml && objref(data.xml)) {
 		ret = data.xml;

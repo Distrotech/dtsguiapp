@@ -82,14 +82,14 @@ class DTSPanel: public DTSObject {
 		void TextBox(const char *, const char *, wxString = wxEmptyString, int flags = wxTE_LEFT, int rows = 1, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
 		void PasswdBox(const char *, const char *, wxString = wxEmptyString, int flags = wxTE_LEFT, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
 		void CheckBox(const char *title, const char *name, int ischecked, const char *checkval, const char *uncheckval, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
-		struct form_item *ListBox(const char *title, const char *name, const char *value, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
-		struct form_item *ComboBox(const char *title, const char *name, const char *value, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
+		class form_item *ListBox(const char *title, const char *name, const char *value, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
+		class form_item *ComboBox(const char *title, const char *name, const char *value, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
 		void AddItem(wxWindow *item, const wxGBPosition pos, const wxGBSpan span = wxDefaultSpan, int flags = 0, int border = 0,	int growrow = -1);
 		void SetEventCallback(event_callback evcb, void *userdata = NULL);
 		void SetConfigCallback(dtsgui_configcb cb, void *userdata = NULL);
 		void Update_XML();
 		struct xml_node *Panel2XML(const char *xpath, const char *node, const char *nodeval, const char *attrkey);
-		struct xml_element *GetNode(const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr);
+		class xml_element *GetNode(const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr);
 		bool ShowPanel(bool = true);
 		void SetTitle(const wxString new_title, bool create = false);
 		void SetStatus(const wxString new_status);

@@ -270,7 +270,7 @@ void DTSFrame::SwitchWindow(wxCommandEvent &event) {
 
 void DTSFrame::DynamicPanelEvent(wxCommandEvent &event) {
 	class evdata *evdat;
-	struct dynamic_panel *p_dyn;
+	class dynamic_panel *p_dyn;
 	wxWindow *w;
 
 	if (!(evdat = (evdata *)event.m_callbackUserData)) {
@@ -278,7 +278,7 @@ void DTSFrame::DynamicPanelEvent(wxCommandEvent &event) {
 		return;
 	}
 
-	if (!evdat->data || !(p_dyn = (struct dynamic_panel*)evdat->data) || !p_dyn->HasCallback() ) {
+	if (!evdat->data || !(p_dyn = (class dynamic_panel*)evdat->data) || !p_dyn->HasCallback() ) {
 		SetWindow(NULL);
 		return;
 	}

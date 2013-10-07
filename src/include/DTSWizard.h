@@ -31,7 +31,7 @@ class dtsgui_wizard {
 	private:
 		wxWizard *wiz;
 		wxWizardPageSimple *start;
-		struct dtsgui *dtsgui;
+		class dtsgui *dtsgui;
 };
 
 #endif // DTSWIZARD_H_INCLUDED

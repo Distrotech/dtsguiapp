@@ -180,10 +180,9 @@ void DTSPanelEvent::OnCombo(wxCommandEvent &event) {
 	} else {
 		dtype = 0;
 	}
-
 	bloop = init_bucket_loop(bl);
 
-	while(bl && bloop && (fi = (struct form_item *)next_bucket_loop(bloop))) {
+	while(bl && bloop && (fi = (class form_item *)next_bucket_loop(bloop))) {
 		if (fi->GetWidget() == cb) {
 			break;
 		}
@@ -489,7 +488,7 @@ void DTSPanel::SetStatus(const wxString new_status) {
 }
 
 struct xml_element *DTSPanel::GetNode(const char *ppath, const char *node, const char *fattr, const char *fval, const char *attr) {
-	struct xml_element *xml = NULL;
+	class xml_element *xml = NULL;
 	struct xml_doc *xd;
 	struct xml_node *xn;
 	const char *xpath;
@@ -600,7 +599,7 @@ void DTSPanel::CheckBox(const char *title, const char *name, int ischecked, cons
 	objunref(fi);
 }
 
-struct form_item *DTSPanel::ListBox(const char *title, const char *name, const char *value, void *data, enum form_data_type dtype) {
+class form_item *DTSPanel::ListBox(const char *title, const char *name, const char *value, void *data, enum form_data_type dtype) {
 	class form_item *fi;
 
 	wxStaticText *text = new wxStaticText(panel, -1, title);
@@ -619,7 +618,7 @@ struct form_item *DTSPanel::ListBox(const char *title, const char *name, const c
 	return fi;
 }
 
-struct form_item *DTSPanel::ComboBox(const char *title, const char *name, const char *value, void *data, enum form_data_type dtype) {
+class form_item *DTSPanel::ComboBox(const char *title, const char *name, const char *value, void *data, enum form_data_type dtype) {
 	class form_item *fi;
 	DTSPanelEvent *dtsevt = (DTSPanelEvent*)dtsevthandler;
 	wxStaticText *text = new wxStaticText(panel, -1, title);
@@ -667,7 +666,7 @@ void DTSPanel::Buttons(void) {
 void DTSPanel::Update_XML() {
 	struct bucket_loop *bloop;
 	class form_item *fi;
-	struct xml_element *xml;
+	class xml_element *xml;
 	const char *value;
 
 	if (!xmldoc) {
@@ -676,7 +675,7 @@ void DTSPanel::Update_XML() {
 
 	objref(fitems);
 	bloop = init_bucket_loop(fitems);
-	while (bloop && (fi = (struct form_item*)next_bucket_loop(bloop))) {
+	while (bloop && (fi = (class form_item*)next_bucket_loop(bloop))) {
 		if (!(xml = fi->GetXMLData())) {
 			objunref(fi);
 			continue;
@@ -698,7 +697,7 @@ void DTSPanel::Update_XML() {
 struct xml_node *DTSPanel::Panel2XML(const char *xpath, const char *node, const char *nodeval, const char *attrkey) {
 	struct xml_node *xn;
 	const char *val = NULL, *name, *aval = NULL;
-	struct form_item *fi;
+	class form_item *fi;
 	struct bucket_loop *bl;
 
 	if (!xmldoc || !objref(xmldoc)) {
@@ -706,13 +705,13 @@ struct xml_node *DTSPanel::Panel2XML(const char *xpath, const char *node, const 
 	}
 
 	objref(fitems);
-	if (nodeval && (fi = (struct form_item*)bucket_list_find_key(fitems, (void*)nodeval))) {
+	if (nodeval && (fi = (class form_item*)bucket_list_find_key(fitems, (void*)nodeval))) {
 		val = fi->GetValue();
 		objunref(fi);
 		fi = NULL;
 	}
 
-	if (attrkey && (fi = (struct form_item*)bucket_list_find_key(fitems, (void*)attrkey))) {
+	if (attrkey && (fi = (class form_item*)bucket_list_find_key(fitems, (void*)attrkey))) {
 		aval = fi->GetValue();
 		objunref(fi);
 		fi = NULL;
@@ -735,7 +734,7 @@ struct xml_node *DTSPanel::Panel2XML(const char *xpath, const char *node, const 
 	}
 
 	bl = init_bucket_loop(fitems);
-	while(fitems && bl && (fi = (struct form_item *)next_bucket_loop(bl))) {
+	while(fitems && bl && (fi = (class form_item *)next_bucket_loop(bl))) {
 		if (!(name = fi->GetName())) {
 			objunref(fi);
 			continue;

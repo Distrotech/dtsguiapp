@@ -27,9 +27,9 @@ class tree_newnode {
 		DTS_OJBREF_CLASS(tree_newnode);
 		tree_newnode(dtsgui_treeview tree, dtsgui_treenode tn, const char *xpath, const char *node, const char *vitem, const char *tattr,
 							int nid, int flags, dtsgui_xmltreenode_cb node_cb, void *data, dtsgui_treeviewpanel_cb p_cb);
-		static int handle_newtreenode_cb(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data);
+		static int handle_newtreenode_cb(class dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data);
 	private:
-		int handle_newtreenode(struct dtsgui *dtsgui, DTSPanel *dp);
+		int handle_newtreenode(class dtsgui *dtsgui, DTSPanel *dp);
 		void *data;
 		dtsgui_treeview tv;
 		dtsgui_treenode tn;
@@ -47,9 +47,9 @@ class tab_newpane {
 	public:
 		DTS_OJBREF_CLASS(tab_newpane);
 		tab_newpane(DTSTabWindow *tabv, const char *xpath, const char *node, const char *vitem, const char *tattr, dtsgui_tabpane_newdata_cb data_cb, dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, void *data);
-		static int handle_newtabpane_cb(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data);
+		static int handle_newtabpane_cb(class dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data);
 	private:
-		int handle_newtabpane(struct dtsgui *dtsgui, DTSPanel *dp);
+		int handle_newtabpane(class dtsgui *dtsgui, DTSPanel *dp);
 		struct xml_doc *xmldoc;
 		DTSTabWindow *tabv;
 		dtsgui_tabpanel_cb cb;
@@ -63,12 +63,17 @@ class tab_newpane {
 		int last;
 };
 
-struct treemenu {
-	wxMenu *menu;
-	wxMenuItem *msort;
-	wxMenuItem *mup;
-	wxMenuItem *mdown;
-	wxMenuItem *mdelete;
+class treemenu {
+	public:
+		DTS_OJBREF_CLASS(treemenu);
+		treemenu();
+		bool Show(wxWindow *w, bool cont, int cnt, bool first, bool last, bool c_sort, bool del);
+	private:
+		wxMenu *menu;
+		wxMenuItem *msort;
+		wxMenuItem *mup;
+		wxMenuItem *mdown;
+		wxMenuItem *mdelete;
 };
 
 class DTSTreeWindowEvent: public wxEvtHandler {
@@ -89,7 +94,7 @@ class DTSTreeWindowEvent: public wxEvtHandler {
 		DTSDVMCtrl *tree;
 		wxDataViewItem a_item;
 		wxDataViewItem a_cont;
-		struct dtsgui *dtsgui;
+		class dtsgui *dtsgui;
 };
 
 class DTSTreeWindow: public DTSObject, public virtual wxSplitterWindow {
@@ -113,7 +118,7 @@ class DTSTreeWindow: public DTSObject, public virtual wxSplitterWindow {
 		DTSDVMListView *vm;
 		DTSPanel *a_window;
 		dtsgui_treenode a_node;
-		struct treemenu *rmenu;
+		class treemenu *rmenu;
 		wxBoxSizer *treesizer;
 };
 

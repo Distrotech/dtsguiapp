@@ -27,7 +27,7 @@ typedef class wxProgressDialog wxProgressDialog;
 
 class DTSFrame: public wxFrame {
 	public:
-		DTSFrame(const wxString &title, const wxPoint &pos, const wxSize &size, struct dtsgui *dtsgui);
+		DTSFrame(const wxString &title, const wxPoint &pos, const wxSize &size, class dtsgui *dtsgui);
 		~DTSFrame();
 		wxMenuBar *GetMenuBar(void);
 		void SetAbout(const char *a_text);
