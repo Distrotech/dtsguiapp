@@ -48,6 +48,210 @@ enum treewinmenu {
 	DTS_TREEWIN_MENU_DELETE
 };
 
+tree_newnode::~tree_newnode() {
+	if (xpath) {
+		free((void*)xpath);
+	}
+	if (node) {
+		free((void*)node);
+	}
+	if (vitem) {
+		free((void*)vitem);
+	}
+	if (tattr) {
+		free((void*)tattr);
+	}
+	if (data) {
+		objunref(data);
+	}
+}
+
+tree_newnode::tree_newnode(dtsgui_treeview tree, dtsgui_treenode tn, const char *xpath, const char *node, const char *vitem, const char *tattr,
+							int nid, int flags, dtsgui_xmltreenode_cb node_cb, void *data, dtsgui_treeviewpanel_cb p_cb) {
+	if (data && objref(data)) {
+		this->data = data;
+	} else {
+		this->data = NULL;
+	}
+	this->tv = tree;
+	this->tn = tn;
+	ALLOC_CONST(this->xpath, xpath);
+	ALLOC_CONST(this->node, node);
+	ALLOC_CONST(this->vitem, vitem);
+	ALLOC_CONST(this->tattr, tattr);
+	this->flags = flags;
+	this->type = nid;
+	this->node_cb = node_cb;
+	this->p_cb = p_cb;
+}
+
+int tree_newnode::handle_newtreenode_cb(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
+	class tree_newnode *nn = (class tree_newnode*)data;
+	DTSPanel *dp = (DTSPanel*)p;
+
+	if (type != wx_PANEL_EVENT_BUTTON) {
+		return 1;
+	}
+
+	switch(event) {
+		case wx_PANEL_EVENT_BUTTON_YES:
+			break;
+		default:
+			return 1;
+	}
+
+	return nn->handle_newtreenode(dtsgui, dp);
+}
+
+int tree_newnode::handle_newtreenode(struct dtsgui *dtsgui, DTSPanel *dp) {
+	DTSTreeWindow *tw = (DTSTreeWindow*)tv;
+	DTSDVMCtrl *tree = tw->GetTreeCtrl();
+	DTSDVMListStore *ls;
+	wxDataViewItem item, root;
+	struct xml_node *xn;
+	const char *name;
+
+	if (!(xn = dp->Panel2XML(xpath, node, vitem, tattr))) {
+		return 1;
+	}
+
+	if (tattr) {
+		name = xml_getattr(xn, tattr);
+	} else {
+		name = xn->value;
+	}
+
+	root = wxDataViewItem(this->tn);
+	if (flags & DTS_TREE_NEW_NODE_CONTAINER) {
+		ls = (DTSDVMListStore*)tree->AppendItem(root, name, flags & DTS_TREE_NEW_NODE_EDIT, flags & DTS_TREE_NEW_NODE_SORT, flags & DTS_TREE_NEW_NODE_DELETE, type, p_cb, data).GetID();
+	} else {
+		ls = (DTSDVMListStore*)tree->AppendContainer(root, name, flags & DTS_TREE_NEW_NODE_EDIT, flags & DTS_TREE_NEW_NODE_SORT, flags & DTS_TREE_NEW_NODE_DELETE, type, p_cb, data).GetID();
+	}
+	ls->SetXMLData(xn, tattr);
+
+	if (!tree->IsExpanded(root)) {
+		tree->Expand(root);
+	}
+
+	/*the panel event manager holds a ref for nn*/
+	if (node_cb) {
+		node_cb(tv, ls, xn, data);
+	}
+	objunref(xn);
+
+	item = wxDataViewItem(ls);
+	tw->Select(item);
+
+	return 0;
+}
+
+tab_newpane::tab_newpane(DTSTabWindow *tabv, const char *xpath, const char *node, const char *vitem, const char *tattr, dtsgui_tabpane_newdata_cb data_cb,
+							dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, void *data) {
+	DTSTabWindow *tv = (DTSTabWindow*)tabv;
+
+	if (data && objref(data)) {
+		this->data = data;
+	}
+
+	if (cdata && objref(cdata)) {
+		this->cdata = cdata;
+	}
+
+	this->tabv = tabv;
+	if (xmldoc && objref(xmldoc)) {
+		this->xmldoc = xmldoc;
+	}
+
+	ALLOC_CONST(this->xpath, xpath);
+	ALLOC_CONST(this->node, node);
+	ALLOC_CONST(this->vitem, vitem);
+	ALLOC_CONST(this->tattr, tattr);
+	this->last = tv->GetPageCount() - 1;
+	this->cb = cb;
+	this->data_cb = data_cb;
+}
+
+tab_newpane::~tab_newpane() {
+	if (data) {
+		objunref(data);
+	}
+
+	if (cdata) {
+		objunref(cdata);
+	}
+
+	if (xmldoc) {
+		objunref(xmldoc);
+	}
+
+	if (xpath) {
+		free((void*)xpath);
+	}
+	if (node) {
+		free((void*)node);
+	}
+	if (vitem) {
+		free((void*)vitem);
+	}
+	if (tattr) {
+		free((void*)tattr);
+	}
+}
+
+int tab_newpane::handle_newtabpane_cb(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
+	class tab_newpane *tp = (class tab_newpane*)data;
+	DTSPanel *dp = (DTSPanel*)p;
+
+	if (type != wx_PANEL_EVENT_BUTTON) {
+		return 1;
+	}
+
+	switch(event) {
+		case wx_PANEL_EVENT_BUTTON_YES:
+			break;
+		default:
+			return 1;
+	}
+
+	return tp->handle_newtabpane(dtsgui, dp);
+}
+
+int tab_newpane::handle_newtabpane(struct dtsgui *dtsgui, DTSPanel *dp) {
+	struct xml_node *xn;
+	const char *name;
+	int pos = last;
+	void *ndata = cdata;
+
+	if (!(xn = dp->Panel2XML(xpath, node, vitem, tattr))) {
+		return 1;
+	}
+
+	if (tattr) {
+		name = xml_getattr(xn, tattr);
+	} else {
+		name = xn->value;
+	}
+
+	if (data_cb) {
+		printf("%p %p\n", cdata, ndata);
+		data_cb(xmldoc, xn, data, &ndata, &pos);
+		printf("%p %p\n", cdata, ndata);
+		if (cdata && (ndata != cdata)) {
+			objunref(cdata);
+			cdata = NULL;
+		}
+		if (data) {
+			cdata = ndata;
+		}
+	}
+
+	dtsgui_tabpage_insert(tabv, name, wx_PANEL_BUTTON_ACTION, data, xmldoc, cb, cdata, pos, -1);
+	last++;
+
+	objunref(xn);
+	return 0;
+}
+
 DTSTreeWindowEvent::DTSTreeWindowEvent(void *userdata, dtsgui_tree_cb tree_cb, class dtsgui *dtsgui, DTSTreeWindow *win) {
 	if (userdata && objref(userdata)) {
 		data = userdata;

@@ -152,13 +152,9 @@ extern dtsgui_menuitem dtsgui_newmenucb(dtsgui_menu dtsmenu, struct dtsgui *dtsg
 	DTSFrame *frame = dtsgui->GetFrame();
 	wxMenuItem *mi;
 
-	if (!(p_dyn = (struct dynamic_panel*)objalloc(sizeof(*p_dyn), NULL))) {
+	if (!(p_dyn = new dynamic_panel(title, blank, cb, data))) {
 		return NULL;
 	}
-	p_dyn->data = data;
-	ALLOC_CONST(p_dyn->title, title);
-	p_dyn->cb = cb;
-	p_dyn->blank = blank;
 
 	/*handed over to wx no need to delete*/
 	evdata *ev_data = new evdata(p_dyn, 1);
@@ -593,22 +589,17 @@ extern 	const char *dtsgui_item_value(struct form_item *fi) {
 
 extern const char *dtsgui_findvalue(dtsgui_pane p, const char *name) {
 	struct form_item *fi;
-	const char *val;
+	const char *val = NULL;
 
-	fi = dtsgui_finditem(p, name);
-	val = fi->GetValue();
-	objunref(fi);
+	if ((fi = dtsgui_finditem(p, name))) {
+		val = fi->GetValue();
+		objunref(fi);
+	}
 	return val;
 }
 
-
 extern struct dtsgui_wizard* dtsgui_newwizard(struct dtsgui *dtsgui, const char *title) {
-	class dtsgui_wizard *dtswiz;
-	wxWindow *f = dtsgui->GetFrame();
-
-	dtswiz = new dtsgui_wizard(dtsgui, f, title);
-
-	return dtswiz;
+	return new dtsgui_wizard(dtsgui, dtsgui->GetFrame(), title);
 }
 
 extern dtsgui_pane dtsgui_wizard_addpage(struct dtsgui_wizard *dtswiz, const char *title, void *userdata, struct xml_doc *xmldoc) {
@@ -715,65 +706,8 @@ dtsgui_treenode dtsgui_treeitem(dtsgui_treeview tree, dtsgui_treenode node, cons
 }
 
 struct xml_node *dtsgui_panetoxml(dtsgui_pane p, const char *xpath, const char *node, const char *nodeval, const char *attrkey) {
-	struct xml_node *xn;
-	struct xml_doc *xmldoc;
-	const char *val, *name, *aval = NULL;
-	struct form_item *fi;
-	struct bucket_list *il;
-	struct bucket_loop *bl;
-
-	if (!(xmldoc = dtsgui_panelxml(p))) {
-		return NULL;
-	}
-
-	if (nodeval) {
-		val = dtsgui_findvalue(p , nodeval);
-	} else {
-		val = NULL;
-	}
-
-	if (attrkey) {
-		aval = dtsgui_findvalue(p , attrkey);
-	}
-
-	xml_createpath(xmldoc, xpath);
-	xn = xml_addnode(xmldoc, xpath, node, (val) ? val : "", attrkey, aval);
-
-	if (val) {
-		free((void*)val);
-	}
-	if (aval) {
-		free((void*)aval);
-	}
-
-	if (!xn) {
-		objunref(xmldoc);
-		return NULL;
-	}
-
-	il = dtsgui_panel_items(p);
-	bl = init_bucket_loop(il);
-	while(il && bl && (fi = (struct form_item *)next_bucket_loop(bl))) {
-		if (!(name = dtsgui_item_name(fi))) {
-			objunref(fi);
-			continue;
-		}
-		if (!(val = fi->GetValue())) {
-			objunref(fi);
-			continue;
-		}
-
-		if ((!nodeval || strcmp(name, nodeval)) && (!attrkey || strcmp(name, attrkey))) {
-			xml_setattr(xmldoc, xn, name, val);
-		}
-		free((void*)val);
-		objunref(fi);
-	}
-	stop_bucket_loop(bl);
-	objunref(il);
-	objunref(xmldoc);
-
-	return xn;
+	DTSPanel *dp = (DTSPanel*)p;
+	return dp->Panel2XML(xpath, node, nodeval, attrkey);
 }
 
 int dtsgui_treenodeid(dtsgui_treenode tn) {
@@ -801,120 +735,23 @@ void *dtsgui_treenodegetdata(dtsgui_treenode tn) {
 }
 
 const char *dtsgui_treenodeparent(dtsgui_treenode tn) {
-	wxDataViewItem item = wxDataViewItem(tn);
 	DTSDVMListStore *entry, *parent;
 	const char *val;
-	bool nok;
 
-	nok = item.IsOk();
-	entry = (DTSDVMListStore*)item.GetID();
-
-	if (!nok || !entry) {
-		return NULL;
-	}
-
-	if (!(parent = entry->GetParent())) {
+	entry = (DTSDVMListStore*)tn;
+	if (!entry || !(parent = entry->GetParent())) {
 		return NULL;
 	}
 	val = strdup(parent->GetTitle().ToUTF8());
 	return val;
 }
 
-static int dtsgui_handle_newtreenode(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
-	struct tree_newnode *nn = (struct tree_newnode*)data;
-	DTSTreeWindow *tw = (DTSTreeWindow*)nn->tv;
-	DTSDVMCtrl *tree = tw->GetTreeCtrl();
-	wxDataViewItem parent;
-	wxDataViewItem item;
-	struct xml_node *xn;
-	const char *name;
-	dtsgui_treenode tn;
-
-	if (type != wx_PANEL_EVENT_BUTTON) {
-		return 1;
-	}
-
-	switch(event) {
-		case wx_PANEL_EVENT_BUTTON_YES:
-			break;
-		default:
-			return 1;
-	}
-
-	if (!nn || !(xn = dtsgui_panetoxml(p, nn->xpath, nn->node, nn->vitem, nn->tattr))) {
-		return 1;
-	}
-
-	if (nn->tattr) {
-		name = xml_getattr(xn, nn->tattr);
-	} else {
-		name = xn->value;
-	}
-	if (nn->flags & DTS_TREE_NEW_NODE_CONTAINER) {
-		tn = dtsgui_treecont(nn->tv, nn->tn, name, nn->flags & DTS_TREE_NEW_NODE_EDIT, nn->flags & DTS_TREE_NEW_NODE_SORT, nn->flags & DTS_TREE_NEW_NODE_DELETE, nn->type, nn->p_cb, nn->data);
-	} else {
-		tn = dtsgui_treeitem(nn->tv, nn->tn, name, nn->flags & DTS_TREE_NEW_NODE_EDIT, nn->flags & DTS_TREE_NEW_NODE_SORT, nn->flags & DTS_TREE_NEW_NODE_DELETE, nn->type, nn->p_cb, nn->data);
-	}
-	dtsgui_treenodesetxml(tn, xn, nn->tattr);
-
-	parent = wxDataViewItem(nn->tn);
-	if (!tree->IsExpanded(parent)) {
-		tree->Expand(parent);
-	}
-
-	/*the panel event manager holds a ref for nn*/
-	if (nn->node_cb) {
-		nn->node_cb(nn->tv, tn, xn, nn->data);
-	}
-	objunref(xn);
-	item = wxDataViewItem(tn);
-	tw->Select(item);
-	return 0;
-}
-
-static void free_tree_newnode(void *data) {
-	struct tree_newnode *nn = (struct tree_newnode*)data;
-
-	if (nn->xpath) {
-		free((void*)nn->xpath);
-	}
-	if (nn->node) {
-		free((void*)nn->node);
-	}
-	if (nn->vitem) {
-		free((void*)nn->vitem);
-	}
-	if (nn->tattr) {
-		free((void*)nn->tattr);
-	}
-	if (nn->data) {
-		objunref(nn->data);
-	}
-}
-
 void dtsgui_newxmltreenode(dtsgui_treeview tree, dtsgui_pane p, dtsgui_treenode tn, const char *xpath, const char *node, const char *vitem, const char *tattr,
-								int nid, int flags, dtsgui_xmltreenode_cb node_cb, void *data, dtsgui_treeviewpanel_cb p_cb) {
-	struct tree_newnode *nn;
+							int nid, int flags, dtsgui_xmltreenode_cb node_cb, void *data, dtsgui_treeviewpanel_cb p_cb) {
+	DTSPanel *dp = (DTSPanel*)p;
+	class tree_newnode *nn = new tree_newnode(tree, tn, xpath, node, vitem, tattr, nid, flags, node_cb, data, p_cb);
 
-	if (!(nn = (struct tree_newnode*)objalloc(sizeof(*nn), free_tree_newnode))) {
-		return;
-	}
-
-	if (data && objref(data)) {
-		nn->data = data;
-	}
-	nn->tv = tree;
-	nn->tn = tn;
-	ALLOC_CONST(nn->xpath, xpath);
-	ALLOC_CONST(nn->node, node);
-	ALLOC_CONST(nn->vitem, vitem);
-	ALLOC_CONST(nn->tattr, tattr);
-	nn->flags = flags;
-	nn->type = nid;
-	nn->node_cb = node_cb;
-	nn->p_cb = p_cb;
-
-	dtsgui_setevcallback(p, dtsgui_handle_newtreenode, nn);
+	dp->SetEventCallback(&tree_newnode::handle_newtreenode_cb, nn);
 	objunref(nn);
 }
 
@@ -943,97 +780,12 @@ void dtsgui_nodesetxml(dtsgui_treeview tree, dtsgui_treenode node, const char *t
 	objunref(xmldoc);
 }
 
-extern int dtsgui_handle_newxmltabpane(dtsgui_pane p, int type, int event, void *data) {
-	struct tab_newpane *tn = (struct tab_newpane*)data;
-	struct xml_node *xn;
-	const char *name;
+void dtsgui_newxmltabpane(dtsgui_tabview tabv, dtsgui_pane p, const char *xpath, const char *node, const char *vitem, const char *tattr,  dtsgui_tabpane_newdata_cb data_cb, dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, void *data) {
+	DTSPanel *dp = (DTSPanel*)p;
 
-	switch(event) {
-		case wx_PANEL_EVENT_BUTTON_YES:
-			break;
-		default:
-			return 1;
-	}
+	struct tab_newpane *tn = new tab_newpane((DTSTabWindow*)tabv, xpath, node, vitem, tattr, data_cb, cb, cdata, xmldoc, data);
 
-	if (!tn || !(xn = dtsgui_panetoxml(p, tn->xpath, tn->node, tn->vitem, tn->tattr))) {
-		return 1;
-	}
-
-	if (tn->tattr) {
-		name = xml_getattr(xn, tn->tattr);
-	} else {
-		name = xn->value;
-	}
-
-	if (name) {
-		dtsgui_setstatus(p, name);
-	}
-
-	dtsgui_newtabpage(tn->tabv, name, wx_PANEL_BUTTON_ACTION, tn->data, tn->xmldoc, tn->cb, tn->cdata);
-
-	objunref(xn);
-	return 0;
-}
-
-void free_newtpane(void *data) {
-	struct tab_newpane *tn = (struct tab_newpane*)data;
-
-	if (tn->data) {
-		objunref(tn->data);
-	}
-
-	if (tn->cdata) {
-		objunref(tn->cdata);
-	}
-
-	if (tn->xmldoc) {
-		objunref(tn->xmldoc);
-	}
-
-	if (tn->xpath) {
-		free((void*)tn->xpath);
-	}
-	if (tn->node) {
-		free((void*)tn->node);
-	}
-	if (tn->vitem) {
-		free((void*)tn->vitem);
-	}
-	if (tn->tattr) {
-		free((void*)tn->tattr);
-	}
-}
-
-void dtsgui_newxmltabpane(dtsgui_tabview tabv, dtsgui_pane p, const char *xpath, const char *node, const char *vitem, const char *tattr, event_callback evcb, dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, void *data) {
-	struct tab_newpane *tn;
-	DTSTabWindow *nb = (DTSTabWindow*)tabv;
-
-	if (!(tn = (struct tab_newpane*)objalloc(sizeof(*tn), free_newtpane))) {
-		return;
-	}
-
-	if (data && objref(data)) {
-		tn->data = data;
-	}
-
-	if (cdata && objref(cdata)) {
-		tn->cdata = cdata;
-	}
-
-	tn->tabv = tabv;
-	if (xmldoc && objref(xmldoc)) {
-		tn->xmldoc = xmldoc;
-	}
-
-	ALLOC_CONST(tn->xpath, xpath);
-	ALLOC_CONST(tn->node, node);
-	ALLOC_CONST(tn->vitem, vitem);
-	ALLOC_CONST(tn->tattr, tattr);
-
-	tn->last = nb->GetPageCount() -1;
-
-	tn->cb = cb;
-	dtsgui_setevcallback(p, evcb, tn);
+	dp->SetEventCallback(&tab_newpane::handle_newtabpane_cb, tn);
 	objunref(tn);
 }
 

@@ -271,37 +271,28 @@ void DTSFrame::SwitchWindow(wxCommandEvent &event) {
 void DTSFrame::DynamicPanelEvent(wxCommandEvent &event) {
 	class evdata *evdat;
 	struct dynamic_panel *p_dyn;
-	DTSObject *p;
+	wxWindow *w;
 
 	if (!(evdat = (evdata *)event.m_callbackUserData)) {
 		SetWindow(NULL);
 		return;
 	}
 
-	if (!evdat->data || !(p_dyn = (struct dynamic_panel*)evdat->data) || !p_dyn->cb ) {
+	if (!evdat->data || !(p_dyn = (struct dynamic_panel*)evdat->data) || !p_dyn->HasCallback() ) {
 		SetWindow(NULL);
 		return;
 	}
 
-	if (p_dyn->w == a_window) {
+	if (*p_dyn == *a_window) {
 		return;
 	}
 
-	if (p_dyn->blank) {
+	if (p_dyn->IsBlank()) {
 		SetWindow(NULL);
 	}
 
-	if (p_dyn->w) {
-		delete p_dyn->w;
-		p_dyn->w = NULL;
-	}
-
-	if (objref(dtsgui)) {
-		if ((p = (DTSObject*)p_dyn->cb(dtsgui, p_dyn->title, p_dyn->data))) {
-			p_dyn->w = p->GetPanel();
-			SetWindow(p_dyn->w);
-		}
-		objunref(dtsgui);
+	if ((w = p_dyn->RunCallback(dtsgui))) {
+		SetWindow(w);
 	}
 }
 
