@@ -824,45 +824,8 @@ void *dtsgui_char2obj(const char *orig) {
 }
 
 struct curl_post *dtsgui_pane2post(dtsgui_pane p) {
-	struct bucket_list *bl;
-	struct bucket_loop *bloop;
-	struct curl_post *post;
-	struct form_item *fi;
-	const char *name;
-	const char *val;
-
-	if (!(bl = dtsgui_panel_items(p))) {
-		return NULL;
-	}
-	if (!(bloop = init_bucket_loop(bl))) {
-		objunlock(bl);
-		return NULL;
-	}
-
-	if (!(post = curl_newpost())) {
-		stop_bucket_loop(bloop);
-		objunlock(bl);
-		return NULL;
-	}
-
-	while((fi = (struct form_item*)next_bucket_loop(bloop))) {
-		if (!(name = dtsgui_item_name(fi))) {
-			objunref(fi);
-			continue;
-		}
-		val = fi->GetValue();
-		if (val) {
-			curl_postitem(post, name, val);
-			free((void*)val);
-		} else {
-			curl_postitem(post, name, "");
-		}
-		objunref(fi);
-	}
-	stop_bucket_loop(bloop);
-	objunref(bl);
-
-	return post;
+	DTSPanel *dp = (DTSPanel*)p;
+	return dp->Panel2Post();
 }
 
 struct curlbuf *dtsgui_posturl(const char *url, curl_post *post) {

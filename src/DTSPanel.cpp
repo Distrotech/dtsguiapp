@@ -758,6 +758,47 @@ struct xml_node *DTSPanel::Panel2XML(const char *xpath, const char *node, const 
 	return xn;
 }
 
+struct curl_post *DTSPanel::Panel2Post() {
+	struct bucket_loop *bloop;
+	struct curl_post *post;
+	struct form_item *fi;
+	const char *name;
+	const char *val;
+
+	if (!objref(fitems)) {
+		return NULL;
+	}
+	if (!(bloop = init_bucket_loop(fitems))) {
+		objunlock(fitems);
+		return NULL;
+	}
+
+	if (!(post = curl_newpost())) {
+		stop_bucket_loop(bloop);
+		objunlock(fitems);
+		return NULL;
+	}
+
+	while((fi = (struct form_item*)next_bucket_loop(bloop))) {
+		if (!(name = fi->GetName())) {
+			objunref(fi);
+			continue;
+		}
+		val = fi->GetValue();
+		if (val) {
+			curl_postitem(post, name, val);
+			free((void*)val);
+		} else {
+			curl_postitem(post, name, "");
+		}
+		objunref(fi);
+	}
+	stop_bucket_loop(bloop);
+	objunref(fitems);
+
+	return post;
+}
+
 DTSScrollPanel::DTSScrollPanel(wxWindow *parent,DTSFrame *frame, wxString status, int butmask)
 	:wxScrolledWindow(parent, wxID_ANY),
 	 DTSPanel(frame, status, butmask) {
