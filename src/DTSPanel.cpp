@@ -695,6 +695,70 @@ void DTSPanel::Update_XML() {
 	objunref(fitems);
 }
 
+struct xml_node *DTSPanel::Panel2XML(const char *xpath, const char *node, const char *nodeval, const char *attrkey) {
+	struct xml_node *xn;
+	const char *val = NULL, *name, *aval = NULL;
+	struct form_item *fi;
+	struct bucket_loop *bl;
+
+	if (!xmldoc || !objref(xmldoc)) {
+		return NULL;
+	}
+
+	objref(fitems);
+	if (nodeval && (fi = (struct form_item*)bucket_list_find_key(fitems, (void*)nodeval))) {
+		val = fi->GetValue();
+		objunref(fi);
+		fi = NULL;
+	}
+
+	if (attrkey && (fi = (struct form_item*)bucket_list_find_key(fitems, (void*)attrkey))) {
+		aval = fi->GetValue();
+		objunref(fi);
+		fi = NULL;
+	}
+
+	xml_createpath(xmldoc, xpath);
+	xn = xml_addnode(xmldoc, xpath, node, (val) ? val : "", attrkey, aval);
+
+	if (val) {
+		free((void*)val);
+	}
+	if (aval) {
+		free((void*)aval);
+	}
+
+	if (!xn) {
+		objunref(xmldoc);
+		objunref(fitems);
+		return NULL;
+	}
+
+	bl = init_bucket_loop(fitems);
+	while(fitems && bl && (fi = (struct form_item *)next_bucket_loop(bl))) {
+		if (!(name = fi->GetName())) {
+			objunref(fi);
+			continue;
+		}
+		if (!(val = fi->GetValue())) {
+			objunref(fi);
+			continue;
+		}
+
+		if ((!nodeval || strcmp(name, nodeval)) && (!attrkey || strcmp(name, attrkey))) {
+			xml_setattr(xmldoc, xn, name, val);
+		}
+		free((void*)val);
+		objunref(fi);
+	}
+
+	stop_bucket_loop(bl);
+	objunref(fitems);
+	objunref(xmldoc);
+
+	return xn;
+}
+
 DTSScrollPanel::DTSScrollPanel(wxWindow *parent,DTSFrame *frame, wxString status, int butmask)
 	:wxScrolledWindow(parent, wxID_ANY),
 	 DTSPanel(frame, status, butmask) {

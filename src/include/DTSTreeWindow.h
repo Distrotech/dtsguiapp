@@ -22,6 +22,47 @@
 typedef class DTSTreeWindow DTSTreeWindow;
 typedef class DTSTabWindow DTSTabWindow;
 
+class tree_newnode {
+	public:
+		DTS_OJBREF_CLASS(tree_newnode);
+		tree_newnode(dtsgui_treeview tree, dtsgui_treenode tn, const char *xpath, const char *node, const char *vitem, const char *tattr,
+							int nid, int flags, dtsgui_xmltreenode_cb node_cb, void *data, dtsgui_treeviewpanel_cb p_cb);
+		static int handle_newtreenode_cb(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data);
+	private:
+		int handle_newtreenode(struct dtsgui *dtsgui, DTSPanel *dp);
+		void *data;
+		dtsgui_treeview tv;
+		dtsgui_treenode tn;
+		dtsgui_xmltreenode_cb node_cb;
+		dtsgui_treeviewpanel_cb p_cb;
+		const char *xpath;
+		const char *node;
+		const char *vitem;
+		const char *tattr;
+		int type;
+		int flags;
+};
+
+class tab_newpane {
+	public:
+		DTS_OJBREF_CLASS(tab_newpane);
+		tab_newpane(DTSTabWindow *tabv, const char *xpath, const char *node, const char *vitem, const char *tattr, dtsgui_tabpane_newdata_cb data_cb, dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, void *data);
+		static int handle_newtabpane_cb(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data);
+	private:
+		int handle_newtabpane(struct dtsgui *dtsgui, DTSPanel *dp);
+		struct xml_doc *xmldoc;
+		DTSTabWindow *tabv;
+		dtsgui_tabpanel_cb cb;
+		dtsgui_tabpane_newdata_cb data_cb;
+		const char *xpath;
+		const char *node;
+		const char *vitem;
+		const char *tattr;
+		void *cdata;
+		void *data;
+		int last;
+};
+
 struct treemenu {
 	wxMenu *menu;
 	wxMenuItem *msort;

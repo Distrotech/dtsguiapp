@@ -18,11 +18,67 @@
 
 #include <stdint.h>
 #include <wx/object.h>
-
+#include <wx/gbsizer.h>
+#include <wx/textctrl.h>
+#include <wx/panel.h>
+#include <wx/scrolwin.h>
+#include <wx/wizard.h>
 #include <dtsapp.h>
 
 #include "dtsgui.h"
 #include "evdata.h"
+#include "pitems.h"
+#include "DTSPanel.h"
+
+
+dynamic_panel::dynamic_panel(const char *title, int blank, dtsgui_dynpanel cb, void *udata) {
+	if (udata && objref(udata)) {
+		data = udata;
+	} else {
+		data = NULL;
+	}
+	ALLOC_CONST(this->title, title);
+	this->cb = cb;
+	this->blank = blank;
+}
+
+dynamic_panel::~dynamic_panel() {
+	if (title) {
+		free((void*)title);
+	}
+	if (data) {
+		objunref(data);
+	}
+}
+
+bool dynamic_panel::HasCallback() {
+	return (cb);
+}
+
+bool dynamic_panel::IsBlank() {
+	return (blank);
+}
+
+bool dynamic_panel::operator==(wxWindow &rhs) {
+	return (this->w == &rhs);
+}
+
+wxWindow *dynamic_panel::RunCallback(class dtsgui *dtsgui) {
+	DTSObject *p;
+
+	if (w) {
+		delete w;
+		w = NULL;
+	}
+
+	if (dtsgui && objref(dtsgui)) {
+		if ((p = (DTSObject*)cb(dtsgui, title, data))) {
+			w = p->GetPanel();
+		}
+		objunref(dtsgui);
+	}
+	return w;
+}
 
 evdata::evdata(void *userdata, int uref) {
 	if (userdata && uref) {

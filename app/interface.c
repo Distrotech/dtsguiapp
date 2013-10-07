@@ -76,57 +76,15 @@ struct new_iface_data *get_newiface_data(dtsgui_tabview tv, struct xml_doc *xmld
 	return nd;
 }
 
-extern int handle_newxmltabpane(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
-	struct tab_newpane *tn = (struct tab_newpane*)data;
-	struct iface_cdata *ndat;
-	struct xml_node *xn;
-	const char *name;
+extern void handle_newxmltabpane(struct xml_doc *xmldoc, struct xml_node *xn, void *tdata, void **cdata, int *last) {
+	struct iface_cdata *ndat = NULL;
 
-	if (type != wx_PANEL_EVENT_BUTTON) {
-		return 1;
+	if (xn->value && (ndat = get_iface_cdata(xn->value))) {
+		cdata[0] = ndat;
 	}
-
-	switch(event) {
-		case wx_PANEL_EVENT_BUTTON_YES:
-			break;
-		default:
-			return 1;
-	}
-
-	if (!tn || !(xn = dtsgui_panetoxml(p, tn->xpath, tn->node, tn->vitem, tn->tattr))) {
-		return 1;
-	}
-
-	if (tn->tattr) {
-		name = xml_getattr(xn, tn->tattr);
-	} else {
-		name = xn->value;
-	}
-
-	objlock(tn);
-	if (tn->cdata) {
-		objunref(tn->cdata);
-		tn->cdata = NULL;
-	}
-	objunlock(tn);
-
-	if (xn->value) {
-		if ((ndat = get_iface_cdata(xn->value))) {
-			objlock(tn);
-			tn->cdata = ndat;
-			objunlock(tn);
-		}
-		if ((p = dtsgui_tabpage_insert(tn->tabv, name, wx_PANEL_BUTTON_ACTION, tn->data, tn->xmldoc, tn->cb, tn->cdata, tn->last, -1))) {
-			tn->last++;
-		}
-	} else {
-		xml_delete(xn);
-	}
-
-	objunref(xn);
-	return 0;
 }
 
+/*update data and let system continue by "skiping*/
 extern int handle_updatetabpane(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
 	struct iface_cdata *cdata = data;
 	const char *name;

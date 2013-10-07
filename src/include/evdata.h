@@ -21,12 +21,20 @@
 
 typedef class wxWindow wxWindow;
 
-struct dynamic_panel {
-	dtsgui_dynpanel cb;
-	const char *title;
-	void *data;
-	int blank;
-	wxWindow *w;
+class dynamic_panel {
+	public:
+		DTS_OJBREF_CLASS(dynamic_panel);
+		dynamic_panel(const char *title, int blank, dtsgui_dynpanel cb, void *udata);
+		bool HasCallback();
+		bool IsBlank();
+		bool operator==(wxWindow &rhs);
+		wxWindow *RunCallback(class dtsgui *dtsgui);
+	private:
+		wxWindow *w;
+		dtsgui_dynpanel cb;
+		const char *title;
+		void *data;
+		int blank;
 };
 
 class evdata :public wxObject {
