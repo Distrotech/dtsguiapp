@@ -18,7 +18,6 @@
 
 #include <stdint.h>
 #include <wx/object.h>
-#include <wx/window.h>
 
 #include <dtsapp.h>
 

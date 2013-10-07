@@ -20,19 +20,18 @@
 #include <stdlib.h>
 
 #include <wx/frame.h>
-#include <wx/menu.h>
-#include <wx/msgdlg.h>
-#include <wx/sizer.h>
-#include <wx/wizard.h>
+
 #include <wx/gbsizer.h>
 #include <wx/textctrl.h>
+#include <wx/panel.h>
 #include <wx/scrolwin.h>
-#include <wx/stattext.h>
-#include <wx/combobox.h>
-#include <wx/toolbar.h>
-#include <wx/progdlg.h>
+#include <wx/wizard.h>
+
+#include <wx/menu.h>
+#include <wx/msgdlg.h>
 #include <wx/gauge.h>
-#include <wx/notebook.h>
+#include <wx/progdlg.h>
+#include <wx/toolbar.h>
 
 #include <dtsapp.h>
 #include <wx/app.h>
@@ -40,6 +39,7 @@
 #include "dtsgui.h"
 #include "dtsgui.hpp"
 
+#include "pitems.h"
 #include "evdata.h"
 #include "DTSFrame.h"
 #include "DTSPanel.h"
@@ -47,7 +47,7 @@
 
 wxDEFINE_EVENT(DTS_APP_EVENT, wxCommandEvent);
 
-DTSFrame::DTSFrame(const wxString &title, const wxPoint &pos, const wxSize &size, struct dtsgui *dtsgui)
+DTSFrame::DTSFrame(const wxString &title, const wxPoint &pos, const wxSize &size, class dtsgui *dtsgui)
 	: wxFrame(NULL, wxID_ANY, title, pos, size) {
 
 	if (!dtsgui || !objref(dtsgui)) {
@@ -312,7 +312,7 @@ void DTSFrame::SendDTSEvent(int eid, wxObject *evobj) {
 	ProcessWindowEvent(event);
 }
 
-struct dtsgui *DTSFrame::GetDTSData(void) {
+class dtsgui *DTSFrame::GetDTSData(void) {
 	if (dtsgui && objref(dtsgui)) {
 		return dtsgui;
 	}

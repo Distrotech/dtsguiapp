@@ -19,34 +19,14 @@
 #ifndef DTSPANEL_H
 #define DTSPANEL_H
 
+typedef class wxComboBox wxComboBox;
+typedef class wxCheckBox wxCheckBox;
+typedef class wxStaticText wxStaticText;
+typedef class wxBookCtrlBase wxBookCtrlBase;
+typedef class wxDialog wxDialog;
+typedef class DTSFrame DTSFrame;
+
 typedef class DTSObject DTSObject;
-
-struct xml_element {
-	struct xml_search *xsearch;
-	const char *xpath;
-	const char  *attr;
-};
-
-union form_data {
-	void *ptr;
-	struct xml_element *xml;
-};
-
-enum form_data_type {
-	DTSGUI_FORM_DATA_PTR,
-	DTSGUI_FORM_DATA_XML
-};
-
-struct form_item {
-	union form_data data;
-	enum form_data_type dtype;
-	enum widget_type type;
-	const char *name;
-	const char *value;
-	const char *value2;
-	void *widget;
-	int idx;
-};
 
 class DTSPanelEvent: public wxEvtHandler {
 	public:
@@ -120,7 +100,6 @@ class DTSPanel: public DTSObject {
 		int button_mask;
 	private:
 		wxStaticText *title;
-		struct form_item *create_new_fitem(void *widget, enum widget_type type, const char *name, const char *value = NULL, const char *value2 = NULL, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
 		wxGridBagSizer *fgs;
 		int g_row;
 		dtsgui_configcb configcb;

@@ -32,7 +32,7 @@ struct treemenu {
 
 class DTSTreeWindowEvent: public wxEvtHandler {
 	public:
-		DTSTreeWindowEvent(void *userdata = NULL, dtsgui_tree_cb tree_cb = NULL, struct dtsgui *dtsgui = NULL, DTSTreeWindow *win = NULL);
+		DTSTreeWindowEvent(void *userdata = NULL, dtsgui_tree_cb tree_cb = NULL, class dtsgui *dtsgui = NULL, DTSTreeWindow *win = NULL);
 		~DTSTreeWindowEvent();
 		void TreeEvent(wxDataViewEvent &event);
 		void OnButton(wxCommandEvent &event);

@@ -92,36 +92,6 @@ void file_menu(struct dtsgui *dtsgui) {
 	objunref(appdata);
 }
 
-void config_menu(struct dtsgui *dtsgui) {
-	struct app_data *appdata;
-
-	if (!(appdata = dtsgui_userdata(dtsgui))) {
-		return;
-	}
-
-	objlock(appdata);
-	appdata->cfg_menu = dtsgui_newmenu(dtsgui, "&Config");
-
-	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "Reconfigure &Wizard", "Run System Reconfigure Wizard.", 1, reconfig_wizard, NULL);
-
-	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "P&BX Configuration", "PBX Setup", 0, pbx_settings, NULL);
-	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&Interface Configuration", "Inteface Configuration", 0, iface_config, NULL);
-	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&Advanced Configuration", "Advanced Config", 0, advanced_config, NULL);
-
-	dtsgui_menusep(appdata->cfg_menu);
-	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&Save And Close Config", "Save/Close System Config (File/URL)", 1, save_config, NULL);
-	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "E&xport Config", "Export Configuration as a .conf file", 0, export_config, NULL);
-
-	dtsgui_menusep(appdata->cfg_menu);
-	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "&View Config (XML)", "View Current Config File In XML Format.", 0, view_config_xml, NULL);
-	dtsgui_newmenucb(appdata->cfg_menu, dtsgui, "View &Config (CONF)", "View Current Config File Converted to .conf Format.", 0, view_config_conf, NULL);
-
-	/*initially greyed out*/
-	dtsgui_menuenable(appdata->cfg_menu, 0);
-	objunlock(appdata);
-	objunref(appdata);
-}
-
 void help_menu(struct dtsgui *dtsgui) {
 	dtsgui_menu help;
 	dtsgui_pane p;

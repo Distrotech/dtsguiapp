@@ -21,10 +21,4 @@
 
 wxDECLARE_EVENT(DTS_APP_EVENT, wxCommandEvent);
 
-struct dtsgui_wizard {
-	wxWizard *wiz;
-	wxWizardPageSimple *start;
-	struct dtsgui *dtsgui;
-};
-
 #endif // DTSGUI_HPP_INCLUDED
