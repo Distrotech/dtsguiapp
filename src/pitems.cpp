@@ -219,3 +219,24 @@ void *form_item::GetWidget() {
 	return widget.p;
 }
 
+void form_item::AppendXML(struct xml_doc *xmldoc, const char *xpath, const char *nattr, const char *vattr) {
+	struct xml_search *xs;
+	struct xml_node *xn;
+	void *iter;
+	const char *name, *value;
+
+	if (!(xs = xml_xpath(xmldoc, xpath, nattr))) {
+		return;
+	}
+
+	for(xn = xml_getfirstnode(xs, &iter); xn ; xn = xml_getnextnode(iter)) {
+		name = (nattr) ? xml_getattr(xn, nattr) : xn->value;
+		value = (vattr) ? xml_getattr(xn, vattr) : xn->value;
+		Append(name, value);
+		objunref(xn);
+	}
+	objunref(xs);
+	if (iter) {
+		objunref(iter);
+	}
+}

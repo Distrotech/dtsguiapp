@@ -218,8 +218,6 @@ int tab_newpane::handle_newtabpane_cb(class dtsgui *dtsgui, dtsgui_pane p, int t
 
 int tab_newpane::handle_newtabpane(class dtsgui *dtsgui, DTSPanel *dp) {
 	DTSTabPage *np;
-	wxBookCtrlBase *nb = static_cast<wxBookCtrlBase*>(tabv);
-	DTSFrame *f = tabv->GetFrame();
 	struct xml_node *xn;
 	const char *name;
 	int pos = last;
@@ -246,8 +244,8 @@ int tab_newpane::handle_newtabpane(class dtsgui *dtsgui, DTSPanel *dp) {
 		}
 	}
 
-	if ((np = new DTSTabPage(nb, f, name, false, wx_PANEL_BUTTON_ACTION, cb, cdata, xmldoc))) {
-		np->InsertPage(pos);
+	if ((np = tabv->CreateTab(name, wx_PANEL_BUTTON_ACTION, NULL, cb, cdata, xmldoc, false))) {
+		tabv->InsertTab(np, pos);
 		tabv->Undo(-1);
 		tabv->SetSelection(pos);
 		last++;
@@ -504,7 +502,7 @@ void DTSTreeWindowEvent::TreeCallback(const wxDataViewItem item, enum tree_cbtyp
 	} else {
 		switch(type) {
 			case DTSGUI_TREE_CB_SELECT:
-				sp = (DTSPanel*)dtsgui_treepane_defalt(parent, ndata);
+				sp = parent->CreatePane(ndata);
 				break;
 			case DTSGUI_TREE_CB_EDIT:
 				dtsgui_nodesetxml(parent, ndata, ndata->GetTitle().ToUTF8());
@@ -713,6 +711,44 @@ void DTSTreeWindow::ShowRMenu(bool cont, int cnt, bool first, bool last, bool c_
 	rmenu->Show(tree, cont, cnt, first, last, c_sort, del);
 }
 
+DTSScrollPanel *DTSTreeWindow::CreatePane(const wxString &name, int butmask, void *userdata, struct xml_doc *xmldoc) {
+	DTSScrollPanel *dp;
+	wxWindow *parent;
+	DTSFrame *f;
+
+	parent = GetPanel();
+	f = GetFrame();
+
+	dp = new DTSScrollPanel(parent, f, name, butmask);
+	dp->type = wx_DTSPANEL_TREE;
+
+	if (name.Len() > 0) {
+		dp->SetTitle(name, true);
+	}
+
+	if (xmldoc) {
+		dp->SetXMLDoc(xmldoc);
+	}
+	return dp;
+}
+
+DTSScrollPanel *DTSTreeWindow::CreatePane(DTSDVMListStore *ls) {
+	DTSScrollPanel *p;
+	int nodeid;
+	wxString name;
+
+	nodeid = ls->GetNodeID();
+
+	if (nodeid == -1) {
+		p = CreatePane();
+	} else {
+		name = ls->GetTitle();
+		p = CreatePane(name, wx_PANEL_BUTTON_ACTION, NULL, xmldoc);
+	}
+	return p;
+
+}
+
 DTSTreeWindow::~DTSTreeWindow() {
 	delete t_pane;
 	delete a_window;
@@ -858,7 +894,9 @@ void DTSTabWindow::Undo(int pg) {
 	DTSTabPage *pane, *newp;
 	int idx;
 
-	if (pg > 0) {
+	if (pg == 0) {
+		return;
+	} else if (pg > 0) {
 		idx = pg-1;
 	} else {
 		idx = GetPageCount() + pg;
@@ -870,7 +908,8 @@ void DTSTabWindow::Undo(int pg) {
 	newp = new DTSTabPage(this);
 	*newp = *pane;
 	delete pane;
-	newp->InsertPage(idx);
+
+	InsertTab(newp, idx);
 }
 
 bool DTSTabWindow::Show(bool show) {
@@ -911,4 +950,45 @@ bool DTSTabWindow::Show(bool show) {
 
 	}
 	return res;
+}
+
+DTSTabPage *DTSTabWindow::CreateTab(const wxString &name, int butmask, void *userdata, dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, bool addpage) {
+	DTSTabPage *dp;
+	DTSFrame *f;
+	wxBookCtrlBase *nb;
+
+	f = GetFrame();
+	nb = static_cast<wxBookCtrlBase*>(this);
+
+	if (!(dp = new DTSTabPage(nb, f, name, butmask, cb, cdata, xmldoc))) {
+		return NULL;
+	}
+
+	if (userdata) {
+		dp->SetUserData(userdata);
+	}
+
+	if (addpage) {
+		nb->AddPage(dp->GetPanel(), name);
+	}
+
+	return dp;
+}
+
+void DTSTabWindow::InsertTab(DTSTabPage *panel, int pos, bool sel, int undo) {
+	wxBookCtrlBase *nb = dynamic_cast<wxBookCtrlBase*>(this);
+	DTSObject *dp = static_cast<DTSObject*>(panel);
+	wxWindow *w = panel->GetPanel();
+
+	objlock(refobj);
+	nb->InsertPage(pos, w, dp->GetName());
+	objunlock(refobj);
+	w->Show(true);
+
+	if (sel) {
+		SetSelection(pos);
+	}
+	if (undo) {
+		Undo(undo);
+	}
 }

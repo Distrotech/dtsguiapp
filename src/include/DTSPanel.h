@@ -84,6 +84,11 @@ class DTSPanel: public DTSObject {
 		void CheckBox(const char *title, const char *name, int ischecked, const char *checkval, const char *uncheckval, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
 		class form_item *ListBox(const char *title, const char *name, const char *value, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
 		class form_item *ComboBox(const char *title, const char *name, const char *value, void *data = NULL, enum form_data_type dtype = DTSGUI_FORM_DATA_PTR);
+		void XMLTextBox(const char *, const char *, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr, int flags = wxTE_LEFT, int rows = 1);
+		void XMLPasswdBox(const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr, int flags);
+		void XMLCheckBox(const char *title, const char *name, const char *checkval, const char *uncheckval, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr);
+		class form_item *XMLListBox(const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr);
+		class form_item *XMLComboBox(const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr);
 		void AddItem(wxWindow *item, const wxGBPosition pos, const wxGBSpan span = wxDefaultSpan, int flags = 0, int border = 0,	int growrow = -1);
 		void SetEventCallback(event_callback evcb, void *userdata = NULL);
 		void SetConfigCallback(dtsgui_configcb cb, void *userdata = NULL);
@@ -94,6 +99,8 @@ class DTSPanel: public DTSObject {
 		bool ShowPanel(bool = true);
 		void SetTitle(const wxString new_title, bool create = false);
 		void SetStatus(const wxString new_status);
+		class form_item *FindItem(const char *name);
+		const char *FindValue(const char *name);
 	protected:
 		void Title(const char *title);
 		void SetSizerSize(wxSize, wxWindow*);
@@ -115,6 +122,11 @@ class DTSStaticPanel: public DTSPanel, public virtual wxPanel  {
 		virtual bool Show(bool = true);
 };
 
+class DTSTextPanel: public DTSStaticPanel  {
+	public:
+		DTSTextPanel(wxWindow *,DTSFrame* = NULL, wxString = wxEmptyString);
+};
+
 class DTSScrollPanel: public DTSPanel, public virtual wxScrolledWindow {
 	public:
 		DTSScrollPanel(wxWindow *, DTSFrame* = NULL, wxString = wxEmptyString, int = 0);
@@ -123,10 +135,9 @@ class DTSScrollPanel: public DTSPanel, public virtual wxScrolledWindow {
 
 class DTSTabPage: public DTSScrollPanel {
 	public:
-		DTSTabPage(wxBookCtrlBase*, DTSFrame* = NULL, wxString = wxEmptyString, bool = false, int = 0, dtsgui_tabpanel_cb  = NULL, void* = NULL, struct xml_doc* = NULL);
+		DTSTabPage(wxBookCtrlBase*, DTSFrame* = NULL, wxString = wxEmptyString, int = 0, dtsgui_tabpanel_cb  = NULL, void* = NULL, struct xml_doc* = NULL);
 		~DTSTabPage();
 		void ConfigPane();
-		void InsertPage(int pos);
 		virtual bool Show(bool);
 		DTSTabPage &operator=(const DTSTabPage &orig);
 	private:
@@ -146,7 +157,7 @@ class DTSDialog: public DTSStaticPanel {
 		DTSDialog(DTSFrame* = NULL, wxString = wxEmptyString, int = wx_PANEL_BUTTON_ACTION);
 		~DTSDialog();
 		bool Show(bool = true);
-		void RunDialog(void);
+		void RunDialog(event_callback evcb, void *data);
 	private:
 		wxBoxSizer *sizer;
 		wxDialog *dialog;

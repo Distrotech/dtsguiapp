@@ -575,8 +575,27 @@ void DTSPanel::TextBox(const char *title, const char *name, wxString defval, int
 	objunref(fi);
 }
 
+void DTSPanel::XMLTextBox(const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr, int flags, int rows) {
+	struct xml_element *xml;
+	const char *value = NULL;
+
+	if ((xml = GetNode(xpath, node, fattr, fval,attr))) {
+		value = xml->GetValue();
+	}
+
+	TextBox(title, name, value, flags, rows, xml,  DTSGUI_FORM_DATA_XML);
+
+	if (value) {
+		free((void*)value);
+	}
+}
+
 void DTSPanel::PasswdBox(const char *title, const char *name, wxString defval, int flags, void *data, enum form_data_type) {
 	TextBox(title, name, defval, flags | wxTE_PASSWORD | wxTE_PROCESS_ENTER, 1, data);
+}
+
+void DTSPanel::XMLPasswdBox(const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr, int flags) {
+	XMLTextBox(title, name, xpath, node, fattr, fval, attr, flags | wxTE_PASSWORD | wxTE_PROCESS_ENTER, 1);
 }
 
 void DTSPanel::CheckBox(const char *title, const char *name, int ischecked, const char *checkval, const char *uncheckval, void *data, enum form_data_type dtype) {
@@ -599,6 +618,26 @@ void DTSPanel::CheckBox(const char *title, const char *name, int ischecked, cons
 	objunref(fi);
 }
 
+void DTSPanel::XMLCheckBox(const char *title, const char *name, const char *checkval, const char *uncheckval, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr) {
+	struct xml_element *xml;
+	int ischecked = 0;
+	const char *value = NULL;
+
+	if ((xml = GetNode(xpath, node, fattr, fval, attr))) {
+		value = xml->GetValue();
+	}
+
+	if (value && checkval && !strcmp(value, checkval)) {
+		ischecked = 1;
+	}
+
+	CheckBox(title, name, ischecked, checkval, uncheckval, xml, DTSGUI_FORM_DATA_XML);
+
+	if (value) {
+		free((void*)value);
+	}
+}
+
 class form_item *DTSPanel::ListBox(const char *title, const char *name, const char *value, void *data, enum form_data_type dtype) {
 	class form_item *fi;
 
@@ -615,6 +654,23 @@ class form_item *DTSPanel::ListBox(const char *title, const char *name, const ch
 
 	fi = new form_item(lbox, DTS_WIDGET_LISTBOX, name, value, NULL, data, dtype);
 	addtobucket(fitems, fi);
+	return fi;
+}
+
+class form_item *DTSPanel::XMLListBox(const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr) {
+	const char *value = NULL;
+	class xml_element *xml;
+	struct form_item *fi;
+
+	if ((xml = GetNode(xpath, node, fattr, fval, attr))) {
+		value = xml->GetValue();
+	}
+	fi = ListBox(title, name, value, xml, DTSGUI_FORM_DATA_XML);
+
+	if (value) {
+		free((void*)value);
+	}
+
 	return fi;
 }
 
@@ -638,6 +694,23 @@ class form_item *DTSPanel::ComboBox(const char *title, const char *name, const c
 
 	fi = new form_item(lbox, DTS_WIDGET_COMBOBOX, name, value, NULL, data, dtype);
 	addtobucket(fitems, fi);
+	return fi;
+}
+
+class form_item *DTSPanel::XMLComboBox(const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr) {
+	const char *value = NULL;
+	class xml_element *xml;
+	struct form_item *fi;
+
+	if ((xml = GetNode(xpath, node, fattr, fval, attr))) {
+		value = xml->GetValue();
+	}
+	fi = ComboBox(title, name, value, xml, DTSGUI_FORM_DATA_XML);
+
+	if (value) {
+		free((void*)value);
+	}
+
 	return fi;
 }
 
@@ -799,6 +872,23 @@ struct curl_post *DTSPanel::Panel2Post() {
 	return post;
 }
 
+class form_item *DTSPanel::FindItem(const char *name) {
+	return (class form_item*)bucket_list_find_key(fitems, (void*)name);
+}
+
+const char *DTSPanel::FindValue(const char *name) {
+	class form_item *fi;
+	const char *val;
+
+	if (!(fi = FindItem(name))) {
+		return NULL;
+	}
+
+	val = fi->GetValue();
+	objunref(fi);
+	return val;
+}
+
 DTSScrollPanel::DTSScrollPanel(wxWindow *parent,DTSFrame *frame, wxString status, int butmask)
 	:wxScrolledWindow(parent, wxID_ANY),
 	 DTSPanel(frame, status, butmask) {
@@ -816,7 +906,7 @@ bool DTSScrollPanel::Show(bool show) {
 	return wxScrolledWindow::Show(show);
 }
 
-DTSTabPage::DTSTabPage(wxBookCtrlBase *parent, DTSFrame *frame, wxString status, bool addpage, int butmask, dtsgui_tabpanel_cb c_cb, void *c_data, struct xml_doc *xmldoc)
+DTSTabPage::DTSTabPage(wxBookCtrlBase *parent, DTSFrame *frame, wxString status, int butmask, dtsgui_tabpanel_cb c_cb, void *c_data, struct xml_doc *xmldoc)
 	:wxScrolledWindow(parent, wxID_ANY),
 	DTSScrollPanel(parent,frame, status, butmask) {
 	type = wx_DTSPANEL_TAB;
@@ -831,9 +921,6 @@ DTSTabPage::DTSTabPage(wxBookCtrlBase *parent, DTSFrame *frame, wxString status,
 	}
 	hasconfig = false;
 	SetTitle(status, 1);
-	if (addpage) {
-		parent->AddPage(panel, status);
-	}
 }
 
 DTSTabPage::~DTSTabPage() {
@@ -863,16 +950,6 @@ void DTSTabPage::ConfigPane() {
 		hasconfig = true;
 		ShowPanel();
 	}
-}
-
-void DTSTabPage::InsertPage(int pos) {
-	wxBookCtrlBase *nb = dynamic_cast<wxBookCtrlBase*>(panel->GetParent());
-
-	objlock(refobj);
-	nb->InsertPage(pos, panel, status);
-	objunlock(refobj);
-	panel->Show();
-	nb->SetSelection(pos);
 }
 
 DTSTabPage &DTSTabPage::operator=(const DTSTabPage &orig) {
@@ -944,6 +1021,10 @@ bool DTSStaticPanel::Show(bool show) {
 	return wxPanel::Show(show);
 }
 
+DTSTextPanel::DTSTextPanel(wxWindow *parent,DTSFrame *frame, wxString status)
+	:DTSStaticPanel(parent, frame, status) {
+}
+
 DTSWindow::DTSWindow(wxWindow *parent, DTSFrame *frame, wxString status)
 	:wxWindow(parent, -1),
 	 DTSPanel(frame, status) {
@@ -986,7 +1067,9 @@ bool DTSDialog::Show(bool show) {
 	return wxPanel::Show(show);
 }
 
-void DTSDialog::RunDialog(void) {
+void DTSDialog::RunDialog(event_callback evcb, void *data) {
+	SetEventCallback(evcb, data);
+
 	Show(true);
 
 	sizer->Add(panel, 1, wxALL | wxEXPAND, 15);
@@ -995,6 +1078,7 @@ void DTSDialog::RunDialog(void) {
 	dialog->Layout();
 	dialog->SetClientSize(sizer->GetSize());
 	dialog->ShowModal();
+	delete this;
 }
 
 DTSWizardWindow::DTSWizardWindow(wxString title) {

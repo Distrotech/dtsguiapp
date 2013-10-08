@@ -21,6 +21,7 @@
 
 typedef class DTSTreeWindow DTSTreeWindow;
 typedef class DTSTabWindow DTSTabWindow;
+typedef class DTSPanel DTSPanel;
 
 class tree_newnode {
 	public:
@@ -111,6 +112,8 @@ class DTSTreeWindow: public DTSObject, public virtual wxSplitterWindow {
 		void Select(const wxDataViewItem& item);
 		wxWindow *SetWindow(DTSPanel *window, const wxDataViewItem& item);
 		dtsgui_treenode GetActiveNode();
+		DTSScrollPanel *CreatePane(const wxString &name = wxEmptyString, int butmask = 0, void *userdata = NULL, struct xml_doc *xmldoc = NULL);
+		DTSScrollPanel *CreatePane(DTSDVMListStore *ls);
 	private:
 		wxScrolledWindow *t_pane;
 		wxWindow *c_pane;
@@ -139,6 +142,8 @@ class DTSTabWindow: public DTSObject, public virtual wxNotebook {
 	public:
 		DTSTabWindow(DTSFrame *frame = NULL, wxString stat_msg = wxEmptyString, void *u_data = NULL);
 		~DTSTabWindow();
+		DTSTabPage *CreateTab(const wxString &name, int butmask = 0, void *userdata = NULL, dtsgui_tabpanel_cb cb = NULL, void *cdata = NULL, struct xml_doc *xmldoc = NULL, bool addpage = true);
+		void InsertTab(DTSTabPage *panel, int pos, bool show = true, int undo = 0);
 		void Undo(int pg);
 		bool Show(bool = true);
 };
