@@ -21,7 +21,6 @@
 #ifdef __WIN32__
 #define UNICODE 1
 #include <winsock2.h>
-#include <windows.h>
 #include <shlobj.h>
 #endif
 

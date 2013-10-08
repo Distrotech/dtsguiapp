@@ -19,10 +19,10 @@
 #ifndef PRIVATE_H_INCLUDED
 #define PRIVATE_H_INCLUDED
 
-#ifdef __cplusplus
-extern "C" {
-#endif
 
+#ifndef DATA_DIR
+#define DATA_DIR	"/usr/share/dtsguiapp"
+#endif
 
 enum node_id {
 	DTS_NODE_CUSTOMER,
@@ -71,6 +71,9 @@ struct listitem {
 	const char *value;
 };
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 struct xml_doc *app_getxmldoc(struct dtsgui *dtsgui);
 
 /*toolbar.cpp*/

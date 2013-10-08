@@ -28,6 +28,7 @@ class dtsgui {
 		void SetStatusText(void);
 		void AppendTitle(const char *text);
 		class DTSFrame *GetFrame(void);
+		void ShowToolbar(bool show = true);
 	private:
 		void *userdata;
 		class DTSFrame *appframe;

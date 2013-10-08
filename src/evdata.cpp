@@ -84,7 +84,7 @@ evdata::evdata(void *userdata, int uref) {
 }
 
 evdata::~evdata() {
-	if (unref) {
+	if (unref && data) {
 		objunref(data);
 	}
 }

@@ -95,7 +95,7 @@ class DTSPanel: public DTSObject {
 		class form_item *XMLListBox(const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr);
 		class form_item *XMLComboBox(const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr);
 		void AddItem(wxWindow *item, const wxGBPosition pos, const wxGBSpan span = wxDefaultSpan, int flags = 0, int border = 0,	int growrow = -1);
-		void SetEventCallback(event_callback evcb, void *userdata = NULL);
+		void SetEventCallback(event_callback evcb, void *userdata = NULL, bool useref = false);
 		void SetConfigCallback(dtsgui_configcb cb, void *userdata = NULL);
 		void Update_XML();
 		struct xml_node *Panel2XML(const char *xpath, const char *node, const char *nodeval, const char *attrkey);

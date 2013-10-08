@@ -18,13 +18,6 @@
 
 #define __DTS_C_API
 
-#ifdef __WIN32__
-#define UNICODE 1
-#include <winsock2.h>
-#include <windows.h>
-#include <shlobj.h>
-#endif
-
 #include <wx/menu.h>
 #include <wx/filedlg.h>
 #include <wx/toolbar.h>
@@ -38,9 +31,10 @@
 #include "DTSWizard.h"
 #include "DTSListView.h"
 
-static int menuid = wxID_AUTO_LOWEST;
 
 namespace DTS_C_API {
+
+static int menuid = wxID_AUTO_LOWEST;
 
 dtsgui_menuitem dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, const char *hint, dtsgui_pane p) {
 	DTSFrame *frame = dtsgui->GetFrame();
@@ -156,9 +150,7 @@ void dtsgui_delpane(dtsgui_pane pane) {
 
 extern dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title, dtsgui_tree_cb tree_cb, void *userdata, struct xml_doc *xmldoc) {
 	DTSFrame *frame = dtsgui->GetFrame();
-	DTSTreeWindow *tw  = new DTSTreeWindow(frame, frame, tree_cb, title, 25);
-	tw->SetXMLDoc(xmldoc);
-	return tw;
+	return new DTSTreeWindow(frame, frame, tree_cb, title, 25, NULL, xmldoc);
 }
 
 extern dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title, void *data) {
@@ -173,9 +165,7 @@ extern dtsgui_pane dtsgui_newtabpage(dtsgui_tabview tv, const char *name, int bu
 
 extern dtsgui_pane dtsgui_tabpage_insert(dtsgui_tabview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc, dtsgui_tabpanel_cb cb, void *cdata, int pos, int undo) {
 	DTSTabWindow *tw = (DTSTabWindow*)tv;
-	DTSTabPage *dp = tw->CreateTab(name, butmask, userdata, cb, cdata, xmldoc, false);
-	tw->InsertTab(dp, pos, true, undo);
-	return dp;
+	return tw->CreateTab(name, butmask, userdata, cb, cdata, xmldoc, pos, undo);
 }
 
 extern void dtsgui_textbox(dtsgui_pane pane, const char *title, const char *name, const char *value, void *data) {
@@ -399,42 +389,29 @@ void dtsgui_rundialog(dtsgui_pane pane, event_callback evcb, void *data) {
 
 dtsgui_treenode dtsgui_treecont(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *data) {
 	DTSTreeWindow *tw = (DTSTreeWindow*)tree;
-	DTSDVMCtrl *tc = tw->GetTreeCtrl();
-	wxDataViewItem root = wxDataViewItem(node);
-
-	return tc->AppendContainer(root, title, can_edit, can_sort, can_del, nodeid, p_cb, data).GetID();
+	return tw->GetTreeCtrl()->AppendContainer(wxDataViewItem(node), title, can_edit, can_sort, can_del, nodeid, p_cb, data).GetID();
 }
 
 dtsgui_treenode dtsgui_treeitem(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *data) {
 	DTSTreeWindow *tw = (DTSTreeWindow*)tree;
-	DTSDVMCtrl *tc = tw->GetTreeCtrl();
-	wxDataViewItem root = wxDataViewItem(node);
-
-	return tc->AppendItem(root, title, can_edit, can_sort, can_del, nodeid, p_cb, data).GetID();
+	return tw->GetTreeCtrl()->AppendItem(wxDataViewItem(node), title, can_edit, can_sort, can_del, nodeid, p_cb, data).GetID();
 }
 
 void dtsgui_newxmltabpane(dtsgui_tabview tabv, dtsgui_pane p, const char *xpath, const char *node, const char *vitem, const char *tattr,  dtsgui_tabpane_newdata_cb data_cb, dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, void *data) {
 	DTSPanel *dp = (DTSPanel*)p;
 	class tab_newpane *tn = new tab_newpane((DTSTabWindow*)tabv, xpath, node, vitem, tattr, data_cb, cb, cdata, xmldoc, data);
-
-	dp->SetEventCallback(&tab_newpane::handle_newtabpane_cb, tn);
-	objunref(tn);
+	dp->SetEventCallback(&tab_newpane::handle_newtabpane_cb, tn, true);
 }
 
 void dtsgui_newxmltreenode(dtsgui_treeview tree, dtsgui_pane p, dtsgui_treenode tn, const char *xpath, const char *node, const char *vitem, const char *tattr,
 							int nid, int flags, dtsgui_xmltreenode_cb node_cb, void *data, dtsgui_treeviewpanel_cb p_cb) {
 	DTSPanel *dp = (DTSPanel*)p;
 	class tree_newnode *nn = new tree_newnode(tree, tn, xpath, node, vitem, tattr, nid, flags, node_cb, data, p_cb);
-
-	dp->SetEventCallback(&tree_newnode::handle_newtreenode_cb, nn);
-	objunref(nn);
+	dp->SetEventCallback(&tree_newnode::handle_newtreenode_cb, nn, true);
 }
 
 void dtsgui_set_toolbar(struct dtsgui *dtsgui, int show) {
-	DTSFrame *f = dtsgui->GetFrame();
-	wxToolBar *tb = f->GetToolBar();
-	tb->Show((show) ? true : false);
-	f->Layout();
+	dtsgui->ShowToolbar(show);
 }
 
 } /*END Namespace*/
