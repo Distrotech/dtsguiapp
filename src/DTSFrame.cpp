@@ -16,7 +16,6 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stdint.h>
 #include <stdlib.h>
 
 #include <wx/menu.h>
@@ -26,10 +25,7 @@
 #include <wx/toolbar.h>
 #include <wx/filedlg.h>
 
-#include <dtsapp.h>
-
 #include "dtsgui.h"
-#include "dtsgui.hpp"
 
 #include "DTSPanel.h"
 #include "evdata.h"
@@ -409,7 +405,7 @@ const char *DTSFrame::FileDialog(const char *title, const char *path, const char
 
 	fd = new wxFileDialog(this, title, (path) ? path : "", (name) ? name : "", (filter) ? filter : wxFileSelectorDefaultWildcardStr, style);
 	if (fd->ShowModal() != wxID_CANCEL) {
-		filename = DTS_C_API::dtsgui_char2obj(fd->GetPath().ToUTF8());
+		filename = objchar(fd->GetPath().ToUTF8());
 	}
 
 	delete fd;

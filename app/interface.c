@@ -17,12 +17,10 @@
 */
 
 #include <stdlib.h>
-#include <stdint.h>
 #include <string.h>
 
-#include <dtsapp.h>
-
 #include "dtsgui.h"
+
 #include "private.h"
 
 struct new_iface_data {

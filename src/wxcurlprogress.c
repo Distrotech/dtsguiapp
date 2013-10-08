@@ -17,10 +17,7 @@
 */
 
 #include <stdlib.h>
-#include <stdint.h>
 #include <math.h>
-
-#include <dtsapp.h>
 
 #include "dtsgui.h"
 

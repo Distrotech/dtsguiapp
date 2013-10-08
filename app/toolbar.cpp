@@ -16,16 +16,14 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stdint.h>
+#define __DTS_C_API
 
 #include <wx/toolbar.h>
 #include <wx/combobox.h>
 #include <wx/stattext.h>
 
-#include <dtsapp.h>
-#define __DTS_C_API
-
 #include "dtsgui.h"
+
 #include "private.h"
 #include "DTSXMLComboBox.h"
 

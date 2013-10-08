@@ -16,7 +16,6 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stdint.h>
 #include <unistd.h>
 
 #ifdef __WIN32
@@ -25,8 +24,6 @@
 #include <dirent.h>
 #include <shlobj.h>
 #endif
-
-#include <dtsapp.h>
 
 #include "dtsgui.h"
 #include "private.h"
@@ -108,7 +105,7 @@ void test_menu(struct dtsgui *dtsgui, dtsgui_menu menu, const char *url) {
 	void *purl;
 	dtsgui_pane p;
 
-	purl = dtsgui_char2obj(url);
+	purl = objchar(url);
 	p = dtsgui_panel(dtsgui, "Test Panel", "Test Panel", wx_PANEL_BUTTON_ALL, 1, purl);
 	objunref(purl);
 	testpanel(p);

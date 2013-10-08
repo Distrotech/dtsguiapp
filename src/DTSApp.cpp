@@ -16,7 +16,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stdint.h>
 #include <stdlib.h>
 
 #ifdef __WIN32__
@@ -25,10 +24,7 @@
 #include <windows.h>
 #endif
 
-#include <dtsapp.h>
-
 #include "dtsgui.h"
-#include "dtsgui.hpp"
 
 #include "DTSApp.h"
 #include "DTSFrame.h"

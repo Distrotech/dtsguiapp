@@ -25,15 +25,11 @@
 #include <shlobj.h>
 #endif
 
-#include <stdint.h>
-
 #include <wx/menu.h>
 #include <wx/filedlg.h>
 #include <wx/toolbar.h>
 
-#include <dtsapp.h>
 #include "dtsgui.h"
-#include "dtsgui.hpp"
 
 #include "DTSFrame.h"
 #include "DTSApp.h"
