@@ -26,6 +26,7 @@
 #include <dtsapp.h>
 
 #include "dtsgui.h"
+#include "dtsgui.hpp"
 #include "evdata.h"
 #include "pitems.h"
 #include "DTSPanel.h"

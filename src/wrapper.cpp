@@ -16,6 +16,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#define __DTS_C_API
+
 #ifdef __WIN32__
 #define UNICODE 1
 #include <winsock2.h>
@@ -146,12 +148,17 @@ extern dtsgui_pane dtsgui_treepane(dtsgui_treeview tv, const char *name, int but
 
 dtsgui_pane dtsgui_treepane_default(dtsgui_treeview tv, dtsgui_treenode node) {
 	DTSTreeWindow *tw = (DTSTreeWindow*)tv;
-	return tw->CreatePane((DTSDVMListStore*)node);
+	return tw->CreatePane(wxDataViewItem(node));
 }
 
 extern void dtsgui_panel_setxml(dtsgui_pane pane, struct xml_doc *xmldoc) {
 	DTSPanel *p = (DTSPanel *)pane;
 	p->SetXMLDoc(xmldoc);
+}
+
+void dtsgui_nodesetxml(dtsgui_treeview tree, dtsgui_treenode node, const char *newname) {
+	DTSTreeWindow *tw = (DTSTreeWindow*)tree;
+	tw->UpdateNodeXML(wxDataViewItem(node), newname);
 }
 
 struct xml_doc *dtsgui_panelxml(dtsgui_pane pane) {
@@ -369,6 +376,11 @@ void dtsgui_setstatus(dtsgui_pane pane, const char *status) {
 int dtsgui_treenodeid(dtsgui_treenode tn) {
 	DTSDVMListStore *ls = (DTSDVMListStore*)tn;
 	return ls->GetNodeID();
+}
+
+const char *dtsgui_treenodeparent(dtsgui_treenode tn) {
+	DTSDVMListStore *entry = (DTSDVMListStore*)tn;
+	return strdup(entry->GetParentTitle().ToUTF8());
 }
 
 void dtsgui_treenodesetxml(dtsgui_treenode tn,struct xml_node *xn, const char *tattr) {

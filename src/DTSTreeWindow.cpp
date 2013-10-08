@@ -502,10 +502,10 @@ void DTSTreeWindowEvent::TreeCallback(const wxDataViewItem item, enum tree_cbtyp
 	} else {
 		switch(type) {
 			case DTSGUI_TREE_CB_SELECT:
-				sp = parent->CreatePane(ndata);
+				sp = parent->CreatePane(wxDataViewItem(ndata));
 				break;
 			case DTSGUI_TREE_CB_EDIT:
-				dtsgui_nodesetxml(parent, ndata, ndata->GetTitle().ToUTF8());
+				parent->UpdateNodeXML(wxDataViewItem(ndata), ndata->GetTitle());
 				break;
 			case DTSGUI_TREE_CB_DELETE:
 				break;
@@ -732,21 +732,46 @@ DTSScrollPanel *DTSTreeWindow::CreatePane(const wxString &name, int butmask, voi
 	return dp;
 }
 
-DTSScrollPanel *DTSTreeWindow::CreatePane(DTSDVMListStore *ls) {
+DTSScrollPanel *DTSTreeWindow::CreatePane(const wxDataViewItem& node) {
 	DTSScrollPanel *p;
 	int nodeid;
 	wxString name;
 
-	nodeid = ls->GetNodeID();
+	nodeid = vm->GetNodeID(node);
 
 	if (nodeid == -1) {
 		p = CreatePane();
 	} else {
-		name = ls->GetTitle();
+		name = vm->GetTitle(node);
 		p = CreatePane(name, wx_PANEL_BUTTON_ACTION, NULL, xmldoc);
 	}
+
 	return p;
 
+}
+
+void DTSTreeWindow::UpdateNodeXML(const wxDataViewItem& node, const char *newname) {
+	struct xml_node *xn;
+	struct xml_doc *xd;
+	char *buf;
+
+	if (!xmldoc || !objref(xmldoc)) {
+		return;
+	}
+	xd = xmldoc;
+
+	if (!(xn = vm->GetXMLData(node, &buf))) {
+		return;
+	}
+
+	if (buf) {
+		xml_setattr(xd, xn, buf, newname);
+		objunref(buf);
+	} else {
+		xml_modify(xd, xn, newname);
+	}
+	objunref(xn);
+	objunref(xd);
 }
 
 DTSTreeWindow::~DTSTreeWindow() {
