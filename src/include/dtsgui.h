@@ -60,6 +60,11 @@ enum tree_cbtype {
 	DTSGUI_TREE_CB_EDIT
 };
 
+enum form_data_type {
+	DTSGUI_FORM_DATA_PTR,
+	DTSGUI_FORM_DATA_XML
+};
+
 /*callbacks*/
 typedef int (*dtsgui_configcb)(struct dtsgui*, void*);
 typedef dtsgui_pane (*dtsgui_menucb)(struct dtsgui*, void*);
@@ -174,7 +179,7 @@ void dtsgui_newxmltabpane(dtsgui_tabview tabv, dtsgui_pane p, const char *xpath,
 /*tree pane*/
 dtsgui_treeview dtsgui_treewindow(struct dtsgui *dtsgui, const char *title, dtsgui_tree_cb tree_cb, void *userdata, struct xml_doc *xmldoc);
 dtsgui_pane dtsgui_treepane(dtsgui_treeview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc);
-dtsgui_pane dtsgui_treepane_defalt(dtsgui_treeview self, dtsgui_treenode node);
+dtsgui_pane dtsgui_treepane_default(dtsgui_treeview self, dtsgui_treenode node);
 void dtsgui_nodesetxml(dtsgui_treeview tree, dtsgui_treenode node, const char *title);
 dtsgui_treenode dtsgui_treecont(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb,void *data);
 dtsgui_treenode dtsgui_treeitem(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *data);
@@ -255,7 +260,6 @@ const char *dtsgui_filesave(struct dtsgui *dtsgui, const char *title, const char
 const char *dtsgui_fileopen(struct dtsgui *dtsgui, const char *title, const char *path, const char *name, const char *filter);
 
 /*utils*/
-struct curlbuf *dtsgui_posturl(const char *url, curl_post *post);
 struct xml_doc *dtsgui_buf2xml(struct curlbuf *cbuf);
 struct curl_post *dtsgui_pane2post(dtsgui_pane p);
 void *dtsgui_char2obj(const char *orig);

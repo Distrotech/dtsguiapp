@@ -47,11 +47,6 @@ union widgets {
 	void *p;
 };
 
-enum form_data_type {
-	DTSGUI_FORM_DATA_PTR,
-	DTSGUI_FORM_DATA_XML
-};
-
 class form_item {
 	public:
 		DTS_OJBREF_CLASS(form_item);
@@ -63,6 +58,7 @@ class form_item {
 		const char *GetName();
 		const char *GetValue();
 		void *GetWidget();
+		void AppendXML(struct xml_doc *xmldoc, const char *xpath, const char *nattr, const char *vattr);
 	private:
 		enum widget_type type;
 		const char *name;

@@ -42,7 +42,7 @@ void post_items(struct dtsgui *dtsgui, dtsgui_pane p) {
 
 	url = dtsgui_paneldata(p);
 	post = dtsgui_pane2post(p);
-	cbuf = dtsgui_posturl(url, post);
+	cbuf = curl_posturl(url, NULL, post, NULL, NULL);
 
 	if (cbuf && cbuf->body) {
 		dtsgui_alert(dtsgui, (char*)cbuf->body);

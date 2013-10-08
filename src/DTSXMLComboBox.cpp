@@ -55,7 +55,7 @@ struct xml_doc *DTSXMLComboBox::GetXMLDoc(const wxString& val, struct xml_node *
 		return NULL;
 	}
 
-	if (!(cbuf = dtsgui_posturl(url, post))) {
+	if (!(cbuf = curl_posturl(url, NULL, post, NULL, NULL))) {
 		return NULL;
 	}
 

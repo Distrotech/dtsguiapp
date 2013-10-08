@@ -32,6 +32,7 @@
 #include <wx/gauge.h>
 #include <wx/progdlg.h>
 #include <wx/toolbar.h>
+#include <wx/filedlg.h>
 
 #include <dtsapp.h>
 #include <wx/app.h>
@@ -69,6 +70,8 @@ DTSFrame::DTSFrame(const wxString &title, const wxPoint &pos, const wxSize &size
 	pbar = NULL;
 	pdia = NULL;
 
+	about = wxEmptyString;
+
 	/*deleted on close*/
 	sizer = new wxBoxSizer(wxHORIZONTAL);
 	this->SetSizer(sizer);
@@ -96,7 +99,13 @@ DTSFrame::~DTSFrame() {
 	delete blank;
 }
 
-void DTSFrame::SetAbout(const char *a_text) {
+void DTSFrame::SetAbout(wxMenu *m, const char *a_text) {
+	if (about.Len() > 0) {
+		return;
+	}
+
+	m->Append(wxID_ABOUT);
+	Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::OnAbout, this, wxID_ABOUT);
 	about = a_text;
 }
 
@@ -347,4 +356,121 @@ void DTSFrame::SetupToolbar(dtsgui_toolbar_create cb, void *data) {
 
 wxMenuBar *DTSFrame::GetMenuBar() {
 	return menubar;
+}
+
+void DTSFrame::CloseMenu(wxMenu *m, int type) {
+	switch (type) {
+		case wxID_EXIT:
+			m->Append(type, "&Quit", "Quit And Exit");
+			Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::OnClose, this, wxID_EXIT);
+			break;
+		case wxID_SAVE:
+			m->Append(type, "E&xit", "Save And Exit");
+			Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::OnClose, this, wxID_SAVE);
+			break;
+	}
+}
+
+wxMenu *DTSFrame::NewMenu(const wxString &name) {
+	wxMenu *new_menu = NULL;
+
+	new_menu = new wxMenu;
+	menubar->Append(new_menu, name);
+
+	return new_menu;
+}
+
+DTSPanel *DTSFrame::CreatePane(const wxString &name, const wxString &title, int butmask, enum panel_type type, void *udata) {
+	DTSPanel *dp = NULL;
+
+	switch (type) {
+		case wx_DTSPANEL_SCROLLPANEL:
+			dp = new DTSScrollPanel(this, this, name, butmask);
+			break;
+		case wx_DTSPANEL_PANEL:
+			dp = new DTSStaticPanel(this, this, name, butmask);
+			break;
+		case wx_DTSPANEL_WINDOW:
+			dp = new DTSWindow(this);
+			break;
+		case wx_DTSPANEL_DIALOG:
+			dp = new DTSDialog(this, name, butmask);
+			break;
+		case wx_DTSPANEL_WIZARD:
+			dp = new DTSWizardWindow(name);
+			break;
+		case wx_DTSPANEL_TAB:
+		case wx_DTSPANEL_TREE:
+			break;
+	}
+
+	if (title.Len() > 0) {
+		dp->SetTitle(title, true);
+	}
+	if (udata) {
+		dp->SetUserData(udata);
+	}
+	return dp;
+}
+
+const char *DTSFrame::FileDialog(const char *title, const char *path, const char *name, const char *filter, long style) {
+	void *filename = NULL;
+	wxFileDialog *fd;
+
+	fd = new wxFileDialog(this, title, (path) ? path : "", (name) ? name : "", (filter) ? filter : wxFileSelectorDefaultWildcardStr, style);
+	if (fd->ShowModal() != wxID_CANCEL) {
+		filename = dtsgui_char2obj(fd->GetPath().ToUTF8());
+	}
+
+	delete fd;
+	return (const char*)filename;
+}
+
+DTSPanel *DTSFrame::TextPanel(const wxString &title, const char *buf) {
+	DTSStaticPanel *p;
+	wxWindow *w;
+	wxTextCtrl *tc;
+
+	p = new DTSStaticPanel(this, this, title);
+	w = p->GetPanel();
+
+	tc = new wxTextCtrl(w, -1, buf, wxDefaultPosition, wxDefaultSize,wxTE_MULTILINE | wxHSCROLL | wxTE_READONLY);
+	p->AddItem(tc, wxGBPosition(0,0), wxGBSpan(10, 6), wxEXPAND|wxGROW, 0, 0);
+
+	return p;
+}
+
+wxMenuItem *DTSFrame::NewMenuItem(wxMenu *m, DTSObject *panel, int menuid, const wxString &hint) {
+	wxMenuItem *mi;
+	wxWindow *w = NULL;
+	wxObject *ev_data;
+	wxString name = wxEmptyString;
+
+	if (panel) {
+		w = panel->GetPanel();
+		name = panel->GetName();
+	}
+	ev_data = new evdata(w);
+
+
+	mi = m->Append(menuid, hint, name);
+	Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::SwitchWindow, this, menuid, menuid, ev_data);
+	return mi;
+}
+
+wxMenuItem *DTSFrame::NewMenuItem(wxMenu *m, int menuid, const wxString &name, const wxString &hint, int blank, dtsgui_dynpanel cb, void *data) {
+	wxMenuItem *mi;
+	wxObject *ev_data;
+	class dynamic_panel *p_dyn;
+
+	if (!(p_dyn = new dynamic_panel(name, blank, cb, data))) {
+		return NULL;
+	}
+
+	ev_data = new evdata(p_dyn, 1);
+	objunref(p_dyn);
+
+	mi = m->Append(menuid, hint, name);
+	Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSFrame::DynamicPanelEvent, this, menuid, menuid, ev_data);
+	return mi;
 }
