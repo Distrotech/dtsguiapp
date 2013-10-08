@@ -19,9 +19,16 @@
 #ifndef DTSTREEWINDOW_H
 #define DTSTREEWINDOW_H
 
-typedef class DTSTreeWindow DTSTreeWindow;
+#include <wx/dataview.h>
+#include <wx/splitter.h>
+#include <wx/notebook.h>
+
+#include "DTSPanel.h"
+
 typedef class DTSTabWindow DTSTabWindow;
-typedef class DTSPanel DTSPanel;
+typedef class DTSTreeWindow DTSTreeWindow;
+typedef class DTSDVMListView DTSDVMListView;
+typedef class DTSDVMCtrl DTSDVMCtrl;
 
 class tree_newnode {
 	public:

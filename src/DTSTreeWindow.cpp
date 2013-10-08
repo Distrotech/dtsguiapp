@@ -16,18 +16,7 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <vector>
 #include <stdint.h>
-
-#include <wx/gbsizer.h>
-#include <wx/textctrl.h>
-#include <wx/panel.h>
-#include <wx/scrolwin.h>
-#include <wx/wizard.h>
-
-#include <wx/dataview.h>
-#include <wx/splitter.h>
-#include <wx/notebook.h>
 
 #include <wx/menu.h>
 
@@ -35,9 +24,7 @@
 #include "dtsgui.h"
 #include "dtsgui.hpp"
 
-#include "pitems.h"
 #include "DTSFrame.h"
-#include "DTSPanel.h"
 #include "DTSListView.h"
 #include "DTSTreeWindow.h"
 

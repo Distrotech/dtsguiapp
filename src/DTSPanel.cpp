@@ -19,15 +19,9 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <wx/gbsizer.h>
-#include <wx/textctrl.h>
-#include <wx/panel.h>
-#include <wx/scrolwin.h>
-#include <wx/wizard.h>
-
 #include <wx/combobox.h>
-#include <wx/checkbox.h>
 #include <wx/stattext.h>
+#include <wx/checkbox.h>
 #include <wx/button.h>
 #include <wx/notebook.h>
 
@@ -35,15 +29,15 @@
 #include "dtsgui.h"
 #include "dtsgui.hpp"
 
-#include "pitems.h"
 #include "DTSFrame.h"
+#include "pitems.h"
 #include "DTSPanel.h"
 
 #define PADING	10
 
 static const int def_buttons[6] = {wxID_FIRST, wxID_BACKWARD, wxID_FORWARD, wxID_LAST, wxID_APPLY, wxID_UNDO};
 
-static int fitems_hash(const void *data, int key) {
+int DTSPanel::fitems_hash(const void *data, int key) {
 	int ret = 0;
 
 	class form_item *fi = (class form_item *)data;

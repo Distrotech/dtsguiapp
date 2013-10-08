@@ -17,8 +17,6 @@
 */
 
 #include <stdint.h>
-#include <stdlib.h>
-#include <string.h>
 
 #include <wx/combobox.h>
 #include <wx/checkbox.h>

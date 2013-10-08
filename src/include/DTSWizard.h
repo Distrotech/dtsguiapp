@@ -21,6 +21,7 @@
 
 typedef class wxWizard wxWizard;
 typedef class DTSWizardWindow DTSWizardWindow;
+typedef class wxWizardPageSimple wxWizardPageSimple;
 
 class dtsgui_wizard {
 	public:

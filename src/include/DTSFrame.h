@@ -26,7 +26,6 @@ typedef class wxGauge wxGauge;
 typedef class wxProgressDialog wxProgressDialog;
 typedef class DTSPanel DTSPanel;
 typedef class DTSObject DTSObject;
-typedef class EventArg EventArg;
 
 class DTSFrame: public wxFrame {
 	public:
