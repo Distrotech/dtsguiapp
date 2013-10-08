@@ -28,7 +28,7 @@
 #include "dtsgui.h"
 #include "DTSListView.h"
 
-bool cmp_title(DTSDVMListStore *c1,DTSDVMListStore *c2) {
+bool DTSDVMListStore::cmp_title(DTSDVMListStore *c1,DTSDVMListStore *c2) {
 	wxString s1, s2;
 
 	s1 = c1->GetTitle();
@@ -75,6 +75,11 @@ bool DTSDVMListStore::IsContainer() const {
 
 DTSDVMListStore* DTSDVMListStore::GetParent() {
 	return parent;
+}
+
+const wxString DTSDVMListStore::GetParentTitle() {
+	DTSDVMListStore *parent = this->GetParent();
+	return (parent) ? parent->GetTitle() : "";
 }
 
 size_t DTSDVMListStore::GetChildCount() {
@@ -523,6 +528,17 @@ struct xml_node *DTSDVMListView::GetXMLData(const wxDataViewItem& node, char **b
 		return data->GetXMLData(buf);
 	}
 	return NULL;
+}
+
+const wxString DTSDVMListView::GetTitle(const wxDataViewItem& node) {
+	DTSDVMListStore *data;
+
+	if (!node.IsOk() && root) {
+		return root->GetTitle();
+	} else if ((data = (DTSDVMListStore*)node.GetID())) {
+		return data->GetTitle();
+	}
+	return wxEmptyString;
 }
 
 DTSDVMCtrl::DTSDVMCtrl() {

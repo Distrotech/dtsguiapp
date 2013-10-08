@@ -16,6 +16,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#define __DTS_C_API
+
 #include <stdint.h>
 #include <vector>
 
@@ -26,12 +28,10 @@
 #include <shlobj.h>
 #endif
 
-#include <wx/dataview.h>
 #include <wx/menu.h>
 
 #include <dtsapp.h>
 #include "dtsgui.h"
-#include "DTSListView.h"
 
 void dtsgui_menuenable(dtsgui_menu dm, int enable) {
 	bool state =  (enable) ? true : false;
@@ -48,43 +48,6 @@ void dtsgui_menuenable(dtsgui_menu dm, int enable) {
 		mi = items[i];
 		mi->Enable(state);
 	}
-}
-
-const char *dtsgui_treenodeparent(dtsgui_treenode tn) {
-	DTSDVMListStore *entry, *parent;
-	const char *val;
-
-	entry = (DTSDVMListStore*)tn;
-	if (!entry || !(parent = entry->GetParent())) {
-		return NULL;
-	}
-	val = strdup(parent->GetTitle().ToUTF8());
-	return val;
-}
-
-void dtsgui_nodesetxml(dtsgui_treeview tree, dtsgui_treenode node, const char *title) {
-	DTSDVMListStore *ls = (DTSDVMListStore*)node;
-	struct xml_doc *xmldoc;
-	struct xml_node *xn;
-	char *buff = NULL;
-
-	if (!(xmldoc = dtsgui_panelxml(tree))) {
-		return;
-	}
-
-	if (!(xn = ls->GetXMLData(&buff))) {
-		objunref(xmldoc);
-		return;
-	}
-
-	if (buff) {
-		xml_setattr(xmldoc, xn, buff, title);
-		objunref(buff);
-	} else {
-		xml_modify(xmldoc, xn, title);
-	}
-	objunref(xn);
-	objunref(xmldoc);
 }
 
 extern struct xml_doc *dtsgui_buf2xml(struct curlbuf *cbuf) {

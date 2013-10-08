@@ -113,7 +113,8 @@ class DTSTreeWindow: public DTSObject, public virtual wxSplitterWindow {
 		wxWindow *SetWindow(DTSPanel *window, const wxDataViewItem& item);
 		dtsgui_treenode GetActiveNode();
 		DTSScrollPanel *CreatePane(const wxString &name = wxEmptyString, int butmask = 0, void *userdata = NULL, struct xml_doc *xmldoc = NULL);
-		DTSScrollPanel *CreatePane(DTSDVMListStore *ls);
+		DTSScrollPanel *CreatePane(const wxDataViewItem& node);
+		void UpdateNodeXML(const wxDataViewItem& node, const char *newname);
 	private:
 		wxScrolledWindow *t_pane;
 		wxWindow *c_pane;

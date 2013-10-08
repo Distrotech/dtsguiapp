@@ -27,6 +27,7 @@ class DTSDVMListStore {
 		~DTSDVMListStore();
 		bool IsContainer() const;
 		DTSDVMListStore* GetParent();
+		const wxString GetParentTitle();
 		size_t GetChildCount();
 		void Append(DTSDVMListStore* child);
 		void Insert(DTSDVMListStore* child, size_t idx);
@@ -50,6 +51,7 @@ class DTSDVMListStore {
 		void SetXMLData(struct xml_node *xnode, const char *tattr);
 		struct xml_node *GetXMLData(char **buff);
 		void ConfigPanel(dtsgui_pane p, dtsgui_treeview tw);
+		static bool cmp_title(DTSDVMListStore *c1,DTSDVMListStore *c2);
 	private:
 		std::vector<DTSDVMListStore*> children;
 		dtsgui_treeviewpanel_cb p_cb;
@@ -92,6 +94,7 @@ class DTSDVMListView :public wxDataViewModel {
 		int GetNodeID(const wxDataViewItem& node);
 		void SetXMLData(const wxDataViewItem& node, struct xml_node *xnode, const char *tattr);
 		struct xml_node *GetXMLData(const wxDataViewItem& node, char **buff);
+		const wxString GetTitle(const wxDataViewItem& node);
 	protected:
 		DTSDVMListStore* root;
 		bool hascontcol;

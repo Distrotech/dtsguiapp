@@ -23,6 +23,7 @@
 #include <wx/stattext.h>
 
 #include <dtsapp.h>
+#define __DTS_C_API
 
 #include "dtsgui.h"
 #include "private.h"

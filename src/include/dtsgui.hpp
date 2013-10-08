@@ -16,8 +16,19 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef DTSGUI_HPP_INCLUDED
+#if !defined(DTSGUI_HPP_INCLUDED) && defined(__cplusplus)
 #define DTSGUI_HPP_INCLUDED
+
+#define DTS_OJBREF_CLASS(classtype)	void *operator new(size_t sz) {\
+			return objalloc(sz, &classtype::unref);\
+		}\
+		void operator delete(void *obj) {\
+		}\
+		static void unref(void *data) {\
+			delete (classtype*)data;\
+		}\
+		~classtype()
+
 
 wxDECLARE_EVENT(DTS_APP_EVENT, wxCommandEvent);
 

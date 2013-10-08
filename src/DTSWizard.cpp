@@ -28,9 +28,12 @@
 #include <wx/app.h>
 
 #include "dtsgui.h"
+#include "dtsgui.hpp"
 #include "pitems.h"
 #include "DTSWizard.h"
 #include "DTSPanel.h"
+#include "DTSApp.h"
+#include "DTSFrame.h"
 
 dtsgui_wizard::dtsgui_wizard(class dtsgui *dgui, wxWindow *f, const wxString &title) {
 	if (dgui && objref(dgui)) {
@@ -54,8 +57,9 @@ DTSWizardWindow *dtsgui_wizard::AddPage(const char *title, struct xml_doc *xmldo
 	DTSWizardWindow *dww;
 	wxWizardPageSimple *wp, *tmp;
 	wxWizardPage *last;
+	DTSFrame *f = dtsgui->GetFrame();
 
-	dww = (DTSWizardWindow*)dtsgui_panel(dtsgui, title, NULL, 0, wx_DTSPANEL_WIZARD, userdata);
+	dww = (DTSWizardWindow*)f->CreatePane(title, wxEmptyString, 0, wx_DTSPANEL_WIZARD, userdata);
 
 	wp = dynamic_cast<wxWizardPageSimple *>(dww);
 	wp->Create(wiz);
