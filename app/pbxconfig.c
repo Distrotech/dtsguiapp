@@ -18,21 +18,9 @@
 
 #include <unistd.h>
 
-#ifdef __WIN32
-#define UNICODE 1
-#include <winsock2.h>
-#include <dirent.h>
-#include <shlobj.h>
-#endif
-
 #include "dtsgui.h"
 
 #include "private.h"
-
-#ifndef DATA_DIR
-#define DATA_DIR	"/usr/share/dtsguiapp"
-#endif
-
 
 void pbxconf_trunk(dtsgui_pane pg, void *data) {
 	struct listitem trunks[] = {{"Linux Modular ISDN Group 1", "mISDN/g:out/"},

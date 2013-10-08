@@ -47,7 +47,6 @@ dtsgui_pane open_config(struct dtsgui *dtsgui, const char *title, void *data) {
 		return NULL;
 	}
 	objunlock(appdata);
-	objunref((void*)filename);
 
 	dtsgui_sendevent(dtsgui, 1);
 
@@ -59,6 +58,8 @@ dtsgui_pane open_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	objunlock(appdata);
 
 	dtsgui_titleappend(dtsgui, filename);
+	objunref((void*)filename);
+
 	dtsgui_set_toolbar(dtsgui, 0);
 	objunref(appdata);
 

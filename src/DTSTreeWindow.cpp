@@ -527,7 +527,7 @@ void DTSTreeWindowEvent::OnButton(wxCommandEvent &event) {
 	event.Skip(true);
 }
 
-DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb tree_cb, wxString stat_msg, int pos, void *u_data)
+DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb tree_cb, wxString stat_msg, int pos, void *u_data, struct xml_doc *xd)
 	:wxSplitterWindow(parent, -1, wxDefaultPosition, wxDefaultSize),
 	 DTSObject(stat_msg) {
 
@@ -549,6 +549,10 @@ DTSTreeWindow::DTSTreeWindow(wxWindow *parent, DTSFrame *frame, dtsgui_tree_cb t
 		userdata = NULL;
 	}
 	this->frame = frame;
+
+	if (xd) {
+		SetXMLDoc(xd);
+	}
 
 	p_sizer->Add(sw, 1,wxEXPAND,0);
 #ifdef __WIN32
@@ -959,6 +963,16 @@ bool DTSTabWindow::Show(bool show) {
 	}
 	return res;
 }
+
+DTSTabPage *DTSTabWindow::CreateTab(const wxString &name, int butmask, void *userdata, dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, int pos, int undo) {
+	DTSTabPage *dp;
+
+	dp = CreateTab(name, butmask, userdata, cb, cdata, xmldoc, false);
+	InsertTab(dp, pos, true, undo);
+
+	return dp;
+}
+
 
 DTSTabPage *DTSTabWindow::CreateTab(const wxString &name, int butmask, void *userdata, dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, bool addpage) {
 	DTSTabPage *dp;

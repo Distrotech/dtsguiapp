@@ -391,11 +391,14 @@ void DTSPanel::SetupWin(void) {
 	w->Show(false);
 }
 
-void DTSPanel::SetEventCallback(event_callback evcb, void *userdata) {
+void DTSPanel::SetEventCallback(event_callback evcb, void *userdata, bool useref) {
 	DTSPanelEvent *dtsevt = (DTSPanelEvent*)dtsevthandler;
 
 	if (dtsevthandler) {
 		dtsevt->SetCallback(evcb, userdata);
+	}
+	if (useref && userdata) {
+		objunref(userdata);
 	}
 }
 

@@ -107,7 +107,7 @@ class DTSTreeWindowEvent: public wxEvtHandler {
 
 class DTSTreeWindow: public DTSObject, public virtual wxSplitterWindow {
 	public:
-		DTSTreeWindow(wxWindow *parent = NULL, DTSFrame *frame = NULL, dtsgui_tree_cb tree_cb = NULL, wxString stat_msg = wxEmptyString, int pos = 30, void *u_data = NULL);
+		DTSTreeWindow(wxWindow *parent = NULL, DTSFrame *frame = NULL, dtsgui_tree_cb tree_cb = NULL, wxString stat_msg = wxEmptyString, int pos = 30, void *u_data = NULL, struct xml_doc *xd = NULL);
 		~DTSTreeWindow();
 		void ShowRMenu(bool cont, int cnt, bool first, bool last, bool c_sort, bool del);
 		bool Show(bool = true);
@@ -151,6 +151,7 @@ class DTSTabWindow: public DTSObject, public virtual wxNotebook {
 		DTSTabWindow(DTSFrame *frame = NULL, wxString stat_msg = wxEmptyString, void *u_data = NULL);
 		~DTSTabWindow();
 		DTSTabPage *CreateTab(const wxString &name, int butmask = 0, void *userdata = NULL, dtsgui_tabpanel_cb cb = NULL, void *cdata = NULL, struct xml_doc *xmldoc = NULL, bool addpage = true);
+		DTSTabPage *CreateTab(const wxString &name, int butmask, void *userdata, dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, int pos, int undo);
 		void InsertTab(DTSTabPage *panel, int pos, bool show = true, int undo = 0);
 		void Undo(int pg);
 		bool Show(bool = true);

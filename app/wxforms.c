@@ -22,7 +22,6 @@
 #include <limits.h>
 
 #ifdef __WIN32
-#define UNICODE 1
 #include <winsock2.h>
 #include <dirent.h>
 #include <shlobj.h>
@@ -31,10 +30,6 @@
 #include "dtsgui.h"
 
 #include "private.h"
-
-#ifndef DATA_DIR
-#define DATA_DIR	"/usr/share/dtsguiapp"
-#endif
 
 void xml_config(struct xml_doc *xmldoc) {
 	void *xmlbuf;
