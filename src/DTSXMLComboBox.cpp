@@ -59,7 +59,7 @@ struct xml_doc *DTSXMLComboBox::GetXMLDoc(const wxString& val, struct xml_node *
 		return NULL;
 	}
 
-	xmldoc = dtsgui_buf2xml(cbuf);
+	xmldoc = DTS_C_API::dtsgui_buf2xml(cbuf);
 	objunref(cbuf);
 
 	return xmldoc;

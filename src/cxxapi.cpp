@@ -16,10 +16,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#define __DTS_C_API
-
 #include <stdint.h>
-#include <vector>
 
 #ifdef __WIN32__
 #define UNICODE 1
@@ -32,6 +29,8 @@
 
 #include <dtsapp.h>
 #include "dtsgui.h"
+
+namespace DTS_C_API {
 
 void dtsgui_menuenable(dtsgui_menu dm, int enable) {
 	bool state =  (enable) ? true : false;
@@ -75,3 +74,4 @@ void getwin32folder(int csidl, char *path) {
 	SHGetFolderPathA(NULL, csidl, NULL, 0, path);
 }
 #endif
+} /* END namespace*/

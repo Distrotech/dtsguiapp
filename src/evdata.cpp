@@ -16,21 +16,18 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stdint.h>
-#include <wx/object.h>
-#include <wx/gbsizer.h>
-#include <wx/textctrl.h>
-#include <wx/panel.h>
-#include <wx/scrolwin.h>
-#include <wx/wizard.h>
-#include <dtsapp.h>
+#ifdef __WIN32__
+#define UNICODE 1
+#endif
 
+#include <stdint.h>
+
+#include <dtsapp.h>
 #include "dtsgui.h"
 #include "dtsgui.hpp"
-#include "evdata.h"
-#include "pitems.h"
-#include "DTSPanel.h"
 
+#include "evdata.h"
+#include "DTSPanel.h"
 
 dynamic_panel::dynamic_panel(const char *title, int blank, dtsgui_dynpanel cb, void *udata) {
 	if (udata && objref(udata)) {

@@ -48,10 +48,12 @@ class DTSApp : public wxApp {
 		int curl;
 };
 
-extern "C" {
-	int curl_progress_function(void *data, double dltotal, double dlnow, double ultotal, double ulnow);
-	void curl_progress_ctrl(void *data, int pause);
-	void *curl_startprogress(void *data);
+namespace DTS_C_API {
+	extern "C" {
+		int curl_progress_function(void *data, double dltotal, double dlnow, double ultotal, double ulnow);
+		void curl_progress_ctrl(void *data, int pause);
+		void *curl_startprogress(void *data);
+	}
 }
 
 #endif // DTSAPP_H

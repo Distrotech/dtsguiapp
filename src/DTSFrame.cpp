@@ -19,14 +19,6 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include <wx/frame.h>
-
-#include <wx/gbsizer.h>
-#include <wx/textctrl.h>
-#include <wx/panel.h>
-#include <wx/scrolwin.h>
-#include <wx/wizard.h>
-
 #include <wx/menu.h>
 #include <wx/msgdlg.h>
 #include <wx/gauge.h>
@@ -35,16 +27,14 @@
 #include <wx/filedlg.h>
 
 #include <dtsapp.h>
-#include <wx/app.h>
 
 #include "dtsgui.h"
 #include "dtsgui.hpp"
 
-#include "pitems.h"
-#include "evdata.h"
-#include "DTSFrame.h"
 #include "DTSPanel.h"
+#include "evdata.h"
 #include "DTSApp.h"
+#include "DTSFrame.h"
 
 wxDEFINE_EVENT(DTS_APP_EVENT, wxCommandEvent);
 
@@ -419,7 +409,7 @@ const char *DTSFrame::FileDialog(const char *title, const char *path, const char
 
 	fd = new wxFileDialog(this, title, (path) ? path : "", (name) ? name : "", (filter) ? filter : wxFileSelectorDefaultWildcardStr, style);
 	if (fd->ShowModal() != wxID_CANCEL) {
-		filename = dtsgui_char2obj(fd->GetPath().ToUTF8());
+		filename = DTS_C_API::dtsgui_char2obj(fd->GetPath().ToUTF8());
 	}
 
 	delete fd;

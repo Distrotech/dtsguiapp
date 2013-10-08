@@ -29,7 +29,6 @@
 #include "private.h"
 #include "DTSXMLComboBox.h"
 
-
 class DTSAPPToolBar: public wxToolBar {
 	public:
 		DTSAPPToolBar(struct dtsgui *dtsgui, wxWindow *parent, long style, wxWindowID id, wxString name, void *data);
@@ -102,12 +101,12 @@ void DTSAPPToolBar::HandleEvent(wxCommandEvent& event) {
 	idx = server->GetSelection();
 
 	if (etype == wxEVT_TEXT_ENTER) {
-		dtsgui_alert(dtsgui, "Got Me Some URL ARRRRGh");
+		DTS_C_API::dtsgui_alert(dtsgui, "Got Me Some URL ARRRRGh");
 	} else if (etype == wxEVT_COMBOBOX) {
 		xn = (struct xml_node*)server->GetClientData(idx);
-		dtsgui_alert(dtsgui, wxString("Selected IP ").Append(xml_getattr(xn, "ipaddr")));
+		DTS_C_API::dtsgui_alert(dtsgui, wxString("Selected IP ").Append(xml_getattr(xn, "ipaddr")));
 	} else if ((etype == wxEVT_COMBOBOX_DROPDOWN) && !server->HasXMLList()) {
-		dtsgui_alert(dtsgui, "Please enter 3 or more characters to search !");
+		DTS_C_API::dtsgui_alert(dtsgui, "Please enter 3 or more characters to search !");
 	}
 }
 

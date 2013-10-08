@@ -19,7 +19,8 @@
 #ifndef DTSLISTVIEW_HPP_INCLUDED
 #define DTSLISTVIEW_HPP_INCLUDED
 
-typedef class wxDataViewItemArray wxDataViewItemArray;
+#include <wx/dataview.h>
+#include <vector>
 
 class DTSDVMListStore {
 	public:

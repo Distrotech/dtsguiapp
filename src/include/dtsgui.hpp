@@ -18,6 +18,7 @@
 
 #if !defined(DTSGUI_HPP_INCLUDED) && defined(__cplusplus)
 #define DTSGUI_HPP_INCLUDED
+#include <wx/app.h>
 
 #define DTS_OJBREF_CLASS(classtype)	void *operator new(size_t sz) {\
 			return objalloc(sz, &classtype::unref);\

@@ -16,16 +16,17 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <vector>
+#ifdef __WIN32__
+#define UNICODE 1
+#endif
+
 #include <algorithm>
 #include <stdlib.h>
 #include <stdint.h>
 
-#include <wx/dataview.h>
-
 #include <dtsapp.h>
-
 #include "dtsgui.h"
+
 #include "DTSListView.h"
 
 bool DTSDVMListStore::cmp_title(DTSDVMListStore *c1,DTSDVMListStore *c2) {
@@ -225,7 +226,7 @@ struct xml_node *DTSDVMListStore::GetXMLData(char **buff) {
 		xn = xml;
 	}
 	if (buff && tattr) {
-		*buff = (char*)dtsgui_char2obj(tattr);
+		*buff = (char*)DTS_C_API::dtsgui_char2obj(tattr);
 	}
 	return xn;
 }
