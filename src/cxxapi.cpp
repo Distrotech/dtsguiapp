@@ -16,7 +16,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stdint.h>
+#define __DTS_C_API
 
 #ifdef __WIN32__
 #define UNICODE 1
@@ -27,7 +27,6 @@
 
 #include <wx/menu.h>
 
-#include <dtsapp.h>
 #include "dtsgui.h"
 
 namespace DTS_C_API {
@@ -47,26 +46,6 @@ void dtsgui_menuenable(dtsgui_menu dm, int enable) {
 		mi = items[i];
 		mi->Enable(state);
 	}
-}
-
-extern struct xml_doc *dtsgui_buf2xml(struct curlbuf *cbuf) {
-	struct xml_doc *xmldoc = NULL;
-
-	if (cbuf && cbuf->c_type && !strcmp("application/xml", cbuf->c_type)) {
-		curl_ungzip(cbuf);
-		xmldoc = xml_loadbuf(cbuf->body, cbuf->bsize, 1);
-	}
-	return xmldoc;
-}
-
-void *dtsgui_char2obj(const char *orig) {
-	int len = strlen(orig) + 1;
-	void *nobj;
-
-	if ((nobj = objalloc(len, NULL))) {
-		memcpy(nobj, orig, len);
-	}
-	return nobj;
 }
 
 #ifdef __WIN32

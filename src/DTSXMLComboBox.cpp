@@ -16,11 +16,7 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stdint.h>
-
 #include <wx/combobox.h>
-
-#include <dtsapp.h>
 
 #include "dtsgui.h"
 
@@ -59,7 +55,7 @@ struct xml_doc *DTSXMLComboBox::GetXMLDoc(const wxString& val, struct xml_node *
 		return NULL;
 	}
 
-	xmldoc = DTS_C_API::dtsgui_buf2xml(cbuf);
+	xmldoc = curl_buf2xml(cbuf);
 	objunref(cbuf);
 
 	return xmldoc;

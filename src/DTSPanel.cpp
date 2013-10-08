@@ -16,7 +16,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stdint.h>
 #include <stdlib.h>
 
 #include <wx/combobox.h>
@@ -25,9 +24,7 @@
 #include <wx/button.h>
 #include <wx/notebook.h>
 
-#include <dtsapp.h>
 #include "dtsgui.h"
-#include "dtsgui.hpp"
 
 #include "DTSFrame.h"
 #include "pitems.h"

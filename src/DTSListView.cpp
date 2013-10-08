@@ -22,9 +22,7 @@
 
 #include <algorithm>
 #include <stdlib.h>
-#include <stdint.h>
 
-#include <dtsapp.h>
 #include "dtsgui.h"
 
 #include "DTSListView.h"
@@ -226,7 +224,7 @@ struct xml_node *DTSDVMListStore::GetXMLData(char **buff) {
 		xn = xml;
 	}
 	if (buff && tattr) {
-		*buff = (char*)DTS_C_API::dtsgui_char2obj(tattr);
+		*buff = (char*)objchar(tattr);
 	}
 	return xn;
 }
@@ -610,7 +608,6 @@ wxDataViewItem DTSDVMCtrl::AppendContainer(wxDataViewItem parent, const wxString
 wxDataViewItem DTSDVMCtrl::AppendNode(wxDataViewItem parent, const wxString& title, bool iscont, bool can_edit, bool can_sort, bool can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *userdata) {
 	DTSDVMListStore *li, *node;
 	wxDataViewItem dvi;
-
 
 	if (!parent.IsOk() && !model->GetRoot()) {
 		li = model->SetRoot(title, nodeid, p_cb, userdata);

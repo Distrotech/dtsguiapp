@@ -16,13 +16,9 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stdint.h>
-
 #include <wx/menu.h>
 
-#include <dtsapp.h>
 #include "dtsgui.h"
-#include "dtsgui.hpp"
 
 #include "DTSFrame.h"
 #include "DTSListView.h"

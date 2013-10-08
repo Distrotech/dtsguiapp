@@ -17,11 +17,8 @@
 */
 
 #include <stdlib.h>
-#include <stdint.h>
 #include <limits.h>
 #include <stdio.h>
-
-#include <dtsapp.h>
 
 #include "dtsgui.h"
 

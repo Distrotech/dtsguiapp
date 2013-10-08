@@ -20,11 +20,7 @@
 #define UNICODE 1
 #endif
 
-#include <stdint.h>
-
-#include <dtsapp.h>
 #include "dtsgui.h"
-#include "dtsgui.hpp"
 
 #include "evdata.h"
 #include "DTSPanel.h"

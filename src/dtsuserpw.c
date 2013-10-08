@@ -16,15 +16,11 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
-#include <dtsapp.h>
-
 #include "dtsgui.h"
-
 
 int pwevent(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
 	struct basic_auth *auth;
