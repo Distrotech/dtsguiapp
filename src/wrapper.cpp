@@ -80,7 +80,7 @@
   * Resources controlling and manipulating the progress dialog
   */
 
-/** 
+/**
   * @ingroup C-API
   * @brief Defining __DTS_C_API allows access to C API from inside a C++ file
   *
@@ -122,7 +122,7 @@ static int menuid = wxID_AUTO_LOWEST;
 /** @ingroup C-API
   * @brief Configure the GUI and create a application frame.
   *
-  * This is the first process required the application is created and the callback 
+  * This is the first process required the application is created and the callback
   * is executed.
   *
   * Application processing continues until dtsgui_run is executed at this point
@@ -132,7 +132,7 @@ static int menuid = wxID_AUTO_LOWEST;
   *
   * The Callback must return a non zero value to indicat success should
   * the application fail returning 0 will close the application.
-  * 
+  *
   * @see DTSApp
   * @see dtsgui_configcb
   *
@@ -180,7 +180,7 @@ void *dtsgui_userdata(struct dtsgui *dtsgui) {
 
 /** @ingroup C-API
   * @brief Set the displayed panel
-  * 
+  *
   * Switch the curent pane with the one provided this
   * should not be done and rather use menu callbacks.
   *
@@ -250,7 +250,7 @@ void dtsgui_set_toolbar(struct dtsgui *dtsgui, int show) {
 /** @ingroup C-API-Menus
   * @brief Create a new menu and append it to the menu bar.
   *
-  * A new menu is created and appended to the menu bar the 
+  * A new menu is created and appended to the menu bar the
   * returned value will be passed to menu functions to append
   * items to.
   *
@@ -267,10 +267,10 @@ dtsgui_menu dtsgui_newmenu(struct dtsgui *dtsgui, const char *name) {
 }
 
 /** @ingroup C-API-Menus
-  * @brief Create a menu item that will activate the pane provided. 
+  * @brief Create a menu item that will activate the pane provided.
   *
   * this pane needs to be created and not deleted use of this function is discouraged.
-  * the callback menu function is recomended where a panel can be dynamically created 
+  * the callback menu function is recomended where a panel can be dynamically created
   * and returned.
   *
   * @see DTSFrame::NewMenuItem()
@@ -310,7 +310,7 @@ dtsgui_menuitem dtsgui_newmenuitem(dtsgui_menu dtsmenu, struct dtsgui *dtsgui, c
   * @param name displayed on status bar and returned in callback.
   * @param blank if not zero will blank the display before executing callback.
   * @param cb Callback function to execute when selected.
-  * @param data A ptr to a referenced object.   
+  * @param data A ptr to a referenced object.
   * @return Created menu item.
   *
   */
@@ -397,7 +397,7 @@ void dtsgui_menusep(dtsgui_menu dtsmenu) {
 
 /** @ingroup C-API-Panel
   * @brief Create a pannel to be displayed.
-  * 
+  *
   * This function is able to create and return various panels excluding Tab/Tree view panels.
   *
   * @see DTSFrame::CreatePane()
@@ -483,7 +483,7 @@ extern dtsgui_tabview dtsgui_tabwindow(struct dtsgui *dtsgui, const char *title,
   *
   * This helper function will update the node's XML after a edit event.
   *
-  * @see DTSTreeWindow::UpdateNodeXML() 
+  * @see DTSTreeWindow::UpdateNodeXML()
   *
   * @param tree Treeview node is part of.
   * @param node TreeNode to update.
@@ -618,7 +618,7 @@ extern dtsgui_pane dtsgui_tabpage_insert(dtsgui_tabview tv, const char *name, in
   * @param data Referenced object made available in callbacks.
   * @return Nothing is returned the callback is registered on the panel.
   */
-void dtsgui_newxmltabpane(dtsgui_tabview tabv, dtsgui_pane p, const char *xpath, const char *node, const char *vitem, const char *tattr,  dtsgui_tabpane_newdata_cb data_cb, 
+void dtsgui_newxmltabpane(dtsgui_tabview tabv, dtsgui_pane p, const char *xpath, const char *node, const char *vitem, const char *tattr,  dtsgui_tabpane_newdata_cb data_cb,
 			  dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, void *data) {
 	class tab_newpane *tn = new tab_newpane((DTSTabWindow*)tabv, xpath, node, vitem, tattr, data_cb, cb, cdata, xmldoc, data);
 	static_cast<DTSPanel*>(p)->SetEventCallback(&tab_newpane::handle_newtabpane_cb, tn, true);
@@ -683,7 +683,7 @@ dtsgui_pane dtsgui_treepane_default(dtsgui_treeview tv, dtsgui_treenode node) {
   * @param p_cb Callback to pass panel for configuration on selection of the item.
   * @param data Referenced object passed too callbacks.
   */
-dtsgui_treenode dtsgui_treecont(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, 
+dtsgui_treenode dtsgui_treecont(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del,
 				int nodeid, dtsgui_treeviewpanel_cb p_cb, void *data) {
 	DTSTreeWindow *tw = (DTSTreeWindow*)tree;
 	return tw->GetTreeCtrl()->AppendContainer(wxDataViewItem(node), title, can_edit, can_sort, can_del, nodeid, p_cb, data).GetID();
@@ -898,7 +898,7 @@ void dtsgui_configcallback(dtsgui_pane pane,dtsgui_configcb cb, void *data) {
 
 /** @ingroup C-API-Panel
   * @brief Create a node from the elements on the panel.
-  * 
+  *
   * Using the path information a node is created and elements
   * added as attributes.
   *
@@ -1144,6 +1144,5 @@ struct form_item *dtsgui_xmlcombobox(dtsgui_pane pane, const char *title, const 
 	DTSPanel *p = (DTSPanel *)pane;
 	return p->XMLComboBox(title, name, xpath, node, fattr, fval, attr);
 }
-
 
 } /*END Namespace*/

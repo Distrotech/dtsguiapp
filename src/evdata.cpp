@@ -25,20 +25,20 @@
 #include "evdata.h"
 #include "DTSPanel.h"
 
-dynamic_panel::dynamic_panel(const char *title, int blank, dtsgui_dynpanel cb, void *udata) {
+dynamic_panel::dynamic_panel(const char *name, int blank, dtsgui_dynpanel cb, void *udata) {
 	if (udata && objref(udata)) {
 		data = udata;
 	} else {
 		data = NULL;
 	}
-	ALLOC_CONST(this->title, title);
+	ALLOC_CONST(this->name, name);
 	this->cb = cb;
 	this->blank = blank;
 }
 
 dynamic_panel::~dynamic_panel() {
-	if (title) {
-		free((void*)title);
+	if (name) {
+		free((void*)name);
 	}
 	if (data) {
 		objunref(data);
@@ -66,7 +66,7 @@ wxWindow *dynamic_panel::RunCallback(class dtsgui *dtsgui) {
 	}
 
 	if (dtsgui && objref(dtsgui)) {
-		if ((p = (DTSObject*)cb(dtsgui, title, data))) {
+		if ((p = (DTSObject*)cb(dtsgui, name, data))) {
 			w = p->GetPanel();
 		}
 		objunref(dtsgui);
