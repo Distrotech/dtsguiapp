@@ -1,0 +1,83 @@
+.TH "DTSDVMCtrl" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DTSDVMCtrl \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DTSListView\&.h>\fP
+.PP
+Inherits wxDataViewCtrl\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTSDVMCtrl\fP ()"
+.br
+.ti -1c
+.RI "\fBDTSDVMCtrl\fP (\fBwxWindow\fP *parent, wxWindowID id=wxID_ANY, \fBDTSDVMListView\fP *model=NULL, const wxPoint &pos=wxDefaultPosition, const wxSize &size=wxDefaultSize, long style=wxDV_ROW_LINES, const wxValidator &validator=wxDefaultValidator)"
+.br
+.ti -1c
+.RI "\fB~DTSDVMCtrl\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBAssociateModel\fP (\fBDTSDVMListView\fP *model)"
+.br
+.ti -1c
+.RI "void \fBSort\fP (const wxDataViewItem &parent)"
+.br
+.ti -1c
+.RI "\fBDTSDVMListView\fP * \fBGetStore\fP ()"
+.br
+.ti -1c
+.RI "wxDataViewItem \fBAppendItem\fP (wxDataViewItem parent, const wxString &title, bool can_edit=true, bool can_sort=true, bool can_del=false, int nodeid=-1, \fBdtsgui_treeviewpanel_cb\fP p_cb=NULL, void *userdata=NULL)"
+.br
+.ti -1c
+.RI "wxDataViewItem \fBAppendContainer\fP (wxDataViewItem parent, const wxString &title, bool can_edit=true, bool can_sort=true, bool can_del=false, int nodeid=-1, \fBdtsgui_treeviewpanel_cb\fP p_cb=NULL, void *userdata=NULL)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 105 of file DTSListView\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DTSDVMCtrl::DTSDVMCtrl ()"
+
+.PP
+Definition at line 543 of file DTSListView\&.cpp\&.
+.SS "DTSDVMCtrl::DTSDVMCtrl (\fBwxWindow\fP *parent, wxWindowIDid = \fCwxID_ANY\fP, \fBDTSDVMListView\fP *model = \fCNULL\fP, const wxPoint &pos = \fCwxDefaultPosition\fP, const wxSize &size = \fCwxDefaultSize\fP, longstyle = \fCwxDV_ROW_LINES\fP, const wxValidator &validator = \fCwxDefaultValidator\fP)"
+
+.PP
+Definition at line 547 of file DTSListView\&.cpp\&.
+.SS "DTSDVMCtrl::~DTSDVMCtrl ()"
+
+.PP
+Definition at line 574 of file DTSListView\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "wxDataViewItem DTSDVMCtrl::AppendContainer (wxDataViewItemparent, const wxString &title, boolcan_edit = \fCtrue\fP, boolcan_sort = \fCtrue\fP, boolcan_del = \fCfalse\fP, intnodeid = \fC-1\fP, \fBdtsgui_treeviewpanel_cb\fPp_cb = \fCNULL\fP, void *userdata = \fCNULL\fP)"
+
+.PP
+Definition at line 604 of file DTSListView\&.cpp\&.
+.SS "wxDataViewItem DTSDVMCtrl::AppendItem (wxDataViewItemparent, const wxString &title, boolcan_edit = \fCtrue\fP, boolcan_sort = \fCtrue\fP, boolcan_del = \fCfalse\fP, intnodeid = \fC-1\fP, \fBdtsgui_treeviewpanel_cb\fPp_cb = \fCNULL\fP, void *userdata = \fCNULL\fP)"
+
+.PP
+Definition at line 600 of file DTSListView\&.cpp\&.
+.SS "bool DTSDVMCtrl::AssociateModel (\fBDTSDVMListView\fP *model)\fC [virtual]\fP"
+
+.PP
+Definition at line 578 of file DTSListView\&.cpp\&.
+.SS "\fBDTSDVMListView\fP * DTSDVMCtrl::GetStore ()"
+
+.PP
+Definition at line 596 of file DTSListView\&.cpp\&.
+.SS "void DTSDVMCtrl::Sort (const wxDataViewItem &parent)"
+
+.PP
+Definition at line 592 of file DTSListView\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

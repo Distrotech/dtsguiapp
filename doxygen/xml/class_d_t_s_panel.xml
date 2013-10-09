@@ -1,0 +1,1077 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_d_t_s_panel" kind="class" prot="public">
+    <compoundname>DTSPanel</compoundname>
+    <basecompoundref refid="class_d_t_s_object" prot="public" virt="non-virtual">DTSObject</basecompoundref>
+    <derivedcompoundref refid="class_d_t_s_scroll_panel" prot="public" virt="non-virtual">DTSScrollPanel</derivedcompoundref>
+    <derivedcompoundref refid="class_d_t_s_static_panel" prot="public" virt="non-virtual">DTSStaticPanel</derivedcompoundref>
+    <derivedcompoundref refid="class_d_t_s_window" prot="public" virt="non-virtual">DTSWindow</derivedcompoundref>
+    <derivedcompoundref refid="class_d_t_s_wizard_window" prot="public" virt="non-virtual">DTSWizardWindow</derivedcompoundref>
+    <includes refid="_d_t_s_panel_8h" local="no">DTSPanel.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_d_t_s_panel_1af25bdb7e04f715c228774c2be0dd8251" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DTSPanel::button_mask</definition>
+        <argsstring></argsstring>
+        <name>button_mask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="114" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_d_t_s_panel_1accbfebfa3c737d3bf33386616f6771f4" prot="private" static="no" mutable="no">
+        <type><ref refid="_d_t_s_panel_8h_1a0ee20cbe771deb52d64bc265fb97ae4d" kindref="member">wxStaticText</ref> *</type>
+        <definition>wxStaticText* DTSPanel::title</definition>
+        <argsstring></argsstring>
+        <name>title</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="117" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_panel_1ad2cca5a57cb57721f09e58b054235347" prot="private" static="no" mutable="no">
+        <type>wxGridBagSizer *</type>
+        <definition>wxGridBagSizer* DTSPanel::fgs</definition>
+        <argsstring></argsstring>
+        <name>fgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="118" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_panel_1a40a4abd45ab1af5aff6eb893aeb0eede" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DTSPanel::g_row</definition>
+        <argsstring></argsstring>
+        <name>g_row</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="119" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_panel_1a92c2c65336702cf1315967eb8f1951a7" prot="private" static="no" mutable="no">
+        <type><ref refid="group___c-_a_p_i_1gad3b80490c86b8275c47382588f2ecfd4" kindref="member">dtsgui_configcb</ref></type>
+        <definition>dtsgui_configcb DTSPanel::configcb</definition>
+        <argsstring></argsstring>
+        <name>configcb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="120" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_panel_1afeb3f176d41017d2daf3b2f2c9e25818" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* DTSPanel::config_data</definition>
+        <argsstring></argsstring>
+        <name>config_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="121" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_d_t_s_panel_1abfe32d536cdcb2eee87a5c0ef1df826f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSPanel::DTSPanel</definition>
+        <argsstring>(DTSFrame *=NULL, wxString=wxEmptyString, int=0)</argsstring>
+        <name>DTSPanel</name>
+        <param>
+          <type><ref refid="class_d_t_s_frame" kindref="compound">DTSFrame</ref> *</type>
+          <defname>mainwin</defname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>wxString</type>
+          <defname>statusmsg</defname>
+          <defval>wxEmptyString</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>butmask</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="85" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="336" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1acfa1f9a5350e95f2898f875113be95e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSPanel::~DTSPanel</definition>
+        <argsstring>()</argsstring>
+        <name>~DTSPanel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="86" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="357" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1acd1b20a134272f1bc2d048d5977a3d3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::TextBox</definition>
+        <argsstring>(const char *, const char *, wxString=wxEmptyString, int flags=wxTE_LEFT, int rows=1, void *data=NULL, enum form_data_type dtype=DTSGUI_FORM_DATA_PTR)</argsstring>
+        <name>TextBox</name>
+        <param>
+          <type>const char *</type>
+          <defname>title</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>wxString</type>
+          <defname>defval</defname>
+          <defval>wxEmptyString</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+          <defval>wxTE_LEFT</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rows</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>enum <ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
+          <declname>dtype</declname>
+          <defval><ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kindref="member">DTSGUI_FORM_DATA_PTR</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="87" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="554" bodyend="570"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1a1276b3add451cab10d57ea0005211194" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::PasswdBox</definition>
+        <argsstring>(const char *, const char *, wxString=wxEmptyString, int flags=wxTE_LEFT, void *data=NULL, enum form_data_type dtype=DTSGUI_FORM_DATA_PTR)</argsstring>
+        <name>PasswdBox</name>
+        <param>
+          <type>const char *</type>
+          <defname>title</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>wxString</type>
+          <defname>defval</defname>
+          <defval>wxEmptyString</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+          <defval>wxTE_LEFT</defval>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>enum <ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
+          <declname>dtype</declname>
+          <defval><ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kindref="member">DTSGUI_FORM_DATA_PTR</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="88" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="587" bodyend="589"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1a1bfea883644cb1052752528b89b8c71f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::CheckBox</definition>
+        <argsstring>(const char *title, const char *name, int ischecked, const char *checkval, const char *uncheckval, void *data=NULL, enum form_data_type dtype=DTSGUI_FORM_DATA_PTR)</argsstring>
+        <name>CheckBox</name>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ischecked</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>checkval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>uncheckval</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>enum <ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
+          <declname>dtype</declname>
+          <defval><ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kindref="member">DTSGUI_FORM_DATA_PTR</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="89" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="595" bodyend="613"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1a08cb04c83c8e5668592bd2f3bacf8267" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
+        <definition>class form_item * DTSPanel::ListBox</definition>
+        <argsstring>(const char *title, const char *name, const char *value, void *data=NULL, enum form_data_type dtype=DTSGUI_FORM_DATA_PTR)</argsstring>
+        <name>ListBox</name>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>enum <ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
+          <declname>dtype</declname>
+          <defval><ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kindref="member">DTSGUI_FORM_DATA_PTR</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="90" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="635" bodyend="652"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1ad91d3ca25ab8349403efc7cc78cb1869" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
+        <definition>class form_item * DTSPanel::ComboBox</definition>
+        <argsstring>(const char *title, const char *name, const char *value, void *data=NULL, enum form_data_type dtype=DTSGUI_FORM_DATA_PTR)</argsstring>
+        <name>ComboBox</name>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>enum <ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
+          <declname>dtype</declname>
+          <defval><ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kindref="member">DTSGUI_FORM_DATA_PTR</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="91" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="671" bodyend="692"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1a2b893b30f6265079a143bb23029aa083" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::XMLTextBox</definition>
+        <argsstring>(const char *, const char *, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr, int flags=wxTE_LEFT, int rows=1)</argsstring>
+        <name>XMLTextBox</name>
+        <param>
+          <type>const char *</type>
+          <defname>title</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>xpath</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fattr</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>attr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+          <defval>wxTE_LEFT</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rows</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="92" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="572" bodyend="585"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1a5bbe4bfc295ef7b772c09628e80976c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::XMLPasswdBox</definition>
+        <argsstring>(const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr, int flags)</argsstring>
+        <name>XMLPasswdBox</name>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>xpath</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fattr</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>attr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="93" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="591" bodyend="593"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1a1495f670e901f45cbbc3a4d2c471aa53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::XMLCheckBox</definition>
+        <argsstring>(const char *title, const char *name, const char *checkval, const char *uncheckval, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)</argsstring>
+        <name>XMLCheckBox</name>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>checkval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>uncheckval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>xpath</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fattr</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>attr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="94" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="615" bodyend="633"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1a03d63a8c380ee62e263d7bc3a3c86396" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
+        <definition>class form_item * DTSPanel::XMLListBox</definition>
+        <argsstring>(const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)</argsstring>
+        <name>XMLListBox</name>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>xpath</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fattr</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>attr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="95" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="654" bodyend="669"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1a4d294755a98b6194df04292abe18d1b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
+        <definition>class form_item * DTSPanel::XMLComboBox</definition>
+        <argsstring>(const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)</argsstring>
+        <name>XMLComboBox</name>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>xpath</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fattr</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>attr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="96" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="694" bodyend="709"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1a714c09276642d4a0cf20cc5d941f62a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::AddItem</definition>
+        <argsstring>(wxWindow *item, const wxGBPosition pos, const wxGBSpan span=wxDefaultSpan, int flags=0, int border=0, int growrow=-1)</argsstring>
+        <name>AddItem</name>
+        <param>
+          <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>const wxGBPosition</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>const wxGBSpan</type>
+          <declname>span</declname>
+          <defval>wxDefaultSpan</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>border</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>growrow</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="97" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="440" bodyend="446"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1ac18de08077529d488ea329a72ee14d98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::SetEventCallback</definition>
+        <argsstring>(event_callback evcb, void *userdata=NULL, bool useref=false)</argsstring>
+        <name>SetEventCallback</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1acfd3355668ba382f87a9aab4ea2c4e9c" kindref="member">event_callback</ref></type>
+          <declname>evcb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useref</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="98" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="394" bodyend="403"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1acdb57729ace5f3c0fc76cce4d41c36cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::SetConfigCallback</definition>
+        <argsstring>(dtsgui_configcb cb, void *userdata=NULL)</argsstring>
+        <name>SetConfigCallback</name>
+        <param>
+          <type><ref refid="group___c-_a_p_i_1gad3b80490c86b8275c47382588f2ecfd4" kindref="member">dtsgui_configcb</ref></type>
+          <declname>cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="99" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="405" bodyend="418"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1adc5131960a24dfa65adba935a1be0f79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::Update_XML</definition>
+        <argsstring>()</argsstring>
+        <name>Update_XML</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="100" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="733" bodyend="762"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1ad28f5ed6bd19e9d685a18df8bf568f92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct xml_node *</type>
+        <definition>struct xml_node * DTSPanel::Panel2XML</definition>
+        <argsstring>(const char *xpath, const char *node, const char *nodeval, const char *attrkey)</argsstring>
+        <name>Panel2XML</name>
+        <param>
+          <type>const char *</type>
+          <declname>xpath</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>nodeval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>attrkey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="101" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="764" bodyend="826"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1a7ce048cedd00ee1f1d9ea1c1fd504a6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct curl_post *</type>
+        <definition>struct curl_post * DTSPanel::Panel2Post</definition>
+        <argsstring>()</argsstring>
+        <name>Panel2Post</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="102" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="828" bodyend="867"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1aab8f3d3fbeb44163401d558d903f45ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classxml__element" kindref="compound">xml_element</ref> *</type>
+        <definition>struct xml_element * DTSPanel::GetNode</definition>
+        <argsstring>(const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)</argsstring>
+        <name>GetNode</name>
+        <param>
+          <type>const char *</type>
+          <declname>xpath</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fattr</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>fval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>attr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="103" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="484" bodyend="552"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1a0c1a3aa81559298e059473bde57ab23e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DTSPanel::ShowPanel</definition>
+        <argsstring>(bool=true)</argsstring>
+        <name>ShowPanel</name>
+        <param>
+          <type>bool</type>
+          <defname>show</defname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="104" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="420" bodyend="438"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1a58daeb533cce1e4bdac57118cce7c7ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::SetTitle</definition>
+        <argsstring>(const wxString new_title, bool create=false)</argsstring>
+        <name>SetTitle</name>
+        <param>
+          <type>const wxString</type>
+          <declname>new_title</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>create</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="105" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="470" bodyend="476"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1a03be174c3cb033ba74b6abce543347e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::SetStatus</definition>
+        <argsstring>(const wxString new_status)</argsstring>
+        <name>SetStatus</name>
+        <param>
+          <type>const wxString</type>
+          <declname>new_status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="106" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="478" bodyend="482"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1a3c4a20a1c122851ae935dcac34697361" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
+        <definition>class form_item * DTSPanel::FindItem</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>FindItem</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="107" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="869" bodyend="871"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1aaeef18ad561346699ed24e0aa6fa47b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * DTSPanel::FindValue</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>FindValue</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="108" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="873" bodyend="884"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_d_t_s_panel_1ae0135da688bb9046fd2cafbf5eaf7ffc" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::Title</definition>
+        <argsstring>(const char *title)</argsstring>
+        <name>Title</name>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="110" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="448" bodyend="468"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1afd0a6ee00e2e13185c240178850e368e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::SetSizerSize</definition>
+        <argsstring>(wxSize, wxWindow *)</argsstring>
+        <name>SetSizerSize</name>
+        <param>
+          <type>wxSize</type>
+          <defname>minsize</defname>
+        </param>
+        <param>
+          <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+          <defname>parent</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="111" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="370" bodyend="376"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1a9e90d0d7b1466eb3e8005343ce787974" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::SetupWin</definition>
+        <argsstring>()</argsstring>
+        <name>SetupWin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="112" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="378" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_panel_1ae2385ab076d14fdecc0d58285063c520" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSPanel::Buttons</definition>
+        <argsstring>(void)</argsstring>
+        <name>Buttons</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="113" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="711" bodyend="731"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_d_t_s_panel_1aa804939e8221c211303c535a40ae4f5f" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DTSPanel::fitems_hash</definition>
+        <argsstring>(const void *data, int key)</argsstring>
+        <name>fitems_hash</name>
+        <param>
+          <type>const void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="116" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="37" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="64">
+        <label>DTSObject</label>
+        <link refid="class_d_t_s_object"/>
+        <childnode refid="65" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="63">
+        <label>DTSPanel</label>
+        <link refid="class_d_t_s_panel"/>
+        <childnode refid="64" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>DTSTextPanel</label>
+        <link refid="class_d_t_s_text_panel"/>
+        <childnode refid="68" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>DTSScrollPanel</label>
+        <link refid="class_d_t_s_scroll_panel"/>
+        <childnode refid="63" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>wxWindow</label>
+      </node>
+      <node id="67">
+        <label>DTSTabPage</label>
+        <link refid="class_d_t_s_tab_page"/>
+        <childnode refid="66" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>DTSWizardWindow</label>
+        <link refid="class_d_t_s_wizard_window"/>
+        <childnode refid="63" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>DTSStaticPanel</label>
+        <link refid="class_d_t_s_static_panel"/>
+        <childnode refid="63" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="71">
+        <label>DTSWindow</label>
+        <link refid="class_d_t_s_window"/>
+        <childnode refid="63" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>DTSDialog</label>
+        <link refid="class_d_t_s_dialog"/>
+        <childnode refid="68" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="74">
+        <label>DTSObject</label>
+        <link refid="class_d_t_s_object"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+        <childnode refid="76" relation="usage">
+          <edgelabel>frame</edgelabel>
+        </childnode>
+      </node>
+      <node id="73">
+        <label>DTSPanel</label>
+        <link refid="class_d_t_s_panel"/>
+        <childnode refid="74" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>wxWindow</label>
+      </node>
+      <node id="77">
+        <label>wxFrame</label>
+      </node>
+      <node id="76">
+        <label>DTSFrame</label>
+        <link refid="class_d_t_s_frame"/>
+        <childnode refid="77" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="83" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="83" bodyend="122"/>
+    <listofallmembers>
+      <member refid="class_d_t_s_panel_1a714c09276642d4a0cf20cc5d941f62a1" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>AddItem</name></member>
+      <member refid="class_d_t_s_object_1ab4249f538d36789b20bb15e29ab4121f" prot="protected" virt="non-virtual"><scope>DTSPanel</scope><name>beenshown</name></member>
+      <member refid="class_d_t_s_panel_1af25bdb7e04f715c228774c2be0dd8251" prot="protected" virt="non-virtual"><scope>DTSPanel</scope><name>button_mask</name></member>
+      <member refid="class_d_t_s_panel_1ae2385ab076d14fdecc0d58285063c520" prot="protected" virt="non-virtual"><scope>DTSPanel</scope><name>Buttons</name></member>
+      <member refid="class_d_t_s_object_1abcce46b892d3c17810d4551c495512ce" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>buttons</name></member>
+      <member refid="class_d_t_s_panel_1a1bfea883644cb1052752528b89b8c71f" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>CheckBox</name></member>
+      <member refid="class_d_t_s_panel_1ad91d3ca25ab8349403efc7cc78cb1869" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>ComboBox</name></member>
+      <member refid="class_d_t_s_panel_1afeb3f176d41017d2daf3b2f2c9e25818" prot="private" virt="non-virtual"><scope>DTSPanel</scope><name>config_data</name></member>
+      <member refid="class_d_t_s_panel_1a92c2c65336702cf1315967eb8f1951a7" prot="private" virt="non-virtual"><scope>DTSPanel</scope><name>configcb</name></member>
+      <member refid="class_d_t_s_object_1a132481851865629352e4aefa7f822e4b" prot="protected" virt="non-virtual"><scope>DTSPanel</scope><name>dtsevthandler</name></member>
+      <member refid="class_d_t_s_object_1a76f73a01ddebf90d59245dd744d491b5" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>DTSObject</name></member>
+      <member refid="class_d_t_s_panel_1abfe32d536cdcb2eee87a5c0ef1df826f" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>DTSPanel</name></member>
+      <member refid="class_d_t_s_object_1a392c5ee37a2ca5e82e39cf11bc781eda" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>EventHandler</name></member>
+      <member refid="class_d_t_s_panel_1ad2cca5a57cb57721f09e58b054235347" prot="private" virt="non-virtual"><scope>DTSPanel</scope><name>fgs</name></member>
+      <member refid="class_d_t_s_panel_1a3c4a20a1c122851ae935dcac34697361" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>FindItem</name></member>
+      <member refid="class_d_t_s_panel_1aaeef18ad561346699ed24e0aa6fa47b3" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>FindValue</name></member>
+      <member refid="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" prot="protected" virt="non-virtual"><scope>DTSPanel</scope><name>fitems</name></member>
+      <member refid="class_d_t_s_panel_1aa804939e8221c211303c535a40ae4f5f" prot="private" virt="non-virtual"><scope>DTSPanel</scope><name>fitems_hash</name></member>
+      <member refid="class_d_t_s_object_1a8ca3e7c6f66685caf07fa93fb5e14337" prot="protected" virt="non-virtual"><scope>DTSPanel</scope><name>frame</name></member>
+      <member refid="class_d_t_s_panel_1a40a4abd45ab1af5aff6eb893aeb0eede" prot="private" virt="non-virtual"><scope>DTSPanel</scope><name>g_row</name></member>
+      <member refid="class_d_t_s_object_1ae5239b912c725a7a5720954767c3537a" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>GetFrame</name></member>
+      <member refid="class_d_t_s_object_1a4cadcce0480e7e8f4a9a07a4aedd3c1f" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>GetItems</name></member>
+      <member refid="class_d_t_s_object_1aa800a3664b895617df9884469dbdf1f8" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>GetName</name></member>
+      <member refid="class_d_t_s_panel_1aab8f3d3fbeb44163401d558d903f45ad" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>GetNode</name></member>
+      <member refid="class_d_t_s_object_1ae88ef1ea6f28346b6cd6d2d898d7acde" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>GetPanel</name></member>
+      <member refid="class_d_t_s_object_1a5d32407be34aa68ea2b038ede768d50e" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>GetUserData</name></member>
+      <member refid="class_d_t_s_object_1ae177d1cfd85be759810b252b98f2050d" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>GetXMLDoc</name></member>
+      <member refid="class_d_t_s_panel_1a08cb04c83c8e5668592bd2f3bacf8267" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>ListBox</name></member>
+      <member refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" prot="protected" virt="non-virtual"><scope>DTSPanel</scope><name>panel</name></member>
+      <member refid="class_d_t_s_panel_1a7ce048cedd00ee1f1d9ea1c1fd504a6f" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>Panel2Post</name></member>
+      <member refid="class_d_t_s_panel_1ad28f5ed6bd19e9d685a18df8bf568f92" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>Panel2XML</name></member>
+      <member refid="class_d_t_s_panel_1a1276b3add451cab10d57ea0005211194" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>PasswdBox</name></member>
+      <member refid="class_d_t_s_object_1a941fc98555b60d021a6c2f488ce9ae3e" prot="protected" virt="non-virtual"><scope>DTSPanel</scope><name>refobj</name></member>
+      <member refid="class_d_t_s_panel_1acdb57729ace5f3c0fc76cce4d41c36cc" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>SetConfigCallback</name></member>
+      <member refid="class_d_t_s_panel_1ac18de08077529d488ea329a72ee14d98" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>SetEventCallback</name></member>
+      <member refid="class_d_t_s_panel_1afd0a6ee00e2e13185c240178850e368e" prot="protected" virt="non-virtual"><scope>DTSPanel</scope><name>SetSizerSize</name></member>
+      <member refid="class_d_t_s_panel_1a03be174c3cb033ba74b6abce543347e3" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>SetStatus</name></member>
+      <member refid="class_d_t_s_panel_1a58daeb533cce1e4bdac57118cce7c7ea" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>SetTitle</name></member>
+      <member refid="class_d_t_s_panel_1a9e90d0d7b1466eb3e8005343ce787974" prot="protected" virt="non-virtual"><scope>DTSPanel</scope><name>SetupWin</name></member>
+      <member refid="class_d_t_s_object_1a3e39ba76f7cb701fc9b99f6f059fb49e" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>SetUserData</name></member>
+      <member refid="class_d_t_s_object_1a1ae63425d8e5770a8b0717f37fd695b2" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>SetXMLDoc</name></member>
+      <member refid="class_d_t_s_panel_1a0c1a3aa81559298e059473bde57ab23e" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>ShowPanel</name></member>
+      <member refid="class_d_t_s_object_1a1292b4804b31450f0ee960fa59fcfc7a" prot="protected" virt="non-virtual"><scope>DTSPanel</scope><name>status</name></member>
+      <member refid="class_d_t_s_panel_1acd1b20a134272f1bc2d048d5977a3d3c" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>TextBox</name></member>
+      <member refid="class_d_t_s_panel_1accbfebfa3c737d3bf33386616f6771f4" prot="private" virt="non-virtual"><scope>DTSPanel</scope><name>title</name></member>
+      <member refid="class_d_t_s_panel_1ae0135da688bb9046fd2cafbf5eaf7ffc" prot="protected" virt="non-virtual"><scope>DTSPanel</scope><name>Title</name></member>
+      <member refid="class_d_t_s_object_1ad191e42b5daa056f9ea8247d752df3b0" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>type</name></member>
+      <member refid="class_d_t_s_panel_1adc5131960a24dfa65adba935a1be0f79" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>Update_XML</name></member>
+      <member refid="class_d_t_s_object_1a783949e39ffd9e00aec15fa2b8cc12ed" prot="protected" virt="non-virtual"><scope>DTSPanel</scope><name>userdata</name></member>
+      <member refid="class_d_t_s_panel_1a1495f670e901f45cbbc3a4d2c471aa53" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>XMLCheckBox</name></member>
+      <member refid="class_d_t_s_panel_1a4d294755a98b6194df04292abe18d1b0" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>XMLComboBox</name></member>
+      <member refid="class_d_t_s_object_1a0e9b6e22629a9aa1fd5227cefaa25e6f" prot="protected" virt="non-virtual"><scope>DTSPanel</scope><name>xmldoc</name></member>
+      <member refid="class_d_t_s_panel_1a03d63a8c380ee62e263d7bc3a3c86396" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>XMLListBox</name></member>
+      <member refid="class_d_t_s_panel_1a5bbe4bfc295ef7b772c09628e80976c7" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>XMLPasswdBox</name></member>
+      <member refid="class_d_t_s_panel_1a2b893b30f6265079a143bb23029aa083" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>XMLTextBox</name></member>
+      <member refid="class_d_t_s_object_1a47a4a671f875d6fb7681865c26b32546" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>~DTSObject</name></member>
+      <member refid="class_d_t_s_panel_1acfa1f9a5350e95f2898f875113be95e3" prot="public" virt="non-virtual"><scope>DTSPanel</scope><name>~DTSPanel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

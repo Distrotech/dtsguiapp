@@ -1,0 +1,890 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_d_t_s_frame" kind="class" prot="public">
+    <compoundname>DTSFrame</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">wxFrame</basecompoundref>
+    <includes refid="_d_t_s_frame_8h" local="no">DTSFrame.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_d_t_s_frame_1af5ccc418850aa4603c4100b6a93cc051" prot="private" static="no" mutable="no">
+        <type><ref refid="_d_t_s_frame_8h_1ad396616e0ef9ed30f9053d7b48712ecd" kindref="member">wxBoxSizer</ref> *</type>
+        <definition>wxBoxSizer* DTSFrame::sizer</definition>
+        <argsstring></argsstring>
+        <name>sizer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="66" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_frame_1a20507dd71a62b698a9070e40755fab26" prot="private" static="no" mutable="no">
+        <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+        <definition>wxWindow* DTSFrame::blank</definition>
+        <argsstring></argsstring>
+        <name>blank</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="67" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_frame_1a4eaa2e530669ee48b4b6d38a4cc3ae6e" prot="private" static="no" mutable="no">
+        <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+        <definition>wxWindow* DTSFrame::a_window</definition>
+        <argsstring></argsstring>
+        <name>a_window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="68" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_frame_1a5b1acb9ecd1828ba46aca3524efbe9ea" prot="private" static="no" mutable="no">
+        <type>wxToolBar *</type>
+        <definition>wxToolBar* DTSFrame::toolbar</definition>
+        <argsstring></argsstring>
+        <name>toolbar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="69" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_frame_1a18384d2a5e61a59fb0c704fff5475ef4" prot="private" static="no" mutable="no">
+        <type>wxString</type>
+        <definition>wxString DTSFrame::about</definition>
+        <argsstring></argsstring>
+        <name>about</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="70" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_frame_1a5f3da41657d6700c5843ce858709f280" prot="private" static="no" mutable="no">
+        <type>wxMenuBar *</type>
+        <definition>wxMenuBar* DTSFrame::menubar</definition>
+        <argsstring></argsstring>
+        <name>menubar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="71" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_frame_1a6cb9a33c465559941f8ce90ecb27819b" prot="private" static="no" mutable="no">
+        <type>class <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+        <definition>class dtsgui* DTSFrame::dtsgui</definition>
+        <argsstring></argsstring>
+        <name>dtsgui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="72" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_frame_1a5206963dd3d2de8dc57ab020d8926c37" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool DTSFrame::abortconfirm</definition>
+        <argsstring></argsstring>
+        <name>abortconfirm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="73" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_frame_1a96185334cac8d4d93c8684ebe152f17c" prot="private" static="no" mutable="no">
+        <type><ref refid="_d_t_s_frame_8h_1a87c58918f18a953b17e8f868b1fa6a95" kindref="member">wxGauge</ref> *</type>
+        <definition>wxGauge* DTSFrame::pbar</definition>
+        <argsstring></argsstring>
+        <name>pbar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="74" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_frame_1a7178b3e879eb8fefe5e7361f349cd275" prot="private" static="no" mutable="no">
+        <type><ref refid="_d_t_s_frame_8h_1a76cdd62022b409cbb306785d979d5644" kindref="member">wxProgressDialog</ref> *</type>
+        <definition>wxProgressDialog* DTSFrame::pdia</definition>
+        <argsstring></argsstring>
+        <name>pdia</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="75" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_frame_1a9beabfd1eda04f79c8df588790c83398" prot="private" static="no" mutable="no">
+        <type><ref refid="dtsgui_8h_1a53eefce4ace6a7d72e49e9ae4c520226" kindref="member">dtsgui_toolbar_create</ref></type>
+        <definition>dtsgui_toolbar_create DTSFrame::tbcb</definition>
+        <argsstring></argsstring>
+        <name>tbcb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="76" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_frame_1ac0f3cd2304aa316d21d15c753eb31a70" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* DTSFrame::tb_data</definition>
+        <argsstring></argsstring>
+        <name>tb_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="77" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_d_t_s_frame_1a183097dc59ac2195f758f7ea5213ad76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSFrame::DTSFrame</definition>
+        <argsstring>(const wxString &amp;title, const wxPoint &amp;pos, const wxSize &amp;size, class dtsgui *dtsgui)</argsstring>
+        <name>DTSFrame</name>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const wxPoint &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>const wxSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>class <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="32" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="35" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a43d60e05b6719fe6cd215bea5bff2247" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSFrame::~DTSFrame</definition>
+        <argsstring>()</argsstring>
+        <name>~DTSFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="78" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a8285d1a5b16cff7020e7fe43838906cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>wxMenuBar *</type>
+        <definition>wxMenuBar * DTSFrame::GetMenuBar</definition>
+        <argsstring>(void)</argsstring>
+        <name>GetMenuBar</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="34" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="341" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a424fbab6df135ea54b5c62a191e809cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSFrame::CloseMenu</definition>
+        <argsstring>(wxMenu *m, int type)</argsstring>
+        <name>CloseMenu</name>
+        <param>
+          <type>wxMenu *</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="35" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="345" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a27cb5c393f6f9bbab0d087db9e6338ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>wxMenu *</type>
+        <definition>wxMenu * DTSFrame::NewMenu</definition>
+        <argsstring>(const wxString &amp;name)</argsstring>
+        <name>NewMenu</name>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="36" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="358" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1af57b68ada1f1958582fea200a2a315fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSFrame::SetAbout</definition>
+        <argsstring>(wxMenu *m, const char *a_text)</argsstring>
+        <name>SetAbout</name>
+        <param>
+          <type>wxMenu *</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>a_text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="37" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="86" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a937f276b15be00e81087ef1a73605478" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DTSFrame::Confirm</definition>
+        <argsstring>(wxString text)</argsstring>
+        <name>Confirm</name>
+        <param>
+          <type>wxString</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="38" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="96" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a890f88e157626205916bdb961cc6fb6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSFrame::Alert</definition>
+        <argsstring>(wxString text)</argsstring>
+        <name>Alert</name>
+        <param>
+          <type>wxString</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="39" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="112" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a5a7ad78662b511e7ef6ac513f8d1a28b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class basic_auth *</type>
+        <definition>class basic_auth * DTSFrame::Passwd</definition>
+        <argsstring>(const char *user, const char *passwd)</argsstring>
+        <name>Passwd</name>
+        <param>
+          <type>const char *</type>
+          <declname>user</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>passwd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="40" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="487" bodyend="502"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1af996b558ba17ecc23cf6ed1a3d1873fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * DTSFrame::FileDialog</definition>
+        <argsstring>(const char *title, const char *path, const char *name, const char *filter, long style)</argsstring>
+        <name>FileDialog</name>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filter</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>style</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="41" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="400" bodyend="411"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a55bbe89f24dc6ad3fbe78589bcbd9686" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DTSFrame::StartProgress</definition>
+        <argsstring>(const wxString &amp;text, int maxval, int quit)</argsstring>
+        <name>StartProgress</name>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxval</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>quit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="43" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="121" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1aa33b0ba3ce50a7ec4434a78c2be498b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSFrame::EndProgress</definition>
+        <argsstring>(void)</argsstring>
+        <name>EndProgress</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="44" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="173" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a3b057f8c85958444049063e75b602108" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DTSFrame::UpdateProgress</definition>
+        <argsstring>(int cval, const wxString &amp;msg)</argsstring>
+        <name>UpdateProgress</name>
+        <param>
+          <type>int</type>
+          <declname>cval</declname>
+        </param>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="45" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="143" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a8b1f1c4cf298ef550edec3fa3bf96738" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DTSFrame::IncProgress</definition>
+        <argsstring>(int ival, const wxString &amp;msg)</argsstring>
+        <name>IncProgress</name>
+        <param>
+          <type>int</type>
+          <declname>ival</declname>
+        </param>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="46" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="158" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a7e9f18961fb55d1b9be667b81681803c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSFrame::SetWindow</definition>
+        <argsstring>(wxWindow *window)</argsstring>
+        <name>SetWindow</name>
+        <param>
+          <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="48" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="227" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a0a5798261ab9b56b7938f968b4032a24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+        <definition>class dtsgui * DTSFrame::GetDTSData</definition>
+        <argsstring>(void)</argsstring>
+        <name>GetDTSData</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="49" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="299" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a6da5874c6ac49f979251013785b62b0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>wxToolBar *</type>
+        <definition>wxToolBar * DTSFrame::OnCreateToolBar</definition>
+        <argsstring>(long style, wxWindowID id, const wxString &amp;name)</argsstring>
+        <name>OnCreateToolBar</name>
+        <param>
+          <type>long</type>
+          <declname>style</declname>
+        </param>
+        <param>
+          <type>wxWindowID</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="50" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="306" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a1fe29f6d56f11d1702a372416a659e3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSFrame::SetupToolbar</definition>
+        <argsstring>(dtsgui_toolbar_create cb, void *data)</argsstring>
+        <name>SetupToolbar</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a53eefce4ace6a7d72e49e9ae4c520226" kindref="member">dtsgui_toolbar_create</ref></type>
+          <declname>cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="51" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="320" bodyend="339"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a3b1105fb9c8e3b6909994e7f993eee20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_d_t_s_panel" kindref="compound">DTSPanel</ref> *</type>
+        <definition>DTSPanel * DTSFrame::CreatePane</definition>
+        <argsstring>(const wxString &amp;name, const wxString &amp;title, int butmask, enum panel_type type, void *udata)</argsstring>
+        <name>CreatePane</name>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>butmask</declname>
+        </param>
+        <param>
+          <type>enum <ref refid="dtsgui_8h_1a9275874ac61d3750aa677a36da714373" kindref="member">panel_type</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>udata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="52" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="367" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a036e076a53c67d43204aa636ab26328d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_d_t_s_panel" kindref="compound">DTSPanel</ref> *</type>
+        <definition>DTSPanel * DTSFrame::TextPanel</definition>
+        <argsstring>(const wxString &amp;title, const char *buf)</argsstring>
+        <name>TextPanel</name>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="53" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="413" bodyend="425"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a55fe07b66530435bce652e8ab3091707" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>wxMenuItem *</type>
+        <definition>wxMenuItem * DTSFrame::NewMenuItem</definition>
+        <argsstring>(wxMenu *m, DTSObject *panel, int menuid, const wxString &amp;hint)</argsstring>
+        <name>NewMenuItem</name>
+        <param>
+          <type>wxMenu *</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type><ref refid="class_d_t_s_object" kindref="compound">DTSObject</ref> *</type>
+          <declname>panel</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>menuid</declname>
+        </param>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>hint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="54" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="427" bodyend="443"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a658114abb50692e826e18593a0e3ba73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>wxMenuItem *</type>
+        <definition>wxMenuItem * DTSFrame::NewMenuItem</definition>
+        <argsstring>(wxMenu *m, int menuid, const wxString &amp;name, const wxString &amp;hint, int blank, dtsgui_dynpanel cb, void *data)</argsstring>
+        <name>NewMenuItem</name>
+        <param>
+          <type>wxMenu *</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>menuid</declname>
+        </param>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>hint</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blank</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a080f931027861c0021f72ac2562b45d7" kindref="member">dtsgui_dynpanel</ref></type>
+          <declname>cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="55" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="445" bodyend="460"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a63488ecbdbe2770ea7d12ce2b06f1b72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSFrame::SendDTSEvent</definition>
+        <argsstring>(int eid, wxObject *evobj)</argsstring>
+        <name>SendDTSEvent</name>
+        <param>
+          <type>int</type>
+          <declname>eid</declname>
+        </param>
+        <param>
+          <type>wxObject *</type>
+          <declname>evobj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="57" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="292" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a85e9e9e31176870e5d1d7fb96972d236" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSFrame::SwitchWindow</definition>
+        <argsstring>(wxCommandEvent &amp;event)</argsstring>
+        <name>SwitchWindow</name>
+        <param>
+          <type>wxCommandEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="58" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="249" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a8b1d7dbacb2a99f3758a35ef06046963" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSFrame::DynamicPanelEvent</definition>
+        <argsstring>(wxCommandEvent &amp;event)</argsstring>
+        <name>DynamicPanelEvent</name>
+        <param>
+          <type>wxCommandEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="59" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="264" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a5bd732df0fb24d07db470c3275504b43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSFrame::OnClose</definition>
+        <argsstring>(wxCommandEvent &amp;event)</argsstring>
+        <name>OnClose</name>
+        <param>
+          <type>wxCommandEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="60" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="196" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a38dd78f5af3241bc9ff822c883e9a3ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSFrame::OnAbort</definition>
+        <argsstring>(wxCloseEvent &amp;event)</argsstring>
+        <name>OnAbort</name>
+        <param>
+          <type>wxCloseEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="61" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="188" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_frame_1a117230517edf6e062aad2a22b00b2d56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSFrame::OnAbout</definition>
+        <argsstring>(wxCommandEvent &amp;event)</argsstring>
+        <name>OnAbout</name>
+        <param>
+          <type>wxCommandEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="62" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="223" bodyend="225"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_d_t_s_frame_1a4662602e974661de7c512bbd9dd3115a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSFrame::OnDTSEvent</definition>
+        <argsstring>(wxCommandEvent &amp;event)</argsstring>
+        <name>OnDTSEvent</name>
+        <param>
+          <type>wxCommandEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="64" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="184" bodyend="186"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_d_t_s_frame_1adb19cc1077af840c132d8e11fd163a15" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DTSFrame::pwevent</definition>
+        <argsstring>(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data)</argsstring>
+        <name>pwevent</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="65" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSFrame.cpp" bodystart="462" bodyend="485"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="38">
+        <label>wxFrame</label>
+      </node>
+      <node id="37">
+        <label>DTSFrame</label>
+        <link refid="class_d_t_s_frame"/>
+        <childnode refid="38" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="40">
+        <label>wxFrame</label>
+      </node>
+      <node id="39">
+        <label>DTSFrame</label>
+        <link refid="class_d_t_s_frame"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSFrame.h" bodystart="30" bodyend="78"/>
+    <listofallmembers>
+      <member refid="class_d_t_s_frame_1a4eaa2e530669ee48b4b6d38a4cc3ae6e" prot="private" virt="non-virtual"><scope>DTSFrame</scope><name>a_window</name></member>
+      <member refid="class_d_t_s_frame_1a5206963dd3d2de8dc57ab020d8926c37" prot="private" virt="non-virtual"><scope>DTSFrame</scope><name>abortconfirm</name></member>
+      <member refid="class_d_t_s_frame_1a18384d2a5e61a59fb0c704fff5475ef4" prot="private" virt="non-virtual"><scope>DTSFrame</scope><name>about</name></member>
+      <member refid="class_d_t_s_frame_1a890f88e157626205916bdb961cc6fb6f" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>Alert</name></member>
+      <member refid="class_d_t_s_frame_1a20507dd71a62b698a9070e40755fab26" prot="private" virt="non-virtual"><scope>DTSFrame</scope><name>blank</name></member>
+      <member refid="class_d_t_s_frame_1a424fbab6df135ea54b5c62a191e809cd" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>CloseMenu</name></member>
+      <member refid="class_d_t_s_frame_1a937f276b15be00e81087ef1a73605478" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>Confirm</name></member>
+      <member refid="class_d_t_s_frame_1a3b1105fb9c8e3b6909994e7f993eee20" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>CreatePane</name></member>
+      <member refid="class_d_t_s_frame_1a183097dc59ac2195f758f7ea5213ad76" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>DTSFrame</name></member>
+      <member refid="class_d_t_s_frame_1a6cb9a33c465559941f8ce90ecb27819b" prot="private" virt="non-virtual"><scope>DTSFrame</scope><name>dtsgui</name></member>
+      <member refid="class_d_t_s_frame_1a8b1d7dbacb2a99f3758a35ef06046963" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>DynamicPanelEvent</name></member>
+      <member refid="class_d_t_s_frame_1aa33b0ba3ce50a7ec4434a78c2be498b7" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>EndProgress</name></member>
+      <member refid="class_d_t_s_frame_1af996b558ba17ecc23cf6ed1a3d1873fb" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>FileDialog</name></member>
+      <member refid="class_d_t_s_frame_1a0a5798261ab9b56b7938f968b4032a24" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>GetDTSData</name></member>
+      <member refid="class_d_t_s_frame_1a8285d1a5b16cff7020e7fe43838906cb" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>GetMenuBar</name></member>
+      <member refid="class_d_t_s_frame_1a8b1f1c4cf298ef550edec3fa3bf96738" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>IncProgress</name></member>
+      <member refid="class_d_t_s_frame_1a5f3da41657d6700c5843ce858709f280" prot="private" virt="non-virtual"><scope>DTSFrame</scope><name>menubar</name></member>
+      <member refid="class_d_t_s_frame_1a27cb5c393f6f9bbab0d087db9e6338ce" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>NewMenu</name></member>
+      <member refid="class_d_t_s_frame_1a55fe07b66530435bce652e8ab3091707" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>NewMenuItem</name></member>
+      <member refid="class_d_t_s_frame_1a658114abb50692e826e18593a0e3ba73" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>NewMenuItem</name></member>
+      <member refid="class_d_t_s_frame_1a38dd78f5af3241bc9ff822c883e9a3ad" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>OnAbort</name></member>
+      <member refid="class_d_t_s_frame_1a117230517edf6e062aad2a22b00b2d56" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>OnAbout</name></member>
+      <member refid="class_d_t_s_frame_1a5bd732df0fb24d07db470c3275504b43" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>OnClose</name></member>
+      <member refid="class_d_t_s_frame_1a6da5874c6ac49f979251013785b62b0d" prot="public" virt="virtual"><scope>DTSFrame</scope><name>OnCreateToolBar</name></member>
+      <member refid="class_d_t_s_frame_1a4662602e974661de7c512bbd9dd3115a" prot="private" virt="non-virtual"><scope>DTSFrame</scope><name>OnDTSEvent</name></member>
+      <member refid="class_d_t_s_frame_1a5a7ad78662b511e7ef6ac513f8d1a28b" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>Passwd</name></member>
+      <member refid="class_d_t_s_frame_1a96185334cac8d4d93c8684ebe152f17c" prot="private" virt="non-virtual"><scope>DTSFrame</scope><name>pbar</name></member>
+      <member refid="class_d_t_s_frame_1a7178b3e879eb8fefe5e7361f349cd275" prot="private" virt="non-virtual"><scope>DTSFrame</scope><name>pdia</name></member>
+      <member refid="class_d_t_s_frame_1adb19cc1077af840c132d8e11fd163a15" prot="private" virt="non-virtual"><scope>DTSFrame</scope><name>pwevent</name></member>
+      <member refid="class_d_t_s_frame_1a63488ecbdbe2770ea7d12ce2b06f1b72" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>SendDTSEvent</name></member>
+      <member refid="class_d_t_s_frame_1af57b68ada1f1958582fea200a2a315fc" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>SetAbout</name></member>
+      <member refid="class_d_t_s_frame_1a1fe29f6d56f11d1702a372416a659e3e" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>SetupToolbar</name></member>
+      <member refid="class_d_t_s_frame_1a7e9f18961fb55d1b9be667b81681803c" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>SetWindow</name></member>
+      <member refid="class_d_t_s_frame_1af5ccc418850aa4603c4100b6a93cc051" prot="private" virt="non-virtual"><scope>DTSFrame</scope><name>sizer</name></member>
+      <member refid="class_d_t_s_frame_1a55bbe89f24dc6ad3fbe78589bcbd9686" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>StartProgress</name></member>
+      <member refid="class_d_t_s_frame_1a85e9e9e31176870e5d1d7fb96972d236" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>SwitchWindow</name></member>
+      <member refid="class_d_t_s_frame_1ac0f3cd2304aa316d21d15c753eb31a70" prot="private" virt="non-virtual"><scope>DTSFrame</scope><name>tb_data</name></member>
+      <member refid="class_d_t_s_frame_1a9beabfd1eda04f79c8df588790c83398" prot="private" virt="non-virtual"><scope>DTSFrame</scope><name>tbcb</name></member>
+      <member refid="class_d_t_s_frame_1a036e076a53c67d43204aa636ab26328d" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>TextPanel</name></member>
+      <member refid="class_d_t_s_frame_1a5b1acb9ecd1828ba46aca3524efbe9ea" prot="private" virt="non-virtual"><scope>DTSFrame</scope><name>toolbar</name></member>
+      <member refid="class_d_t_s_frame_1a3b057f8c85958444049063e75b602108" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>UpdateProgress</name></member>
+      <member refid="class_d_t_s_frame_1a43d60e05b6719fe6cd215bea5bff2247" prot="public" virt="non-virtual"><scope>DTSFrame</scope><name>~DTSFrame</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

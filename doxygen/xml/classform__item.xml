@@ -1,0 +1,329 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="classform__item" kind="class" prot="public">
+    <compoundname>form_item</compoundname>
+    <includes refid="pitems_8h" local="no">pitems.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classform__item_1aa7364e00d99d22b9a594767915caa4be" prot="private" static="no" mutable="no">
+        <type>enum <ref refid="dtsgui_8h_1afd296180392ef5681415b9fb0590be84" kindref="member">widget_type</ref></type>
+        <definition>enum widget_type form_item::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="63" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classform__item_1a4b647b26beee4bb3f3935645f3eb1a9b" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* form_item::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="64" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classform__item_1a9c5388b8962be531b51920c7775f8d2d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int form_item::idx</definition>
+        <argsstring></argsstring>
+        <name>idx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="65" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classform__item_1a601ff328ce4165b07d5ad23bd96967b7" prot="private" static="no" mutable="no">
+        <type>union <ref refid="unionform__data" kindref="compound">form_data</ref></type>
+        <definition>union form_data form_item::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="66" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classform__item_1a6720d7a562d897686e128fc2146702e7" prot="private" static="no" mutable="no">
+        <type>union <ref refid="unionwidgets" kindref="compound">widgets</ref></type>
+        <definition>union widgets form_item::widget</definition>
+        <argsstring></argsstring>
+        <name>widget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="67" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classform__item_1acaa83eeebb557f7e66ae998bc45dc6c9" prot="private" static="no" mutable="no">
+        <type>enum <ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
+        <definition>enum form_data_type form_item::dtype</definition>
+        <argsstring></argsstring>
+        <name>dtype</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="68" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classform__item_1a031f8fb162f54579bc1ba53a751c5414" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* form_item::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="69" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classform__item_1abb8668ad59e583a7a73bc03f2c4503da" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* form_item::value2</definition>
+        <argsstring></argsstring>
+        <name>value2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="70" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classform__item_1a9f620e55ba53bd5abcf4af612944c838" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>form_item::DTS_OJBREF_CLASS</definition>
+        <argsstring>(form_item)</argsstring>
+        <name>DTS_OJBREF_CLASS</name>
+        <param>
+          <type><ref refid="classform__item" kindref="compound">form_item</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classform__item_1a9fe4dea1dbc9692a1511c6ba5256665e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>form_item::form_item</definition>
+        <argsstring>(void *widget, enum widget_type type, const char *name, const char *value, const char *value2, void *data, enum form_data_type dtype)</argsstring>
+        <name>form_item</name>
+        <param>
+          <type>void *</type>
+          <declname>widget</declname>
+        </param>
+        <param>
+          <type>enum <ref refid="dtsgui_8h_1afd296180392ef5681415b9fb0590be84" kindref="member">widget_type</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value2</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>enum <ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
+          <declname>dtype</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="53" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="81" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classform__item_1a1e08369cee96e1b5417c767be9b086ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="classxml__element" kindref="compound">xml_element</ref> *</type>
+        <definition>class xml_element * form_item::GetXMLData</definition>
+        <argsstring>()</argsstring>
+        <name>GetXMLData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="54" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="126" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classform__item_1a45b4a4db5526c1032f15ba20d3f28249" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * form_item::GetData</definition>
+        <argsstring>()</argsstring>
+        <name>GetData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="55" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="136" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classform__item_1ad99d224a37a5bc6f99835afb2347fac8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void form_item::Append</definition>
+        <argsstring>(const char *text, const char *val)</argsstring>
+        <name>Append</name>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="56" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="147" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="classform__item_1a9f108735a3f81f0f419fd828a29b2938" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void form_item::SetSelection</definition>
+        <argsstring>(int i)</argsstring>
+        <name>SetSelection</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="57" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="168" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="classform__item_1a4f3558ce5670e789ad51d1f489ec5b14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * form_item::GetName</definition>
+        <argsstring>()</argsstring>
+        <name>GetName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="58" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="180" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * form_item::GetValue</definition>
+        <argsstring>()</argsstring>
+        <name>GetValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="59" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="184" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classform__item_1a9d5508fb933bef9f078f702338e3d166" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * form_item::GetWidget</definition>
+        <argsstring>()</argsstring>
+        <name>GetWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="60" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="213" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classform__item_1a7bbc5ad6365c6b104f230afb35b0996b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void form_item::AppendXML</definition>
+        <argsstring>(struct xml_doc *xmldoc, const char *xpath, const char *nattr, const char *vattr)</argsstring>
+        <name>AppendXML</name>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xmldoc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>xpath</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>nattr</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>vattr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="61" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="217" bodyend="237"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="50" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="50" bodyend="71"/>
+    <listofallmembers>
+      <member refid="classform__item_1ad99d224a37a5bc6f99835afb2347fac8" prot="public" virt="non-virtual"><scope>form_item</scope><name>Append</name></member>
+      <member refid="classform__item_1a7bbc5ad6365c6b104f230afb35b0996b" prot="public" virt="non-virtual"><scope>form_item</scope><name>AppendXML</name></member>
+      <member refid="classform__item_1a601ff328ce4165b07d5ad23bd96967b7" prot="private" virt="non-virtual"><scope>form_item</scope><name>data</name></member>
+      <member refid="classform__item_1a9f620e55ba53bd5abcf4af612944c838" prot="public" virt="non-virtual"><scope>form_item</scope><name>DTS_OJBREF_CLASS</name></member>
+      <member refid="classform__item_1acaa83eeebb557f7e66ae998bc45dc6c9" prot="private" virt="non-virtual"><scope>form_item</scope><name>dtype</name></member>
+      <member refid="classform__item_1a9fe4dea1dbc9692a1511c6ba5256665e" prot="public" virt="non-virtual"><scope>form_item</scope><name>form_item</name></member>
+      <member refid="classform__item_1a45b4a4db5526c1032f15ba20d3f28249" prot="public" virt="non-virtual"><scope>form_item</scope><name>GetData</name></member>
+      <member refid="classform__item_1a4f3558ce5670e789ad51d1f489ec5b14" prot="public" virt="non-virtual"><scope>form_item</scope><name>GetName</name></member>
+      <member refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" prot="public" virt="non-virtual"><scope>form_item</scope><name>GetValue</name></member>
+      <member refid="classform__item_1a9d5508fb933bef9f078f702338e3d166" prot="public" virt="non-virtual"><scope>form_item</scope><name>GetWidget</name></member>
+      <member refid="classform__item_1a1e08369cee96e1b5417c767be9b086ce" prot="public" virt="non-virtual"><scope>form_item</scope><name>GetXMLData</name></member>
+      <member refid="classform__item_1a9c5388b8962be531b51920c7775f8d2d" prot="private" virt="non-virtual"><scope>form_item</scope><name>idx</name></member>
+      <member refid="classform__item_1a4b647b26beee4bb3f3935645f3eb1a9b" prot="private" virt="non-virtual"><scope>form_item</scope><name>name</name></member>
+      <member refid="classform__item_1a9f108735a3f81f0f419fd828a29b2938" prot="public" virt="non-virtual"><scope>form_item</scope><name>SetSelection</name></member>
+      <member refid="classform__item_1aa7364e00d99d22b9a594767915caa4be" prot="private" virt="non-virtual"><scope>form_item</scope><name>type</name></member>
+      <member refid="classform__item_1a031f8fb162f54579bc1ba53a751c5414" prot="private" virt="non-virtual"><scope>form_item</scope><name>value</name></member>
+      <member refid="classform__item_1abb8668ad59e583a7a73bc03f2c4503da" prot="private" virt="non-virtual"><scope>form_item</scope><name>value2</name></member>
+      <member refid="classform__item_1a6720d7a562d897686e128fc2146702e7" prot="private" virt="non-virtual"><scope>form_item</scope><name>widget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

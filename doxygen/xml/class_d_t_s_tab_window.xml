@@ -1,0 +1,302 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_d_t_s_tab_window" kind="class" prot="public">
+    <compoundname>DTSTabWindow</compoundname>
+    <basecompoundref refid="class_d_t_s_object" prot="public" virt="non-virtual">DTSObject</basecompoundref>
+    <basecompoundref prot="public" virt="virtual">wxNotebook</basecompoundref>
+    <includes refid="_d_t_s_tree_window_8h" local="no">DTSTreeWindow.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_d_t_s_tab_window_1af62011731508681950ec835f6293095b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSTabWindow::DTSTabWindow</definition>
+        <argsstring>(DTSFrame *frame=NULL, wxString stat_msg=wxEmptyString, void *u_data=NULL)</argsstring>
+        <name>DTSTabWindow</name>
+        <param>
+          <type><ref refid="class_d_t_s_frame" kindref="compound">DTSFrame</ref> *</type>
+          <declname>frame</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>wxString</type>
+          <declname>stat_msg</declname>
+          <defval>wxEmptyString</defval>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>u_data</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="151" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="874" bodyend="896"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tab_window_1a2ce2a4e23f391cb621c80d92cd7ebea4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSTabWindow::~DTSTabWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~DTSTabWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="152" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="898" bodyend="902"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tab_window_1aa37d1c10f98b08a6c7b265ecd77e3f1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_d_t_s_tab_page" kindref="compound">DTSTabPage</ref> *</type>
+        <definition>DTSTabPage * DTSTabWindow::CreateTab</definition>
+        <argsstring>(const wxString &amp;name, int butmask=0, void *userdata=NULL, dtsgui_tabpanel_cb cb=NULL, void *cdata=NULL, struct xml_doc *xmldoc=NULL, bool addpage=true)</argsstring>
+        <name>CreateTab</name>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>butmask</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1ab65db729662a3b0d109158d2fb51f93c" kindref="member">dtsgui_tabpanel_cb</ref></type>
+          <declname>cb</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>cdata</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xmldoc</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>addpage</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="153" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="977" bodyend="998"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tab_window_1a92747d3ec04159b96c1e2fde83b9c325" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_d_t_s_tab_page" kindref="compound">DTSTabPage</ref> *</type>
+        <definition>DTSTabPage * DTSTabWindow::CreateTab</definition>
+        <argsstring>(const wxString &amp;name, int butmask, void *userdata, dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, int pos, int undo)</argsstring>
+        <name>CreateTab</name>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>butmask</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1ab65db729662a3b0d109158d2fb51f93c" kindref="member">dtsgui_tabpanel_cb</ref></type>
+          <declname>cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>cdata</declname>
+        </param>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xmldoc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>undo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="154" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="967" bodyend="974"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tab_window_1a9906beec5aeff80face128b7631f5a8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSTabWindow::InsertTab</definition>
+        <argsstring>(DTSTabPage *panel, int pos, bool show=true, int undo=0)</argsstring>
+        <name>InsertTab</name>
+        <param>
+          <type><ref refid="class_d_t_s_tab_page" kindref="compound">DTSTabPage</ref> *</type>
+          <declname>panel</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>show</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>undo</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="155" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="1000" bodyend="1016"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tab_window_1aa52e98a59b0ad81e28f5463be5e85051" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSTabWindow::Undo</definition>
+        <argsstring>(int pg)</argsstring>
+        <name>Undo</name>
+        <param>
+          <type>int</type>
+          <declname>pg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="156" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="905" bodyend="925"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tab_window_1a7e438e77899502fc316577e972d9ef28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DTSTabWindow::Show</definition>
+        <argsstring>(bool=true)</argsstring>
+        <name>Show</name>
+        <param>
+          <type>bool</type>
+          <defname>show</defname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="157" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="927" bodyend="965"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="124">
+        <label>DTSObject</label>
+        <link refid="class_d_t_s_object"/>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="123">
+        <label>DTSTabWindow</label>
+        <link refid="class_d_t_s_tab_window"/>
+        <childnode refid="124" relation="public-inheritance">
+        </childnode>
+        <childnode refid="126" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="125">
+        <label>wxWindow</label>
+      </node>
+      <node id="126">
+        <label>wxNotebook</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="128">
+        <label>DTSObject</label>
+        <link refid="class_d_t_s_object"/>
+        <childnode refid="129" relation="public-inheritance">
+        </childnode>
+        <childnode refid="130" relation="usage">
+          <edgelabel>frame</edgelabel>
+        </childnode>
+      </node>
+      <node id="127">
+        <label>DTSTabWindow</label>
+        <link refid="class_d_t_s_tab_window"/>
+        <childnode refid="128" relation="public-inheritance">
+        </childnode>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="129">
+        <label>wxWindow</label>
+      </node>
+      <node id="131">
+        <label>wxFrame</label>
+      </node>
+      <node id="130">
+        <label>DTSFrame</label>
+        <link refid="class_d_t_s_frame"/>
+        <childnode refid="131" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="132">
+        <label>wxNotebook</label>
+      </node>
+    </collaborationgraph>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="149" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="149" bodyend="158"/>
+    <listofallmembers>
+      <member refid="class_d_t_s_object_1ab4249f538d36789b20bb15e29ab4121f" prot="protected" virt="non-virtual"><scope>DTSTabWindow</scope><name>beenshown</name></member>
+      <member refid="class_d_t_s_object_1abcce46b892d3c17810d4551c495512ce" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>buttons</name></member>
+      <member refid="class_d_t_s_tab_window_1aa37d1c10f98b08a6c7b265ecd77e3f1f" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>CreateTab</name></member>
+      <member refid="class_d_t_s_tab_window_1a92747d3ec04159b96c1e2fde83b9c325" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>CreateTab</name></member>
+      <member refid="class_d_t_s_object_1a132481851865629352e4aefa7f822e4b" prot="protected" virt="non-virtual"><scope>DTSTabWindow</scope><name>dtsevthandler</name></member>
+      <member refid="class_d_t_s_object_1a76f73a01ddebf90d59245dd744d491b5" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>DTSObject</name></member>
+      <member refid="class_d_t_s_tab_window_1af62011731508681950ec835f6293095b" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>DTSTabWindow</name></member>
+      <member refid="class_d_t_s_object_1a392c5ee37a2ca5e82e39cf11bc781eda" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>EventHandler</name></member>
+      <member refid="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" prot="protected" virt="non-virtual"><scope>DTSTabWindow</scope><name>fitems</name></member>
+      <member refid="class_d_t_s_object_1a8ca3e7c6f66685caf07fa93fb5e14337" prot="protected" virt="non-virtual"><scope>DTSTabWindow</scope><name>frame</name></member>
+      <member refid="class_d_t_s_object_1ae5239b912c725a7a5720954767c3537a" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>GetFrame</name></member>
+      <member refid="class_d_t_s_object_1a4cadcce0480e7e8f4a9a07a4aedd3c1f" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>GetItems</name></member>
+      <member refid="class_d_t_s_object_1aa800a3664b895617df9884469dbdf1f8" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>GetName</name></member>
+      <member refid="class_d_t_s_object_1ae88ef1ea6f28346b6cd6d2d898d7acde" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>GetPanel</name></member>
+      <member refid="class_d_t_s_object_1a5d32407be34aa68ea2b038ede768d50e" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>GetUserData</name></member>
+      <member refid="class_d_t_s_object_1ae177d1cfd85be759810b252b98f2050d" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>GetXMLDoc</name></member>
+      <member refid="class_d_t_s_tab_window_1a9906beec5aeff80face128b7631f5a8b" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>InsertTab</name></member>
+      <member refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" prot="protected" virt="non-virtual"><scope>DTSTabWindow</scope><name>panel</name></member>
+      <member refid="class_d_t_s_object_1a941fc98555b60d021a6c2f488ce9ae3e" prot="protected" virt="non-virtual"><scope>DTSTabWindow</scope><name>refobj</name></member>
+      <member refid="class_d_t_s_object_1a3e39ba76f7cb701fc9b99f6f059fb49e" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>SetUserData</name></member>
+      <member refid="class_d_t_s_object_1a1ae63425d8e5770a8b0717f37fd695b2" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>SetXMLDoc</name></member>
+      <member refid="class_d_t_s_tab_window_1a7e438e77899502fc316577e972d9ef28" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>Show</name></member>
+      <member refid="class_d_t_s_object_1a1292b4804b31450f0ee960fa59fcfc7a" prot="protected" virt="non-virtual"><scope>DTSTabWindow</scope><name>status</name></member>
+      <member refid="class_d_t_s_object_1ad191e42b5daa056f9ea8247d752df3b0" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>type</name></member>
+      <member refid="class_d_t_s_tab_window_1aa52e98a59b0ad81e28f5463be5e85051" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>Undo</name></member>
+      <member refid="class_d_t_s_object_1a783949e39ffd9e00aec15fa2b8cc12ed" prot="protected" virt="non-virtual"><scope>DTSTabWindow</scope><name>userdata</name></member>
+      <member refid="class_d_t_s_object_1a0e9b6e22629a9aa1fd5227cefaa25e6f" prot="protected" virt="non-virtual"><scope>DTSTabWindow</scope><name>xmldoc</name></member>
+      <member refid="class_d_t_s_object_1a47a4a671f875d6fb7681865c26b32546" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>~DTSObject</name></member>
+      <member refid="class_d_t_s_tab_window_1a2ce2a4e23f391cb621c80d92cd7ebea4" prot="public" virt="non-virtual"><scope>DTSTabWindow</scope><name>~DTSTabWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

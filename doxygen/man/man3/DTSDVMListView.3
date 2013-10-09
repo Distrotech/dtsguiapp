@@ -1,0 +1,236 @@
+.TH "DTSDVMListView" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DTSDVMListView \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DTSListView\&.h>\fP
+.PP
+Inherits wxDataViewModel\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTSDVMListView\fP (int cols=1, bool cont_cols=true)"
+.br
+.ti -1c
+.RI "\fB~DTSDVMListView\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBIsContainer\fP (const wxDataViewItem &item) const "
+.br
+.ti -1c
+.RI "virtual wxDataViewItem \fBGetParent\fP (const wxDataViewItem &item) const "
+.br
+.ti -1c
+.RI "virtual unsigned int \fBGetChildren\fP (const wxDataViewItem &parent, wxDataViewItemArray &items) const "
+.br
+.ti -1c
+.RI "virtual unsigned int \fBGetColumnCount\fP () const "
+.br
+.ti -1c
+.RI "virtual bool \fBHasContainerColumns\fP (const wxDataViewItem &item) const "
+.br
+.ti -1c
+.RI "virtual wxString \fBGetColumnType\fP (unsigned int col) const "
+.br
+.ti -1c
+.RI "virtual void \fBGetValue\fP (wxVariant &variant, const wxDataViewItem &item, unsigned int col) const "
+.br
+.ti -1c
+.RI "virtual bool \fBSetValue\fP (const wxVariant &variant, const wxDataViewItem &item, unsigned int col)"
+.br
+.ti -1c
+.RI "\fBDTSDVMListStore\fP * \fBGetRoot\fP ()"
+.br
+.ti -1c
+.RI "\fBDTSDVMListStore\fP * \fBSetRoot\fP (const wxString &title, int nodeid=-1, \fBdtsgui_treeviewpanel_cb\fP p_cb=NULL, void *userdata=NULL)"
+.br
+.ti -1c
+.RI "void \fBDelete\fP (const wxDataViewItem &item)"
+.br
+.ti -1c
+.RI "void \fBDeleteAll\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSortChildren\fP (const wxDataViewItem &parent)"
+.br
+.ti -1c
+.RI "int \fBGetChildCount\fP (wxDataViewItem &parent)"
+.br
+.ti -1c
+.RI "wxDataViewItem \fBGetNthChild\fP (wxDataViewItem &parent, size_t idx)"
+.br
+.ti -1c
+.RI "void \fBSetExpanded\fP (const wxDataViewItem &node, bool expanded=true)"
+.br
+.ti -1c
+.RI "virtual unsigned int \fBGetContainers\fP (const wxDataViewItem &parent, wxDataViewItemArray &items, bool exonly=false) const "
+.br
+.ti -1c
+.RI "void \fBMoveChildUp\fP (const wxDataViewItem &node)"
+.br
+.ti -1c
+.RI "void \fBMoveChildDown\fP (const wxDataViewItem &node)"
+.br
+.ti -1c
+.RI "void * \fBGetUserData\fP (const wxDataViewItem &node)"
+.br
+.ti -1c
+.RI "int \fBGetNodeID\fP (const wxDataViewItem &node)"
+.br
+.ti -1c
+.RI "void \fBSetXMLData\fP (const wxDataViewItem &node, struct xml_node *xnode, const char *tattr)"
+.br
+.ti -1c
+.RI "struct xml_node * \fBGetXMLData\fP (const wxDataViewItem &node, char **buff)"
+.br
+.ti -1c
+.RI "const wxString \fBGetTitle\fP (const wxDataViewItem &node)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBDTSDVMListStore\fP * \fBroot\fP"
+.br
+.ti -1c
+.RI "bool \fBhascontcol\fP"
+.br
+.ti -1c
+.RI "int \fBcolcnt\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 69 of file DTSListView\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DTSDVMListView::DTSDVMListView (intcols = \fC1\fP, boolcont_cols = \fCtrue\fP)"
+
+.PP
+Definition at line 239 of file DTSListView\&.cpp\&.
+.SS "DTSDVMListView::~DTSDVMListView ()"
+
+.PP
+Definition at line 245 of file DTSListView\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void DTSDVMListView::Delete (const wxDataViewItem &item)"
+
+.PP
+Definition at line 333 of file DTSListView\&.cpp\&.
+.SS "void DTSDVMListView::DeleteAll (void)"
+
+.PP
+Definition at line 359 of file DTSListView\&.cpp\&.
+.SS "int DTSDVMListView::GetChildCount (wxDataViewItem &parent)"
+
+.PP
+Definition at line 383 of file DTSListView\&.cpp\&.
+.SS "unsigned int DTSDVMListView::GetChildren (const wxDataViewItem &parent, wxDataViewItemArray &items) const\fC [virtual]\fP"
+
+.PP
+Definition at line 273 of file DTSListView\&.cpp\&.
+.SS "unsigned int DTSDVMListView::GetColumnCount () const\fC [virtual]\fP"
+
+.PP
+Definition at line 292 of file DTSListView\&.cpp\&.
+.SS "wxString DTSDVMListView::GetColumnType (unsigned intcol) const\fC [virtual]\fP"
+
+.PP
+Definition at line 300 of file DTSListView\&.cpp\&.
+.SS "unsigned int DTSDVMListView::GetContainers (const wxDataViewItem &parent, wxDataViewItemArray &items, boolexonly = \fCfalse\fP) const\fC [virtual]\fP"
+
+.PP
+Definition at line 428 of file DTSListView\&.cpp\&.
+.SS "int DTSDVMListView::GetNodeID (const wxDataViewItem &node)"
+
+.PP
+Definition at line 499 of file DTSListView\&.cpp\&.
+.SS "wxDataViewItem DTSDVMListView::GetNthChild (wxDataViewItem &parent, size_tidx)"
+
+.PP
+Definition at line 397 of file DTSListView\&.cpp\&.
+.SS "wxDataViewItem DTSDVMListView::GetParent (const wxDataViewItem &item) const\fC [virtual]\fP"
+
+.PP
+Definition at line 258 of file DTSListView\&.cpp\&.
+.SS "\fBDTSDVMListStore\fP * DTSDVMListView::GetRoot ()"
+
+.PP
+Definition at line 324 of file DTSListView\&.cpp\&.
+.SS "const wxString DTSDVMListView::GetTitle (const wxDataViewItem &node)"
+
+.PP
+Definition at line 532 of file DTSListView\&.cpp\&.
+.SS "void * DTSDVMListView::GetUserData (const wxDataViewItem &node)"
+
+.PP
+Definition at line 487 of file DTSListView\&.cpp\&.
+.SS "void DTSDVMListView::GetValue (wxVariant &variant, const wxDataViewItem &item, unsigned intcol) const\fC [virtual]\fP"
+
+.PP
+Definition at line 304 of file DTSListView\&.cpp\&.
+.SS "struct xml_node * DTSDVMListView::GetXMLData (const wxDataViewItem &node, char **buff)\fC [read]\fP"
+
+.PP
+Definition at line 521 of file DTSListView\&.cpp\&.
+.SS "bool DTSDVMListView::HasContainerColumns (const wxDataViewItem &item) const\fC [virtual]\fP"
+
+.PP
+Definition at line 296 of file DTSListView\&.cpp\&.
+.SS "bool DTSDVMListView::IsContainer (const wxDataViewItem &item) const\fC [virtual]\fP"
+
+.PP
+Definition at line 249 of file DTSListView\&.cpp\&.
+.SS "void DTSDVMListView::MoveChildDown (const wxDataViewItem &node)"
+
+.PP
+Definition at line 467 of file DTSListView\&.cpp\&.
+.SS "void DTSDVMListView::MoveChildUp (const wxDataViewItem &node)"
+
+.PP
+Definition at line 447 of file DTSListView\&.cpp\&.
+.SS "void DTSDVMListView::SetExpanded (const wxDataViewItem &node, boolexpanded = \fCtrue\fP)"
+
+.PP
+Definition at line 414 of file DTSListView\&.cpp\&.
+.SS "\fBDTSDVMListStore\fP * DTSDVMListView::SetRoot (const wxString &title, intnodeid = \fC-1\fP, \fBdtsgui_treeviewpanel_cb\fPp_cb = \fCNULL\fP, void *userdata = \fCNULL\fP)"
+
+.PP
+Definition at line 328 of file DTSListView\&.cpp\&.
+.SS "bool DTSDVMListView::SetValue (const wxVariant &variant, const wxDataViewItem &item, unsigned intcol)\fC [virtual]\fP"
+
+.PP
+Definition at line 312 of file DTSListView\&.cpp\&.
+.SS "void DTSDVMListView::SetXMLData (const wxDataViewItem &node, struct xml_node *xnode, const char *tattr)"
+
+.PP
+Definition at line 511 of file DTSListView\&.cpp\&.
+.SS "void DTSDVMListView::SortChildren (const wxDataViewItem &parent)"
+
+.PP
+Definition at line 369 of file DTSListView\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int DTSDVMListView::colcnt\fC [protected]\fP"
+
+.PP
+Definition at line 102 of file DTSListView\&.h\&.
+.SS "bool DTSDVMListView::hascontcol\fC [protected]\fP"
+
+.PP
+Definition at line 101 of file DTSListView\&.h\&.
+.SS "\fBDTSDVMListStore\fP* DTSDVMListView::root\fC [protected]\fP"
+
+.PP
+Definition at line 100 of file DTSListView\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

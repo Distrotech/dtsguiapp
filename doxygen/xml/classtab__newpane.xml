@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="classtab__newpane" kind="class" prot="public">
+    <compoundname>tab_newpane</compoundname>
+    <includes refid="_d_t_s_tree_window_8h" local="no">DTSTreeWindow.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtab__newpane_1af58db0bde709efe63fd806ca6753eff4" prot="private" static="no" mutable="no">
+        <type>struct xml_doc *</type>
+        <definition>struct xml_doc* tab_newpane::xmldoc</definition>
+        <argsstring></argsstring>
+        <name>xmldoc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="61" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtab__newpane_1ab354d877d932ffb47de092bf1e1a8ab8" prot="private" static="no" mutable="no">
+        <type><ref refid="class_d_t_s_tab_window" kindref="compound">DTSTabWindow</ref> *</type>
+        <definition>DTSTabWindow* tab_newpane::tabv</definition>
+        <argsstring></argsstring>
+        <name>tabv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="62" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtab__newpane_1a8eb7f1e451ea29a942fe94c5e79842bc" prot="private" static="no" mutable="no">
+        <type><ref refid="dtsgui_8h_1ab65db729662a3b0d109158d2fb51f93c" kindref="member">dtsgui_tabpanel_cb</ref></type>
+        <definition>dtsgui_tabpanel_cb tab_newpane::cb</definition>
+        <argsstring></argsstring>
+        <name>cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="63" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtab__newpane_1ad411183382cacce488de4bad08fa1e74" prot="private" static="no" mutable="no">
+        <type><ref refid="dtsgui_8h_1ab5e1fa276d48b20d35f4ef20110c39ed" kindref="member">dtsgui_tabpane_newdata_cb</ref></type>
+        <definition>dtsgui_tabpane_newdata_cb tab_newpane::data_cb</definition>
+        <argsstring></argsstring>
+        <name>data_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="64" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtab__newpane_1a7a0581f47af3ab66c26fd6ea82b3ee9a" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* tab_newpane::xpath</definition>
+        <argsstring></argsstring>
+        <name>xpath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="65" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtab__newpane_1a6ba77ba36491f4faaa975fe4264e0da5" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* tab_newpane::node</definition>
+        <argsstring></argsstring>
+        <name>node</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="66" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtab__newpane_1a91aa2bdcdc5a40fc55c922d779ce24e3" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* tab_newpane::vitem</definition>
+        <argsstring></argsstring>
+        <name>vitem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="67" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtab__newpane_1a1fdfec0a57f980f16a83892b0da294b9" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* tab_newpane::tattr</definition>
+        <argsstring></argsstring>
+        <name>tattr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="68" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtab__newpane_1ab8134f20a45410b664c3853e4ef5f499" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* tab_newpane::cdata</definition>
+        <argsstring></argsstring>
+        <name>cdata</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="69" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtab__newpane_1a70f33dd22d1a121e7d8e84cd52f1efd0" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* tab_newpane::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="70" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtab__newpane_1ad3c901ac96fe24f4f57e2052dd459361" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tab_newpane::last</definition>
+        <argsstring></argsstring>
+        <name>last</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="71" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtab__newpane_1a2a9e328d10b6f803969edf7621df3681" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tab_newpane::DTS_OJBREF_CLASS</definition>
+        <argsstring>(tab_newpane)</argsstring>
+        <name>DTS_OJBREF_CLASS</name>
+        <param>
+          <type><ref refid="classtab__newpane" kindref="compound">tab_newpane</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classtab__newpane_1a66f664e9d0212bd0415953c72afbbacd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tab_newpane::tab_newpane</definition>
+        <argsstring>(DTSTabWindow *tabv, const char *xpath, const char *node, const char *vitem, const char *tattr, dtsgui_tabpane_newdata_cb data_cb, dtsgui_tabpanel_cb cb, void *cdata, struct xml_doc *xmldoc, void *data)</argsstring>
+        <name>tab_newpane</name>
+        <param>
+          <type><ref refid="class_d_t_s_tab_window" kindref="compound">DTSTabWindow</ref> *</type>
+          <declname>tabv</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>xpath</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>vitem</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>tattr</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1ab5e1fa276d48b20d35f4ef20110c39ed" kindref="member">dtsgui_tabpane_newdata_cb</ref></type>
+          <declname>data_cb</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1ab65db729662a3b0d109158d2fb51f93c" kindref="member">dtsgui_tabpanel_cb</ref></type>
+          <declname>cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>cdata</declname>
+        </param>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xmldoc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="57" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="131" bodyend="155"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtab__newpane_1a8084796f246b29a21c9077aefa40fc18" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tab_newpane::handle_newtabpane_cb</definition>
+        <argsstring>(class dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data)</argsstring>
+        <name>handle_newtabpane_cb</name>
+        <param>
+          <type>class <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="58" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="184" bodyend="200"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtab__newpane_1af3f96c0ce186f089d5e5598ea4814179" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tab_newpane::handle_newtabpane</definition>
+        <argsstring>(class dtsgui *dtsgui, DTSPanel *dp)</argsstring>
+        <name>handle_newtabpane</name>
+        <param>
+          <type>class <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type><ref refid="class_d_t_s_panel" kindref="compound">DTSPanel</ref> *</type>
+          <declname>dp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="60" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="202" bodyend="239"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="54" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="54" bodyend="72"/>
+    <listofallmembers>
+      <member refid="classtab__newpane_1a8eb7f1e451ea29a942fe94c5e79842bc" prot="private" virt="non-virtual"><scope>tab_newpane</scope><name>cb</name></member>
+      <member refid="classtab__newpane_1ab8134f20a45410b664c3853e4ef5f499" prot="private" virt="non-virtual"><scope>tab_newpane</scope><name>cdata</name></member>
+      <member refid="classtab__newpane_1a70f33dd22d1a121e7d8e84cd52f1efd0" prot="private" virt="non-virtual"><scope>tab_newpane</scope><name>data</name></member>
+      <member refid="classtab__newpane_1ad411183382cacce488de4bad08fa1e74" prot="private" virt="non-virtual"><scope>tab_newpane</scope><name>data_cb</name></member>
+      <member refid="classtab__newpane_1a2a9e328d10b6f803969edf7621df3681" prot="public" virt="non-virtual"><scope>tab_newpane</scope><name>DTS_OJBREF_CLASS</name></member>
+      <member refid="classtab__newpane_1af3f96c0ce186f089d5e5598ea4814179" prot="private" virt="non-virtual"><scope>tab_newpane</scope><name>handle_newtabpane</name></member>
+      <member refid="classtab__newpane_1a8084796f246b29a21c9077aefa40fc18" prot="public" virt="non-virtual"><scope>tab_newpane</scope><name>handle_newtabpane_cb</name></member>
+      <member refid="classtab__newpane_1ad3c901ac96fe24f4f57e2052dd459361" prot="private" virt="non-virtual"><scope>tab_newpane</scope><name>last</name></member>
+      <member refid="classtab__newpane_1a6ba77ba36491f4faaa975fe4264e0da5" prot="private" virt="non-virtual"><scope>tab_newpane</scope><name>node</name></member>
+      <member refid="classtab__newpane_1a66f664e9d0212bd0415953c72afbbacd" prot="public" virt="non-virtual"><scope>tab_newpane</scope><name>tab_newpane</name></member>
+      <member refid="classtab__newpane_1ab354d877d932ffb47de092bf1e1a8ab8" prot="private" virt="non-virtual"><scope>tab_newpane</scope><name>tabv</name></member>
+      <member refid="classtab__newpane_1a1fdfec0a57f980f16a83892b0da294b9" prot="private" virt="non-virtual"><scope>tab_newpane</scope><name>tattr</name></member>
+      <member refid="classtab__newpane_1a91aa2bdcdc5a40fc55c922d779ce24e3" prot="private" virt="non-virtual"><scope>tab_newpane</scope><name>vitem</name></member>
+      <member refid="classtab__newpane_1af58db0bde709efe63fd806ca6753eff4" prot="private" virt="non-virtual"><scope>tab_newpane</scope><name>xmldoc</name></member>
+      <member refid="classtab__newpane_1a7a0581f47af3ab66c26fd6ea82b3ee9a" prot="private" virt="non-virtual"><scope>tab_newpane</scope><name>xpath</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

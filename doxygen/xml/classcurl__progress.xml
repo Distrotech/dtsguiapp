@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="classcurl__progress" kind="class" prot="public">
+    <compoundname>curl_progress</compoundname>
+    <includes refid="_d_t_s_app_8h" local="no">DTSApp.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcurl__progress_1ac7738d2384035a652657db4f450222c6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int curl_progress::pd</definition>
+        <argsstring></argsstring>
+        <name>pd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="62" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcurl__progress_1a966b43ffd5e1e8e0447f5fa934f327c0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int curl_progress::pause</definition>
+        <argsstring></argsstring>
+        <name>pause</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="63" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcurl__progress_1a2df831a7a9744a7d88d85acb6862cf55" prot="private" static="no" mutable="no">
+        <type>class <ref refid="classdtsgui__curl" kindref="compound">dtsgui_curl</ref> *</type>
+        <definition>class dtsgui_curl* curl_progress::owner</definition>
+        <argsstring></argsstring>
+        <name>owner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="65" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcurl__progress_1a8cf89322f120534f5d212006a86694ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>curl_progress::DTS_OJBREF_CLASS</definition>
+        <argsstring>(curl_progress)</argsstring>
+        <name>DTS_OJBREF_CLASS</name>
+        <param>
+          <type><ref refid="classcurl__progress" kindref="compound">curl_progress</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classcurl__progress_1a855a2ff30ced56e3344ce6a6d76b0e01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>curl_progress::curl_progress</definition>
+        <argsstring>(class dtsgui_curl *dc)</argsstring>
+        <name>curl_progress</name>
+        <param>
+          <type>class <ref refid="classdtsgui__curl" kindref="compound">dtsgui_curl</ref> *</type>
+          <declname>dc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="60" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="219" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classcurl__progress_1a8ac357b0cb0498c02528ef12d1c9c1cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_d_t_s_frame" kindref="compound">DTSFrame</ref> *</type>
+        <definition>DTSFrame * curl_progress::GetFrame</definition>
+        <argsstring>()</argsstring>
+        <name>GetFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="61" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="235" bodyend="237"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="57" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="57" bodyend="66"/>
+    <listofallmembers>
+      <member refid="classcurl__progress_1a855a2ff30ced56e3344ce6a6d76b0e01" prot="public" virt="non-virtual"><scope>curl_progress</scope><name>curl_progress</name></member>
+      <member refid="classcurl__progress_1a8cf89322f120534f5d212006a86694ac" prot="public" virt="non-virtual"><scope>curl_progress</scope><name>DTS_OJBREF_CLASS</name></member>
+      <member refid="classcurl__progress_1a8ac357b0cb0498c02528ef12d1c9c1cb" prot="public" virt="non-virtual"><scope>curl_progress</scope><name>GetFrame</name></member>
+      <member refid="classcurl__progress_1a2df831a7a9744a7d88d85acb6862cf55" prot="private" virt="non-virtual"><scope>curl_progress</scope><name>owner</name></member>
+      <member refid="classcurl__progress_1a966b43ffd5e1e8e0447f5fa934f327c0" prot="public" virt="non-virtual"><scope>curl_progress</scope><name>pause</name></member>
+      <member refid="classcurl__progress_1ac7738d2384035a652657db4f450222c6" prot="public" virt="non-virtual"><scope>curl_progress</scope><name>pd</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

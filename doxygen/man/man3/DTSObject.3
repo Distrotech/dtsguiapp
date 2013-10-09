@@ -1,0 +1,193 @@
+.TH "DTSObject" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DTSObject \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DTSPanel\&.h>\fP
+.PP
+Inherits wxWindow\&.
+.PP
+Inherited by \fBDTSPanel\fP, \fBDTSTabWindow\fP, and \fBDTSTreeWindow\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTSObject\fP (wxString=wxEmptyString)"
+.br
+.ti -1c
+.RI "\fB~DTSObject\fP ()"
+.br
+.ti -1c
+.RI "wxString \fBGetName\fP ()"
+.br
+.ti -1c
+.RI "\fBwxWindow\fP * \fBGetPanel\fP ()"
+.br
+.ti -1c
+.RI "\fBDTSFrame\fP * \fBGetFrame\fP ()"
+.br
+.ti -1c
+.RI "void \fBEventHandler\fP (int eid, wxCommandEvent *event)"
+.br
+.ti -1c
+.RI "struct bucket_list * \fBGetItems\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSetUserData\fP (void *data)"
+.br
+.ti -1c
+.RI "void * \fBGetUserData\fP (void)"
+.br
+.ti -1c
+.RI "void \fBSetXMLDoc\fP (struct xml_doc *\fBxmldoc\fP)"
+.br
+.ti -1c
+.RI "struct xml_doc * \fBGetXMLDoc\fP (void)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBpanel_type\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "int \fBbuttons\fP [6]"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "void ** \fBrefobj\fP"
+.br
+.ti -1c
+.RI "\fBDTSFrame\fP * \fBframe\fP"
+.br
+.ti -1c
+.RI "wxString \fBstatus\fP"
+.br
+.ti -1c
+.RI "\fBwxWindow\fP * \fBpanel\fP"
+.br
+.ti -1c
+.RI "wxEvtHandler * \fBdtsevthandler\fP"
+.br
+.ti -1c
+.RI "struct bucket_list * \fBfitems\fP"
+.br
+.ti -1c
+.RI "void * \fBuserdata\fP"
+.br
+.ti -1c
+.RI "struct xml_doc * \fBxmldoc\fP"
+.br
+.ti -1c
+.RI "bool \fBbeenshown\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 56 of file DTSPanel\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DTSObject::DTSObject (wxStringst = \fCwxEmptyString\fP)"
+
+.PP
+Definition at line 229 of file DTSPanel\&.cpp\&.
+.SS "DTSObject::~DTSObject ()"
+
+.PP
+Definition at line 242 of file DTSPanel\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void DTSObject::EventHandler (inteid, wxCommandEvent *event)"
+
+.PP
+Definition at line 311 of file DTSPanel\&.cpp\&.
+.SS "\fBDTSFrame\fP * DTSObject::GetFrame (void)"
+
+.PP
+Definition at line 274 of file DTSPanel\&.cpp\&.
+.SS "struct bucket_list * DTSObject::GetItems (void)\fC [read]\fP"
+
+.PP
+Definition at line 304 of file DTSPanel\&.cpp\&.
+.SS "wxString DTSObject::GetName ()"
+
+.PP
+Definition at line 260 of file DTSPanel\&.cpp\&.
+.SS "\fBwxWindow\fP * DTSObject::GetPanel ()"
+
+.PP
+Definition at line 270 of file DTSPanel\&.cpp\&.
+.SS "void * DTSObject::GetUserData (void)"
+
+.PP
+Definition at line 326 of file DTSPanel\&.cpp\&.
+.SS "struct xml_doc * DTSObject::GetXMLDoc (void)\fC [read]\fP"
+
+.PP
+Definition at line 293 of file DTSPanel\&.cpp\&.
+.SS "void DTSObject::SetUserData (void *data)"
+
+.PP
+Definition at line 314 of file DTSPanel\&.cpp\&.
+.SS "void DTSObject::SetXMLDoc (struct xml_doc *xmldoc)"
+
+.PP
+Definition at line 278 of file DTSPanel\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool DTSObject::beenshown\fC [protected]\fP"
+
+.PP
+Definition at line 80 of file DTSPanel\&.h\&.
+.SS "int DTSObject::buttons[6]"
+
+.PP
+Definition at line 70 of file DTSPanel\&.h\&.
+.SS "wxEvtHandler* DTSObject::dtsevthandler\fC [protected]\fP"
+
+.PP
+Definition at line 76 of file DTSPanel\&.h\&.
+.SS "struct bucket_list* DTSObject::fitems\fC [protected]\fP"
+
+.PP
+Definition at line 77 of file DTSPanel\&.h\&.
+.SS "\fBDTSFrame\fP* DTSObject::frame\fC [protected]\fP"
+
+.PP
+Definition at line 73 of file DTSPanel\&.h\&.
+.SS "\fBwxWindow\fP* DTSObject::panel\fC [protected]\fP"
+
+.PP
+Definition at line 75 of file DTSPanel\&.h\&.
+.SS "void** DTSObject::refobj\fC [protected]\fP"
+
+.PP
+Definition at line 72 of file DTSPanel\&.h\&.
+.SS "wxString DTSObject::status\fC [protected]\fP"
+
+.PP
+Definition at line 74 of file DTSPanel\&.h\&.
+.SS "\fBpanel_type\fP DTSObject::type"
+
+.PP
+Definition at line 69 of file DTSPanel\&.h\&.
+.SS "void* DTSObject::userdata\fC [protected]\fP"
+
+.PP
+Definition at line 78 of file DTSPanel\&.h\&.
+.SS "struct xml_doc* DTSObject::xmldoc\fC [protected]\fP"
+
+.PP
+Definition at line 79 of file DTSPanel\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

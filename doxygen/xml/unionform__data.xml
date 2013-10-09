@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="unionform__data" kind="union" prot="public">
+    <compoundname>form_data</compoundname>
+    <includes refid="pitems_8h" local="no">pitems.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="unionform__data_1a5906eb68e54829e44467b3d082f9eee4" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* form_data::ptr</definition>
+        <argsstring></argsstring>
+        <name>ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="39" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionform__data_1a3dcf61d4a1bf598d238248b6a2fd84c0" prot="public" static="no" mutable="no">
+        <type>class <ref refid="classxml__element" kindref="compound">xml_element</ref> *</type>
+        <definition>class xml_element* form_data::xml</definition>
+        <argsstring></argsstring>
+        <name>xml</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="40" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="199">
+        <label>xml_element</label>
+        <link refid="classxml__element"/>
+      </node>
+      <node id="198">
+        <label>form_data</label>
+        <link refid="unionform__data"/>
+        <childnode refid="199" relation="usage">
+          <edgelabel>xml</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="38" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="38" bodyend="41"/>
+    <listofallmembers>
+      <member refid="unionform__data_1a5906eb68e54829e44467b3d082f9eee4" prot="public" virt="non-virtual"><scope>form_data</scope><name>ptr</name></member>
+      <member refid="unionform__data_1a3dcf61d4a1bf598d238248b6a2fd84c0" prot="public" virt="non-virtual"><scope>form_data</scope><name>xml</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

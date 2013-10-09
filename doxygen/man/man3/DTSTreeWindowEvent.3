@@ -1,0 +1,76 @@
+.TH "DTSTreeWindowEvent" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DTSTreeWindowEvent \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DTSTreeWindow\&.h>\fP
+.PP
+Inherits wxEvtHandler\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTSTreeWindowEvent\fP (void *userdata=NULL, \fBdtsgui_tree_cb\fP tree_cb=NULL, class \fBdtsgui\fP *\fBdtsgui\fP=NULL, \fBDTSTreeWindow\fP *win=NULL)"
+.br
+.ti -1c
+.RI "\fB~DTSTreeWindowEvent\fP ()"
+.br
+.ti -1c
+.RI "void \fBTreeEvent\fP (wxDataViewEvent &event)"
+.br
+.ti -1c
+.RI "void \fBOnButton\fP (wxCommandEvent &event)"
+.br
+.ti -1c
+.RI "void \fBMenuEvent\fP (wxCommandEvent &event)"
+.br
+.ti -1c
+.RI "void \fBSplitterEvent\fP (wxSplitterEvent &event)"
+.br
+.ti -1c
+.RI "void \fBTreeCallback\fP (const wxDataViewItem item, enum \fBtree_cbtype\fP cbtype)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 87 of file DTSTreeWindow\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DTSTreeWindowEvent::DTSTreeWindowEvent (void *userdata = \fCNULL\fP, \fBdtsgui_tree_cb\fPtree_cb = \fCNULL\fP, class \fBdtsgui\fP *dtsgui = \fCNULL\fP, \fBDTSTreeWindow\fP *win = \fCNULL\fP)"
+
+.PP
+Definition at line 281 of file DTSTreeWindow\&.cpp\&.
+.SS "DTSTreeWindowEvent::~DTSTreeWindowEvent ()"
+
+.PP
+Definition at line 298 of file DTSTreeWindow\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void DTSTreeWindowEvent::MenuEvent (wxCommandEvent &event)"
+
+.PP
+Definition at line 431 of file DTSTreeWindow\&.cpp\&.
+.SS "void DTSTreeWindowEvent::OnButton (wxCommandEvent &event)"
+
+.PP
+Definition at line 510 of file DTSTreeWindow\&.cpp\&.
+.SS "void DTSTreeWindowEvent::SplitterEvent (wxSplitterEvent &event)"
+
+.PP
+Definition at line 457 of file DTSTreeWindow\&.cpp\&.
+.SS "void DTSTreeWindowEvent::TreeCallback (const wxDataViewItemitem, enum \fBtree_cbtype\fPcbtype)"
+
+.PP
+Definition at line 469 of file DTSTreeWindow\&.cpp\&.
+.SS "void DTSTreeWindowEvent::TreeEvent (wxDataViewEvent &event)"
+
+.PP
+Definition at line 307 of file DTSTreeWindow\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

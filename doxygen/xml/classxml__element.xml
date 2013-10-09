@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="classxml__element" kind="class" prot="public">
+    <compoundname>xml_element</compoundname>
+    <includes refid="pitems_8h" local="no">pitems.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classxml__element_1a7064cb97bc7806a0d2fb792d9c0891e5" prot="private" static="no" mutable="no">
+        <type>struct xml_search *</type>
+        <definition>struct xml_search* xml_element::xsearch</definition>
+        <argsstring></argsstring>
+        <name>xsearch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classxml__element_1a78560d170e3256faa79d79679552b717" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* xml_element::xpath</definition>
+        <argsstring></argsstring>
+        <name>xpath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="34" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classxml__element_1a5e1c544e39cc117f13e692f59cf020c1" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* xml_element::attr</definition>
+        <argsstring></argsstring>
+        <name>attr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="35" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classxml__element_1a9a49d3a411488c7267eeaadf6203f3b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>xml_element::DTS_OJBREF_CLASS</definition>
+        <argsstring>(xml_element)</argsstring>
+        <name>DTS_OJBREF_CLASS</name>
+        <param>
+          <type><ref refid="classxml__element" kindref="compound">xml_element</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classxml__element_1a888f82e61d6ed6d91077cbf0037c5ed9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>xml_element::xml_element</definition>
+        <argsstring>(const char *xp, struct xml_search *xs, const char *xa)</argsstring>
+        <name>xml_element</name>
+        <param>
+          <type>const char *</type>
+          <declname>xp</declname>
+        </param>
+        <param>
+          <type>struct xml_search *</type>
+          <declname>xs</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>xa</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="38" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classxml__element_1a232e850ca67d3d065d1c16bea79cb441" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void xml_element::Modify</definition>
+        <argsstring>(struct xml_doc *xmldoc, const char *value)</argsstring>
+        <name>Modify</name>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xmldoc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="46" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classxml__element_1ae0415b9bbe906cbab04e2c78c84ae5bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char * xml_element::GetValue</definition>
+        <argsstring>()</argsstring>
+        <name>GetValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="59" bodyend="79"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="26" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="26" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classxml__element_1a5e1c544e39cc117f13e692f59cf020c1" prot="private" virt="non-virtual"><scope>xml_element</scope><name>attr</name></member>
+      <member refid="classxml__element_1a9a49d3a411488c7267eeaadf6203f3b3" prot="public" virt="non-virtual"><scope>xml_element</scope><name>DTS_OJBREF_CLASS</name></member>
+      <member refid="classxml__element_1ae0415b9bbe906cbab04e2c78c84ae5bc" prot="public" virt="non-virtual"><scope>xml_element</scope><name>GetValue</name></member>
+      <member refid="classxml__element_1a232e850ca67d3d065d1c16bea79cb441" prot="public" virt="non-virtual"><scope>xml_element</scope><name>Modify</name></member>
+      <member refid="classxml__element_1a888f82e61d6ed6d91077cbf0037c5ed9" prot="public" virt="non-virtual"><scope>xml_element</scope><name>xml_element</name></member>
+      <member refid="classxml__element_1a78560d170e3256faa79d79679552b717" prot="private" virt="non-virtual"><scope>xml_element</scope><name>xpath</name></member>
+      <member refid="classxml__element_1a7064cb97bc7806a0d2fb792d9c0891e5" prot="private" virt="non-virtual"><scope>xml_element</scope><name>xsearch</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

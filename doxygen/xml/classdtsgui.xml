@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="classdtsgui" kind="class" prot="public">
+    <compoundname>dtsgui</compoundname>
+    <includes refid="_d_t_s_app_8h" local="no">DTSApp.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdtsgui_1a9c7541fac0311f9b2ffcb5c2699719ca" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* dtsgui::userdata</definition>
+        <argsstring></argsstring>
+        <name>userdata</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdtsgui_1a23186f0e51311156f54f9f9882806414" prot="private" static="no" mutable="no">
+        <type>class <ref refid="class_d_t_s_frame" kindref="compound">DTSFrame</ref> *</type>
+        <definition>class DTSFrame* dtsgui::appframe</definition>
+        <argsstring></argsstring>
+        <name>appframe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="34" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdtsgui_1a949562ecff03159461686f2ddc36b936" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* dtsgui::title</definition>
+        <argsstring></argsstring>
+        <name>title</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="35" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdtsgui_1a8ae0201b6a08daf9d9804c1f7550da4e" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* dtsgui::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="36" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdtsgui_1aa47c583745cf2afd984cd09088d8fa00" prot="private" static="no" mutable="no">
+        <type><ref refid="group___c-_a_p_i_1gad3b80490c86b8275c47382588f2ecfd4" kindref="member">dtsgui_configcb</ref></type>
+        <definition>dtsgui_configcb dtsgui::cb</definition>
+        <argsstring></argsstring>
+        <name>cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="37" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdtsgui_1a04955c97163ded998019001b749a1883" prot="private" static="no" mutable="no">
+        <type>struct <ref refid="structpoint" kindref="compound">point</ref></type>
+        <definition>struct point dtsgui::wsize</definition>
+        <argsstring></argsstring>
+        <name>wsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="38" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdtsgui_1a7a64aff083bfba24859a4c47e9d89c53" prot="private" static="no" mutable="no">
+        <type>struct <ref refid="structpoint" kindref="compound">point</ref></type>
+        <definition>struct point dtsgui::wpos</definition>
+        <argsstring></argsstring>
+        <name>wpos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="39" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdtsgui_1a04bd33691e2479644d61cf3cf51f377f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dtsgui::DTS_OJBREF_CLASS</definition>
+        <argsstring>(dtsgui)</argsstring>
+        <name>DTS_OJBREF_CLASS</name>
+        <param>
+          <type><ref refid="classdtsgui" kindref="compound">dtsgui</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui_1a96324bdb4d6457ea0c815959092bee84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dtsgui::dtsgui</definition>
+        <argsstring>(const char *title, const char *stat, struct point w_size, struct point w_pos, dtsgui_configcb confcallback_cb, void *userdata)</argsstring>
+        <name>dtsgui</name>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>stat</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structpoint" kindref="compound">point</ref></type>
+          <declname>w_size</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structpoint" kindref="compound">point</ref></type>
+          <declname>w_pos</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c-_a_p_i_1gad3b80490c86b8275c47382588f2ecfd4" kindref="member">dtsgui_configcb</ref></type>
+          <declname>confcallback_cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="25" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="29" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui_1a8dd69405dd8fe95341e0a99c14a6f431" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int dtsgui::SetupAPPFrame</definition>
+        <argsstring>(void)</argsstring>
+        <name>SetupAPPFrame</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="26" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="58" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui_1a4d5bf22a505defc4ab13178ff95f2b32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * dtsgui::GetUserData</definition>
+        <argsstring>(void)</argsstring>
+        <name>GetUserData</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="27" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="79" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui_1a67a85f336d93a287e5ec3434a79620ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dtsgui::SetStatusText</definition>
+        <argsstring>(void)</argsstring>
+        <name>SetStatusText</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="28" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="91" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui_1a9d7432eacf96358d22797b37ee73caed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dtsgui::AppendTitle</definition>
+        <argsstring>(const char *text)</argsstring>
+        <name>AppendTitle</name>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="99" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>class <ref refid="class_d_t_s_frame" kindref="compound">DTSFrame</ref> *</type>
+        <definition>class DTSFrame * dtsgui::GetFrame</definition>
+        <argsstring>(void)</argsstring>
+        <name>GetFrame</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="131" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui_1adbf932006dfc6df2266b5fbf34af67ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dtsgui::ShowToolbar</definition>
+        <argsstring>(bool show=true)</argsstring>
+        <name>ShowToolbar</name>
+        <param>
+          <type>bool</type>
+          <declname>show</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="123" bodyend="129"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="22" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="22" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classdtsgui_1a9d7432eacf96358d22797b37ee73caed" prot="public" virt="non-virtual"><scope>dtsgui</scope><name>AppendTitle</name></member>
+      <member refid="classdtsgui_1a23186f0e51311156f54f9f9882806414" prot="private" virt="non-virtual"><scope>dtsgui</scope><name>appframe</name></member>
+      <member refid="classdtsgui_1aa47c583745cf2afd984cd09088d8fa00" prot="private" virt="non-virtual"><scope>dtsgui</scope><name>cb</name></member>
+      <member refid="classdtsgui_1a04bd33691e2479644d61cf3cf51f377f" prot="public" virt="non-virtual"><scope>dtsgui</scope><name>DTS_OJBREF_CLASS</name></member>
+      <member refid="classdtsgui_1a96324bdb4d6457ea0c815959092bee84" prot="public" virt="non-virtual"><scope>dtsgui</scope><name>dtsgui</name></member>
+      <member refid="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" prot="public" virt="non-virtual"><scope>dtsgui</scope><name>GetFrame</name></member>
+      <member refid="classdtsgui_1a4d5bf22a505defc4ab13178ff95f2b32" prot="public" virt="non-virtual"><scope>dtsgui</scope><name>GetUserData</name></member>
+      <member refid="classdtsgui_1a67a85f336d93a287e5ec3434a79620ed" prot="public" virt="non-virtual"><scope>dtsgui</scope><name>SetStatusText</name></member>
+      <member refid="classdtsgui_1a8dd69405dd8fe95341e0a99c14a6f431" prot="public" virt="non-virtual"><scope>dtsgui</scope><name>SetupAPPFrame</name></member>
+      <member refid="classdtsgui_1adbf932006dfc6df2266b5fbf34af67ac" prot="public" virt="non-virtual"><scope>dtsgui</scope><name>ShowToolbar</name></member>
+      <member refid="classdtsgui_1a8ae0201b6a08daf9d9804c1f7550da4e" prot="private" virt="non-virtual"><scope>dtsgui</scope><name>status</name></member>
+      <member refid="classdtsgui_1a949562ecff03159461686f2ddc36b936" prot="private" virt="non-virtual"><scope>dtsgui</scope><name>title</name></member>
+      <member refid="classdtsgui_1a9c7541fac0311f9b2ffcb5c2699719ca" prot="private" virt="non-virtual"><scope>dtsgui</scope><name>userdata</name></member>
+      <member refid="classdtsgui_1a7a64aff083bfba24859a4c47e9d89c53" prot="private" virt="non-virtual"><scope>dtsgui</scope><name>wpos</name></member>
+      <member refid="classdtsgui_1a04955c97163ded998019001b749a1883" prot="private" virt="non-virtual"><scope>dtsgui</scope><name>wsize</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

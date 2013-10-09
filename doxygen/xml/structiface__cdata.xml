@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="structiface__cdata" kind="struct" prot="public">
+    <compoundname>iface_cdata</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* iface_cdata::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="32" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="31" bodyend="33"/>
+    <listofallmembers>
+      <member refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" prot="public" virt="non-virtual"><scope>iface_cdata</scope><name>name</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

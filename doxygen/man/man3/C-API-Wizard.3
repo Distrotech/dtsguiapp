@@ -1,0 +1,113 @@
+.TH "C API Wizard Interface" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C API Wizard Interface \- 
+.PP
+C API Wizard Management
+.PP
+Resources controlling and manipulating wizards in the C API\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "struct \fBdtsgui_wizard\fP * \fBDTS_C_API::dtsgui_newwizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title)"
+.br
+.RI "\fICreate a new wizard\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBDTS_C_API::dtsgui_wizard_addpage\fP (struct \fBdtsgui_wizard\fP *dtswiz, const char *title, void *userdata, struct xml_doc *xmldoc)"
+.br
+.RI "\fICreate a panel appended to the wizard\&. \fP"
+.ti -1c
+.RI "int \fBDTS_C_API::dtsgui_runwizard\fP (struct \fBdtsgui_wizard\fP *dtswiz)"
+.br
+.RI "\fIRun the wizard\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+C API Wizard Management
+.PP
+Resources controlling and manipulating wizards in the C API\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "struct \fBdtsgui_wizard\fP* DTS_C_API::dtsgui_newwizard (struct \fBdtsgui\fP *dtsgui, const char *title)\fC [read]\fP"
+
+.PP
+Create a new wizard\&. A wizard consists of multiple panels linked with back/next controls each panel will need to be procesed on completion\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBdtsgui_wizard\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Aplication data ptr\&. 
+.br
+\fItitle\fP Title shown on title bar of wizard pop up\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+New wizard that needs pages added too and run\&. 
+.RE
+.PP
+
+.PP
+Definition at line 941 of file wrapper\&.cpp\&.
+.SS "int DTS_C_API::dtsgui_runwizard (struct \fBdtsgui_wizard\fP *dtswiz)"
+
+.PP
+Run the wizard\&. Pop up the wizard window and open first page on success its required that the panels information be processed\&. When the wizard is un refferenced the panels are deleted\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBdtsgui_wizard::RunWizard()\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtswiz\fP Wizard too run\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+non Zero on success\&. 
+.RE
+.PP
+
+.PP
+Definition at line 970 of file wrapper\&.cpp\&.
+.SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_wizard_addpage (struct \fBdtsgui_wizard\fP *dtswiz, const char *title, void *userdata, struct xml_doc *xmldoc)"
+
+.PP
+Create a panel appended to the wizard\&. \fBSee Also:\fP
+.RS 4
+\fBdtsgui_wizard::AddPage()\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtswiz\fP Wizard to add page too\&. 
+.br
+\fItitle\fP Title of the new panel\&. 
+.br
+\fIuserdata\fP Userdata to be referenced and stored on the panel\&. 
+.br
+\fIxmldoc\fP Optional XML Doc to be referenced and stored on the panel\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+New panel that will need to be configured and processed after completion\&. 
+.RE
+.PP
+
+.PP
+Definition at line 955 of file wrapper\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

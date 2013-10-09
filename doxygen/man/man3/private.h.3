@@ -1,0 +1,241 @@
+.TH "app/private.h" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+app/private.h \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBapp_data\fP"
+.br
+.ti -1c
+.RI "struct \fBlistitem\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDATA_DIR\fP   '/usr/share/dtsguiapp'"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBnode_id\fP { \fBDTS_NODE_CUSTOMER\fP, \fBDTS_NODE_NETWORK_CONFIG\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_DYN\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_SERV\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_ZONE\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_HOST_NEW\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_HOST\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_NEW\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER_NEW\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER\fP, \fBDTS_NODE_NETWORK_IFACE_NEW\fP, \fBDTS_NODE_NETWORK_IFACE\fP, \fBDTS_NODE_NETWORK_WIFI_NEW\fP, \fBDTS_NODE_NETWORK_WIFI\fP, \fBDTS_NODE_NETWORK_WAN_NEW\fP, \fBDTS_NODE_NETWORK_WAN\fP, \fBDTS_NODE_NETWORK_ROUTE_NEW\fP, \fBDTS_NODE_NETWORK_ROUTE\fP, \fBDTS_NODE_NETWORK_MODEM\fP, \fBDTS_NODE_NETWORK_MODEM_ADV\fP, \fBDTS_NODE_NETWORK_MODEM_ANA\fP, \fBDTS_NODE_NETWORK_ADSL_LINK_NEW\fP, \fBDTS_NODE_NETWORK_ADSL_LINK\fP, \fBDTS_NODE_NETWORK_ADSL_USER_NEW\fP, \fBDTS_NODE_NETWORK_ADSL_USER\fP, \fBDTS_NODE_NETWORK_TOS_NEW\fP, \fBDTS_NODE_NETWORK_TOS\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "struct xml_doc * \fBapp_getxmldoc\fP (struct \fBdtsgui\fP *\fBdtsgui\fP)"
+.br
+.ti -1c
+.RI "void * \fBapp_toolbar\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, void *pw, long style, int id, const char *name, void *data)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBreconfig_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBeditsys_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBnewsys_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.ti -1c
+.RI "void \fBwizz_custinfo\fP (\fBdtsgui_pane\fP *pg)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBpbx_settings\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.ti -1c
+.RI "void \fBtest_menu\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, \fBdtsgui_menu\fP menu, const char *url)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBadvanced_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.ti -1c
+.RI "void \fBnetwork_iface_pane\fP (\fBdtsgui_pane\fP p, const char *xpre, const char *iface)"
+.br
+.ti -1c
+.RI "void \fBnetwork_iface_new_pane\fP (\fBdtsgui_pane\fP p, void *data)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBiface_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBopen_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBsave_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBexport_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBview_config_conf\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBview_config_xml\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.ti -1c
+.RI "void \fBconfig_menu\fP (struct \fBdtsgui\fP *\fBdtsgui\fP)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DATA_DIR   '/usr/share/dtsguiapp'"
+
+.PP
+Definition at line 24 of file private\&.h\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBnode_id\fP"
+
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIDTS_NODE_CUSTOMER \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_DYN \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_SERV \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_ZONE \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_HOST_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_HOST \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_IFACE_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_IFACE \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_WIFI_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_WIFI \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_WAN_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_WAN \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_ROUTE_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_ROUTE \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_MODEM \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_MODEM_ADV \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_MODEM_ANA \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_ADSL_LINK_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_ADSL_LINK \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_ADSL_USER_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_ADSL_USER \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_TOS_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_TOS \fP\fP
+
+.PP
+Definition at line 27 of file private\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "\fBdtsgui_pane\fP advanced_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 740 of file netconfig\&.c\&.
+.SS "struct xml_doc* app_getxmldoc (struct \fBdtsgui\fP *dtsgui)\fC [read]\fP"
+
+.PP
+Definition at line 42 of file wxforms\&.c\&.
+.SS "void* app_toolbar (struct \fBdtsgui\fP *dtsgui, void *pw, longstyle, intid, const char *name, void *data)"
+
+.PP
+Definition at line 111 of file toolbar\&.cpp\&.
+.SS "void config_menu (struct \fBdtsgui\fP *dtsgui)"
+
+.PP
+Definition at line 189 of file config\&.c\&.
+.SS "\fBdtsgui_pane\fP editsys_wizard (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 454 of file wizard\&.c\&.
+.SS "\fBdtsgui_pane\fP export_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 150 of file config\&.c\&.
+.SS "\fBdtsgui_pane\fP iface_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 145 of file interface\&.c\&.
+.SS "void network_iface_new_pane (\fBdtsgui_pane\fPp, void *data)"
+
+.PP
+Definition at line 222 of file netconfig\&.c\&.
+.SS "void network_iface_pane (\fBdtsgui_pane\fPp, const char *xpre, const char *iface)"
+
+.PP
+Definition at line 201 of file netconfig\&.c\&.
+.SS "\fBdtsgui_pane\fP newsys_wizard (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 429 of file wizard\&.c\&.
+.SS "\fBdtsgui_pane\fP open_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 27 of file config\&.c\&.
+.SS "\fBdtsgui_pane\fP pbx_settings (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 325 of file pbxconfig\&.c\&.
+.SS "\fBdtsgui_pane\fP reconfig_wizard (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 474 of file wizard\&.c\&.
+.SS "\fBdtsgui_pane\fP save_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 69 of file config\&.c\&.
+.SS "void test_menu (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_menu\fPmenu, const char *url)"
+
+.PP
+Definition at line 94 of file testing\&.c\&.
+.SS "\fBdtsgui_pane\fP view_config_conf (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 112 of file config\&.c\&.
+.SS "\fBdtsgui_pane\fP view_config_xml (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 94 of file config\&.c\&.
+.SS "void wizz_custinfo (\fBdtsgui_pane\fP *pg)"
+
+.PP
+Definition at line 157 of file wizard\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

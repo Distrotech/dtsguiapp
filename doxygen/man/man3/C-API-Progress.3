@@ -1,0 +1,135 @@
+.TH "C API Progress Dialog Functions" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C API Progress Dialog Functions \- 
+.PP
+C API for managing progress dialog
+.PP
+Resources controlling and manipulating the progress dialog\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBDTS_C_API::dtsgui_progress_start\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *text, int maxval, int quit)"
+.br
+.RI "\fIInitialise the progress dialog Pop up a dialog box that can be updated to showprogress with a optional cancel button\&. \fP"
+.ti -1c
+.RI "int \fBDTS_C_API::dtsgui_progress_update\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, int newval, const char *newtext)"
+.br
+.RI "\fIUpdate the progress bar counter This function updates the current progress value and optionally allows setting new displayed text\&. \fP"
+.ti -1c
+.RI "int \fBDTS_C_API::dtsgui_progress_increment\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, int ival, const char *newtext)"
+.br
+.RI "\fIIncrements the counter by adding to it not setting it\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_progress_end\fP (struct \fBdtsgui\fP *\fBdtsgui\fP)"
+.br
+.RI "\fIDisable the progress bar\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+C API for managing progress dialog
+.PP
+Resources controlling and manipulating the progress dialog\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "void DTS_C_API::dtsgui_progress_end (struct \fBdtsgui\fP *dtsgui)"
+
+.PP
+Disable the progress bar\&. \fBSee Also:\fP
+.RS 4
+\fBDTSFrame::EndProgress()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1019 of file wrapper\&.cpp\&.
+.SS "int DTS_C_API::dtsgui_progress_increment (struct \fBdtsgui\fP *dtsgui, intival, const char *newtext)"
+
+.PP
+Increments the counter by adding to it not setting it\&. \fBSee Also:\fP
+.RS 4
+\fBDTSFrame::IncProgress()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fIival\fP Value to increment progress bar\&. 
+.br
+\fInewtext\fP Text displayed in the popup box\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 on success may fail when the user presses cancel\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1010 of file wrapper\&.cpp\&.
+.SS "int DTS_C_API::dtsgui_progress_start (struct \fBdtsgui\fP *dtsgui, const char *text, intmaxval, intquit)"
+
+.PP
+Initialise the progress dialog Pop up a dialog box that can be updated to showprogress with a optional cancel button\&. \fBSee Also:\fP
+.RS 4
+\fBDTSFrame::StartProgress()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fItext\fP Text displayed in the popup box\&. 
+.br
+\fImaxval\fP the maximum expected value to update\&. 
+.br
+\fIquit\fP Disable the cancel button if quit is zero\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+zero on failure 
+.RE
+.PP
+
+.PP
+Definition at line 983 of file wrapper\&.cpp\&.
+.SS "int DTS_C_API::dtsgui_progress_update (struct \fBdtsgui\fP *dtsgui, intnewval, const char *newtext)"
+
+.PP
+Update the progress bar counter This function updates the current progress value and optionally allows setting new displayed text\&. \fBSee Also:\fP
+.RS 4
+\fBDTSFrame::UpdateProgress()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fInewval\fP Update the counter with this value\&. 
+.br
+\fInewtext\fP Text displayed in the popup box\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 on success may fail when the user presses cancel\&. 
+.RE
+.PP
+
+.PP
+Definition at line 998 of file wrapper\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

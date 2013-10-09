@@ -1,0 +1,171 @@
+.TH "C API Tab View Interface" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C API Tab View Interface \- 
+.PP
+C API for managing tab view panels\&.
+.PP
+Resources controlling and manipulating tab view in the C API\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBDTS_C_API::dtsgui_newtabpage\fP (\fBdtsgui_tabview\fP tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc, \fBdtsgui_tabpanel_cb\fP cb, void *cdata)"
+.br
+.RI "\fICreate and append a tab to the view\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBDTS_C_API::dtsgui_tabpage_insert\fP (\fBdtsgui_tabview\fP tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc, \fBdtsgui_tabpanel_cb\fP cb, void *cdata, int pos, int undo)"
+.br
+.RI "\fICreate and append a tab to the view\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_newxmltabpane\fP (\fBdtsgui_tabview\fP tabv, \fBdtsgui_pane\fP p, const char *xpath, const char *node, const char *vitem, const char *tattr, \fBdtsgui_tabpane_newdata_cb\fP data_cb, \fBdtsgui_tabpanel_cb\fP cb, void *cdata, struct xml_doc *xmldoc, void *data)"
+.br
+.RI "\fIHelper function to handle 'Adding' a new tab from a existing tab\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+C API for managing tab view panels\&.
+.PP
+Resources controlling and manipulating tab view in the C API\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_newtabpage (\fBdtsgui_tabview\fPtv, const char *name, intbutmask, void *userdata, struct xml_doc *xmldoc, \fBdtsgui_tabpanel_cb\fPcb, void *cdata)"
+
+.PP
+Create and append a tab to the view\&. Append a tab to the tab view the tab will be configured when it is selected the callback will run to configure it\&.
+.PP
+\fBNote:\fP
+.RS 4
+Its also possible to configure the returned panel\&. 
+.PP
+On win32 all tabs are configured when the view is activated\&.
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBdtsgui_tabpage_insert\fP 
+.PP
+\fBdtsgui_tabwindow()\fP 
+.PP
+\fBDTSTabWindow\fP 
+.PP
+\fBDTSTabWindow::CreateTab()\fP 
+.PP
+\fBpanel_buttons\fP 
+.PP
+\fBdtsgui_tabpanel_cb\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItv\fP Tabview previously created\&. 
+.br
+\fIname\fP Title placed on the pane Top/Center\&. 
+.br
+\fIbutmask\fP Mask of buttons to be placed on the panel and trigger events passed to the callback\&. 
+.br
+\fIuserdata\fP Referenced object stored and made available in callbacks\&. 
+.br
+\fIxmldoc\fP Optional XML document stored and made available to XML resources\&. 
+.br
+\fIcb\fP Callback called to configure the panel\&. 
+.br
+\fIcdata\fP Referenced object passed to the configuration callback\&. 
+.RE
+.PP
+
+.PP
+Definition at line 565 of file wrapper\&.cpp\&.
+.SS "void DTS_C_API::dtsgui_newxmltabpane (\fBdtsgui_tabview\fPtabv, \fBdtsgui_pane\fPp, const char *xpath, const char *node, const char *vitem, const char *tattr, \fBdtsgui_tabpane_newdata_cb\fPdata_cb, \fBdtsgui_tabpanel_cb\fPcb, void *cdata, struct xml_doc *xmldoc, void *data)"
+
+.PP
+Helper function to handle 'Adding' a new tab from a existing tab\&. This implements the concept of the New button a new panel will be created from the data filled in on the pane this callback is attached too\&. A new XML node is created and the panel created from this node\&.
+.PP
+\fBNote:\fP
+.RS 4
+this callback helper is rather complex\&.
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBtab_newpane\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItabv\fP Table view the new panel will be added too\&. 
+.br
+\fIp\fP The panel this callback is attached too\&. 
+.br
+\fIxpath\fP the path of the new node\&. 
+.br
+\fInode\fP the name of the XML node to create in the xpath\&. 
+.br
+\fIvitem\fP the item in the panel to be used to create the value of the new node\&. 
+.br
+\fItattr\fP the attribute to be used too create the title in the new pane\&. 
+.br
+\fIdata_cb\fP Callback to allow setting the data used in pane creation\&. 
+.br
+\fIcdata\fP Referrenced object containing initial callback data\&. 
+.br
+\fIxmldoc\fP XML doc reference for creating the node / panel\&. 
+.br
+\fIdata\fP Referenced object made available in callbacks\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Nothing is returned the callback is registered on the panel\&. 
+.RE
+.PP
+
+.PP
+Definition at line 621 of file wrapper\&.cpp\&.
+.SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_tabpage_insert (\fBdtsgui_tabview\fPtv, const char *name, intbutmask, void *userdata, struct xml_doc *xmldoc, \fBdtsgui_tabpanel_cb\fPcb, void *cdata, intpos, intundo)"
+
+.PP
+Create and append a tab to the view\&. Insert a tab at the position specified and recreate the panel at position undo\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+dtsgui_tabpage_newtabpage 
+.PP
+\fBdtsgui_tabwindow()\fP 
+.PP
+\fBDTSTabWindow\fP 
+.PP
+\fBDTSTabWindow::CreateTab()\fP 
+.PP
+\fBpanel_buttons\fP 
+.PP
+\fBdtsgui_tabpanel_cb\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItv\fP Tabview previously created\&. 
+.br
+\fIname\fP Title placed on the pane Top/Center\&. 
+.br
+\fIbutmask\fP Mask of buttons to be placed on the panel and trigger events passed to the callback\&. 
+.br
+\fIuserdata\fP Referenced object stored and made available in callbacks\&. 
+.br
+\fIxmldoc\fP Optional XML document stored and made available to XML resources\&. 
+.br
+\fIcb\fP Callback called to configure the panel\&. 
+.br
+\fIcdata\fP Referenced object passed to the configuration callback\&. 
+.RE
+.PP
+
+.PP
+Definition at line 593 of file wrapper\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

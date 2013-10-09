@@ -1,0 +1,854 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="private_8h" kind="file">
+    <compoundname>private.h</compoundname>
+    <includedby refid="config_8c" local="yes">app/config.c</includedby>
+    <includedby refid="interface_8c" local="yes">app/interface.c</includedby>
+    <includedby refid="netconfig_8c" local="yes">app/netconfig.c</includedby>
+    <includedby refid="pbxconfig_8c" local="yes">app/pbxconfig.c</includedby>
+    <includedby refid="testing_8c" local="yes">app/testing.c</includedby>
+    <includedby refid="toolbar_8cpp" local="yes">app/toolbar.cpp</includedby>
+    <includedby refid="wizard_8c" local="yes">app/wizard.c</includedby>
+    <includedby refid="wxforms_8c" local="yes">app/wxforms.c</includedby>
+    <invincdepgraph>
+      <node id="43">
+        <label>app/wxforms.c</label>
+        <link refid="wxforms_8c"/>
+      </node>
+      <node id="40">
+        <label>app/testing.c</label>
+        <link refid="testing_8c"/>
+      </node>
+      <node id="38">
+        <label>app/netconfig.c</label>
+        <link refid="netconfig_8c"/>
+      </node>
+      <node id="39">
+        <label>app/pbxconfig.c</label>
+        <link refid="pbxconfig_8c"/>
+      </node>
+      <node id="36">
+        <label>app/config.c</label>
+        <link refid="config_8c"/>
+      </node>
+      <node id="41">
+        <label>app/toolbar.cpp</label>
+        <link refid="toolbar_8cpp"/>
+      </node>
+      <node id="35">
+        <label>app/private.h</label>
+        <link refid="private.h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>app/interface.c</label>
+        <link refid="interface_8c"/>
+      </node>
+      <node id="42">
+        <label>app/wizard.c</label>
+        <link refid="wizard_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structapp__data" prot="public">app_data</innerclass>
+    <innerclass refid="structlistitem" prot="public">listitem</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="private_8h_1a48cc0a91e8f54c62f3341c21c8cc74e8" prot="public" static="no">
+        <name>DATA_DIR</name>
+        <initializer>&quot;/usr/share/dtsguiapp&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="24" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="private_8h_1a018cb6fe637d3a25a67e794d620808ec" prot="public" static="no">
+        <name>node_id</name>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca05bdc159f9d09f11da201a71742409ab" prot="public">
+          <name>DTS_NODE_CUSTOMER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca5d9219d48e330379299d2ed15ff4ea15" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca18ebf5363d2b4ceb3a8743a4e7647bcf" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808ecaca8f7e08a6f51e6081b99238a63cbafe" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_DYN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca6fc67e5941f734e9de7b2637da5c9d2e" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_SERV</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca72083493da720ce59de27e706129d826" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_ZONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808ecadc2abb3aae3102620d94987b8bf84f62" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_HOST_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca1bd61a04594205156cf8c1bdbee06c25" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_HOST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808ecac0f1f71b049c8b3cb01da6496f13806e" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca25d60169e86212cf235d0c4667064603" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca67d5c38ab27222a53751515b85b184f3" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca5b916eea0e8627cd48cad8e0ea0d39ca" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808ecaadaa5062456242e248fd995b69227644" prot="public">
+          <name>DTS_NODE_NETWORK_IFACE_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca08159fce51c8b85d49c5f4966bf35d8b" prot="public">
+          <name>DTS_NODE_NETWORK_IFACE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808ecae56467f65a231afd6634cae3269e663c" prot="public">
+          <name>DTS_NODE_NETWORK_WIFI_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca692abd6a99c569736b4bf162a07c298e" prot="public">
+          <name>DTS_NODE_NETWORK_WIFI</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca19640654abb2114b8ee8098dc52e250a" prot="public">
+          <name>DTS_NODE_NETWORK_WAN_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca701fcc5c32156589c8d427dca26ad3c7" prot="public">
+          <name>DTS_NODE_NETWORK_WAN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808ecaffda66a81ab84d7dfb2dac1c5ce352f0" prot="public">
+          <name>DTS_NODE_NETWORK_ROUTE_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808ecaa6a75ad98f4e80d9ef8fa806e966bfdb" prot="public">
+          <name>DTS_NODE_NETWORK_ROUTE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808ecab0e808e1aa3a128b563041ad11d63892" prot="public">
+          <name>DTS_NODE_NETWORK_MODEM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808ecae55296fcae8a1a6d9b68b3488ce510ca" prot="public">
+          <name>DTS_NODE_NETWORK_MODEM_ADV</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808ecad3a141f5a4b83f7396624ec46408781b" prot="public">
+          <name>DTS_NODE_NETWORK_MODEM_ANA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808ecada7817a2ab63af146792c6e8421b0124" prot="public">
+          <name>DTS_NODE_NETWORK_ADSL_LINK_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca227b415be9d0831d430de77ec5bf8c52" prot="public">
+          <name>DTS_NODE_NETWORK_ADSL_LINK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca767fd577d500a56d72c11ffea034e08c" prot="public">
+          <name>DTS_NODE_NETWORK_ADSL_USER_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808ecaeb4d90752cc1ae6b1189057456d4080d" prot="public">
+          <name>DTS_NODE_NETWORK_ADSL_USER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808eca15c8b3347c4ae06b4206e5960f7bd41c" prot="public">
+          <name>DTS_NODE_NETWORK_TOS_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="private_8h_1a018cb6fe637d3a25a67e794d620808ecae4d8c8164988e426b306b81ba7a54551" prot="public">
+          <name>DTS_NODE_NETWORK_TOS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="27" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="27" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="private_8h_1a65a24b9322f0fd002413f3e9e13272f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct xml_doc *</type>
+        <definition>struct xml_doc* app_getxmldoc</definition>
+        <argsstring>(struct dtsgui *dtsgui)</argsstring>
+        <name>app_getxmldoc</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="77" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="42" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1ab33c9c3228455b45318900a842c7a693" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* app_toolbar</definition>
+        <argsstring>(struct dtsgui *dtsgui, void *pw, long style, int id, const char *name, void *data)</argsstring>
+        <name>app_toolbar</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pw</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>style</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="80" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" bodystart="111" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1a0be336c09b5cd473a616326c4cb227d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane reconfig_wizard</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>reconfig_wizard</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="83" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wizard.c" bodystart="474" bodyend="483"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1a126b309803052977061662f97fb9012a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane editsys_wizard</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>editsys_wizard</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="84" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wizard.c" bodystart="454" bodyend="472"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1a56c78e0d32a18452dcea4f026de2c889" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane newsys_wizard</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>newsys_wizard</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="85" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wizard.c" bodystart="429" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1accc1788f03d17d487ce09a1d07d53018" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void wizz_custinfo</definition>
+        <argsstring>(dtsgui_pane *pg)</argsstring>
+        <name>wizz_custinfo</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref> *</type>
+          <declname>pg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="86" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wizard.c" bodystart="157" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1aa1aa69985689f9714422c273fe968fdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane pbx_settings</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>pbx_settings</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="89" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" bodystart="325" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1a77cb81a619f8c9ccd83cdf1e7c97aae9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void test_menu</definition>
+        <argsstring>(struct dtsgui *dtsgui, dtsgui_menu menu, const char *url)</argsstring>
+        <name>test_menu</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1afb1e28bd82fd8ea9d43a188c06095682" kindref="member">dtsgui_menu</ref></type>
+          <declname>menu</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>url</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="92" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/testing.c" bodystart="94" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1a6d9d2b0105df87000cb2bdecbff91239" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane advanced_config</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>advanced_config</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="95" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="740" bodyend="769"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1ab77c80061336502da4c2cc2d2c11f4a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_iface_pane</definition>
+        <argsstring>(dtsgui_pane p, const char *xpre, const char *iface)</argsstring>
+        <name>network_iface_pane</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>xpre</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>iface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="96" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="201" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1a3d43e57bb96cf8bd603872099c3bc038" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_iface_new_pane</definition>
+        <argsstring>(dtsgui_pane p, void *data)</argsstring>
+        <name>network_iface_new_pane</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="97" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="222" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1abf43f59e582eee9f27734b14c8307819" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane iface_config</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>iface_config</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="100" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="145" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1a72af4355dbc5afe93fef750a81a3e572" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane open_config</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>open_config</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="103" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="27" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1ae1a63d1e8add52ca63e83582891054fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane save_config</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>save_config</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="104" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="69" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1a01bdf27a0760d9da4bb77918735171c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane export_config</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>export_config</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="105" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="150" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1abc9a4e54439d7a701992752ec7b3f6b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane view_config_conf</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>view_config_conf</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="106" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="112" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1abe0b9ce2252ec72774af23a0ec71424f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane view_config_xml</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>view_config_xml</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="107" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="94" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="private_8h_1a2bcdb1dc60a2dc5383e027578faeb44e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void config_menu</definition>
+        <argsstring>(struct dtsgui *dtsgui)</argsstring>
+        <name>config_menu</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="108" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="189" bodyend="217"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>Distrotech<sp/>Solutions<sp/>wxWidgets<sp/>Gui<sp/>Interface</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>Copyright<sp/>(C)<sp/>2013<sp/>Gregory<sp/>Hinton<sp/>Nietsky<sp/>&lt;gregory@distrotech.co.za&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PRIVATE_H_INCLUDED</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PRIVATE_H_INCLUDED</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DATA_DIR</highlight></codeline>
+<codeline lineno="24" refid="private_8h_1a48cc0a91e8f54c62f3341c21c8cc74e8" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DATA_DIR<sp/><sp/><sp/><sp/>&quot;/usr/share/dtsguiapp&quot;</highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="private_8h_1a018cb6fe637d3a25a67e794d620808ec" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808ec" kindref="member">node_id</ref><sp/>{</highlight></codeline>
+<codeline lineno="28" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca05bdc159f9d09f11da201a71742409ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca05bdc159f9d09f11da201a71742409ab" kindref="member">DTS_NODE_CUSTOMER</ref>,</highlight></codeline>
+<codeline lineno="29" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca5d9219d48e330379299d2ed15ff4ea15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca5d9219d48e330379299d2ed15ff4ea15" kindref="member">DTS_NODE_NETWORK_CONFIG</ref>,</highlight></codeline>
+<codeline lineno="30" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca18ebf5363d2b4ceb3a8743a4e7647bcf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca18ebf5363d2b4ceb3a8743a4e7647bcf" kindref="member">DTS_NODE_NETWORK_CONFIG_DNS</ref>,</highlight></codeline>
+<codeline lineno="31" refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecaca8f7e08a6f51e6081b99238a63cbafe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecaca8f7e08a6f51e6081b99238a63cbafe" kindref="member">DTS_NODE_NETWORK_CONFIG_DNS_DYN</ref>,</highlight></codeline>
+<codeline lineno="32" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca6fc67e5941f734e9de7b2637da5c9d2e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca6fc67e5941f734e9de7b2637da5c9d2e" kindref="member">DTS_NODE_NETWORK_CONFIG_DNS_SERV</ref>,</highlight></codeline>
+<codeline lineno="33" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca72083493da720ce59de27e706129d826" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca72083493da720ce59de27e706129d826" kindref="member">DTS_NODE_NETWORK_CONFIG_DNS_ZONE</ref>,</highlight></codeline>
+<codeline lineno="34" refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecadc2abb3aae3102620d94987b8bf84f62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecadc2abb3aae3102620d94987b8bf84f62" kindref="member">DTS_NODE_NETWORK_CONFIG_DNS_HOST_NEW</ref>,</highlight></codeline>
+<codeline lineno="35" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca1bd61a04594205156cf8c1bdbee06c25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca1bd61a04594205156cf8c1bdbee06c25" kindref="member">DTS_NODE_NETWORK_CONFIG_DNS_HOST</ref>,</highlight></codeline>
+<codeline lineno="36" refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecac0f1f71b049c8b3cb01da6496f13806e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecac0f1f71b049c8b3cb01da6496f13806e" kindref="member">DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_NEW</ref>,</highlight></codeline>
+<codeline lineno="37" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca25d60169e86212cf235d0c4667064603" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca25d60169e86212cf235d0c4667064603" kindref="member">DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN</ref>,</highlight></codeline>
+<codeline lineno="38" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca67d5c38ab27222a53751515b85b184f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca67d5c38ab27222a53751515b85b184f3" kindref="member">DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER_NEW</ref>,</highlight></codeline>
+<codeline lineno="39" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca5b916eea0e8627cd48cad8e0ea0d39ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca5b916eea0e8627cd48cad8e0ea0d39ca" kindref="member">DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER</ref>,</highlight></codeline>
+<codeline lineno="40" refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecaadaa5062456242e248fd995b69227644" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecaadaa5062456242e248fd995b69227644" kindref="member">DTS_NODE_NETWORK_IFACE_NEW</ref>,</highlight></codeline>
+<codeline lineno="41" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca08159fce51c8b85d49c5f4966bf35d8b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca08159fce51c8b85d49c5f4966bf35d8b" kindref="member">DTS_NODE_NETWORK_IFACE</ref>,</highlight></codeline>
+<codeline lineno="42" refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecae56467f65a231afd6634cae3269e663c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecae56467f65a231afd6634cae3269e663c" kindref="member">DTS_NODE_NETWORK_WIFI_NEW</ref>,</highlight></codeline>
+<codeline lineno="43" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca692abd6a99c569736b4bf162a07c298e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca692abd6a99c569736b4bf162a07c298e" kindref="member">DTS_NODE_NETWORK_WIFI</ref>,</highlight></codeline>
+<codeline lineno="44" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca19640654abb2114b8ee8098dc52e250a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca19640654abb2114b8ee8098dc52e250a" kindref="member">DTS_NODE_NETWORK_WAN_NEW</ref>,</highlight></codeline>
+<codeline lineno="45" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca701fcc5c32156589c8d427dca26ad3c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca701fcc5c32156589c8d427dca26ad3c7" kindref="member">DTS_NODE_NETWORK_WAN</ref>,</highlight></codeline>
+<codeline lineno="46" refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecaffda66a81ab84d7dfb2dac1c5ce352f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecaffda66a81ab84d7dfb2dac1c5ce352f0" kindref="member">DTS_NODE_NETWORK_ROUTE_NEW</ref>,</highlight></codeline>
+<codeline lineno="47" refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecaa6a75ad98f4e80d9ef8fa806e966bfdb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecaa6a75ad98f4e80d9ef8fa806e966bfdb" kindref="member">DTS_NODE_NETWORK_ROUTE</ref>,</highlight></codeline>
+<codeline lineno="48" refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecab0e808e1aa3a128b563041ad11d63892" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecab0e808e1aa3a128b563041ad11d63892" kindref="member">DTS_NODE_NETWORK_MODEM</ref>,</highlight></codeline>
+<codeline lineno="49" refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecae55296fcae8a1a6d9b68b3488ce510ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecae55296fcae8a1a6d9b68b3488ce510ca" kindref="member">DTS_NODE_NETWORK_MODEM_ADV</ref>,</highlight></codeline>
+<codeline lineno="50" refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecad3a141f5a4b83f7396624ec46408781b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecad3a141f5a4b83f7396624ec46408781b" kindref="member">DTS_NODE_NETWORK_MODEM_ANA</ref>,</highlight></codeline>
+<codeline lineno="51" refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecada7817a2ab63af146792c6e8421b0124" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecada7817a2ab63af146792c6e8421b0124" kindref="member">DTS_NODE_NETWORK_ADSL_LINK_NEW</ref>,</highlight></codeline>
+<codeline lineno="52" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca227b415be9d0831d430de77ec5bf8c52" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca227b415be9d0831d430de77ec5bf8c52" kindref="member">DTS_NODE_NETWORK_ADSL_LINK</ref>,</highlight></codeline>
+<codeline lineno="53" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca767fd577d500a56d72c11ffea034e08c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca767fd577d500a56d72c11ffea034e08c" kindref="member">DTS_NODE_NETWORK_ADSL_USER_NEW</ref>,</highlight></codeline>
+<codeline lineno="54" refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecaeb4d90752cc1ae6b1189057456d4080d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecaeb4d90752cc1ae6b1189057456d4080d" kindref="member">DTS_NODE_NETWORK_ADSL_USER</ref>,</highlight></codeline>
+<codeline lineno="55" refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca15c8b3347c4ae06b4206e5960f7bd41c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca15c8b3347c4ae06b4206e5960f7bd41c" kindref="member">DTS_NODE_NETWORK_TOS_NEW</ref>,</highlight></codeline>
+<codeline lineno="56" refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecae4d8c8164988e426b306b81ba7a54551" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecae4d8c8164988e426b306b81ba7a54551" kindref="member">DTS_NODE_NETWORK_TOS</ref></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="structapp__data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structapp__data" kindref="compound">app_data</ref><sp/>{</highlight></codeline>
+<codeline lineno="60" refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*<ref refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" kindref="member">xmldoc</ref>;</highlight></codeline>
+<codeline lineno="61" refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" kindref="member">datadir</ref>;</highlight></codeline>
+<codeline lineno="62" refid="structapp__data_1a2dc4e3a7e569ee4f9bf1d88b35fe107b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structapp__data_1a2dc4e3a7e569ee4f9bf1d88b35fe107b" kindref="member">openconf</ref>;</highlight></codeline>
+<codeline lineno="63" refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dtsgui_8h_1af59302244664352117c2669055da5850" kindref="member">dtsgui_menuitem</ref><sp/><ref refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" kindref="member">n_wiz</ref>;</highlight></codeline>
+<codeline lineno="64" refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dtsgui_8h_1af59302244664352117c2669055da5850" kindref="member">dtsgui_menuitem</ref><sp/><ref refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" kindref="member">e_wiz</ref>;</highlight></codeline>
+<codeline lineno="65" refid="structapp__data_1a68690abb28e424749f67339ea3736a41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dtsgui_8h_1af59302244664352117c2669055da5850" kindref="member">dtsgui_menuitem</ref><sp/><ref refid="structapp__data_1a68690abb28e424749f67339ea3736a41" kindref="member">c_open</ref>;</highlight></codeline>
+<codeline lineno="66" refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="dtsgui_8h_1afb1e28bd82fd8ea9d43a188c06095682" kindref="member">dtsgui_menu</ref><sp/><ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member">cfg_menu</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="structlistitem" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structlistitem" kindref="compound">listitem</ref><sp/>{</highlight></codeline>
+<codeline lineno="70" refid="structlistitem_1af53587242ef469841b5a0c0836b3cb21" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structlistitem_1af53587242ef469841b5a0c0836b3cb21" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="71" refid="structlistitem_1a678100a2bc64b5f325a842ac0555d191" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structlistitem_1a678100a2bc64b5f325a842ac0555d191" kindref="member">value</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="75"><highlight class="preprocessor"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="77"><highlight class="preprocessor"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*<ref refid="private_8h_1a65a24b9322f0fd002413f3e9e13272f0" kindref="member">app_getxmldoc</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">/*toolbar.cpp*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="private_8h_1ab33c9c3228455b45318900a842c7a693" kindref="member">app_toolbar</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pw,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>style,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">/*wizard.c*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/><ref refid="private_8h_1a0be336c09b5cd473a616326c4cb227d2" kindref="member">reconfig_wizard</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/><ref refid="private_8h_1a126b309803052977061662f97fb9012a" kindref="member">editsys_wizard</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/><ref refid="private_8h_1a56c78e0d32a18452dcea4f026de2c889" kindref="member">newsys_wizard</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="private_8h_1accc1788f03d17d487ce09a1d07d53018" kindref="member">wizz_custinfo</ref>(<ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/>*pg);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">/*pbxconfig.c*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/><ref refid="pbxconfig_8c_1aa1aa69985689f9714422c273fe968fdf" kindref="member">pbx_settings</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">/*testing.c*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="private_8h_1a77cb81a619f8c9ccd83cdf1e7c97aae9" kindref="member">test_menu</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui,<sp/><ref refid="dtsgui_8h_1afb1e28bd82fd8ea9d43a188c06095682" kindref="member">dtsgui_menu</ref><sp/>menu,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*url);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="comment">/*netconfig.c*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/><ref refid="netconfig_8c_1a6d9d2b0105df87000cb2bdecbff91239" kindref="member">advanced_config</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="netconfig_8c_1ab77c80061336502da4c2cc2d2c11f4a0" kindref="member">network_iface_pane</ref>(<ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/>p,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*xpre,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*iface);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="netconfig_8c_1a3d43e57bb96cf8bd603872099c3bc038" kindref="member">network_iface_new_pane</ref>(<ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/>p,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">/*iface*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/><ref refid="interface_8c_1abf43f59e582eee9f27734b14c8307819" kindref="member">iface_config</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="comment">/*config.c*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/><ref refid="config_8c_1a72af4355dbc5afe93fef750a81a3e572" kindref="member">open_config</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/><ref refid="config_8c_1ae1a63d1e8add52ca63e83582891054fa" kindref="member">save_config</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/><ref refid="config_8c_1a01bdf27a0760d9da4bb77918735171c1" kindref="member">export_config</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/><ref refid="config_8c_1abc9a4e54439d7a701992752ec7b3f6b9" kindref="member">view_config_conf</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/><ref refid="config_8c_1abe0b9ce2252ec72774af23a0ec71424f" kindref="member">view_config_xml</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="config_8c_1a2bcdb1dc60a2dc5383e027578faeb44e" kindref="member">config_menu</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor"></highlight><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="113"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*PRIVATE_H_INCLUDED*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h"/>
+  </compounddef>
+</doxygen>

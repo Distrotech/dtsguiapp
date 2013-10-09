@@ -1,0 +1,456 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_d_t_s_object" kind="class" prot="public">
+    <compoundname>DTSObject</compoundname>
+    <basecompoundref prot="public" virt="virtual">wxWindow</basecompoundref>
+    <derivedcompoundref refid="class_d_t_s_panel" prot="public" virt="non-virtual">DTSPanel</derivedcompoundref>
+    <derivedcompoundref refid="class_d_t_s_tab_window" prot="public" virt="non-virtual">DTSTabWindow</derivedcompoundref>
+    <derivedcompoundref refid="class_d_t_s_tree_window" prot="public" virt="non-virtual">DTSTreeWindow</derivedcompoundref>
+    <includes refid="_d_t_s_panel_8h" local="no">DTSPanel.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_d_t_s_object_1ad191e42b5daa056f9ea8247d752df3b0" prot="public" static="no" mutable="no">
+        <type><ref refid="dtsgui_8h_1a9275874ac61d3750aa677a36da714373" kindref="member">panel_type</ref></type>
+        <definition>panel_type DTSObject::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="69" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_object_1abcce46b892d3c17810d4551c495512ce" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DTSObject::buttons[6]</definition>
+        <argsstring>[6]</argsstring>
+        <name>buttons</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="70" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_d_t_s_object_1a941fc98555b60d021a6c2f488ce9ae3e" prot="protected" static="no" mutable="no">
+        <type>void **</type>
+        <definition>void** DTSObject::refobj</definition>
+        <argsstring></argsstring>
+        <name>refobj</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="72" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_object_1a8ca3e7c6f66685caf07fa93fb5e14337" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_d_t_s_frame" kindref="compound">DTSFrame</ref> *</type>
+        <definition>DTSFrame* DTSObject::frame</definition>
+        <argsstring></argsstring>
+        <name>frame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="73" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_object_1a1292b4804b31450f0ee960fa59fcfc7a" prot="protected" static="no" mutable="no">
+        <type>wxString</type>
+        <definition>wxString DTSObject::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="74" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" prot="protected" static="no" mutable="no">
+        <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+        <definition>wxWindow* DTSObject::panel</definition>
+        <argsstring></argsstring>
+        <name>panel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="75" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_object_1a132481851865629352e4aefa7f822e4b" prot="protected" static="no" mutable="no">
+        <type>wxEvtHandler *</type>
+        <definition>wxEvtHandler* DTSObject::dtsevthandler</definition>
+        <argsstring></argsstring>
+        <name>dtsevthandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="76" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" prot="protected" static="no" mutable="no">
+        <type>struct bucket_list *</type>
+        <definition>struct bucket_list* DTSObject::fitems</definition>
+        <argsstring></argsstring>
+        <name>fitems</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="77" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_object_1a783949e39ffd9e00aec15fa2b8cc12ed" prot="protected" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* DTSObject::userdata</definition>
+        <argsstring></argsstring>
+        <name>userdata</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="78" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_object_1a0e9b6e22629a9aa1fd5227cefaa25e6f" prot="protected" static="no" mutable="no">
+        <type>struct xml_doc *</type>
+        <definition>struct xml_doc* DTSObject::xmldoc</definition>
+        <argsstring></argsstring>
+        <name>xmldoc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="79" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_object_1ab4249f538d36789b20bb15e29ab4121f" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool DTSObject::beenshown</definition>
+        <argsstring></argsstring>
+        <name>beenshown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="80" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_d_t_s_object_1a76f73a01ddebf90d59245dd744d491b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSObject::DTSObject</definition>
+        <argsstring>(wxString=wxEmptyString)</argsstring>
+        <name>DTSObject</name>
+        <param>
+          <type>wxString</type>
+          <defname>st</defname>
+          <defval>wxEmptyString</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="58" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="229" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_object_1a47a4a671f875d6fb7681865c26b32546" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSObject::~DTSObject</definition>
+        <argsstring>()</argsstring>
+        <name>~DTSObject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="59" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="242" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_object_1aa800a3664b895617df9884469dbdf1f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>wxString</type>
+        <definition>wxString DTSObject::GetName</definition>
+        <argsstring>()</argsstring>
+        <name>GetName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="60" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="260" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_object_1ae88ef1ea6f28346b6cd6d2d898d7acde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+        <definition>wxWindow * DTSObject::GetPanel</definition>
+        <argsstring>()</argsstring>
+        <name>GetPanel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="61" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="270" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_object_1ae5239b912c725a7a5720954767c3537a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_d_t_s_frame" kindref="compound">DTSFrame</ref> *</type>
+        <definition>DTSFrame * DTSObject::GetFrame</definition>
+        <argsstring>()</argsstring>
+        <name>GetFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="62" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="274" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_object_1a392c5ee37a2ca5e82e39cf11bc781eda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSObject::EventHandler</definition>
+        <argsstring>(int eid, wxCommandEvent *event)</argsstring>
+        <name>EventHandler</name>
+        <param>
+          <type>int</type>
+          <declname>eid</declname>
+        </param>
+        <param>
+          <type>wxCommandEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="63" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="311" bodyend="312"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_object_1a4cadcce0480e7e8f4a9a07a4aedd3c1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct bucket_list *</type>
+        <definition>struct bucket_list * DTSObject::GetItems</definition>
+        <argsstring>(void)</argsstring>
+        <name>GetItems</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="64" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="304" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_object_1a3e39ba76f7cb701fc9b99f6f059fb49e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSObject::SetUserData</definition>
+        <argsstring>(void *data)</argsstring>
+        <name>SetUserData</name>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="65" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="314" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_object_1a5d32407be34aa68ea2b038ede768d50e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * DTSObject::GetUserData</definition>
+        <argsstring>(void)</argsstring>
+        <name>GetUserData</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="66" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="326" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_object_1a1ae63425d8e5770a8b0717f37fd695b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSObject::SetXMLDoc</definition>
+        <argsstring>(struct xml_doc *xmldoc)</argsstring>
+        <name>SetXMLDoc</name>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xmldoc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="67" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="278" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_object_1ae177d1cfd85be759810b252b98f2050d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct xml_doc *</type>
+        <definition>struct xml_doc * DTSObject::GetXMLDoc</definition>
+        <argsstring>(void)</argsstring>
+        <name>GetXMLDoc</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="68" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="293" bodyend="302"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="58">
+        <label>DTSTreeWindow</label>
+        <link refid="class_d_t_s_tree_window"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>DTSObject</label>
+        <link refid="class_d_t_s_object"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>DTSPanel</label>
+        <link refid="class_d_t_s_panel"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>DTSTextPanel</label>
+        <link refid="class_d_t_s_text_panel"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>DTSTabWindow</label>
+        <link refid="class_d_t_s_tab_window"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>DTSScrollPanel</label>
+        <link refid="class_d_t_s_scroll_panel"/>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>wxWindow</label>
+      </node>
+      <node id="51">
+        <label>DTSTabPage</label>
+        <link refid="class_d_t_s_tab_page"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>DTSWizardWindow</label>
+        <link refid="class_d_t_s_wizard_window"/>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="52">
+        <label>DTSStaticPanel</label>
+        <link refid="class_d_t_s_static_panel"/>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>DTSWindow</label>
+        <link refid="class_d_t_s_window"/>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>DTSDialog</label>
+        <link refid="class_d_t_s_dialog"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="59">
+        <label>DTSObject</label>
+        <link refid="class_d_t_s_object"/>
+        <childnode refid="60" relation="public-inheritance">
+        </childnode>
+        <childnode refid="61" relation="usage">
+          <edgelabel>frame</edgelabel>
+        </childnode>
+      </node>
+      <node id="60">
+        <label>wxWindow</label>
+      </node>
+      <node id="62">
+        <label>wxFrame</label>
+      </node>
+      <node id="61">
+        <label>DTSFrame</label>
+        <link refid="class_d_t_s_frame"/>
+        <childnode refid="62" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="56" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="56" bodyend="81"/>
+    <listofallmembers>
+      <member refid="class_d_t_s_object_1ab4249f538d36789b20bb15e29ab4121f" prot="protected" virt="non-virtual"><scope>DTSObject</scope><name>beenshown</name></member>
+      <member refid="class_d_t_s_object_1abcce46b892d3c17810d4551c495512ce" prot="public" virt="non-virtual"><scope>DTSObject</scope><name>buttons</name></member>
+      <member refid="class_d_t_s_object_1a132481851865629352e4aefa7f822e4b" prot="protected" virt="non-virtual"><scope>DTSObject</scope><name>dtsevthandler</name></member>
+      <member refid="class_d_t_s_object_1a76f73a01ddebf90d59245dd744d491b5" prot="public" virt="non-virtual"><scope>DTSObject</scope><name>DTSObject</name></member>
+      <member refid="class_d_t_s_object_1a392c5ee37a2ca5e82e39cf11bc781eda" prot="public" virt="non-virtual"><scope>DTSObject</scope><name>EventHandler</name></member>
+      <member refid="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" prot="protected" virt="non-virtual"><scope>DTSObject</scope><name>fitems</name></member>
+      <member refid="class_d_t_s_object_1a8ca3e7c6f66685caf07fa93fb5e14337" prot="protected" virt="non-virtual"><scope>DTSObject</scope><name>frame</name></member>
+      <member refid="class_d_t_s_object_1ae5239b912c725a7a5720954767c3537a" prot="public" virt="non-virtual"><scope>DTSObject</scope><name>GetFrame</name></member>
+      <member refid="class_d_t_s_object_1a4cadcce0480e7e8f4a9a07a4aedd3c1f" prot="public" virt="non-virtual"><scope>DTSObject</scope><name>GetItems</name></member>
+      <member refid="class_d_t_s_object_1aa800a3664b895617df9884469dbdf1f8" prot="public" virt="non-virtual"><scope>DTSObject</scope><name>GetName</name></member>
+      <member refid="class_d_t_s_object_1ae88ef1ea6f28346b6cd6d2d898d7acde" prot="public" virt="non-virtual"><scope>DTSObject</scope><name>GetPanel</name></member>
+      <member refid="class_d_t_s_object_1a5d32407be34aa68ea2b038ede768d50e" prot="public" virt="non-virtual"><scope>DTSObject</scope><name>GetUserData</name></member>
+      <member refid="class_d_t_s_object_1ae177d1cfd85be759810b252b98f2050d" prot="public" virt="non-virtual"><scope>DTSObject</scope><name>GetXMLDoc</name></member>
+      <member refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" prot="protected" virt="non-virtual"><scope>DTSObject</scope><name>panel</name></member>
+      <member refid="class_d_t_s_object_1a941fc98555b60d021a6c2f488ce9ae3e" prot="protected" virt="non-virtual"><scope>DTSObject</scope><name>refobj</name></member>
+      <member refid="class_d_t_s_object_1a3e39ba76f7cb701fc9b99f6f059fb49e" prot="public" virt="non-virtual"><scope>DTSObject</scope><name>SetUserData</name></member>
+      <member refid="class_d_t_s_object_1a1ae63425d8e5770a8b0717f37fd695b2" prot="public" virt="non-virtual"><scope>DTSObject</scope><name>SetXMLDoc</name></member>
+      <member refid="class_d_t_s_object_1a1292b4804b31450f0ee960fa59fcfc7a" prot="protected" virt="non-virtual"><scope>DTSObject</scope><name>status</name></member>
+      <member refid="class_d_t_s_object_1ad191e42b5daa056f9ea8247d752df3b0" prot="public" virt="non-virtual"><scope>DTSObject</scope><name>type</name></member>
+      <member refid="class_d_t_s_object_1a783949e39ffd9e00aec15fa2b8cc12ed" prot="protected" virt="non-virtual"><scope>DTSObject</scope><name>userdata</name></member>
+      <member refid="class_d_t_s_object_1a0e9b6e22629a9aa1fd5227cefaa25e6f" prot="protected" virt="non-virtual"><scope>DTSObject</scope><name>xmldoc</name></member>
+      <member refid="class_d_t_s_object_1a47a4a671f875d6fb7681865c26b32546" prot="public" virt="non-virtual"><scope>DTSObject</scope><name>~DTSObject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

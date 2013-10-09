@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="dir_d422163b96683743ed3963d4aac17747" kind="dir">
+    <compoundname>app</compoundname>
+    <innerfile refid="config_8c">config.c</innerfile>
+    <innerfile refid="interface_8c">interface.c</innerfile>
+    <innerfile refid="netconfig_8c">netconfig.c</innerfile>
+    <innerfile refid="pbxconfig_8c">pbxconfig.c</innerfile>
+    <innerfile refid="private_8h">private.h</innerfile>
+    <innerfile refid="testing_8c">testing.c</innerfile>
+    <innerfile refid="toolbar_8cpp">toolbar.cpp</innerfile>
+    <innerfile refid="wizard_8c">wizard.c</innerfile>
+    <innerfile refid="wxforms_8c">wxforms.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/app/"/>
+  </compounddef>
+</doxygen>

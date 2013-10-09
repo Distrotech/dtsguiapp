@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerdir refid="dir_b0856f6b0d80ccb263b2f415c91f9e17">src/include</innerdir>
+    <innerfile refid="cxxapi_8cpp">cxxapi.cpp</innerfile>
+    <innerfile refid="_d_t_s_app_8cpp">DTSApp.cpp</innerfile>
+    <innerfile refid="_d_t_s_frame_8cpp">DTSFrame.cpp</innerfile>
+    <innerfile refid="_d_t_s_list_view_8cpp">DTSListView.cpp</innerfile>
+    <innerfile refid="_d_t_s_panel_8cpp">DTSPanel.cpp</innerfile>
+    <innerfile refid="_d_t_s_tree_window_8cpp">DTSTreeWindow.cpp</innerfile>
+    <innerfile refid="_d_t_s_wizard_8cpp">DTSWizard.cpp</innerfile>
+    <innerfile refid="_d_t_s_x_m_l_combo_box_8cpp">DTSXMLComboBox.cpp</innerfile>
+    <innerfile refid="evdata_8cpp">evdata.cpp</innerfile>
+    <innerfile refid="pitems_8cpp">pitems.cpp</innerfile>
+    <innerfile refid="wrapper_8cpp">wrapper.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/"/>
+  </compounddef>
+</doxygen>

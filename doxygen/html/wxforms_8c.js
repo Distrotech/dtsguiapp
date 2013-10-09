@@ -1,0 +1,10 @@
+var wxforms_8c =
+[
+    [ "app_getxmldoc", "wxforms_8c.html#a65a24b9322f0fd002413f3e9e13272f0", null ],
+    [ "file_menu", "wxforms_8c.html#a011cd0b131174029fed8babdf1c7a101", null ],
+    [ "free_appdata", "wxforms_8c.html#a5fe0b449ba347b98cc9acad0f5608ca1", null ],
+    [ "guiconfig_cb", "wxforms_8c.html#af12c2714c0878b7565d8b788931f9e50", null ],
+    [ "help_menu", "wxforms_8c.html#ae1b0e521306d90ee09f460064c015b2b", null ],
+    [ "main", "wxforms_8c.html#a3c04138a5bfe5d72780bb7e82a18e627", null ],
+    [ "xml_config", "wxforms_8c.html#a063bbba7cc37af45b7989f2838fae1e1", null ]
+];

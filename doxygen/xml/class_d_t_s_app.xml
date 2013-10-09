@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_d_t_s_app" kind="class" prot="public">
+    <compoundname>DTSApp</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">wxApp</basecompoundref>
+    <includes refid="_d_t_s_app_8h" local="no">DTSApp.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_d_t_s_app_1a05d434e7521a1228cc58ee1a49a8044f" prot="private" static="no" mutable="no">
+        <type>class <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+        <definition>class dtsgui* DTSApp::dtsgui</definition>
+        <argsstring></argsstring>
+        <name>dtsgui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="74" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_app_1a402934b59ac3bb4ff67422d39656f304" prot="private" static="no" mutable="no">
+        <type>class <ref refid="classdtsgui__curl" kindref="compound">dtsgui_curl</ref> *</type>
+        <definition>class dtsgui_curl* DTSApp::curl</definition>
+        <argsstring></argsstring>
+        <name>curl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="75" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_d_t_s_app_1a1b9443b7b3698541887e6407fdc6d1ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSApp::DTSApp</definition>
+        <argsstring>(dtsgui_configcb confcallback_cb, void *data, struct point wsize, struct point wpos, const char *title, const char *status)</argsstring>
+        <name>DTSApp</name>
+        <param>
+          <type><ref refid="group___c-_a_p_i_1gad3b80490c86b8275c47382588f2ecfd4" kindref="member">dtsgui_configcb</ref></type>
+          <declname>confcallback_cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structpoint" kindref="compound">point</ref></type>
+          <declname>wsize</declname>
+        </param>
+        <param>
+          <type>struct <ref refid="structpoint" kindref="compound">point</ref></type>
+          <declname>wpos</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="70" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="239" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_app_1a4b4ef9b0d2e3ae5fda50e81f4ade664c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSApp::~DTSApp</definition>
+        <argsstring>()</argsstring>
+        <name>~DTSApp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="71" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="243" bodyend="252"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_d_t_s_app_1ae21cc8793d06b6b770867ebd3d0d1daa" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool DTSApp::OnInit</definition>
+        <argsstring>()</argsstring>
+        <name>OnInit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="73" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="254" bodyend="260"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>DTSApp</label>
+        <link refid="class_d_t_s_app"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>wxApp</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="6">
+        <label>DTSApp</label>
+        <link refid="class_d_t_s_app"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>wxApp</label>
+      </node>
+    </collaborationgraph>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="68" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="68" bodyend="76"/>
+    <listofallmembers>
+      <member refid="class_d_t_s_app_1a402934b59ac3bb4ff67422d39656f304" prot="private" virt="non-virtual"><scope>DTSApp</scope><name>curl</name></member>
+      <member refid="class_d_t_s_app_1a1b9443b7b3698541887e6407fdc6d1ac" prot="public" virt="non-virtual"><scope>DTSApp</scope><name>DTSApp</name></member>
+      <member refid="class_d_t_s_app_1a05d434e7521a1228cc58ee1a49a8044f" prot="private" virt="non-virtual"><scope>DTSApp</scope><name>dtsgui</name></member>
+      <member refid="class_d_t_s_app_1ae21cc8793d06b6b770867ebd3d0d1daa" prot="private" virt="virtual"><scope>DTSApp</scope><name>OnInit</name></member>
+      <member refid="class_d_t_s_app_1a4b4ef9b0d2e3ae5fda50e81f4ade664c" prot="public" virt="non-virtual"><scope>DTSApp</scope><name>~DTSApp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

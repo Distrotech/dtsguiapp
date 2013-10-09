@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_d_t_s_x_m_l_combo_box" kind="class" prot="public">
+    <compoundname>DTSXMLComboBox</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">wxComboBox</basecompoundref>
+    <includes refid="_d_t_s_x_m_l_combo_box_8h" local="no">DTSXMLComboBox.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DTSXMLComboBox::sflags</definition>
+        <argsstring></argsstring>
+        <name>sflags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="38" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_x_m_l_combo_box_1a9ce866cc4f74a2447db49cf23968e351" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t DTSXMLComboBox::minlen</definition>
+        <argsstring></argsstring>
+        <name>minlen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="39" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_x_m_l_combo_box_1a573345fd24fe84285cd88a15387ca1c1" prot="private" static="no" mutable="no">
+        <type>wxString</type>
+        <definition>wxString DTSXMLComboBox::url</definition>
+        <argsstring></argsstring>
+        <name>url</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="40" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_x_m_l_combo_box_1aa1f6979f243bb50a3f690b7a82162773" prot="private" static="no" mutable="no">
+        <type>wxString</type>
+        <definition>wxString DTSXMLComboBox::xpath</definition>
+        <argsstring></argsstring>
+        <name>xpath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="41" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_x_m_l_combo_box_1afa4ceb66dab1fc8beda14047dfb3d1e6" prot="private" static="no" mutable="no">
+        <type>struct curl_post *(*</type>
+        <definition>struct curl_post*(* DTSXMLComboBox::getpost)(const wxString &amp;)</definition>
+        <argsstring>)(const wxString &amp;)</argsstring>
+        <name>getpost</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="42" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_d_t_s_x_m_l_combo_box_1aa0ef061b697a527a559d56a6c5914e08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSXMLComboBox::DTSXMLComboBox</definition>
+        <argsstring>(wxWindow *parent, int id, wxString url, wxString xpath, struct curl_post *(*getpost)(const wxString &amp;), size_t minlen)</argsstring>
+        <name>DTSXMLComboBox</name>
+        <param>
+          <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>wxString</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>wxString</type>
+          <declname>xpath</declname>
+        </param>
+        <param>
+          <type>struct curl_post *(*)(const wxString &amp;)</type>
+          <declname>getpost</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>minlen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="26" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_x_m_l_combo_box_1a026821df9109a287aff26b12859fbf7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSXMLComboBox::~DTSXMLComboBox</definition>
+        <argsstring>()</argsstring>
+        <name>~DTSXMLComboBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="86" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_x_m_l_combo_box_1ab73ab96a2dddeb756b984db6e0fa9106" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DTSXMLComboBox::HasXMLList</definition>
+        <argsstring>()</argsstring>
+        <name>HasXMLList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="90" bodyend="96"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_d_t_s_x_m_l_combo_box_1aeec14b4880ff9d69bb1b19a4549e082c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSXMLComboBox::HandleEvent</definition>
+        <argsstring>(wxCommandEvent &amp;event)</argsstring>
+        <name>HandleEvent</name>
+        <param>
+          <type>wxCommandEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="98" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_x_m_l_combo_box_1a3f983fc429c2fa50b9b46d7c5fa0538d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct xml_doc *</type>
+        <definition>struct xml_doc * DTSXMLComboBox::GetXMLDoc</definition>
+        <argsstring>(const wxString &amp;val, struct xml_node *xn)</argsstring>
+        <name>GetXMLDoc</name>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>struct xml_node *</type>
+          <declname>xn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="34" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="43" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_x_m_l_combo_box_1aefd4fde2c41d00b0a9d8068265ee42c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct curl_post *</type>
+        <definition>struct curl_post* DTSXMLComboBox::GetPostInfo</definition>
+        <argsstring>(const wxString &amp;val)</argsstring>
+        <name>GetPostInfo</name>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_x_m_l_combo_box_1acf258ad2d53caf6b87d48cbb53e32a65" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DTSXMLComboBox::AppendXMLNodes</definition>
+        <argsstring>(struct xml_doc *xmldoc)</argsstring>
+        <name>AppendXMLNodes</name>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xmldoc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="36" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="64" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_x_m_l_combo_box_1a5294d28f4b31cbc166cd984f0babb6b3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSXMLComboBox::EmptyServerList</definition>
+        <argsstring>()</argsstring>
+        <name>EmptyServerList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="37" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="154" bodyend="166"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="187">
+        <label>DTSXMLComboBox</label>
+        <link refid="class_d_t_s_x_m_l_combo_box"/>
+        <childnode refid="188" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="188">
+        <label>wxComboBox</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="189">
+        <label>DTSXMLComboBox</label>
+        <link refid="class_d_t_s_x_m_l_combo_box"/>
+        <childnode refid="190" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="190">
+        <label>wxComboBox</label>
+      </node>
+    </collaborationgraph>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="27" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" bodystart="27" bodyend="43"/>
+    <listofallmembers>
+      <member refid="class_d_t_s_x_m_l_combo_box_1acf258ad2d53caf6b87d48cbb53e32a65" prot="private" virt="non-virtual"><scope>DTSXMLComboBox</scope><name>AppendXMLNodes</name></member>
+      <member refid="class_d_t_s_x_m_l_combo_box_1aa0ef061b697a527a559d56a6c5914e08" prot="public" virt="non-virtual"><scope>DTSXMLComboBox</scope><name>DTSXMLComboBox</name></member>
+      <member refid="class_d_t_s_x_m_l_combo_box_1a5294d28f4b31cbc166cd984f0babb6b3" prot="private" virt="non-virtual"><scope>DTSXMLComboBox</scope><name>EmptyServerList</name></member>
+      <member refid="class_d_t_s_x_m_l_combo_box_1afa4ceb66dab1fc8beda14047dfb3d1e6" prot="private" virt="non-virtual"><scope>DTSXMLComboBox</scope><name>getpost</name></member>
+      <member refid="class_d_t_s_x_m_l_combo_box_1aefd4fde2c41d00b0a9d8068265ee42c6" prot="private" virt="non-virtual"><scope>DTSXMLComboBox</scope><name>GetPostInfo</name></member>
+      <member refid="class_d_t_s_x_m_l_combo_box_1a3f983fc429c2fa50b9b46d7c5fa0538d" prot="private" virt="non-virtual"><scope>DTSXMLComboBox</scope><name>GetXMLDoc</name></member>
+      <member refid="class_d_t_s_x_m_l_combo_box_1aeec14b4880ff9d69bb1b19a4549e082c" prot="private" virt="non-virtual"><scope>DTSXMLComboBox</scope><name>HandleEvent</name></member>
+      <member refid="class_d_t_s_x_m_l_combo_box_1ab73ab96a2dddeb756b984db6e0fa9106" prot="public" virt="non-virtual"><scope>DTSXMLComboBox</scope><name>HasXMLList</name></member>
+      <member refid="class_d_t_s_x_m_l_combo_box_1a9ce866cc4f74a2447db49cf23968e351" prot="private" virt="non-virtual"><scope>DTSXMLComboBox</scope><name>minlen</name></member>
+      <member refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" prot="private" virt="non-virtual"><scope>DTSXMLComboBox</scope><name>sflags</name></member>
+      <member refid="class_d_t_s_x_m_l_combo_box_1a573345fd24fe84285cd88a15387ca1c1" prot="private" virt="non-virtual"><scope>DTSXMLComboBox</scope><name>url</name></member>
+      <member refid="class_d_t_s_x_m_l_combo_box_1aa1f6979f243bb50a3f690b7a82162773" prot="private" virt="non-virtual"><scope>DTSXMLComboBox</scope><name>xpath</name></member>
+      <member refid="class_d_t_s_x_m_l_combo_box_1a026821df9109a287aff26b12859fbf7c" prot="public" virt="non-virtual"><scope>DTSXMLComboBox</scope><name>~DTSXMLComboBox</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,651 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="group___c-_a_p_i-_panel-_tree" kind="group">
+    <compoundname>C-API-Panel-Tree</compoundname>
+    <title>C API Tree View Interface</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1gaaaf93911380c2f40eb8adbdc39ac36ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTS_C_API::dtsgui_nodesetxml</definition>
+        <argsstring>(dtsgui_treeview tree, dtsgui_treenode node, const char *newname)</argsstring>
+        <name>dtsgui_nodesetxml</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>tree</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>newname</declname>
+        </param>
+        <briefdescription>
+<para>Update the XML Node with a new name. </para>        </briefdescription>
+        <detaileddescription>
+<para>This helper function will update the node&apos;s XML after a edit event.</para><para><simplesect kind="see"><para><ref refid="class_d_t_s_tree_window_1a3a7d1d1ce34864f71d5ffd154ca18210" kindref="member">DTSTreeWindow::UpdateNodeXML()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Treeview node is part of. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>TreeNode to update. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newname</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name to update XML node with. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="492" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="492" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1gad71b59e1898bce570cac2acd774f71e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane DTS_C_API::dtsgui_treepane</definition>
+        <argsstring>(dtsgui_treeview tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc)</argsstring>
+        <name>dtsgui_treepane</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>tv</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>butmask</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+        </param>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xmldoc</declname>
+        </param>
+        <briefdescription>
+<para>Create a tree view panel with information. </para>        </briefdescription>
+        <detaileddescription>
+<para>This will seldom be needed as panels are created and supplied in callbacks.</para><para><simplesect kind="see"><para><ref refid="class_d_t_s_tree_window_1a7457dc767b9cbc873e0e963644fa1fda" kindref="member">DTSTreeWindow::CreatePane()</ref> </para><simplesectsep/><para><ref refid="dtsgui_8h_1a5082bae7f0b5d2b7d715e40450f302ec" kindref="member">panel_buttons</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Title placed on the panel top/center </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>butmask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A mask of buttons to be placed on the panel. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Referenced object available in event callbacks. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xmldoc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>XML doc reference used for updating XML elements. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New Tree Pane. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="642" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="642" bodyend="645"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1gab8713feb542a9bb13f8fe7e3bf568bda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane DTS_C_API::dtsgui_treepane_default</definition>
+        <argsstring>(dtsgui_treeview tv, dtsgui_treenode node)</argsstring>
+        <name>dtsgui_treepane_default</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>tv</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+<para>Create a tree view panel with information. </para>        </briefdescription>
+        <detaileddescription>
+<para>Create a pane from information obtained from node. Name of node is used for the panel title and a Accept/Undo button.</para><para><simplesect kind="note"><para>if node id is -1 no name/buttons are added the page is blank.</para></simplesect>
+<simplesect kind="see"><para><ref refid="class_d_t_s_tree_window_1a7457dc767b9cbc873e0e963644fa1fda" kindref="member">DTSTreeWindow::CreatePane()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>used as template for panel. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New Tree Pane. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="661" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="661" bodyend="664"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1ga550b7516bbb97dd66bc71033e7d996cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+        <definition>dtsgui_treenode DTS_C_API::dtsgui_treecont</definition>
+        <argsstring>(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *data)</argsstring>
+        <name>dtsgui_treecont</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>tree</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>can_edit</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>can_sort</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>can_del</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nodeid</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a8bf800adcd2392cf7722c3cf2f603f96" kindref="member">dtsgui_treeviewpanel_cb</ref></type>
+          <declname>p_cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Create a container in the tree view. </para>        </briefdescription>
+        <detaileddescription>
+<para>Create and insert a new folder/container in the tree view with properties / call back. A panel will be created and supplied to the callback too implement on selection.</para><para><simplesect kind="note"><para>The root node is NULL this is the initial container.</para></simplesect>
+<simplesect kind="see"><para>DTSTreeWindow::AppendContainer </para><simplesectsep/><para><ref refid="dtsgui_8h_1a8bf800adcd2392cf7722c3cf2f603f96" kindref="member">dtsgui_treeviewpanel_cb</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tree view to add the node too. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parent node or NULL to create root node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The label shown on the tree. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>can_edit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Allow editing of this node the XML node will be updated. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>can_del</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Not yet implemented for containers but will allow right click menu to delete. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nodeid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A value passed to the callback as convinence can be any value -1 will cause a blank panel. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_cb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Callback to pass panel for configuration on selection of the item. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Referenced object passed too callbacks. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="687" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="686" bodyend="690"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1ga0f7146637609d42057e2cd21bd2bf33e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+        <definition>dtsgui_treenode DTS_C_API::dtsgui_treeitem</definition>
+        <argsstring>(dtsgui_treeview tree, dtsgui_treenode node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, dtsgui_treeviewpanel_cb p_cb, void *data)</argsstring>
+        <name>dtsgui_treeitem</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>tree</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>can_edit</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>can_sort</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>can_del</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nodeid</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a8bf800adcd2392cf7722c3cf2f603f96" kindref="member">dtsgui_treeviewpanel_cb</ref></type>
+          <declname>p_cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Create a item in a container. </para>        </briefdescription>
+        <detaileddescription>
+<para>Create and insert a new item in the tree view in the node specified with properties / call back. A panel will be created and supplied to the callback too implement on selection.</para><para><simplesect kind="see"><para>DTSTreeWindow::AppendItem </para><simplesectsep/><para><ref refid="dtsgui_8h_1a8bf800adcd2392cf7722c3cf2f603f96" kindref="member">dtsgui_treeviewpanel_cb</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tree view to add the node too. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The parent node or NULL to create root node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The label shown on the tree. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>can_edit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Allow editing of this node the XML node will be updated. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>can_del</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Allow right click menu to delete. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nodeid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A value passed to the callback as convinence can be any value -1 will cause a blank panel. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_cb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Callback to pass panel for configuration on selection of the item. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Referenced object passed too callbacks. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="711" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="710" bodyend="714"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1ga55a99744231b294667ece32a1087042f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTS_C_API::dtsgui_newxmltreenode</definition>
+        <argsstring>(dtsgui_treeview tree, dtsgui_pane p, dtsgui_treenode tn, const char *xpath, const char *node, const char *vitem, const char *tattr, int nid, int flags, dtsgui_xmltreenode_cb node_cb, void *data, dtsgui_treeviewpanel_cb p_cb)</argsstring>
+        <name>dtsgui_newxmltreenode</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>tree</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>tn</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>xpath</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>vitem</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>tattr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nid</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a52992645e33e4d92c8e68c3490239c75" kindref="member">dtsgui_xmltreenode_cb</ref></type>
+          <declname>node_cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a8bf800adcd2392cf7722c3cf2f603f96" kindref="member">dtsgui_treeviewpanel_cb</ref></type>
+          <declname>p_cb</declname>
+        </param>
+        <briefdescription>
+<para>Helper function to handle &quot;Adding&quot; a new node from a existing node. </para>        </briefdescription>
+        <detaileddescription>
+<para>This implements the concept of the New button a new node will be created from the data filled in on the pane this callback is attached too. A new XML node is created and the panel created from this node.</para><para><simplesect kind="see"><para><ref refid="dtsgui_8h_1a7ecd2a00f2306c0b94734a72a7899898" kindref="member">tree_newnode_flags</ref></para></simplesect>
+<simplesect kind="note"><para>this callback helper is rather complex.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view the new panel will be added too. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The panel this callback is attached too. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xpath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the path of the new node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the XML node to create in the xpath. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vitem</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the item in the panel to be used to create the value of the new node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tattr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the attribute to be used too create the title in the new pane. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Node id for newly created node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Option flags combined from tree_newnode_flags. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node_cb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Callback called to configure the node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Referenced Object passed to the callbacks. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_cb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Callback called to configure the panel when it is selected. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Nothing is returned the callback is registered on the panel. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="740" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="739" bodyend="743"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1gadc59452935e169e8e78c178aed0b77c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DTS_C_API::dtsgui_treenodeid</definition>
+        <argsstring>(dtsgui_treenode tn)</argsstring>
+        <name>dtsgui_treenodeid</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>tn</declname>
+        </param>
+        <briefdescription>
+<para>Get the node id of a tree node. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_d_t_s_d_v_m_list_store_1a9744dc2bb294481c69a55fcdd667b357" kindref="member">DTSDVMListStore::GetNodeID()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree Node to get the node of. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the user defined tree node ID </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="752" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="752" bodyend="755"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1gaedca58250011ea48c67fbc4faa14278f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* DTS_C_API::dtsgui_treenodeparent</definition>
+        <argsstring>(dtsgui_treenode tn)</argsstring>
+        <name>dtsgui_treenodeparent</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>tn</declname>
+        </param>
+        <briefdescription>
+<para>Get the name of the nodes parent. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_d_t_s_d_v_m_list_store_1a06805bea00fbdbf5df1f995b87897b5e" kindref="member">DTSDVMListStore::GetParentTitle()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Name og the nodes parentI </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="762" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="762" bodyend="765"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1ga3e6618e889e7b58e3bf2ae3d63332178" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTS_C_API::dtsgui_treenodesetxml</definition>
+        <argsstring>(dtsgui_treenode tn, struct xml_node *xn, const char *tattr)</argsstring>
+        <name>dtsgui_treenodesetxml</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>tn</declname>
+        </param>
+        <param>
+          <type>struct xml_node *</type>
+          <declname>xn</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>tattr</declname>
+        </param>
+        <briefdescription>
+<para>Add a XML node to the tree node. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_d_t_s_d_v_m_list_store_1aa82d333247a2bf537c3acdeae7635e15" kindref="member">DTSDVMListStore::SetXMLData</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>XML node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tattr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Attribute in the XN that represents the title NULL if the value is the title. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="772" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="772" bodyend="775"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1ga00767aae723dce154065e0bb090c0e70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* DTS_C_API::dtsgui_treenodegetdata</definition>
+        <argsstring>(dtsgui_treenode tn)</argsstring>
+        <name>dtsgui_treenodegetdata</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>tn</declname>
+        </param>
+        <briefdescription>
+<para>Get reference for the user data of node. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_d_t_s_d_v_m_list_store_1a35aa2204af134770c1fab2f5426c50a7" kindref="member">DTSDVMListStore::GetUserData()</ref> </para></simplesect>
+<simplesect kind="note"><para>This needs to be unreferenced. </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree node. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to user data </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="788" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="788" bodyend="791"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>C API for managing tree view panels.</para><para>Resources controlling and manipulating tree view in the C API. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,243 @@
+.TH "DTSPanel" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DTSPanel \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DTSPanel\&.h>\fP
+.PP
+Inherits \fBDTSObject\fP\&.
+.PP
+Inherited by \fBDTSScrollPanel\fP, \fBDTSStaticPanel\fP, \fBDTSWindow\fP, and \fBDTSWizardWindow\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTSPanel\fP (\fBDTSFrame\fP *=NULL, wxString=wxEmptyString, int=0)"
+.br
+.ti -1c
+.RI "\fB~DTSPanel\fP ()"
+.br
+.ti -1c
+.RI "void \fBTextBox\fP (const char *, const char *, wxString=wxEmptyString, int flags=wxTE_LEFT, int rows=1, void *data=NULL, enum \fBform_data_type\fP dtype=\fBDTSGUI_FORM_DATA_PTR\fP)"
+.br
+.ti -1c
+.RI "void \fBPasswdBox\fP (const char *, const char *, wxString=wxEmptyString, int flags=wxTE_LEFT, void *data=NULL, enum \fBform_data_type\fP dtype=\fBDTSGUI_FORM_DATA_PTR\fP)"
+.br
+.ti -1c
+.RI "void \fBCheckBox\fP (const char *title, const char *name, int ischecked, const char *checkval, const char *uncheckval, void *data=NULL, enum \fBform_data_type\fP dtype=\fBDTSGUI_FORM_DATA_PTR\fP)"
+.br
+.ti -1c
+.RI "class \fBform_item\fP * \fBListBox\fP (const char *title, const char *name, const char *value, void *data=NULL, enum \fBform_data_type\fP dtype=\fBDTSGUI_FORM_DATA_PTR\fP)"
+.br
+.ti -1c
+.RI "class \fBform_item\fP * \fBComboBox\fP (const char *title, const char *name, const char *value, void *data=NULL, enum \fBform_data_type\fP dtype=\fBDTSGUI_FORM_DATA_PTR\fP)"
+.br
+.ti -1c
+.RI "void \fBXMLTextBox\fP (const char *, const char *, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr, int flags=wxTE_LEFT, int rows=1)"
+.br
+.ti -1c
+.RI "void \fBXMLPasswdBox\fP (const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr, int flags)"
+.br
+.ti -1c
+.RI "void \fBXMLCheckBox\fP (const char *title, const char *name, const char *checkval, const char *uncheckval, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.ti -1c
+.RI "class \fBform_item\fP * \fBXMLListBox\fP (const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.ti -1c
+.RI "class \fBform_item\fP * \fBXMLComboBox\fP (const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.ti -1c
+.RI "void \fBAddItem\fP (\fBwxWindow\fP *item, const wxGBPosition pos, const wxGBSpan span=wxDefaultSpan, int flags=0, int border=0, int growrow=-1)"
+.br
+.ti -1c
+.RI "void \fBSetEventCallback\fP (\fBevent_callback\fP evcb, void *\fBuserdata\fP=NULL, bool useref=false)"
+.br
+.ti -1c
+.RI "void \fBSetConfigCallback\fP (\fBdtsgui_configcb\fP cb, void *\fBuserdata\fP=NULL)"
+.br
+.ti -1c
+.RI "void \fBUpdate_XML\fP ()"
+.br
+.ti -1c
+.RI "struct xml_node * \fBPanel2XML\fP (const char *xpath, const char *node, const char *nodeval, const char *attrkey)"
+.br
+.ti -1c
+.RI "struct curl_post * \fBPanel2Post\fP ()"
+.br
+.ti -1c
+.RI "class \fBxml_element\fP * \fBGetNode\fP (const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.ti -1c
+.RI "bool \fBShowPanel\fP (bool=true)"
+.br
+.ti -1c
+.RI "void \fBSetTitle\fP (const wxString new_title, bool create=false)"
+.br
+.ti -1c
+.RI "void \fBSetStatus\fP (const wxString new_status)"
+.br
+.ti -1c
+.RI "class \fBform_item\fP * \fBFindItem\fP (const char *name)"
+.br
+.ti -1c
+.RI "const char * \fBFindValue\fP (const char *name)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBTitle\fP (const char *title)"
+.br
+.ti -1c
+.RI "void \fBSetSizerSize\fP (wxSize, \fBwxWindow\fP *)"
+.br
+.ti -1c
+.RI "void \fBSetupWin\fP ()"
+.br
+.ti -1c
+.RI "void \fBButtons\fP (void)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBbutton_mask\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 83 of file DTSPanel\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DTSPanel::DTSPanel (\fBDTSFrame\fP *mainwin = \fCNULL\fP, wxStringstatusmsg = \fCwxEmptyString\fP, intbutmask = \fC0\fP)"
+
+.PP
+Definition at line 336 of file DTSPanel\&.cpp\&.
+.SS "DTSPanel::~DTSPanel ()"
+
+.PP
+Definition at line 357 of file DTSPanel\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void DTSPanel::AddItem (\fBwxWindow\fP *item, const wxGBPositionpos, const wxGBSpanspan = \fCwxDefaultSpan\fP, intflags = \fC0\fP, intborder = \fC0\fP, intgrowrow = \fC-1\fP)"
+
+.PP
+Definition at line 440 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanel::Buttons (void)\fC [protected]\fP"
+
+.PP
+Definition at line 711 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanel::CheckBox (const char *title, const char *name, intischecked, const char *checkval, const char *uncheckval, void *data = \fCNULL\fP, enum \fBform_data_type\fPdtype = \fC\fBDTSGUI_FORM_DATA_PTR\fP\fP)"
+
+.PP
+Definition at line 595 of file DTSPanel\&.cpp\&.
+.SS "class \fBform_item\fP * DTSPanel::ComboBox (const char *title, const char *name, const char *value, void *data = \fCNULL\fP, enum \fBform_data_type\fPdtype = \fC\fBDTSGUI_FORM_DATA_PTR\fP\fP)"
+
+.PP
+Definition at line 671 of file DTSPanel\&.cpp\&.
+.SS "class \fBform_item\fP * DTSPanel::FindItem (const char *name)"
+
+.PP
+Definition at line 869 of file DTSPanel\&.cpp\&.
+.SS "const char * DTSPanel::FindValue (const char *name)"
+
+.PP
+Definition at line 873 of file DTSPanel\&.cpp\&.
+.SS "struct \fBxml_element\fP * DTSPanel::GetNode (const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)\fC [read]\fP"
+
+.PP
+Definition at line 484 of file DTSPanel\&.cpp\&.
+.SS "class \fBform_item\fP * DTSPanel::ListBox (const char *title, const char *name, const char *value, void *data = \fCNULL\fP, enum \fBform_data_type\fPdtype = \fC\fBDTSGUI_FORM_DATA_PTR\fP\fP)"
+
+.PP
+Definition at line 635 of file DTSPanel\&.cpp\&.
+.SS "struct curl_post * DTSPanel::Panel2Post ()\fC [read]\fP"
+
+.PP
+Definition at line 828 of file DTSPanel\&.cpp\&.
+.SS "struct xml_node * DTSPanel::Panel2XML (const char *xpath, const char *node, const char *nodeval, const char *attrkey)\fC [read]\fP"
+
+.PP
+Definition at line 764 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanel::PasswdBox (const char *title, const char *name, wxStringdefval = \fCwxEmptyString\fP, intflags = \fCwxTE_LEFT\fP, void *data = \fCNULL\fP, enum \fBform_data_type\fPdtype = \fC\fBDTSGUI_FORM_DATA_PTR\fP\fP)"
+
+.PP
+Definition at line 587 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanel::SetConfigCallback (\fBdtsgui_configcb\fPcb, void *userdata = \fCNULL\fP)"
+
+.PP
+Definition at line 405 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanel::SetEventCallback (\fBevent_callback\fPevcb, void *userdata = \fCNULL\fP, booluseref = \fCfalse\fP)"
+
+.PP
+Definition at line 394 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanel::SetSizerSize (wxSizeminsize, \fBwxWindow\fP *parent)\fC [protected]\fP"
+
+.PP
+Definition at line 370 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanel::SetStatus (const wxStringnew_status)"
+
+.PP
+Definition at line 478 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanel::SetTitle (const wxStringnew_title, boolcreate = \fCfalse\fP)"
+
+.PP
+Definition at line 470 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanel::SetupWin (void)\fC [protected]\fP"
+
+.PP
+Definition at line 378 of file DTSPanel\&.cpp\&.
+.SS "bool DTSPanel::ShowPanel (boolshow = \fCtrue\fP)"
+
+.PP
+Definition at line 420 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanel::TextBox (const char *title, const char *name, wxStringdefval = \fCwxEmptyString\fP, intflags = \fCwxTE_LEFT\fP, introws = \fC1\fP, void *data = \fCNULL\fP, enum \fBform_data_type\fPdtype = \fC\fBDTSGUI_FORM_DATA_PTR\fP\fP)"
+
+.PP
+Definition at line 554 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanel::Title (const char *title)\fC [protected]\fP"
+
+.PP
+Definition at line 448 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanel::Update_XML ()"
+
+.PP
+Definition at line 733 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanel::XMLCheckBox (const char *title, const char *name, const char *checkval, const char *uncheckval, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+
+.PP
+Definition at line 615 of file DTSPanel\&.cpp\&.
+.SS "class \fBform_item\fP * DTSPanel::XMLComboBox (const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+
+.PP
+Definition at line 694 of file DTSPanel\&.cpp\&.
+.SS "class \fBform_item\fP * DTSPanel::XMLListBox (const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+
+.PP
+Definition at line 654 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanel::XMLPasswdBox (const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr, intflags)"
+
+.PP
+Definition at line 591 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanel::XMLTextBox (const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr, intflags = \fCwxTE_LEFT\fP, introws = \fC1\fP)"
+
+.PP
+Definition at line 572 of file DTSPanel\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int DTSPanel::button_mask\fC [protected]\fP"
+
+.PP
+Definition at line 114 of file DTSPanel\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.
