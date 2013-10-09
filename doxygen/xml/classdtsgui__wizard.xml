@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="classdtsgui__wizard" kind="class" prot="public">
+    <compoundname>dtsgui_wizard</compoundname>
+    <includes refid="_d_t_s_wizard_8h" local="no">DTSWizard.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdtsgui__wizard_1a54ee023336fe1f000bb593c7dcbbcc9d" prot="private" static="no" mutable="no">
+        <type><ref refid="_d_t_s_wizard_8h_1afc9801308f8dd7566a2e222ef91a6932" kindref="member">wxWizard</ref> *</type>
+        <definition>wxWizard* dtsgui_wizard::wiz</definition>
+        <argsstring></argsstring>
+        <name>wiz</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdtsgui__wizard_1aaffe8d8784abd52b3496bce01bc17491" prot="private" static="no" mutable="no">
+        <type><ref refid="_d_t_s_wizard_8h_1a0692504754593e8beb0333a4d1f6c80e" kindref="member">wxWizardPageSimple</ref> *</type>
+        <definition>wxWizardPageSimple* dtsgui_wizard::start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="34" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdtsgui__wizard_1abb0f21895a9868f84f9ce7390ddcd14a" prot="private" static="no" mutable="no">
+        <type>class <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+        <definition>class dtsgui* dtsgui_wizard::dtsgui</definition>
+        <argsstring></argsstring>
+        <name>dtsgui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="35" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdtsgui__wizard_1a5fed7f6f5eb482fc137f16adf2a494ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dtsgui_wizard::DTS_OJBREF_CLASS</definition>
+        <argsstring>(dtsgui_wizard)</argsstring>
+        <name>DTS_OJBREF_CLASS</name>
+        <param>
+          <type><ref refid="classdtsgui__wizard" kindref="compound">dtsgui_wizard</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui__wizard_1aef1a3023055dee016ead1826c44731d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dtsgui_wizard::dtsgui_wizard</definition>
+        <argsstring>(class dtsgui *dtsgui, wxWindow *f, const wxString &amp;title)</argsstring>
+        <name>dtsgui_wizard</name>
+        <param>
+          <type>class <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>title</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSWizard.cpp" bodystart="30" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui__wizard_1a02984b1d70df5100e8b6200e0bb1b421" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_d_t_s_wizard_window" kindref="compound">DTSWizardWindow</ref> *</type>
+        <definition>DTSWizardWindow * dtsgui_wizard::AddPage</definition>
+        <argsstring>(const char *title, struct xml_doc *xmldoc, void *userdata)</argsstring>
+        <name>AddPage</name>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xmldoc</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSWizard.cpp" bodystart="48" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui__wizard_1ab0554e6b9fe1d2c0419a6659d883edf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int dtsgui_wizard::RunWizard</definition>
+        <argsstring>()</argsstring>
+        <name>RunWizard</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSWizard.cpp" bodystart="81" bodyend="86"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="26" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" bodystart="26" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classdtsgui__wizard_1a02984b1d70df5100e8b6200e0bb1b421" prot="public" virt="non-virtual"><scope>dtsgui_wizard</scope><name>AddPage</name></member>
+      <member refid="classdtsgui__wizard_1a5fed7f6f5eb482fc137f16adf2a494ad" prot="public" virt="non-virtual"><scope>dtsgui_wizard</scope><name>DTS_OJBREF_CLASS</name></member>
+      <member refid="classdtsgui__wizard_1abb0f21895a9868f84f9ce7390ddcd14a" prot="private" virt="non-virtual"><scope>dtsgui_wizard</scope><name>dtsgui</name></member>
+      <member refid="classdtsgui__wizard_1aef1a3023055dee016ead1826c44731d1" prot="public" virt="non-virtual"><scope>dtsgui_wizard</scope><name>dtsgui_wizard</name></member>
+      <member refid="classdtsgui__wizard_1ab0554e6b9fe1d2c0419a6659d883edf3" prot="public" virt="non-virtual"><scope>dtsgui_wizard</scope><name>RunWizard</name></member>
+      <member refid="classdtsgui__wizard_1aaffe8d8784abd52b3496bce01bc17491" prot="private" virt="non-virtual"><scope>dtsgui_wizard</scope><name>start</name></member>
+      <member refid="classdtsgui__wizard_1a54ee023336fe1f000bb593c7dcbbcc9d" prot="private" virt="non-virtual"><scope>dtsgui_wizard</scope><name>wiz</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,97 @@
+.TH "DTSPanelEvent" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DTSPanelEvent \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DTSPanel\&.h>\fP
+.PP
+Inherits wxEvtHandler\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTSPanelEvent\fP (\fBDTSObject\fP *win=NULL)"
+.br
+.ti -1c
+.RI "\fB~DTSPanelEvent\fP ()"
+.br
+.ti -1c
+.RI "void \fBBindButton\fP (\fBwxWindow\fP *win, int button)"
+.br
+.ti -1c
+.RI "void \fBBindDTSEvent\fP (\fBDTSFrame\fP *frame)"
+.br
+.ti -1c
+.RI "void \fBBindCombo\fP (\fBwxWindow\fP *win, int button)"
+.br
+.ti -1c
+.RI "void \fBOnButton\fP (wxCommandEvent &event)"
+.br
+.ti -1c
+.RI "void \fBOnCombo\fP (wxCommandEvent &event)"
+.br
+.ti -1c
+.RI "void \fBOnDTSEvent\fP (wxCommandEvent &event)"
+.br
+.ti -1c
+.RI "void \fBSetCallback\fP (\fBevent_callback\fP evcb=NULL, void *userdata=NULL)"
+.br
+.ti -1c
+.RI "void \fBOnDialog\fP (wxCommandEvent &event)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 36 of file DTSPanel\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DTSPanelEvent::DTSPanelEvent (\fBDTSObject\fP *win = \fCNULL\fP)"
+
+.PP
+Definition at line 52 of file DTSPanel\&.cpp\&.
+.SS "DTSPanelEvent::~DTSPanelEvent ()"
+
+.PP
+Definition at line 60 of file DTSPanel\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void DTSPanelEvent::BindButton (\fBwxWindow\fP *win, intbutton)"
+
+.PP
+Definition at line 220 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanelEvent::BindCombo (\fBwxWindow\fP *win, intbutton)"
+
+.PP
+Definition at line 224 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanelEvent::BindDTSEvent (\fBDTSFrame\fP *frame)"
+
+.PP
+Definition at line 216 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanelEvent::OnButton (wxCommandEvent &event)"
+
+.PP
+Definition at line 111 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanelEvent::OnCombo (wxCommandEvent &event)"
+
+.PP
+Definition at line 151 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanelEvent::OnDialog (wxCommandEvent &event)"
+
+.PP
+Definition at line 144 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanelEvent::OnDTSEvent (wxCommandEvent &event)"
+
+.PP
+Definition at line 206 of file DTSPanel\&.cpp\&.
+.SS "void DTSPanelEvent::SetCallback (\fBevent_callback\fPevcb = \fCNULL\fP, void *userdata = \fCNULL\fP)"
+
+.PP
+Definition at line 70 of file DTSPanel\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

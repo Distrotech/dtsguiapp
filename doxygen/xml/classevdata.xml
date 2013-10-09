@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="classevdata" kind="class" prot="public">
+    <compoundname>evdata</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">wxObject</basecompoundref>
+    <includes refid="evdata_8h" local="no">evdata.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classevdata_1ab8569cae7cd7a33fde4e51872ef29090" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* evdata::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="44" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classevdata_1a5ccf23487f6c2b58bedf37bf6da3adf5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int evdata::unref</definition>
+        <argsstring></argsstring>
+        <name>unref</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="46" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classevdata_1ad136a65ea4c324ecbd9b98e953c10afc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>evdata::evdata</definition>
+        <argsstring>(void *, int uref=0)</argsstring>
+        <name>evdata</name>
+        <param>
+          <type>void *</type>
+          <defname>userdata</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>uref</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="42" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="77" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classevdata_1a2d73a5260935f0e089c1f660c950786d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>evdata::~evdata</definition>
+        <argsstring>()</argsstring>
+        <name>~evdata</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="43" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="86" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="194">
+        <label>wxObject</label>
+      </node>
+      <node id="193">
+        <label>evdata</label>
+        <link refid="classevdata"/>
+        <childnode refid="194" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="196">
+        <label>wxObject</label>
+      </node>
+      <node id="195">
+        <label>evdata</label>
+        <link refid="classevdata"/>
+        <childnode refid="196" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="40" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" bodystart="40" bodyend="47"/>
+    <listofallmembers>
+      <member refid="classevdata_1ab8569cae7cd7a33fde4e51872ef29090" prot="public" virt="non-virtual"><scope>evdata</scope><name>data</name></member>
+      <member refid="classevdata_1ad136a65ea4c324ecbd9b98e953c10afc" prot="public" virt="non-virtual"><scope>evdata</scope><name>evdata</name></member>
+      <member refid="classevdata_1a5ccf23487f6c2b58bedf37bf6da3adf5" prot="private" virt="non-virtual"><scope>evdata</scope><name>unref</name></member>
+      <member refid="classevdata_1a2d73a5260935f0e089c1f660c950786d" prot="public" virt="non-virtual"><scope>evdata</scope><name>~evdata</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="pitems_8h" kind="file">
+    <compoundname>pitems.h</compoundname>
+    <includedby refid="_d_t_s_panel_8cpp" local="yes">src/DTSPanel.cpp</includedby>
+    <includedby refid="pitems_8cpp" local="yes">src/pitems.cpp</includedby>
+    <includedby refid="wrapper_8cpp" local="yes">src/wrapper.cpp</includedby>
+    <invincdepgraph>
+      <node id="309">
+        <label>src/wrapper.cpp</label>
+        <link refid="wrapper_8cpp"/>
+      </node>
+      <node id="308">
+        <label>src/pitems.cpp</label>
+        <link refid="pitems_8cpp"/>
+      </node>
+      <node id="306">
+        <label>src/include/pitems.h</label>
+        <link refid="pitems.h"/>
+        <childnode refid="307" relation="include">
+        </childnode>
+        <childnode refid="308" relation="include">
+        </childnode>
+        <childnode refid="309" relation="include">
+        </childnode>
+      </node>
+      <node id="307">
+        <label>src/DTSPanel.cpp</label>
+        <link refid="_d_t_s_panel_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classxml__element" prot="public">xml_element</innerclass>
+    <innerclass refid="unionform__data" prot="public">form_data</innerclass>
+    <innerclass refid="unionwidgets" prot="public">widgets</innerclass>
+    <innerclass refid="classform__item" prot="public">form_item</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="pitems_8h_1abd3381f4db4e2b967199254324c78f71" prot="public" static="no">
+        <type>class <ref refid="pitems_8h_1abd3381f4db4e2b967199254324c78f71" kindref="member">wxComboBox</ref></type>
+        <definition>typedef class wxComboBox wxComboBox</definition>
+        <argsstring></argsstring>
+        <name>wxComboBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="23" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pitems_8h_1aef96dbf274b0324394cd30671b01d2bb" prot="public" static="no">
+        <type>class <ref refid="pitems_8h_1aef96dbf274b0324394cd30671b01d2bb" kindref="member">wxCheckBox</ref></type>
+        <definition>typedef class wxCheckBox wxCheckBox</definition>
+        <argsstring></argsstring>
+        <name>wxCheckBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="24" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>Distrotech<sp/>Solutions<sp/>wxWidgets<sp/>Gui<sp/>Interface</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>Copyright<sp/>(C)<sp/>2013<sp/>Gregory<sp/>Hinton<sp/>Nietsky<sp/>&lt;gregory@distrotech.co.za&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PITEMS_H_INCLUDED</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>PITEMS_H_INCLUDED</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="pitems_8h_1abd3381f4db4e2b967199254324c78f71" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="pitems_8h_1abd3381f4db4e2b967199254324c78f71" kindref="member">wxComboBox</ref><sp/><ref refid="pitems_8h_1abd3381f4db4e2b967199254324c78f71" kindref="member">wxComboBox</ref>;</highlight></codeline>
+<codeline lineno="24" refid="pitems_8h_1aef96dbf274b0324394cd30671b01d2bb" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="pitems_8h_1aef96dbf274b0324394cd30671b01d2bb" kindref="member">wxCheckBox</ref><sp/><ref refid="pitems_8h_1aef96dbf274b0324394cd30671b01d2bb" kindref="member">wxCheckBox</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classxml__element" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classxml__element" kindref="compound">xml_element</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classxml__element_1a9a49d3a411488c7267eeaadf6203f3b3" kindref="member">DTS_OJBREF_CLASS</ref>(<ref refid="classxml__element" kindref="compound">xml_element</ref>);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classxml__element_1a888f82e61d6ed6d91077cbf0037c5ed9" kindref="member">xml_element</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*xp,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_search<sp/>*xs,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*xa);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classxml__element_1a232e850ca67d3d065d1c16bea79cb441" kindref="member">Modify</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_doc<sp/>*xmldoc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="classxml__element_1ae0415b9bbe906cbab04e2c78c84ae5bc" kindref="member">GetValue</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_search<sp/>*xsearch;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*xpath;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/>*attr;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="unionform__data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="unionform__data" kindref="compound">form_data</ref><sp/>{</highlight></codeline>
+<codeline lineno="39" refid="unionform__data_1a5906eb68e54829e44467b3d082f9eee4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="unionform__data_1a5906eb68e54829e44467b3d082f9eee4" kindref="member">ptr</ref>;</highlight></codeline>
+<codeline lineno="40" refid="unionform__data_1a3dcf61d4a1bf598d238248b6a2fd84c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classxml__element" kindref="compound">xml_element</ref><sp/>*<ref refid="unionform__data_1a3dcf61d4a1bf598d238248b6a2fd84c0" kindref="member">xml</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="unionwidgets" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="unionwidgets" kindref="compound">widgets</ref><sp/>{</highlight></codeline>
+<codeline lineno="44" refid="unionwidgets_1ad9dbdf416e8ba75e55b8030549c2d5ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>wxTextCtrl<sp/>*<ref refid="unionwidgets_1ad9dbdf416e8ba75e55b8030549c2d5ac" kindref="member">t</ref>;</highlight></codeline>
+<codeline lineno="45" refid="unionwidgets_1a9e5583bcc42f0273b9c6a1605e0e1b6d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pitems_8h_1abd3381f4db4e2b967199254324c78f71" kindref="member">wxComboBox</ref><sp/>*<ref refid="unionwidgets_1a9e5583bcc42f0273b9c6a1605e0e1b6d" kindref="member">l</ref>;</highlight></codeline>
+<codeline lineno="46" refid="unionwidgets_1aa5bb8e792fd60fca871e8782e39993cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pitems_8h_1aef96dbf274b0324394cd30671b01d2bb" kindref="member">wxCheckBox</ref><sp/>*<ref refid="unionwidgets_1aa5bb8e792fd60fca871e8782e39993cc" kindref="member">c</ref>;</highlight></codeline>
+<codeline lineno="47" refid="unionwidgets_1a5dbc3a005c0d466449a1be8c20db8cfc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="unionwidgets_1a5dbc3a005c0d466449a1be8c20db8cfc" kindref="member">p</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="classform__item" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classform__item" kindref="compound">form_item</ref><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classform__item_1a9f620e55ba53bd5abcf4af612944c838" kindref="member">DTS_OJBREF_CLASS</ref>(<ref refid="classform__item" kindref="compound">form_item</ref>);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classform__item_1a9fe4dea1dbc9692a1511c6ba5256665e" kindref="member">form_item</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*widget,<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="dtsgui_8h_1afd296180392ef5681415b9fb0590be84" kindref="member">widget_type</ref><sp/>type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value2,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data,<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref><sp/>dtype);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classxml__element" kindref="compound">xml_element</ref><sp/>*<ref refid="classform__item_1a1e08369cee96e1b5417c767be9b086ce" kindref="member">GetXMLData</ref>();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="classform__item_1a45b4a4db5526c1032f15ba20d3f28249" kindref="member">GetData</ref>();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classform__item_1ad99d224a37a5bc6f99835afb2347fac8" kindref="member">Append</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*text,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*val);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classform__item_1a9f108735a3f81f0f419fd828a29b2938" kindref="member">SetSelection</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="classform__item_1a4f3558ce5670e789ad51d1f489ec5b14" kindref="member">GetName</ref>();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" kindref="member">GetValue</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="classform__item_1a9d5508fb933bef9f078f702338e3d166" kindref="member">GetWidget</ref>();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classform__item_1a7bbc5ad6365c6b104f230afb35b0996b" kindref="member">AppendXML</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_doc<sp/>*xmldoc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*xpath,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*nattr,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*vattr);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="dtsgui_8h_1afd296180392ef5681415b9fb0590be84" kindref="member">widget_type</ref><sp/>type;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idx;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="unionform__data" kindref="compound">form_data</ref><sp/>data;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="unionwidgets" kindref="compound">widgets</ref><sp/>widget;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref><sp/>dtype;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value2;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>PITEMS_H_INCLUDED</highlight></codeline>
+    </programlisting>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h"/>
+  </compounddef>
+</doxygen>

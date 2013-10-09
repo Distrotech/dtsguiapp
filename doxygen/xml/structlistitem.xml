@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="structlistitem" kind="struct" prot="public">
+    <compoundname>listitem</compoundname>
+    <includes refid="private_8h" local="no">private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structlistitem_1af53587242ef469841b5a0c0836b3cb21" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* listitem::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="70" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structlistitem_1a678100a2bc64b5f325a842ac0555d191" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* listitem::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="71" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="69" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="69" bodyend="72"/>
+    <listofallmembers>
+      <member refid="structlistitem_1af53587242ef469841b5a0c0836b3cb21" prot="public" virt="non-virtual"><scope>listitem</scope><name>name</name></member>
+      <member refid="structlistitem_1a678100a2bc64b5f325a842ac0555d191" prot="public" virt="non-virtual"><scope>listitem</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

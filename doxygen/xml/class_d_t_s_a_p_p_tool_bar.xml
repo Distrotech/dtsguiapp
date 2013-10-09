@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_d_t_s_a_p_p_tool_bar" kind="class" prot="public">
+    <compoundname>DTSAPPToolBar</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">wxToolBar</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_d_t_s_a_p_p_tool_bar_1abb04f52cac8e987c0ad12eba22f97957" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DTSAPPToolBar::itemid</definition>
+        <argsstring></argsstring>
+        <name>itemid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" line="36" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" prot="private" static="no" mutable="no">
+        <type><ref refid="class_d_t_s_x_m_l_combo_box" kindref="compound">DTSXMLComboBox</ref> *</type>
+        <definition>DTSXMLComboBox* DTSAPPToolBar::server</definition>
+        <argsstring></argsstring>
+        <name>server</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" line="38" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" prot="private" static="no" mutable="no">
+        <type><ref refid="pitems_8h_1abd3381f4db4e2b967199254324c78f71" kindref="member">wxComboBox</ref> *</type>
+        <definition>wxComboBox* DTSAPPToolBar::proto</definition>
+        <argsstring></argsstring>
+        <name>proto</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" line="39" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_a_p_p_tool_bar_1a299c68d2f3d838a1c8d04a94a71afd5d" prot="private" static="no" mutable="no">
+        <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+        <definition>struct dtsgui* DTSAPPToolBar::dtsgui</definition>
+        <argsstring></argsstring>
+        <name>dtsgui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" line="40" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_d_t_s_a_p_p_tool_bar_1a683e5a1240a0721dc0c77c9c6545e147" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSAPPToolBar::DTSAPPToolBar</definition>
+        <argsstring>(struct dtsgui *dtsgui, wxWindow *parent, long style, wxWindowID id, wxString name, void *data)</argsstring>
+        <name>DTSAPPToolBar</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>style</declname>
+        </param>
+        <param>
+          <type>wxWindowID</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>wxString</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" line="32" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" bodystart="44" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_a_p_p_tool_bar_1a46946611cdeeb58af37da61ecf1d8d07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSAPPToolBar::~DTSAPPToolBar</definition>
+        <argsstring>()</argsstring>
+        <name>~DTSAPPToolBar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" bodystart="79" bodyend="83"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_d_t_s_a_p_p_tool_bar_1a3a6b7d6e0c40ace8cb298cebb2d108d4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct curl_post *</type>
+        <definition>struct curl_post * DTSAPPToolBar::GetPostInfo</definition>
+        <argsstring>(const wxString &amp;val)</argsstring>
+        <name>GetPostInfo</name>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" line="34" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" bodystart="85" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSAPPToolBar::HandleEvent</definition>
+        <argsstring>(wxCommandEvent &amp;event)</argsstring>
+        <name>HandleEvent</name>
+        <param>
+          <type>wxCommandEvent &amp;</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" line="37" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" bodystart="95" bodyend="109"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="9">
+        <label>wxToolBar</label>
+      </node>
+      <node id="8">
+        <label>DTSAPPToolBar</label>
+        <link refid="class_d_t_s_a_p_p_tool_bar"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="11">
+        <label>wxToolBar</label>
+      </node>
+      <node id="10">
+        <label>DTSAPPToolBar</label>
+        <link refid="class_d_t_s_a_p_p_tool_bar"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" bodystart="30" bodyend="41"/>
+    <listofallmembers>
+      <member refid="class_d_t_s_a_p_p_tool_bar_1a683e5a1240a0721dc0c77c9c6545e147" prot="public" virt="non-virtual"><scope>DTSAPPToolBar</scope><name>DTSAPPToolBar</name></member>
+      <member refid="class_d_t_s_a_p_p_tool_bar_1a299c68d2f3d838a1c8d04a94a71afd5d" prot="private" virt="non-virtual"><scope>DTSAPPToolBar</scope><name>dtsgui</name></member>
+      <member refid="class_d_t_s_a_p_p_tool_bar_1a3a6b7d6e0c40ace8cb298cebb2d108d4" prot="public" virt="non-virtual"><scope>DTSAPPToolBar</scope><name>GetPostInfo</name></member>
+      <member refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" prot="private" virt="non-virtual"><scope>DTSAPPToolBar</scope><name>HandleEvent</name></member>
+      <member refid="class_d_t_s_a_p_p_tool_bar_1abb04f52cac8e987c0ad12eba22f97957" prot="private" virt="non-virtual"><scope>DTSAPPToolBar</scope><name>itemid</name></member>
+      <member refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" prot="private" virt="non-virtual"><scope>DTSAPPToolBar</scope><name>proto</name></member>
+      <member refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" prot="private" virt="non-virtual"><scope>DTSAPPToolBar</scope><name>server</name></member>
+      <member refid="class_d_t_s_a_p_p_tool_bar_1a46946611cdeeb58af37da61ecf1d8d07" prot="public" virt="non-virtual"><scope>DTSAPPToolBar</scope><name>~DTSAPPToolBar</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

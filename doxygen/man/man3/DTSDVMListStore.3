@@ -1,0 +1,238 @@
+.TH "DTSDVMListStore" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DTSDVMListStore \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DTSListView\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTSDVMListStore\fP (\fBDTSDVMListStore\fP *parent, bool is_container, const wxString &title, int nodeid=-1, \fBdtsgui_treeviewpanel_cb\fP p_cb=NULL, void *userdata=NULL)"
+.br
+.ti -1c
+.RI "\fB~DTSDVMListStore\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsContainer\fP () const "
+.br
+.ti -1c
+.RI "\fBDTSDVMListStore\fP * \fBGetParent\fP ()"
+.br
+.ti -1c
+.RI "const wxString \fBGetParentTitle\fP ()"
+.br
+.ti -1c
+.RI "size_t \fBGetChildCount\fP ()"
+.br
+.ti -1c
+.RI "void \fBAppend\fP (\fBDTSDVMListStore\fP *child)"
+.br
+.ti -1c
+.RI "void \fBInsert\fP (\fBDTSDVMListStore\fP *child, size_t idx)"
+.br
+.ti -1c
+.RI "\fBDTSDVMListStore\fP * \fBGetNthChild\fP (size_t idx)"
+.br
+.ti -1c
+.RI "size_t \fBGetChildIndex\fP (\fBDTSDVMListStore\fP *child)"
+.br
+.ti -1c
+.RI "void \fBRemoveChildReference\fP (\fBDTSDVMListStore\fP *child)"
+.br
+.ti -1c
+.RI "const wxString \fBGetTitle\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetTitle\fP (const wxString &value)"
+.br
+.ti -1c
+.RI "void \fBSortChildren\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetExpanded\fP (bool expanded=true)"
+.br
+.ti -1c
+.RI "unsigned int \fBGetChildren\fP (wxDataViewItemArray &items)"
+.br
+.ti -1c
+.RI "unsigned int \fBGetContainers\fP (wxDataViewItemArray &items, bool exonly=false)"
+.br
+.ti -1c
+.RI "bool \fBIsExpanded\fP ()"
+.br
+.ti -1c
+.RI "bool \fBMoveChildUp\fP (size_t idx)"
+.br
+.ti -1c
+.RI "bool \fBMoveChildDown\fP (size_t idx)"
+.br
+.ti -1c
+.RI "void * \fBGetUserData\fP ()"
+.br
+.ti -1c
+.RI "int \fBGetNodeID\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetXMLData\fP (struct xml_node *xnode, const char *tattr)"
+.br
+.ti -1c
+.RI "struct xml_node * \fBGetXMLData\fP (char **buff)"
+.br
+.ti -1c
+.RI "void \fBConfigPanel\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP tw)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBcmp_title\fP (\fBDTSDVMListStore\fP *c1, \fBDTSDVMListStore\fP *c2)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBcan_edit\fP"
+.br
+.ti -1c
+.RI "bool \fBcan_sort\fP"
+.br
+.ti -1c
+.RI "bool \fBcan_delete\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 25 of file DTSListView\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DTSDVMListStore::DTSDVMListStore (\fBDTSDVMListStore\fP *parent, boolis_container, const wxString &title, intnodeid = \fC-1\fP, \fBdtsgui_treeviewpanel_cb\fPp_cb = \fCNULL\fP, void *userdata = \fCNULL\fP)"
+
+.PP
+Definition at line 39 of file DTSListView\&.cpp\&.
+.SS "DTSDVMListStore::~DTSDVMListStore ()"
+
+.PP
+Definition at line 54 of file DTSListView\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void DTSDVMListStore::Append (\fBDTSDVMListStore\fP *child)"
+
+.PP
+Definition at line 88 of file DTSListView\&.cpp\&.
+.SS "bool DTSDVMListStore::cmp_title (\fBDTSDVMListStore\fP *c1, \fBDTSDVMListStore\fP *c2)\fC [static]\fP"
+
+.PP
+Definition at line 30 of file DTSListView\&.cpp\&.
+.SS "void DTSDVMListStore::ConfigPanel (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPtw)"
+
+.PP
+Definition at line 232 of file DTSListView\&.cpp\&.
+.SS "size_t DTSDVMListStore::GetChildCount ()"
+
+.PP
+Definition at line 84 of file DTSListView\&.cpp\&.
+.SS "size_t DTSDVMListStore::GetChildIndex (\fBDTSDVMListStore\fP *child)"
+
+.PP
+Definition at line 110 of file DTSListView\&.cpp\&.
+.SS "unsigned int DTSDVMListStore::GetChildren (wxDataViewItemArray &items)"
+
+.PP
+Definition at line 146 of file DTSListView\&.cpp\&.
+.SS "unsigned int DTSDVMListStore::GetContainers (wxDataViewItemArray &items, boolexonly = \fCfalse\fP)"
+
+.PP
+Definition at line 157 of file DTSListView\&.cpp\&.
+.SS "int DTSDVMListStore::GetNodeID ()"
+
+.PP
+Definition at line 207 of file DTSListView\&.cpp\&.
+.SS "\fBDTSDVMListStore\fP * DTSDVMListStore::GetNthChild (size_tidx)"
+
+.PP
+Definition at line 102 of file DTSListView\&.cpp\&.
+.SS "\fBDTSDVMListStore\fP * DTSDVMListStore::GetParent ()"
+
+.PP
+Definition at line 75 of file DTSListView\&.cpp\&.
+.SS "const wxString DTSDVMListStore::GetParentTitle ()"
+
+.PP
+Definition at line 79 of file DTSListView\&.cpp\&.
+.SS "const wxString DTSDVMListStore::GetTitle ()"
+
+.PP
+Definition at line 130 of file DTSListView\&.cpp\&.
+.SS "void * DTSDVMListStore::GetUserData (void)"
+
+.PP
+Definition at line 200 of file DTSListView\&.cpp\&.
+.SS "struct xml_node * DTSDVMListStore::GetXMLData (char **buff)\fC [read]\fP"
+
+.PP
+Definition at line 220 of file DTSListView\&.cpp\&.
+.SS "void DTSDVMListStore::Insert (\fBDTSDVMListStore\fP *child, size_tidx)"
+
+.PP
+Definition at line 92 of file DTSListView\&.cpp\&.
+.SS "bool DTSDVMListStore::IsContainer () const"
+
+.PP
+Definition at line 71 of file DTSListView\&.cpp\&.
+.SS "bool DTSDVMListStore::IsExpanded ()"
+
+.PP
+Definition at line 172 of file DTSListView\&.cpp\&.
+.SS "bool DTSDVMListStore::MoveChildDown (size_tidx)"
+
+.PP
+Definition at line 188 of file DTSListView\&.cpp\&.
+.SS "bool DTSDVMListStore::MoveChildUp (size_tidx)"
+
+.PP
+Definition at line 176 of file DTSListView\&.cpp\&.
+.SS "void DTSDVMListStore::RemoveChildReference (\fBDTSDVMListStore\fP *child)"
+
+.PP
+Definition at line 121 of file DTSListView\&.cpp\&.
+.SS "void DTSDVMListStore::SetExpanded (boolexpanded = \fCtrue\fP)"
+
+.PP
+Definition at line 142 of file DTSListView\&.cpp\&.
+.SS "void DTSDVMListStore::SetTitle (const wxString &value)"
+
+.PP
+Definition at line 134 of file DTSListView\&.cpp\&.
+.SS "void DTSDVMListStore::SetXMLData (struct xml_node *xnode, const char *tattr)"
+
+.PP
+Definition at line 211 of file DTSListView\&.cpp\&.
+.SS "void DTSDVMListStore::SortChildren ()"
+
+.PP
+Definition at line 138 of file DTSListView\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool DTSDVMListStore::can_delete"
+
+.PP
+Definition at line 50 of file DTSListView\&.h\&.
+.SS "bool DTSDVMListStore::can_edit"
+
+.PP
+Definition at line 48 of file DTSListView\&.h\&.
+.SS "bool DTSDVMListStore::can_sort"
+
+.PP
+Definition at line 49 of file DTSListView\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

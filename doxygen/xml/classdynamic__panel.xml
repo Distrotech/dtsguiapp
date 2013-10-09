@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="classdynamic__panel" kind="class" prot="public">
+    <compoundname>dynamic_panel</compoundname>
+    <includes refid="evdata_8h" local="no">evdata.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdynamic__panel_1a5d13849f704cffb0ecfde8dfdb072571" prot="private" static="no" mutable="no">
+        <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+        <definition>wxWindow* dynamic_panel::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamic__panel_1ace913453518c31659ba1ecdbede98d99" prot="private" static="no" mutable="no">
+        <type><ref refid="dtsgui_8h_1a080f931027861c0021f72ac2562b45d7" kindref="member">dtsgui_dynpanel</ref></type>
+        <definition>dtsgui_dynpanel dynamic_panel::cb</definition>
+        <argsstring></argsstring>
+        <name>cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="34" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamic__panel_1a4310f04b6e6208d757a8e8e4d9de2607" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* dynamic_panel::title</definition>
+        <argsstring></argsstring>
+        <name>title</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="35" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamic__panel_1a829939df89ab897c11179a31b8cd46be" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* dynamic_panel::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="36" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdynamic__panel_1a590542c18fbe042c59612a8d630fb974" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int dynamic_panel::blank</definition>
+        <argsstring></argsstring>
+        <name>blank</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="37" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamic__panel_1a85d6e3235706cc6f50d14be843a563f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamic_panel::DTS_OJBREF_CLASS</definition>
+        <argsstring>(dynamic_panel)</argsstring>
+        <name>DTS_OJBREF_CLASS</name>
+        <param>
+          <type><ref refid="classdynamic__panel" kindref="compound">dynamic_panel</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__panel_1ae6689acea2cf5d984fbcb191a680c4cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dynamic_panel::dynamic_panel</definition>
+        <argsstring>(const char *title, int blank, dtsgui_dynpanel cb, void *udata)</argsstring>
+        <name>dynamic_panel</name>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>blank</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a080f931027861c0021f72ac2562b45d7" kindref="member">dtsgui_dynpanel</ref></type>
+          <declname>cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>udata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="27" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="28" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__panel_1a52940fe2d7c72ec45a2aff77ad7ec8d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool dynamic_panel::HasCallback</definition>
+        <argsstring>()</argsstring>
+        <name>HasCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="28" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="48" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__panel_1a001a227c89e7998e18b88f7c49d4d035" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool dynamic_panel::IsBlank</definition>
+        <argsstring>()</argsstring>
+        <name>IsBlank</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="52" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__panel_1ab636fa1300532545f6c6fbf31e5e4971" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool dynamic_panel::operator==</definition>
+        <argsstring>(wxWindow &amp;rhs)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="56" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamic__panel_1a5774ea0571dc1748c346129fcddf63de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+        <definition>wxWindow * dynamic_panel::RunCallback</definition>
+        <argsstring>(class dtsgui *dtsgui)</argsstring>
+        <name>RunCallback</name>
+        <param>
+          <type>class <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="60" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="24" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" bodystart="24" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classdynamic__panel_1a590542c18fbe042c59612a8d630fb974" prot="private" virt="non-virtual"><scope>dynamic_panel</scope><name>blank</name></member>
+      <member refid="classdynamic__panel_1ace913453518c31659ba1ecdbede98d99" prot="private" virt="non-virtual"><scope>dynamic_panel</scope><name>cb</name></member>
+      <member refid="classdynamic__panel_1a829939df89ab897c11179a31b8cd46be" prot="private" virt="non-virtual"><scope>dynamic_panel</scope><name>data</name></member>
+      <member refid="classdynamic__panel_1a85d6e3235706cc6f50d14be843a563f6" prot="public" virt="non-virtual"><scope>dynamic_panel</scope><name>DTS_OJBREF_CLASS</name></member>
+      <member refid="classdynamic__panel_1ae6689acea2cf5d984fbcb191a680c4cb" prot="public" virt="non-virtual"><scope>dynamic_panel</scope><name>dynamic_panel</name></member>
+      <member refid="classdynamic__panel_1a52940fe2d7c72ec45a2aff77ad7ec8d0" prot="public" virt="non-virtual"><scope>dynamic_panel</scope><name>HasCallback</name></member>
+      <member refid="classdynamic__panel_1a001a227c89e7998e18b88f7c49d4d035" prot="public" virt="non-virtual"><scope>dynamic_panel</scope><name>IsBlank</name></member>
+      <member refid="classdynamic__panel_1ab636fa1300532545f6c6fbf31e5e4971" prot="public" virt="non-virtual"><scope>dynamic_panel</scope><name>operator==</name></member>
+      <member refid="classdynamic__panel_1a5774ea0571dc1748c346129fcddf63de" prot="public" virt="non-virtual"><scope>dynamic_panel</scope><name>RunCallback</name></member>
+      <member refid="classdynamic__panel_1a4310f04b6e6208d757a8e8e4d9de2607" prot="private" virt="non-virtual"><scope>dynamic_panel</scope><name>title</name></member>
+      <member refid="classdynamic__panel_1a5d13849f704cffb0ecfde8dfdb072571" prot="private" virt="non-virtual"><scope>dynamic_panel</scope><name>w</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

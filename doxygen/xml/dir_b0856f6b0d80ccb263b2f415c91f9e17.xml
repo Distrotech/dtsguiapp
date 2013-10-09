@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="dir_b0856f6b0d80ccb263b2f415c91f9e17" kind="dir">
+    <compoundname>src/include</compoundname>
+    <innerfile refid="_d_t_s_app_8h">DTSApp.h</innerfile>
+    <innerfile refid="_d_t_s_frame_8h">DTSFrame.h</innerfile>
+    <innerfile refid="dtsgui_8h">dtsgui.h</innerfile>
+    <innerfile refid="_d_t_s_list_view_8h">DTSListView.h</innerfile>
+    <innerfile refid="_d_t_s_panel_8h">DTSPanel.h</innerfile>
+    <innerfile refid="_d_t_s_tree_window_8h">DTSTreeWindow.h</innerfile>
+    <innerfile refid="_d_t_s_wizard_8h">DTSWizard.h</innerfile>
+    <innerfile refid="_d_t_s_x_m_l_combo_box_8h">DTSXMLComboBox.h</innerfile>
+    <innerfile refid="evdata_8h">evdata.h</innerfile>
+    <innerfile refid="pitems_8h">pitems.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/"/>
+  </compounddef>
+</doxygen>

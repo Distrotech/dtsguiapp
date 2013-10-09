@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="structnew__iface__data" kind="struct" prot="public">
+    <compoundname>new_iface_data</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" prot="public" static="no" mutable="no">
+        <type><ref refid="dtsgui_8h_1a29c463cda54f69beb273c77e1aa7ccef" kindref="member">dtsgui_tabview</ref></type>
+        <definition>dtsgui_tabview new_iface_data::tv</definition>
+        <argsstring></argsstring>
+        <name>tv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="27" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" prot="public" static="no" mutable="no">
+        <type>struct xml_doc *</type>
+        <definition>struct xml_doc* new_iface_data::xmldoc</definition>
+        <argsstring></argsstring>
+        <name>xmldoc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="28" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="26" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="26" bodyend="29"/>
+    <listofallmembers>
+      <member refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" prot="public" virt="non-virtual"><scope>new_iface_data</scope><name>tv</name></member>
+      <member refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" prot="public" virt="non-virtual"><scope>new_iface_data</scope><name>xmldoc</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

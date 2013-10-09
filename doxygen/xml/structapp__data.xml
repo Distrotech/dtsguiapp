@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="structapp__data" kind="struct" prot="public">
+    <compoundname>app_data</compoundname>
+    <includes refid="private_8h" local="no">private.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" prot="public" static="no" mutable="no">
+        <type>struct xml_doc *</type>
+        <definition>struct xml_doc* app_data::xmldoc</definition>
+        <argsstring></argsstring>
+        <name>xmldoc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="60" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* app_data::datadir</definition>
+        <argsstring></argsstring>
+        <name>datadir</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="61" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structapp__data_1a2dc4e3a7e569ee4f9bf1d88b35fe107b" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* app_data::openconf</definition>
+        <argsstring></argsstring>
+        <name>openconf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="62" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structapp__data_1a0afceecac34508f601812c1dcae49af5" prot="public" static="no" mutable="no">
+        <type><ref refid="dtsgui_8h_1af59302244664352117c2669055da5850" kindref="member">dtsgui_menuitem</ref></type>
+        <definition>dtsgui_menuitem app_data::n_wiz</definition>
+        <argsstring></argsstring>
+        <name>n_wiz</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="63" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" prot="public" static="no" mutable="no">
+        <type><ref refid="dtsgui_8h_1af59302244664352117c2669055da5850" kindref="member">dtsgui_menuitem</ref></type>
+        <definition>dtsgui_menuitem app_data::e_wiz</definition>
+        <argsstring></argsstring>
+        <name>e_wiz</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="64" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structapp__data_1a68690abb28e424749f67339ea3736a41" prot="public" static="no" mutable="no">
+        <type><ref refid="dtsgui_8h_1af59302244664352117c2669055da5850" kindref="member">dtsgui_menuitem</ref></type>
+        <definition>dtsgui_menuitem app_data::c_open</definition>
+        <argsstring></argsstring>
+        <name>c_open</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="65" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" prot="public" static="no" mutable="no">
+        <type><ref refid="dtsgui_8h_1afb1e28bd82fd8ea9d43a188c06095682" kindref="member">dtsgui_menu</ref></type>
+        <definition>dtsgui_menu app_data::cfg_menu</definition>
+        <argsstring></argsstring>
+        <name>cfg_menu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="66" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="59" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="59" bodyend="67"/>
+    <listofallmembers>
+      <member refid="structapp__data_1a68690abb28e424749f67339ea3736a41" prot="public" virt="non-virtual"><scope>app_data</scope><name>c_open</name></member>
+      <member refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" prot="public" virt="non-virtual"><scope>app_data</scope><name>cfg_menu</name></member>
+      <member refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" prot="public" virt="non-virtual"><scope>app_data</scope><name>datadir</name></member>
+      <member refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" prot="public" virt="non-virtual"><scope>app_data</scope><name>e_wiz</name></member>
+      <member refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" prot="public" virt="non-virtual"><scope>app_data</scope><name>n_wiz</name></member>
+      <member refid="structapp__data_1a2dc4e3a7e569ee4f9bf1d88b35fe107b" prot="public" virt="non-virtual"><scope>app_data</scope><name>openconf</name></member>
+      <member refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" prot="public" virt="non-virtual"><scope>app_data</scope><name>xmldoc</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

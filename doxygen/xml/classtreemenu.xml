@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="classtreemenu" kind="class" prot="public">
+    <compoundname>treemenu</compoundname>
+    <includes refid="_d_t_s_tree_window_8h" local="no">DTSTreeWindow.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtreemenu_1ac4c099bd171f3b9a862c1b117e90d23a" prot="private" static="no" mutable="no">
+        <type>wxMenu *</type>
+        <definition>wxMenu* treemenu::menu</definition>
+        <argsstring></argsstring>
+        <name>menu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="80" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtreemenu_1ac8ada77439f8096d693791fe5ca9464e" prot="private" static="no" mutable="no">
+        <type>wxMenuItem *</type>
+        <definition>wxMenuItem* treemenu::msort</definition>
+        <argsstring></argsstring>
+        <name>msort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="81" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtreemenu_1af1f838f6a51672e2d55e59514f77ccfe" prot="private" static="no" mutable="no">
+        <type>wxMenuItem *</type>
+        <definition>wxMenuItem* treemenu::mup</definition>
+        <argsstring></argsstring>
+        <name>mup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="82" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtreemenu_1a662ecad63db574b8e5766be9875ddd3a" prot="private" static="no" mutable="no">
+        <type>wxMenuItem *</type>
+        <definition>wxMenuItem* treemenu::mdown</definition>
+        <argsstring></argsstring>
+        <name>mdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="83" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtreemenu_1a359469982a21e31368621e0cda9c5f5d" prot="private" static="no" mutable="no">
+        <type>wxMenuItem *</type>
+        <definition>wxMenuItem* treemenu::mdelete</definition>
+        <argsstring></argsstring>
+        <name>mdelete</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="84" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtreemenu_1a17f25bef9a93d5916241b327fcdb6ebb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>treemenu::DTS_OJBREF_CLASS</definition>
+        <argsstring>(treemenu)</argsstring>
+        <name>DTS_OJBREF_CLASS</name>
+        <param>
+          <type><ref refid="classtreemenu" kindref="compound">treemenu</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classtreemenu_1a886f95a39537bdff27d990c6f0f7f9b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>treemenu::treemenu</definition>
+        <argsstring>()</argsstring>
+        <name>treemenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="77" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="241" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="classtreemenu_1ad011350ad24e3c8c9ec9816dd057ad34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool treemenu::Show</definition>
+        <argsstring>(wxWindow *w, bool cont, int cnt, bool first, bool last, bool c_sort, bool del)</argsstring>
+        <name>Show</name>
+        <param>
+          <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>cont</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cnt</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>last</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>c_sort</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>del</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="78" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="254" bodyend="279"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="74" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="74" bodyend="85"/>
+    <listofallmembers>
+      <member refid="classtreemenu_1a17f25bef9a93d5916241b327fcdb6ebb" prot="public" virt="non-virtual"><scope>treemenu</scope><name>DTS_OJBREF_CLASS</name></member>
+      <member refid="classtreemenu_1a359469982a21e31368621e0cda9c5f5d" prot="private" virt="non-virtual"><scope>treemenu</scope><name>mdelete</name></member>
+      <member refid="classtreemenu_1a662ecad63db574b8e5766be9875ddd3a" prot="private" virt="non-virtual"><scope>treemenu</scope><name>mdown</name></member>
+      <member refid="classtreemenu_1ac4c099bd171f3b9a862c1b117e90d23a" prot="private" virt="non-virtual"><scope>treemenu</scope><name>menu</name></member>
+      <member refid="classtreemenu_1ac8ada77439f8096d693791fe5ca9464e" prot="private" virt="non-virtual"><scope>treemenu</scope><name>msort</name></member>
+      <member refid="classtreemenu_1af1f838f6a51672e2d55e59514f77ccfe" prot="private" virt="non-virtual"><scope>treemenu</scope><name>mup</name></member>
+      <member refid="classtreemenu_1ad011350ad24e3c8c9ec9816dd057ad34" prot="public" virt="non-virtual"><scope>treemenu</scope><name>Show</name></member>
+      <member refid="classtreemenu_1a886f95a39537bdff27d990c6f0f7f9b8" prot="public" virt="non-virtual"><scope>treemenu</scope><name>treemenu</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

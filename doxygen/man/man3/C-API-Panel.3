@@ -1,0 +1,506 @@
+.TH "C API Panel Interface" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C API Panel Interface \- 
+.PP
+C API Panel Management
+.PP
+Resources controlling and manipulating panels in the C API\&.  
+
+.SS "Modules"
+
+.in +1c
+.ti -1c
+.RI "\fBC API Tree View Interface\fP"
+.br
+.RI "\fIC API for managing tree view panels\&.
+.PP
+Resources controlling and manipulating tree view in the C API\&. \fP"
+.ti -1c
+.RI "\fBC API Tab View Interface\fP"
+.br
+.RI "\fIC API for managing tab view panels\&.
+.PP
+Resources controlling and manipulating tab view in the C API\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBDTS_C_API::dtsgui_panel\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *name, const char *title, int butmask, enum \fBpanel_type\fP type, void *userdata)"
+.br
+.RI "\fICreate a pannel to be displayed\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBDTS_C_API::dtsgui_textpane\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, const char *buf)"
+.br
+.RI "\fICreate a text display box with the supplied buffer\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_treeview\fP \fBDTS_C_API::dtsgui_treewindow\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, \fBdtsgui_tree_cb\fP tree_cb, void *userdata, struct xml_doc *xmldoc)"
+.br
+.RI "\fICreate a treepane view\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_tabview\fP \fBDTS_C_API::dtsgui_tabwindow\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.RI "\fICreate a tab view panel\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_panel_setxml\fP (\fBdtsgui_pane\fP pane, struct xml_doc *xmldoc)"
+.br
+.RI "\fIPass a reference to a XML Doc Structure to the panel\&. \fP"
+.ti -1c
+.RI "struct xml_doc * \fBDTS_C_API::dtsgui_panelxml\fP (\fBdtsgui_pane\fP pane)"
+.br
+.RI "\fIGet reference to previously allocated XML Doc\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_delpane\fP (\fBdtsgui_pane\fP pane)"
+.br
+.RI "\fIDelete a panel\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_setevcallback\fP (\fBdtsgui_pane\fP pane, \fBevent_callback\fP evcb, void *data)"
+.br
+.RI "\fISet event callback function for panel\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_xmlpanel_update\fP (\fBdtsgui_pane\fP pane)"
+.br
+.RI "\fIupdate all XML elements in the panel\&. \fP"
+.ti -1c
+.RI "struct curl_post * \fBDTS_C_API::dtsgui_pane2post\fP (\fBdtsgui_pane\fP p)"
+.br
+.RI "\fIPrepare a HTTP POST structure from panel\&. \fP"
+.ti -1c
+.RI "void * \fBDTS_C_API::dtsgui_paneldata\fP (\fBdtsgui_pane\fP pane)"
+.br
+.RI "\fIObtain a reference to the userdata of panel\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_settitle\fP (\fBdtsgui_pane\fP pane, const char *title)"
+.br
+.RI "\fIUpdate the title on the panel if it exists\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_setstatus\fP (\fBdtsgui_pane\fP pane, const char *status)"
+.br
+.RI "\fIUpdate the status bar message of panel\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_configcallback\fP (\fBdtsgui_pane\fP pane, \fBdtsgui_configcb\fP cb, void *data)"
+.br
+.RI "\fISet config callback function for panel (UNUSED)\&. \fP"
+.ti -1c
+.RI "struct xml_node * \fBDTS_C_API::dtsgui_panetoxml\fP (\fBdtsgui_pane\fP p, const char *xpath, const char *node, const char *nodeval, const char *attrkey)"
+.br
+.RI "\fICreate a node from the elements on the panel\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_rundialog\fP (\fBdtsgui_pane\fP pane, \fBevent_callback\fP evcb, void *data)"
+.br
+.RI "\fIExecute a dialog panel\&. Pop up and run a dialog pane the result will be obtained int the event handler\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+C API Panel Management
+.PP
+Resources controlling and manipulating panels in the C API\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "void DTS_C_API::dtsgui_configcallback (\fBdtsgui_pane\fPpane, \fBdtsgui_configcb\fPcb, void *data)"
+
+.PP
+Set config callback function for panel (UNUSED)\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::SetConfigCallback()\fP 
+.PP
+\fBdtsgui_configcb\fP
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+Not yet implemted who knows maybe it will maybe it wont\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to attach callback too\&. 
+.br
+\fIcb\fP Config callback\&. 
+.br
+\fIdata\fP Data supplied in the callback (panel userdata is available in the panel)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 894 of file wrapper\&.cpp\&.
+.SS "void DTS_C_API::dtsgui_delpane (\fBdtsgui_pane\fPpane)"
+
+.PP
+Delete a panel\&. \fBNote:\fP
+.RS 4
+This is unlikly too be needed as the GUI manages panels\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel To Delete\&. 
+.RE
+.PP
+
+.PP
+Definition at line 536 of file wrapper\&.cpp\&.
+.SS "struct curl_post* DTS_C_API::dtsgui_pane2post (\fBdtsgui_pane\fPp)\fC [read]\fP"
+
+.PP
+Prepare a HTTP POST structure from panel\&. Create a HTTP Post structure from the values and names Of elements on a panel this can then be used with curl_post to post to a URL\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSPanel::Update_XML()\fP 
+.PP
+dtsgui_xmlpane_update() 
+.PP
+\fBDTSPanel::Panel2Post()\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to create from\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A CURL HTTP POST Structure\&. 
+.RE
+.PP
+
+.PP
+Definition at line 841 of file wrapper\&.cpp\&.
+.SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_panel (struct \fBdtsgui\fP *dtsgui, const char *name, const char *title, intbutmask, enum \fBpanel_type\fPtype, void *userdata)"
+
+.PP
+Create a pannel to be displayed\&. This function is able to create and return various panels excluding Tab/Tree view panels\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSFrame::CreatePane()\fP 
+.PP
+\fBpanel_type\fP 
+.PP
+\fBpanel_buttons\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fIname\fP Text used in the status bar when panel is displayed\&. 
+.br
+\fItitle\fP Title set in the window Top/Middle\&. 
+.br
+\fIbutmask\fP Buttons to be displayed values of panel_buttons or'd together\&. 
+.br
+\fItype\fP Type of panel to create [Excludes Tab/Tree Views] 
+.br
+\fIuserdata\fP Referenced Obect passed stored in panel and available in event handlers\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Newly created panel\&. 
+.RE
+.PP
+
+.PP
+Definition at line 415 of file wrapper\&.cpp\&.
+.SS "void DTS_C_API::dtsgui_panel_setxml (\fBdtsgui_pane\fPpane, struct xml_doc *xmldoc)"
+
+.PP
+Pass a reference to a XML Doc Structure to the panel\&. Assign a reference to a XML Doc to the panel for use latter and with XML controls\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSObject::SetXMLDoc()\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to be assigned the ref\&. 
+.br
+\fIxmldoc\fP Document to be assigned\&. 
+.RE
+.PP
+
+.PP
+Definition at line 507 of file wrapper\&.cpp\&.
+.SS "void* DTS_C_API::dtsgui_paneldata (\fBdtsgui_pane\fPpane)"
+
+.PP
+Obtain a reference to the userdata of panel\&. \fBSee Also:\fP
+.RS 4
+\fBDTSObject::GetUserData()\fP\&.
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+this must be un refferenced\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to obtain reference from\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Reference to userdata\&. 
+.RE
+.PP
+
+.PP
+Definition at line 856 of file wrapper\&.cpp\&.
+.SS "struct xml_doc* DTS_C_API::dtsgui_panelxml (\fBdtsgui_pane\fPpane)\fC [read]\fP"
+
+.PP
+Get reference to previously allocated XML Doc\&. Obtain a new reference to the xmldoc stored in the panel\&.
+.PP
+\fBNote:\fP
+.RS 4
+This must be un refferenced\&.
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSObject::GetXMLDoc()\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to obtain the XML Info\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Reference to XML Doc\&. 
+.RE
+.PP
+
+.PP
+Definition at line 524 of file wrapper\&.cpp\&.
+.SS "struct xml_node* DTS_C_API::dtsgui_panetoxml (\fBdtsgui_pane\fPp, const char *xpath, const char *node, const char *nodeval, const char *attrkey)\fC [read]\fP"
+
+.PP
+Create a node from the elements on the panel\&. Using the path information a node is created and elements added as attributes\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSPanel::Panel2XML()\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to create nodes from\&. 
+.br
+\fIxpath\fP Base path to create the nodes in\&. 
+.br
+\fInode\fP Name of the node to add\&. 
+.br
+\fInodeval\fP Name of the element to use as the value of node\&. 
+.br
+\fIattrkey\fP Use this item to set the initial attribute and use as key\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+New XML Node\&. 
+.RE
+.PP
+
+.PP
+Definition at line 913 of file wrapper\&.cpp\&.
+.SS "void DTS_C_API::dtsgui_rundialog (\fBdtsgui_pane\fPpane, \fBevent_callback\fPevcb, void *data)"
+
+.PP
+Execute a dialog panel\&. Pop up and run a dialog pane the result will be obtained int the event handler\&. \fBSee Also:\fP
+.RS 4
+\fBDTSDialog::RunDialog()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Dialog panel to execute\&. 
+.br
+\fIevcb\fP Event callback to handle the results in\&. 
+.br
+\fIdata\fP Data passed to the event handler\&. 
+.RE
+.PP
+
+.PP
+Definition at line 925 of file wrapper\&.cpp\&.
+.SS "void DTS_C_API::dtsgui_setevcallback (\fBdtsgui_pane\fPpane, \fBevent_callback\fPevcb, void *data)"
+
+.PP
+Set event callback function for panel\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::SetEventCallback()\fP 
+.PP
+\fBevent_callback\fP
+.RE
+.PP
+When a event happens the callback is called with the userdata to allow actioning the event\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to attach callback too\&. 
+.br
+\fIevcb\fP Event callback\&. 
+.br
+\fIdata\fP Data supplied in the callback (panel userdata is available in the panel)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 806 of file wrapper\&.cpp\&.
+.SS "void DTS_C_API::dtsgui_setstatus (\fBdtsgui_pane\fPpane, const char *status)"
+
+.PP
+Update the status bar message of panel\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::SetStatus()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to update title\&. 
+.br
+\fIstatus\fP New status bar message\&. 
+.RE
+.PP
+
+.PP
+Definition at line 877 of file wrapper\&.cpp\&.
+.SS "void DTS_C_API::dtsgui_settitle (\fBdtsgui_pane\fPpane, const char *title)"
+
+.PP
+Update the title on the panel if it exists\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::SetTitle()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to update title\&. 
+.br
+\fItitle\fP New title to place on panel\&. 
+.RE
+.PP
+
+.PP
+Definition at line 866 of file wrapper\&.cpp\&.
+.SS "\fBdtsgui_tabview\fP DTS_C_API::dtsgui_tabwindow (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Create a tab view panel\&. Create a panel that will place pages as tabs along the top of the display\&. Clicking on the tab opens the panel in the display area\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSTabWindow\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fItitle\fP Text displayed on status bar\&. 
+.br
+\fIdata\fP Referenced object made available in the event callback\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Tab window\&. 
+.RE
+.PP
+
+.PP
+Definition at line 476 of file wrapper\&.cpp\&.
+.SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_textpane (struct \fBdtsgui\fP *dtsgui, const char *title, const char *buf)"
+
+.PP
+Create a text display box with the supplied buffer\&. This creates a panel that only contains the supplied buffer Scrollbars are used as required\&.
+.PP
+This window is read only\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSFrame::TextPanel()\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fItitle\fP Text displayed on the status bar\&. 
+.br
+\fIbuf\fP The text displayed in the pane\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+New text panel\&. 
+.RE
+.PP
+
+.PP
+Definition at line 436 of file wrapper\&.cpp\&.
+.SS "\fBdtsgui_treeview\fP DTS_C_API::dtsgui_treewindow (struct \fBdtsgui\fP *dtsgui, const char *title, \fBdtsgui_tree_cb\fPtree_cb, void *userdata, struct xml_doc *xmldoc)"
+
+.PP
+Create a treepane view\&. Create a split window with a tree control on the left and display area on right\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSTreeWindow\fP 
+.PP
+\fBdtsgui_tree_cb\fP 
+.PP
+\fBtree_cbtype\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Aplication data ptr\&. 
+.br
+\fItitle\fP Text displayed on the status bar\&. 
+.br
+\fItree_cb\fP Callback called when a event of tree_cbtype is handled\&. 
+.br
+\fIuserdata\fP Referenced object made available in callback\&. 
+.br
+\fIxmldoc\fP Optional XML doc struct available in callback's and for managing XML nodes/panels\&. 
+.RE
+.PP
+
+.PP
+Definition at line 458 of file wrapper\&.cpp\&.
+.SS "void DTS_C_API::dtsgui_xmlpanel_update (\fBdtsgui_pane\fPpane)"
+
+.PP
+update all XML elements in the panel\&. All elements on the panel that are XML will have there nodes updated Based on the value of the elements\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSPanel::Update_XML()\fP 
+.PP
+\fBdtsgui_pane2post\fP 
+.PP
+\fBDTSPanel::Panel2Post()\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to update\&. 
+.RE
+.PP
+
+.PP
+Definition at line 823 of file wrapper\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

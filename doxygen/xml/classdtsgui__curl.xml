@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="classdtsgui__curl" kind="class" prot="public">
+    <compoundname>dtsgui_curl</compoundname>
+    <includes refid="_d_t_s_app_8h" local="no">DTSApp.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classdtsgui__curl_1adbc2a0aefd2a3412b739c88c82484e9e" prot="private" static="no" mutable="no">
+        <type>class <ref refid="class_d_t_s_frame" kindref="compound">DTSFrame</ref> *</type>
+        <definition>class DTSFrame* dtsgui_curl::frame</definition>
+        <argsstring></argsstring>
+        <name>frame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="53" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classdtsgui__curl_1aba670f1e03229a05d40fd5dc5881a241" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int dtsgui_curl::curl</definition>
+        <argsstring></argsstring>
+        <name>curl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="54" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdtsgui__curl_1a0c8d459eebe5b0738da3dbf398374b98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dtsgui_curl::DTS_OJBREF_CLASS</definition>
+        <argsstring>(dtsgui_curl)</argsstring>
+        <name>DTS_OJBREF_CLASS</name>
+        <param>
+          <type><ref refid="classdtsgui__curl" kindref="compound">dtsgui_curl</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui__curl_1a32244d6816ad29d796387af121707d2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>dtsgui_curl::dtsgui_curl</definition>
+        <argsstring>(class dtsgui *dtsgui)</argsstring>
+        <name>dtsgui_curl</name>
+        <param>
+          <type>class <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="45" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="135" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui__curl_1acc79c1c90bc8337dcd93b349dc9c5513" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dtsgui_curl::Close</definition>
+        <argsstring>()</argsstring>
+        <name>Close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="46" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="148" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui__curl_1a5ab8bf28a7dcb9ae37b14873d681bff9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_d_t_s_frame" kindref="compound">DTSFrame</ref> *</type>
+        <definition>DTSFrame * dtsgui_curl::GetFrame</definition>
+        <argsstring>()</argsstring>
+        <name>GetFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="47" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="215" bodyend="217"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classdtsgui__curl_1a6185280c5a0b3071a7b34a38131754f3" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct basic_auth *</type>
+        <definition>struct basic_auth * dtsgui_curl::CurlPasswd</definition>
+        <argsstring>(const char *user, const char *passwd, void *data)</argsstring>
+        <name>CurlPasswd</name>
+        <param>
+          <type>const char *</type>
+          <declname>user</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>passwd</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="49" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="208" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui__curl_1a0794340b11b85da4309931132721b4e2" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * dtsgui_curl::curl_startprogress</definition>
+        <argsstring>(void *data)</argsstring>
+        <name>curl_startprogress</name>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="50" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="156" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui__curl_1ab1654abd596655f85087851d8d459ee9" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dtsgui_curl::curl_progress_ctrl</definition>
+        <argsstring>(void *data, int pause)</argsstring>
+        <name>curl_progress_ctrl</name>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pause</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="51" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="188" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="classdtsgui__curl_1a2fecec8a1192e94da4125de619ce13e7" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int dtsgui_curl::curl_progress_function</definition>
+        <argsstring>(void *data, double dltotal, double dlnow, double ultotal, double ulnow)</argsstring>
+        <name>curl_progress_function</name>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dltotal</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dlnow</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ultotal</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ulnow</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="52" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="162" bodyend="186"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="42" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="42" bodyend="55"/>
+    <listofallmembers>
+      <member refid="classdtsgui__curl_1acc79c1c90bc8337dcd93b349dc9c5513" prot="public" virt="non-virtual"><scope>dtsgui_curl</scope><name>Close</name></member>
+      <member refid="classdtsgui__curl_1aba670f1e03229a05d40fd5dc5881a241" prot="private" virt="non-virtual"><scope>dtsgui_curl</scope><name>curl</name></member>
+      <member refid="classdtsgui__curl_1ab1654abd596655f85087851d8d459ee9" prot="private" virt="non-virtual"><scope>dtsgui_curl</scope><name>curl_progress_ctrl</name></member>
+      <member refid="classdtsgui__curl_1a2fecec8a1192e94da4125de619ce13e7" prot="private" virt="non-virtual"><scope>dtsgui_curl</scope><name>curl_progress_function</name></member>
+      <member refid="classdtsgui__curl_1a0794340b11b85da4309931132721b4e2" prot="private" virt="non-virtual"><scope>dtsgui_curl</scope><name>curl_startprogress</name></member>
+      <member refid="classdtsgui__curl_1a6185280c5a0b3071a7b34a38131754f3" prot="private" virt="non-virtual"><scope>dtsgui_curl</scope><name>CurlPasswd</name></member>
+      <member refid="classdtsgui__curl_1a0c8d459eebe5b0738da3dbf398374b98" prot="public" virt="non-virtual"><scope>dtsgui_curl</scope><name>DTS_OJBREF_CLASS</name></member>
+      <member refid="classdtsgui__curl_1a32244d6816ad29d796387af121707d2f" prot="public" virt="non-virtual"><scope>dtsgui_curl</scope><name>dtsgui_curl</name></member>
+      <member refid="classdtsgui__curl_1adbc2a0aefd2a3412b739c88c82484e9e" prot="private" virt="non-virtual"><scope>dtsgui_curl</scope><name>frame</name></member>
+      <member refid="classdtsgui__curl_1a5ab8bf28a7dcb9ae37b14873d681bff9" prot="public" virt="non-virtual"><scope>dtsgui_curl</scope><name>GetFrame</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

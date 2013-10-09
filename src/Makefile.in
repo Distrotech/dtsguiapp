@@ -130,10 +130,9 @@ am_libdtsapp_gui_la_OBJECTS = libdtsapp_gui_la-DTSApp.lo \
 	libdtsapp_gui_la-DTSFrame.lo libdtsapp_gui_la-DTSPanel.lo \
 	libdtsapp_gui_la-DTSTreeWindow.lo \
 	libdtsapp_gui_la-DTSListView.lo libdtsapp_gui_la-evdata.lo \
-	libdtsapp_gui_la-cxxapi.lo libdtsapp_gui_la-dtsuserpw.lo \
-	libdtsapp_gui_la-wxcurlprogress.lo \
-	libdtsapp_gui_la-DTSXMLComboBox.lo libdtsapp_gui_la-pitems.lo \
-	libdtsapp_gui_la-DTSWizard.lo libdtsapp_gui_la-wrapper.lo
+	libdtsapp_gui_la-cxxapi.lo libdtsapp_gui_la-DTSXMLComboBox.lo \
+	libdtsapp_gui_la-pitems.lo libdtsapp_gui_la-DTSWizard.lo \
+	libdtsapp_gui_la-wrapper.lo
 libdtsapp_gui_la_OBJECTS = $(am_libdtsapp_gui_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -159,24 +158,6 @@ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/depcomp
 am__depfiles_maybe = depfiles
 am__mv = mv -f
-COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
-	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
-LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) \
-	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
-	$(AM_CFLAGS) $(CFLAGS)
-AM_V_CC = $(am__v_CC_@AM_V@)
-am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
-am__v_CC_0 = @echo "  CC      " $@;
-am__v_CC_1 = 
-CCLD = $(CC)
-LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
-	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
-AM_V_CCLD = $(am__v_CCLD_@AM_V@)
-am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
-am__v_CCLD_0 = @echo "  CCLD    " $@;
-am__v_CCLD_1 = 
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
 LTCXXCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
@@ -371,7 +352,7 @@ EXTRA_DIST = include
 lib_LTLIBRARIES = libdtsapp_gui.la
 includeinstdir = $(includedir)/dtsapplib
 includeinst_DATA = include/dtsgui.h
-libdtsapp_gui_la_SOURCES = DTSApp.cpp DTSFrame.cpp DTSPanel.cpp DTSTreeWindow.cpp DTSListView.cpp evdata.cpp cxxapi.cpp dtsuserpw.c wxcurlprogress.c DTSXMLComboBox.cpp \
+libdtsapp_gui_la_SOURCES = DTSApp.cpp DTSFrame.cpp DTSPanel.cpp DTSTreeWindow.cpp DTSListView.cpp evdata.cpp cxxapi.cpp DTSXMLComboBox.cpp \
 			   pitems.cpp DTSWizard.cpp wrapper.cpp
 
 libdtsapp_gui_la_LIBADD = $(WX_LIBS) $(DTSAPPLIB_LIBS)
@@ -393,7 +374,7 @@ pkgconfig_DATA = libdtsapp_gui.pc
 all: all-am
 
 .SUFFIXES:
-.SUFFIXES: .c .cpp .lo .o .obj
+.SUFFIXES: .cpp .lo .o .obj
 $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
@@ -479,46 +460,9 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdtsapp_gui_la-DTSWizard.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdtsapp_gui_la-DTSXMLComboBox.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdtsapp_gui_la-cxxapi.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdtsapp_gui_la-dtsuserpw.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdtsapp_gui_la-evdata.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdtsapp_gui_la-pitems.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdtsapp_gui_la-wrapper.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libdtsapp_gui_la-wxcurlprogress.Plo@am__quote@
-
-.c.o:
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c $<
-
-.c.obj:
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(COMPILE) -c `$(CYGPATH_W) '$<'`
-
-.c.lo:
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LTCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
-
-libdtsapp_gui_la-dtsuserpw.lo: dtsuserpw.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdtsapp_gui_la_CFLAGS) $(CFLAGS) -MT libdtsapp_gui_la-dtsuserpw.lo -MD -MP -MF $(DEPDIR)/libdtsapp_gui_la-dtsuserpw.Tpo -c -o libdtsapp_gui_la-dtsuserpw.lo `test -f 'dtsuserpw.c' || echo '$(srcdir)/'`dtsuserpw.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdtsapp_gui_la-dtsuserpw.Tpo $(DEPDIR)/libdtsapp_gui_la-dtsuserpw.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='dtsuserpw.c' object='libdtsapp_gui_la-dtsuserpw.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdtsapp_gui_la_CFLAGS) $(CFLAGS) -c -o libdtsapp_gui_la-dtsuserpw.lo `test -f 'dtsuserpw.c' || echo '$(srcdir)/'`dtsuserpw.c
-
-libdtsapp_gui_la-wxcurlprogress.lo: wxcurlprogress.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdtsapp_gui_la_CFLAGS) $(CFLAGS) -MT libdtsapp_gui_la-wxcurlprogress.lo -MD -MP -MF $(DEPDIR)/libdtsapp_gui_la-wxcurlprogress.Tpo -c -o libdtsapp_gui_la-wxcurlprogress.lo `test -f 'wxcurlprogress.c' || echo '$(srcdir)/'`wxcurlprogress.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libdtsapp_gui_la-wxcurlprogress.Tpo $(DEPDIR)/libdtsapp_gui_la-wxcurlprogress.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='wxcurlprogress.c' object='libdtsapp_gui_la-wxcurlprogress.lo' libtool=yes @AMDEPBACKSLASH@
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libdtsapp_gui_la_CFLAGS) $(CFLAGS) -c -o libdtsapp_gui_la-wxcurlprogress.lo `test -f 'wxcurlprogress.c' || echo '$(srcdir)/'`wxcurlprogress.c
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<

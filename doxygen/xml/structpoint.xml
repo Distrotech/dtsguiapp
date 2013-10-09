@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="structpoint" kind="struct" prot="public">
+    <compoundname>point</compoundname>
+    <includes refid="dtsgui_8h" local="no">dtsgui.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structpoint_1ad679b07fb69d55f5ad454d0f1f2891d5" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int point::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="90" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structpoint_1a9a82ca9504acabb1e30569f89c805471" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int point::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="91" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="89" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="89" bodyend="92"/>
+    <listofallmembers>
+      <member refid="structpoint_1ad679b07fb69d55f5ad454d0f1f2891d5" prot="public" virt="non-virtual"><scope>point</scope><name>x</name></member>
+      <member refid="structpoint_1a9a82ca9504acabb1e30569f89c805471" prot="public" virt="non-virtual"><scope>point</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

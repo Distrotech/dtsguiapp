@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="_d_t_s_x_m_l_combo_box_8h" kind="file">
+    <compoundname>DTSXMLComboBox.h</compoundname>
+    <includedby refid="toolbar_8cpp" local="yes">app/toolbar.cpp</includedby>
+    <includedby refid="_d_t_s_x_m_l_combo_box_8cpp" local="yes">src/DTSXMLComboBox.cpp</includedby>
+    <invincdepgraph>
+      <node id="298">
+        <label>src/include/DTSXMLComboBox.h</label>
+        <link refid="DTSXMLComboBox.h"/>
+        <childnode refid="299" relation="include">
+        </childnode>
+        <childnode refid="300" relation="include">
+        </childnode>
+      </node>
+      <node id="300">
+        <label>src/DTSXMLComboBox.cpp</label>
+        <link refid="_d_t_s_x_m_l_combo_box_8cpp"/>
+      </node>
+      <node id="299">
+        <label>app/toolbar.cpp</label>
+        <link refid="toolbar_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_d_t_s_x_m_l_combo_box" prot="public">DTSXMLComboBox</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520" prot="public" static="no">
+        <name>server_state</name>
+        <enumvalue id="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520ae6478ae16db29ffeaa6fee0389fb2057" prot="public">
+          <name>DTSAPPTB_SERVER_POP</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" prot="public">
+          <name>DTSAPPTB_SERVER_SET</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="22" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" bodystart="22" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>Distrotech<sp/>Solutions<sp/>wxWidgets<sp/>Gui<sp/>Interface</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>Copyright<sp/>(C)<sp/>2013<sp/>Gregory<sp/>Hinton<sp/>Nietsky<sp/>&lt;gregory@distrotech.co.za&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DTSXMLCOMBOBOX_H</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DTSXMLCOMBOBOX_H</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520" kindref="member">server_state</ref><sp/>{</highlight></codeline>
+<codeline lineno="23" refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520ae6478ae16db29ffeaa6fee0389fb2057" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520ae6478ae16db29ffeaa6fee0389fb2057" kindref="member">DTSAPPTB_SERVER_POP</ref><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>0,</highlight></codeline>
+<codeline lineno="24" refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" kindref="member">DTSAPPTB_SERVER_SET</ref><sp/>=<sp/>1<sp/>&lt;&lt;<sp/>1</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_d_t_s_x_m_l_combo_box" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_d_t_s_x_m_l_combo_box" kindref="compound">DTSXMLComboBox</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="pitems_8h_1abd3381f4db4e2b967199254324c78f71" kindref="member">wxComboBox</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1aa0ef061b697a527a559d56a6c5914e08" kindref="member">DTSXMLComboBox</ref>(<ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>*parent,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wxString<sp/>url,<sp/>wxString<sp/>xpath,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>curl_post*(*getpost)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString&amp;),<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>minlen);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1a026821df9109a287aff26b12859fbf7c" kindref="member">~DTSXMLComboBox</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1ab73ab96a2dddeb756b984db6e0fa9106" kindref="member">HasXMLList</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>HandleEvent(wxCommandEvent&amp;<sp/>event);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*GetXMLDoc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString&amp;<sp/>val,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_node<sp/>*xn);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">curl_post<sp/>*GetPostInfo(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString&amp;<sp/>val);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>AppendXMLNodes(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_doc<sp/>*xmldoc);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EmptyServerList();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sflags;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>minlen;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxString<sp/>url;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxString<sp/>xpath;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">curl_post*(*getpost)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString&amp;);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>DTSXMLCOMBOBOX_H</highlight></codeline>
+    </programlisting>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h"/>
+  </compounddef>
+</doxygen>

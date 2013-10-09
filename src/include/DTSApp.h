@@ -39,6 +39,32 @@ class dtsgui {
 		struct point wpos;
 };
 
+class dtsgui_curl {
+	public:
+		DTS_OJBREF_CLASS(dtsgui_curl);
+		dtsgui_curl(class dtsgui *dtsgui);
+		void Close();
+		DTSFrame *GetFrame();
+	private:
+		static struct basic_auth *CurlPasswd(const char *user, const char *passwd, void *data);
+		static void *curl_startprogress(void *data);
+		static void curl_progress_ctrl(void *data, int pause);
+		static int curl_progress_function(void *data, double dltotal, double dlnow, double ultotal, double ulnow);
+		class DTSFrame *frame;
+		int curl;
+};
+
+class curl_progress {
+	public:
+		DTS_OJBREF_CLASS(curl_progress);
+		curl_progress(class dtsgui_curl *dc);
+		DTSFrame *GetFrame();
+		int pd;
+		int pause;
+	private:
+		class dtsgui_curl *owner;
+};
+
 class DTSApp : public wxApp {
 	public:
 		DTSApp(dtsgui_configcb confcallback_cb, void *data, struct point wsize, struct point wpos, const char *title, const char *status);
@@ -46,15 +72,7 @@ class DTSApp : public wxApp {
 	private:
 		virtual bool OnInit();
 		class dtsgui *dtsgui;
-		int curl;
+		class dtsgui_curl *curl;
 };
-
-namespace DTS_C_API {
-	extern "C" {
-		int curl_progress_function(void *data, double dltotal, double dlnow, double ultotal, double ulnow);
-		void curl_progress_ctrl(void *data, int pause);
-		void *curl_startprogress(void *data);
-	}
-}
 
 #endif // DTSAPP_H

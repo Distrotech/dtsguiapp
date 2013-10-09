@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="unionwidgets" kind="union" prot="public">
+    <compoundname>widgets</compoundname>
+    <includes refid="pitems_8h" local="no">pitems.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="unionwidgets_1ad9dbdf416e8ba75e55b8030549c2d5ac" prot="public" static="no" mutable="no">
+        <type>wxTextCtrl *</type>
+        <definition>wxTextCtrl* widgets::t</definition>
+        <argsstring></argsstring>
+        <name>t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="44" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionwidgets_1a9e5583bcc42f0273b9c6a1605e0e1b6d" prot="public" static="no" mutable="no">
+        <type><ref refid="pitems_8h_1abd3381f4db4e2b967199254324c78f71" kindref="member">wxComboBox</ref> *</type>
+        <definition>wxComboBox* widgets::l</definition>
+        <argsstring></argsstring>
+        <name>l</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="45" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionwidgets_1aa5bb8e792fd60fca871e8782e39993cc" prot="public" static="no" mutable="no">
+        <type><ref refid="pitems_8h_1aef96dbf274b0324394cd30671b01d2bb" kindref="member">wxCheckBox</ref> *</type>
+        <definition>wxCheckBox* widgets::c</definition>
+        <argsstring></argsstring>
+        <name>c</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="46" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionwidgets_1a5dbc3a005c0d466449a1be8c20db8cfc" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* widgets::p</definition>
+        <argsstring></argsstring>
+        <name>p</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="47" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="43" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="43" bodyend="48"/>
+    <listofallmembers>
+      <member refid="unionwidgets_1aa5bb8e792fd60fca871e8782e39993cc" prot="public" virt="non-virtual"><scope>widgets</scope><name>c</name></member>
+      <member refid="unionwidgets_1a9e5583bcc42f0273b9c6a1605e0e1b6d" prot="public" virt="non-virtual"><scope>widgets</scope><name>l</name></member>
+      <member refid="unionwidgets_1a5dbc3a005c0d466449a1be8c20db8cfc" prot="public" virt="non-virtual"><scope>widgets</scope><name>p</name></member>
+      <member refid="unionwidgets_1ad9dbdf416e8ba75e55b8030549c2d5ac" prot="public" virt="non-virtual"><scope>widgets</scope><name>t</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

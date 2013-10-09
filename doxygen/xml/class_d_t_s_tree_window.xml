@@ -1,0 +1,532 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_d_t_s_tree_window" kind="class" prot="public">
+    <compoundname>DTSTreeWindow</compoundname>
+    <basecompoundref refid="class_d_t_s_object" prot="public" virt="non-virtual">DTSObject</basecompoundref>
+    <basecompoundref prot="public" virt="virtual">wxSplitterWindow</basecompoundref>
+    <includes refid="_d_t_s_tree_window_8h" local="no">DTSTreeWindow.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_d_t_s_tree_window_1a7ea74947094602a9ad9c3ca3ebd078e2" prot="private" static="no" mutable="no">
+        <type>wxScrolledWindow *</type>
+        <definition>wxScrolledWindow* DTSTreeWindow::t_pane</definition>
+        <argsstring></argsstring>
+        <name>t_pane</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="126" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_tree_window_1a0fdb1692f73b9e9b2e000754092bc8f2" prot="private" static="no" mutable="no">
+        <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+        <definition>wxWindow* DTSTreeWindow::c_pane</definition>
+        <argsstring></argsstring>
+        <name>c_pane</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="127" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_tree_window_1af4f29b88bb58c804090e5c4bab01898d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_d_t_s_d_v_m_ctrl" kindref="compound">DTSDVMCtrl</ref> *</type>
+        <definition>DTSDVMCtrl* DTSTreeWindow::tree</definition>
+        <argsstring></argsstring>
+        <name>tree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="128" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_tree_window_1a57f82dd35e2ad0c6f50041b40c6e67f5" prot="private" static="no" mutable="no">
+        <type><ref refid="class_d_t_s_d_v_m_list_view" kindref="compound">DTSDVMListView</ref> *</type>
+        <definition>DTSDVMListView* DTSTreeWindow::vm</definition>
+        <argsstring></argsstring>
+        <name>vm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="129" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_tree_window_1a37362520ed70a72d3b1888cdae337ad4" prot="private" static="no" mutable="no">
+        <type><ref refid="class_d_t_s_panel" kindref="compound">DTSPanel</ref> *</type>
+        <definition>DTSPanel* DTSTreeWindow::a_window</definition>
+        <argsstring></argsstring>
+        <name>a_window</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="130" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_tree_window_1a996e933c35328c5302c52880c85d005f" prot="private" static="no" mutable="no">
+        <type><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+        <definition>dtsgui_treenode DTSTreeWindow::a_node</definition>
+        <argsstring></argsstring>
+        <name>a_node</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="131" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_tree_window_1ae6ae4cafa2647a549f709206ac35bd81" prot="private" static="no" mutable="no">
+        <type>class <ref refid="classtreemenu" kindref="compound">treemenu</ref> *</type>
+        <definition>class treemenu* DTSTreeWindow::rmenu</definition>
+        <argsstring></argsstring>
+        <name>rmenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="132" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_tree_window_1a34f907b7b676ad866ada6d4198de7322" prot="private" static="no" mutable="no">
+        <type><ref refid="_d_t_s_frame_8h_1ad396616e0ef9ed30f9053d7b48712ecd" kindref="member">wxBoxSizer</ref> *</type>
+        <definition>wxBoxSizer* DTSTreeWindow::treesizer</definition>
+        <argsstring></argsstring>
+        <name>treesizer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="133" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_d_t_s_tree_window_1a1664835725e0e19ce3e4cced298fac39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSTreeWindow::DTSTreeWindow</definition>
+        <argsstring>(wxWindow *parent=NULL, DTSFrame *frame=NULL, dtsgui_tree_cb tree_cb=NULL, wxString stat_msg=wxEmptyString, int pos=30, void *u_data=NULL, struct xml_doc *xd=NULL)</argsstring>
+        <name>DTSTreeWindow</name>
+        <param>
+          <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+          <declname>parent</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type><ref refid="class_d_t_s_frame" kindref="compound">DTSFrame</ref> *</type>
+          <declname>frame</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a32927ee58215cd957e5134af0f13303f" kindref="member">dtsgui_tree_cb</ref></type>
+          <declname>tree_cb</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>wxString</type>
+          <declname>stat_msg</declname>
+          <defval>wxEmptyString</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+          <defval>30</defval>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>u_data</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xd</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="110" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="530" bodyend="639"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tree_window_1ae76407acd39772ef597cbfa599b349af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSTreeWindow::~DTSTreeWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~DTSTreeWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="111" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="764" bodyend="771"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tree_window_1a0df3486cd55349c3e7efe33f0304d76d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSTreeWindow::ShowRMenu</definition>
+        <argsstring>(bool cont, int cnt, bool first, bool last, bool c_sort, bool del)</argsstring>
+        <name>ShowRMenu</name>
+        <param>
+          <type>bool</type>
+          <declname>cont</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cnt</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>first</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>last</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>c_sort</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>del</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="112" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="697" bodyend="699"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tree_window_1a7c6941ddc90e0539d219561556e2e455" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DTSTreeWindow::Show</definition>
+        <argsstring>(bool=true)</argsstring>
+        <name>Show</name>
+        <param>
+          <type>bool</type>
+          <defname>show</defname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="113" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="773" bodyend="794"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tree_window_1aae9e856659f3701452382e2cdcba8463" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_d_t_s_d_v_m_ctrl" kindref="compound">DTSDVMCtrl</ref> *</type>
+        <definition>DTSDVMCtrl * DTSTreeWindow::GetTreeCtrl</definition>
+        <argsstring>()</argsstring>
+        <name>GetTreeCtrl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="114" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="641" bodyend="643"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tree_window_1a45a0f5740984258b0d318104e7aef932" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSTreeWindow::TreeResize</definition>
+        <argsstring>()</argsstring>
+        <name>TreeResize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="115" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="654" bodyend="657"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tree_window_1acef5712c7e881b7fbca765d32530737d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSTreeWindow::SetTreePaneSize</definition>
+        <argsstring>()</argsstring>
+        <name>SetTreePaneSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="116" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="645" bodyend="652"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tree_window_1ad5c187ebc6203b19afae00ea5a42b78d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_d_t_s_panel" kindref="compound">DTSPanel</ref> *</type>
+        <definition>DTSPanel * DTSTreeWindow::GetClientPane</definition>
+        <argsstring>()</argsstring>
+        <name>GetClientPane</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="117" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="796" bodyend="798"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tree_window_1a2ed14675c69eebc630e82b65ddb2bb4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSTreeWindow::SetPaneTitle</definition>
+        <argsstring>(const wxString value)</argsstring>
+        <name>SetPaneTitle</name>
+        <param>
+          <type>const wxString</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="118" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="659" bodyend="667"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tree_window_1a16e8b0b7de01806b70235b4eac89345e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSTreeWindow::Select</definition>
+        <argsstring>(const wxDataViewItem &amp;item)</argsstring>
+        <name>Select</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="119" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="800" bodyend="809"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tree_window_1a491a55218197db09e099be00afe06850" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+        <definition>wxWindow * DTSTreeWindow::SetWindow</definition>
+        <argsstring>(DTSPanel *window, const wxDataViewItem &amp;item)</argsstring>
+        <name>SetWindow</name>
+        <param>
+          <type><ref refid="class_d_t_s_panel" kindref="compound">DTSPanel</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="120" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="673" bodyend="695"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tree_window_1a13f1a1a56891ccba3df14c857e09197e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+        <definition>dtsgui_treenode DTSTreeWindow::GetActiveNode</definition>
+        <argsstring>()</argsstring>
+        <name>GetActiveNode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="121" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="669" bodyend="671"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tree_window_1a7457dc767b9cbc873e0e963644fa1fda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_d_t_s_scroll_panel" kindref="compound">DTSScrollPanel</ref> *</type>
+        <definition>DTSScrollPanel * DTSTreeWindow::CreatePane</definition>
+        <argsstring>(const wxString &amp;name=wxEmptyString, int butmask=0, void *userdata=NULL, struct xml_doc *xmldoc=NULL)</argsstring>
+        <name>CreatePane</name>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>name</declname>
+          <defval>wxEmptyString</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>butmask</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xmldoc</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="122" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="701" bodyend="720"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tree_window_1a45d33a41609c46d51d17bb80a64f2ca4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_d_t_s_scroll_panel" kindref="compound">DTSScrollPanel</ref> *</type>
+        <definition>DTSScrollPanel * DTSTreeWindow::CreatePane</definition>
+        <argsstring>(const wxDataViewItem &amp;node)</argsstring>
+        <name>CreatePane</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="123" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="722" bodyend="738"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_tree_window_1a3a7d1d1ce34864f71d5ffd154ca18210" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSTreeWindow::UpdateNodeXML</definition>
+        <argsstring>(const wxDataViewItem &amp;node, const char *newname)</argsstring>
+        <name>UpdateNodeXML</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>newname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="124" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="740" bodyend="762"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="151">
+        <label>DTSTreeWindow</label>
+        <link refid="class_d_t_s_tree_window"/>
+        <childnode refid="152" relation="public-inheritance">
+        </childnode>
+        <childnode refid="154" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="152">
+        <label>DTSObject</label>
+        <link refid="class_d_t_s_object"/>
+        <childnode refid="153" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="154">
+        <label>wxSplitterWindow</label>
+      </node>
+      <node id="153">
+        <label>wxWindow</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="155">
+        <label>DTSTreeWindow</label>
+        <link refid="class_d_t_s_tree_window"/>
+        <childnode refid="156" relation="public-inheritance">
+        </childnode>
+        <childnode refid="160" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="156">
+        <label>DTSObject</label>
+        <link refid="class_d_t_s_object"/>
+        <childnode refid="157" relation="public-inheritance">
+        </childnode>
+        <childnode refid="158" relation="usage">
+          <edgelabel>frame</edgelabel>
+        </childnode>
+      </node>
+      <node id="160">
+        <label>wxSplitterWindow</label>
+      </node>
+      <node id="157">
+        <label>wxWindow</label>
+      </node>
+      <node id="159">
+        <label>wxFrame</label>
+      </node>
+      <node id="158">
+        <label>DTSFrame</label>
+        <link refid="class_d_t_s_frame"/>
+        <childnode refid="159" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="108" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="108" bodyend="134"/>
+    <listofallmembers>
+      <member refid="class_d_t_s_tree_window_1a996e933c35328c5302c52880c85d005f" prot="private" virt="non-virtual"><scope>DTSTreeWindow</scope><name>a_node</name></member>
+      <member refid="class_d_t_s_tree_window_1a37362520ed70a72d3b1888cdae337ad4" prot="private" virt="non-virtual"><scope>DTSTreeWindow</scope><name>a_window</name></member>
+      <member refid="class_d_t_s_object_1ab4249f538d36789b20bb15e29ab4121f" prot="protected" virt="non-virtual"><scope>DTSTreeWindow</scope><name>beenshown</name></member>
+      <member refid="class_d_t_s_object_1abcce46b892d3c17810d4551c495512ce" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>buttons</name></member>
+      <member refid="class_d_t_s_tree_window_1a0fdb1692f73b9e9b2e000754092bc8f2" prot="private" virt="non-virtual"><scope>DTSTreeWindow</scope><name>c_pane</name></member>
+      <member refid="class_d_t_s_tree_window_1a7457dc767b9cbc873e0e963644fa1fda" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>CreatePane</name></member>
+      <member refid="class_d_t_s_tree_window_1a45d33a41609c46d51d17bb80a64f2ca4" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>CreatePane</name></member>
+      <member refid="class_d_t_s_object_1a132481851865629352e4aefa7f822e4b" prot="protected" virt="non-virtual"><scope>DTSTreeWindow</scope><name>dtsevthandler</name></member>
+      <member refid="class_d_t_s_object_1a76f73a01ddebf90d59245dd744d491b5" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>DTSObject</name></member>
+      <member refid="class_d_t_s_tree_window_1a1664835725e0e19ce3e4cced298fac39" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>DTSTreeWindow</name></member>
+      <member refid="class_d_t_s_object_1a392c5ee37a2ca5e82e39cf11bc781eda" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>EventHandler</name></member>
+      <member refid="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" prot="protected" virt="non-virtual"><scope>DTSTreeWindow</scope><name>fitems</name></member>
+      <member refid="class_d_t_s_object_1a8ca3e7c6f66685caf07fa93fb5e14337" prot="protected" virt="non-virtual"><scope>DTSTreeWindow</scope><name>frame</name></member>
+      <member refid="class_d_t_s_tree_window_1a13f1a1a56891ccba3df14c857e09197e" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>GetActiveNode</name></member>
+      <member refid="class_d_t_s_tree_window_1ad5c187ebc6203b19afae00ea5a42b78d" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>GetClientPane</name></member>
+      <member refid="class_d_t_s_object_1ae5239b912c725a7a5720954767c3537a" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>GetFrame</name></member>
+      <member refid="class_d_t_s_object_1a4cadcce0480e7e8f4a9a07a4aedd3c1f" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>GetItems</name></member>
+      <member refid="class_d_t_s_object_1aa800a3664b895617df9884469dbdf1f8" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>GetName</name></member>
+      <member refid="class_d_t_s_object_1ae88ef1ea6f28346b6cd6d2d898d7acde" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>GetPanel</name></member>
+      <member refid="class_d_t_s_tree_window_1aae9e856659f3701452382e2cdcba8463" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>GetTreeCtrl</name></member>
+      <member refid="class_d_t_s_object_1a5d32407be34aa68ea2b038ede768d50e" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>GetUserData</name></member>
+      <member refid="class_d_t_s_object_1ae177d1cfd85be759810b252b98f2050d" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>GetXMLDoc</name></member>
+      <member refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" prot="protected" virt="non-virtual"><scope>DTSTreeWindow</scope><name>panel</name></member>
+      <member refid="class_d_t_s_object_1a941fc98555b60d021a6c2f488ce9ae3e" prot="protected" virt="non-virtual"><scope>DTSTreeWindow</scope><name>refobj</name></member>
+      <member refid="class_d_t_s_tree_window_1ae6ae4cafa2647a549f709206ac35bd81" prot="private" virt="non-virtual"><scope>DTSTreeWindow</scope><name>rmenu</name></member>
+      <member refid="class_d_t_s_tree_window_1a16e8b0b7de01806b70235b4eac89345e" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>Select</name></member>
+      <member refid="class_d_t_s_tree_window_1a2ed14675c69eebc630e82b65ddb2bb4a" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>SetPaneTitle</name></member>
+      <member refid="class_d_t_s_tree_window_1acef5712c7e881b7fbca765d32530737d" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>SetTreePaneSize</name></member>
+      <member refid="class_d_t_s_object_1a3e39ba76f7cb701fc9b99f6f059fb49e" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>SetUserData</name></member>
+      <member refid="class_d_t_s_tree_window_1a491a55218197db09e099be00afe06850" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>SetWindow</name></member>
+      <member refid="class_d_t_s_object_1a1ae63425d8e5770a8b0717f37fd695b2" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>SetXMLDoc</name></member>
+      <member refid="class_d_t_s_tree_window_1a7c6941ddc90e0539d219561556e2e455" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>Show</name></member>
+      <member refid="class_d_t_s_tree_window_1a0df3486cd55349c3e7efe33f0304d76d" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>ShowRMenu</name></member>
+      <member refid="class_d_t_s_object_1a1292b4804b31450f0ee960fa59fcfc7a" prot="protected" virt="non-virtual"><scope>DTSTreeWindow</scope><name>status</name></member>
+      <member refid="class_d_t_s_tree_window_1a7ea74947094602a9ad9c3ca3ebd078e2" prot="private" virt="non-virtual"><scope>DTSTreeWindow</scope><name>t_pane</name></member>
+      <member refid="class_d_t_s_tree_window_1af4f29b88bb58c804090e5c4bab01898d" prot="private" virt="non-virtual"><scope>DTSTreeWindow</scope><name>tree</name></member>
+      <member refid="class_d_t_s_tree_window_1a45a0f5740984258b0d318104e7aef932" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>TreeResize</name></member>
+      <member refid="class_d_t_s_tree_window_1a34f907b7b676ad866ada6d4198de7322" prot="private" virt="non-virtual"><scope>DTSTreeWindow</scope><name>treesizer</name></member>
+      <member refid="class_d_t_s_object_1ad191e42b5daa056f9ea8247d752df3b0" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>type</name></member>
+      <member refid="class_d_t_s_tree_window_1a3a7d1d1ce34864f71d5ffd154ca18210" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>UpdateNodeXML</name></member>
+      <member refid="class_d_t_s_object_1a783949e39ffd9e00aec15fa2b8cc12ed" prot="protected" virt="non-virtual"><scope>DTSTreeWindow</scope><name>userdata</name></member>
+      <member refid="class_d_t_s_tree_window_1a57f82dd35e2ad0c6f50041b40c6e67f5" prot="private" virt="non-virtual"><scope>DTSTreeWindow</scope><name>vm</name></member>
+      <member refid="class_d_t_s_object_1a0e9b6e22629a9aa1fd5227cefaa25e6f" prot="protected" virt="non-virtual"><scope>DTSTreeWindow</scope><name>xmldoc</name></member>
+      <member refid="class_d_t_s_object_1a47a4a671f875d6fb7681865c26b32546" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>~DTSObject</name></member>
+      <member refid="class_d_t_s_tree_window_1ae76407acd39772ef597cbfa599b349af" prot="public" virt="non-virtual"><scope>DTSTreeWindow</scope><name>~DTSTreeWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

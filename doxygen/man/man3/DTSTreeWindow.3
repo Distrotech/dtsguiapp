@@ -1,0 +1,133 @@
+.TH "DTSTreeWindow" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DTSTreeWindow \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DTSTreeWindow\&.h>\fP
+.PP
+Inherits \fBDTSObject\fP, and wxSplitterWindow\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTSTreeWindow\fP (\fBwxWindow\fP *parent=NULL, \fBDTSFrame\fP *\fBframe\fP=NULL, \fBdtsgui_tree_cb\fP tree_cb=NULL, wxString stat_msg=wxEmptyString, int pos=30, void *u_data=NULL, struct xml_doc *xd=NULL)"
+.br
+.ti -1c
+.RI "\fB~DTSTreeWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBShowRMenu\fP (bool cont, int cnt, bool first, bool last, bool c_sort, bool del)"
+.br
+.ti -1c
+.RI "bool \fBShow\fP (bool=true)"
+.br
+.ti -1c
+.RI "\fBDTSDVMCtrl\fP * \fBGetTreeCtrl\fP ()"
+.br
+.ti -1c
+.RI "void \fBTreeResize\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetTreePaneSize\fP ()"
+.br
+.ti -1c
+.RI "\fBDTSPanel\fP * \fBGetClientPane\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetPaneTitle\fP (const wxString value)"
+.br
+.ti -1c
+.RI "void \fBSelect\fP (const wxDataViewItem &item)"
+.br
+.ti -1c
+.RI "\fBwxWindow\fP * \fBSetWindow\fP (\fBDTSPanel\fP *window, const wxDataViewItem &item)"
+.br
+.ti -1c
+.RI "\fBdtsgui_treenode\fP \fBGetActiveNode\fP ()"
+.br
+.ti -1c
+.RI "\fBDTSScrollPanel\fP * \fBCreatePane\fP (const wxString &name=wxEmptyString, int butmask=0, void *\fBuserdata\fP=NULL, struct xml_doc *\fBxmldoc\fP=NULL)"
+.br
+.ti -1c
+.RI "\fBDTSScrollPanel\fP * \fBCreatePane\fP (const wxDataViewItem &node)"
+.br
+.ti -1c
+.RI "void \fBUpdateNodeXML\fP (const wxDataViewItem &node, const char *newname)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 108 of file DTSTreeWindow\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DTSTreeWindow::DTSTreeWindow (\fBwxWindow\fP *parent = \fCNULL\fP, \fBDTSFrame\fP *frame = \fCNULL\fP, \fBdtsgui_tree_cb\fPtree_cb = \fCNULL\fP, wxStringstat_msg = \fCwxEmptyString\fP, intpos = \fC30\fP, void *u_data = \fCNULL\fP, struct xml_doc *xd = \fCNULL\fP)"
+
+.PP
+Definition at line 530 of file DTSTreeWindow\&.cpp\&.
+.SS "DTSTreeWindow::~DTSTreeWindow ()"
+
+.PP
+Definition at line 764 of file DTSTreeWindow\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBDTSScrollPanel\fP * DTSTreeWindow::CreatePane (const wxString &name = \fCwxEmptyString\fP, intbutmask = \fC0\fP, void *userdata = \fCNULL\fP, struct xml_doc *xmldoc = \fCNULL\fP)"
+
+.PP
+Definition at line 701 of file DTSTreeWindow\&.cpp\&.
+.SS "\fBDTSScrollPanel\fP * DTSTreeWindow::CreatePane (const wxDataViewItem &node)"
+
+.PP
+Definition at line 722 of file DTSTreeWindow\&.cpp\&.
+.SS "\fBdtsgui_treenode\fP DTSTreeWindow::GetActiveNode ()"
+
+.PP
+Definition at line 669 of file DTSTreeWindow\&.cpp\&.
+.SS "\fBDTSPanel\fP * DTSTreeWindow::GetClientPane ()"
+
+.PP
+Definition at line 796 of file DTSTreeWindow\&.cpp\&.
+.SS "\fBDTSDVMCtrl\fP * DTSTreeWindow::GetTreeCtrl ()"
+
+.PP
+Definition at line 641 of file DTSTreeWindow\&.cpp\&.
+.SS "void DTSTreeWindow::Select (const wxDataViewItem &item)"
+
+.PP
+Definition at line 800 of file DTSTreeWindow\&.cpp\&.
+.SS "void DTSTreeWindow::SetPaneTitle (const wxStringvalue)"
+
+.PP
+Definition at line 659 of file DTSTreeWindow\&.cpp\&.
+.SS "void DTSTreeWindow::SetTreePaneSize ()"
+
+.PP
+Definition at line 645 of file DTSTreeWindow\&.cpp\&.
+.SS "\fBwxWindow\fP * DTSTreeWindow::SetWindow (\fBDTSPanel\fP *window, const wxDataViewItem &item)"
+
+.PP
+Definition at line 673 of file DTSTreeWindow\&.cpp\&.
+.SS "bool DTSTreeWindow::Show (boolshow = \fCtrue\fP)"
+
+.PP
+Definition at line 773 of file DTSTreeWindow\&.cpp\&.
+.SS "void DTSTreeWindow::ShowRMenu (boolcont, intcnt, boolfirst, boollast, boolc_sort, booldel)"
+
+.PP
+Definition at line 697 of file DTSTreeWindow\&.cpp\&.
+.SS "void DTSTreeWindow::TreeResize ()"
+
+.PP
+Definition at line 654 of file DTSTreeWindow\&.cpp\&.
+.SS "void DTSTreeWindow::UpdateNodeXML (const wxDataViewItem &node, const char *newname)"
+
+.PP
+Definition at line 740 of file DTSTreeWindow\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

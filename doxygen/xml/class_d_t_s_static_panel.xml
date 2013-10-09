@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_d_t_s_static_panel" kind="class" prot="public">
+    <compoundname>DTSStaticPanel</compoundname>
+    <basecompoundref refid="class_d_t_s_panel" prot="public" virt="non-virtual">DTSPanel</basecompoundref>
+    <basecompoundref prot="public" virt="virtual">wxPanel</basecompoundref>
+    <derivedcompoundref refid="class_d_t_s_dialog" prot="public" virt="non-virtual">DTSDialog</derivedcompoundref>
+    <derivedcompoundref refid="class_d_t_s_text_panel" prot="public" virt="non-virtual">DTSTextPanel</derivedcompoundref>
+    <includes refid="_d_t_s_panel_8h" local="no">DTSPanel.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_d_t_s_static_panel_1ac982605cd17112ca73ede769814cca47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSStaticPanel::DTSStaticPanel</definition>
+        <argsstring>(wxWindow *, DTSFrame *=NULL, wxString=wxEmptyString, int=0)</argsstring>
+        <name>DTSStaticPanel</name>
+        <param>
+          <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
+          <defname>parent</defname>
+        </param>
+        <param>
+          <type><ref refid="class_d_t_s_frame" kindref="compound">DTSFrame</ref> *</type>
+          <defname>frame</defname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>wxString</type>
+          <defname>status</defname>
+          <defval>wxEmptyString</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>butmask</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="126" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="999" bodyend="1007"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_static_panel_1a07647534a053d3e0a03a5da57cc626c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSStaticPanel::DTSStaticPanel</definition>
+        <argsstring>()</argsstring>
+        <name>DTSStaticPanel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="127" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="1009" bodyend="1011"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_static_panel_1adc4c9227ed43facbd7a202f220eb4382" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool DTSStaticPanel::Show</definition>
+        <argsstring>(bool=true)</argsstring>
+        <name>Show</name>
+        <reimplementedby refid="class_d_t_s_dialog_1a569e3d1caa1405354a2a090725b76071">Show</reimplementedby>
+        <param>
+          <type>bool</type>
+          <defname>show</defname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="128" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="1013" bodyend="1016"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="97">
+        <label>DTSObject</label>
+        <link refid="class_d_t_s_object"/>
+        <childnode refid="98" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>DTSPanel</label>
+        <link refid="class_d_t_s_panel"/>
+        <childnode refid="97" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>DTSTextPanel</label>
+        <link refid="class_d_t_s_text_panel"/>
+        <childnode refid="95" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>wxPanel</label>
+      </node>
+      <node id="98">
+        <label>wxWindow</label>
+      </node>
+      <node id="95">
+        <label>DTSStaticPanel</label>
+        <link refid="class_d_t_s_static_panel"/>
+        <childnode refid="96" relation="public-inheritance">
+        </childnode>
+        <childnode refid="99" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="100">
+        <label>DTSDialog</label>
+        <link refid="class_d_t_s_dialog"/>
+        <childnode refid="95" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="104">
+        <label>DTSObject</label>
+        <link refid="class_d_t_s_object"/>
+        <childnode refid="105" relation="public-inheritance">
+        </childnode>
+        <childnode refid="106" relation="usage">
+          <edgelabel>frame</edgelabel>
+        </childnode>
+      </node>
+      <node id="103">
+        <label>DTSPanel</label>
+        <link refid="class_d_t_s_panel"/>
+        <childnode refid="104" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="108">
+        <label>wxPanel</label>
+      </node>
+      <node id="105">
+        <label>wxWindow</label>
+      </node>
+      <node id="107">
+        <label>wxFrame</label>
+      </node>
+      <node id="106">
+        <label>DTSFrame</label>
+        <link refid="class_d_t_s_frame"/>
+        <childnode refid="107" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>DTSStaticPanel</label>
+        <link refid="class_d_t_s_static_panel"/>
+        <childnode refid="103" relation="public-inheritance">
+        </childnode>
+        <childnode refid="108" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="124" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="124" bodyend="129"/>
+    <listofallmembers>
+      <member refid="class_d_t_s_panel_1a714c09276642d4a0cf20cc5d941f62a1" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>AddItem</name></member>
+      <member refid="class_d_t_s_object_1ab4249f538d36789b20bb15e29ab4121f" prot="protected" virt="non-virtual"><scope>DTSStaticPanel</scope><name>beenshown</name></member>
+      <member refid="class_d_t_s_panel_1af25bdb7e04f715c228774c2be0dd8251" prot="protected" virt="non-virtual"><scope>DTSStaticPanel</scope><name>button_mask</name></member>
+      <member refid="class_d_t_s_panel_1ae2385ab076d14fdecc0d58285063c520" prot="protected" virt="non-virtual"><scope>DTSStaticPanel</scope><name>Buttons</name></member>
+      <member refid="class_d_t_s_object_1abcce46b892d3c17810d4551c495512ce" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>buttons</name></member>
+      <member refid="class_d_t_s_panel_1a1bfea883644cb1052752528b89b8c71f" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>CheckBox</name></member>
+      <member refid="class_d_t_s_panel_1ad91d3ca25ab8349403efc7cc78cb1869" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>ComboBox</name></member>
+      <member refid="class_d_t_s_object_1a132481851865629352e4aefa7f822e4b" prot="protected" virt="non-virtual"><scope>DTSStaticPanel</scope><name>dtsevthandler</name></member>
+      <member refid="class_d_t_s_object_1a76f73a01ddebf90d59245dd744d491b5" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>DTSObject</name></member>
+      <member refid="class_d_t_s_panel_1abfe32d536cdcb2eee87a5c0ef1df826f" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>DTSPanel</name></member>
+      <member refid="class_d_t_s_static_panel_1ac982605cd17112ca73ede769814cca47" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>DTSStaticPanel</name></member>
+      <member refid="class_d_t_s_static_panel_1a07647534a053d3e0a03a5da57cc626c9" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>DTSStaticPanel</name></member>
+      <member refid="class_d_t_s_object_1a392c5ee37a2ca5e82e39cf11bc781eda" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>EventHandler</name></member>
+      <member refid="class_d_t_s_panel_1a3c4a20a1c122851ae935dcac34697361" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>FindItem</name></member>
+      <member refid="class_d_t_s_panel_1aaeef18ad561346699ed24e0aa6fa47b3" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>FindValue</name></member>
+      <member refid="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" prot="protected" virt="non-virtual"><scope>DTSStaticPanel</scope><name>fitems</name></member>
+      <member refid="class_d_t_s_object_1a8ca3e7c6f66685caf07fa93fb5e14337" prot="protected" virt="non-virtual"><scope>DTSStaticPanel</scope><name>frame</name></member>
+      <member refid="class_d_t_s_object_1ae5239b912c725a7a5720954767c3537a" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>GetFrame</name></member>
+      <member refid="class_d_t_s_object_1a4cadcce0480e7e8f4a9a07a4aedd3c1f" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>GetItems</name></member>
+      <member refid="class_d_t_s_object_1aa800a3664b895617df9884469dbdf1f8" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>GetName</name></member>
+      <member refid="class_d_t_s_panel_1aab8f3d3fbeb44163401d558d903f45ad" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>GetNode</name></member>
+      <member refid="class_d_t_s_object_1ae88ef1ea6f28346b6cd6d2d898d7acde" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>GetPanel</name></member>
+      <member refid="class_d_t_s_object_1a5d32407be34aa68ea2b038ede768d50e" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>GetUserData</name></member>
+      <member refid="class_d_t_s_object_1ae177d1cfd85be759810b252b98f2050d" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>GetXMLDoc</name></member>
+      <member refid="class_d_t_s_panel_1a08cb04c83c8e5668592bd2f3bacf8267" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>ListBox</name></member>
+      <member refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" prot="protected" virt="non-virtual"><scope>DTSStaticPanel</scope><name>panel</name></member>
+      <member refid="class_d_t_s_panel_1a7ce048cedd00ee1f1d9ea1c1fd504a6f" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>Panel2Post</name></member>
+      <member refid="class_d_t_s_panel_1ad28f5ed6bd19e9d685a18df8bf568f92" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>Panel2XML</name></member>
+      <member refid="class_d_t_s_panel_1a1276b3add451cab10d57ea0005211194" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>PasswdBox</name></member>
+      <member refid="class_d_t_s_object_1a941fc98555b60d021a6c2f488ce9ae3e" prot="protected" virt="non-virtual"><scope>DTSStaticPanel</scope><name>refobj</name></member>
+      <member refid="class_d_t_s_panel_1acdb57729ace5f3c0fc76cce4d41c36cc" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>SetConfigCallback</name></member>
+      <member refid="class_d_t_s_panel_1ac18de08077529d488ea329a72ee14d98" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>SetEventCallback</name></member>
+      <member refid="class_d_t_s_panel_1afd0a6ee00e2e13185c240178850e368e" prot="protected" virt="non-virtual"><scope>DTSStaticPanel</scope><name>SetSizerSize</name></member>
+      <member refid="class_d_t_s_panel_1a03be174c3cb033ba74b6abce543347e3" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>SetStatus</name></member>
+      <member refid="class_d_t_s_panel_1a58daeb533cce1e4bdac57118cce7c7ea" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>SetTitle</name></member>
+      <member refid="class_d_t_s_panel_1a9e90d0d7b1466eb3e8005343ce787974" prot="protected" virt="non-virtual"><scope>DTSStaticPanel</scope><name>SetupWin</name></member>
+      <member refid="class_d_t_s_object_1a3e39ba76f7cb701fc9b99f6f059fb49e" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>SetUserData</name></member>
+      <member refid="class_d_t_s_object_1a1ae63425d8e5770a8b0717f37fd695b2" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>SetXMLDoc</name></member>
+      <member refid="class_d_t_s_static_panel_1adc4c9227ed43facbd7a202f220eb4382" prot="public" virt="virtual"><scope>DTSStaticPanel</scope><name>Show</name></member>
+      <member refid="class_d_t_s_panel_1a0c1a3aa81559298e059473bde57ab23e" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>ShowPanel</name></member>
+      <member refid="class_d_t_s_object_1a1292b4804b31450f0ee960fa59fcfc7a" prot="protected" virt="non-virtual"><scope>DTSStaticPanel</scope><name>status</name></member>
+      <member refid="class_d_t_s_panel_1acd1b20a134272f1bc2d048d5977a3d3c" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>TextBox</name></member>
+      <member refid="class_d_t_s_panel_1ae0135da688bb9046fd2cafbf5eaf7ffc" prot="protected" virt="non-virtual"><scope>DTSStaticPanel</scope><name>Title</name></member>
+      <member refid="class_d_t_s_object_1ad191e42b5daa056f9ea8247d752df3b0" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>type</name></member>
+      <member refid="class_d_t_s_panel_1adc5131960a24dfa65adba935a1be0f79" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>Update_XML</name></member>
+      <member refid="class_d_t_s_object_1a783949e39ffd9e00aec15fa2b8cc12ed" prot="protected" virt="non-virtual"><scope>DTSStaticPanel</scope><name>userdata</name></member>
+      <member refid="class_d_t_s_panel_1a1495f670e901f45cbbc3a4d2c471aa53" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>XMLCheckBox</name></member>
+      <member refid="class_d_t_s_panel_1a4d294755a98b6194df04292abe18d1b0" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>XMLComboBox</name></member>
+      <member refid="class_d_t_s_object_1a0e9b6e22629a9aa1fd5227cefaa25e6f" prot="protected" virt="non-virtual"><scope>DTSStaticPanel</scope><name>xmldoc</name></member>
+      <member refid="class_d_t_s_panel_1a03d63a8c380ee62e263d7bc3a3c86396" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>XMLListBox</name></member>
+      <member refid="class_d_t_s_panel_1a5bbe4bfc295ef7b772c09628e80976c7" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>XMLPasswdBox</name></member>
+      <member refid="class_d_t_s_panel_1a2b893b30f6265079a143bb23029aa083" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>XMLTextBox</name></member>
+      <member refid="class_d_t_s_object_1a47a4a671f875d6fb7681865c26b32546" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>~DTSObject</name></member>
+      <member refid="class_d_t_s_panel_1acfa1f9a5350e95f2898f875113be95e3" prot="public" virt="non-virtual"><scope>DTSStaticPanel</scope><name>~DTSPanel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

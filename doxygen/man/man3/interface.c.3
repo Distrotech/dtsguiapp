@@ -1,0 +1,99 @@
+.TH "app/interface.c" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+app/interface.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include 'dtsgui\&.h'\fP
+.br
+\fC#include 'private\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBnew_iface_data\fP"
+.br
+.ti -1c
+.RI "struct \fBiface_cdata\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfree_iface_cdata\fP (void *data)"
+.br
+.ti -1c
+.RI "struct \fBiface_cdata\fP * \fBget_iface_cdata\fP (const char *val)"
+.br
+.ti -1c
+.RI "void \fBfree_newiface_data\fP (void *data)"
+.br
+.ti -1c
+.RI "struct \fBnew_iface_data\fP * \fBget_newiface_data\fP (\fBdtsgui_tabview\fP tv, struct xml_doc *xmldoc)"
+.br
+.ti -1c
+.RI "void \fBhandle_newxmltabpane\fP (struct xml_doc *xmldoc, struct xml_node *xn, void *tdata, void **cdata, int *last)"
+.br
+.ti -1c
+.RI "int \fBhandle_updatetabpane\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, \fBdtsgui_pane\fP p, int type, int event, void *data)"
+.br
+.ti -1c
+.RI "void \fBnetwork_iface_pane_cb\fP (\fBdtsgui_pane\fP p, void *data)"
+.br
+.ti -1c
+.RI "void \fBnetwork_iface_new_pane_cb\fP (\fBdtsgui_pane\fP p, void *data)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBiface_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void free_iface_cdata (void *data)"
+
+.PP
+Definition at line 35 of file interface\&.c\&.
+.SS "void free_newiface_data (void *data)"
+
+.PP
+Definition at line 54 of file interface\&.c\&.
+.SS "struct \fBiface_cdata\fP* get_iface_cdata (const char *val)\fC [read]\fP"
+
+.PP
+Definition at line 43 of file interface\&.c\&.
+.SS "struct \fBnew_iface_data\fP* get_newiface_data (\fBdtsgui_tabview\fPtv, struct xml_doc *xmldoc)\fC [read]\fP"
+
+.PP
+Definition at line 63 of file interface\&.c\&.
+.SS "void handle_newxmltabpane (struct xml_doc *xmldoc, struct xml_node *xn, void *tdata, void **cdata, int *last)"
+
+.PP
+Definition at line 77 of file interface\&.c\&.
+.SS "int handle_updatetabpane (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_pane\fPp, inttype, intevent, void *data)"
+
+.PP
+Definition at line 86 of file interface\&.c\&.
+.SS "\fBdtsgui_pane\fP iface_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 145 of file interface\&.c\&.
+.SS "void network_iface_new_pane_cb (\fBdtsgui_pane\fPp, void *data)"
+
+.PP
+Definition at line 137 of file interface\&.c\&.
+.SS "void network_iface_pane_cb (\fBdtsgui_pane\fPp, void *data)"
+
+.PP
+Definition at line 123 of file interface\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

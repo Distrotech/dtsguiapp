@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="_d_t_s_wizard_8h" kind="file">
+    <compoundname>DTSWizard.h</compoundname>
+    <includedby refid="_d_t_s_wizard_8cpp" local="yes">src/DTSWizard.cpp</includedby>
+    <includedby refid="wrapper_8cpp" local="yes">src/wrapper.cpp</includedby>
+    <invincdepgraph>
+      <node id="296">
+        <label>src/wrapper.cpp</label>
+        <link refid="wrapper_8cpp"/>
+      </node>
+      <node id="295">
+        <label>src/DTSWizard.cpp</label>
+        <link refid="_d_t_s_wizard_8cpp"/>
+      </node>
+      <node id="294">
+        <label>src/include/DTSWizard.h</label>
+        <link refid="DTSWizard.h"/>
+        <childnode refid="295" relation="include">
+        </childnode>
+        <childnode refid="296" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classdtsgui__wizard" prot="public">dtsgui_wizard</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_d_t_s_wizard_8h_1afc9801308f8dd7566a2e222ef91a6932" prot="public" static="no">
+        <type>class <ref refid="_d_t_s_wizard_8h_1afc9801308f8dd7566a2e222ef91a6932" kindref="member">wxWizard</ref></type>
+        <definition>typedef class wxWizard wxWizard</definition>
+        <argsstring></argsstring>
+        <name>wxWizard</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="22" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_d_t_s_wizard_8h_1aa8db4e8a4187c26468519a4456933b3b" prot="public" static="no">
+        <type>class <ref refid="class_d_t_s_wizard_window" kindref="compound">DTSWizardWindow</ref></type>
+        <definition>typedef class DTSWizardWindow DTSWizardWindow</definition>
+        <argsstring></argsstring>
+        <name>DTSWizardWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="23" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_d_t_s_wizard_8h_1a0692504754593e8beb0333a4d1f6c80e" prot="public" static="no">
+        <type>class <ref refid="_d_t_s_wizard_8h_1a0692504754593e8beb0333a4d1f6c80e" kindref="member">wxWizardPageSimple</ref></type>
+        <definition>typedef class wxWizardPageSimple wxWizardPageSimple</definition>
+        <argsstring></argsstring>
+        <name>wxWizardPageSimple</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="24" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>Distrotech<sp/>Solutions<sp/>wxWidgets<sp/>Gui<sp/>Interface</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>Copyright<sp/>(C)<sp/>2013<sp/>Gregory<sp/>Hinton<sp/>Nietsky<sp/>&lt;gregory@distrotech.co.za&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DTSWIZARD_H_INCLUDED</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DTSWIZARD_H_INCLUDED</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="_d_t_s_wizard_8h_1afc9801308f8dd7566a2e222ef91a6932" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_d_t_s_wizard_8h_1afc9801308f8dd7566a2e222ef91a6932" kindref="member">wxWizard</ref><sp/><ref refid="_d_t_s_wizard_8h_1afc9801308f8dd7566a2e222ef91a6932" kindref="member">wxWizard</ref>;</highlight></codeline>
+<codeline lineno="23" refid="_d_t_s_wizard_8h_1aa8db4e8a4187c26468519a4456933b3b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_d_t_s_wizard_window" kindref="compound">DTSWizardWindow</ref><sp/><ref refid="class_d_t_s_wizard_window" kindref="compound">DTSWizardWindow</ref>;</highlight></codeline>
+<codeline lineno="24" refid="_d_t_s_wizard_8h_1a0692504754593e8beb0333a4d1f6c80e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="_d_t_s_wizard_8h_1a0692504754593e8beb0333a4d1f6c80e" kindref="member">wxWizardPageSimple</ref><sp/><ref refid="_d_t_s_wizard_8h_1a0692504754593e8beb0333a4d1f6c80e" kindref="member">wxWizardPageSimple</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classdtsgui__wizard" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classdtsgui__wizard" kindref="compound">dtsgui_wizard</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdtsgui__wizard_1a5fed7f6f5eb482fc137f16adf2a494ad" kindref="member">DTS_OJBREF_CLASS</ref>(<ref refid="classdtsgui__wizard" kindref="compound">dtsgui_wizard</ref>);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdtsgui__wizard_1aef1a3023055dee016ead1826c44731d1" kindref="member">dtsgui_wizard</ref>(</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>*f,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString<sp/>&amp;title);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_wizard_window" kindref="compound">DTSWizardWindow</ref><sp/>*<ref refid="classdtsgui__wizard_1a02984b1d70df5100e8b6200e0bb1b421" kindref="member">AddPage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_doc<sp/>*xmldoc,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*userdata);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classdtsgui__wizard_1ab0554e6b9fe1d2c0419a6659d883edf3" kindref="member">RunWizard</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_d_t_s_wizard_8h_1afc9801308f8dd7566a2e222ef91a6932" kindref="member">wxWizard</ref><sp/>*wiz;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_d_t_s_wizard_8h_1a0692504754593e8beb0333a4d1f6c80e" kindref="member">wxWizardPageSimple</ref><sp/>*start;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">dtsgui<sp/>*<ref refid="classdtsgui_1a96324bdb4d6457ea0c815959092bee84" kindref="member">dtsgui</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>DTSWIZARD_H_INCLUDED</highlight></codeline>
+    </programlisting>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h"/>
+  </compounddef>
+</doxygen>

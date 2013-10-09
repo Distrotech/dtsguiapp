@@ -1,0 +1,320 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="_d_t_s_tree_window_8h" kind="file">
+    <compoundname>DTSTreeWindow.h</compoundname>
+    <includes local="no">wx/dataview.h</includes>
+    <includes local="no">wx/splitter.h</includes>
+    <includes local="no">wx/notebook.h</includes>
+    <includes refid="_d_t_s_panel_8h" local="yes">DTSPanel.h</includes>
+    <includedby refid="_d_t_s_tree_window_8cpp" local="yes">src/DTSTreeWindow.cpp</includedby>
+    <includedby refid="wrapper_8cpp" local="yes">src/wrapper.cpp</includedby>
+    <incdepgraph>
+      <node id="283">
+        <label>wx/event.h</label>
+      </node>
+      <node id="282">
+        <label>DTSPanel.h</label>
+        <link refid="_d_t_s_panel_8h"/>
+        <childnode refid="283" relation="include">
+        </childnode>
+        <childnode refid="284" relation="include">
+        </childnode>
+        <childnode refid="285" relation="include">
+        </childnode>
+        <childnode refid="286" relation="include">
+        </childnode>
+        <childnode refid="287" relation="include">
+        </childnode>
+        <childnode refid="288" relation="include">
+        </childnode>
+        <childnode refid="289" relation="include">
+        </childnode>
+      </node>
+      <node id="284">
+        <label>wx/window.h</label>
+      </node>
+      <node id="289">
+        <label>wx/wizard.h</label>
+      </node>
+      <node id="279">
+        <label>wx/dataview.h</label>
+      </node>
+      <node id="288">
+        <label>wx/scrolwin.h</label>
+      </node>
+      <node id="285">
+        <label>wx/gbsizer.h</label>
+      </node>
+      <node id="281">
+        <label>wx/notebook.h</label>
+      </node>
+      <node id="280">
+        <label>wx/splitter.h</label>
+      </node>
+      <node id="287">
+        <label>wx/panel.h</label>
+      </node>
+      <node id="278">
+        <label>src/include/DTSTreeWindow.h</label>
+        <link refid="DTSTreeWindow.h"/>
+        <childnode refid="279" relation="include">
+        </childnode>
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="282" relation="include">
+        </childnode>
+      </node>
+      <node id="286">
+        <label>wx/textctrl.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="292">
+        <label>src/wrapper.cpp</label>
+        <link refid="wrapper_8cpp"/>
+      </node>
+      <node id="291">
+        <label>src/DTSTreeWindow.cpp</label>
+        <link refid="_d_t_s_tree_window_8cpp"/>
+      </node>
+      <node id="290">
+        <label>src/include/DTSTreeWindow.h</label>
+        <link refid="DTSTreeWindow.h"/>
+        <childnode refid="291" relation="include">
+        </childnode>
+        <childnode refid="292" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classtree__newnode" prot="public">tree_newnode</innerclass>
+    <innerclass refid="classtab__newpane" prot="public">tab_newpane</innerclass>
+    <innerclass refid="classtreemenu" prot="public">treemenu</innerclass>
+    <innerclass refid="class_d_t_s_tree_window_event" prot="public">DTSTreeWindowEvent</innerclass>
+    <innerclass refid="class_d_t_s_tree_window" prot="public">DTSTreeWindow</innerclass>
+    <innerclass refid="class_d_t_s_tab_window_event" prot="public">DTSTabWindowEvent</innerclass>
+    <innerclass refid="class_d_t_s_tab_window" prot="public">DTSTabWindow</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_d_t_s_tree_window_8h_1a97e93e5bc35e2e15b56d1a1dfc055c82" prot="public" static="no">
+        <type>class <ref refid="class_d_t_s_tab_window" kindref="compound">DTSTabWindow</ref></type>
+        <definition>typedef class DTSTabWindow DTSTabWindow</definition>
+        <argsstring></argsstring>
+        <name>DTSTabWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="28" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_d_t_s_tree_window_8h_1a784aa6f77dc66f229fc77dbab4c1e0f0" prot="public" static="no">
+        <type>class <ref refid="class_d_t_s_tree_window" kindref="compound">DTSTreeWindow</ref></type>
+        <definition>typedef class DTSTreeWindow DTSTreeWindow</definition>
+        <argsstring></argsstring>
+        <name>DTSTreeWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_d_t_s_tree_window_8h_1a40910b006b3cb725bb4b46991136f4d9" prot="public" static="no">
+        <type>class <ref refid="class_d_t_s_d_v_m_list_view" kindref="compound">DTSDVMListView</ref></type>
+        <definition>typedef class DTSDVMListView DTSDVMListView</definition>
+        <argsstring></argsstring>
+        <name>DTSDVMListView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="_d_t_s_tree_window_8h_1adfae3fffe0550113ce94a837b02d55f6" prot="public" static="no">
+        <type>class <ref refid="class_d_t_s_d_v_m_ctrl" kindref="compound">DTSDVMCtrl</ref></type>
+        <definition>typedef class DTSDVMCtrl DTSDVMCtrl</definition>
+        <argsstring></argsstring>
+        <name>DTSDVMCtrl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>Distrotech<sp/>Solutions<sp/>wxWidgets<sp/>Gui<sp/>Interface</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/><sp/>Copyright<sp/>(C)<sp/>2013<sp/>Gregory<sp/>Hinton<sp/>Nietsky<sp/>&lt;gregory@distrotech.co.za&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/><sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"></highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/><sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/><sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DTSTREEWINDOW_H</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DTSTREEWINDOW_H</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wx/dataview.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wx/splitter.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wx/notebook.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_d_t_s_panel_8h" kindref="compound">DTSPanel.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="_d_t_s_tree_window_8h_1a97e93e5bc35e2e15b56d1a1dfc055c82" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_d_t_s_tab_window" kindref="compound">DTSTabWindow</ref><sp/><ref refid="class_d_t_s_tab_window" kindref="compound">DTSTabWindow</ref>;</highlight></codeline>
+<codeline lineno="29" refid="_d_t_s_tree_window_8h_1a784aa6f77dc66f229fc77dbab4c1e0f0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_d_t_s_tree_window" kindref="compound">DTSTreeWindow</ref><sp/><ref refid="class_d_t_s_tree_window" kindref="compound">DTSTreeWindow</ref>;</highlight></codeline>
+<codeline lineno="30" refid="_d_t_s_tree_window_8h_1a40910b006b3cb725bb4b46991136f4d9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_d_t_s_d_v_m_list_view" kindref="compound">DTSDVMListView</ref><sp/><ref refid="class_d_t_s_d_v_m_list_view" kindref="compound">DTSDVMListView</ref>;</highlight></codeline>
+<codeline lineno="31" refid="_d_t_s_tree_window_8h_1adfae3fffe0550113ce94a837b02d55f6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_d_t_s_d_v_m_ctrl" kindref="compound">DTSDVMCtrl</ref><sp/><ref refid="class_d_t_s_d_v_m_ctrl" kindref="compound">DTSDVMCtrl</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="classtree__newnode" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtree__newnode" kindref="compound">tree_newnode</ref><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtree__newnode_1afb5a36f3d58e8c965a0f1056503f90c6" kindref="member">DTS_OJBREF_CLASS</ref>(<ref refid="classtree__newnode" kindref="compound">tree_newnode</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtree__newnode_1a79fd1a82bf40d2d922c1d297f1de3f29" kindref="member">tree_newnode</ref>(<ref refid="dtsgui_8h_1a91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref><sp/>tree,<sp/><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref><sp/>tn,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*xpath,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*node,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*vitem,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*tattr,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nid,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags,<sp/><ref refid="dtsgui_8h_1a52992645e33e4d92c8e68c3490239c75" kindref="member">dtsgui_xmltreenode_cb</ref><sp/>node_cb,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data,<sp/><ref refid="dtsgui_8h_1a8bf800adcd2392cf7722c3cf2f603f96" kindref="member">dtsgui_treeviewpanel_cb</ref><sp/>p_cb);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classtree__newnode_1a307fb2ff9afc18429af055850f3c01a8" kindref="member">handle_newtreenode_cb</ref>(</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/>p,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>event,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>handle_newtreenode(</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui,<sp/><ref refid="class_d_t_s_panel" kindref="compound">DTSPanel</ref><sp/>*dp);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dtsgui_8h_1a91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref><sp/>tv;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref><sp/>tn;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dtsgui_8h_1a52992645e33e4d92c8e68c3490239c75" kindref="member">dtsgui_xmltreenode_cb</ref><sp/>node_cb;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dtsgui_8h_1a8bf800adcd2392cf7722c3cf2f603f96" kindref="member">dtsgui_treeviewpanel_cb</ref><sp/>p_cb;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*xpath;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*node;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*vitem;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*tattr;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classtab__newpane" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtab__newpane" kindref="compound">tab_newpane</ref><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtab__newpane_1a2a9e328d10b6f803969edf7621df3681" kindref="member">DTS_OJBREF_CLASS</ref>(<ref refid="classtab__newpane" kindref="compound">tab_newpane</ref>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtab__newpane_1a66f664e9d0212bd0415953c72afbbacd" kindref="member">tab_newpane</ref>(<ref refid="class_d_t_s_tab_window" kindref="compound">DTSTabWindow</ref><sp/>*tabv,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*xpath,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*node,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*vitem,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*tattr,<sp/><ref refid="dtsgui_8h_1ab5e1fa276d48b20d35f4ef20110c39ed" kindref="member">dtsgui_tabpane_newdata_cb</ref><sp/>data_cb,<sp/><ref refid="dtsgui_8h_1ab65db729662a3b0d109158d2fb51f93c" kindref="member">dtsgui_tabpanel_cb</ref><sp/>cb,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*cdata,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_doc<sp/>*xmldoc,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classtab__newpane_1a8084796f246b29a21c9077aefa40fc18" kindref="member">handle_newtabpane_cb</ref>(</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref><sp/>p,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>event,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>handle_newtabpane(</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>dtsgui<sp/>*dtsgui,<sp/><ref refid="class_d_t_s_panel" kindref="compound">DTSPanel</ref><sp/>*dp);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*xmldoc;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_tab_window" kindref="compound">DTSTabWindow</ref><sp/>*tabv;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dtsgui_8h_1ab65db729662a3b0d109158d2fb51f93c" kindref="member">dtsgui_tabpanel_cb</ref><sp/>cb;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dtsgui_8h_1ab5e1fa276d48b20d35f4ef20110c39ed" kindref="member">dtsgui_tabpane_newdata_cb</ref><sp/>data_cb;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*xpath;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*node;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*vitem;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*tattr;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*cdata;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>last;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="classtreemenu" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtreemenu" kindref="compound">treemenu</ref><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtreemenu_1a17f25bef9a93d5916241b327fcdb6ebb" kindref="member">DTS_OJBREF_CLASS</ref>(<ref refid="classtreemenu" kindref="compound">treemenu</ref>);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classtreemenu_1a886f95a39537bdff27d990c6f0f7f9b8" kindref="member">treemenu</ref>();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classtreemenu_1ad011350ad24e3c8c9ec9816dd057ad34" kindref="member">Show</ref>(<ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>*w,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cont,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cnt,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>first,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>last,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>c_sort,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>del);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxMenu<sp/>*menu;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxMenuItem<sp/>*msort;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxMenuItem<sp/>*mup;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxMenuItem<sp/>*mdown;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxMenuItem<sp/>*mdelete;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="class_d_t_s_tree_window_event" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_d_t_s_tree_window_event" kindref="compound">DTSTreeWindowEvent</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>wxEvtHandler<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_tree_window_event_1ab42e89c20d43eb8b536c3601158b6f7a" kindref="member">DTSTreeWindowEvent</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*userdata<sp/>=<sp/>NULL,<sp/><ref refid="dtsgui_8h_1a32927ee58215cd957e5134af0f13303f" kindref="member">dtsgui_tree_cb</ref><sp/>tree_cb<sp/>=<sp/>NULL,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>=<sp/>NULL,<sp/><ref refid="class_d_t_s_tree_window" kindref="compound">DTSTreeWindow</ref><sp/>*win<sp/>=<sp/>NULL);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_tree_window_event_1a27f73ab3778ec2cf8ccfb6a9d0000a48" kindref="member">~DTSTreeWindowEvent</ref>();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tree_window_event_1ac0c3b48a9c6227d016dcffe7dc17a250" kindref="member">TreeEvent</ref>(wxDataViewEvent<sp/>&amp;event);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tree_window_event_1a7523413f0f0cbe621c630730b8b1713f" kindref="member">OnButton</ref>(wxCommandEvent<sp/>&amp;event);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tree_window_event_1ac629b258d688fee58bdccd9d165c076e" kindref="member">MenuEvent</ref>(wxCommandEvent<sp/>&amp;event);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tree_window_event_1a70409a54c0a1a20707105e67c2ebfd81" kindref="member">SplitterEvent</ref>(wxSplitterEvent&amp;<sp/>event);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tree_window_event_1a98ac8a3612545e1eaeb99fa9b5662048" kindref="member">TreeCallback</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxDataViewItem<sp/>item,<sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="dtsgui_8h_1a465794df2cb30731dfe34d3e7a4ed368" kindref="member">tree_cbtype</ref><sp/>cbtype);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SortParent(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxDataViewItem<sp/>parent,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>action);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dtsgui_8h_1a32927ee58215cd957e5134af0f13303f" kindref="member">dtsgui_tree_cb</ref><sp/>treecb;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_tree_window" kindref="compound">DTSTreeWindow</ref><sp/>*parent;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_d_v_m_list_view" kindref="compound">DTSDVMListView</ref><sp/>*vm;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_d_v_m_ctrl" kindref="compound">DTSDVMCtrl</ref><sp/>*tree;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxDataViewItem<sp/>a_item;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxDataViewItem<sp/>a_cont;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui_1a96324bdb4d6457ea0c815959092bee84" kindref="member">dtsgui</ref>;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="class_d_t_s_tree_window" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_d_t_s_tree_window" kindref="compound">DTSTreeWindow</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_object" kindref="compound">DTSObject</ref>,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>wxSplitterWindow<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_tree_window_1a1664835725e0e19ce3e4cced298fac39" kindref="member">DTSTreeWindow</ref>(<ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>*parent<sp/>=<sp/>NULL,<sp/><ref refid="class_d_t_s_frame" kindref="compound">DTSFrame</ref><sp/>*<ref refid="class_d_t_s_object_1a8ca3e7c6f66685caf07fa93fb5e14337" kindref="member">frame</ref><sp/>=<sp/>NULL,<sp/><ref refid="dtsgui_8h_1a32927ee58215cd957e5134af0f13303f" kindref="member">dtsgui_tree_cb</ref><sp/>tree_cb<sp/>=<sp/>NULL,<sp/>wxString<sp/>stat_msg<sp/>=<sp/>wxEmptyString,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>30,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*u_data<sp/>=<sp/>NULL,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_doc<sp/>*xd<sp/>=<sp/>NULL);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_tree_window_1ae76407acd39772ef597cbfa599b349af" kindref="member">~DTSTreeWindow</ref>();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tree_window_1a0df3486cd55349c3e7efe33f0304d76d" kindref="member">ShowRMenu</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cont,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cnt,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>first,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>last,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>c_sort,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>del);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tree_window_1a7c6941ddc90e0539d219561556e2e455" kindref="member">Show</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_d_v_m_ctrl" kindref="compound">DTSDVMCtrl</ref><sp/>*<ref refid="class_d_t_s_tree_window_1aae9e856659f3701452382e2cdcba8463" kindref="member">GetTreeCtrl</ref>();</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tree_window_1a45a0f5740984258b0d318104e7aef932" kindref="member">TreeResize</ref>();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tree_window_1acef5712c7e881b7fbca765d32530737d" kindref="member">SetTreePaneSize</ref>();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_panel" kindref="compound">DTSPanel</ref><sp/>*<ref refid="class_d_t_s_tree_window_1ad5c187ebc6203b19afae00ea5a42b78d" kindref="member">GetClientPane</ref>();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tree_window_1a2ed14675c69eebc630e82b65ddb2bb4a" kindref="member">SetPaneTitle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString<sp/>value);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tree_window_1a16e8b0b7de01806b70235b4eac89345e" kindref="member">Select</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxDataViewItem&amp;<sp/>item);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>*<ref refid="class_d_t_s_tree_window_1a491a55218197db09e099be00afe06850" kindref="member">SetWindow</ref>(<ref refid="class_d_t_s_panel" kindref="compound">DTSPanel</ref><sp/>*window,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxDataViewItem&amp;<sp/>item);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref><sp/><ref refid="class_d_t_s_tree_window_1a13f1a1a56891ccba3df14c857e09197e" kindref="member">GetActiveNode</ref>();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_scroll_panel" kindref="compound">DTSScrollPanel</ref><sp/>*<ref refid="class_d_t_s_tree_window_1a7457dc767b9cbc873e0e963644fa1fda" kindref="member">CreatePane</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString<sp/>&amp;name<sp/>=<sp/>wxEmptyString,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>butmask<sp/>=<sp/>0,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="class_d_t_s_object_1a783949e39ffd9e00aec15fa2b8cc12ed" kindref="member">userdata</ref><sp/>=<sp/>NULL,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_doc<sp/>*<ref refid="class_d_t_s_object_1a0e9b6e22629a9aa1fd5227cefaa25e6f" kindref="member">xmldoc</ref><sp/>=<sp/>NULL);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_scroll_panel" kindref="compound">DTSScrollPanel</ref><sp/>*<ref refid="class_d_t_s_tree_window_1a7457dc767b9cbc873e0e963644fa1fda" kindref="member">CreatePane</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxDataViewItem&amp;<sp/>node);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tree_window_1a3a7d1d1ce34864f71d5ffd154ca18210" kindref="member">UpdateNodeXML</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxDataViewItem&amp;<sp/>node,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*newname);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>wxScrolledWindow<sp/>*t_pane;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>*c_pane;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_d_v_m_ctrl" kindref="compound">DTSDVMCtrl</ref><sp/>*tree;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_d_v_m_list_view" kindref="compound">DTSDVMListView</ref><sp/>*vm;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_panel" kindref="compound">DTSPanel</ref><sp/>*a_window;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref><sp/>a_node;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtreemenu" kindref="compound">treemenu</ref><sp/>*rmenu;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_d_t_s_frame_8h_1ad396616e0ef9ed30f9053d7b48712ecd" kindref="member">wxBoxSizer</ref><sp/>*treesizer;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="class_d_t_s_tab_window_event" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_d_t_s_tab_window_event" kindref="compound">DTSTabWindowEvent</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>wxEvtHandler<sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_tab_window_event_1a3d14f7f7f09cc1d16fc2ddcb8dd36cb9" kindref="member">DTSTabWindowEvent</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*userdata<sp/>=<sp/>NULL,<sp/><ref refid="class_d_t_s_tab_window" kindref="compound">DTSTabWindow</ref><sp/>*win<sp/>=<sp/>NULL);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_tab_window_event_1a0df6bfbb94e538ba1ab10aea9915aa4c" kindref="member">~DTSTabWindowEvent</ref>();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tab_window_event_1a0ef3c51fe26036ac2cb0353940307eb6" kindref="member">PageChange</ref>(wxBookCtrlEvent<sp/>&amp;event);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tab_window_event_1a373ea755544153574d3d93018ebc2f9c" kindref="member">PageChanged</ref>(wxBookCtrlEvent<sp/>&amp;event);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tab_window_event_1af41c21b5d534856a22eb64ccf1281807" kindref="member">RightMenu</ref>(wxCommandEvent<sp/>&amp;event);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tab_window_event_1a0d4bd622b3c1ef90ca87cd6b052b4f76" kindref="member">OnButton</ref>(wxCommandEvent<sp/>&amp;event);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_tab_window" kindref="compound">DTSTabWindow</ref><sp/>*tw;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="class_d_t_s_tab_window" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_d_t_s_tab_window" kindref="compound">DTSTabWindow</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_object" kindref="compound">DTSObject</ref>,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>wxNotebook<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_tab_window_1af62011731508681950ec835f6293095b" kindref="member">DTSTabWindow</ref>(<ref refid="class_d_t_s_frame" kindref="compound">DTSFrame</ref><sp/>*<ref refid="class_d_t_s_object_1a8ca3e7c6f66685caf07fa93fb5e14337" kindref="member">frame</ref><sp/>=<sp/>NULL,<sp/>wxString<sp/>stat_msg<sp/>=<sp/>wxEmptyString,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*u_data<sp/>=<sp/>NULL);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_tab_window_1a2ce2a4e23f391cb621c80d92cd7ebea4" kindref="member">~DTSTabWindow</ref>();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_tab_page" kindref="compound">DTSTabPage</ref><sp/>*<ref refid="class_d_t_s_tab_window_1aa37d1c10f98b08a6c7b265ecd77e3f1f" kindref="member">CreateTab</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString<sp/>&amp;name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>butmask<sp/>=<sp/>0,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="class_d_t_s_object_1a783949e39ffd9e00aec15fa2b8cc12ed" kindref="member">userdata</ref><sp/>=<sp/>NULL,<sp/><ref refid="dtsgui_8h_1ab65db729662a3b0d109158d2fb51f93c" kindref="member">dtsgui_tabpanel_cb</ref><sp/>cb<sp/>=<sp/>NULL,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*cdata<sp/>=<sp/>NULL,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_doc<sp/>*<ref refid="class_d_t_s_object_1a0e9b6e22629a9aa1fd5227cefaa25e6f" kindref="member">xmldoc</ref><sp/>=<sp/>NULL,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>addpage<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_tab_page" kindref="compound">DTSTabPage</ref><sp/>*<ref refid="class_d_t_s_tab_window_1aa37d1c10f98b08a6c7b265ecd77e3f1f" kindref="member">CreateTab</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString<sp/>&amp;name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>butmask,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="class_d_t_s_object_1a783949e39ffd9e00aec15fa2b8cc12ed" kindref="member">userdata</ref>,<sp/><ref refid="dtsgui_8h_1ab65db729662a3b0d109158d2fb51f93c" kindref="member">dtsgui_tabpanel_cb</ref><sp/>cb,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*cdata,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_doc<sp/>*<ref refid="class_d_t_s_object_1a0e9b6e22629a9aa1fd5227cefaa25e6f" kindref="member">xmldoc</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>undo);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tab_window_1a9906beec5aeff80face128b7631f5a8b" kindref="member">InsertTab</ref>(<ref refid="class_d_t_s_tab_page" kindref="compound">DTSTabPage</ref><sp/>*<ref refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" kindref="member">panel</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>show<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>undo<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tab_window_1aa52e98a59b0ad81e28f5463be5e85051" kindref="member">Undo</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pg);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_tab_window_1a7e438e77899502fc316577e972d9ef28" kindref="member">Show</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>DTSTREEWINDOW_H</highlight></codeline>
+    </programlisting>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h"/>
+  </compounddef>
+</doxygen>

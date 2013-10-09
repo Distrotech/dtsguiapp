@@ -1,0 +1,358 @@
+.TH "C API Tree View Interface" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C API Tree View Interface \- 
+.PP
+C API for managing tree view panels\&.
+.PP
+Resources controlling and manipulating tree view in the C API\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_nodesetxml\fP (\fBdtsgui_treeview\fP tree, \fBdtsgui_treenode\fP node, const char *newname)"
+.br
+.RI "\fIUpdate the XML Node with a new name\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBDTS_C_API::dtsgui_treepane\fP (\fBdtsgui_treeview\fP tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc)"
+.br
+.RI "\fICreate a tree view panel with information\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBDTS_C_API::dtsgui_treepane_default\fP (\fBdtsgui_treeview\fP tv, \fBdtsgui_treenode\fP node)"
+.br
+.RI "\fICreate a tree view panel with information\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_treenode\fP \fBDTS_C_API::dtsgui_treecont\fP (\fBdtsgui_treeview\fP tree, \fBdtsgui_treenode\fP node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, \fBdtsgui_treeviewpanel_cb\fP p_cb, void *data)"
+.br
+.RI "\fICreate a container in the tree view\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_treenode\fP \fBDTS_C_API::dtsgui_treeitem\fP (\fBdtsgui_treeview\fP tree, \fBdtsgui_treenode\fP node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, \fBdtsgui_treeviewpanel_cb\fP p_cb, void *data)"
+.br
+.RI "\fICreate a item in a container\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_newxmltreenode\fP (\fBdtsgui_treeview\fP tree, \fBdtsgui_pane\fP p, \fBdtsgui_treenode\fP tn, const char *xpath, const char *node, const char *vitem, const char *tattr, int nid, int flags, \fBdtsgui_xmltreenode_cb\fP node_cb, void *data, \fBdtsgui_treeviewpanel_cb\fP p_cb)"
+.br
+.RI "\fIHelper function to handle 'Adding' a new node from a existing node\&. \fP"
+.ti -1c
+.RI "int \fBDTS_C_API::dtsgui_treenodeid\fP (\fBdtsgui_treenode\fP tn)"
+.br
+.RI "\fIGet the node id of a tree node\&. \fP"
+.ti -1c
+.RI "const char * \fBDTS_C_API::dtsgui_treenodeparent\fP (\fBdtsgui_treenode\fP tn)"
+.br
+.RI "\fIGet the name of the nodes parent\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_treenodesetxml\fP (\fBdtsgui_treenode\fP tn, struct xml_node *xn, const char *tattr)"
+.br
+.RI "\fIAdd a XML node to the tree node\&. \fP"
+.ti -1c
+.RI "void * \fBDTS_C_API::dtsgui_treenodegetdata\fP (\fBdtsgui_treenode\fP tn)"
+.br
+.RI "\fIGet reference for the user data of node\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+C API for managing tree view panels\&.
+.PP
+Resources controlling and manipulating tree view in the C API\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "void DTS_C_API::dtsgui_newxmltreenode (\fBdtsgui_treeview\fPtree, \fBdtsgui_pane\fPp, \fBdtsgui_treenode\fPtn, const char *xpath, const char *node, const char *vitem, const char *tattr, intnid, intflags, \fBdtsgui_xmltreenode_cb\fPnode_cb, void *data, \fBdtsgui_treeviewpanel_cb\fPp_cb)"
+
+.PP
+Helper function to handle 'Adding' a new node from a existing node\&. This implements the concept of the New button a new node will be created from the data filled in on the pane this callback is attached too\&. A new XML node is created and the panel created from this node\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBtree_newnode_flags\fP
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+this callback helper is rather complex\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItree\fP Tree view the new panel will be added too\&. 
+.br
+\fIp\fP The panel this callback is attached too\&. 
+.br
+\fIxpath\fP the path of the new node\&. 
+.br
+\fInode\fP the name of the XML node to create in the xpath\&. 
+.br
+\fIvitem\fP the item in the panel to be used to create the value of the new node\&. 
+.br
+\fItattr\fP the attribute to be used too create the title in the new pane\&. 
+.br
+\fInid\fP Node id for newly created node\&. 
+.br
+\fIflags\fP Option flags combined from tree_newnode_flags\&. 
+.br
+\fInode_cb\fP Callback called to configure the node\&. 
+.br
+\fIdata\fP Referenced Object passed to the callbacks\&. 
+.br
+\fIp_cb\fP Callback called to configure the panel when it is selected\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Nothing is returned the callback is registered on the panel\&. 
+.RE
+.PP
+
+.PP
+Definition at line 739 of file wrapper\&.cpp\&.
+.SS "void DTS_C_API::dtsgui_nodesetxml (\fBdtsgui_treeview\fPtree, \fBdtsgui_treenode\fPnode, const char *newname)"
+
+.PP
+Update the XML Node with a new name\&. This helper function will update the node's XML after a edit event\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSTreeWindow::UpdateNodeXML()\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItree\fP Treeview node is part of\&. 
+.br
+\fInode\fP TreeNode to update\&. 
+.br
+\fInewname\fP Name to update XML node with\&. 
+.RE
+.PP
+
+.PP
+Definition at line 492 of file wrapper\&.cpp\&.
+.SS "\fBdtsgui_treenode\fP DTS_C_API::dtsgui_treecont (\fBdtsgui_treeview\fPtree, \fBdtsgui_treenode\fPnode, const char *title, intcan_edit, intcan_sort, intcan_del, intnodeid, \fBdtsgui_treeviewpanel_cb\fPp_cb, void *data)"
+
+.PP
+Create a container in the tree view\&. Create and insert a new folder/container in the tree view with properties / call back\&. A panel will be created and supplied to the callback too implement on selection\&.
+.PP
+\fBNote:\fP
+.RS 4
+The root node is NULL this is the initial container\&.
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+DTSTreeWindow::AppendContainer 
+.PP
+\fBdtsgui_treeviewpanel_cb\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItree\fP The tree view to add the node too\&. 
+.br
+\fInode\fP The parent node or NULL to create root node\&. 
+.br
+\fItitle\fP The label shown on the tree\&. 
+.br
+\fIcan_edit\fP Allow editing of this node the XML node will be updated\&. 
+.br
+\fIcan_del\fP Not yet implemented for containers but will allow right click menu to delete\&. 
+.br
+\fInodeid\fP A value passed to the callback as convinence can be any value -1 will cause a blank panel\&. 
+.br
+\fIp_cb\fP Callback to pass panel for configuration on selection of the item\&. 
+.br
+\fIdata\fP Referenced object passed too callbacks\&. 
+.RE
+.PP
+
+.PP
+Definition at line 686 of file wrapper\&.cpp\&.
+.SS "\fBdtsgui_treenode\fP DTS_C_API::dtsgui_treeitem (\fBdtsgui_treeview\fPtree, \fBdtsgui_treenode\fPnode, const char *title, intcan_edit, intcan_sort, intcan_del, intnodeid, \fBdtsgui_treeviewpanel_cb\fPp_cb, void *data)"
+
+.PP
+Create a item in a container\&. Create and insert a new item in the tree view in the node specified with properties / call back\&. A panel will be created and supplied to the callback too implement on selection\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+DTSTreeWindow::AppendItem 
+.PP
+\fBdtsgui_treeviewpanel_cb\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItree\fP The tree view to add the node too\&. 
+.br
+\fInode\fP The parent node or NULL to create root node\&. 
+.br
+\fItitle\fP The label shown on the tree\&. 
+.br
+\fIcan_edit\fP Allow editing of this node the XML node will be updated\&. 
+.br
+\fIcan_del\fP Allow right click menu to delete\&. 
+.br
+\fInodeid\fP A value passed to the callback as convinence can be any value -1 will cause a blank panel\&. 
+.br
+\fIp_cb\fP Callback to pass panel for configuration on selection of the item\&. 
+.br
+\fIdata\fP Referenced object passed too callbacks\&. 
+.RE
+.PP
+
+.PP
+Definition at line 710 of file wrapper\&.cpp\&.
+.SS "void* DTS_C_API::dtsgui_treenodegetdata (\fBdtsgui_treenode\fPtn)"
+
+.PP
+Get reference for the user data of node\&. \fBSee Also:\fP
+.RS 4
+\fBDTSDVMListStore::GetUserData()\fP 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+This needs to be unreferenced\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItn\fP Tree node\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Reference to user data 
+.RE
+.PP
+
+.PP
+Definition at line 788 of file wrapper\&.cpp\&.
+.SS "int DTS_C_API::dtsgui_treenodeid (\fBdtsgui_treenode\fPtn)"
+
+.PP
+Get the node id of a tree node\&. \fBSee Also:\fP
+.RS 4
+\fBDTSDVMListStore::GetNodeID()\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItn\fP Tree Node to get the node of\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the user defined tree node ID 
+.RE
+.PP
+
+.PP
+Definition at line 752 of file wrapper\&.cpp\&.
+.SS "const char* DTS_C_API::dtsgui_treenodeparent (\fBdtsgui_treenode\fPtn)"
+
+.PP
+Get the name of the nodes parent\&. \fBSee Also:\fP
+.RS 4
+\fBDTSDVMListStore::GetParentTitle()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItn\fP Tree node 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Name og the nodes parentI 
+.RE
+.PP
+
+.PP
+Definition at line 762 of file wrapper\&.cpp\&.
+.SS "void DTS_C_API::dtsgui_treenodesetxml (\fBdtsgui_treenode\fPtn, struct xml_node *xn, const char *tattr)"
+
+.PP
+Add a XML node to the tree node\&. \fBSee Also:\fP
+.RS 4
+\fBDTSDVMListStore::SetXMLData\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIxn\fP XML node\&. 
+.br
+\fItattr\fP Attribute in the XN that represents the title NULL if the value is the title\&. 
+.RE
+.PP
+
+.PP
+Definition at line 772 of file wrapper\&.cpp\&.
+.SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_treepane (\fBdtsgui_treeview\fPtv, const char *name, intbutmask, void *userdata, struct xml_doc *xmldoc)"
+
+.PP
+Create a tree view panel with information\&. This will seldom be needed as panels are created and supplied in callbacks\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSTreeWindow::CreatePane()\fP 
+.PP
+\fBpanel_buttons\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItv\fP Tree view\&. 
+.br
+\fIname\fP Title placed on the panel top/center 
+.br
+\fIbutmask\fP A mask of buttons to be placed on the panel\&. 
+.br
+\fIuserdata\fP Referenced object available in event callbacks\&. 
+.br
+\fIxmldoc\fP XML doc reference used for updating XML elements\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+New Tree Pane\&. 
+.RE
+.PP
+
+.PP
+Definition at line 642 of file wrapper\&.cpp\&.
+.SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_treepane_default (\fBdtsgui_treeview\fPtv, \fBdtsgui_treenode\fPnode)"
+
+.PP
+Create a tree view panel with information\&. Create a pane from information obtained from node\&. Name of node is used for the panel title and a Accept/Undo button\&.
+.PP
+\fBNote:\fP
+.RS 4
+if node id is -1 no name/buttons are added the page is blank\&.
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSTreeWindow::CreatePane()\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItv\fP Tree view\&. 
+.br
+\fInode\fP used as template for panel\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+New Tree Pane\&. 
+.RE
+.PP
+
+.PP
+Definition at line 661 of file wrapper\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

@@ -1,0 +1,727 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="group___c-_a_p_i-_panel" kind="group">
+    <compoundname>C-API-Panel</compoundname>
+    <title>C API Panel Interface</title>
+    <innergroup refid="group___c-_a_p_i-_panel-_tree">C API Tree View Interface</innergroup>
+    <innergroup refid="group___c-_a_p_i-_panel-_tab">C API Tab View Interface</innergroup>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1gac763bff39863668014931022b469d836" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane DTS_C_API::dtsgui_panel</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *name, const char *title, int butmask, enum panel_type type, void *userdata)</argsstring>
+        <name>dtsgui_panel</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>butmask</declname>
+        </param>
+        <param>
+          <type>enum <ref refid="dtsgui_8h_1a9275874ac61d3750aa677a36da714373" kindref="member">panel_type</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+        </param>
+        <briefdescription>
+<para>Create a pannel to be displayed. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is able to create and return various panels excluding Tab/Tree view panels.</para><para><simplesect kind="see"><para><ref refid="class_d_t_s_frame_1a3b1105fb9c8e3b6909994e7f993eee20" kindref="member">DTSFrame::CreatePane()</ref> </para><simplesectsep/><para><ref refid="dtsgui_8h_1a9275874ac61d3750aa677a36da714373" kindref="member">panel_type</ref> </para><simplesectsep/><para><ref refid="dtsgui_8h_1a5082bae7f0b5d2b7d715e40450f302ec" kindref="member">panel_buttons</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Text used in the status bar when panel is displayed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Title set in the window Top/Middle. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>butmask</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Buttons to be displayed values of panel_buttons or&apos;d together. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of panel to create [Excludes Tab/Tree Views] </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Referenced Obect passed stored in panel and available in event handlers. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Newly created panel. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="415" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="415" bodyend="418"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1gafb8efe017917a372826f7ddedb0e8bba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane DTS_C_API::dtsgui_textpane</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, const char *buf)</argsstring>
+        <name>dtsgui_textpane</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>buf</declname>
+        </param>
+        <briefdescription>
+<para>Create a text display box with the supplied buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para>This creates a panel that only contains the supplied buffer Scrollbars are used as required.</para><para>This window is read only.</para><para><simplesect kind="see"><para><ref refid="class_d_t_s_frame_1a036e076a53c67d43204aa636ab26328d" kindref="member">DTSFrame::TextPanel()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Text displayed on the status bar. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>buf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text displayed in the pane. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New text panel. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="436" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="436" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1gaa92cb9c6006aaf320e784f04500c3b25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+        <definition>dtsgui_treeview DTS_C_API::dtsgui_treewindow</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, dtsgui_tree_cb tree_cb, void *userdata, struct xml_doc *xmldoc)</argsstring>
+        <name>dtsgui_treewindow</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a32927ee58215cd957e5134af0f13303f" kindref="member">dtsgui_tree_cb</ref></type>
+          <declname>tree_cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+        </param>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xmldoc</declname>
+        </param>
+        <briefdescription>
+<para>Create a treepane view. </para>        </briefdescription>
+        <detaileddescription>
+<para>Create a split window with a tree control on the left and display area on right.</para><para><simplesect kind="see"><para><ref refid="class_d_t_s_tree_window" kindref="compound">DTSTreeWindow</ref> </para><simplesectsep/><para><ref refid="dtsgui_8h_1a32927ee58215cd957e5134af0f13303f" kindref="member">dtsgui_tree_cb</ref> </para><simplesectsep/><para><ref refid="dtsgui_8h_1a465794df2cb30731dfe34d3e7a4ed368" kindref="member">tree_cbtype</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Aplication data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Text displayed on the status bar. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tree_cb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Callback called when a event of tree_cbtype is handled. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Referenced object made available in callback. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xmldoc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional XML doc struct available in callback&apos;s and for managing XML nodes/panels. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="458" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="458" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1ga05cf1592d301351aa838bd23c710f3bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a29c463cda54f69beb273c77e1aa7ccef" kindref="member">dtsgui_tabview</ref></type>
+        <definition>dtsgui_tabview DTS_C_API::dtsgui_tabwindow</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>dtsgui_tabwindow</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Create a tab view panel. </para>        </briefdescription>
+        <detaileddescription>
+<para>Create a panel that will place pages as tabs along the top of the display. Clicking on the tab opens the panel in the display area.</para><para><simplesect kind="see"><para><ref refid="class_d_t_s_tab_window" kindref="compound">DTSTabWindow</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Text displayed on status bar. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Referenced object made available in the event callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Tab window. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="476" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="476" bodyend="479"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1gad91055a12542c30dab4aacbd0761c785" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTS_C_API::dtsgui_panel_setxml</definition>
+        <argsstring>(dtsgui_pane pane, struct xml_doc *xmldoc)</argsstring>
+        <name>dtsgui_panel_setxml</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pane</declname>
+        </param>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xmldoc</declname>
+        </param>
+        <briefdescription>
+<para>Pass a reference to a XML Doc Structure to the panel. </para>        </briefdescription>
+        <detaileddescription>
+<para>Assign a reference to a XML Doc to the panel for use latter and with XML controls.</para><para><simplesect kind="see"><para><ref refid="class_d_t_s_object_1a1ae63425d8e5770a8b0717f37fd695b2" kindref="member">DTSObject::SetXMLDoc()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to be assigned the ref. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xmldoc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Document to be assigned. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="507" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="507" bodyend="510"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1ga75c6083aa363922fdf1fd19767eceeea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct xml_doc *</type>
+        <definition>struct xml_doc* DTS_C_API::dtsgui_panelxml</definition>
+        <argsstring>(dtsgui_pane pane)</argsstring>
+        <name>dtsgui_panelxml</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pane</declname>
+        </param>
+        <briefdescription>
+<para>Get reference to previously allocated XML Doc. </para>        </briefdescription>
+        <detaileddescription>
+<para>Obtain a new reference to the xmldoc stored in the panel.</para><para><simplesect kind="note"><para>This must be un refferenced.</para></simplesect>
+<simplesect kind="see"><para><ref refid="class_d_t_s_object_1ae177d1cfd85be759810b252b98f2050d" kindref="member">DTSObject::GetXMLDoc()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to obtain the XML Info. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to XML Doc. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="524" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="524" bodyend="527"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1ga71826ffc718e3dc219e57befdb6f0d8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTS_C_API::dtsgui_delpane</definition>
+        <argsstring>(dtsgui_pane pane)</argsstring>
+        <name>dtsgui_delpane</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pane</declname>
+        </param>
+        <briefdescription>
+<para>Delete a panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This is unlikly too be needed as the GUI manages panels.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel To Delete. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="536" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="536" bodyend="538"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1gaa85445ee6c9a2c24d76824bb67cc2ab2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTS_C_API::dtsgui_setevcallback</definition>
+        <argsstring>(dtsgui_pane pane, event_callback evcb, void *data)</argsstring>
+        <name>dtsgui_setevcallback</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pane</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1acfd3355668ba382f87a9aab4ea2c4e9c" kindref="member">event_callback</ref></type>
+          <declname>evcb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Set event callback function for panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_d_t_s_panel_1ac18de08077529d488ea329a72ee14d98" kindref="member">DTSPanel::SetEventCallback()</ref> </para><simplesectsep/><para><ref refid="dtsgui_8h_1acfd3355668ba382f87a9aab4ea2c4e9c" kindref="member">event_callback</ref></para></simplesect>
+When a event happens the callback is called with the userdata to allow actioning the event.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to attach callback too. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>evcb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event callback. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data supplied in the callback (panel userdata is available in the panel). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="806" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="806" bodyend="809"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1ga28e2dbe2171ea35e32fa615aca55b934" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTS_C_API::dtsgui_xmlpanel_update</definition>
+        <argsstring>(dtsgui_pane pane)</argsstring>
+        <name>dtsgui_xmlpanel_update</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pane</declname>
+        </param>
+        <briefdescription>
+<para>update all XML elements in the panel. </para>        </briefdescription>
+        <detaileddescription>
+<para>All elements on the panel that are XML will have there nodes updated Based on the value of the elements.</para><para><simplesect kind="see"><para><ref refid="class_d_t_s_panel_1adc5131960a24dfa65adba935a1be0f79" kindref="member">DTSPanel::Update_XML()</ref> </para><simplesectsep/><para><ref refid="group___c-_a_p_i-_panel_1ga4d0d6742f61c91fb590b3728a7229150" kindref="member">dtsgui_pane2post</ref> </para><simplesectsep/><para><ref refid="class_d_t_s_panel_1a7ce048cedd00ee1f1d9ea1c1fd504a6f" kindref="member">DTSPanel::Panel2Post()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to update. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="823" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="823" bodyend="826"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1ga4d0d6742f61c91fb590b3728a7229150" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct curl_post *</type>
+        <definition>struct curl_post* DTS_C_API::dtsgui_pane2post</definition>
+        <argsstring>(dtsgui_pane p)</argsstring>
+        <name>dtsgui_pane2post</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Prepare a HTTP POST structure from panel. </para>        </briefdescription>
+        <detaileddescription>
+<para>Create a HTTP Post structure from the values and names Of elements on a panel this can then be used with curl_post to post to a URL.</para><para><simplesect kind="see"><para><ref refid="class_d_t_s_panel_1adc5131960a24dfa65adba935a1be0f79" kindref="member">DTSPanel::Update_XML()</ref> </para><simplesectsep/><para>dtsgui_xmlpane_update() </para><simplesectsep/><para><ref refid="class_d_t_s_panel_1a7ce048cedd00ee1f1d9ea1c1fd504a6f" kindref="member">DTSPanel::Panel2Post()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to create from. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A CURL HTTP POST Structure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="841" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="841" bodyend="844"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1ga6728901f40e67a95bc46150e1cf3c450" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* DTS_C_API::dtsgui_paneldata</definition>
+        <argsstring>(dtsgui_pane pane)</argsstring>
+        <name>dtsgui_paneldata</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pane</declname>
+        </param>
+        <briefdescription>
+<para>Obtain a reference to the userdata of panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_d_t_s_object_1a5d32407be34aa68ea2b038ede768d50e" kindref="member">DTSObject::GetUserData()</ref>.</para></simplesect>
+<simplesect kind="note"><para>this must be un refferenced.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to obtain reference from. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to userdata. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="856" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="856" bodyend="859"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1ga3f8f0e22fd2ecdcb915ec06851d12e3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTS_C_API::dtsgui_settitle</definition>
+        <argsstring>(dtsgui_pane pane, const char *title)</argsstring>
+        <name>dtsgui_settitle</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pane</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <briefdescription>
+<para>Update the title on the panel if it exists. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_d_t_s_panel_1a58daeb533cce1e4bdac57118cce7c7ea" kindref="member">DTSPanel::SetTitle()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to update title. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New title to place on panel. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="866" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="866" bodyend="869"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1gad561196144c72953e31b83aff17054e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTS_C_API::dtsgui_setstatus</definition>
+        <argsstring>(dtsgui_pane pane, const char *status)</argsstring>
+        <name>dtsgui_setstatus</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pane</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Update the status bar message of panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_d_t_s_panel_1a03be174c3cb033ba74b6abce543347e3" kindref="member">DTSPanel::SetStatus()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to update title. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>status</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New status bar message. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="877" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="877" bodyend="880"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1gab2f995a29a5b461ac67c7d9aa7091686" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTS_C_API::dtsgui_configcallback</definition>
+        <argsstring>(dtsgui_pane pane, dtsgui_configcb cb, void *data)</argsstring>
+        <name>dtsgui_configcallback</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pane</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c-_a_p_i_1gad3b80490c86b8275c47382588f2ecfd4" kindref="member">dtsgui_configcb</ref></type>
+          <declname>cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Set config callback function for panel (UNUSED). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_d_t_s_panel_1acdb57729ace5f3c0fc76cce4d41c36cc" kindref="member">DTSPanel::SetConfigCallback()</ref> </para><simplesectsep/><para><ref refid="group___c-_a_p_i_1gad3b80490c86b8275c47382588f2ecfd4" kindref="member">dtsgui_configcb</ref></para></simplesect>
+<simplesect kind="note"><para>Not yet implemted who knows maybe it will maybe it wont.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to attach callback too. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Config callback. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data supplied in the callback (panel userdata is available in the panel). </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="894" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="894" bodyend="897"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1ga9c1222d2fe8fa5066a2c55e4b71c2cac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct xml_node *</type>
+        <definition>struct xml_node* DTS_C_API::dtsgui_panetoxml</definition>
+        <argsstring>(dtsgui_pane p, const char *xpath, const char *node, const char *nodeval, const char *attrkey)</argsstring>
+        <name>dtsgui_panetoxml</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>xpath</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>nodeval</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>attrkey</declname>
+        </param>
+        <briefdescription>
+<para>Create a node from the elements on the panel. </para>        </briefdescription>
+        <detaileddescription>
+<para>Using the path information a node is created and elements added as attributes.</para><para><simplesect kind="see"><para><ref refid="class_d_t_s_panel_1ad28f5ed6bd19e9d685a18df8bf568f92" kindref="member">DTSPanel::Panel2XML()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to create nodes from. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xpath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Base path to create the nodes in. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the node to add. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nodeval</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the element to use as the value of node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>attrkey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Use this item to set the initial attribute and use as key. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New XML Node. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="913" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="913" bodyend="916"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel_1ga3f904089ceb734323477f2b3dbac4a41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTS_C_API::dtsgui_rundialog</definition>
+        <argsstring>(dtsgui_pane pane, event_callback evcb, void *data)</argsstring>
+        <name>dtsgui_rundialog</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pane</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1acfd3355668ba382f87a9aab4ea2c4e9c" kindref="member">event_callback</ref></type>
+          <declname>evcb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Execute a dialog panel. Pop up and run a dialog pane the result will be obtained int the event handler. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_d_t_s_dialog_1af1e6be7e08913149d128839b7e535cd0" kindref="member">DTSDialog::RunDialog()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dialog panel to execute. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>evcb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event callback to handle the results in. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data passed to the event handler. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="925" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="925" bodyend="928"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>C API Panel Management</para><para>Resources controlling and manipulating panels in the C API. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

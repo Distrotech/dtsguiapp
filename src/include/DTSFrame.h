@@ -37,6 +37,7 @@ class DTSFrame: public wxFrame {
 		void SetAbout(wxMenu *m, const char *a_text);
 		bool Confirm(wxString text);
 		void Alert(wxString text);
+		class basic_auth *Passwd(const char *user, const char *passwd);
 		const char *FileDialog(const char *title, const char *path, const char *name, const char *filter, long style);
 		/*progress*/
 		int StartProgress(const wxString &text, int maxval, int quit);
@@ -61,6 +62,7 @@ class DTSFrame: public wxFrame {
 		void OnAbout(wxCommandEvent &event);
 	private:
 		void OnDTSEvent(wxCommandEvent &event);
+		static int pwevent(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data);
 		wxBoxSizer *sizer;
 		wxWindow *blank;
 		wxWindow *a_window;

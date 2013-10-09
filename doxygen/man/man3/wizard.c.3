@@ -1,0 +1,135 @@
+.TH "app/wizard.c" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+app/wizard.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <limits\&.h>\fP
+.br
+\fC#include 'dtsgui\&.h'\fP
+.br
+\fC#include 'private\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBwizz_custinfo\fP (\fBdtsgui_pane\fP *pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_netinfo\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_dyndns\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_dnsinfo\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_x509\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_samba\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_network\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_exten\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_location\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_acd\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_trunk\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_voip\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBnewsys_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBeditsys_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBreconfig_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBdtsgui_pane\fP editsys_wizard (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 454 of file wizard\&.c\&.
+.SS "\fBdtsgui_pane\fP newsys_wizard (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 429 of file wizard\&.c\&.
+.SS "\fBdtsgui_pane\fP reconfig_wizard (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 474 of file wizard\&.c\&.
+.SS "void wizz_acd (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 310 of file wizard\&.c\&.
+.SS "void wizz_custinfo (\fBdtsgui_pane\fP *pg)"
+
+.PP
+Definition at line 157 of file wizard\&.c\&.
+.SS "void wizz_dnsinfo (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 183 of file wizard\&.c\&.
+.SS "void wizz_dyndns (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 177 of file wizard\&.c\&.
+.SS "void wizz_exten (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 226 of file wizard\&.c\&.
+.SS "void wizz_location (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 275 of file wizard\&.c\&.
+.SS "void wizz_netinfo (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 168 of file wizard\&.c\&.
+.SS "void wizz_network (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 210 of file wizard\&.c\&.
+.SS "void wizz_samba (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 202 of file wizard\&.c\&.
+.SS "void wizz_trunk (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 319 of file wizard\&.c\&.
+.SS "void wizz_voip (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 341 of file wizard\&.c\&.
+.SS "void wizz_x509 (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 192 of file wizard\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

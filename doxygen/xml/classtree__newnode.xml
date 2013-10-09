@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="classtree__newnode" kind="class" prot="public">
+    <compoundname>tree_newnode</compoundname>
+    <includes refid="_d_t_s_tree_window_8h" local="no">DTSTreeWindow.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtree__newnode_1a0f8198927692046e5763c7e126ea101c" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* tree_newnode::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="41" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtree__newnode_1a6d2aeccaa71eac80144dfb2353b51adc" prot="private" static="no" mutable="no">
+        <type><ref refid="dtsgui_8h_1a91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+        <definition>dtsgui_treeview tree_newnode::tv</definition>
+        <argsstring></argsstring>
+        <name>tv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="42" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtree__newnode_1aa910ec0ca8be88d01c6595984213b816" prot="private" static="no" mutable="no">
+        <type><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+        <definition>dtsgui_treenode tree_newnode::tn</definition>
+        <argsstring></argsstring>
+        <name>tn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="43" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtree__newnode_1acd8405c3d6f344a21ecdadcbf3db14a6" prot="private" static="no" mutable="no">
+        <type><ref refid="dtsgui_8h_1a52992645e33e4d92c8e68c3490239c75" kindref="member">dtsgui_xmltreenode_cb</ref></type>
+        <definition>dtsgui_xmltreenode_cb tree_newnode::node_cb</definition>
+        <argsstring></argsstring>
+        <name>node_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="44" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtree__newnode_1ad29bf242b359fc093c474559e6f1be21" prot="private" static="no" mutable="no">
+        <type><ref refid="dtsgui_8h_1a8bf800adcd2392cf7722c3cf2f603f96" kindref="member">dtsgui_treeviewpanel_cb</ref></type>
+        <definition>dtsgui_treeviewpanel_cb tree_newnode::p_cb</definition>
+        <argsstring></argsstring>
+        <name>p_cb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="45" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtree__newnode_1a47004081f2ee1240bf613990048ffeb4" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* tree_newnode::xpath</definition>
+        <argsstring></argsstring>
+        <name>xpath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="46" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtree__newnode_1a50e4845fff0149464cfb8ffe105b061c" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* tree_newnode::node</definition>
+        <argsstring></argsstring>
+        <name>node</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="47" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtree__newnode_1abeb52a93336763f855d2136268fb13a6" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* tree_newnode::vitem</definition>
+        <argsstring></argsstring>
+        <name>vitem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="48" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtree__newnode_1af024b549dee406efb459720399e3ba46" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* tree_newnode::tattr</definition>
+        <argsstring></argsstring>
+        <name>tattr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="49" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtree__newnode_1a0fae844863614c2f9e26a2534373a9b7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tree_newnode::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="50" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtree__newnode_1a71eae2a3f8fbcb7e2c4245ae0303d171" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int tree_newnode::flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="51" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtree__newnode_1afb5a36f3d58e8c965a0f1056503f90c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tree_newnode::DTS_OJBREF_CLASS</definition>
+        <argsstring>(tree_newnode)</argsstring>
+        <name>DTS_OJBREF_CLASS</name>
+        <param>
+          <type><ref refid="classtree__newnode" kindref="compound">tree_newnode</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classtree__newnode_1a79fd1a82bf40d2d922c1d297f1de3f29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tree_newnode::tree_newnode</definition>
+        <argsstring>(dtsgui_treeview tree, dtsgui_treenode tn, const char *xpath, const char *node, const char *vitem, const char *tattr, int nid, int flags, dtsgui_xmltreenode_cb node_cb, void *data, dtsgui_treeviewpanel_cb p_cb)</argsstring>
+        <name>tree_newnode</name>
+        <param>
+          <type><ref refid="dtsgui_8h_1a91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>tree</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>tn</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>xpath</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>vitem</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>tattr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nid</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a52992645e33e4d92c8e68c3490239c75" kindref="member">dtsgui_xmltreenode_cb</ref></type>
+          <declname>node_cb</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a8bf800adcd2392cf7722c3cf2f603f96" kindref="member">dtsgui_treeviewpanel_cb</ref></type>
+          <declname>p_cb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="37" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="52" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtree__newnode_1a307fb2ff9afc18429af055850f3c01a8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tree_newnode::handle_newtreenode_cb</definition>
+        <argsstring>(class dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data)</argsstring>
+        <name>handle_newtreenode_cb</name>
+        <param>
+          <type>class <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="38" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="71" bodyend="87"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classtree__newnode_1a64abbefc5f204cfbf9b7ad0bd7e035cf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int tree_newnode::handle_newtreenode</definition>
+        <argsstring>(class dtsgui *dtsgui, DTSPanel *dp)</argsstring>
+        <name>handle_newtreenode</name>
+        <param>
+          <type>class <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type><ref refid="class_d_t_s_panel" kindref="compound">DTSPanel</ref> *</type>
+          <declname>dp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="40" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="89" bodyend="129"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="33" bodyend="52"/>
+    <listofallmembers>
+      <member refid="classtree__newnode_1a0f8198927692046e5763c7e126ea101c" prot="private" virt="non-virtual"><scope>tree_newnode</scope><name>data</name></member>
+      <member refid="classtree__newnode_1afb5a36f3d58e8c965a0f1056503f90c6" prot="public" virt="non-virtual"><scope>tree_newnode</scope><name>DTS_OJBREF_CLASS</name></member>
+      <member refid="classtree__newnode_1a71eae2a3f8fbcb7e2c4245ae0303d171" prot="private" virt="non-virtual"><scope>tree_newnode</scope><name>flags</name></member>
+      <member refid="classtree__newnode_1a64abbefc5f204cfbf9b7ad0bd7e035cf" prot="private" virt="non-virtual"><scope>tree_newnode</scope><name>handle_newtreenode</name></member>
+      <member refid="classtree__newnode_1a307fb2ff9afc18429af055850f3c01a8" prot="public" virt="non-virtual"><scope>tree_newnode</scope><name>handle_newtreenode_cb</name></member>
+      <member refid="classtree__newnode_1a50e4845fff0149464cfb8ffe105b061c" prot="private" virt="non-virtual"><scope>tree_newnode</scope><name>node</name></member>
+      <member refid="classtree__newnode_1acd8405c3d6f344a21ecdadcbf3db14a6" prot="private" virt="non-virtual"><scope>tree_newnode</scope><name>node_cb</name></member>
+      <member refid="classtree__newnode_1ad29bf242b359fc093c474559e6f1be21" prot="private" virt="non-virtual"><scope>tree_newnode</scope><name>p_cb</name></member>
+      <member refid="classtree__newnode_1af024b549dee406efb459720399e3ba46" prot="private" virt="non-virtual"><scope>tree_newnode</scope><name>tattr</name></member>
+      <member refid="classtree__newnode_1aa910ec0ca8be88d01c6595984213b816" prot="private" virt="non-virtual"><scope>tree_newnode</scope><name>tn</name></member>
+      <member refid="classtree__newnode_1a79fd1a82bf40d2d922c1d297f1de3f29" prot="public" virt="non-virtual"><scope>tree_newnode</scope><name>tree_newnode</name></member>
+      <member refid="classtree__newnode_1a6d2aeccaa71eac80144dfb2353b51adc" prot="private" virt="non-virtual"><scope>tree_newnode</scope><name>tv</name></member>
+      <member refid="classtree__newnode_1a0fae844863614c2f9e26a2534373a9b7" prot="private" virt="non-virtual"><scope>tree_newnode</scope><name>type</name></member>
+      <member refid="classtree__newnode_1abeb52a93336763f855d2136268fb13a6" prot="private" virt="non-virtual"><scope>tree_newnode</scope><name>vitem</name></member>
+      <member refid="classtree__newnode_1a47004081f2ee1240bf613990048ffeb4" prot="private" virt="non-virtual"><scope>tree_newnode</scope><name>xpath</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

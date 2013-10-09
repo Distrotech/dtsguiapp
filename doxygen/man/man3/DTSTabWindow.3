@@ -1,0 +1,77 @@
+.TH "DTSTabWindow" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DTSTabWindow \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DTSTreeWindow\&.h>\fP
+.PP
+Inherits \fBDTSObject\fP, and wxNotebook\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTSTabWindow\fP (\fBDTSFrame\fP *\fBframe\fP=NULL, wxString stat_msg=wxEmptyString, void *u_data=NULL)"
+.br
+.ti -1c
+.RI "\fB~DTSTabWindow\fP ()"
+.br
+.ti -1c
+.RI "\fBDTSTabPage\fP * \fBCreateTab\fP (const wxString &name, int butmask=0, void *\fBuserdata\fP=NULL, \fBdtsgui_tabpanel_cb\fP cb=NULL, void *cdata=NULL, struct xml_doc *\fBxmldoc\fP=NULL, bool addpage=true)"
+.br
+.ti -1c
+.RI "\fBDTSTabPage\fP * \fBCreateTab\fP (const wxString &name, int butmask, void *\fBuserdata\fP, \fBdtsgui_tabpanel_cb\fP cb, void *cdata, struct xml_doc *\fBxmldoc\fP, int pos, int undo)"
+.br
+.ti -1c
+.RI "void \fBInsertTab\fP (\fBDTSTabPage\fP *\fBpanel\fP, int pos, bool show=true, int undo=0)"
+.br
+.ti -1c
+.RI "void \fBUndo\fP (int pg)"
+.br
+.ti -1c
+.RI "bool \fBShow\fP (bool=true)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 149 of file DTSTreeWindow\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DTSTabWindow::DTSTabWindow (\fBDTSFrame\fP *frame = \fCNULL\fP, wxStringstat_msg = \fCwxEmptyString\fP, void *u_data = \fCNULL\fP)"
+
+.PP
+Definition at line 874 of file DTSTreeWindow\&.cpp\&.
+.SS "DTSTabWindow::~DTSTabWindow ()"
+
+.PP
+Definition at line 898 of file DTSTreeWindow\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBDTSTabPage\fP * DTSTabWindow::CreateTab (const wxString &name, intbutmask = \fC0\fP, void *userdata = \fCNULL\fP, \fBdtsgui_tabpanel_cb\fPcb = \fCNULL\fP, void *cdata = \fCNULL\fP, struct xml_doc *xmldoc = \fCNULL\fP, booladdpage = \fCtrue\fP)"
+
+.PP
+Definition at line 977 of file DTSTreeWindow\&.cpp\&.
+.SS "\fBDTSTabPage\fP * DTSTabWindow::CreateTab (const wxString &name, intbutmask, void *userdata, \fBdtsgui_tabpanel_cb\fPcb, void *cdata, struct xml_doc *xmldoc, intpos, intundo)"
+
+.PP
+Definition at line 967 of file DTSTreeWindow\&.cpp\&.
+.SS "void DTSTabWindow::InsertTab (\fBDTSTabPage\fP *panel, intpos, boolshow = \fCtrue\fP, intundo = \fC0\fP)"
+
+.PP
+Definition at line 1000 of file DTSTreeWindow\&.cpp\&.
+.SS "bool DTSTabWindow::Show (boolshow = \fCtrue\fP)"
+
+.PP
+Definition at line 927 of file DTSTreeWindow\&.cpp\&.
+.SS "void DTSTabWindow::Undo (intpg)"
+
+.PP
+Definition at line 905 of file DTSTreeWindow\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

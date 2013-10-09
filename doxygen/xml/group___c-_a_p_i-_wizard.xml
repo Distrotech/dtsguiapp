@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="group___c-_a_p_i-_wizard" kind="group">
+    <compoundname>C-API-Wizard</compoundname>
+    <title>C API Wizard Interface</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___c-_a_p_i-_wizard_1ga2e1e2013214ae275160b8c87e6cb3d89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classdtsgui__wizard" kindref="compound">dtsgui_wizard</ref> *</type>
+        <definition>struct dtsgui_wizard* DTS_C_API::dtsgui_newwizard</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title)</argsstring>
+        <name>dtsgui_newwizard</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <briefdescription>
+<para>Create a new wizard. </para>        </briefdescription>
+        <detaileddescription>
+<para>A wizard consists of multiple panels linked with back/next controls each panel will need to be procesed on completion.</para><para><simplesect kind="see"><para><ref refid="classdtsgui__wizard" kindref="compound">dtsgui_wizard</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Aplication data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Title shown on title bar of wizard pop up. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New wizard that needs pages added too and run. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="941" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="941" bodyend="943"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_wizard_1ga3e76b1ea2eebb91e1d0b5a55649d65e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane DTS_C_API::dtsgui_wizard_addpage</definition>
+        <argsstring>(struct dtsgui_wizard *dtswiz, const char *title, void *userdata, struct xml_doc *xmldoc)</argsstring>
+        <name>dtsgui_wizard_addpage</name>
+        <param>
+          <type>struct <ref refid="classdtsgui__wizard" kindref="compound">dtsgui_wizard</ref> *</type>
+          <declname>dtswiz</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+        </param>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xmldoc</declname>
+        </param>
+        <briefdescription>
+<para>Create a panel appended to the wizard. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="classdtsgui__wizard_1a02984b1d70df5100e8b6200e0bb1b421" kindref="member">dtsgui_wizard::AddPage()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtswiz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Wizard to add page too. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Title of the new panel. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Userdata to be referenced and stored on the panel. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xmldoc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional XML Doc to be referenced and stored on the panel. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>New panel that will need to be configured and processed after completion. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="955" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="955" bodyend="957"/>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_wizard_1ga25174d47f2e9680d41aebdf08ff9b979" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DTS_C_API::dtsgui_runwizard</definition>
+        <argsstring>(struct dtsgui_wizard *dtswiz)</argsstring>
+        <name>dtsgui_runwizard</name>
+        <param>
+          <type>struct <ref refid="classdtsgui__wizard" kindref="compound">dtsgui_wizard</ref> *</type>
+          <declname>dtswiz</declname>
+        </param>
+        <briefdescription>
+<para>Run the wizard. </para>        </briefdescription>
+        <detaileddescription>
+<para>Pop up the wizard window and open first page on success its required that the panels information be processed. When the wizard is un refferenced the panels are deleted.</para><para><simplesect kind="see"><para><ref refid="classdtsgui__wizard_1ab0554e6b9fe1d2c0419a6659d883edf3" kindref="member">dtsgui_wizard::RunWizard()</ref></para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtswiz</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Wizard too run. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>non Zero on success. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="970" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="970" bodyend="972"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>C API Wizard Management</para><para>Resources controlling and manipulating wizards in the C API. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

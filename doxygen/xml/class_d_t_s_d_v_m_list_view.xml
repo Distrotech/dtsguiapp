@@ -1,0 +1,616 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_d_t_s_d_v_m_list_view" kind="class" prot="public">
+    <compoundname>DTSDVMListView</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">wxDataViewModel</basecompoundref>
+    <includes refid="_d_t_s_list_view_8h" local="no">DTSListView.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_d_t_s_d_v_m_list_view_1add4852a61464d3771c20bec22f88db6b" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_d_t_s_d_v_m_list_store" kindref="compound">DTSDVMListStore</ref> *</type>
+        <definition>DTSDVMListStore* DTSDVMListView::root</definition>
+        <argsstring></argsstring>
+        <name>root</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="100" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_d_v_m_list_view_1a2ebf1a7559aef2ca8dc1c0f8b333b244" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool DTSDVMListView::hascontcol</definition>
+        <argsstring></argsstring>
+        <name>hascontcol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="101" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_d_t_s_d_v_m_list_view_1ae2a9d162d28fbbc8fb50d1dce1e46388" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DTSDVMListView::colcnt</definition>
+        <argsstring></argsstring>
+        <name>colcnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="102" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1a0c7618bfadacb401064205b2ae23a7b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSDVMListView::DTSDVMListView</definition>
+        <argsstring>(int cols=1, bool cont_cols=true)</argsstring>
+        <name>DTSDVMListView</name>
+        <param>
+          <type>int</type>
+          <declname>cols</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>cont_cols</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="71" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="239" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1ab9f4c979acf017bd4bd18d5f2017e302" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DTSDVMListView::~DTSDVMListView</definition>
+        <argsstring>()</argsstring>
+        <name>~DTSDVMListView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="72" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="245" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1a3b8181057f6c202ccb8a096a8550d6d1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool DTSDVMListView::IsContainer</definition>
+        <argsstring>(const wxDataViewItem &amp;item) const </argsstring>
+        <name>IsContainer</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="73" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="249" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1a764737b69417b79b1f57ee862746d7dc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>wxDataViewItem</type>
+        <definition>wxDataViewItem DTSDVMListView::GetParent</definition>
+        <argsstring>(const wxDataViewItem &amp;item) const </argsstring>
+        <name>GetParent</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="74" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="258" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1ade8f140548e87dce4f43782b82928be3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int DTSDVMListView::GetChildren</definition>
+        <argsstring>(const wxDataViewItem &amp;parent, wxDataViewItemArray &amp;items) const </argsstring>
+        <name>GetChildren</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>wxDataViewItemArray &amp;</type>
+          <declname>items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="75" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="273" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1abafbe991d4b0341d0e11a065d7639c54" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int DTSDVMListView::GetColumnCount</definition>
+        <argsstring>() const </argsstring>
+        <name>GetColumnCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="76" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="292" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1ab28ac2eef25cf6be486a5fdf2769b4ef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool DTSDVMListView::HasContainerColumns</definition>
+        <argsstring>(const wxDataViewItem &amp;item) const </argsstring>
+        <name>HasContainerColumns</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="77" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="296" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1a594b4e57d9c93cb75ce7c249db7183ae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>wxString</type>
+        <definition>wxString DTSDVMListView::GetColumnType</definition>
+        <argsstring>(unsigned int col) const </argsstring>
+        <name>GetColumnType</name>
+        <param>
+          <type>unsigned int</type>
+          <declname>col</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="79" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="300" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1adb0653ec593332765c9b44c7cbe14e0b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void DTSDVMListView::GetValue</definition>
+        <argsstring>(wxVariant &amp;variant, const wxDataViewItem &amp;item, unsigned int col) const </argsstring>
+        <name>GetValue</name>
+        <param>
+          <type>wxVariant &amp;</type>
+          <declname>variant</declname>
+        </param>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>col</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="80" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="304" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1acccd8efb3d7b81849ea504799ac8d638" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool DTSDVMListView::SetValue</definition>
+        <argsstring>(const wxVariant &amp;variant, const wxDataViewItem &amp;item, unsigned int col)</argsstring>
+        <name>SetValue</name>
+        <param>
+          <type>const wxVariant &amp;</type>
+          <declname>variant</declname>
+        </param>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>col</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="81" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="312" bodyend="322"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1adc923eb492e77cb825121688fc73764c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_d_t_s_d_v_m_list_store" kindref="compound">DTSDVMListStore</ref> *</type>
+        <definition>DTSDVMListStore * DTSDVMListView::GetRoot</definition>
+        <argsstring>()</argsstring>
+        <name>GetRoot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="83" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="324" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1a3dd3b975a0207831ad000447340482a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_d_t_s_d_v_m_list_store" kindref="compound">DTSDVMListStore</ref> *</type>
+        <definition>DTSDVMListStore * DTSDVMListView::SetRoot</definition>
+        <argsstring>(const wxString &amp;title, int nodeid=-1, dtsgui_treeviewpanel_cb p_cb=NULL, void *userdata=NULL)</argsstring>
+        <name>SetRoot</name>
+        <param>
+          <type>const wxString &amp;</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nodeid</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type><ref refid="dtsgui_8h_1a8bf800adcd2392cf7722c3cf2f603f96" kindref="member">dtsgui_treeviewpanel_cb</ref></type>
+          <declname>p_cb</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="84" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="328" bodyend="331"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1aae01dd71efaebb94dfea9e35d552237e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSDVMListView::Delete</definition>
+        <argsstring>(const wxDataViewItem &amp;item)</argsstring>
+        <name>Delete</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="85" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="333" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1a7d0ec062e50e1d05cf4a2e8852104580" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSDVMListView::DeleteAll</definition>
+        <argsstring>(void)</argsstring>
+        <name>DeleteAll</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="86" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="359" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1a463cffa4280decda9cb36655a200caae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSDVMListView::SortChildren</definition>
+        <argsstring>(const wxDataViewItem &amp;parent)</argsstring>
+        <name>SortChildren</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="87" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="369" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1a75b2584818b50c6d05adde7ac20dfd5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DTSDVMListView::GetChildCount</definition>
+        <argsstring>(wxDataViewItem &amp;parent)</argsstring>
+        <name>GetChildCount</name>
+        <param>
+          <type>wxDataViewItem &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="88" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="383" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1aee18c001df2dc0a5c907b5d17ea3ece6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>wxDataViewItem</type>
+        <definition>wxDataViewItem DTSDVMListView::GetNthChild</definition>
+        <argsstring>(wxDataViewItem &amp;parent, size_t idx)</argsstring>
+        <name>GetNthChild</name>
+        <param>
+          <type>wxDataViewItem &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="89" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="397" bodyend="412"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1a216845800003f23bf035f0eb561d4df3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSDVMListView::SetExpanded</definition>
+        <argsstring>(const wxDataViewItem &amp;node, bool expanded=true)</argsstring>
+        <name>SetExpanded</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>expanded</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="90" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="414" bodyend="426"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1a03a9867dcd09b6c74c33f9d79c2d887d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int DTSDVMListView::GetContainers</definition>
+        <argsstring>(const wxDataViewItem &amp;parent, wxDataViewItemArray &amp;items, bool exonly=false) const </argsstring>
+        <name>GetContainers</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>wxDataViewItemArray &amp;</type>
+          <declname>items</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>exonly</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="91" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="428" bodyend="445"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1a1d0cb108cee3efdf2acbc813ec66e812" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSDVMListView::MoveChildUp</definition>
+        <argsstring>(const wxDataViewItem &amp;node)</argsstring>
+        <name>MoveChildUp</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="92" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="447" bodyend="465"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1a4fd06f54c22ab48fddd25fa77bf90034" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSDVMListView::MoveChildDown</definition>
+        <argsstring>(const wxDataViewItem &amp;node)</argsstring>
+        <name>MoveChildDown</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="93" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="467" bodyend="485"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1a5dbe05ed1e31ca2896d5f5c57229a0a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * DTSDVMListView::GetUserData</definition>
+        <argsstring>(const wxDataViewItem &amp;node)</argsstring>
+        <name>GetUserData</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="94" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="487" bodyend="497"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1ac8cd1cebdb6a6c3d03cbc7697e4ac9ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DTSDVMListView::GetNodeID</definition>
+        <argsstring>(const wxDataViewItem &amp;node)</argsstring>
+        <name>GetNodeID</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="95" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="499" bodyend="509"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1a53608928d1ea68114e65ba7b92695f32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DTSDVMListView::SetXMLData</definition>
+        <argsstring>(const wxDataViewItem &amp;node, struct xml_node *xnode, const char *tattr)</argsstring>
+        <name>SetXMLData</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>struct xml_node *</type>
+          <declname>xnode</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>tattr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="96" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="511" bodyend="519"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1a90439ae943298c9d7104e3f09dbd3abf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct xml_node *</type>
+        <definition>struct xml_node * DTSDVMListView::GetXMLData</definition>
+        <argsstring>(const wxDataViewItem &amp;node, char **buff)</argsstring>
+        <name>GetXMLData</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>buff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="97" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="521" bodyend="530"/>
+      </memberdef>
+      <memberdef kind="function" id="class_d_t_s_d_v_m_list_view_1ab6290667fa8c72eedc83399220fee834" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const wxString</type>
+        <definition>const wxString DTSDVMListView::GetTitle</definition>
+        <argsstring>(const wxDataViewItem &amp;node)</argsstring>
+        <name>GetTitle</name>
+        <param>
+          <type>const wxDataViewItem &amp;</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="98" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="532" bodyend="541"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="33">
+        <label>wxDataViewModel</label>
+      </node>
+      <node id="32">
+        <label>DTSDVMListView</label>
+        <link refid="class_d_t_s_d_v_m_list_view"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="35">
+        <label>wxDataViewModel</label>
+      </node>
+      <node id="36">
+        <label>DTSDVMListStore</label>
+        <link refid="class_d_t_s_d_v_m_list_store"/>
+      </node>
+      <node id="34">
+        <label>DTSDVMListView</label>
+        <link refid="class_d_t_s_d_v_m_list_view"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+        <childnode refid="36" relation="usage">
+          <edgelabel>root</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="69" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="69" bodyend="103"/>
+    <listofallmembers>
+      <member refid="class_d_t_s_d_v_m_list_view_1ae2a9d162d28fbbc8fb50d1dce1e46388" prot="protected" virt="non-virtual"><scope>DTSDVMListView</scope><name>colcnt</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1aae01dd71efaebb94dfea9e35d552237e" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>Delete</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a7d0ec062e50e1d05cf4a2e8852104580" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>DeleteAll</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a0c7618bfadacb401064205b2ae23a7b9" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>DTSDVMListView</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a75b2584818b50c6d05adde7ac20dfd5d" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>GetChildCount</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1ade8f140548e87dce4f43782b82928be3" prot="public" virt="virtual"><scope>DTSDVMListView</scope><name>GetChildren</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1abafbe991d4b0341d0e11a065d7639c54" prot="public" virt="virtual"><scope>DTSDVMListView</scope><name>GetColumnCount</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a594b4e57d9c93cb75ce7c249db7183ae" prot="public" virt="virtual"><scope>DTSDVMListView</scope><name>GetColumnType</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a03a9867dcd09b6c74c33f9d79c2d887d" prot="public" virt="virtual"><scope>DTSDVMListView</scope><name>GetContainers</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1ac8cd1cebdb6a6c3d03cbc7697e4ac9ed" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>GetNodeID</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1aee18c001df2dc0a5c907b5d17ea3ece6" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>GetNthChild</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a764737b69417b79b1f57ee862746d7dc" prot="public" virt="virtual"><scope>DTSDVMListView</scope><name>GetParent</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1adc923eb492e77cb825121688fc73764c" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>GetRoot</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1ab6290667fa8c72eedc83399220fee834" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>GetTitle</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a5dbe05ed1e31ca2896d5f5c57229a0a3" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>GetUserData</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1adb0653ec593332765c9b44c7cbe14e0b" prot="public" virt="virtual"><scope>DTSDVMListView</scope><name>GetValue</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a90439ae943298c9d7104e3f09dbd3abf" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>GetXMLData</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1ab28ac2eef25cf6be486a5fdf2769b4ef" prot="public" virt="virtual"><scope>DTSDVMListView</scope><name>HasContainerColumns</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a2ebf1a7559aef2ca8dc1c0f8b333b244" prot="protected" virt="non-virtual"><scope>DTSDVMListView</scope><name>hascontcol</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a3b8181057f6c202ccb8a096a8550d6d1" prot="public" virt="virtual"><scope>DTSDVMListView</scope><name>IsContainer</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a4fd06f54c22ab48fddd25fa77bf90034" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>MoveChildDown</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a1d0cb108cee3efdf2acbc813ec66e812" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>MoveChildUp</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1add4852a61464d3771c20bec22f88db6b" prot="protected" virt="non-virtual"><scope>DTSDVMListView</scope><name>root</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a216845800003f23bf035f0eb561d4df3" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>SetExpanded</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a3dd3b975a0207831ad000447340482a0" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>SetRoot</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1acccd8efb3d7b81849ea504799ac8d638" prot="public" virt="virtual"><scope>DTSDVMListView</scope><name>SetValue</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a53608928d1ea68114e65ba7b92695f32" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>SetXMLData</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1a463cffa4280decda9cb36655a200caae" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>SortChildren</name></member>
+      <member refid="class_d_t_s_d_v_m_list_view_1ab9f4c979acf017bd4bd18d5f2017e302" prot="public" virt="non-virtual"><scope>DTSDVMListView</scope><name>~DTSDVMListView</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
