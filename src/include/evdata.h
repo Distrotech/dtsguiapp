@@ -24,7 +24,7 @@ typedef class wxWindow wxWindow;
 class dynamic_panel {
 	public:
 		DTS_OJBREF_CLASS(dynamic_panel);
-		dynamic_panel(const char *title, int blank, dtsgui_dynpanel cb, void *udata);
+		dynamic_panel(const char *name, int blank, dtsgui_dynpanel cb, void *udata);
 		bool HasCallback();
 		bool IsBlank();
 		bool operator==(wxWindow &rhs);
@@ -32,7 +32,7 @@ class dynamic_panel {
 	private:
 		wxWindow *w;
 		dtsgui_dynpanel cb;
-		const char *title;
+		const char *name;
 		void *data;
 		int blank;
 };
