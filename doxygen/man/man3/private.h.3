@@ -1,4 +1,4 @@
-.TH "app/private.h" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "app/private.h" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -94,6 +94,8 @@ app/private.h \-
 
 .PP
 Definition at line 24 of file private\&.h\&.
+.PP
+Referenced by main()\&.
 .SH "Enumeration Type Documentation"
 .PP 
 .SS "enum \fBnode_id\fP"
@@ -168,74 +170,104 @@ Definition at line 27 of file private\&.h\&.
 
 .PP
 Definition at line 740 of file netconfig\&.c\&.
-.SS "struct xml_doc* app_getxmldoc (struct \fBdtsgui\fP *dtsgui)\fC [read]\fP"
-
 .PP
-Definition at line 42 of file wxforms\&.c\&.
+References app_getxmldoc(), app_data::datadir, dtsgui_alert(), dtsgui_treewindow(), dtsgui_userdata(), and network_tree_setup()\&.
+.PP
+Referenced by config_menu()\&.
 .SS "void* app_toolbar (struct \fBdtsgui\fP *dtsgui, void *pw, longstyle, intid, const char *name, void *data)"
 
 .PP
 Definition at line 111 of file toolbar\&.cpp\&.
+.PP
+Referenced by guiconfig_cb()\&.
 .SS "void config_menu (struct \fBdtsgui\fP *dtsgui)"
 
 .PP
 Definition at line 189 of file config\&.c\&.
-.SS "\fBdtsgui_pane\fP editsys_wizard (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
 .PP
-Definition at line 454 of file wizard\&.c\&.
+References advanced_config(), app_data::cfg_menu, dtsgui_menuenable(), dtsgui_menusep(), dtsgui_newmenu(), dtsgui_newmenucb(), dtsgui_userdata(), export_config(), iface_config(), pbx_settings(), reconfig_wizard(), save_config(), view_config_conf(), and view_config_xml()\&.
+.PP
+Referenced by guiconfig_cb()\&.
 .SS "\fBdtsgui_pane\fP export_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
 
 .PP
 Definition at line 150 of file config\&.c\&.
+.PP
+References app_getxmldoc(), app_data::datadir, dtsgui_alert(), dtsgui_filesave(), and dtsgui_userdata()\&.
+.PP
+Referenced by config_menu()\&.
 .SS "\fBdtsgui_pane\fP iface_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
 
 .PP
 Definition at line 145 of file interface\&.c\&.
+.PP
+References app_getxmldoc(), dtsgui_newtabpage(), dtsgui_tabwindow(), get_iface_cdata(), get_newiface_data(), network_iface_new_pane_cb(), network_iface_pane_cb(), and wx_PANEL_BUTTON_ACTION\&.
+.PP
+Referenced by config_menu()\&.
 .SS "void network_iface_new_pane (\fBdtsgui_pane\fPp, void *data)"
 
 .PP
 Definition at line 222 of file netconfig\&.c\&.
+.PP
+References dtsgui_textbox()\&.
+.PP
+Referenced by network_iface_new_pane_cb(), and network_newiface()\&.
 .SS "void network_iface_pane (\fBdtsgui_pane\fPp, const char *xpre, const char *iface)"
 
 .PP
 Definition at line 201 of file netconfig\&.c\&.
-.SS "\fBdtsgui_pane\fP newsys_wizard (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
 .PP
-Definition at line 429 of file wizard\&.c\&.
+References dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_iface(), and network_iface_pane_cb()\&.
 .SS "\fBdtsgui_pane\fP open_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
 
 .PP
 Definition at line 27 of file config\&.c\&.
+.PP
+References app_data::c_open, app_data::cfg_menu, dtsgui_alert(), dtsgui_fileopen(), dtsgui_menuenable(), dtsgui_menuitemenable(), dtsgui_sendevent(), dtsgui_set_toolbar(), dtsgui_titleappend(), dtsgui_userdata(), app_data::e_wiz, app_data::n_wiz, and app_data::xmldoc\&.
+.PP
+Referenced by file_menu()\&.
 .SS "\fBdtsgui_pane\fP pbx_settings (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
 
 .PP
 Definition at line 325 of file pbxconfig\&.c\&.
-.SS "\fBdtsgui_pane\fP reconfig_wizard (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
 .PP
-Definition at line 474 of file wizard\&.c\&.
+References app_getxmldoc(), dtsgui_newtabpage(), dtsgui_tabwindow(), pbxconf_acd(), pbxconf_autoadd(), pbxconf_default(), pbxconf_e1(), pbxconf_global(), pbxconf_incoming(), pbxconf_location(), pbxconf_mfcr2(), pbxconf_misdn(), pbxconf_numplan(), pbxconf_topts(), pbxconf_trunk(), and wx_PANEL_BUTTON_ACTION\&.
+.PP
+Referenced by config_menu()\&.
 .SS "\fBdtsgui_pane\fP save_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
 
 .PP
 Definition at line 69 of file config\&.c\&.
+.PP
+References app_data::c_open, app_data::cfg_menu, dtsgui_menuenable(), dtsgui_menuitemenable(), dtsgui_set_toolbar(), dtsgui_titleappend(), dtsgui_userdata(), app_data::e_wiz, app_data::n_wiz, and app_data::xmldoc\&.
+.PP
+Referenced by config_menu()\&.
 .SS "void test_menu (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_menu\fPmenu, const char *url)"
 
 .PP
 Definition at line 94 of file testing\&.c\&.
+.PP
+References dtsgui_newmenuitem(), dtsgui_panel(), dtsgui_setevcallback(), handle_test(), testpanel(), and wx_PANEL_BUTTON_ALL\&.
+.PP
+Referenced by help_menu()\&.
 .SS "\fBdtsgui_pane\fP view_config_conf (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
 
 .PP
 Definition at line 112 of file config\&.c\&.
+.PP
+References app_getxmldoc(), app_data::datadir, dtsgui_alert(), dtsgui_textpane(), and dtsgui_userdata()\&.
+.PP
+Referenced by config_menu()\&.
 .SS "\fBdtsgui_pane\fP view_config_xml (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
 
 .PP
 Definition at line 94 of file config\&.c\&.
-.SS "void wizz_custinfo (\fBdtsgui_pane\fP *pg)"
-
 .PP
-Definition at line 157 of file wizard\&.c\&.
+References app_getxmldoc(), and dtsgui_textpane()\&.
+.PP
+Referenced by config_menu()\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

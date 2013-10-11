@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
@@ -94,7 +95,7 @@ $(document).ready(function(){initNavTree('class_d_t_s_app.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,6 +107,8 @@ $(document).ready(function(){initNavTree('class_d_t_s_app.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_d_t_s_app-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">DTSApp Class Reference</div>  </div>
@@ -124,10 +127,22 @@ Inheritance diagram for DTSApp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1b9443b7b3698541887e6407fdc6d1ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_app.html#a1b9443b7b3698541887e6407fdc6d1ac">DTSApp</a> (<a class="el" href="group___c-_a_p_i.html#gad3b80490c86b8275c47382588f2ecfd4">dtsgui_configcb</a> confcallback_cb, void *data, struct <a class="el" href="structpoint.html">point</a> wsize, struct <a class="el" href="structpoint.html">point</a> wpos, const char *title, const char *status)</td></tr>
+<tr class="memitem:a1b9443b7b3698541887e6407fdc6d1ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_app.html#a1b9443b7b3698541887e6407fdc6d1ac">DTSApp</a> (<a class="el" href="group___c_o_r_e.html#gad3b80490c86b8275c47382588f2ecfd4">dtsgui_configcb</a> confcallback_cb, void *data, struct <a class="el" href="structpoint.html">point</a> wsize, struct <a class="el" href="structpoint.html">point</a> wpos, const char *title, const char *status)</td></tr>
 <tr class="separator:a1b9443b7b3698541887e6407fdc6d1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b4ef9b0d2e3ae5fda50e81f4ade664c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_app.html#a4b4ef9b0d2e3ae5fda50e81f4ade664c">~DTSApp</a> ()</td></tr>
 <tr class="separator:a4b4ef9b0d2e3ae5fda50e81f4ade664c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ae21cc8793d06b6b770867ebd3d0d1daa"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_app.html#ae21cc8793d06b6b770867ebd3d0d1daa">OnInit</a> ()</td></tr>
+<tr class="separator:ae21cc8793d06b6b770867ebd3d0d1daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a05d434e7521a1228cc58ee1a49a8044f"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="classdtsgui.html">dtsgui</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_app.html#a05d434e7521a1228cc58ee1a49a8044f">dtsgui</a></td></tr>
+<tr class="separator:a05d434e7521a1228cc58ee1a49a8044f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a402934b59ac3bb4ff67422d39656f304"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="classdtsgui__curl.html">dtsgui_curl</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_app.html#a402934b59ac3bb4ff67422d39656f304">curl</a></td></tr>
+<tr class="separator:a402934b59ac3bb4ff67422d39656f304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -140,7 +155,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">DTSApp::DTSApp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group___c-_a_p_i.html#gad3b80490c86b8275c47382588f2ecfd4">dtsgui_configcb</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#gad3b80490c86b8275c47382588f2ecfd4">dtsgui_configcb</a>&#160;</td>
           <td class="paramname"><em>confcallback_cb</em>, </td>
         </tr>
         <tr>
@@ -181,7 +196,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_app_8cpp_source.html#l00239">239</a> of file <a class="el" href="_d_t_s_app_8cpp_source.html">DTSApp.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_app_8cpp_source.html#l00247">247</a> of file <a class="el" href="_d_t_s_app_8cpp_source.html">DTSApp.cpp</a>.</p>
 
 </div>
 </div>
@@ -198,7 +213,82 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_app_8cpp_source.html#l00243">243</a> of file <a class="el" href="_d_t_s_app_8cpp_source.html">DTSApp.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_app_8cpp_source.html#l00251">251</a> of file <a class="el" href="_d_t_s_app_8cpp_source.html">DTSApp.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_app_8h_source.html#l00054">dtsgui_curl::curl</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ae21cc8793d06b6b770867ebd3d0d1daa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DTSApp::OnInit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_app_8cpp_source.html#l00262">262</a> of file <a class="el" href="_d_t_s_app_8cpp_source.html">DTSApp.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_app_8h_source.html#l00054">dtsgui_curl::curl</a>, and <a class="el" href="_d_t_s_app_8cpp_source.html#l00064">dtsgui::SetupAPPFrame()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a402934b59ac3bb4ff67422d39656f304"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">class <a class="el" href="classdtsgui__curl.html">dtsgui_curl</a>* DTSApp::curl</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_app_8h_source.html#l00075">75</a> of file <a class="el" href="_d_t_s_app_8h_source.html">DTSApp.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a05d434e7521a1228cc58ee1a49a8044f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">class <a class="el" href="classdtsgui.html">dtsgui</a>* DTSApp::dtsgui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_app_8h_source.html#l00074">74</a> of file <a class="el" href="_d_t_s_app_8h_source.html">DTSApp.h</a>.</p>
 
 </div>
 </div>
@@ -212,7 +302,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_app.html">DTSApp</a></li>
-    <li class="footer">Generated on Wed Oct 9 2013 22:32:56 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

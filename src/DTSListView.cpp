@@ -16,6 +16,14 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @defgroup CPP-Panel-Tree-Store Treewindow implementation.
+  * @brief Data Store/View/Control model for tree window
+  * @ingroup CPP-Panel-Tree*/
+
+/** @file
+  * @brief Data Store/View/Control model for tree window
+  * @ingroup CPP-Panel-Tree-Store*/
+
 #ifdef __WIN32__
 #define UNICODE 1
 #endif

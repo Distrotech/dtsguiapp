@@ -1,0 +1,227 @@
+.TH "Basic Elements." 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Basic Elements. \- 
+.PP
+Elements consisting Name/Value/Data\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_textbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *value, void *data)"
+.br
+.RI "\fIPlace a text element on the panel\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_textbox_multi\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *value, void *data)"
+.br
+.RI "\fIPlace a multi line text element on the panel\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_passwdbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *value, void *data)"
+.br
+.RI "\fIPlace a password element on the panel\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_checkbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *checkval, const char *uncheck, int ischecked, void *data)"
+.br
+.RI "\fIPlace a checkbox element on the panel\&. \fP"
+.ti -1c
+.RI "struct \fBform_item\fP * \fBDTS_C_API::dtsgui_listbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, void *data)"
+.br
+.RI "\fIPlace a listbox element on the panel\&. \fP"
+.ti -1c
+.RI "struct \fBform_item\fP * \fBDTS_C_API::dtsgui_combobox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, void *data)"
+.br
+.RI "\fIPlace a combobox element on the panel\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Elements consisting Name/Value/Data\&. 
+
+\fBNote:\fP
+.RS 4
+The data is a reference to a referenced object\&. 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "void DTS_C_API::dtsgui_checkbox (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *checkval, const char *uncheck, intischecked, void *data)"
+
+.PP
+Place a checkbox element on the panel\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::CheckBox()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to place element on\&. 
+.br
+\fItitle\fP Title of element\&. 
+.br
+\fIname\fP Name of element\&. 
+.br
+\fIcheckval\fP Value of item when checked\&. 
+.br
+\fIuncheck\fP Value of item when unchecked\&. 
+.br
+\fIischecked\fP Set to non zero if item is initially checked\&. 
+.br
+\fIdata\fP User data to hold a reference of\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1294 of file wrapper\&.cpp\&.
+.PP
+References DTSPanel::CheckBox(), and DTSGUI_FORM_DATA_PTR\&.
+.PP
+Referenced by network_config_dns_domain_new(), and testpanel()\&.
+.SS "struct \fBform_item\fP* DTS_C_API::dtsgui_combobox (\fBdtsgui_pane\fPpane, const char *title, const char *name, void *data)\fC [read]\fP"
+
+.PP
+Place a combobox element on the panel\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::ComboBox()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to place element on\&. 
+.br
+\fItitle\fP Title of element\&. 
+.br
+\fIname\fP Name of element\&. 
+.br
+\fIdata\fP User data to hold a reference of\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Form item that can be used to add values this must be unreferenced 
+.RE
+.PP
+
+.PP
+Definition at line 1320 of file wrapper\&.cpp\&.
+.PP
+References DTSPanel::ComboBox(), and DTSGUI_FORM_DATA_PTR\&.
+.PP
+Referenced by testpanel()\&.
+.SS "struct \fBform_item\fP* DTS_C_API::dtsgui_listbox (\fBdtsgui_pane\fPpane, const char *title, const char *name, void *data)\fC [read]\fP"
+
+.PP
+Place a listbox element on the panel\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::ListBox()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to place element on\&. 
+.br
+\fItitle\fP Title of element\&. 
+.br
+\fIname\fP Name of element\&. 
+.br
+\fIdata\fP User data to hold a reference of\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Form item that can be used to add values this must be unreferenced 
+.RE
+.PP
+
+.PP
+Definition at line 1307 of file wrapper\&.cpp\&.
+.PP
+References DTSGUI_FORM_DATA_PTR, and DTSPanel::ListBox()\&.
+.PP
+Referenced by network_adsl_link_new(), network_newwifi(), network_tos_new(), and testpanel()\&.
+.SS "void DTS_C_API::dtsgui_passwdbox (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *value, void *data)"
+
+.PP
+Place a password element on the panel\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::TextBox()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to place element on\&. 
+.br
+\fItitle\fP Title of element\&. 
+.br
+\fIname\fP Name of element\&. 
+.br
+\fIvalue\fP Initial value of element\&. 
+.br
+\fIdata\fP User data to hold a reference of\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1279 of file wrapper\&.cpp\&.
+.PP
+References DTSGUI_FORM_DATA_PTR, and DTSPanel::TextBox()\&.
+.SS "void DTS_C_API::dtsgui_textbox (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *value, void *data)"
+
+.PP
+Place a text element on the panel\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::TextBox()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to place element on\&. 
+.br
+\fItitle\fP Title of element\&. 
+.br
+\fIname\fP Name of element\&. 
+.br
+\fIvalue\fP Initial value of element\&. 
+.br
+\fIdata\fP User data to hold a reference of\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1253 of file wrapper\&.cpp\&.
+.PP
+References DTSGUI_FORM_DATA_PTR, and DTSPanel::TextBox()\&.
+.PP
+Referenced by network_adsl_link_new(), network_adsl_user_new(), network_config_dns_domain_new(), network_config_dns_domain_server_new(), network_config_dns_host_new(), network_iface_new_pane(), network_newroute(), network_newwan(), network_newwifi(), network_tos_new(), and testpanel()\&.
+.SS "void DTS_C_API::dtsgui_textbox_multi (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *value, void *data)"
+
+.PP
+Place a multi line text element on the panel\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::TextBox()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to place element on\&. 
+.br
+\fItitle\fP Title of element\&. 
+.br
+\fIname\fP Name of element\&. 
+.br
+\fIvalue\fP Initial value of element\&. 
+.br
+\fIdata\fP User data to hold a reference of\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1266 of file wrapper\&.cpp\&.
+.PP
+References DTSGUI_FORM_DATA_PTR, and DTSPanel::TextBox()\&.
+.PP
+Referenced by testpanel()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

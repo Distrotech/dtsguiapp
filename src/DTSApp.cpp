@@ -24,6 +24,12 @@
 #include "DTSApp.h"
 #include "DTSFrame.h"
 
+/**@file
+  *@brief Core Application Class implementation.
+  *@ingroup CPP*/
+
+/** @brief Define event type used for application events.
+  *@ingroup CPP*/
 wxDEFINE_EVENT(DTS_APP_EVENT, wxCommandEvent);
 
 dtsgui::dtsgui(const char *title, const char *stat, struct point w_size, struct point w_pos, dtsgui_configcb confcallback_cb , void *data) {
@@ -199,7 +205,9 @@ void dtsgui_curl::curl_progress_ctrl(void *data, int pause) {
 			cp->pd = 0;
 			break;
 		case -1:
-			f->EndProgress();
+			if (cp->pd) {
+				f->EndProgress();
+			}
 			objunref(cp);
 			break;
 	}

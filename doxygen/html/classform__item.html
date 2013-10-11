@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
@@ -94,7 +95,7 @@ $(document).ready(function(){initNavTree('classform__item.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,6 +107,7 @@ $(document).ready(function(){initNavTree('classform__item.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classform__item-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">form_item Class Reference</div>  </div>
@@ -118,7 +120,7 @@ $(document).ready(function(){initNavTree('classform__item.html','');});
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9f620e55ba53bd5abcf4af612944c838"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classform__item.html#a9f620e55ba53bd5abcf4af612944c838">DTS_OJBREF_CLASS</a> (<a class="el" href="classform__item.html">form_item</a>)</td></tr>
 <tr class="separator:a9f620e55ba53bd5abcf4af612944c838"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fe4dea1dbc9692a1511c6ba5256665e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classform__item.html#a9fe4dea1dbc9692a1511c6ba5256665e">form_item</a> (void *widget, enum <a class="el" href="dtsgui_8h.html#afd296180392ef5681415b9fb0590be84">widget_type</a> type, const char *name, const char *value, const char *value2, void *data, enum <a class="el" href="dtsgui_8h.html#aa648ae9cc0927fecec3a6f705930f8a9">form_data_type</a> dtype)</td></tr>
+<tr class="memitem:a9fe4dea1dbc9692a1511c6ba5256665e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classform__item.html#a9fe4dea1dbc9692a1511c6ba5256665e">form_item</a> (void *<a class="el" href="classform__item.html#a6720d7a562d897686e128fc2146702e7">widget</a>, enum <a class="el" href="group___c_o_r_e.html#gafd296180392ef5681415b9fb0590be84">widget_type</a> <a class="el" href="classform__item.html#aa7364e00d99d22b9a594767915caa4be">type</a>, const char *<a class="el" href="classform__item.html#a4b647b26beee4bb3f3935645f3eb1a9b">name</a>, const char *<a class="el" href="classform__item.html#a031f8fb162f54579bc1ba53a751c5414">value</a>, const char *<a class="el" href="classform__item.html#abb8668ad59e583a7a73bc03f2c4503da">value2</a>, void *<a class="el" href="classform__item.html#a601ff328ce4165b07d5ad23bd96967b7">data</a>, enum <a class="el" href="group___c_o_r_e.html#gaa648ae9cc0927fecec3a6f705930f8a9">form_data_type</a> <a class="el" href="classform__item.html#acaa83eeebb557f7e66ae998bc45dc6c9">dtype</a>)</td></tr>
 <tr class="separator:a9fe4dea1dbc9692a1511c6ba5256665e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e08369cee96e1b5417c767be9b086ce"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="classxml__element.html">xml_element</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classform__item.html#a1e08369cee96e1b5417c767be9b086ce">GetXMLData</a> ()</td></tr>
 <tr class="separator:a1e08369cee96e1b5417c767be9b086ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,6 +138,25 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9d5508fb933bef9f078f702338e3d166"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bbc5ad6365c6b104f230afb35b0996b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classform__item.html#a7bbc5ad6365c6b104f230afb35b0996b">AppendXML</a> (struct xml_doc *xmldoc, const char *xpath, const char *nattr, const char *vattr)</td></tr>
 <tr class="separator:a7bbc5ad6365c6b104f230afb35b0996b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa7364e00d99d22b9a594767915caa4be"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group___c_o_r_e.html#gafd296180392ef5681415b9fb0590be84">widget_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classform__item.html#aa7364e00d99d22b9a594767915caa4be">type</a></td></tr>
+<tr class="separator:aa7364e00d99d22b9a594767915caa4be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b647b26beee4bb3f3935645f3eb1a9b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classform__item.html#a4b647b26beee4bb3f3935645f3eb1a9b">name</a></td></tr>
+<tr class="separator:a4b647b26beee4bb3f3935645f3eb1a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c5388b8962be531b51920c7775f8d2d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classform__item.html#a9c5388b8962be531b51920c7775f8d2d">idx</a></td></tr>
+<tr class="separator:a9c5388b8962be531b51920c7775f8d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a601ff328ce4165b07d5ad23bd96967b7"><td class="memItemLeft" align="right" valign="top">union <a class="el" href="unionform__data.html">form_data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classform__item.html#a601ff328ce4165b07d5ad23bd96967b7">data</a></td></tr>
+<tr class="separator:a601ff328ce4165b07d5ad23bd96967b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6720d7a562d897686e128fc2146702e7"><td class="memItemLeft" align="right" valign="top">union <a class="el" href="unionwidgets.html">widgets</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classform__item.html#a6720d7a562d897686e128fc2146702e7">widget</a></td></tr>
+<tr class="separator:a6720d7a562d897686e128fc2146702e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaa83eeebb557f7e66ae998bc45dc6c9"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group___c_o_r_e.html#gaa648ae9cc0927fecec3a6f705930f8a9">form_data_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classform__item.html#acaa83eeebb557f7e66ae998bc45dc6c9">dtype</a></td></tr>
+<tr class="separator:acaa83eeebb557f7e66ae998bc45dc6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a031f8fb162f54579bc1ba53a751c5414"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classform__item.html#a031f8fb162f54579bc1ba53a751c5414">value</a></td></tr>
+<tr class="separator:a031f8fb162f54579bc1ba53a751c5414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb8668ad59e583a7a73bc03f2c4503da"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classform__item.html#abb8668ad59e583a7a73bc03f2c4503da">value2</a></td></tr>
+<tr class="separator:abb8668ad59e583a7a73bc03f2c4503da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -154,7 +175,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">enum <a class="el" href="dtsgui_8h.html#afd296180392ef5681415b9fb0590be84">widget_type</a>&#160;</td>
+          <td class="paramtype">enum <a class="el" href="group___c_o_r_e.html#gafd296180392ef5681415b9fb0590be84">widget_type</a>&#160;</td>
           <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
@@ -184,7 +205,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">enum <a class="el" href="dtsgui_8h.html#aa648ae9cc0927fecec3a6f705930f8a9">form_data_type</a>&#160;</td>
+          <td class="paramtype">enum <a class="el" href="group___c_o_r_e.html#gaa648ae9cc0927fecec3a6f705930f8a9">form_data_type</a>&#160;</td>
           <td class="paramname"><em>dtype</em>&#160;</td>
         </tr>
         <tr>
@@ -195,7 +216,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00081">81</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00089">89</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+
+<p>References <a class="el" href="pitems_8h_source.html#l00066">data</a>, <a class="el" href="pitems_8h_source.html#l00068">dtype</a>, <a class="el" href="pitems_8h_source.html#l00065">idx</a>, <a class="el" href="pitems_8h_source.html#l00063">type</a>, and <a class="el" href="pitems_8h_source.html#l00067">widget</a>.</p>
 
 </div>
 </div>
@@ -224,7 +247,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00147">147</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00155">155</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+
+<p>References <a class="el" href="dtsgui_8h_source.html#l00261">DTS_WIDGET_COMBOBOX</a>, <a class="el" href="dtsgui_8h_source.html#l00260">DTS_WIDGET_LISTBOX</a>, <a class="el" href="pitems_8h_source.html#l00065">idx</a>, <a class="el" href="pitems_8h_source.html#l00045">widgets::l</a>, <a class="el" href="pitems_8cpp_source.html#l00176">SetSelection()</a>, <a class="el" href="pitems_8h_source.html#l00063">type</a>, <a class="el" href="pitems_8h_source.html#l00069">value</a>, and <a class="el" href="pitems_8h_source.html#l00067">widget</a>.</p>
+
+<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00225">AppendXML()</a>, and <a class="el" href="wrapper_8cpp_source.html#l01219">DTS_C_API::dtsgui_listbox_add()</a>.</p>
 
 </div>
 </div>
@@ -264,7 +291,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00217">217</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00225">225</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+
+<p>References <a class="el" href="pitems_8cpp_source.html#l00155">Append()</a>, <a class="el" href="pitems_8h_source.html#l00064">name</a>, and <a class="el" href="pitems_8h_source.html#l00069">value</a>.</p>
+
+<p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l01241">DTS_C_API::dtsgui_listbox_addxml()</a>.</p>
 
 </div>
 </div>
@@ -297,7 +328,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00136">136</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00144">144</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+
+<p>References <a class="el" href="pitems_8h_source.html#l00066">data</a>, and <a class="el" href="pitems_8h_source.html#l00039">form_data::ptr</a>.</p>
+
+<p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l01102">DTS_C_API::dtsgui_item_data()</a>.</p>
 
 </div>
 </div>
@@ -314,7 +349,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00180">180</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00188">188</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+
+<p>References <a class="el" href="pitems_8h_source.html#l00064">name</a>.</p>
+
+<p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l01124">DTS_C_API::dtsgui_item_name()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00049">DTSPanel::fitems_hash()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00841">DTSPanel::Panel2Post()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00777">DTSPanel::Panel2XML()</a>.</p>
 
 </div>
 </div>
@@ -331,7 +370,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00184">184</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00192">192</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+
+<p>References <a class="el" href="pitems_8h_source.html#l00046">widgets::c</a>, <a class="el" href="dtsgui_8h_source.html#l00259">DTS_WIDGET_CHECKBOX</a>, <a class="el" href="dtsgui_8h_source.html#l00261">DTS_WIDGET_COMBOBOX</a>, <a class="el" href="dtsgui_8h_source.html#l00260">DTS_WIDGET_LISTBOX</a>, <a class="el" href="dtsgui_8h_source.html#l00258">DTS_WIDGET_TEXTBOX</a>, <a class="el" href="pitems_8h_source.html#l00045">widgets::l</a>, <a class="el" href="pitems_8h_source.html#l00044">widgets::t</a>, <a class="el" href="pitems_8h_source.html#l00063">type</a>, <a class="el" href="pitems_8h_source.html#l00069">value</a>, <a class="el" href="pitems_8h_source.html#l00070">value2</a>, and <a class="el" href="pitems_8h_source.html#l00067">widget</a>.</p>
+
+<p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l01113">DTS_C_API::dtsgui_item_value()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00886">DTSPanel::FindValue()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00841">DTSPanel::Panel2Post()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00777">DTSPanel::Panel2XML()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00746">DTSPanel::Update_XML()</a>.</p>
 
 </div>
 </div>
@@ -348,7 +391,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00213">213</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00221">221</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+
+<p>References <a class="el" href="pitems_8h_source.html#l00047">widgets::p</a>, and <a class="el" href="pitems_8h_source.html#l00067">widget</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00163">DTSPanelEvent::OnCombo()</a>.</p>
 
 </div>
 </div>
@@ -365,7 +412,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00126">126</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00134">134</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+
+<p>References <a class="el" href="pitems_8h_source.html#l00066">data</a>, <a class="el" href="dtsgui_8h_source.html#l00052">DTSGUI_FORM_DATA_XML</a>, <a class="el" href="pitems_8h_source.html#l00068">dtype</a>, and <a class="el" href="pitems_8h_source.html#l00040">form_data::xml</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00746">DTSPanel::Update_XML()</a>.</p>
 
 </div>
 </div>
@@ -383,7 +434,204 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00168">168</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00176">176</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+
+<p>References <a class="el" href="dtsgui_8h_source.html#l00261">DTS_WIDGET_COMBOBOX</a>, <a class="el" href="dtsgui_8h_source.html#l00260">DTS_WIDGET_LISTBOX</a>, <a class="el" href="pitems_8h_source.html#l00045">widgets::l</a>, <a class="el" href="pitems_8h_source.html#l00063">type</a>, and <a class="el" href="pitems_8h_source.html#l00067">widget</a>.</p>
+
+<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00155">Append()</a>, and <a class="el" href="wrapper_8cpp_source.html#l01227">DTS_C_API::dtsgui_listbox_set()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a601ff328ce4165b07d5ad23bd96967b7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">union <a class="el" href="unionform__data.html">form_data</a> form_item::data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="pitems_8h_source.html#l00066">66</a> of file <a class="el" href="pitems_8h_source.html">pitems.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00684">DTSPanel::ComboBox()</a>, <a class="el" href="pitems_8cpp_source.html#l00089">form_item()</a>, <a class="el" href="pitems_8cpp_source.html#l00144">GetData()</a>, and <a class="el" href="pitems_8cpp_source.html#l00134">GetXMLData()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acaa83eeebb557f7e66ae998bc45dc6c9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group___c_o_r_e.html#gaa648ae9cc0927fecec3a6f705930f8a9">form_data_type</a> form_item::dtype</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="pitems_8h_source.html#l00068">68</a> of file <a class="el" href="pitems_8h_source.html">pitems.h</a>.</p>
+
+<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00089">form_item()</a>, <a class="el" href="pitems_8cpp_source.html#l00134">GetXMLData()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00163">DTSPanelEvent::OnCombo()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9c5388b8962be531b51920c7775f8d2d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int form_item::idx</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="pitems_8h_source.html#l00065">65</a> of file <a class="el" href="pitems_8h_source.html">pitems.h</a>.</p>
+
+<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00155">Append()</a>, and <a class="el" href="pitems_8cpp_source.html#l00089">form_item()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4b647b26beee4bb3f3935645f3eb1a9b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* form_item::name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="pitems_8h_source.html#l00064">64</a> of file <a class="el" href="pitems_8h_source.html">pitems.h</a>.</p>
+
+<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00225">AppendXML()</a>, <a class="el" href="pitems_8cpp_source.html#l00188">GetName()</a>, <a class="el" href="netconfig_8c_source.html#l00524">network_tos()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00841">DTSPanel::Panel2Post()</a>, <a class="el" href="pbxconfig_8c_source.html#l00220">pbxconf_default()</a>, and <a class="el" href="pbxconfig_8c_source.html#l00025">pbxconf_trunk()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa7364e00d99d22b9a594767915caa4be"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group___c_o_r_e.html#gafd296180392ef5681415b9fb0590be84">widget_type</a> form_item::type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="pitems_8h_source.html#l00063">63</a> of file <a class="el" href="pitems_8h_source.html">pitems.h</a>.</p>
+
+<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00155">Append()</a>, <a class="el" href="pitems_8cpp_source.html#l00089">form_item()</a>, <a class="el" href="pitems_8cpp_source.html#l00192">GetValue()</a>, and <a class="el" href="pitems_8cpp_source.html#l00176">SetSelection()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a031f8fb162f54579bc1ba53a751c5414"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* form_item::value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="pitems_8h_source.html#l00069">69</a> of file <a class="el" href="pitems_8h_source.html">pitems.h</a>.</p>
+
+<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00155">Append()</a>, <a class="el" href="pitems_8cpp_source.html#l00225">AppendXML()</a>, <a class="el" href="pitems_8cpp_source.html#l00192">GetValue()</a>, <a class="el" href="pbxconfig_8c_source.html#l00220">pbxconf_default()</a>, <a class="el" href="pbxconfig_8c_source.html#l00025">pbxconf_trunk()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00707">DTSPanel::XMLComboBox()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00667">DTSPanel::XMLListBox()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abb8668ad59e583a7a73bc03f2c4503da"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* form_item::value2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="pitems_8h_source.html#l00070">70</a> of file <a class="el" href="pitems_8h_source.html">pitems.h</a>.</p>
+
+<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00192">GetValue()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6720d7a562d897686e128fc2146702e7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">union <a class="el" href="unionwidgets.html">widgets</a> form_item::widget</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="pitems_8h_source.html#l00067">67</a> of file <a class="el" href="pitems_8h_source.html">pitems.h</a>.</p>
+
+<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00155">Append()</a>, <a class="el" href="pitems_8cpp_source.html#l00089">form_item()</a>, <a class="el" href="pitems_8cpp_source.html#l00192">GetValue()</a>, <a class="el" href="pitems_8cpp_source.html#l00221">GetWidget()</a>, and <a class="el" href="pitems_8cpp_source.html#l00176">SetSelection()</a>.</p>
 
 </div>
 </div>
@@ -397,7 +645,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classform__item.html">form_item</a></li>
-    <li class="footer">Generated on Wed Oct 9 2013 22:32:56 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

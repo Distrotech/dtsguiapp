@@ -16,6 +16,14 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @defgroup CPP-XMLCombo XML combination box.
+  * @brief Combo box that populates list from the XML returned in XML Post.
+  * @ingroup CPP*/
+
+/** @file
+  * @brief Combo box that populates list from the XML returned in XML Post.
+  * @ingroup CPP-XMLCombo*/
+
 #include <wx/combobox.h>
 
 #include "dtsgui.h"

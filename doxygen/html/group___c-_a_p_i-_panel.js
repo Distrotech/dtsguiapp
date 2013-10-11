@@ -1,7 +1,9 @@
 var group___c__a_p_i__panel =
 [
-    [ "C API Tree View Interface", "group___c-_a_p_i-_panel-_tree.html", "group___c-_a_p_i-_panel-_tree" ],
-    [ "C API Tab View Interface", "group___c-_a_p_i-_panel-_tab.html", "group___c-_a_p_i-_panel-_tab" ],
+    [ "Tree view panel interface.", "group___c-_a_p_i-_panel-_tree.html", "group___c-_a_p_i-_panel-_tree" ],
+    [ "Tab view panel interface.", "group___c-_a_p_i-_panel-_tab.html", "group___c-_a_p_i-_panel-_tab" ],
+    [ "Panel element interface.", "group___c-_a_p_i-_panel-_elements.html", "group___c-_a_p_i-_panel-_elements" ],
+    [ "Panel item interface.", "group___c-_a_p_i-_panel-_items.html", "group___c-_a_p_i-_panel-_items" ],
     [ "dtsgui_configcallback", "group___c-_a_p_i-_panel.html#gab2f995a29a5b461ac67c7d9aa7091686", null ],
     [ "dtsgui_delpane", "group___c-_a_p_i-_panel.html#ga71826ffc718e3dc219e57befdb6f0d8c", null ],
     [ "dtsgui_pane2post", "group___c-_a_p_i-_panel.html#ga4d0d6742f61c91fb590b3728a7229150", null ],

@@ -16,6 +16,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="classxml__element_1ae0415b9bbe906cbab04e2c78c84ae5bc" compoundref="pitems_8cpp" startline="67" endline="87">GetValue</referencedby>
+        <referencedby refid="classxml__element_1a232e850ca67d3d065d1c16bea79cb441" compoundref="pitems_8cpp" startline="54" endline="65">Modify</referencedby>
+        <referencedby refid="classxml__element_1a888f82e61d6ed6d91077cbf0037c5ed9" compoundref="pitems_8cpp" startline="46" endline="52">xml_element</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classxml__element_1a78560d170e3256faa79d79679552b717" prot="private" static="no" mutable="no">
         <type>const char *</type>
@@ -29,6 +32,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="34" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="classxml__element_1a888f82e61d6ed6d91077cbf0037c5ed9" compoundref="pitems_8cpp" startline="46" endline="52">xml_element</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classxml__element_1a5e1c544e39cc117f13e692f59cf020c1" prot="private" static="no" mutable="no">
         <type>const char *</type>
@@ -42,6 +46,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="35" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classxml__element_1ae0415b9bbe906cbab04e2c78c84ae5bc" compoundref="pitems_8cpp" startline="67" endline="87">GetValue</referencedby>
+        <referencedby refid="classxml__element_1a232e850ca67d3d065d1c16bea79cb441" compoundref="pitems_8cpp" startline="54" endline="65">Modify</referencedby>
+        <referencedby refid="classxml__element_1a888f82e61d6ed6d91077cbf0037c5ed9" compoundref="pitems_8cpp" startline="46" endline="52">xml_element</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -84,7 +91,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="38" bodyend="44"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="46" bodyend="52"/>
+        <references refid="classxml__element_1a5e1c544e39cc117f13e692f59cf020c1" compoundref="pitems_8h" startline="35">attr</references>
+        <references refid="classxml__element_1a78560d170e3256faa79d79679552b717" compoundref="pitems_8h" startline="34">xpath</references>
+        <references refid="classxml__element_1a7064cb97bc7806a0d2fb792d9c0891e5" compoundref="pitems_8h" startline="33">xsearch</references>
       </memberdef>
       <memberdef kind="function" id="classxml__element_1a232e850ca67d3d065d1c16bea79cb441" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -105,7 +115,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="46" bodyend="57"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="54" bodyend="65"/>
+        <references refid="classxml__element_1a5e1c544e39cc117f13e692f59cf020c1" compoundref="pitems_8h" startline="35">attr</references>
+        <references refid="classxml__element_1a7064cb97bc7806a0d2fb792d9c0891e5" compoundref="pitems_8h" startline="33">xsearch</references>
+        <referencedby refid="class_d_t_s_panel_1adc5131960a24dfa65adba935a1be0f79" compoundref="_d_t_s_panel_8cpp" startline="746" endline="775">DTSPanel::Update_XML</referencedby>
       </memberdef>
       <memberdef kind="function" id="classxml__element_1ae0415b9bbe906cbab04e2c78c84ae5bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const char *</type>
@@ -118,7 +131,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="59" bodyend="79"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="67" bodyend="87"/>
+        <references refid="classxml__element_1a5e1c544e39cc117f13e692f59cf020c1" compoundref="pitems_8h" startline="35">attr</references>
+        <references refid="classxml__element_1a7064cb97bc7806a0d2fb792d9c0891e5" compoundref="pitems_8h" startline="33">xsearch</references>
+        <referencedby refid="class_d_t_s_panel_1a1495f670e901f45cbbc3a4d2c471aa53" compoundref="_d_t_s_panel_8cpp" startline="628" endline="646">DTSPanel::XMLCheckBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a4d294755a98b6194df04292abe18d1b0" compoundref="_d_t_s_panel_8cpp" startline="707" endline="722">DTSPanel::XMLComboBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a03d63a8c380ee62e263d7bc3a3c86396" compoundref="_d_t_s_panel_8cpp" startline="667" endline="682">DTSPanel::XMLListBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a2b893b30f6265079a143bb23029aa083" compoundref="_d_t_s_panel_8cpp" startline="585" endline="598">DTSPanel::XMLTextBox</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

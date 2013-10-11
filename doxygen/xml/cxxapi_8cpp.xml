@@ -33,21 +33,22 @@
     </incdepgraph>
     <innernamespace refid="namespace_d_t_s___c___a_p_i">DTS_C_API</innernamespace>
       <sectiondef kind="define">
-      <memberdef kind="define" id="cxxapi_8cpp_1adc3e6af7bc4df899bca001c49d7f5e07" prot="public" static="no">
+      <memberdef kind="define" id="group___c-_a_p_i_1gadc3e6af7bc4df899bca001c49d7f5e07" prot="public" static="no">
         <name>__DTS_C_API</name>
         <briefdescription>
-        </briefdescription>
+<para>Defining __DTS_C_API allows access to C API from inside a C++ file. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><ref refid="dtsgui_8h" kindref="compound">dtsgui.h</ref> will only include the definitions for the C API using C++ if this is defined. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/cxxapi.cpp" line="19" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/cxxapi.cpp" bodystart="19" bodyend="-1"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/cxxapi.cpp" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/cxxapi.cpp" bodystart="33" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>C++ Functions exported to C API. </para>    </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para><simplesect kind="see"><para><ref refid="namespace_d_t_s___c___a_p_i" kindref="compound">DTS_C_API</ref> </para><simplesectsep/><para><ref refid="group___c-_a_p_i_1gadc3e6af7bc4df899bca001c49d7f5e07" kindref="member">__DTS_C_API</ref> </para><simplesectsep/><para><ref refid="group___c-_a_p_i" kindref="compound">Distrotech GUI Library C API</ref></para></simplesect>
+These functions should not be used in C++ applications. </para>    </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
 <codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/>Distrotech<sp/>Solutions<sp/>wxWidgets<sp/>Gui<sp/>Interface</highlight></codeline>
@@ -67,43 +68,43 @@
 <codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
 <codeline lineno="17"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19" refid="cxxapi_8cpp_1adc3e6af7bc4df899bca001c49d7f5e07" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__DTS_C_API</highlight></codeline>
-<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__WIN32__</highlight></codeline>
-<codeline lineno="22"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>UNICODE<sp/>1</highlight></codeline>
-<codeline lineno="23"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;winsock2.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;shlobj.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
-<codeline lineno="26"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wx/menu.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dtsgui_8h" kindref="compound" tooltip="Main include file for the GUI Library.">dtsgui.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31" refid="namespace_d_t_s___c___a_p_i" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">DTS_C_API<sp/>{</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight></codeline>
-<codeline lineno="33" refid="dtsgui_8h_1ae70ea93052afabcae582538032652d7f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespace_d_t_s___c___a_p_i_1ab20156180905342ce3bc648253507f73" kindref="member">dtsgui_menuenable</ref>(<ref refid="dtsgui_8h_1afb1e28bd82fd8ea9d43a188c06095682" kindref="member">dtsgui_menu</ref><sp/>dm,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>enable)<sp/>{</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>state<sp/>=<sp/><sp/>(enable)<sp/>?<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>wxMenuItemList<sp/>items;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>wxMenuItem<sp/>*mi;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cnt,i;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>wxMenu<sp/>*m<sp/>=<sp/>(wxMenu*)dm;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>items<sp/>=<sp/>m-&gt;GetMenuItems();</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>cnt<sp/>=<sp/>m-&gt;GetMenuItemCount();</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i<sp/>&lt;<sp/>cnt;i++)<sp/>{</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mi<sp/>=<sp/>items[i];</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mi-&gt;Enable(state);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__WIN32</highlight></codeline>
-<codeline lineno="51"><highlight class="preprocessor"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>getwin32folder(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>csidl,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path)<sp/>{</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>SHGetFolderPathA(NULL,<sp/>csidl,<sp/>NULL,<sp/>0,<sp/>path);</highlight></codeline>
-<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
-<codeline lineno="55"><highlight class="preprocessor"></highlight><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>END<sp/>namespace*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="group___c-_a_p_i_1gadc3e6af7bc4df899bca001c49d7f5e07" refkind="member"><highlight class="preprocessor">#define<sp/>__DTS_C_API</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__WIN32__</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>UNICODE<sp/>1</highlight></codeline>
+<codeline lineno="37"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;winsock2.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;shlobj.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="40"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wx/menu.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dtsgui_8h" kindref="compound" tooltip="Main include file for the GUI Library.">dtsgui.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="namespace_d_t_s___c___a_p_i" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">DTS_C_API<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" kindref="member" tooltip="Enable or disable all items in menu.">dtsgui_menuenable</ref>(<ref refid="group___c_o_r_e_1gafb1e28bd82fd8ea9d43a188c06095682" kindref="member" tooltip="Define menu as void* it is not exported to API.">dtsgui_menu</ref><sp/>dm,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>enable)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>state<sp/>=<sp/><sp/>(enable)<sp/>?<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>wxMenuItemList<sp/>items;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>wxMenuItem<sp/>*mi;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cnt,i;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>wxMenu<sp/>*m<sp/>=<sp/>(wxMenu*)dm;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>items<sp/>=<sp/>m-&gt;GetMenuItems();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>cnt<sp/>=<sp/>m-&gt;GetMenuItemCount();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i<sp/>&lt;<sp/>cnt;i++)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mi<sp/>=<sp/>items[i];</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mi-&gt;Enable(state);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor">#ifdef<sp/>__WIN32</highlight></codeline>
+<codeline lineno="74"><highlight class="preprocessor"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>getwin32folder(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>csidl,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path)<sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>SHGetFolderPathA(NULL,<sp/>csidl,<sp/>NULL,<sp/>0,<sp/>path);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="78"><highlight class="preprocessor"></highlight><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>END<sp/>namespace*/</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/usr/src/dtsapplib/dtsguiapp/src/cxxapi.cpp"/>
   </compounddef>

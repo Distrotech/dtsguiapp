@@ -1,0 +1,931 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="group___c_o_r_e" kind="group">
+    <compoundname>CORE</compoundname>
+    <title>Core API Interface Common to C and C++</title>
+    <innerfile refid="dtsgui_8h">dtsgui.h</innerfile>
+    <innerclass refid="structpoint" prot="public">point</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group___c_o_r_e_1ga465794df2cb30731dfe34d3e7a4ed368" prot="public" static="no">
+        <name>tree_cbtype</name>
+        <enumvalue id="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368adac89e1845cacd5358022cbc20aba1a9" prot="public">
+          <name>DTSGUI_TREE_CB_SELECT</name>
+          <briefdescription>
+<para>Treenods is selected. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368a95978182db76e342ba406456dc935258" prot="public">
+          <name>DTSGUI_TREE_CB_DELETE</name>
+          <briefdescription>
+<para>Treenods is to be deleted. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368a629392b319c09bfdb44b638c858381e8" prot="public">
+          <name>DTSGUI_TREE_CB_EDIT</name>
+          <briefdescription>
+<para>Treenods is edited. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Callback event for tree view. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="38" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="38" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="enum" id="group___c_o_r_e_1gaa648ae9cc0927fecec3a6f705930f8a9" prot="public" static="no">
+        <name>form_data_type</name>
+        <enumvalue id="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" prot="public">
+          <name>DTSGUI_FORM_DATA_PTR</name>
+          <briefdescription>
+<para>Reference to data. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9a5c592b75994135a5de470f79e40aafda" prot="public">
+          <name>DTSGUI_FORM_DATA_XML</name>
+          <briefdescription>
+<para>Reference to XML Node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Data storage type on form element. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="48" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="48" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="enum" id="group___c_o_r_e_1ga5082bae7f0b5d2b7d715e40450f302ec" prot="public" static="no">
+        <name>panel_buttons</name>
+        <enumvalue id="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca332b4d1a5e1ae1425b5f77c49edd311c" prot="public">
+          <name>wx_PANEL_EVENT_BUTTON_FIRST</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+<para>A Rewind button used to indicate select first record. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca5092915b2da9df3365a956562b3d3663" prot="public">
+          <name>wx_PANEL_EVENT_BUTTON_BACK</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+<para>A Back button used to go one record back. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca95b3613970d7acac3b1b3f4adbebf186" prot="public">
+          <name>wx_PANEL_EVENT_BUTTON_FWD</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+<para>A Forward button indicating to proceed to next record. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302ecaff2d58b46c16f29654d00ae290e25a63" prot="public">
+          <name>wx_PANEL_EVENT_BUTTON_LAST</name>
+          <initializer>= 1 &lt;&lt; 3</initializer>
+          <briefdescription>
+<para>A Fast Forward button used to indicate select lasr record. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca6ce91176e6c929e87d7acbd000d07f79" prot="public">
+          <name>wx_PANEL_EVENT_BUTTON_YES</name>
+          <initializer>= 1 &lt;&lt; 4</initializer>
+          <briefdescription>
+<para>A Affirmative button. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302ecadb8742f8472eb90558cfbf8e3914553b" prot="public">
+          <name>wx_PANEL_EVENT_BUTTON_NO</name>
+          <initializer>= 1 &lt;&lt; 5</initializer>
+          <briefdescription>
+<para>A Cancel/No/Undo button. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Define all buttons that are used in creating a panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>These buttons are placed in this order at the bottom of the panel buttons not in the mask are not displayed and are blank spaces </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="198" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="198" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="enum" id="group___c_o_r_e_1ga54d7edaba9c015c3b5310ed3080b82e6" prot="public" static="no">
+        <name>panel_events</name>
+        <enumvalue id="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a331937b86eb259d1d84728d28fbed79d" prot="public">
+          <name>wx_PANEL_EVENT_BUTTON</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+<para>Button press event. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a05cb2a662e44a9332f631e8fb04ea5ef" prot="public">
+          <name>wx_PANEL_EVENT_COMBO_ENTER</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+<para>Enter was pressed in a Combo box. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a9d9853f83e3e28aaca0621c788994cc8" prot="public">
+          <name>wx_PANEL_EVENT_COMBO_UPDATE</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+<para>Combo box text has been updated. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a8f700b4b2b17b782d57dd32dc696956c" prot="public">
+          <name>wx_PANEL_EVENT_DTS</name>
+          <initializer>= 1 &lt;&lt; 3</initializer>
+          <briefdescription>
+<para>DTS Application event.. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Define all possible events that are passed to event handler. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="214" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="214" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="enum" id="group___c_o_r_e_1ga7ecd2a00f2306c0b94734a72a7899898" prot="public" static="no">
+        <name>tree_newnode_flags</name>
+        <enumvalue id="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a92d0796e80ba757f7f74979253423b98" prot="public">
+          <name>DTS_TREE_NEW_NODE_EDIT</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+<para>Allow editing of the node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a09bf4479510d6996e8c2d0e3cd27c714" prot="public">
+          <name>DTS_TREE_NEW_NODE_DELETE</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+<para>Allow deleteing the node from right click menu. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a67752f3ce4c088a226eb85e1f2369532" prot="public">
+          <name>DTS_TREE_NEW_NODE_CONTAINER</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+<para>Node is a Container. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898ab4026cda71b1fb600c8af942c1194e99" prot="public">
+          <name>DTS_TREE_NEW_NODE_SORT</name>
+          <initializer>= 1 &lt;&lt; 3</initializer>
+          <briefdescription>
+<para>Container node allows sorting. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Options set on tree nodes. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>Not all options apply to containers and leaf nodes. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="227" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="227" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="enum" id="group___c_o_r_e_1ga9275874ac61d3750aa677a36da714373" prot="public" static="no">
+        <name>panel_type</name>
+        <enumvalue id="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373ad0213b4d1d51e9f04e084a09e8da1c62" prot="public">
+          <name>wx_DTSPANEL_WINDOW</name>
+          <briefdescription>
+<para><ref refid="class_d_t_s_window" kindref="compound">DTSWindow</ref> (wx_DTSPANEL_WINDOW) is a basic panel without tab traversal controls and is rarely used (<ref refid="class_d_t_s_frame_1afc0dae8ce7b26ef38297d520a3144d2a" kindref="member">DTSFrame::TextPanel</ref>). </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a0e31c26466ea939007976914785fff2c" prot="public">
+          <name>wx_DTSPANEL_PANEL</name>
+          <briefdescription>
+<para><ref refid="class_d_t_s_static_panel" kindref="compound">DTSStaticPanel</ref> (wx_DTSPANEL_PANEL) includes tab traversal. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a51268d1576c4e816f1416435cfe61500" prot="public">
+          <name>wx_DTSPANEL_SCROLLPANEL</name>
+          <briefdescription>
+<para><ref refid="class_d_t_s_scroll_panel" kindref="compound">DTSScrollPanel</ref> (wx_DTSPANEL_SCROLLPANEL) adds scrollbar support. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a259d19ace1b7a45cbd7e99697bd2b69a" prot="public">
+          <name>wx_DTSPANEL_DIALOG</name>
+          <briefdescription>
+<para><ref refid="class_d_t_s_dialog" kindref="compound">DTSDialog</ref> (wx_DTSPANEL_DIALOG) is a wx_DTSPANEL_PANEL displayed in a pop up dialog box. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a8aa14d05cc73bd9438f302f6f2cb29c3" prot="public">
+          <name>wx_DTSPANEL_TREE</name>
+          <briefdescription>
+<para><ref refid="class_d_t_s_tree_window" kindref="compound">DTSTreeWindow</ref> (wx_DTSPANEL_TREE) see <ref refid="group___c-_a_p_i-_panel-_tree" kindref="compound">Tree view panel interface.</ref>. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a94b4b5412dbd78fdf58517c74afa9dad" prot="public">
+          <name>wx_DTSPANEL_TAB</name>
+          <briefdescription>
+<para><ref refid="class_d_t_s_tab_window" kindref="compound">DTSTabWindow</ref> (wx_DTSPANEL_TAB) see <ref refid="group___c-_a_p_i-_panel-_tab" kindref="compound">Tab view panel interface.</ref>. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373aa108fde55f9c1830cf68cd368aba1d02" prot="public">
+          <name>wx_DTSPANEL_WIZARD</name>
+          <briefdescription>
+<para><ref refid="class_d_t_s_wizard_window" kindref="compound">DTSWizardWindow</ref> (wx_DTSPANEL_WIZARD) see <ref refid="group___c-_a_p_i-_wizard" kindref="compound">Wizard Interface.</ref>. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Panel Type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="239" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="239" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="enum" id="group___c_o_r_e_1gafd296180392ef5681415b9fb0590be84" prot="public" static="no">
+        <name>widget_type</name>
+        <enumvalue id="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84a30946b987fd9b1a681425eb86c33b836" prot="public">
+          <name>DTS_WIDGET_TEXTBOX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84af8b07c907089ef8cf8534af437682a28" prot="public">
+          <name>DTS_WIDGET_CHECKBOX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84a617d0a94e82cae830c769b66b1751b9a" prot="public">
+          <name>DTS_WIDGET_LISTBOX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84ad091872a88b66595cb453008b03565cc" prot="public">
+          <name>DTS_WIDGET_COMBOBOX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Type of list item. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="257" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="257" bodyend="262"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group___c_o_r_e_1ga8d0ed2b4049e42079b366e341b33347f" prot="public" static="no">
+        <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref></type>
+        <definition>typedef struct dtsgui dtsgui</definition>
+        <argsstring></argsstring>
+        <name>dtsgui</name>
+        <briefdescription>
+<para>Forward decleration of the application data class. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="56" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1ga00d1631dc45e8a99d361b5091856abe3" prot="public" static="no">
+        <type>struct <ref refid="classdtsgui__wizard" kindref="compound">dtsgui_wizard</ref></type>
+        <definition>typedef struct dtsgui_wizard dtsgui_wizard</definition>
+        <argsstring></argsstring>
+        <name>dtsgui_wizard</name>
+        <briefdescription>
+<para>Forward decleration of wizard class. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="58" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1gabbf6decd0bf8428c296f4adcafed46fb" prot="public" static="no">
+        <type>struct <ref refid="classform__item" kindref="compound">form_item</ref></type>
+        <definition>typedef struct form_item form_item</definition>
+        <argsstring></argsstring>
+        <name>form_item</name>
+        <briefdescription>
+<para>Forward definition of <ref refid="classform__item" kindref="compound">form_item</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="60" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1gaa881f6b55dcf9b95108f08bf62d4802f" prot="public" static="no">
+        <type>struct <ref refid="classdynamic__panel" kindref="compound">dynamic_panel</ref></type>
+        <definition>typedef struct dynamic_panel dynamic_panel</definition>
+        <argsstring></argsstring>
+        <name>dynamic_panel</name>
+        <briefdescription>
+<para>Forward definition of <ref refid="classdynamic__panel" kindref="compound">dynamic_panel</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="62" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1gafb1e28bd82fd8ea9d43a188c06095682" prot="public" static="no">
+        <type>void *</type>
+        <definition>typedef void* dtsgui_menu</definition>
+        <argsstring></argsstring>
+        <name>dtsgui_menu</name>
+        <briefdescription>
+<para>Define menu as void* it is not exported to API. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="65" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1gaf59302244664352117c2669055da5850" prot="public" static="no">
+        <type>void *</type>
+        <definition>typedef void* dtsgui_menuitem</definition>
+        <argsstring></argsstring>
+        <name>dtsgui_menuitem</name>
+        <briefdescription>
+<para>Define menuitem as void* it is not exported to API. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="67" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" prot="public" static="no">
+        <type>void *</type>
+        <definition>typedef void* dtsgui_pane</definition>
+        <argsstring></argsstring>
+        <name>dtsgui_pane</name>
+        <briefdescription>
+<para>Define panel as void* it is not exported to API. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="69" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1ga698d08e25e0df56af6ba94c8056bdd97" prot="public" static="no">
+        <type>void *</type>
+        <definition>typedef void* dtsgui_notebook</definition>
+        <argsstring></argsstring>
+        <name>dtsgui_notebook</name>
+        <briefdescription>
+<para>Define notebook as void* it is not exported to API. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="71" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" prot="public" static="no">
+        <type>void *</type>
+        <definition>typedef void* dtsgui_treeview</definition>
+        <argsstring></argsstring>
+        <name>dtsgui_treeview</name>
+        <briefdescription>
+<para>Define treeview as void* it is not exported to API. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="73" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1ga29c463cda54f69beb273c77e1aa7ccef" prot="public" static="no">
+        <type>void *</type>
+        <definition>typedef void* dtsgui_tabview</definition>
+        <argsstring></argsstring>
+        <name>dtsgui_tabview</name>
+        <briefdescription>
+<para>Define tabview as void* it is not exported to API. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="75" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" prot="public" static="no">
+        <type>void *</type>
+        <definition>typedef void* dtsgui_treenode</definition>
+        <argsstring></argsstring>
+        <name>dtsgui_treenode</name>
+        <briefdescription>
+<para>Define treenode as void* it is not exported to API. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="77" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1ga531b61ccda025272407e2d2b26f0072c" prot="public" static="no">
+        <type>void *</type>
+        <definition>typedef void* dtsgui_progress</definition>
+        <argsstring></argsstring>
+        <name>dtsgui_progress</name>
+        <briefdescription>
+<para>Define progress as void* it is not exported to API. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="79" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1gad3b80490c86b8275c47382588f2ecfd4" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int(* dtsgui_configcb)(struct dtsgui *, void *)</definition>
+        <argsstring>)(struct dtsgui *, void *)</argsstring>
+        <name>dtsgui_configcb</name>
+        <briefdescription>
+<para>Callback called on application execution. </para>        </briefdescription>
+        <detaileddescription>
+<para>The callback is called with the application pointer and supplied userdata <simplesect kind="see"><para><ref refid="class_d_t_s_app_1a1b9443b7b3698541887e6407fdc6d1ac" kindref="member">DTSApp::DTSApp()</ref> </para><simplesectsep/><para><ref refid="group___c-_a_p_i_1gacecdb36b65ac3d5522a419a6b69c9f7f" kindref="member">dtsgui_config()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Userdata reference. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returning 0 will cause application execution to fail. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="89" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1ga06d1a959e1581116961bca636a919043" prot="public" static="no">
+        <type>int(*</type>
+        <definition>typedef int(* event_callback)(struct dtsgui *, dtsgui_pane, int type, int, void *)</definition>
+        <argsstring>)(struct dtsgui *, dtsgui_pane, int type, int, void *)</argsstring>
+        <name>event_callback</name>
+        <briefdescription>
+<para>Callback run on panel event. </para>        </briefdescription>
+        <detaileddescription>
+<para>When a panel event is triggered and a callback has been registered it will be called. <simplesect kind="see"><para><ref refid="group___c_o_r_e_1ga54d7edaba9c015c3b5310ed3080b82e6" kindref="member">panel_events</ref> </para><simplesectsep/><para><ref refid="group___c_o_r_e_1ga5082bae7f0b5d2b7d715e40450f302ec" kindref="member">panel_buttons</ref> </para><simplesectsep/><para><ref refid="class_d_t_s_panel_1ac18de08077529d488ea329a72ee14d98" kindref="member">DTSPanel::SetEventCallback()</ref> </para><simplesectsep/><para><ref refid="group___c-_a_p_i-_panel_1gaa85445ee6c9a2c24d76824bb67cc2ab2" kindref="member">dtsgui_setevcallback()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel that the event originated on. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event type. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>eid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event ID Depends on the event type. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data attached to the event handler. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A non zero value to allow further processing of the event. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="105" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1ga53eefce4ace6a7d72e49e9ae4c520226" prot="public" static="no">
+        <type>void *(*</type>
+        <definition>typedef void*(* dtsgui_toolbar_create)(struct dtsgui *, void *, long, int, const char *, void *data)</definition>
+        <argsstring>)(struct dtsgui *, void *, long, int, const char *, void *data)</argsstring>
+        <name>dtsgui_toolbar_create</name>
+        <briefdescription>
+<para>Calback to configure and return a wxToolbar objecct. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_d_t_s_frame_1a1fe29f6d56f11d1702a372416a659e3e" kindref="member">DTSFrame::SetupToolbar()</ref> </para><simplesectsep/><para><ref refid="group___c-_a_p_i_1ga1734b840fc0696b13d5b616df0ec3bbb" kindref="member">dtsgui_setuptoolbar</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application frame (Parent window wxWindow) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>style</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Style to be supplied to wxToolbar constructor. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>wid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window id to be supplied. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name to be supplied. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to data supplied when setting upt the tool bar. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Must return a wxToolbar object. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="118" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1ga080f931027861c0021f72ac2562b45d7" prot="public" static="no">
+        <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref>(*</type>
+        <definition>typedef dtsgui_pane(* dtsgui_dynpanel)(struct dtsgui *, const char *, void *)</definition>
+        <argsstring>)(struct dtsgui *, const char *, void *)</argsstring>
+        <name>dtsgui_dynpanel</name>
+        <briefdescription>
+<para>Callback called when a dynamic menu item is selected. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is called and allows returning a pane to be displayed. <simplesect kind="see"><para><ref refid="class_d_t_s_frame_1a55fe07b66530435bce652e8ab3091707" kindref="member">DTSFrame::NewMenuItem()</ref> </para><simplesectsep/><para><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member">dtsgui_newmenucb</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the menu item. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to data set when menu is created. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If a panel is returned it will be displayed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="129" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1gae088feda00f338f6ddd35daaacc44817" prot="public" static="no">
+        <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref>(*</type>
+        <definition>typedef dtsgui_pane(* dtsgui_tree_cb)(struct dtsgui *, dtsgui_treeview, dtsgui_treenode, enum tree_cbtype, const char *, void *)</definition>
+        <argsstring>)(struct dtsgui *, dtsgui_treeview, dtsgui_treenode, enum tree_cbtype, const char *, void *)</argsstring>
+        <name>dtsgui_tree_cb</name>
+        <briefdescription>
+<para>Callback used for tree view events. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_d_t_s_tree_window_event_1a98ac8a3612545e1eaeb99fa9b5662048" kindref="member">DTSTreeWindowEvent::TreeCallback()</ref> </para><simplesectsep/><para><ref refid="group___c_o_r_e_1ga465794df2cb30731dfe34d3e7a4ed368" kindref="member">tree_cbtype</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Treeview. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree node that generated the event. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Callback type. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Userdata refernece of data passed too treeview. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If a panel is returned it will be placed int the display area. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="142" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1ga8bf800adcd2392cf7722c3cf2f603f96" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* dtsgui_treeviewpanel_cb)(dtsgui_pane, dtsgui_treeview, dtsgui_treenode, void *)</definition>
+        <argsstring>)(dtsgui_pane, dtsgui_treeview, dtsgui_treenode, void *)</argsstring>
+        <name>dtsgui_treeviewpanel_cb</name>
+        <briefdescription>
+<para>Callback called after dtsgui_tree_cb to allow configuration of the panel. </para>        </briefdescription>
+        <detaileddescription>
+<para>This callback is stored on the node and allows the panel to be configured per node allowing generic tree callback. <simplesect kind="see"><para><ref refid="class_d_t_s_tree_window_event_1a98ac8a3612545e1eaeb99fa9b5662048" kindref="member">DTSTreeWindowEvent::TreeCallback()</ref> </para><simplesectsep/><para><ref refid="class_d_t_s_d_v_m_list_store_1a235c78752ca007f5189806e95abcefe2" kindref="member">DTSDVMListStore::ConfigPanel()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Treeview that contains the node/panel. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Node that this panel represents. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to user data stored on node. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="154" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1ga52992645e33e4d92c8e68c3490239c75" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* dtsgui_xmltreenode_cb)(dtsgui_treeview, dtsgui_treenode, struct xml_node *, void *)</definition>
+        <argsstring>)(dtsgui_treeview, dtsgui_treenode, struct xml_node *, void *)</argsstring>
+        <name>dtsgui_xmltreenode_cb</name>
+        <briefdescription>
+<para>Callback called as part of the creation of a new node. </para>        </briefdescription>
+        <detaileddescription>
+<para>This callback will allow manipulation of the newly created node if required. <simplesect kind="see"><para><ref refid="group___c-_a_p_i-_panel-_tree_1ga55a99744231b294667ece32a1087042f" kindref="member">dtsgui_newxmltreenode()</ref> </para><simplesectsep/><para><ref refid="classtree__newnode_1a79fd1a82bf40d2d922c1d297f1de3f29" kindref="member">tree_newnode::tree_newnode()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view that contains the node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Newly created tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>XML Node assigned to the node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to user data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="165" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1gab65db729662a3b0d109158d2fb51f93c" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* dtsgui_tabpanel_cb)(dtsgui_pane, void *)</definition>
+        <argsstring>)(dtsgui_pane, void *)</argsstring>
+        <name>dtsgui_tabpanel_cb</name>
+        <briefdescription>
+<para>Configure a tab view panel prior to display. </para>        </briefdescription>
+        <detaileddescription>
+<para>Tab panels are dynanic and created as needed by calling this callback. <simplesect kind="see"><para><ref refid="class_d_t_s_tab_page_1a433bdbb8af0ded1fb884b45c5d9259a9" kindref="member">DTSTabPage::ConfigPane()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel been configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the config data held by panel. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="173" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group___c_o_r_e_1gab5e1fa276d48b20d35f4ef20110c39ed" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* dtsgui_tabpane_newdata_cb)(struct xml_doc *, struct xml_node *, void *, void **, int *)</definition>
+        <argsstring>)(struct xml_doc *, struct xml_node *, void *, void **, int *)</argsstring>
+        <name>dtsgui_tabpane_newdata_cb</name>
+        <briefdescription>
+<para>Allow setting the configuration data before tab pane is created. </para>        </briefdescription>
+        <detaileddescription>
+<para>This callback is called as part of the new tab creation to allow setting callback data.The position of the pane can also be set. <simplesect kind="see"><para><ref refid="classtab__newpane_1af3f96c0ce186f089d5e5598ea4814179" kindref="member">tab_newpane::handle_newtabpane()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xmldoc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>XML Document. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>XML Node reference. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel data reference. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cdata</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to reference of cdata can be replaced by setting cdata[0] to new reference. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to integer containing panel position can be overwritten setting *pos. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="185" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___c_o_r_e_1gabcf9e451a313490d78549227e6dc8824" prot="public" static="no">
+        <name>wx_PANEL_BUTTON_NAV</name>
+        <initializer><ref refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca332b4d1a5e1ae1425b5f77c49edd311c" kindref="member">wx_PANEL_EVENT_BUTTON_FIRST</ref> | <ref refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca5092915b2da9df3365a956562b3d3663" kindref="member">wx_PANEL_EVENT_BUTTON_BACK</ref> | <ref refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca95b3613970d7acac3b1b3f4adbebf186" kindref="member">wx_PANEL_EVENT_BUTTON_FWD</ref> | <ref refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302ecaff2d58b46c16f29654d00ae290e25a63" kindref="member">wx_PANEL_EVENT_BUTTON_LAST</ref></initializer>
+        <briefdescription>
+<para>Shortcut flags for navigation buttons. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="265" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="265" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___c_o_r_e_1gaa7fc68a1ddb9112dbbbfe2ae26e2e379" prot="public" static="no">
+        <name>wx_PANEL_BUTTON_DIR</name>
+        <initializer><ref refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca5092915b2da9df3365a956562b3d3663" kindref="member">wx_PANEL_EVENT_BUTTON_BACK</ref> | <ref refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca95b3613970d7acac3b1b3f4adbebf186" kindref="member">wx_PANEL_EVENT_BUTTON_FWD</ref></initializer>
+        <briefdescription>
+<para>Shortcut flags for direction buttons. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="268" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="268" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group___c_o_r_e_1ga4ef37ee1286eb68a9f5663813f134be2" prot="public" static="no">
+        <name>wx_PANEL_BUTTON_ACTION</name>
+        <initializer><ref refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca6ce91176e6c929e87d7acbd000d07f79" kindref="member">wx_PANEL_EVENT_BUTTON_YES</ref> | <ref refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302ecadb8742f8472eb90558cfbf8e3914553b" kindref="member">wx_PANEL_EVENT_BUTTON_NO</ref></initializer>
+        <briefdescription>
+<para>Shortcut flags for action buttons. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="271" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="271" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_tree_window_1a45d33a41609c46d51d17bb80a64f2ca4" compoundref="_d_t_s_tree_window_8cpp" startline="736" endline="752">DTSTreeWindow::CreatePane</referencedby>
+        <referencedby refid="classtab__newpane_1af3f96c0ce186f089d5e5598ea4814179" compoundref="_d_t_s_tree_window_8cpp" startline="216" endline="253">tab_newpane::handle_newtabpane</referencedby>
+        <referencedby refid="private_8h_1abf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="145" endline="184">iface_config</referencedby>
+        <referencedby refid="class_d_t_s_frame_1a5a7ad78662b511e7ef6ac513f8d1a28b" compoundref="_d_t_s_frame_8cpp" startline="495" endline="510">DTSFrame::Passwd</referencedby>
+        <referencedby refid="private_8h_1aa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="325" endline="350">pbx_settings</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___c_o_r_e_1ga6fd6c8004323d4605940ac5fb2ff9c9b" prot="public" static="no">
+        <name>wx_PANEL_BUTTON_ALL</name>
+        <initializer><ref refid="group___c_o_r_e_1ga4ef37ee1286eb68a9f5663813f134be2" kindref="member">wx_PANEL_BUTTON_ACTION</ref> | <ref refid="group___c_o_r_e_1gabcf9e451a313490d78549227e6dc8824" kindref="member">wx_PANEL_BUTTON_NAV</ref></initializer>
+        <briefdescription>
+<para>Shortcut flags for all buttons. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="274" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="274" bodyend="-1"/>
+        <referencedby refid="testing_8c_1a77cb81a619f8c9ccd83cdf1e7c97aae9" compoundref="testing_8c" startline="94" endline="105">test_menu</referencedby>
+      </memberdef>
+      <memberdef kind="define" id="group___c_o_r_e_1ga655f2051956468f6592bef486573e424" prot="public" static="no">
+        <name>wx_PANEL_EVENT_BUTTON_NONE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Shortcut flags for no buttons. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="277" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="277" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Core elements shared by all API&apos;s. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

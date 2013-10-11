@@ -1,0 +1,224 @@
+.TH "Distrotech Application Wizard Interface" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Distrotech Application Wizard Interface \- 
+.PP
+System configuration wizard\&.  
+
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBwizard\&.c\fP"
+.br
+.RI "\fISystem configuration wizard\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBset_temp_xml\fP (struct xml_doc *xmldoc)"
+.br
+.ti -1c
+.RI "static void \fBrem_temp_xml\fP (struct xml_doc *xmldoc)"
+.br
+.ti -1c
+.RI "void \fBwizz_custinfo\fP (\fBdtsgui_pane\fP *pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_netinfo\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_dyndns\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_dnsinfo\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_x509\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_samba\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_network\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_exten\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_location\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_acd\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_trunk\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "void \fBwizz_voip\fP (\fBdtsgui_pane\fP pg)"
+.br
+.ti -1c
+.RI "static int \fBsystem_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, void *data, const char *filename, struct xml_doc *xmldoc, int save)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBnewsys_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBeditsys_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBreconfig_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+System configuration wizard\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBdtsgui_pane\fP editsys_wizard (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 461 of file wizard\&.c\&.
+.PP
+References dtsgui_alert(), dtsgui_fileopen(), and system_wizard()\&.
+.PP
+Referenced by file_menu()\&.
+.SS "\fBdtsgui_pane\fP newsys_wizard (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 436 of file wizard\&.c\&.
+.PP
+References app_data::datadir, dtsgui_alert(), dtsgui_userdata(), and system_wizard()\&.
+.PP
+Referenced by file_menu()\&.
+.SS "\fBdtsgui_pane\fP reconfig_wizard (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Definition at line 481 of file wizard\&.c\&.
+.PP
+References app_getxmldoc(), and system_wizard()\&.
+.PP
+Referenced by config_menu()\&.
+.SS "static void rem_temp_xml (struct xml_doc *xmldoc)\fC [static]\fP"
+
+.PP
+Definition at line 111 of file wizard\&.c\&.
+.PP
+Referenced by system_wizard()\&.
+.SS "static void set_temp_xml (struct xml_doc *xmldoc)\fC [static]\fP"
+
+.PP
+Definition at line 35 of file wizard\&.c\&.
+.PP
+Referenced by system_wizard()\&.
+.SS "static int system_wizard (struct \fBdtsgui\fP *dtsgui, void *data, const char *filename, struct xml_doc *xmldoc, intsave)\fC [static]\fP"
+
+.PP
+Definition at line 363 of file wizard\&.c\&.
+.PP
+References dtsgui_confirm(), dtsgui_filesave(), dtsgui_newwizard(), dtsgui_runwizard(), dtsgui_wizard_addpage(), dtsgui_xmlpanel_update(), rem_temp_xml(), set_temp_xml(), wizz_acd(), wizz_custinfo(), wizz_dnsinfo(), wizz_dyndns(), wizz_exten(), wizz_location(), wizz_netinfo(), wizz_network(), wizz_samba(), wizz_trunk(), wizz_voip(), and wizz_x509()\&.
+.PP
+Referenced by editsys_wizard(), newsys_wizard(), and reconfig_wizard()\&.
+.SS "void wizz_acd (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 317 of file wizard\&.c\&.
+.PP
+References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by system_wizard()\&.
+.SS "void wizz_custinfo (\fBdtsgui_pane\fP *pg)"
+
+.PP
+Definition at line 164 of file wizard\&.c\&.
+.PP
+References dtsgui_xmltextbox(), and dtsgui_xmltextbox_multi()\&.
+.PP
+Referenced by customer_info(), and system_wizard()\&.
+.SS "void wizz_dnsinfo (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 190 of file wizard\&.c\&.
+.PP
+References dtsgui_xmltextbox()\&.
+.PP
+Referenced by system_wizard()\&.
+.SS "void wizz_dyndns (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 184 of file wizard\&.c\&.
+.PP
+References dtsgui_xmltextbox()\&.
+.PP
+Referenced by system_wizard()\&.
+.SS "void wizz_exten (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 233 of file wizard\&.c\&.
+.PP
+References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), dtsgui_xmllistbox(), dtsgui_xmltextbox(), listitem::name, and listitem::value\&.
+.PP
+Referenced by system_wizard()\&.
+.SS "void wizz_location (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 282 of file wizard\&.c\&.
+.PP
+References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), dtsgui_xmllistbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by system_wizard()\&.
+.SS "void wizz_netinfo (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 175 of file wizard\&.c\&.
+.PP
+References dtsgui_xmltextbox()\&.
+.PP
+Referenced by system_wizard()\&.
+.SS "void wizz_network (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 217 of file wizard\&.c\&.
+.PP
+References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), dtsgui_xmlcombobox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by system_wizard()\&.
+.SS "void wizz_samba (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 209 of file wizard\&.c\&.
+.PP
+References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by system_wizard()\&.
+.SS "void wizz_trunk (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 326 of file wizard\&.c\&.
+.PP
+References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), dtsgui_xmllistbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by system_wizard()\&.
+.SS "void wizz_voip (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 348 of file wizard\&.c\&.
+.PP
+References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), and dtsgui_xmllistbox()\&.
+.PP
+Referenced by system_wizard()\&.
+.SS "void wizz_x509 (\fBdtsgui_pane\fPpg)"
+
+.PP
+Definition at line 199 of file wizard\&.c\&.
+.PP
+References dtsgui_xmltextbox()\&.
+.PP
+Referenced by system_wizard()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

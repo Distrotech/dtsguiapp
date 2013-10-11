@@ -1,4 +1,4 @@
-.TH "DTSDVMListView" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "DTSDVMListView" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -113,123 +113,213 @@ Definition at line 69 of file DTSListView\&.h\&.
 .SS "DTSDVMListView::DTSDVMListView (intcols = \fC1\fP, boolcont_cols = \fCtrue\fP)"
 
 .PP
-Definition at line 239 of file DTSListView\&.cpp\&.
+Definition at line 247 of file DTSListView\&.cpp\&.
+.PP
+References colcnt, hascontcol, and root\&.
 .SS "DTSDVMListView::~DTSDVMListView ()"
 
 .PP
-Definition at line 245 of file DTSListView\&.cpp\&.
+Definition at line 253 of file DTSListView\&.cpp\&.
+.PP
+References DeleteAll()\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void DTSDVMListView::Delete (const wxDataViewItem &item)"
 
 .PP
-Definition at line 333 of file DTSListView\&.cpp\&.
+Definition at line 341 of file DTSListView\&.cpp\&.
+.PP
+References DeleteAll(), DTSDVMListStore::GetParent(), DTSDVMListStore::GetXMLData(), and DTSDVMListStore::RemoveChildReference()\&.
+.PP
+Referenced by DTSTreeWindowEvent::MenuEvent()\&.
 .SS "void DTSDVMListView::DeleteAll (void)"
 
 .PP
-Definition at line 359 of file DTSListView\&.cpp\&.
+Definition at line 367 of file DTSListView\&.cpp\&.
+.PP
+References root\&.
+.PP
+Referenced by DTSDVMCtrl::AssociateModel(), Delete(), DTSDVMCtrl::~DTSDVMCtrl(), and ~DTSDVMListView()\&.
 .SS "int DTSDVMListView::GetChildCount (wxDataViewItem &parent)"
 
 .PP
-Definition at line 383 of file DTSListView\&.cpp\&.
+Definition at line 391 of file DTSListView\&.cpp\&.
+.PP
+References DTSDVMListStore::GetChildCount(), and root\&.
+.PP
+Referenced by DTSTreeWindowEvent::TreeEvent()\&.
 .SS "unsigned int DTSDVMListView::GetChildren (const wxDataViewItem &parent, wxDataViewItemArray &items) const\fC [virtual]\fP"
 
 .PP
-Definition at line 273 of file DTSListView\&.cpp\&.
+Definition at line 281 of file DTSListView\&.cpp\&.
+.PP
+References DTSDVMListStore::GetChildren(), and root\&.
+.PP
+Referenced by MoveChildDown(), MoveChildUp(), and SortChildren()\&.
 .SS "unsigned int DTSDVMListView::GetColumnCount () const\fC [virtual]\fP"
 
 .PP
-Definition at line 292 of file DTSListView\&.cpp\&.
+Definition at line 300 of file DTSListView\&.cpp\&.
+.PP
+References colcnt\&.
 .SS "wxString DTSDVMListView::GetColumnType (unsigned intcol) const\fC [virtual]\fP"
 
 .PP
-Definition at line 300 of file DTSListView\&.cpp\&.
+Definition at line 308 of file DTSListView\&.cpp\&.
 .SS "unsigned int DTSDVMListView::GetContainers (const wxDataViewItem &parent, wxDataViewItemArray &items, boolexonly = \fCfalse\fP) const\fC [virtual]\fP"
 
 .PP
-Definition at line 428 of file DTSListView\&.cpp\&.
+Definition at line 436 of file DTSListView\&.cpp\&.
+.PP
+References DTSDVMListStore::GetContainers(), and root\&.
+.PP
+Referenced by DTSTreeWindowEvent::SortParent()\&.
 .SS "int DTSDVMListView::GetNodeID (const wxDataViewItem &node)"
 
 .PP
-Definition at line 499 of file DTSListView\&.cpp\&.
+Definition at line 507 of file DTSListView\&.cpp\&.
+.PP
+References DTSDVMListStore::GetNodeID(), and root\&.
+.PP
+Referenced by DTSTreeWindow::CreatePane(), and DTSTreeWindowEvent::TreeEvent()\&.
 .SS "wxDataViewItem DTSDVMListView::GetNthChild (wxDataViewItem &parent, size_tidx)"
 
 .PP
-Definition at line 397 of file DTSListView\&.cpp\&.
+Definition at line 405 of file DTSListView\&.cpp\&.
+.PP
+References DTSDVMListStore::GetNthChild(), and root\&.
+.PP
+Referenced by DTSTreeWindowEvent::TreeEvent()\&.
 .SS "wxDataViewItem DTSDVMListView::GetParent (const wxDataViewItem &item) const\fC [virtual]\fP"
 
 .PP
-Definition at line 258 of file DTSListView\&.cpp\&.
+Definition at line 266 of file DTSListView\&.cpp\&.
+.PP
+References DTSDVMListStore::GetParent(), and root\&.
+.PP
+Referenced by DTSTreeWindowEvent::MenuEvent(), and DTSTreeWindowEvent::TreeEvent()\&.
 .SS "\fBDTSDVMListStore\fP * DTSDVMListView::GetRoot ()"
 
 .PP
-Definition at line 324 of file DTSListView\&.cpp\&.
+Definition at line 332 of file DTSListView\&.cpp\&.
+.PP
+References root\&.
+.PP
+Referenced by DTSDVMCtrl::AppendNode(), and DTSTreeWindow::Show()\&.
 .SS "const wxString DTSDVMListView::GetTitle (const wxDataViewItem &node)"
 
 .PP
-Definition at line 532 of file DTSListView\&.cpp\&.
+Definition at line 540 of file DTSListView\&.cpp\&.
+.PP
+References DTSDVMListStore::GetTitle(), and root\&.
+.PP
+Referenced by DTSTreeWindow::CreatePane()\&.
 .SS "void * DTSDVMListView::GetUserData (const wxDataViewItem &node)"
 
 .PP
-Definition at line 487 of file DTSListView\&.cpp\&.
+Definition at line 495 of file DTSListView\&.cpp\&.
+.PP
+References DTSDVMListStore::GetUserData(), and root\&.
 .SS "void DTSDVMListView::GetValue (wxVariant &variant, const wxDataViewItem &item, unsigned intcol) const\fC [virtual]\fP"
 
 .PP
-Definition at line 304 of file DTSListView\&.cpp\&.
+Definition at line 312 of file DTSListView\&.cpp\&.
+.PP
+References DTSDVMListStore::GetTitle()\&.
 .SS "struct xml_node * DTSDVMListView::GetXMLData (const wxDataViewItem &node, char **buff)\fC [read]\fP"
 
 .PP
-Definition at line 521 of file DTSListView\&.cpp\&.
+Definition at line 529 of file DTSListView\&.cpp\&.
+.PP
+References DTSDVMListStore::GetXMLData(), and root\&.
+.PP
+Referenced by DTSTreeWindow::UpdateNodeXML()\&.
 .SS "bool DTSDVMListView::HasContainerColumns (const wxDataViewItem &item) const\fC [virtual]\fP"
 
 .PP
-Definition at line 296 of file DTSListView\&.cpp\&.
+Definition at line 304 of file DTSListView\&.cpp\&.
+.PP
+References hascontcol\&.
 .SS "bool DTSDVMListView::IsContainer (const wxDataViewItem &item) const\fC [virtual]\fP"
 
 .PP
-Definition at line 249 of file DTSListView\&.cpp\&.
+Definition at line 257 of file DTSListView\&.cpp\&.
+.PP
+References DTSDVMListStore::IsContainer()\&.
+.PP
+Referenced by DTSTreeWindow::Select(), and DTSTreeWindowEvent::TreeEvent()\&.
 .SS "void DTSDVMListView::MoveChildDown (const wxDataViewItem &node)"
 
 .PP
-Definition at line 467 of file DTSListView\&.cpp\&.
+Definition at line 475 of file DTSListView\&.cpp\&.
+.PP
+References DTSDVMListStore::GetChildIndex(), GetChildren(), DTSDVMListStore::GetParent(), and DTSDVMListStore::MoveChildDown()\&.
+.PP
+Referenced by DTSTreeWindowEvent::SortParent()\&.
 .SS "void DTSDVMListView::MoveChildUp (const wxDataViewItem &node)"
 
 .PP
-Definition at line 447 of file DTSListView\&.cpp\&.
+Definition at line 455 of file DTSListView\&.cpp\&.
+.PP
+References DTSDVMListStore::GetChildIndex(), GetChildren(), DTSDVMListStore::GetParent(), and DTSDVMListStore::MoveChildUp()\&.
+.PP
+Referenced by DTSTreeWindowEvent::SortParent()\&.
 .SS "void DTSDVMListView::SetExpanded (const wxDataViewItem &node, boolexpanded = \fCtrue\fP)"
 
 .PP
-Definition at line 414 of file DTSListView\&.cpp\&.
+Definition at line 422 of file DTSListView\&.cpp\&.
+.PP
+References root, and DTSDVMListStore::SetExpanded()\&.
+.PP
+Referenced by DTSTreeWindowEvent::SortParent()\&.
 .SS "\fBDTSDVMListStore\fP * DTSDVMListView::SetRoot (const wxString &title, intnodeid = \fC-1\fP, \fBdtsgui_treeviewpanel_cb\fPp_cb = \fCNULL\fP, void *userdata = \fCNULL\fP)"
 
 .PP
-Definition at line 328 of file DTSListView\&.cpp\&.
+Definition at line 336 of file DTSListView\&.cpp\&.
+.PP
+References root\&.
+.PP
+Referenced by DTSDVMCtrl::AppendNode()\&.
 .SS "bool DTSDVMListView::SetValue (const wxVariant &variant, const wxDataViewItem &item, unsigned intcol)\fC [virtual]\fP"
 
 .PP
-Definition at line 312 of file DTSListView\&.cpp\&.
+Definition at line 320 of file DTSListView\&.cpp\&.
+.PP
+References DTSDVMListStore::SetTitle()\&.
 .SS "void DTSDVMListView::SetXMLData (const wxDataViewItem &node, struct xml_node *xnode, const char *tattr)"
 
 .PP
-Definition at line 511 of file DTSListView\&.cpp\&.
+Definition at line 519 of file DTSListView\&.cpp\&.
+.PP
+References root, and DTSDVMListStore::SetXMLData()\&.
 .SS "void DTSDVMListView::SortChildren (const wxDataViewItem &parent)"
 
 .PP
-Definition at line 369 of file DTSListView\&.cpp\&.
+Definition at line 377 of file DTSListView\&.cpp\&.
+.PP
+References GetChildren(), and DTSDVMListStore::SortChildren()\&.
+.PP
+Referenced by DTSDVMCtrl::Sort(), and DTSTreeWindowEvent::SortParent()\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "int DTSDVMListView::colcnt\fC [protected]\fP"
 
 .PP
 Definition at line 102 of file DTSListView\&.h\&.
+.PP
+Referenced by DTSDVMListView(), and GetColumnCount()\&.
 .SS "bool DTSDVMListView::hascontcol\fC [protected]\fP"
 
 .PP
 Definition at line 101 of file DTSListView\&.h\&.
+.PP
+Referenced by DTSDVMListView(), and HasContainerColumns()\&.
 .SS "\fBDTSDVMListStore\fP* DTSDVMListView::root\fC [protected]\fP"
 
 .PP
 Definition at line 100 of file DTSListView\&.h\&.
+.PP
+Referenced by DeleteAll(), DTSDVMListView(), GetChildCount(), GetChildren(), GetContainers(), GetNodeID(), GetNthChild(), GetParent(), GetRoot(), GetTitle(), GetUserData(), GetXMLData(), SetExpanded(), SetRoot(), and SetXMLData()\&.
 
 .SH "Author"
 .PP 

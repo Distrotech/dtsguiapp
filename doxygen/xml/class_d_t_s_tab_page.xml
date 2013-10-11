@@ -6,7 +6,7 @@
     <includes refid="_d_t_s_panel_8h" local="no">DTSPanel.h</includes>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_d_t_s_tab_page_1a89d1be9e8530a03ed51872a07c14a8b7" prot="private" static="no" mutable="no">
-        <type><ref refid="dtsgui_8h_1ab65db729662a3b0d109158d2fb51f93c" kindref="member">dtsgui_tabpanel_cb</ref></type>
+        <type><ref refid="group___c_o_r_e_1gab65db729662a3b0d109158d2fb51f93c" kindref="member">dtsgui_tabpanel_cb</ref></type>
         <definition>dtsgui_tabpanel_cb DTSTabPage::cb</definition>
         <argsstring></argsstring>
         <name>cb</name>
@@ -17,6 +17,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="150" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="150" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_tab_page_1a433bdbb8af0ded1fb884b45c5d9259a9" compoundref="_d_t_s_panel_8cpp" startline="945" endline="960">ConfigPane</referencedby>
+        <referencedby refid="class_d_t_s_tab_page_1ae29cbd93440f0d485b2f186fcdbc9c7c" compoundref="_d_t_s_panel_8cpp" startline="916" endline="931">DTSTabPage</referencedby>
+        <referencedby refid="class_d_t_s_tab_page_1a99f09a166ea777c2dcc572284594b00e" compoundref="_d_t_s_panel_8cpp" startline="962" endline="1010">operator=</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_tab_page_1a99f6c8da250c0cbb5f75cf5395658d77" prot="private" static="no" mutable="no">
         <type>void *</type>
@@ -30,6 +33,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="151" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="151" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_tab_page_1a433bdbb8af0ded1fb884b45c5d9259a9" compoundref="_d_t_s_panel_8cpp" startline="945" endline="960">ConfigPane</referencedby>
+        <referencedby refid="class_d_t_s_tab_page_1ae29cbd93440f0d485b2f186fcdbc9c7c" compoundref="_d_t_s_panel_8cpp" startline="916" endline="931">DTSTabPage</referencedby>
+        <referencedby refid="class_d_t_s_tab_page_1a99f09a166ea777c2dcc572284594b00e" compoundref="_d_t_s_panel_8cpp" startline="962" endline="1010">operator=</referencedby>
+        <referencedby refid="class_d_t_s_tab_page_1a9dc8aa3cd79b00e80747a9bd0cf9b379" compoundref="_d_t_s_panel_8cpp" startline="933" endline="939">~DTSTabPage</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_tab_page_1a26fb9793db8290bf72d411475224a97d" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -43,6 +50,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="152" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="152" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_tab_page_1a433bdbb8af0ded1fb884b45c5d9259a9" compoundref="_d_t_s_panel_8cpp" startline="945" endline="960">ConfigPane</referencedby>
+        <referencedby refid="class_d_t_s_tab_page_1ae29cbd93440f0d485b2f186fcdbc9c7c" compoundref="_d_t_s_panel_8cpp" startline="916" endline="931">DTSTabPage</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -71,7 +80,7 @@
           <defval>0</defval>
         </param>
         <param>
-          <type><ref refid="dtsgui_8h_1ab65db729662a3b0d109158d2fb51f93c" kindref="member">dtsgui_tabpanel_cb</ref></type>
+          <type><ref refid="group___c_o_r_e_1gab65db729662a3b0d109158d2fb51f93c" kindref="member">dtsgui_tabpanel_cb</ref></type>
           <defname>c_cb</defname>
           <defval>NULL</defval>
         </param>
@@ -91,7 +100,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="144" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="903" bodyend="918"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="144" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="916" bodyend="931"/>
+        <references refid="class_d_t_s_tab_page_1a89d1be9e8530a03ed51872a07c14a8b7" compoundref="_d_t_s_panel_8h" startline="150">cb</references>
+        <references refid="class_d_t_s_tab_page_1a99f6c8da250c0cbb5f75cf5395658d77" compoundref="_d_t_s_panel_8h" startline="151">cdata</references>
+        <references refid="class_d_t_s_tab_page_1a26fb9793db8290bf72d411475224a97d" compoundref="_d_t_s_panel_8h" startline="152">hasconfig</references>
+        <references refid="class_d_t_s_panel_1a58daeb533cce1e4bdac57118cce7c7ea" compoundref="_d_t_s_panel_8cpp" startline="482" endline="488">DTSPanel::SetTitle</references>
+        <references refid="class_d_t_s_object_1a1ae63425d8e5770a8b0717f37fd695b2" compoundref="_d_t_s_panel_8cpp" startline="290" endline="303">DTSObject::SetXMLDoc</references>
+        <references refid="class_d_t_s_object_1ad191e42b5daa056f9ea8247d752df3b0" compoundref="_d_t_s_panel_8h" startline="69">DTSObject::type</references>
+        <references refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a94b4b5412dbd78fdf58517c74afa9dad" compoundref="dtsgui_8h" startline="251">wx_DTSPANEL_TAB</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_tab_page_1a9dc8aa3cd79b00e80747a9bd0cf9b379" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -104,7 +120,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="145" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="920" bodyend="926"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="145" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="933" bodyend="939"/>
+        <references refid="class_d_t_s_tab_page_1a99f6c8da250c0cbb5f75cf5395658d77" compoundref="_d_t_s_panel_8h" startline="151">cdata</references>
+        <references refid="class_d_t_s_object_1a941fc98555b60d021a6c2f488ce9ae3e" compoundref="_d_t_s_panel_8h" startline="72">DTSObject::refobj</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_tab_page_1a433bdbb8af0ded1fb884b45c5d9259a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -117,7 +135,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="146" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="932" bodyend="947"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="146" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="945" bodyend="960"/>
+        <references refid="class_d_t_s_tab_page_1a89d1be9e8530a03ed51872a07c14a8b7" compoundref="_d_t_s_panel_8h" startline="150">cb</references>
+        <references refid="class_d_t_s_tab_page_1a99f6c8da250c0cbb5f75cf5395658d77" compoundref="_d_t_s_panel_8h" startline="151">cdata</references>
+        <references refid="class_d_t_s_tab_page_1a26fb9793db8290bf72d411475224a97d" compoundref="_d_t_s_panel_8h" startline="152">hasconfig</references>
+        <references refid="class_d_t_s_panel_1a0c1a3aa81559298e059473bde57ab23e" compoundref="_d_t_s_panel_8cpp" startline="432" endline="450">DTSPanel::ShowPanel</references>
+        <referencedby refid="class_d_t_s_tab_window_event_1a0ef3c51fe26036ac2cb0353940307eb6" compoundref="_d_t_s_tree_window_8cpp" startline="864" endline="874">DTSTabWindowEvent::PageChange</referencedby>
+        <referencedby refid="class_d_t_s_tab_window_1a7e438e77899502fc316577e972d9ef28" compoundref="_d_t_s_tree_window_8cpp" startline="941" endline="979">DTSTabWindow::Show</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_tab_page_1a2270518c402eb3b38bc9b7e1a7e89a97" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -135,7 +159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="147" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="928" bodyend="930"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="147" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="941" bodyend="943"/>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_tab_page_1a99f09a166ea777c2dcc572284594b00e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_d_t_s_tab_page" kindref="compound">DTSTabPage</ref> &amp;</type>
@@ -152,7 +176,18 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="148" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="949" bodyend="997"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="148" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="962" bodyend="1010"/>
+        <references refid="class_d_t_s_panel_event_1af2333021915425cd85ab9544170e7152" compoundref="_d_t_s_panel_8cpp" startline="228" endline="230">DTSPanelEvent::BindDTSEvent</references>
+        <references refid="class_d_t_s_panel_1af25bdb7e04f715c228774c2be0dd8251" compoundref="_d_t_s_panel_8h" startline="114">DTSPanel::button_mask</references>
+        <references refid="class_d_t_s_tab_page_1a89d1be9e8530a03ed51872a07c14a8b7" compoundref="_d_t_s_panel_8h" startline="150">cb</references>
+        <references refid="class_d_t_s_tab_page_1a99f6c8da250c0cbb5f75cf5395658d77" compoundref="_d_t_s_panel_8h" startline="151">cdata</references>
+        <references refid="class_d_t_s_object_1a132481851865629352e4aefa7f822e4b" compoundref="_d_t_s_panel_8h" startline="76">DTSObject::dtsevthandler</references>
+        <references refid="class_d_t_s_object_1a8ca3e7c6f66685caf07fa93fb5e14337" compoundref="_d_t_s_panel_8h" startline="73">DTSObject::frame</references>
+        <references refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" compoundref="_d_t_s_panel_8h" startline="75">DTSObject::panel</references>
+        <references refid="class_d_t_s_object_1a941fc98555b60d021a6c2f488ce9ae3e" compoundref="_d_t_s_panel_8h" startline="72">DTSObject::refobj</references>
+        <references refid="class_d_t_s_panel_1a58daeb533cce1e4bdac57118cce7c7ea" compoundref="_d_t_s_panel_8cpp" startline="482" endline="488">DTSPanel::SetTitle</references>
+        <references refid="class_d_t_s_object_1a1292b4804b31450f0ee960fa59fcfc7a" compoundref="_d_t_s_panel_8h" startline="74">DTSObject::status</references>
+        <references refid="class_d_t_s_object_1a0e9b6e22629a9aa1fd5227cefaa25e6f" compoundref="_d_t_s_panel_8h" startline="79">DTSObject::xmldoc</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -160,82 +195,107 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="112">
+      <node id="160">
         <label>DTSObject</label>
         <link refid="class_d_t_s_object"/>
-        <childnode refid="113" relation="public-inheritance">
+        <childnode refid="161" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="114">
+      <node id="162">
         <label>wxScrolledWindow</label>
       </node>
-      <node id="111">
+      <node id="159">
         <label>DTSPanel</label>
         <link refid="class_d_t_s_panel"/>
-        <childnode refid="112" relation="public-inheritance">
+        <childnode refid="160" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="110">
+      <node id="158">
         <label>DTSScrollPanel</label>
         <link refid="class_d_t_s_scroll_panel"/>
-        <childnode refid="111" relation="public-inheritance">
+        <childnode refid="159" relation="public-inheritance">
         </childnode>
-        <childnode refid="114" relation="public-inheritance">
+        <childnode refid="162" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="113">
+      <node id="161">
         <label>wxWindow</label>
       </node>
-      <node id="109">
+      <node id="157">
         <label>DTSTabPage</label>
         <link refid="class_d_t_s_tab_page"/>
-        <childnode refid="110" relation="public-inheritance">
+        <childnode refid="158" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="118">
+      <node id="166">
         <label>DTSObject</label>
         <link refid="class_d_t_s_object"/>
-        <childnode refid="119" relation="public-inheritance">
+        <childnode refid="167" relation="public-inheritance">
         </childnode>
-        <childnode refid="120" relation="usage">
+        <childnode refid="168" relation="usage">
           <edgelabel>frame</edgelabel>
         </childnode>
       </node>
-      <node id="122">
+      <node id="172">
         <label>wxScrolledWindow</label>
       </node>
-      <node id="117">
+      <node id="165">
         <label>DTSPanel</label>
         <link refid="class_d_t_s_panel"/>
-        <childnode refid="118" relation="public-inheritance">
+        <childnode refid="166" relation="public-inheritance">
+        </childnode>
+        <childnode refid="170" relation="usage">
+          <edgelabel>configcb</edgelabel>
         </childnode>
       </node>
-      <node id="116">
+      <node id="164">
         <label>DTSScrollPanel</label>
         <link refid="class_d_t_s_scroll_panel"/>
-        <childnode refid="117" relation="public-inheritance">
+        <childnode refid="165" relation="public-inheritance">
         </childnode>
-        <childnode refid="122" relation="public-inheritance">
+        <childnode refid="172" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="119">
+      <node id="167">
         <label>wxWindow</label>
       </node>
-      <node id="121">
+      <node id="169">
         <label>wxFrame</label>
       </node>
-      <node id="115">
-        <label>DTSTabPage</label>
-        <link refid="class_d_t_s_tab_page"/>
-        <childnode refid="116" relation="public-inheritance">
+      <node id="170">
+        <label>dtsgui</label>
+        <link refid="classdtsgui"/>
+        <childnode refid="168" relation="usage">
+          <edgelabel>appframe</edgelabel>
+        </childnode>
+        <childnode refid="170" relation="usage">
+          <edgelabel>cb</edgelabel>
+        </childnode>
+        <childnode refid="171" relation="usage">
+          <edgelabel>wsize</edgelabel>
+          <edgelabel>wpos</edgelabel>
         </childnode>
       </node>
-      <node id="120">
+      <node id="163">
+        <label>DTSTabPage</label>
+        <link refid="class_d_t_s_tab_page"/>
+        <childnode refid="164" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="171">
+        <label>point</label>
+        <link refid="structpoint"/>
+      </node>
+      <node id="168">
         <label>DTSFrame</label>
         <link refid="class_d_t_s_frame"/>
-        <childnode refid="121" relation="public-inheritance">
+        <childnode refid="169" relation="public-inheritance">
+        </childnode>
+        <childnode refid="170" relation="usage">
+          <edgelabel>dtsgui</edgelabel>
+          <edgelabel>tbcb</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

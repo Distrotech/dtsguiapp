@@ -1,4 +1,4 @@
-.TH "DTSPanelEvent" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "DTSPanelEvent" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -38,10 +38,33 @@ Inherits wxEvtHandler\&.
 .RI "void \fBOnDTSEvent\fP (wxCommandEvent &event)"
 .br
 .ti -1c
-.RI "void \fBSetCallback\fP (\fBevent_callback\fP evcb=NULL, void *userdata=NULL)"
+.RI "void \fBSetCallback\fP (\fBevent_callback\fP \fBevcb\fP=NULL, void *userdata=NULL)"
 .br
 .ti -1c
 .RI "void \fBOnDialog\fP (wxCommandEvent &event)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBRunCallBack\fP (int etype, int eid, void *cb_data)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "void ** \fBrefobj\fP"
+.br
+.ti -1c
+.RI "void * \fBdata\fP"
+.br
+.ti -1c
+.RI "\fBevent_callback\fP \fBevcb\fP"
+.br
+.ti -1c
+.RI "\fBDTSObject\fP * \fBparent\fP"
 .br
 .in -1c
 .SH "Detailed Description"
@@ -52,45 +75,115 @@ Definition at line 36 of file DTSPanel\&.h\&.
 .SS "DTSPanelEvent::DTSPanelEvent (\fBDTSObject\fP *win = \fCNULL\fP)"
 
 .PP
-Definition at line 52 of file DTSPanel\&.cpp\&.
+Definition at line 64 of file DTSPanel\&.cpp\&.
+.PP
+References data, evcb, parent, and refobj\&.
 .SS "DTSPanelEvent::~DTSPanelEvent ()"
 
 .PP
-Definition at line 60 of file DTSPanel\&.cpp\&.
+Definition at line 72 of file DTSPanel\&.cpp\&.
+.PP
+References data, and refobj\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void DTSPanelEvent::BindButton (\fBwxWindow\fP *win, intbutton)"
 
 .PP
-Definition at line 220 of file DTSPanel\&.cpp\&.
+Definition at line 232 of file DTSPanel\&.cpp\&.
+.PP
+References OnButton()\&.
+.PP
+Referenced by DTSPanel::Buttons()\&.
 .SS "void DTSPanelEvent::BindCombo (\fBwxWindow\fP *win, intbutton)"
 
 .PP
-Definition at line 224 of file DTSPanel\&.cpp\&.
+Definition at line 236 of file DTSPanel\&.cpp\&.
+.PP
+References OnCombo()\&.
+.PP
+Referenced by DTSPanel::ComboBox()\&.
 .SS "void DTSPanelEvent::BindDTSEvent (\fBDTSFrame\fP *frame)"
 
 .PP
-Definition at line 216 of file DTSPanel\&.cpp\&.
+Definition at line 228 of file DTSPanel\&.cpp\&.
+.PP
+References OnDTSEvent()\&.
+.PP
+Referenced by DTSPanel::DTSPanel(), and DTSTabPage::operator=()\&.
 .SS "void DTSPanelEvent::OnButton (wxCommandEvent &event)"
 
 .PP
-Definition at line 111 of file DTSPanel\&.cpp\&.
+Definition at line 123 of file DTSPanel\&.cpp\&.
+.PP
+References DTSObject::buttons, data, evcb, DTSObject::EventHandler(), parent, RunCallBack(), DTSObject::type, wx_DTSPANEL_DIALOG, and wx_PANEL_EVENT_BUTTON\&.
+.PP
+Referenced by BindButton(), and OnDialog()\&.
 .SS "void DTSPanelEvent::OnCombo (wxCommandEvent &event)"
 
 .PP
-Definition at line 151 of file DTSPanel\&.cpp\&.
+Definition at line 163 of file DTSPanel\&.cpp\&.
+.PP
+References dtsgui::cb, form_item::dtype, evcb, DTSObject::GetItems(), form_item::GetWidget(), parent, RunCallBack(), wx_PANEL_EVENT_COMBO_ENTER, and wx_PANEL_EVENT_COMBO_UPDATE\&.
+.PP
+Referenced by BindCombo()\&.
 .SS "void DTSPanelEvent::OnDialog (wxCommandEvent &event)"
 
 .PP
-Definition at line 144 of file DTSPanel\&.cpp\&.
+Definition at line 156 of file DTSPanel\&.cpp\&.
+.PP
+References DTSObject::buttons, OnButton(), and parent\&.
+.PP
+Referenced by DTSDialog::DTSDialog(), DTSScrollPanel::DTSScrollPanel(), and DTSStaticPanel::DTSStaticPanel()\&.
 .SS "void DTSPanelEvent::OnDTSEvent (wxCommandEvent &event)"
 
 .PP
-Definition at line 206 of file DTSPanel\&.cpp\&.
+Definition at line 218 of file DTSPanel\&.cpp\&.
+.PP
+References data, evcb, RunCallBack(), and wx_PANEL_EVENT_DTS\&.
+.PP
+Referenced by BindDTSEvent()\&.
+.SS "int DTSPanelEvent::RunCallBack (intetype, inteid, void *cb_data)\fC [private]\fP"
+
+.PP
+Definition at line 96 of file DTSPanel\&.cpp\&.
+.PP
+References evcb, DTSFrame::GetDTSData(), DTSObject::GetFrame(), and parent\&.
+.PP
+Referenced by OnButton(), OnCombo(), and OnDTSEvent()\&.
 .SS "void DTSPanelEvent::SetCallback (\fBevent_callback\fPevcb = \fCNULL\fP, void *userdata = \fCNULL\fP)"
 
 .PP
-Definition at line 70 of file DTSPanel\&.cpp\&.
+Definition at line 82 of file DTSPanel\&.cpp\&.
+.PP
+References data, evcb, and refobj\&.
+.PP
+Referenced by DTSPanel::SetEventCallback()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "void* DTSPanelEvent::data\fC [private]\fP"
+
+.PP
+Definition at line 51 of file DTSPanel\&.h\&.
+.PP
+Referenced by DTSPanelEvent(), OnButton(), OnDTSEvent(), SetCallback(), and ~DTSPanelEvent()\&.
+.SS "\fBevent_callback\fP DTSPanelEvent::evcb\fC [private]\fP"
+
+.PP
+Definition at line 52 of file DTSPanel\&.h\&.
+.PP
+Referenced by DTSPanelEvent(), OnButton(), OnCombo(), OnDTSEvent(), RunCallBack(), and SetCallback()\&.
+.SS "\fBDTSObject\fP* DTSPanelEvent::parent\fC [private]\fP"
+
+.PP
+Definition at line 53 of file DTSPanel\&.h\&.
+.PP
+Referenced by DTSPanelEvent(), OnButton(), OnCombo(), OnDialog(), and RunCallBack()\&.
+.SS "void** DTSPanelEvent::refobj\fC [private]\fP"
+
+.PP
+Definition at line 49 of file DTSPanel\&.h\&.
+.PP
+Referenced by DTSPanelEvent(), SetCallback(), and ~DTSPanelEvent()\&.
 
 .SH "Author"
 .PP 

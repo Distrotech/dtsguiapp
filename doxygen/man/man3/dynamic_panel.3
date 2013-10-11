@@ -1,0 +1,132 @@
+.TH "dynamic_panel" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+dynamic_panel \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <evdata\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTS_OJBREF_CLASS\fP (\fBdynamic_panel\fP)"
+.br
+.ti -1c
+.RI "\fBdynamic_panel\fP (const char *\fBname\fP, int \fBblank\fP, \fBdtsgui_dynpanel\fP \fBcb\fP, void *udata)"
+.br
+.ti -1c
+.RI "bool \fBHasCallback\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsBlank\fP ()"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (\fBwxWindow\fP &rhs)"
+.br
+.ti -1c
+.RI "\fBwxWindow\fP * \fBRunCallback\fP (class \fBdtsgui\fP *\fBdtsgui\fP)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBwxWindow\fP * \fBw\fP"
+.br
+.ti -1c
+.RI "\fBdtsgui_dynpanel\fP \fBcb\fP"
+.br
+.ti -1c
+.RI "const char * \fBname\fP"
+.br
+.ti -1c
+.RI "void * \fBdata\fP"
+.br
+.ti -1c
+.RI "int \fBblank\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 24 of file evdata\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "dynamic_panel::dynamic_panel (const char *name, intblank, \fBdtsgui_dynpanel\fPcb, void *udata)"
+
+.PP
+Definition at line 36 of file evdata\&.cpp\&.
+.PP
+References blank, cb, and data\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "dynamic_panel::DTS_OJBREF_CLASS (\fBdynamic_panel\fP)"
+
+.SS "bool dynamic_panel::HasCallback ()"
+
+.PP
+Definition at line 56 of file evdata\&.cpp\&.
+.PP
+References cb\&.
+.PP
+Referenced by DTSFrame::DynamicPanelEvent()\&.
+.SS "bool dynamic_panel::IsBlank ()"
+
+.PP
+Definition at line 60 of file evdata\&.cpp\&.
+.PP
+References blank\&.
+.PP
+Referenced by DTSFrame::DynamicPanelEvent()\&.
+.SS "bool dynamic_panel::operator== (\fBwxWindow\fP &rhs)"
+
+.PP
+Definition at line 64 of file evdata\&.cpp\&.
+.PP
+References w\&.
+.SS "\fBwxWindow\fP * dynamic_panel::RunCallback (class \fBdtsgui\fP *dtsgui)"
+
+.PP
+Definition at line 68 of file evdata\&.cpp\&.
+.PP
+References cb, data, DTSObject::GetPanel(), name, and w\&.
+.PP
+Referenced by DTSFrame::DynamicPanelEvent()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int dynamic_panel::blank\fC [private]\fP"
+
+.PP
+Definition at line 37 of file evdata\&.h\&.
+.PP
+Referenced by dynamic_panel(), and IsBlank()\&.
+.SS "\fBdtsgui_dynpanel\fP dynamic_panel::cb\fC [private]\fP"
+
+.PP
+Definition at line 34 of file evdata\&.h\&.
+.PP
+Referenced by dynamic_panel(), HasCallback(), and RunCallback()\&.
+.SS "void* dynamic_panel::data\fC [private]\fP"
+
+.PP
+Definition at line 36 of file evdata\&.h\&.
+.PP
+Referenced by dynamic_panel(), and RunCallback()\&.
+.SS "const char* dynamic_panel::name\fC [private]\fP"
+
+.PP
+Definition at line 35 of file evdata\&.h\&.
+.PP
+Referenced by RunCallback()\&.
+.SS "\fBwxWindow\fP* dynamic_panel::w\fC [private]\fP"
+
+.PP
+Definition at line 33 of file evdata\&.h\&.
+.PP
+Referenced by DTSFrame::DynamicPanelEvent(), operator==(), and RunCallback()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

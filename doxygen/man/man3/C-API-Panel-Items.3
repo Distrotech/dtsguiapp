@@ -1,0 +1,231 @@
+.TH "Panel item interface." 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Panel item interface. \- 
+.PP
+Access and manage panel elements in a consistant way\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "struct bucket_list * \fBDTS_C_API::dtsgui_panel_items\fP (\fBdtsgui_pane\fP pane)"
+.br
+.RI "\fIReturn reference to hashed bucket list of items\&. \fP"
+.ti -1c
+.RI "struct \fBform_item\fP * \fBDTS_C_API::dtsgui_finditem\fP (\fBdtsgui_pane\fP p, const char *name)"
+.br
+.RI "\fIReturn refernece to a form element\&. Find a item and return it searcing the bucket list for the specified name\&. \fP"
+.ti -1c
+.RI "void * \fBDTS_C_API::dtsgui_item_data\fP (struct \fBform_item\fP *fi)"
+.br
+.RI "\fIGet refernece to data stoed on element\&. \fP"
+.ti -1c
+.RI "const char * \fBDTS_C_API::dtsgui_item_value\fP (struct \fBform_item\fP *fi)"
+.br
+.RI "\fIReturn value of element\&. The value of the panel element is returned fo the item\&. \fP"
+.ti -1c
+.RI "const char * \fBDTS_C_API::dtsgui_item_name\fP (struct \fBform_item\fP *fi)"
+.br
+.RI "\fIReturn name of element\&. \fP"
+.ti -1c
+.RI "const char * \fBDTS_C_API::dtsgui_findvalue\fP (\fBdtsgui_pane\fP p, const char *name)"
+.br
+.RI "\fIHelper function to return a value of a item\&. This function finds a value by name returning the value\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Access and manage panel elements in a consistant way\&. 
+
+\fBSee Also:\fP
+.RS 4
+\fBPanel element interface\&.\fP 
+.RE
+.PP
+\fBRemarks:\fP
+.RS 4
+Element items include Text / Password / Check / List / Combo boxes\&. 
+.PP
+Information of each element is stored in a hashed bucket to provide a consistant interface to the values and references to data (XML)\&. 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "struct \fBform_item\fP* DTS_C_API::dtsgui_finditem (\fBdtsgui_pane\fPp, const char *name)\fC [read]\fP"
+
+.PP
+Return refernece to a form element\&. Find a item and return it searcing the bucket list for the specified name\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::FindItem()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP panel who's item list is to be searched\&. 
+.br
+\fIname\fP Return item with this name\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Form item if found matching the name\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1089 of file wrapper\&.cpp\&.
+.PP
+References DTSPanel::FindItem()\&.
+.SS "const char* DTS_C_API::dtsgui_findvalue (\fBdtsgui_pane\fPp, const char *name)"
+
+.PP
+Helper function to return a value of a item\&. This function finds a value by name returning the value\&. \fBNote:\fP
+.RS 4
+the returned value must be freeed\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBdtsgui_finditem()\fP 
+.PP
+\fBdtsgui_item_value()\fP 
+.PP
+\fBDTSPanel::FindValue()\fP 
+.PP
+\fBDTSPanel::FindItem()\fP 
+.PP
+\fBform_item::GetValue()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp\fP Panel to search element\&. 
+.br
+\fIname\fP Return value of element with this name\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value of element\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1140 of file wrapper\&.cpp\&.
+.PP
+References DTSPanel::FindValue()\&.
+.PP
+Referenced by handle_updatetabpane()\&.
+.SS "void* DTS_C_API::dtsgui_item_data (struct \fBform_item\fP *fi)"
+
+.PP
+Get refernece to data stoed on element\&. Each element is capable of storing user supplied data this returns a reference to this data\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBform_item::GetData()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfi\fP Form item to obtain data from\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Reference to data stored in item\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1102 of file wrapper\&.cpp\&.
+.PP
+References form_item::GetData()\&.
+.SS "const char* DTS_C_API::dtsgui_item_name (struct \fBform_item\fP *fi)"
+
+.PP
+Return name of element\&. \fBNote:\fP
+.RS 4
+the name must not be freed and the form itme must not be un referenced 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBform_item::GetName()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfi\fP Form item\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Name of item\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1124 of file wrapper\&.cpp\&.
+.PP
+References form_item::GetName()\&.
+.SS "const char* DTS_C_API::dtsgui_item_value (struct \fBform_item\fP *fi)"
+
+.PP
+Return value of element\&. The value of the panel element is returned fo the item\&. \fBNote:\fP
+.RS 4
+The return value must be freed\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBform_item::GetValue()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfi\fP Form item to obtain value of\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value of the element\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1113 of file wrapper\&.cpp\&.
+.PP
+References form_item::GetValue()\&.
+.PP
+Referenced by network_config()\&.
+.SS "struct bucket_list* DTS_C_API::dtsgui_panel_items (\fBdtsgui_pane\fPpane)\fC [read]\fP"
+
+.PP
+Return reference to hashed bucket list of items\&. The bucket list API in dtsapplib contains more information\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSObject::GetItems()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to obtain list from\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Reference to hashed bucket list\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1076 of file wrapper\&.cpp\&.
+.PP
+References DTSObject::GetItems()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

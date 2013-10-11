@@ -6,6 +6,5 @@ var searchData=
   ['package_5fstring',['PACKAGE_STRING',['../build_2config_8h.html#ac73e6f903c16eca7710f92e36e1c6fbf',1,'PACKAGE_STRING():&#160;config.h'],['../mingw_2config_8h.html#ac73e6f903c16eca7710f92e36e1c6fbf',1,'PACKAGE_STRING():&#160;config.h']]],
   ['package_5ftarname',['PACKAGE_TARNAME',['../build_2config_8h.html#af415af6bfede0e8d5453708afe68651c',1,'PACKAGE_TARNAME():&#160;config.h'],['../mingw_2config_8h.html#af415af6bfede0e8d5453708afe68651c',1,'PACKAGE_TARNAME():&#160;config.h']]],
   ['package_5furl',['PACKAGE_URL',['../build_2config_8h.html#a5c93853116d5a50307b6744f147840aa',1,'PACKAGE_URL():&#160;config.h'],['../mingw_2config_8h.html#a5c93853116d5a50307b6744f147840aa',1,'PACKAGE_URL():&#160;config.h']]],
-  ['package_5fversion',['PACKAGE_VERSION',['../build_2config_8h.html#aa326a05d5e30f9e9a4bb0b4469d5d0c0',1,'PACKAGE_VERSION():&#160;config.h'],['../mingw_2config_8h.html#aa326a05d5e30f9e9a4bb0b4469d5d0c0',1,'PACKAGE_VERSION():&#160;config.h']]],
-  ['pading',['PADING',['../_d_t_s_panel_8cpp.html#a00fc562a7d9ef5cac917f9697dfdb769',1,'DTSPanel.cpp']]]
+  ['package_5fversion',['PACKAGE_VERSION',['../build_2config_8h.html#aa326a05d5e30f9e9a4bb0b4469d5d0c0',1,'PACKAGE_VERSION():&#160;config.h'],['../mingw_2config_8h.html#aa326a05d5e30f9e9a4bb0b4469d5d0c0',1,'PACKAGE_VERSION():&#160;config.h']]]
 ];

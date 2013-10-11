@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
@@ -94,7 +95,7 @@ $(document).ready(function(){initNavTree('class_d_t_s_panel_event.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,6 +107,8 @@ $(document).ready(function(){initNavTree('class_d_t_s_panel_event.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_d_t_s_panel_event-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">DTSPanelEvent Class Reference</div>  </div>
@@ -140,10 +143,26 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8e755136313a6c423167af1d44dfc710"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a878aaab5bddc9167d3d2380ea7de0f31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_panel_event.html#a878aaab5bddc9167d3d2380ea7de0f31">OnDTSEvent</a> (wxCommandEvent &amp;event)</td></tr>
 <tr class="separator:a878aaab5bddc9167d3d2380ea7de0f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6d0fb736bf45162b6bf2082e437195b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_panel_event.html#ad6d0fb736bf45162b6bf2082e437195b">SetCallback</a> (<a class="el" href="dtsgui_8h.html#acfd3355668ba382f87a9aab4ea2c4e9c">event_callback</a> evcb=NULL, void *userdata=NULL)</td></tr>
+<tr class="memitem:ad6d0fb736bf45162b6bf2082e437195b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_panel_event.html#ad6d0fb736bf45162b6bf2082e437195b">SetCallback</a> (<a class="el" href="group___c_o_r_e.html#ga06d1a959e1581116961bca636a919043">event_callback</a> <a class="el" href="class_d_t_s_panel_event.html#a1f989eb33812d025e2876c538b032ee4">evcb</a>=NULL, void *userdata=NULL)</td></tr>
 <tr class="separator:ad6d0fb736bf45162b6bf2082e437195b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7b3a422bc55f7f9f676b2b640614fd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_panel_event.html#ae7b3a422bc55f7f9f676b2b640614fd9">OnDialog</a> (wxCommandEvent &amp;event)</td></tr>
 <tr class="separator:ae7b3a422bc55f7f9f676b2b640614fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aac849a4fb920e6e680f4d7092202f60e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_panel_event.html#aac849a4fb920e6e680f4d7092202f60e">RunCallBack</a> (int etype, int eid, void *cb_data)</td></tr>
+<tr class="separator:aac849a4fb920e6e680f4d7092202f60e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a51478063cdaccd9bb7df533e0a7fc442"><td class="memItemLeft" align="right" valign="top">void **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_panel_event.html#a51478063cdaccd9bb7df533e0a7fc442">refobj</a></td></tr>
+<tr class="separator:a51478063cdaccd9bb7df533e0a7fc442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63313454db1807ffd97873cb2ffd5e0d"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_panel_event.html#a63313454db1807ffd97873cb2ffd5e0d">data</a></td></tr>
+<tr class="separator:a63313454db1807ffd97873cb2ffd5e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f989eb33812d025e2876c538b032ee4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_o_r_e.html#ga06d1a959e1581116961bca636a919043">event_callback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_panel_event.html#a1f989eb33812d025e2876c538b032ee4">evcb</a></td></tr>
+<tr class="separator:a1f989eb33812d025e2876c538b032ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9870f4a7cbb59e59471ccf811269396d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_t_s_object.html">DTSObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_panel_event.html#a9870f4a7cbb59e59471ccf811269396d">parent</a></td></tr>
+<tr class="separator:a9870f4a7cbb59e59471ccf811269396d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -163,7 +182,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00052">52</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00064">64</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00051">data</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00052">evcb</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00053">parent</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00049">refobj</a>.</p>
 
 </div>
 </div>
@@ -180,7 +201,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00060">60</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00072">72</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00051">data</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00049">refobj</a>.</p>
 
 </div>
 </div>
@@ -209,7 +232,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00220">220</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00232">232</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00123">OnButton()</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00724">DTSPanel::Buttons()</a>.</p>
 
 </div>
 </div>
@@ -237,7 +264,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00224">224</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00236">236</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00163">OnCombo()</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00684">DTSPanel::ComboBox()</a>.</p>
 
 </div>
 </div>
@@ -255,7 +286,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00216">216</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00228">228</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00218">OnDTSEvent()</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00348">DTSPanel::DTSPanel()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00962">DTSTabPage::operator=()</a>.</p>
 
 </div>
 </div>
@@ -273,7 +308,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00111">111</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00123">123</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00070">DTSObject::buttons</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00051">data</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00052">evcb</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00323">DTSObject::EventHandler()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00053">parent</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00096">RunCallBack()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00069">DTSObject::type</a>, <a class="el" href="dtsgui_8h_source.html#l00247">wx_DTSPANEL_DIALOG</a>, and <a class="el" href="dtsgui_8h_source.html#l00216">wx_PANEL_EVENT_BUTTON</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00232">BindButton()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00156">OnDialog()</a>.</p>
 
 </div>
 </div>
@@ -291,7 +330,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00151">151</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00163">163</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_app_8h_source.html#l00037">dtsgui::cb</a>, <a class="el" href="pitems_8h_source.html#l00068">form_item::dtype</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00052">evcb</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00316">DTSObject::GetItems()</a>, <a class="el" href="pitems_8cpp_source.html#l00221">form_item::GetWidget()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00053">parent</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00096">RunCallBack()</a>, <a class="el" href="dtsgui_8h_source.html#l00218">wx_PANEL_EVENT_COMBO_ENTER</a>, and <a class="el" href="dtsgui_8h_source.html#l00220">wx_PANEL_EVENT_COMBO_UPDATE</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00236">BindCombo()</a>.</p>
 
 </div>
 </div>
@@ -309,7 +352,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00144">144</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00156">156</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00070">DTSObject::buttons</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00123">OnButton()</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00053">parent</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l01048">DTSDialog::DTSDialog()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00899">DTSScrollPanel::DTSScrollPanel()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l01012">DTSStaticPanel::DTSStaticPanel()</a>.</p>
 
 </div>
 </div>
@@ -327,7 +374,57 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00206">206</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00218">218</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00051">data</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00052">evcb</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00096">RunCallBack()</a>, and <a class="el" href="dtsgui_8h_source.html#l00222">wx_PANEL_EVENT_DTS</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00228">BindDTSEvent()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aac849a4fb920e6e680f4d7092202f60e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DTSPanelEvent::RunCallBack </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>etype</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>eid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>cb_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00096">96</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00052">evcb</a>, <a class="el" href="_d_t_s_frame_8cpp_source.html#l00307">DTSFrame::GetDTSData()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00286">DTSObject::GetFrame()</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00053">parent</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00123">OnButton()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00163">OnCombo()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00218">OnDTSEvent()</a>.</p>
 
 </div>
 </div>
@@ -338,7 +435,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void DTSPanelEvent::SetCallback </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dtsgui_8h.html#acfd3355668ba382f87a9aab4ea2c4e9c">event_callback</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#ga06d1a959e1581116961bca636a919043">event_callback</a>&#160;</td>
           <td class="paramname"><em>evcb</em> = <code>NULL</code>, </td>
         </tr>
         <tr>
@@ -355,7 +452,108 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00070">70</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00082">82</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00051">data</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00052">evcb</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00049">refobj</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00406">DTSPanel::SetEventCallback()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a63313454db1807ffd97873cb2ffd5e0d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* DTSPanelEvent::data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_panel_8h_source.html#l00051">51</a> of file <a class="el" href="_d_t_s_panel_8h_source.html">DTSPanel.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00064">DTSPanelEvent()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00123">OnButton()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00218">OnDTSEvent()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00082">SetCallback()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00072">~DTSPanelEvent()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f989eb33812d025e2876c538b032ee4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group___c_o_r_e.html#ga06d1a959e1581116961bca636a919043">event_callback</a> DTSPanelEvent::evcb</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_panel_8h_source.html#l00052">52</a> of file <a class="el" href="_d_t_s_panel_8h_source.html">DTSPanel.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00064">DTSPanelEvent()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00123">OnButton()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00163">OnCombo()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00218">OnDTSEvent()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00096">RunCallBack()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00082">SetCallback()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9870f4a7cbb59e59471ccf811269396d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_t_s_object.html">DTSObject</a>* DTSPanelEvent::parent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_panel_8h_source.html#l00053">53</a> of file <a class="el" href="_d_t_s_panel_8h_source.html">DTSPanel.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00064">DTSPanelEvent()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00123">OnButton()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00163">OnCombo()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00156">OnDialog()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00096">RunCallBack()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a51478063cdaccd9bb7df533e0a7fc442"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void** DTSPanelEvent::refobj</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_panel_8h_source.html#l00049">49</a> of file <a class="el" href="_d_t_s_panel_8h_source.html">DTSPanel.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00064">DTSPanelEvent()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00082">SetCallback()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00072">~DTSPanelEvent()</a>.</p>
 
 </div>
 </div>
@@ -369,7 +567,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_panel_event.html">DTSPanelEvent</a></li>
-    <li class="footer">Generated on Wed Oct 9 2013 22:32:56 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

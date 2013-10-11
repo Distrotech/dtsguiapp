@@ -16,6 +16,14 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @defgroup CPP-Panel-Event Panel event handler classes.
+  * @brief Implementation of panel event classes.
+  * @ingroup CPP-Panel*/
+
+/** @file
+  * @brief Implementation of panel event classes.
+  * @ingroup CPP-Panel-Event*/
+
 #ifdef __WIN32__
 #define UNICODE 1
 #endif

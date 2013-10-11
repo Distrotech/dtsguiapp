@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="group___c_p_p-_panel" kind="group">
+    <compoundname>CPP-Panel</compoundname>
+    <title>Core panel classes</title>
+    <innerfile refid="_d_t_s_panel_8cpp">DTSPanel.cpp</innerfile>
+    <innergroup refid="group___c_p_p-_panel-_tree">Tree/Tab view implemnetation.</innergroup>
+    <innergroup refid="group___c_p_p-_panel-_event">Panel event handler classes.</innergroup>
+    <innergroup refid="group___c_p_p-_panel-_items">Panel item classes</innergroup>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group___c_p_p-_panel_1ga138f34819b90ed241ed77fc27958f745" prot="public" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int def_buttons[6]</definition>
+        <argsstring>[6]</argsstring>
+        <name>def_buttons</name>
+        <initializer>= {wxID_FIRST, wxID_BACKWARD, wxID_FORWARD, wxID_LAST, wxID_APPLY, wxID_UNDO}</initializer>
+        <briefdescription>
+<para>Array mapping wxWidgets buttons to DTS Buttons. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" line="47" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="47" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_panel_1abfe32d536cdcb2eee87a5c0ef1df826f" compoundref="_d_t_s_panel_8cpp" startline="348" endline="367">DTSPanel::DTSPanel</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___c_p_p-_panel_1ga00fc562a7d9ef5cac917f9697dfdb769" prot="public" static="no">
+        <name>PADING</name>
+        <initializer>10</initializer>
+        <briefdescription>
+<para>Border used when placing elements. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" line="43" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="43" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_panel_1ae2385ab076d14fdecc0d58285063c520" compoundref="_d_t_s_panel_8cpp" startline="724" endline="744">DTSPanel::Buttons</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a1bfea883644cb1052752528b89b8c71f" compoundref="_d_t_s_panel_8cpp" startline="608" endline="626">DTSPanel::CheckBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1ad91d3ca25ab8349403efc7cc78cb1869" compoundref="_d_t_s_panel_8cpp" startline="684" endline="705">DTSPanel::ComboBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a08cb04c83c8e5668592bd2f3bacf8267" compoundref="_d_t_s_panel_8cpp" startline="648" endline="665">DTSPanel::ListBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1acd1b20a134272f1bc2d048d5977a3d3c" compoundref="_d_t_s_panel_8cpp" startline="567" endline="583">DTSPanel::TextBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1ae0135da688bb9046fd2cafbf5eaf7ffc" compoundref="_d_t_s_panel_8cpp" startline="460" endline="480">DTSPanel::Title</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation of core panel clases and event handler. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

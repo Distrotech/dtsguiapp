@@ -158,7 +158,7 @@
     <member refid="class_d_t_s_frame_1a6da5874c6ac49f979251013785b62b0d" kind="function"><name>OnCreateToolBar</name></member>
     <member refid="class_d_t_s_frame_1a1fe29f6d56f11d1702a372416a659e3e" kind="function"><name>SetupToolbar</name></member>
     <member refid="class_d_t_s_frame_1a3b1105fb9c8e3b6909994e7f993eee20" kind="function"><name>CreatePane</name></member>
-    <member refid="class_d_t_s_frame_1a036e076a53c67d43204aa636ab26328d" kind="function"><name>TextPanel</name></member>
+    <member refid="class_d_t_s_frame_1afc0dae8ce7b26ef38297d520a3144d2a" kind="function"><name>TextPanel</name></member>
     <member refid="class_d_t_s_frame_1a55fe07b66530435bce652e8ab3091707" kind="function"><name>NewMenuItem</name></member>
     <member refid="class_d_t_s_frame_1a658114abb50692e826e18593a0e3ba73" kind="function"><name>NewMenuItem</name></member>
     <member refid="class_d_t_s_frame_1a63488ecbdbe2770ea7d12ce2b06f1b72" kind="function"><name>SendDTSEvent</name></member>
@@ -396,11 +396,11 @@
   <compound refid="classdynamic__panel" kind="class"><name>dynamic_panel</name>
     <member refid="classdynamic__panel_1a5d13849f704cffb0ecfde8dfdb072571" kind="variable"><name>w</name></member>
     <member refid="classdynamic__panel_1ace913453518c31659ba1ecdbede98d99" kind="variable"><name>cb</name></member>
-    <member refid="classdynamic__panel_1a4310f04b6e6208d757a8e8e4d9de2607" kind="variable"><name>title</name></member>
+    <member refid="classdynamic__panel_1ab6472f891f994a9f4dddd9572eb8adab" kind="variable"><name>name</name></member>
     <member refid="classdynamic__panel_1a829939df89ab897c11179a31b8cd46be" kind="variable"><name>data</name></member>
     <member refid="classdynamic__panel_1a590542c18fbe042c59612a8d630fb974" kind="variable"><name>blank</name></member>
     <member refid="classdynamic__panel_1a85d6e3235706cc6f50d14be843a563f6" kind="function"><name>DTS_OJBREF_CLASS</name></member>
-    <member refid="classdynamic__panel_1ae6689acea2cf5d984fbcb191a680c4cb" kind="function"><name>dynamic_panel</name></member>
+    <member refid="classdynamic__panel_1ab9bd460c0e6acd3b84806f908d53df49" kind="function"><name>dynamic_panel</name></member>
     <member refid="classdynamic__panel_1a52940fe2d7c72ec45a2aff77ad7ec8d0" kind="function"><name>HasCallback</name></member>
     <member refid="classdynamic__panel_1a001a227c89e7998e18b88f7c49d4d035" kind="function"><name>IsBlank</name></member>
     <member refid="classdynamic__panel_1ab636fa1300532545f6c6fbf31e5e4971" kind="function"><name>operator==</name></member>
@@ -511,17 +511,16 @@
     <member refid="classxml__element_1ae0415b9bbe906cbab04e2c78c84ae5bc" kind="function"><name>GetValue</name></member>
   </compound>
   <compound refid="namespace_d_t_s___c___a_p_i" kind="namespace"><name>DTS_C_API</name>
-    <member refid="namespace_d_t_s___c___a_p_i_1a295fb20974bd3ceb8a6d8ed6e13a6c70" kind="variable"><name>menuid</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1ab20156180905342ce3bc648253507f73" kind="function"><name>dtsgui_menuenable</name></member>
+    <member refid="group___c-_a_p_i_1ga295fb20974bd3ceb8a6d8ed6e13a6c70" kind="variable"><name>menuid</name></member>
+    <member refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" kind="function"><name>dtsgui_menuenable</name></member>
     <member refid="group___c-_a_p_i_1gacecdb36b65ac3d5522a419a6b69c9f7f" kind="function"><name>dtsgui_config</name></member>
     <member refid="group___c-_a_p_i_1ga3ac9d5ef153d17266a704a373d591962" kind="function"><name>dtsgui_run</name></member>
     <member refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" kind="function"><name>dtsgui_userdata</name></member>
     <member refid="group___c-_a_p_i_1ga529d973a998e39dba025dfcd96a9a706" kind="function"><name>dtsgui_setwindow</name></member>
     <member refid="group___c-_a_p_i_1ga4e766a49c1e9eba3f2c2fda47b8166aa" kind="function"><name>dtsgui_sendevent</name></member>
     <member refid="group___c-_a_p_i_1ga1734b840fc0696b13d5b616df0ec3bbb" kind="function"><name>dtsgui_setuptoolbar</name></member>
-    <member refid="group___c-_a_p_i_1gafc00c020f324c119956fcc38e7fd55db" kind="function"><name>dtsgui_titleappend</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a99f0bbb3bf979d0102b7b19899ad79dd" kind="function"><name>dtsgui_menuitemenable</name></member>
     <member refid="group___c-_a_p_i_1ga164aa159bc57a744f012b49268796bbe" kind="function"><name>dtsgui_set_toolbar</name></member>
+    <member refid="group___c-_a_p_i_1gafc00c020f324c119956fcc38e7fd55db" kind="function"><name>dtsgui_titleappend</name></member>
     <member refid="group___c-_a_p_i-_menus_1gadd0f3eab51bf576378a6438c3982fd48" kind="function"><name>dtsgui_newmenu</name></member>
     <member refid="group___c-_a_p_i-_menus_1gabb8b44357ce2ce4a3fd028939cf8c700" kind="function"><name>dtsgui_newmenuitem</name></member>
     <member refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kind="function"><name>dtsgui_newmenucb</name></member>
@@ -529,11 +528,11 @@
     <member refid="group___c-_a_p_i-_menus_1ga58e38f8ef567c8f50e15a53507ee4a72" kind="function"><name>dtsgui_close</name></member>
     <member refid="group___c-_a_p_i-_menus_1gaf06c34986c04d800883694733554033e" kind="function"><name>dtsgui_about</name></member>
     <member refid="group___c-_a_p_i-_menus_1gaf655828d94de128cfd8269d03d649092" kind="function"><name>dtsgui_menusep</name></member>
+    <member refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" kind="function"><name>dtsgui_menuitemenable</name></member>
     <member refid="group___c-_a_p_i-_panel_1gac763bff39863668014931022b469d836" kind="function"><name>dtsgui_panel</name></member>
     <member refid="group___c-_a_p_i-_panel_1gafb8efe017917a372826f7ddedb0e8bba" kind="function"><name>dtsgui_textpane</name></member>
     <member refid="group___c-_a_p_i-_panel_1gaa92cb9c6006aaf320e784f04500c3b25" kind="function"><name>dtsgui_treewindow</name></member>
     <member refid="group___c-_a_p_i-_panel_1ga05cf1592d301351aa838bd23c710f3bb" kind="function"><name>dtsgui_tabwindow</name></member>
-    <member refid="group___c-_a_p_i-_panel-_tree_1gaaaf93911380c2f40eb8adbdc39ac36ac" kind="function"><name>dtsgui_nodesetxml</name></member>
     <member refid="group___c-_a_p_i-_panel_1gad91055a12542c30dab4aacbd0761c785" kind="function"><name>dtsgui_panel_setxml</name></member>
     <member refid="group___c-_a_p_i-_panel_1ga75c6083aa363922fdf1fd19767eceeea" kind="function"><name>dtsgui_panelxml</name></member>
     <member refid="group___c-_a_p_i-_panel_1ga71826ffc718e3dc219e57befdb6f0d8c" kind="function"><name>dtsgui_delpane</name></member>
@@ -548,7 +547,8 @@
     <member refid="group___c-_a_p_i-_panel-_tree_1gadc59452935e169e8e78c178aed0b77c0" kind="function"><name>dtsgui_treenodeid</name></member>
     <member refid="group___c-_a_p_i-_panel-_tree_1gaedca58250011ea48c67fbc4faa14278f" kind="function"><name>dtsgui_treenodeparent</name></member>
     <member refid="group___c-_a_p_i-_panel-_tree_1ga3e6618e889e7b58e3bf2ae3d63332178" kind="function"><name>dtsgui_treenodesetxml</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1af56a924134315107e80c8b01bfbeee68" kind="function"><name>dtsgui_treenodegetxml</name></member>
+    <member refid="group___c-_a_p_i-_panel-_tree_1gaf56a924134315107e80c8b01bfbeee68" kind="function"><name>dtsgui_treenodegetxml</name></member>
+    <member refid="group___c-_a_p_i-_panel-_tree_1gaaaf93911380c2f40eb8adbdc39ac36ac" kind="function"><name>dtsgui_nodesetxml</name></member>
     <member refid="group___c-_a_p_i-_panel-_tree_1ga00767aae723dce154065e0bb090c0e70" kind="function"><name>dtsgui_treenodegetdata</name></member>
     <member refid="group___c-_a_p_i-_panel_1gaa85445ee6c9a2c24d76824bb67cc2ab2" kind="function"><name>dtsgui_setevcallback</name></member>
     <member refid="group___c-_a_p_i-_panel_1ga28e2dbe2171ea35e32fa615aca55b934" kind="function"><name>dtsgui_xmlpanel_update</name></member>
@@ -566,32 +566,32 @@
     <member refid="group___c-_a_p_i-_progress_1gabda6276de46c13fb4e0831bb8c8d1ec1" kind="function"><name>dtsgui_progress_update</name></member>
     <member refid="group___c-_a_p_i-_progress_1ga7bd617a3f00cb21ae6df7a37eba0dc7b" kind="function"><name>dtsgui_progress_increment</name></member>
     <member refid="group___c-_a_p_i-_progress_1ga528f638b6cb7b0d813e350a0b0c7262c" kind="function"><name>dtsgui_progress_end</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a557f314ceb047c6d2ee3ec5f40e6b93a" kind="function"><name>dtsgui_listbox_add</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1aaa4e4de11048d7e32151628f4428cf3e" kind="function"><name>dtsgui_listbox_set</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a9a2e87bf30be8644653d11754fcb4e26" kind="function"><name>dtsgui_panel_items</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a30bc1422cf3395b150773320ffda00ea" kind="function"><name>dtsgui_item_data</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a2cb1581f47559805b221f9290f9ec83e" kind="function"><name>dtsgui_item_name</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1adc168d1ed91fc91be2bb7bf7b060dd62" kind="function"><name>dtsgui_item_value</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a6585281832905a2e769f8b0f813a67e0" kind="function"><name>dtsgui_listbox_addxml</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a3af426dd6bf50cb6bd7232c4ea5b92f6" kind="function"><name>dtsgui_finditem</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a37f578498eb38e545906898e7250e6bb" kind="function"><name>dtsgui_findvalue</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1ab2431470ff495d71aae8e41368a214cb" kind="function"><name>dtsgui_pwdialog</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a5761cfa6ab849723e50760a9642efc9f" kind="function"><name>dtsgui_confirm</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1ad331a82b0502bea7d78545c6efb72b78" kind="function"><name>dtsgui_alert</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1ad2b11bd5e9e51dcba9f53f4969f1f25c" kind="function"><name>dtsgui_filesave</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1ad458f5d64710487c7213a4921a5ebc99" kind="function"><name>dtsgui_fileopen</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a9bbd9bb4aa7a921fc64742ecf3b0f61d" kind="function"><name>dtsgui_textbox</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a89eb3889f372aaec58543d51d881c822" kind="function"><name>dtsgui_textbox_multi</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a42a80bcfa5dfb41d87e548eb146261e1" kind="function"><name>dtsgui_passwdbox</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1ad9a5fa9a5623850a3889e305ef3da717" kind="function"><name>dtsgui_checkbox</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a21dbebc529c734dffe528f2b15b2a441" kind="function"><name>dtsgui_listbox</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a554b15e578927450a5ee9128483885ca" kind="function"><name>dtsgui_combobox</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a8eca510dc07eee0cd113f852fe67caa6" kind="function"><name>dtsgui_xmltextbox</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a1e60e1a55957b1055c99df5a45f18bce" kind="function"><name>dtsgui_xmltextbox_multi</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1ab8e603da01cb2c17d0ecfbbe216ac750" kind="function"><name>dtsgui_xmlpasswdbox</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a2a2a0a7402e2f1bbbd5eeff3446a08fe" kind="function"><name>dtsgui_xmlcheckbox</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a0f5275b68ac882154ab7b2bf48e47ef2" kind="function"><name>dtsgui_xmllistbox</name></member>
-    <member refid="namespace_d_t_s___c___a_p_i_1a9472a3941bf352a063fa5e55a6016fdc" kind="function"><name>dtsgui_xmlcombobox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1ga9a2e87bf30be8644653d11754fcb4e26" kind="function"><name>dtsgui_panel_items</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1ga3af426dd6bf50cb6bd7232c4ea5b92f6" kind="function"><name>dtsgui_finditem</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1ga30bc1422cf3395b150773320ffda00ea" kind="function"><name>dtsgui_item_data</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1gadc168d1ed91fc91be2bb7bf7b060dd62" kind="function"><name>dtsgui_item_value</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1ga2cb1581f47559805b221f9290f9ec83e" kind="function"><name>dtsgui_item_name</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1ga37f578498eb38e545906898e7250e6bb" kind="function"><name>dtsgui_findvalue</name></member>
+    <member refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kind="function"><name>dtsgui_alert</name></member>
+    <member refid="group___c-_a_p_i-_dialog_1ga5761cfa6ab849723e50760a9642efc9f" kind="function"><name>dtsgui_confirm</name></member>
+    <member refid="group___c-_a_p_i-_dialog_1gad2b11bd5e9e51dcba9f53f4969f1f25c" kind="function"><name>dtsgui_filesave</name></member>
+    <member refid="group___c-_a_p_i-_dialog_1gad458f5d64710487c7213a4921a5ebc99" kind="function"><name>dtsgui_fileopen</name></member>
+    <member refid="group___c-_a_p_i-_dialog_1gab2431470ff495d71aae8e41368a214cb" kind="function"><name>dtsgui_pwdialog</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" kind="function"><name>dtsgui_listbox_add</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements_1gaaa4e4de11048d7e32151628f4428cf3e" kind="function"><name>dtsgui_listbox_set</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements_1ga6585281832905a2e769f8b0f813a67e0" kind="function"><name>dtsgui_listbox_addxml</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga9bbd9bb4aa7a921fc64742ecf3b0f61d" kind="function"><name>dtsgui_textbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga89eb3889f372aaec58543d51d881c822" kind="function"><name>dtsgui_textbox_multi</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga42a80bcfa5dfb41d87e548eb146261e1" kind="function"><name>dtsgui_passwdbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1gad9a5fa9a5623850a3889e305ef3da717" kind="function"><name>dtsgui_checkbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga21dbebc529c734dffe528f2b15b2a441" kind="function"><name>dtsgui_listbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga554b15e578927450a5ee9128483885ca" kind="function"><name>dtsgui_combobox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" kind="function"><name>dtsgui_xmltextbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga1e60e1a55957b1055c99df5a45f18bce" kind="function"><name>dtsgui_xmltextbox_multi</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1gab8e603da01cb2c17d0ecfbbe216ac750" kind="function"><name>dtsgui_xmlpasswdbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" kind="function"><name>dtsgui_xmlcheckbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" kind="function"><name>dtsgui_xmllistbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga9472a3941bf352a063fa5e55a6016fdc" kind="function"><name>dtsgui_xmlcombobox</name></member>
   </compound>
   <compound refid="config_8c" kind="file"><name>config.c</name>
     <member refid="config_8c_1a72af4355dbc5afe93fef750a81a3e572" kind="function"><name>open_config</name></member>
@@ -696,12 +696,12 @@
     <member refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecaeb4d90752cc1ae6b1189057456d4080d" kind="enumvalue"><name>DTS_NODE_NETWORK_ADSL_USER</name></member>
     <member refid="private_8h_1a018cb6fe637d3a25a67e794d620808eca15c8b3347c4ae06b4206e5960f7bd41c" kind="enumvalue"><name>DTS_NODE_NETWORK_TOS_NEW</name></member>
     <member refid="private_8h_1a018cb6fe637d3a25a67e794d620808ecae4d8c8164988e426b306b81ba7a54551" kind="enumvalue"><name>DTS_NODE_NETWORK_TOS</name></member>
-    <member refid="private_8h_1a65a24b9322f0fd002413f3e9e13272f0" kind="function"><name>app_getxmldoc</name></member>
+    <member refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" kind="function"><name>app_getxmldoc</name></member>
     <member refid="private_8h_1ab33c9c3228455b45318900a842c7a693" kind="function"><name>app_toolbar</name></member>
-    <member refid="private_8h_1a0be336c09b5cd473a616326c4cb227d2" kind="function"><name>reconfig_wizard</name></member>
-    <member refid="private_8h_1a126b309803052977061662f97fb9012a" kind="function"><name>editsys_wizard</name></member>
-    <member refid="private_8h_1a56c78e0d32a18452dcea4f026de2c889" kind="function"><name>newsys_wizard</name></member>
-    <member refid="private_8h_1accc1788f03d17d487ce09a1d07d53018" kind="function"><name>wizz_custinfo</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga0be336c09b5cd473a616326c4cb227d2" kind="function"><name>reconfig_wizard</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga126b309803052977061662f97fb9012a" kind="function"><name>editsys_wizard</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga56c78e0d32a18452dcea4f026de2c889" kind="function"><name>newsys_wizard</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1gaccc1788f03d17d487ce09a1d07d53018" kind="function"><name>wizz_custinfo</name></member>
     <member refid="private_8h_1aa1aa69985689f9714422c273fe968fdf" kind="function"><name>pbx_settings</name></member>
     <member refid="private_8h_1a77cb81a619f8c9ccd83cdf1e7c97aae9" kind="function"><name>test_menu</name></member>
     <member refid="private_8h_1a6d9d2b0105df87000cb2bdecbff91239" kind="function"><name>advanced_config</name></member>
@@ -726,33 +726,33 @@
     <member refid="toolbar_8cpp_1ab33c9c3228455b45318900a842c7a693" kind="function"><name>app_toolbar</name></member>
   </compound>
   <compound refid="wizard_8c" kind="file"><name>wizard.c</name>
-    <member refid="wizard_8c_1a4f882ff8bd54df9885846da44baba542" kind="function"><name>set_temp_xml</name></member>
-    <member refid="wizard_8c_1ac882aeda8345539fc608001e35a5cc59" kind="function"><name>rem_temp_xml</name></member>
-    <member refid="wizard_8c_1accc1788f03d17d487ce09a1d07d53018" kind="function"><name>wizz_custinfo</name></member>
-    <member refid="wizard_8c_1af6a04c61f4efb3d8c9581d1ca2a79f7c" kind="function"><name>wizz_netinfo</name></member>
-    <member refid="wizard_8c_1a488833f1ea62639df39c4cd7662864db" kind="function"><name>wizz_dyndns</name></member>
-    <member refid="wizard_8c_1a2d137c5c2ae4b1407da5442477dd2b36" kind="function"><name>wizz_dnsinfo</name></member>
-    <member refid="wizard_8c_1a81b5895e97fa4d47dbd829cccffa1b7b" kind="function"><name>wizz_x509</name></member>
-    <member refid="wizard_8c_1a85fecec1da6b92b910c3810a9f0f431c" kind="function"><name>wizz_samba</name></member>
-    <member refid="wizard_8c_1a4fc4a7cde0492cbde04a4e0804cc81d8" kind="function"><name>wizz_network</name></member>
-    <member refid="wizard_8c_1a2385f9d99b5222b879485702af299fd0" kind="function"><name>wizz_exten</name></member>
-    <member refid="wizard_8c_1afcf1b2026fe781338918ede3a099a713" kind="function"><name>wizz_location</name></member>
-    <member refid="wizard_8c_1a34653c75ebbdc91cadc68180a51b121b" kind="function"><name>wizz_acd</name></member>
-    <member refid="wizard_8c_1aa274a72a578011082041109b5e2d8b22" kind="function"><name>wizz_trunk</name></member>
-    <member refid="wizard_8c_1a4663a22f17fb8c01f6058f117ed6c201" kind="function"><name>wizz_voip</name></member>
-    <member refid="wizard_8c_1ae99af9389a848fe0d810a538d0b64d53" kind="function"><name>system_wizard</name></member>
-    <member refid="wizard_8c_1a56c78e0d32a18452dcea4f026de2c889" kind="function"><name>newsys_wizard</name></member>
-    <member refid="wizard_8c_1a126b309803052977061662f97fb9012a" kind="function"><name>editsys_wizard</name></member>
-    <member refid="wizard_8c_1a0be336c09b5cd473a616326c4cb227d2" kind="function"><name>reconfig_wizard</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga4f882ff8bd54df9885846da44baba542" kind="function"><name>set_temp_xml</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1gac882aeda8345539fc608001e35a5cc59" kind="function"><name>rem_temp_xml</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1gaccc1788f03d17d487ce09a1d07d53018" kind="function"><name>wizz_custinfo</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1gaf6a04c61f4efb3d8c9581d1ca2a79f7c" kind="function"><name>wizz_netinfo</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga488833f1ea62639df39c4cd7662864db" kind="function"><name>wizz_dyndns</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga2d137c5c2ae4b1407da5442477dd2b36" kind="function"><name>wizz_dnsinfo</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga81b5895e97fa4d47dbd829cccffa1b7b" kind="function"><name>wizz_x509</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga85fecec1da6b92b910c3810a9f0f431c" kind="function"><name>wizz_samba</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga4fc4a7cde0492cbde04a4e0804cc81d8" kind="function"><name>wizz_network</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga2385f9d99b5222b879485702af299fd0" kind="function"><name>wizz_exten</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1gafcf1b2026fe781338918ede3a099a713" kind="function"><name>wizz_location</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga34653c75ebbdc91cadc68180a51b121b" kind="function"><name>wizz_acd</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1gaa274a72a578011082041109b5e2d8b22" kind="function"><name>wizz_trunk</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga4663a22f17fb8c01f6058f117ed6c201" kind="function"><name>wizz_voip</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1gae99af9389a848fe0d810a538d0b64d53" kind="function"><name>system_wizard</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga56c78e0d32a18452dcea4f026de2c889" kind="function"><name>newsys_wizard</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga126b309803052977061662f97fb9012a" kind="function"><name>editsys_wizard</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga0be336c09b5cd473a616326c4cb227d2" kind="function"><name>reconfig_wizard</name></member>
   </compound>
   <compound refid="wxforms_8c" kind="file"><name>wxforms.c</name>
-    <member refid="wxforms_8c_1a063bbba7cc37af45b7989f2838fae1e1" kind="function"><name>xml_config</name></member>
-    <member refid="wxforms_8c_1a65a24b9322f0fd002413f3e9e13272f0" kind="function"><name>app_getxmldoc</name></member>
-    <member refid="wxforms_8c_1a011cd0b131174029fed8babdf1c7a101" kind="function"><name>file_menu</name></member>
-    <member refid="wxforms_8c_1ae1b0e521306d90ee09f460064c015b2b" kind="function"><name>help_menu</name></member>
-    <member refid="wxforms_8c_1af12c2714c0878b7565d8b788931f9e50" kind="function"><name>guiconfig_cb</name></member>
-    <member refid="wxforms_8c_1a5fe0b449ba347b98cc9acad0f5608ca1" kind="function"><name>free_appdata</name></member>
-    <member refid="wxforms_8c_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+    <member refid="group___d_t_s-_a_p_p_1ga063bbba7cc37af45b7989f2838fae1e1" kind="function"><name>xml_config</name></member>
+    <member refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" kind="function"><name>app_getxmldoc</name></member>
+    <member refid="group___d_t_s-_a_p_p_1ga011cd0b131174029fed8babdf1c7a101" kind="function"><name>file_menu</name></member>
+    <member refid="group___d_t_s-_a_p_p_1gae1b0e521306d90ee09f460064c015b2b" kind="function"><name>help_menu</name></member>
+    <member refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" kind="function"><name>guiconfig_cb</name></member>
+    <member refid="group___d_t_s-_a_p_p_1ga5fe0b449ba347b98cc9acad0f5608ca1" kind="function"><name>free_appdata</name></member>
+    <member refid="group___d_t_s-_a_p_p_1ga3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
   </compound>
   <compound refid="build_2config_8h" kind="file"><name>config.h</name>
     <member refid="build_2config_8h_1a0ee1617ff2f6885ef384a3dd46f9b9d7" kind="define"><name>HAVE_DLFCN_H</name></member>
@@ -801,25 +801,25 @@
     <member refid="mingw_2config_8h_1a1c6d5de492ac61ad29aec7aa9a436bbf" kind="define"><name>VERSION</name></member>
   </compound>
   <compound refid="cxxapi_8cpp" kind="file"><name>cxxapi.cpp</name>
-    <member refid="cxxapi_8cpp_1adc3e6af7bc4df899bca001c49d7f5e07" kind="define"><name>__DTS_C_API</name></member>
+    <member refid="group___c-_a_p_i_1gadc3e6af7bc4df899bca001c49d7f5e07" kind="define"><name>__DTS_C_API</name></member>
   </compound>
   <compound refid="_d_t_s_app_8cpp" kind="file"><name>DTSApp.cpp</name>
-    <member refid="_d_t_s_app_8cpp_1ac7cc8ecc2c05777065fdf0af985b197b" kind="function"><name>wxDEFINE_EVENT</name></member>
+    <member refid="group___c_p_p_1gac7cc8ecc2c05777065fdf0af985b197b" kind="function"><name>wxDEFINE_EVENT</name></member>
   </compound>
   <compound refid="_d_t_s_frame_8cpp" kind="file"><name>DTSFrame.cpp</name>
   </compound>
   <compound refid="_d_t_s_list_view_8cpp" kind="file"><name>DTSListView.cpp</name>
   </compound>
   <compound refid="_d_t_s_panel_8cpp" kind="file"><name>DTSPanel.cpp</name>
-    <member refid="_d_t_s_panel_8cpp_1a00fc562a7d9ef5cac917f9697dfdb769" kind="define"><name>PADING</name></member>
-    <member refid="_d_t_s_panel_8cpp_1a138f34819b90ed241ed77fc27958f745" kind="variable"><name>def_buttons</name></member>
+    <member refid="group___c_p_p-_panel_1ga00fc562a7d9ef5cac917f9697dfdb769" kind="define"><name>PADING</name></member>
+    <member refid="group___c_p_p-_panel_1ga138f34819b90ed241ed77fc27958f745" kind="variable"><name>def_buttons</name></member>
   </compound>
   <compound refid="_d_t_s_tree_window_8cpp" kind="file"><name>DTSTreeWindow.cpp</name>
-    <member refid="_d_t_s_tree_window_8cpp_1a1ed19fc940f9de92a2ac518ffbc04486" kind="enum"><name>treewinmenu</name></member>
-    <member refid="_d_t_s_tree_window_8cpp_1a1ed19fc940f9de92a2ac518ffbc04486aed80ef06b46ae100a6f5c56da1674ba7" kind="enumvalue"><name>DTS_TREEWIN_MENU_SORT</name></member>
-    <member refid="_d_t_s_tree_window_8cpp_1a1ed19fc940f9de92a2ac518ffbc04486af5bd57193f475f49c63b9b7271586daf" kind="enumvalue"><name>DTS_TREEWIN_MENU_MOVEUP</name></member>
-    <member refid="_d_t_s_tree_window_8cpp_1a1ed19fc940f9de92a2ac518ffbc04486a097ecad73656ee80fb0c9e7ddf464e5d" kind="enumvalue"><name>DTS_TREEWIN_MENU_MOVEDOWN</name></member>
-    <member refid="_d_t_s_tree_window_8cpp_1a1ed19fc940f9de92a2ac518ffbc04486a4a0c85437a842221377dac401285454f" kind="enumvalue"><name>DTS_TREEWIN_MENU_DELETE</name></member>
+    <member refid="group___c_p_p-_panel-_tree_1ga1ed19fc940f9de92a2ac518ffbc04486" kind="enum"><name>treewinmenu</name></member>
+    <member refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486aed80ef06b46ae100a6f5c56da1674ba7" kind="enumvalue"><name>DTS_TREEWIN_MENU_SORT</name></member>
+    <member refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486af5bd57193f475f49c63b9b7271586daf" kind="enumvalue"><name>DTS_TREEWIN_MENU_MOVEUP</name></member>
+    <member refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486a097ecad73656ee80fb0c9e7ddf464e5d" kind="enumvalue"><name>DTS_TREEWIN_MENU_MOVEDOWN</name></member>
+    <member refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486a4a0c85437a842221377dac401285454f" kind="enumvalue"><name>DTS_TREEWIN_MENU_DELETE</name></member>
   </compound>
   <compound refid="_d_t_s_wizard_8cpp" kind="file"><name>DTSWizard.cpp</name>
   </compound>
@@ -835,72 +835,72 @@
     <member refid="_d_t_s_frame_8h_1a76cdd62022b409cbb306785d979d5644" kind="typedef"><name>wxProgressDialog</name></member>
     <member refid="_d_t_s_frame_8h_1aa91ff9a59523cc19b5e1bbbd8a53d6ab" kind="typedef"><name>DTSPanel</name></member>
     <member refid="_d_t_s_frame_8h_1a0cffe42d59bc7197d9c84182aef0f22d" kind="typedef"><name>DTSObject</name></member>
+    <member refid="_d_t_s_frame_8h_1aaf5c0edaf8bc2cf97613de1b618bff60" kind="typedef"><name>DTSWindow</name></member>
   </compound>
   <compound refid="dtsgui_8h" kind="file"><name>dtsgui.h</name>
-    <member refid="dtsgui_8h_1abcf9e451a313490d78549227e6dc8824" kind="define"><name>wx_PANEL_BUTTON_NAV</name></member>
-    <member refid="dtsgui_8h_1aa7fc68a1ddb9112dbbbfe2ae26e2e379" kind="define"><name>wx_PANEL_BUTTON_DIR</name></member>
-    <member refid="dtsgui_8h_1a4ef37ee1286eb68a9f5663813f134be2" kind="define"><name>wx_PANEL_BUTTON_ACTION</name></member>
-    <member refid="dtsgui_8h_1a6fd6c8004323d4605940ac5fb2ff9c9b" kind="define"><name>wx_PANEL_BUTTON_ALL</name></member>
-    <member refid="dtsgui_8h_1a655f2051956468f6592bef486573e424" kind="define"><name>wx_PANEL_EVENT_BUTTON_NONE</name></member>
-    <member refid="dtsgui_8h_1a465794df2cb30731dfe34d3e7a4ed368" kind="enum"><name>tree_cbtype</name></member>
-    <member refid="dtsgui_8h_1a465794df2cb30731dfe34d3e7a4ed368adac89e1845cacd5358022cbc20aba1a9" kind="enumvalue"><name>DTSGUI_TREE_CB_SELECT</name></member>
-    <member refid="dtsgui_8h_1a465794df2cb30731dfe34d3e7a4ed368a95978182db76e342ba406456dc935258" kind="enumvalue"><name>DTSGUI_TREE_CB_DELETE</name></member>
-    <member refid="dtsgui_8h_1a465794df2cb30731dfe34d3e7a4ed368a629392b319c09bfdb44b638c858381e8" kind="enumvalue"><name>DTSGUI_TREE_CB_EDIT</name></member>
-    <member refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kind="enum"><name>form_data_type</name></member>
-    <member refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kind="enumvalue"><name>DTSGUI_FORM_DATA_PTR</name></member>
-    <member refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9a5c592b75994135a5de470f79e40aafda" kind="enumvalue"><name>DTSGUI_FORM_DATA_XML</name></member>
-    <member refid="dtsgui_8h_1a5082bae7f0b5d2b7d715e40450f302ec" kind="enum"><name>panel_buttons</name></member>
-    <member refid="dtsgui_8h_1a5082bae7f0b5d2b7d715e40450f302eca332b4d1a5e1ae1425b5f77c49edd311c" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_FIRST</name></member>
-    <member refid="dtsgui_8h_1a5082bae7f0b5d2b7d715e40450f302eca5092915b2da9df3365a956562b3d3663" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_BACK</name></member>
-    <member refid="dtsgui_8h_1a5082bae7f0b5d2b7d715e40450f302eca95b3613970d7acac3b1b3f4adbebf186" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_FWD</name></member>
-    <member refid="dtsgui_8h_1a5082bae7f0b5d2b7d715e40450f302ecaff2d58b46c16f29654d00ae290e25a63" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_LAST</name></member>
-    <member refid="dtsgui_8h_1a5082bae7f0b5d2b7d715e40450f302eca6ce91176e6c929e87d7acbd000d07f79" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_YES</name></member>
-    <member refid="dtsgui_8h_1a5082bae7f0b5d2b7d715e40450f302ecadb8742f8472eb90558cfbf8e3914553b" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_NO</name></member>
-    <member refid="dtsgui_8h_1a54d7edaba9c015c3b5310ed3080b82e6" kind="enum"><name>panel_events</name></member>
-    <member refid="dtsgui_8h_1a54d7edaba9c015c3b5310ed3080b82e6a331937b86eb259d1d84728d28fbed79d" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON</name></member>
-    <member refid="dtsgui_8h_1a54d7edaba9c015c3b5310ed3080b82e6a05cb2a662e44a9332f631e8fb04ea5ef" kind="enumvalue"><name>wx_PANEL_EVENT_COMBO_ENTER</name></member>
-    <member refid="dtsgui_8h_1a54d7edaba9c015c3b5310ed3080b82e6a9d9853f83e3e28aaca0621c788994cc8" kind="enumvalue"><name>wx_PANEL_EVENT_COMBO_UPDATE</name></member>
-    <member refid="dtsgui_8h_1a54d7edaba9c015c3b5310ed3080b82e6a8f700b4b2b17b782d57dd32dc696956c" kind="enumvalue"><name>wx_PANEL_EVENT_DTS</name></member>
-    <member refid="dtsgui_8h_1a7ecd2a00f2306c0b94734a72a7899898" kind="enum"><name>tree_newnode_flags</name></member>
-    <member refid="dtsgui_8h_1a7ecd2a00f2306c0b94734a72a7899898a92d0796e80ba757f7f74979253423b98" kind="enumvalue"><name>DTS_TREE_NEW_NODE_EDIT</name></member>
-    <member refid="dtsgui_8h_1a7ecd2a00f2306c0b94734a72a7899898a09bf4479510d6996e8c2d0e3cd27c714" kind="enumvalue"><name>DTS_TREE_NEW_NODE_DELETE</name></member>
-    <member refid="dtsgui_8h_1a7ecd2a00f2306c0b94734a72a7899898a67752f3ce4c088a226eb85e1f2369532" kind="enumvalue"><name>DTS_TREE_NEW_NODE_CONTAINER</name></member>
-    <member refid="dtsgui_8h_1a7ecd2a00f2306c0b94734a72a7899898ab4026cda71b1fb600c8af942c1194e99" kind="enumvalue"><name>DTS_TREE_NEW_NODE_SORT</name></member>
-    <member refid="dtsgui_8h_1a9275874ac61d3750aa677a36da714373" kind="enum"><name>panel_type</name></member>
-    <member refid="dtsgui_8h_1a9275874ac61d3750aa677a36da714373ad0213b4d1d51e9f04e084a09e8da1c62" kind="enumvalue"><name>wx_DTSPANEL_WINDOW</name></member>
-    <member refid="dtsgui_8h_1a9275874ac61d3750aa677a36da714373a0e31c26466ea939007976914785fff2c" kind="enumvalue"><name>wx_DTSPANEL_PANEL</name></member>
-    <member refid="dtsgui_8h_1a9275874ac61d3750aa677a36da714373a51268d1576c4e816f1416435cfe61500" kind="enumvalue"><name>wx_DTSPANEL_SCROLLPANEL</name></member>
-    <member refid="dtsgui_8h_1a9275874ac61d3750aa677a36da714373a259d19ace1b7a45cbd7e99697bd2b69a" kind="enumvalue"><name>wx_DTSPANEL_DIALOG</name></member>
-    <member refid="dtsgui_8h_1a9275874ac61d3750aa677a36da714373a8aa14d05cc73bd9438f302f6f2cb29c3" kind="enumvalue"><name>wx_DTSPANEL_TREE</name></member>
-    <member refid="dtsgui_8h_1a9275874ac61d3750aa677a36da714373aa108fde55f9c1830cf68cd368aba1d02" kind="enumvalue"><name>wx_DTSPANEL_WIZARD</name></member>
-    <member refid="dtsgui_8h_1a9275874ac61d3750aa677a36da714373a94b4b5412dbd78fdf58517c74afa9dad" kind="enumvalue"><name>wx_DTSPANEL_TAB</name></member>
-    <member refid="dtsgui_8h_1afd296180392ef5681415b9fb0590be84" kind="enum"><name>widget_type</name></member>
-    <member refid="dtsgui_8h_1afd296180392ef5681415b9fb0590be84a30946b987fd9b1a681425eb86c33b836" kind="enumvalue"><name>DTS_WIDGET_TEXTBOX</name></member>
-    <member refid="dtsgui_8h_1afd296180392ef5681415b9fb0590be84af8b07c907089ef8cf8534af437682a28" kind="enumvalue"><name>DTS_WIDGET_CHECKBOX</name></member>
-    <member refid="dtsgui_8h_1afd296180392ef5681415b9fb0590be84a617d0a94e82cae830c769b66b1751b9a" kind="enumvalue"><name>DTS_WIDGET_LISTBOX</name></member>
-    <member refid="dtsgui_8h_1afd296180392ef5681415b9fb0590be84ad091872a88b66595cb453008b03565cc" kind="enumvalue"><name>DTS_WIDGET_COMBOBOX</name></member>
-    <member refid="dtsgui_8h_1a8d0ed2b4049e42079b366e341b33347f" kind="typedef"><name>dtsgui</name></member>
-    <member refid="dtsgui_8h_1a00d1631dc45e8a99d361b5091856abe3" kind="typedef"><name>dtsgui_wizard</name></member>
-    <member refid="dtsgui_8h_1afb1e28bd82fd8ea9d43a188c06095682" kind="typedef"><name>dtsgui_menu</name></member>
-    <member refid="dtsgui_8h_1af59302244664352117c2669055da5850" kind="typedef"><name>dtsgui_menuitem</name></member>
-    <member refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kind="typedef"><name>dtsgui_pane</name></member>
-    <member refid="dtsgui_8h_1a698d08e25e0df56af6ba94c8056bdd97" kind="typedef"><name>dtsgui_notebook</name></member>
-    <member refid="dtsgui_8h_1a91b92f00d06cc6174b8b271fc9f2c241" kind="typedef"><name>dtsgui_treeview</name></member>
-    <member refid="dtsgui_8h_1a29c463cda54f69beb273c77e1aa7ccef" kind="typedef"><name>dtsgui_tabview</name></member>
-    <member refid="dtsgui_8h_1a6529df5f03710b4fec84553e1d7febc5" kind="typedef"><name>dtsgui_treenode</name></member>
-    <member refid="dtsgui_8h_1a531b61ccda025272407e2d2b26f0072c" kind="typedef"><name>dtsgui_progress</name></member>
-    <member refid="dtsgui_8h_1abbf6decd0bf8428c296f4adcafed46fb" kind="typedef"><name>form_item</name></member>
-    <member refid="dtsgui_8h_1aa881f6b55dcf9b95108f08bf62d4802f" kind="typedef"><name>dynamic_panel</name></member>
-    <member refid="group___c-_a_p_i_1gad3b80490c86b8275c47382588f2ecfd4" kind="typedef"><name>dtsgui_configcb</name></member>
-    <member refid="dtsgui_8h_1a0d655090fad451700b01ffc4b0bdd727" kind="typedef"><name>dtsgui_menucb</name></member>
-    <member refid="dtsgui_8h_1acfd3355668ba382f87a9aab4ea2c4e9c" kind="typedef"><name>event_callback</name></member>
-    <member refid="dtsgui_8h_1a080f931027861c0021f72ac2562b45d7" kind="typedef"><name>dtsgui_dynpanel</name></member>
-    <member refid="dtsgui_8h_1a32927ee58215cd957e5134af0f13303f" kind="typedef"><name>dtsgui_tree_cb</name></member>
-    <member refid="dtsgui_8h_1a52992645e33e4d92c8e68c3490239c75" kind="typedef"><name>dtsgui_xmltreenode_cb</name></member>
-    <member refid="dtsgui_8h_1a8bf800adcd2392cf7722c3cf2f603f96" kind="typedef"><name>dtsgui_treeviewpanel_cb</name></member>
-    <member refid="dtsgui_8h_1ab65db729662a3b0d109158d2fb51f93c" kind="typedef"><name>dtsgui_tabpanel_cb</name></member>
-    <member refid="dtsgui_8h_1a53eefce4ace6a7d72e49e9ae4c520226" kind="typedef"><name>dtsgui_toolbar_create</name></member>
-    <member refid="dtsgui_8h_1ab5e1fa276d48b20d35f4ef20110c39ed" kind="typedef"><name>dtsgui_tabpane_newdata_cb</name></member>
+    <member refid="group___c_o_r_e_1gabcf9e451a313490d78549227e6dc8824" kind="define"><name>wx_PANEL_BUTTON_NAV</name></member>
+    <member refid="group___c_o_r_e_1gaa7fc68a1ddb9112dbbbfe2ae26e2e379" kind="define"><name>wx_PANEL_BUTTON_DIR</name></member>
+    <member refid="group___c_o_r_e_1ga4ef37ee1286eb68a9f5663813f134be2" kind="define"><name>wx_PANEL_BUTTON_ACTION</name></member>
+    <member refid="group___c_o_r_e_1ga6fd6c8004323d4605940ac5fb2ff9c9b" kind="define"><name>wx_PANEL_BUTTON_ALL</name></member>
+    <member refid="group___c_o_r_e_1ga655f2051956468f6592bef486573e424" kind="define"><name>wx_PANEL_EVENT_BUTTON_NONE</name></member>
+    <member refid="group___c_o_r_e_1ga465794df2cb30731dfe34d3e7a4ed368" kind="enum"><name>tree_cbtype</name></member>
+    <member refid="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368adac89e1845cacd5358022cbc20aba1a9" kind="enumvalue"><name>DTSGUI_TREE_CB_SELECT</name></member>
+    <member refid="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368a95978182db76e342ba406456dc935258" kind="enumvalue"><name>DTSGUI_TREE_CB_DELETE</name></member>
+    <member refid="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368a629392b319c09bfdb44b638c858381e8" kind="enumvalue"><name>DTSGUI_TREE_CB_EDIT</name></member>
+    <member refid="group___c_o_r_e_1gaa648ae9cc0927fecec3a6f705930f8a9" kind="enum"><name>form_data_type</name></member>
+    <member refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kind="enumvalue"><name>DTSGUI_FORM_DATA_PTR</name></member>
+    <member refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9a5c592b75994135a5de470f79e40aafda" kind="enumvalue"><name>DTSGUI_FORM_DATA_XML</name></member>
+    <member refid="group___c_o_r_e_1ga5082bae7f0b5d2b7d715e40450f302ec" kind="enum"><name>panel_buttons</name></member>
+    <member refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca332b4d1a5e1ae1425b5f77c49edd311c" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_FIRST</name></member>
+    <member refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca5092915b2da9df3365a956562b3d3663" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_BACK</name></member>
+    <member refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca95b3613970d7acac3b1b3f4adbebf186" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_FWD</name></member>
+    <member refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302ecaff2d58b46c16f29654d00ae290e25a63" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_LAST</name></member>
+    <member refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca6ce91176e6c929e87d7acbd000d07f79" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_YES</name></member>
+    <member refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302ecadb8742f8472eb90558cfbf8e3914553b" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_NO</name></member>
+    <member refid="group___c_o_r_e_1ga54d7edaba9c015c3b5310ed3080b82e6" kind="enum"><name>panel_events</name></member>
+    <member refid="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a331937b86eb259d1d84728d28fbed79d" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON</name></member>
+    <member refid="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a05cb2a662e44a9332f631e8fb04ea5ef" kind="enumvalue"><name>wx_PANEL_EVENT_COMBO_ENTER</name></member>
+    <member refid="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a9d9853f83e3e28aaca0621c788994cc8" kind="enumvalue"><name>wx_PANEL_EVENT_COMBO_UPDATE</name></member>
+    <member refid="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a8f700b4b2b17b782d57dd32dc696956c" kind="enumvalue"><name>wx_PANEL_EVENT_DTS</name></member>
+    <member refid="group___c_o_r_e_1ga7ecd2a00f2306c0b94734a72a7899898" kind="enum"><name>tree_newnode_flags</name></member>
+    <member refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a92d0796e80ba757f7f74979253423b98" kind="enumvalue"><name>DTS_TREE_NEW_NODE_EDIT</name></member>
+    <member refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a09bf4479510d6996e8c2d0e3cd27c714" kind="enumvalue"><name>DTS_TREE_NEW_NODE_DELETE</name></member>
+    <member refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a67752f3ce4c088a226eb85e1f2369532" kind="enumvalue"><name>DTS_TREE_NEW_NODE_CONTAINER</name></member>
+    <member refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898ab4026cda71b1fb600c8af942c1194e99" kind="enumvalue"><name>DTS_TREE_NEW_NODE_SORT</name></member>
+    <member refid="group___c_o_r_e_1ga9275874ac61d3750aa677a36da714373" kind="enum"><name>panel_type</name></member>
+    <member refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373ad0213b4d1d51e9f04e084a09e8da1c62" kind="enumvalue"><name>wx_DTSPANEL_WINDOW</name></member>
+    <member refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a0e31c26466ea939007976914785fff2c" kind="enumvalue"><name>wx_DTSPANEL_PANEL</name></member>
+    <member refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a51268d1576c4e816f1416435cfe61500" kind="enumvalue"><name>wx_DTSPANEL_SCROLLPANEL</name></member>
+    <member refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a259d19ace1b7a45cbd7e99697bd2b69a" kind="enumvalue"><name>wx_DTSPANEL_DIALOG</name></member>
+    <member refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a8aa14d05cc73bd9438f302f6f2cb29c3" kind="enumvalue"><name>wx_DTSPANEL_TREE</name></member>
+    <member refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a94b4b5412dbd78fdf58517c74afa9dad" kind="enumvalue"><name>wx_DTSPANEL_TAB</name></member>
+    <member refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373aa108fde55f9c1830cf68cd368aba1d02" kind="enumvalue"><name>wx_DTSPANEL_WIZARD</name></member>
+    <member refid="group___c_o_r_e_1gafd296180392ef5681415b9fb0590be84" kind="enum"><name>widget_type</name></member>
+    <member refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84a30946b987fd9b1a681425eb86c33b836" kind="enumvalue"><name>DTS_WIDGET_TEXTBOX</name></member>
+    <member refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84af8b07c907089ef8cf8534af437682a28" kind="enumvalue"><name>DTS_WIDGET_CHECKBOX</name></member>
+    <member refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84a617d0a94e82cae830c769b66b1751b9a" kind="enumvalue"><name>DTS_WIDGET_LISTBOX</name></member>
+    <member refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84ad091872a88b66595cb453008b03565cc" kind="enumvalue"><name>DTS_WIDGET_COMBOBOX</name></member>
+    <member refid="group___c_o_r_e_1ga8d0ed2b4049e42079b366e341b33347f" kind="typedef"><name>dtsgui</name></member>
+    <member refid="group___c_o_r_e_1ga00d1631dc45e8a99d361b5091856abe3" kind="typedef"><name>dtsgui_wizard</name></member>
+    <member refid="group___c_o_r_e_1gabbf6decd0bf8428c296f4adcafed46fb" kind="typedef"><name>form_item</name></member>
+    <member refid="group___c_o_r_e_1gaa881f6b55dcf9b95108f08bf62d4802f" kind="typedef"><name>dynamic_panel</name></member>
+    <member refid="group___c_o_r_e_1gafb1e28bd82fd8ea9d43a188c06095682" kind="typedef"><name>dtsgui_menu</name></member>
+    <member refid="group___c_o_r_e_1gaf59302244664352117c2669055da5850" kind="typedef"><name>dtsgui_menuitem</name></member>
+    <member refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kind="typedef"><name>dtsgui_pane</name></member>
+    <member refid="group___c_o_r_e_1ga698d08e25e0df56af6ba94c8056bdd97" kind="typedef"><name>dtsgui_notebook</name></member>
+    <member refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kind="typedef"><name>dtsgui_treeview</name></member>
+    <member refid="group___c_o_r_e_1ga29c463cda54f69beb273c77e1aa7ccef" kind="typedef"><name>dtsgui_tabview</name></member>
+    <member refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kind="typedef"><name>dtsgui_treenode</name></member>
+    <member refid="group___c_o_r_e_1ga531b61ccda025272407e2d2b26f0072c" kind="typedef"><name>dtsgui_progress</name></member>
+    <member refid="group___c_o_r_e_1gad3b80490c86b8275c47382588f2ecfd4" kind="typedef"><name>dtsgui_configcb</name></member>
+    <member refid="group___c_o_r_e_1ga06d1a959e1581116961bca636a919043" kind="typedef"><name>event_callback</name></member>
+    <member refid="group___c_o_r_e_1ga53eefce4ace6a7d72e49e9ae4c520226" kind="typedef"><name>dtsgui_toolbar_create</name></member>
+    <member refid="group___c_o_r_e_1ga080f931027861c0021f72ac2562b45d7" kind="typedef"><name>dtsgui_dynpanel</name></member>
+    <member refid="group___c_o_r_e_1gae088feda00f338f6ddd35daaacc44817" kind="typedef"><name>dtsgui_tree_cb</name></member>
+    <member refid="group___c_o_r_e_1ga8bf800adcd2392cf7722c3cf2f603f96" kind="typedef"><name>dtsgui_treeviewpanel_cb</name></member>
+    <member refid="group___c_o_r_e_1ga52992645e33e4d92c8e68c3490239c75" kind="typedef"><name>dtsgui_xmltreenode_cb</name></member>
+    <member refid="group___c_o_r_e_1gab65db729662a3b0d109158d2fb51f93c" kind="typedef"><name>dtsgui_tabpanel_cb</name></member>
+    <member refid="group___c_o_r_e_1gab5e1fa276d48b20d35f4ef20110c39ed" kind="typedef"><name>dtsgui_tabpane_newdata_cb</name></member>
     <member refid="group___c-_a_p_i_1gacecdb36b65ac3d5522a419a6b69c9f7f" kind="function"><name>dtsgui_config</name></member>
     <member refid="group___c-_a_p_i_1ga3ac9d5ef153d17266a704a373d591962" kind="function"><name>dtsgui_run</name></member>
     <member refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" kind="function"><name>dtsgui_userdata</name></member>
@@ -913,7 +913,7 @@
     <member refid="group___c-_a_p_i-_menus_1gadd0f3eab51bf576378a6438c3982fd48" kind="function"><name>dtsgui_newmenu</name></member>
     <member refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kind="function"><name>dtsgui_newmenucb</name></member>
     <member refid="group___c-_a_p_i-_menus_1gabb8b44357ce2ce4a3fd028939cf8c700" kind="function"><name>dtsgui_newmenuitem</name></member>
-    <member refid="dtsgui_8h_1a8a85f388867d2c2059a620883dc0f39f" kind="function"><name>dtsgui_menuitemenable</name></member>
+    <member refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" kind="function"><name>dtsgui_menuitemenable</name></member>
     <member refid="group___c-_a_p_i-_menus_1gaf655828d94de128cfd8269d03d649092" kind="function"><name>dtsgui_menusep</name></member>
     <member refid="group___c-_a_p_i-_menus_1gaf06c34986c04d800883694733554033e" kind="function"><name>dtsgui_about</name></member>
     <member refid="group___c-_a_p_i-_menus_1ga58e38f8ef567c8f50e15a53507ee4a72" kind="function"><name>dtsgui_close</name></member>
@@ -939,54 +939,48 @@
     <member refid="group___c-_a_p_i-_panel-_tree_1ga550b7516bbb97dd66bc71033e7d996cb" kind="function"><name>dtsgui_treecont</name></member>
     <member refid="group___c-_a_p_i-_panel-_tree_1ga0f7146637609d42057e2cd21bd2bf33e" kind="function"><name>dtsgui_treeitem</name></member>
     <member refid="group___c-_a_p_i-_panel-_tree_1ga3e6618e889e7b58e3bf2ae3d63332178" kind="function"><name>dtsgui_treenodesetxml</name></member>
-    <member refid="dtsgui_8h_1ac23fb82d0b4d99484fc878d27ee51cbf" kind="function"><name>dtsgui_treenodegetxml</name></member>
+    <member refid="group___c-_a_p_i-_panel-_tree_1gaf56a924134315107e80c8b01bfbeee68" kind="function"><name>dtsgui_treenodegetxml</name></member>
     <member refid="group___c-_a_p_i-_panel-_tree_1ga00767aae723dce154065e0bb090c0e70" kind="function"><name>dtsgui_treenodegetdata</name></member>
     <member refid="group___c-_a_p_i-_panel-_tree_1gaedca58250011ea48c67fbc4faa14278f" kind="function"><name>dtsgui_treenodeparent</name></member>
     <member refid="group___c-_a_p_i-_panel-_tree_1ga55a99744231b294667ece32a1087042f" kind="function"><name>dtsgui_newxmltreenode</name></member>
     <member refid="group___c-_a_p_i-_panel-_tree_1gadc59452935e169e8e78c178aed0b77c0" kind="function"><name>dtsgui_treenodeid</name></member>
     <member refid="group___c-_a_p_i-_panel_1ga9c1222d2fe8fa5066a2c55e4b71c2cac" kind="function"><name>dtsgui_panetoxml</name></member>
     <member refid="group___c-_a_p_i-_panel_1ga3f904089ceb734323477f2b3dbac4a41" kind="function"><name>dtsgui_rundialog</name></member>
-    <member refid="dtsgui_8h_1a516c50b1b7dc3d64b7359b2dc8cc5c7c" kind="function"><name>dtsgui_textbox</name></member>
-    <member refid="dtsgui_8h_1ab6e3fc77fef8fb74258c33ee69b911bb" kind="function"><name>dtsgui_textbox_multi</name></member>
-    <member refid="dtsgui_8h_1a79b1ab33ee1a0e016f6a52867cfd64c9" kind="function"><name>dtsgui_passwdbox</name></member>
-    <member refid="dtsgui_8h_1ac09b17812af1a1d082b5a21eeb6e76fe" kind="function"><name>dtsgui_checkbox</name></member>
-    <member refid="dtsgui_8h_1a2a0aa663f737802473c120696200f96b" kind="function"><name>dtsgui_listbox</name></member>
-    <member refid="dtsgui_8h_1a420ed9483fa9e18ad23b28e42f1e8128" kind="function"><name>dtsgui_combobox</name></member>
-    <member refid="dtsgui_8h_1a2d12f82c087187d64f9d8bd294935c2d" kind="function"><name>dtsgui_xmltextbox</name></member>
-    <member refid="dtsgui_8h_1ab67abe4aa19f727bf0e4c2945858b04e" kind="function"><name>dtsgui_xmltextbox_multi</name></member>
-    <member refid="dtsgui_8h_1a0dfeefebc308af548fa896483791d491" kind="function"><name>dtsgui_xmlpasswdbox</name></member>
-    <member refid="dtsgui_8h_1ab8135d7095450792a3038a61bccc11e2" kind="function"><name>dtsgui_xmlcheckbox</name></member>
-    <member refid="dtsgui_8h_1ad718a851b143372f7b9a66987d3a5ad3" kind="function"><name>dtsgui_xmllistbox</name></member>
-    <member refid="dtsgui_8h_1ac59f56d30e11143c437f0399d49dad31" kind="function"><name>dtsgui_xmlcombobox</name></member>
-    <member refid="dtsgui_8h_1afe0c58df358c2f9efc35c153f0cbe26f" kind="function"><name>dtsgui_xnode_textbox</name></member>
-    <member refid="dtsgui_8h_1a4212d0d416149eb28a4b09a8a6e8d032" kind="function"><name>dtsgui_xnode_textbox_multi</name></member>
-    <member refid="dtsgui_8h_1aae0cdf1caf3652516cfef827a8bea94f" kind="function"><name>dtsgui_xnode_passwdbox</name></member>
-    <member refid="dtsgui_8h_1a471bb38231515cd799b3f227593dadb8" kind="function"><name>dtsgui_xnode_checkbox</name></member>
-    <member refid="dtsgui_8h_1ab46668a5a74bd51597aca686c4e481d6" kind="function"><name>dtsgui_xnode_listbox</name></member>
-    <member refid="dtsgui_8h_1a09063c2d2a097eb4faaffd5e56153a4a" kind="function"><name>dtsgui_xnode_combobox</name></member>
-    <member refid="dtsgui_8h_1a352d67b3533b37717b30ccdfa2e35ce7" kind="function"><name>dtsgui_listbox_add</name></member>
-    <member refid="dtsgui_8h_1ab852f0df487273e791980a9cdf833b54" kind="function"><name>dtsgui_listbox_addxml</name></member>
-    <member refid="dtsgui_8h_1a2cb642b0c5cde1bf4c32210b0bed9b3d" kind="function"><name>dtsgui_listbox_set</name></member>
-    <member refid="dtsgui_8h_1af92ea8c5403cf99b34199eaaf35fa600" kind="function"><name>dtsgui_confirm</name></member>
-    <member refid="dtsgui_8h_1a3cc7862093cea93011a8719a43bf858f" kind="function"><name>dtsgui_alert</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga9bbd9bb4aa7a921fc64742ecf3b0f61d" kind="function"><name>dtsgui_textbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga89eb3889f372aaec58543d51d881c822" kind="function"><name>dtsgui_textbox_multi</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga42a80bcfa5dfb41d87e548eb146261e1" kind="function"><name>dtsgui_passwdbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1gad9a5fa9a5623850a3889e305ef3da717" kind="function"><name>dtsgui_checkbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga21dbebc529c734dffe528f2b15b2a441" kind="function"><name>dtsgui_listbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga554b15e578927450a5ee9128483885ca" kind="function"><name>dtsgui_combobox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" kind="function"><name>dtsgui_xmltextbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga1e60e1a55957b1055c99df5a45f18bce" kind="function"><name>dtsgui_xmltextbox_multi</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1gab8e603da01cb2c17d0ecfbbe216ac750" kind="function"><name>dtsgui_xmlpasswdbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" kind="function"><name>dtsgui_xmlcheckbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" kind="function"><name>dtsgui_xmllistbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga9472a3941bf352a063fa5e55a6016fdc" kind="function"><name>dtsgui_xmlcombobox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" kind="function"><name>dtsgui_listbox_add</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements_1ga6585281832905a2e769f8b0f813a67e0" kind="function"><name>dtsgui_listbox_addxml</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements_1gaaa4e4de11048d7e32151628f4428cf3e" kind="function"><name>dtsgui_listbox_set</name></member>
+    <member refid="group___c-_a_p_i-_dialog_1ga5761cfa6ab849723e50760a9642efc9f" kind="function"><name>dtsgui_confirm</name></member>
+    <member refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kind="function"><name>dtsgui_alert</name></member>
     <member refid="group___c-_a_p_i-_progress_1gac4185ec71523c1735f1da2cb6dc876d3" kind="function"><name>dtsgui_progress_start</name></member>
     <member refid="group___c-_a_p_i-_progress_1gabda6276de46c13fb4e0831bb8c8d1ec1" kind="function"><name>dtsgui_progress_update</name></member>
     <member refid="group___c-_a_p_i-_progress_1ga7bd617a3f00cb21ae6df7a37eba0dc7b" kind="function"><name>dtsgui_progress_increment</name></member>
     <member refid="group___c-_a_p_i-_progress_1ga528f638b6cb7b0d813e350a0b0c7262c" kind="function"><name>dtsgui_progress_end</name></member>
-    <member refid="dtsgui_8h_1ad7ddb743b7fd844efb49fe9c9a21ab5b" kind="function"><name>dtsgui_panel_items</name></member>
-    <member refid="dtsgui_8h_1a4b7c1bec5b0e7fb98c1da39ba7a33f11" kind="function"><name>dtsgui_item_data</name></member>
-    <member refid="dtsgui_8h_1a043451147cbaf12b4dd9cf986ac9c52a" kind="function"><name>dtsgui_item_name</name></member>
-    <member refid="dtsgui_8h_1a73ab6225b32dfaa102b95ec96e35ccb9" kind="function"><name>dtsgui_item_value</name></member>
-    <member refid="dtsgui_8h_1a6aa6d1c9a511d7761cad2cbfd291505c" kind="function"><name>dtsgui_finditem</name></member>
-    <member refid="dtsgui_8h_1a670cae0571f32de4e06c4d32dd11e9d8" kind="function"><name>dtsgui_findvalue</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1ga9a2e87bf30be8644653d11754fcb4e26" kind="function"><name>dtsgui_panel_items</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1ga30bc1422cf3395b150773320ffda00ea" kind="function"><name>dtsgui_item_data</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1ga2cb1581f47559805b221f9290f9ec83e" kind="function"><name>dtsgui_item_name</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1gadc168d1ed91fc91be2bb7bf7b060dd62" kind="function"><name>dtsgui_item_value</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1ga3af426dd6bf50cb6bd7232c4ea5b92f6" kind="function"><name>dtsgui_finditem</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1ga37f578498eb38e545906898e7250e6bb" kind="function"><name>dtsgui_findvalue</name></member>
     <member refid="group___c-_a_p_i-_wizard_1ga2e1e2013214ae275160b8c87e6cb3d89" kind="function"><name>dtsgui_newwizard</name></member>
     <member refid="group___c-_a_p_i-_wizard_1ga3e76b1ea2eebb91e1d0b5a55649d65e6" kind="function"><name>dtsgui_wizard_addpage</name></member>
     <member refid="group___c-_a_p_i-_wizard_1ga25174d47f2e9680d41aebdf08ff9b979" kind="function"><name>dtsgui_runwizard</name></member>
-    <member refid="dtsgui_8h_1a45086dc70bb1514065404a0fc25e4bce" kind="function"><name>dtsgui_filesave</name></member>
-    <member refid="dtsgui_8h_1a539470bafd5da6df6ab9ccabad15fd71" kind="function"><name>dtsgui_fileopen</name></member>
-    <member refid="dtsgui_8h_1ae70ea93052afabcae582538032652d7f" kind="function"><name>dtsgui_menuenable</name></member>
+    <member refid="group___c-_a_p_i-_dialog_1gad2b11bd5e9e51dcba9f53f4969f1f25c" kind="function"><name>dtsgui_filesave</name></member>
+    <member refid="group___c-_a_p_i-_dialog_1gad458f5d64710487c7213a4921a5ebc99" kind="function"><name>dtsgui_fileopen</name></member>
+    <member refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" kind="function"><name>dtsgui_menuenable</name></member>
     <member refid="group___c-_a_p_i-_panel_1ga4d0d6742f61c91fb590b3728a7229150" kind="function"><name>dtsgui_pane2post</name></member>
-    <member refid="dtsgui_8h_1a1b5488398f5555e2f93a35774428dd9b" kind="function"><name>dtsgui_pwdialog</name></member>
+    <member refid="group___c-_a_p_i-_dialog_1gab2431470ff495d71aae8e41368a214cb" kind="function"><name>dtsgui_pwdialog</name></member>
   </compound>
   <compound refid="_d_t_s_list_view_8h" kind="file"><name>DTSListView.h</name>
   </compound>
@@ -1025,19 +1019,141 @@
   <compound refid="wrapper_8cpp" kind="file"><name>wrapper.cpp</name>
     <member refid="group___c-_a_p_i_1gadc3e6af7bc4df899bca001c49d7f5e07" kind="define"><name>__DTS_C_API</name></member>
   </compound>
+  <compound refid="group___d_t_s-_a_p_p-_wizard" kind="group"><name>DTS-APP-Wizard</name>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga4f882ff8bd54df9885846da44baba542" kind="function"><name>set_temp_xml</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1gac882aeda8345539fc608001e35a5cc59" kind="function"><name>rem_temp_xml</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1gaccc1788f03d17d487ce09a1d07d53018" kind="function"><name>wizz_custinfo</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1gaf6a04c61f4efb3d8c9581d1ca2a79f7c" kind="function"><name>wizz_netinfo</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga488833f1ea62639df39c4cd7662864db" kind="function"><name>wizz_dyndns</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga2d137c5c2ae4b1407da5442477dd2b36" kind="function"><name>wizz_dnsinfo</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga81b5895e97fa4d47dbd829cccffa1b7b" kind="function"><name>wizz_x509</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga85fecec1da6b92b910c3810a9f0f431c" kind="function"><name>wizz_samba</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga4fc4a7cde0492cbde04a4e0804cc81d8" kind="function"><name>wizz_network</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga2385f9d99b5222b879485702af299fd0" kind="function"><name>wizz_exten</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1gafcf1b2026fe781338918ede3a099a713" kind="function"><name>wizz_location</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga34653c75ebbdc91cadc68180a51b121b" kind="function"><name>wizz_acd</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1gaa274a72a578011082041109b5e2d8b22" kind="function"><name>wizz_trunk</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga4663a22f17fb8c01f6058f117ed6c201" kind="function"><name>wizz_voip</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1gae99af9389a848fe0d810a538d0b64d53" kind="function"><name>system_wizard</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga56c78e0d32a18452dcea4f026de2c889" kind="function"><name>newsys_wizard</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga126b309803052977061662f97fb9012a" kind="function"><name>editsys_wizard</name></member>
+    <member refid="group___d_t_s-_a_p_p-_wizard_1ga0be336c09b5cd473a616326c4cb227d2" kind="function"><name>reconfig_wizard</name></member>
+  </compound>
+  <compound refid="group___d_t_s-_a_p_p" kind="group"><name>DTS-APP</name>
+    <member refid="group___d_t_s-_a_p_p_1ga063bbba7cc37af45b7989f2838fae1e1" kind="function"><name>xml_config</name></member>
+    <member refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" kind="function"><name>app_getxmldoc</name></member>
+    <member refid="group___d_t_s-_a_p_p_1ga011cd0b131174029fed8babdf1c7a101" kind="function"><name>file_menu</name></member>
+    <member refid="group___d_t_s-_a_p_p_1gae1b0e521306d90ee09f460064c015b2b" kind="function"><name>help_menu</name></member>
+    <member refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" kind="function"><name>guiconfig_cb</name></member>
+    <member refid="group___d_t_s-_a_p_p_1ga5fe0b449ba347b98cc9acad0f5608ca1" kind="function"><name>free_appdata</name></member>
+    <member refid="group___d_t_s-_a_p_p_1ga3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="group___c_p_p-_frame" kind="group"><name>CPP-Frame</name>
+  </compound>
+  <compound refid="group___c_p_p-_panel-_tree-_store" kind="group"><name>CPP-Panel-Tree-Store</name>
+  </compound>
+  <compound refid="group___c_p_p-_panel" kind="group"><name>CPP-Panel</name>
+    <member refid="group___c_p_p-_panel_1ga138f34819b90ed241ed77fc27958f745" kind="variable"><name>def_buttons</name></member>
+    <member refid="group___c_p_p-_panel_1ga00fc562a7d9ef5cac917f9697dfdb769" kind="define"><name>PADING</name></member>
+  </compound>
+  <compound refid="group___c_p_p-_panel-_tree" kind="group"><name>CPP-Panel-Tree</name>
+    <member refid="group___c_p_p-_panel-_tree_1ga1ed19fc940f9de92a2ac518ffbc04486" kind="enum"><name>treewinmenu</name></member>
+    <member refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486aed80ef06b46ae100a6f5c56da1674ba7" kind="enumvalue"><name>DTS_TREEWIN_MENU_SORT</name></member>
+    <member refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486af5bd57193f475f49c63b9b7271586daf" kind="enumvalue"><name>DTS_TREEWIN_MENU_MOVEUP</name></member>
+    <member refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486a097ecad73656ee80fb0c9e7ddf464e5d" kind="enumvalue"><name>DTS_TREEWIN_MENU_MOVEDOWN</name></member>
+    <member refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486a4a0c85437a842221377dac401285454f" kind="enumvalue"><name>DTS_TREEWIN_MENU_DELETE</name></member>
+  </compound>
+  <compound refid="group___c_p_p-_wizard" kind="group"><name>CPP-Wizard</name>
+  </compound>
+  <compound refid="group___c_p_p-_x_m_l_combo" kind="group"><name>CPP-XMLCombo</name>
+  </compound>
+  <compound refid="group___c_p_p-_panel-_event" kind="group"><name>CPP-Panel-Event</name>
+  </compound>
+  <compound refid="group___c_p_p-_panel-_items" kind="group"><name>CPP-Panel-Items</name>
+  </compound>
+  <compound refid="group___c_o_r_e" kind="group"><name>CORE</name>
+    <member refid="group___c_o_r_e_1ga465794df2cb30731dfe34d3e7a4ed368" kind="enum"><name>tree_cbtype</name></member>
+    <member refid="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368adac89e1845cacd5358022cbc20aba1a9" kind="enumvalue"><name>DTSGUI_TREE_CB_SELECT</name></member>
+    <member refid="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368a95978182db76e342ba406456dc935258" kind="enumvalue"><name>DTSGUI_TREE_CB_DELETE</name></member>
+    <member refid="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368a629392b319c09bfdb44b638c858381e8" kind="enumvalue"><name>DTSGUI_TREE_CB_EDIT</name></member>
+    <member refid="group___c_o_r_e_1gaa648ae9cc0927fecec3a6f705930f8a9" kind="enum"><name>form_data_type</name></member>
+    <member refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kind="enumvalue"><name>DTSGUI_FORM_DATA_PTR</name></member>
+    <member refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9a5c592b75994135a5de470f79e40aafda" kind="enumvalue"><name>DTSGUI_FORM_DATA_XML</name></member>
+    <member refid="group___c_o_r_e_1ga5082bae7f0b5d2b7d715e40450f302ec" kind="enum"><name>panel_buttons</name></member>
+    <member refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca332b4d1a5e1ae1425b5f77c49edd311c" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_FIRST</name></member>
+    <member refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca5092915b2da9df3365a956562b3d3663" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_BACK</name></member>
+    <member refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca95b3613970d7acac3b1b3f4adbebf186" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_FWD</name></member>
+    <member refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302ecaff2d58b46c16f29654d00ae290e25a63" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_LAST</name></member>
+    <member refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca6ce91176e6c929e87d7acbd000d07f79" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_YES</name></member>
+    <member refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302ecadb8742f8472eb90558cfbf8e3914553b" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON_NO</name></member>
+    <member refid="group___c_o_r_e_1ga54d7edaba9c015c3b5310ed3080b82e6" kind="enum"><name>panel_events</name></member>
+    <member refid="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a331937b86eb259d1d84728d28fbed79d" kind="enumvalue"><name>wx_PANEL_EVENT_BUTTON</name></member>
+    <member refid="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a05cb2a662e44a9332f631e8fb04ea5ef" kind="enumvalue"><name>wx_PANEL_EVENT_COMBO_ENTER</name></member>
+    <member refid="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a9d9853f83e3e28aaca0621c788994cc8" kind="enumvalue"><name>wx_PANEL_EVENT_COMBO_UPDATE</name></member>
+    <member refid="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a8f700b4b2b17b782d57dd32dc696956c" kind="enumvalue"><name>wx_PANEL_EVENT_DTS</name></member>
+    <member refid="group___c_o_r_e_1ga7ecd2a00f2306c0b94734a72a7899898" kind="enum"><name>tree_newnode_flags</name></member>
+    <member refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a92d0796e80ba757f7f74979253423b98" kind="enumvalue"><name>DTS_TREE_NEW_NODE_EDIT</name></member>
+    <member refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a09bf4479510d6996e8c2d0e3cd27c714" kind="enumvalue"><name>DTS_TREE_NEW_NODE_DELETE</name></member>
+    <member refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a67752f3ce4c088a226eb85e1f2369532" kind="enumvalue"><name>DTS_TREE_NEW_NODE_CONTAINER</name></member>
+    <member refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898ab4026cda71b1fb600c8af942c1194e99" kind="enumvalue"><name>DTS_TREE_NEW_NODE_SORT</name></member>
+    <member refid="group___c_o_r_e_1ga9275874ac61d3750aa677a36da714373" kind="enum"><name>panel_type</name></member>
+    <member refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373ad0213b4d1d51e9f04e084a09e8da1c62" kind="enumvalue"><name>wx_DTSPANEL_WINDOW</name></member>
+    <member refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a0e31c26466ea939007976914785fff2c" kind="enumvalue"><name>wx_DTSPANEL_PANEL</name></member>
+    <member refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a51268d1576c4e816f1416435cfe61500" kind="enumvalue"><name>wx_DTSPANEL_SCROLLPANEL</name></member>
+    <member refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a259d19ace1b7a45cbd7e99697bd2b69a" kind="enumvalue"><name>wx_DTSPANEL_DIALOG</name></member>
+    <member refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a8aa14d05cc73bd9438f302f6f2cb29c3" kind="enumvalue"><name>wx_DTSPANEL_TREE</name></member>
+    <member refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a94b4b5412dbd78fdf58517c74afa9dad" kind="enumvalue"><name>wx_DTSPANEL_TAB</name></member>
+    <member refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373aa108fde55f9c1830cf68cd368aba1d02" kind="enumvalue"><name>wx_DTSPANEL_WIZARD</name></member>
+    <member refid="group___c_o_r_e_1gafd296180392ef5681415b9fb0590be84" kind="enum"><name>widget_type</name></member>
+    <member refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84a30946b987fd9b1a681425eb86c33b836" kind="enumvalue"><name>DTS_WIDGET_TEXTBOX</name></member>
+    <member refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84af8b07c907089ef8cf8534af437682a28" kind="enumvalue"><name>DTS_WIDGET_CHECKBOX</name></member>
+    <member refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84a617d0a94e82cae830c769b66b1751b9a" kind="enumvalue"><name>DTS_WIDGET_LISTBOX</name></member>
+    <member refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84ad091872a88b66595cb453008b03565cc" kind="enumvalue"><name>DTS_WIDGET_COMBOBOX</name></member>
+    <member refid="group___c_o_r_e_1ga8d0ed2b4049e42079b366e341b33347f" kind="typedef"><name>dtsgui</name></member>
+    <member refid="group___c_o_r_e_1ga00d1631dc45e8a99d361b5091856abe3" kind="typedef"><name>dtsgui_wizard</name></member>
+    <member refid="group___c_o_r_e_1gabbf6decd0bf8428c296f4adcafed46fb" kind="typedef"><name>form_item</name></member>
+    <member refid="group___c_o_r_e_1gaa881f6b55dcf9b95108f08bf62d4802f" kind="typedef"><name>dynamic_panel</name></member>
+    <member refid="group___c_o_r_e_1gafb1e28bd82fd8ea9d43a188c06095682" kind="typedef"><name>dtsgui_menu</name></member>
+    <member refid="group___c_o_r_e_1gaf59302244664352117c2669055da5850" kind="typedef"><name>dtsgui_menuitem</name></member>
+    <member refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kind="typedef"><name>dtsgui_pane</name></member>
+    <member refid="group___c_o_r_e_1ga698d08e25e0df56af6ba94c8056bdd97" kind="typedef"><name>dtsgui_notebook</name></member>
+    <member refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kind="typedef"><name>dtsgui_treeview</name></member>
+    <member refid="group___c_o_r_e_1ga29c463cda54f69beb273c77e1aa7ccef" kind="typedef"><name>dtsgui_tabview</name></member>
+    <member refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kind="typedef"><name>dtsgui_treenode</name></member>
+    <member refid="group___c_o_r_e_1ga531b61ccda025272407e2d2b26f0072c" kind="typedef"><name>dtsgui_progress</name></member>
+    <member refid="group___c_o_r_e_1gad3b80490c86b8275c47382588f2ecfd4" kind="typedef"><name>dtsgui_configcb</name></member>
+    <member refid="group___c_o_r_e_1ga06d1a959e1581116961bca636a919043" kind="typedef"><name>event_callback</name></member>
+    <member refid="group___c_o_r_e_1ga53eefce4ace6a7d72e49e9ae4c520226" kind="typedef"><name>dtsgui_toolbar_create</name></member>
+    <member refid="group___c_o_r_e_1ga080f931027861c0021f72ac2562b45d7" kind="typedef"><name>dtsgui_dynpanel</name></member>
+    <member refid="group___c_o_r_e_1gae088feda00f338f6ddd35daaacc44817" kind="typedef"><name>dtsgui_tree_cb</name></member>
+    <member refid="group___c_o_r_e_1ga8bf800adcd2392cf7722c3cf2f603f96" kind="typedef"><name>dtsgui_treeviewpanel_cb</name></member>
+    <member refid="group___c_o_r_e_1ga52992645e33e4d92c8e68c3490239c75" kind="typedef"><name>dtsgui_xmltreenode_cb</name></member>
+    <member refid="group___c_o_r_e_1gab65db729662a3b0d109158d2fb51f93c" kind="typedef"><name>dtsgui_tabpanel_cb</name></member>
+    <member refid="group___c_o_r_e_1gab5e1fa276d48b20d35f4ef20110c39ed" kind="typedef"><name>dtsgui_tabpane_newdata_cb</name></member>
+    <member refid="group___c_o_r_e_1gabcf9e451a313490d78549227e6dc8824" kind="define"><name>wx_PANEL_BUTTON_NAV</name></member>
+    <member refid="group___c_o_r_e_1gaa7fc68a1ddb9112dbbbfe2ae26e2e379" kind="define"><name>wx_PANEL_BUTTON_DIR</name></member>
+    <member refid="group___c_o_r_e_1ga4ef37ee1286eb68a9f5663813f134be2" kind="define"><name>wx_PANEL_BUTTON_ACTION</name></member>
+    <member refid="group___c_o_r_e_1ga6fd6c8004323d4605940ac5fb2ff9c9b" kind="define"><name>wx_PANEL_BUTTON_ALL</name></member>
+    <member refid="group___c_o_r_e_1ga655f2051956468f6592bef486573e424" kind="define"><name>wx_PANEL_EVENT_BUTTON_NONE</name></member>
+  </compound>
   <compound refid="group___c-_a_p_i" kind="group"><name>C-API</name>
-    <member refid="group___c-_a_p_i_1gad3b80490c86b8275c47382588f2ecfd4" kind="typedef"><name>dtsgui_configcb</name></member>
+    <member refid="group___c-_a_p_i_1ga295fb20974bd3ceb8a6d8ed6e13a6c70" kind="variable"><name>menuid</name></member>
     <member refid="group___c-_a_p_i_1gacecdb36b65ac3d5522a419a6b69c9f7f" kind="function"><name>dtsgui_config</name></member>
     <member refid="group___c-_a_p_i_1ga3ac9d5ef153d17266a704a373d591962" kind="function"><name>dtsgui_run</name></member>
     <member refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" kind="function"><name>dtsgui_userdata</name></member>
     <member refid="group___c-_a_p_i_1ga529d973a998e39dba025dfcd96a9a706" kind="function"><name>dtsgui_setwindow</name></member>
     <member refid="group___c-_a_p_i_1ga4e766a49c1e9eba3f2c2fda47b8166aa" kind="function"><name>dtsgui_sendevent</name></member>
     <member refid="group___c-_a_p_i_1ga1734b840fc0696b13d5b616df0ec3bbb" kind="function"><name>dtsgui_setuptoolbar</name></member>
-    <member refid="group___c-_a_p_i_1gafc00c020f324c119956fcc38e7fd55db" kind="function"><name>dtsgui_titleappend</name></member>
     <member refid="group___c-_a_p_i_1ga164aa159bc57a744f012b49268796bbe" kind="function"><name>dtsgui_set_toolbar</name></member>
+    <member refid="group___c-_a_p_i_1gafc00c020f324c119956fcc38e7fd55db" kind="function"><name>dtsgui_titleappend</name></member>
+    <member refid="group___c-_a_p_i_1gadc3e6af7bc4df899bca001c49d7f5e07" kind="define"><name>__DTS_C_API</name></member>
     <member refid="group___c-_a_p_i_1gadc3e6af7bc4df899bca001c49d7f5e07" kind="define"><name>__DTS_C_API</name></member>
   </compound>
+  <compound refid="group___c_p_p" kind="group"><name>CPP</name>
+    <member refid="group___c_p_p_1gac7cc8ecc2c05777065fdf0af985b197b" kind="function"><name>wxDEFINE_EVENT</name></member>
+  </compound>
   <compound refid="group___c-_a_p_i-_menus" kind="group"><name>C-API-Menus</name>
+    <member refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" kind="function"><name>dtsgui_menuenable</name></member>
     <member refid="group___c-_a_p_i-_menus_1gadd0f3eab51bf576378a6438c3982fd48" kind="function"><name>dtsgui_newmenu</name></member>
     <member refid="group___c-_a_p_i-_menus_1gabb8b44357ce2ce4a3fd028939cf8c700" kind="function"><name>dtsgui_newmenuitem</name></member>
     <member refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kind="function"><name>dtsgui_newmenucb</name></member>
@@ -1045,6 +1161,7 @@
     <member refid="group___c-_a_p_i-_menus_1ga58e38f8ef567c8f50e15a53507ee4a72" kind="function"><name>dtsgui_close</name></member>
     <member refid="group___c-_a_p_i-_menus_1gaf06c34986c04d800883694733554033e" kind="function"><name>dtsgui_about</name></member>
     <member refid="group___c-_a_p_i-_menus_1gaf655828d94de128cfd8269d03d649092" kind="function"><name>dtsgui_menusep</name></member>
+    <member refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" kind="function"><name>dtsgui_menuitemenable</name></member>
   </compound>
   <compound refid="group___c-_a_p_i-_panel" kind="group"><name>C-API-Panel</name>
     <member refid="group___c-_a_p_i-_panel_1gac763bff39863668014931022b469d836" kind="function"><name>dtsgui_panel</name></member>
@@ -1064,13 +1181,7 @@
     <member refid="group___c-_a_p_i-_panel_1ga9c1222d2fe8fa5066a2c55e4b71c2cac" kind="function"><name>dtsgui_panetoxml</name></member>
     <member refid="group___c-_a_p_i-_panel_1ga3f904089ceb734323477f2b3dbac4a41" kind="function"><name>dtsgui_rundialog</name></member>
   </compound>
-  <compound refid="group___c-_a_p_i-_wizard" kind="group"><name>C-API-Wizard</name>
-    <member refid="group___c-_a_p_i-_wizard_1ga2e1e2013214ae275160b8c87e6cb3d89" kind="function"><name>dtsgui_newwizard</name></member>
-    <member refid="group___c-_a_p_i-_wizard_1ga3e76b1ea2eebb91e1d0b5a55649d65e6" kind="function"><name>dtsgui_wizard_addpage</name></member>
-    <member refid="group___c-_a_p_i-_wizard_1ga25174d47f2e9680d41aebdf08ff9b979" kind="function"><name>dtsgui_runwizard</name></member>
-  </compound>
   <compound refid="group___c-_a_p_i-_panel-_tree" kind="group"><name>C-API-Panel-Tree</name>
-    <member refid="group___c-_a_p_i-_panel-_tree_1gaaaf93911380c2f40eb8adbdc39ac36ac" kind="function"><name>dtsgui_nodesetxml</name></member>
     <member refid="group___c-_a_p_i-_panel-_tree_1gad71b59e1898bce570cac2acd774f71e3" kind="function"><name>dtsgui_treepane</name></member>
     <member refid="group___c-_a_p_i-_panel-_tree_1gab8713feb542a9bb13f8fe7e3bf568bda" kind="function"><name>dtsgui_treepane_default</name></member>
     <member refid="group___c-_a_p_i-_panel-_tree_1ga550b7516bbb97dd66bc71033e7d996cb" kind="function"><name>dtsgui_treecont</name></member>
@@ -1079,6 +1190,8 @@
     <member refid="group___c-_a_p_i-_panel-_tree_1gadc59452935e169e8e78c178aed0b77c0" kind="function"><name>dtsgui_treenodeid</name></member>
     <member refid="group___c-_a_p_i-_panel-_tree_1gaedca58250011ea48c67fbc4faa14278f" kind="function"><name>dtsgui_treenodeparent</name></member>
     <member refid="group___c-_a_p_i-_panel-_tree_1ga3e6618e889e7b58e3bf2ae3d63332178" kind="function"><name>dtsgui_treenodesetxml</name></member>
+    <member refid="group___c-_a_p_i-_panel-_tree_1gaf56a924134315107e80c8b01bfbeee68" kind="function"><name>dtsgui_treenodegetxml</name></member>
+    <member refid="group___c-_a_p_i-_panel-_tree_1gaaaf93911380c2f40eb8adbdc39ac36ac" kind="function"><name>dtsgui_nodesetxml</name></member>
     <member refid="group___c-_a_p_i-_panel-_tree_1ga00767aae723dce154065e0bb090c0e70" kind="function"><name>dtsgui_treenodegetdata</name></member>
   </compound>
   <compound refid="group___c-_a_p_i-_panel-_tab" kind="group"><name>C-API-Panel-Tab</name>
@@ -1086,11 +1199,54 @@
     <member refid="group___c-_a_p_i-_panel-_tab_1ga26ee371ec8b1bed0f4a652eb99e04767" kind="function"><name>dtsgui_tabpage_insert</name></member>
     <member refid="group___c-_a_p_i-_panel-_tab_1gad3333a23e28993072b5ef4feed86778c" kind="function"><name>dtsgui_newxmltabpane</name></member>
   </compound>
+  <compound refid="group___c-_a_p_i-_panel-_elements" kind="group"><name>C-API-Panel-Elements</name>
+    <member refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" kind="function"><name>dtsgui_listbox_add</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements_1gaaa4e4de11048d7e32151628f4428cf3e" kind="function"><name>dtsgui_listbox_set</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements_1ga6585281832905a2e769f8b0f813a67e0" kind="function"><name>dtsgui_listbox_addxml</name></member>
+  </compound>
+  <compound refid="group___c-_a_p_i-_panel-_elements-_s_t_d" kind="group"><name>C-API-Panel-Elements-STD</name>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga9bbd9bb4aa7a921fc64742ecf3b0f61d" kind="function"><name>dtsgui_textbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga89eb3889f372aaec58543d51d881c822" kind="function"><name>dtsgui_textbox_multi</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga42a80bcfa5dfb41d87e548eb146261e1" kind="function"><name>dtsgui_passwdbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1gad9a5fa9a5623850a3889e305ef3da717" kind="function"><name>dtsgui_checkbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga21dbebc529c734dffe528f2b15b2a441" kind="function"><name>dtsgui_listbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga554b15e578927450a5ee9128483885ca" kind="function"><name>dtsgui_combobox</name></member>
+  </compound>
+  <compound refid="group___c-_a_p_i-_panel-_elements-_x_m_l" kind="group"><name>C-API-Panel-Elements-XML</name>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" kind="function"><name>dtsgui_xmltextbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga1e60e1a55957b1055c99df5a45f18bce" kind="function"><name>dtsgui_xmltextbox_multi</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1gab8e603da01cb2c17d0ecfbbe216ac750" kind="function"><name>dtsgui_xmlpasswdbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" kind="function"><name>dtsgui_xmlcheckbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" kind="function"><name>dtsgui_xmllistbox</name></member>
+    <member refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga9472a3941bf352a063fa5e55a6016fdc" kind="function"><name>dtsgui_xmlcombobox</name></member>
+  </compound>
+  <compound refid="group___c-_a_p_i-_panel-_items" kind="group"><name>C-API-Panel-Items</name>
+    <member refid="group___c-_a_p_i-_panel-_items_1ga9a2e87bf30be8644653d11754fcb4e26" kind="function"><name>dtsgui_panel_items</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1ga3af426dd6bf50cb6bd7232c4ea5b92f6" kind="function"><name>dtsgui_finditem</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1ga30bc1422cf3395b150773320ffda00ea" kind="function"><name>dtsgui_item_data</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1gadc168d1ed91fc91be2bb7bf7b060dd62" kind="function"><name>dtsgui_item_value</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1ga2cb1581f47559805b221f9290f9ec83e" kind="function"><name>dtsgui_item_name</name></member>
+    <member refid="group___c-_a_p_i-_panel-_items_1ga37f578498eb38e545906898e7250e6bb" kind="function"><name>dtsgui_findvalue</name></member>
+  </compound>
+  <compound refid="group___c-_a_p_i-_dialog" kind="group"><name>C-API-Dialog</name>
+    <member refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kind="function"><name>dtsgui_alert</name></member>
+    <member refid="group___c-_a_p_i-_dialog_1ga5761cfa6ab849723e50760a9642efc9f" kind="function"><name>dtsgui_confirm</name></member>
+    <member refid="group___c-_a_p_i-_dialog_1gad2b11bd5e9e51dcba9f53f4969f1f25c" kind="function"><name>dtsgui_filesave</name></member>
+    <member refid="group___c-_a_p_i-_dialog_1gad458f5d64710487c7213a4921a5ebc99" kind="function"><name>dtsgui_fileopen</name></member>
+    <member refid="group___c-_a_p_i-_dialog_1gab2431470ff495d71aae8e41368a214cb" kind="function"><name>dtsgui_pwdialog</name></member>
+  </compound>
+  <compound refid="group___c-_a_p_i-_wizard" kind="group"><name>C-API-Wizard</name>
+    <member refid="group___c-_a_p_i-_wizard_1ga2e1e2013214ae275160b8c87e6cb3d89" kind="function"><name>dtsgui_newwizard</name></member>
+    <member refid="group___c-_a_p_i-_wizard_1ga3e76b1ea2eebb91e1d0b5a55649d65e6" kind="function"><name>dtsgui_wizard_addpage</name></member>
+    <member refid="group___c-_a_p_i-_wizard_1ga25174d47f2e9680d41aebdf08ff9b979" kind="function"><name>dtsgui_runwizard</name></member>
+  </compound>
   <compound refid="group___c-_a_p_i-_progress" kind="group"><name>C-API-Progress</name>
     <member refid="group___c-_a_p_i-_progress_1gac4185ec71523c1735f1da2cb6dc876d3" kind="function"><name>dtsgui_progress_start</name></member>
     <member refid="group___c-_a_p_i-_progress_1gabda6276de46c13fb4e0831bb8c8d1ec1" kind="function"><name>dtsgui_progress_update</name></member>
     <member refid="group___c-_a_p_i-_progress_1ga7bd617a3f00cb21ae6df7a37eba0dc7b" kind="function"><name>dtsgui_progress_increment</name></member>
     <member refid="group___c-_a_p_i-_progress_1ga528f638b6cb7b0d813e350a0b0c7262c" kind="function"><name>dtsgui_progress_end</name></member>
+  </compound>
+  <compound refid="todo" kind="page"><name>todo</name>
   </compound>
   <compound refid="dir_d422163b96683743ed3963d4aac17747" kind="dir"><name>app</name>
   </compound>

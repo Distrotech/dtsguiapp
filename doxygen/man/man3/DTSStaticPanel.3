@@ -1,4 +1,4 @@
-.TH "DTSStaticPanel" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "DTSStaticPanel" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -34,11 +34,15 @@ Definition at line 124 of file DTSPanel\&.h\&.
 .SS "DTSStaticPanel::DTSStaticPanel (\fBwxWindow\fP *parent, \fBDTSFrame\fP *frame = \fCNULL\fP, wxStringstatus = \fCwxEmptyString\fP, intbutmask = \fC0\fP)"
 
 .PP
-Definition at line 999 of file DTSPanel\&.cpp\&.
+Definition at line 1012 of file DTSPanel\&.cpp\&.
+.PP
+References DTSObject::dtsevthandler, DTSPanelEvent::OnDialog(), DTSObject::panel, DTSPanel::SetupWin(), DTSObject::type, and wx_DTSPANEL_PANEL\&.
 .SS "DTSStaticPanel::DTSStaticPanel ()"
 
 .PP
-Definition at line 1009 of file DTSPanel\&.cpp\&.
+Definition at line 1022 of file DTSPanel\&.cpp\&.
+.PP
+References DTSObject::type, and wx_DTSPANEL_PANEL\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "bool DTSStaticPanel::Show (boolshow = \fCtrue\fP)\fC [virtual]\fP"
@@ -46,7 +50,9 @@ Definition at line 1009 of file DTSPanel\&.cpp\&.
 .PP
 Reimplemented in \fBDTSDialog\fP\&.
 .PP
-Definition at line 1013 of file DTSPanel\&.cpp\&.
+Definition at line 1026 of file DTSPanel\&.cpp\&.
+.PP
+References DTSPanel::ShowPanel()\&.
 
 .SH "Author"
 .PP 

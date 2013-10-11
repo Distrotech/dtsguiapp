@@ -16,6 +16,14 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @defgroup CPP-Panel-Items Panel item classes
+  * @brief Implementation of Panel Items.
+  * @ingroup CPP-Panel*/
+
+/** @file
+  * @brief Implementation of Panel Items.
+  * @ingroup CPP-Panel-Items*/
+
 #include <wx/combobox.h>
 #include <wx/checkbox.h>
 

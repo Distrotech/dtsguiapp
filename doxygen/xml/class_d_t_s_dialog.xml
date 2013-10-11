@@ -17,6 +17,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="168" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="168" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_dialog_1a09808605e28e0870bd717a975fd0d856" compoundref="_d_t_s_panel_8cpp" startline="1048" endline="1067">DTSDialog</referencedby>
+        <referencedby refid="class_d_t_s_dialog_1af1e6be7e08913149d128839b7e535cd0" compoundref="_d_t_s_panel_8cpp" startline="1077" endline="1089">RunDialog</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_dialog_1aa5f49d2b6d13bebadc4721ade6f29de9" prot="private" static="no" mutable="no">
         <type><ref refid="_d_t_s_panel_8h_1a0a27e6150193664909134000ec2fd06d" kindref="member">wxDialog</ref> *</type>
@@ -30,6 +32,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="169" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="169" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_dialog_1a09808605e28e0870bd717a975fd0d856" compoundref="_d_t_s_panel_8cpp" startline="1048" endline="1067">DTSDialog</referencedby>
+        <referencedby refid="class_d_t_s_dialog_1af1e6be7e08913149d128839b7e535cd0" compoundref="_d_t_s_panel_8cpp" startline="1077" endline="1089">RunDialog</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -51,7 +55,7 @@
         <param>
           <type>int</type>
           <defname>butmask</defname>
-          <defval><ref refid="dtsgui_8h_1a4ef37ee1286eb68a9f5663813f134be2" kindref="member">wx_PANEL_BUTTON_ACTION</ref></defval>
+          <defval><ref refid="group___c_o_r_e_1ga4ef37ee1286eb68a9f5663813f134be2" kindref="member">wx_PANEL_BUTTON_ACTION</ref></defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -59,7 +63,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="163" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="1035" bodyend="1054"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="163" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="1048" bodyend="1067"/>
+        <references refid="class_d_t_s_panel_1af25bdb7e04f715c228774c2be0dd8251" compoundref="_d_t_s_panel_8h" startline="114">DTSPanel::button_mask</references>
+        <references refid="class_d_t_s_object_1abcce46b892d3c17810d4551c495512ce" compoundref="_d_t_s_panel_8h" startline="70">DTSObject::buttons</references>
+        <references refid="class_d_t_s_dialog_1aa5f49d2b6d13bebadc4721ade6f29de9" compoundref="_d_t_s_panel_8h" startline="169">dialog</references>
+        <references refid="class_d_t_s_object_1a132481851865629352e4aefa7f822e4b" compoundref="_d_t_s_panel_8h" startline="76">DTSObject::dtsevthandler</references>
+        <references refid="class_d_t_s_panel_event_1ae7b3a422bc55f7f9f676b2b640614fd9" compoundref="_d_t_s_panel_8cpp" startline="156" endline="161">DTSPanelEvent::OnDialog</references>
+        <references refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" compoundref="_d_t_s_panel_8h" startline="75">DTSObject::panel</references>
+        <references refid="class_d_t_s_panel_1a9e90d0d7b1466eb3e8005343ce787974" compoundref="_d_t_s_panel_8cpp" startline="390" endline="404">DTSPanel::SetupWin</references>
+        <references refid="class_d_t_s_dialog_1aa9988391a17d5a8afe72a24ec57fe9ca" compoundref="_d_t_s_panel_8h" startline="168">sizer</references>
+        <references refid="class_d_t_s_object_1ad191e42b5daa056f9ea8247d752df3b0" compoundref="_d_t_s_panel_8h" startline="69">DTSObject::type</references>
+        <references refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a259d19ace1b7a45cbd7e99697bd2b69a" compoundref="dtsgui_8h" startline="247">wx_DTSPANEL_DIALOG</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_dialog_1af68cd07469e4fbe9dcb3640219adfee0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -72,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="164" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="1056" bodyend="1057"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="164" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="1069" bodyend="1070"/>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_dialog_1a569e3d1caa1405354a2a090725b76071" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -91,7 +105,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="165" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="1059" bodyend="1062"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="165" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="1072" bodyend="1075"/>
+        <references refid="class_d_t_s_panel_1a0c1a3aa81559298e059473bde57ab23e" compoundref="_d_t_s_panel_8cpp" startline="432" endline="450">DTSPanel::ShowPanel</references>
+        <referencedby refid="class_d_t_s_dialog_1af1e6be7e08913149d128839b7e535cd0" compoundref="_d_t_s_panel_8cpp" startline="1077" endline="1089">RunDialog</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_dialog_1af1e6be7e08913149d128839b7e535cd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -99,7 +115,7 @@
         <argsstring>(event_callback evcb, void *data)</argsstring>
         <name>RunDialog</name>
         <param>
-          <type><ref refid="dtsgui_8h_1acfd3355668ba382f87a9aab4ea2c4e9c" kindref="member">event_callback</ref></type>
+          <type><ref refid="group___c_o_r_e_1ga06d1a959e1581116961bca636a919043" kindref="member">event_callback</ref></type>
           <declname>evcb</declname>
         </param>
         <param>
@@ -112,7 +128,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="166" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="1064" bodyend="1076"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="166" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="1077" bodyend="1089"/>
+        <references refid="class_d_t_s_dialog_1aa5f49d2b6d13bebadc4721ade6f29de9" compoundref="_d_t_s_panel_8h" startline="169">dialog</references>
+        <references refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" compoundref="_d_t_s_panel_8h" startline="75">DTSObject::panel</references>
+        <references refid="class_d_t_s_panel_1ac18de08077529d488ea329a72ee14d98" compoundref="_d_t_s_panel_8cpp" startline="406" endline="415">DTSPanel::SetEventCallback</references>
+        <references refid="class_d_t_s_dialog_1a569e3d1caa1405354a2a090725b76071" compoundref="_d_t_s_panel_8cpp" startline="1072" endline="1075">Show</references>
+        <references refid="class_d_t_s_dialog_1aa9988391a17d5a8afe72a24ec57fe9ca" compoundref="_d_t_s_panel_8h" startline="168">sizer</references>
+        <referencedby refid="group___c-_a_p_i-_panel_1ga3f904089ceb734323477f2b3dbac4a41" compoundref="wrapper_8cpp" startline="969" endline="972">DTS_C_API::dtsgui_rundialog</referencedby>
+        <referencedby refid="class_d_t_s_frame_1a5a7ad78662b511e7ef6ac513f8d1a28b" compoundref="_d_t_s_frame_8cpp" startline="495" endline="510">DTSFrame::Passwd</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -120,82 +143,107 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="15">
+      <node id="31">
         <label>DTSObject</label>
         <link refid="class_d_t_s_object"/>
-        <childnode refid="16" relation="public-inheritance">
+        <childnode refid="32" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="14">
+      <node id="30">
         <label>DTSPanel</label>
         <link refid="class_d_t_s_panel"/>
-        <childnode refid="15" relation="public-inheritance">
+        <childnode refid="31" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="17">
+      <node id="33">
         <label>wxPanel</label>
       </node>
-      <node id="16">
+      <node id="32">
         <label>wxWindow</label>
       </node>
-      <node id="13">
+      <node id="29">
         <label>DTSStaticPanel</label>
         <link refid="class_d_t_s_static_panel"/>
-        <childnode refid="14" relation="public-inheritance">
+        <childnode refid="30" relation="public-inheritance">
         </childnode>
-        <childnode refid="17" relation="public-inheritance">
+        <childnode refid="33" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="12">
+      <node id="28">
         <label>DTSDialog</label>
         <link refid="class_d_t_s_dialog"/>
-        <childnode refid="13" relation="public-inheritance">
+        <childnode refid="29" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="21">
+      <node id="37">
         <label>DTSObject</label>
         <link refid="class_d_t_s_object"/>
-        <childnode refid="22" relation="public-inheritance">
+        <childnode refid="38" relation="public-inheritance">
         </childnode>
-        <childnode refid="23" relation="usage">
+        <childnode refid="39" relation="usage">
           <edgelabel>frame</edgelabel>
         </childnode>
       </node>
-      <node id="20">
+      <node id="36">
         <label>DTSPanel</label>
         <link refid="class_d_t_s_panel"/>
-        <childnode refid="21" relation="public-inheritance">
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+        <childnode refid="41" relation="usage">
+          <edgelabel>configcb</edgelabel>
         </childnode>
       </node>
-      <node id="25">
+      <node id="43">
         <label>wxPanel</label>
       </node>
-      <node id="22">
+      <node id="38">
         <label>wxWindow</label>
       </node>
-      <node id="24">
+      <node id="40">
         <label>wxFrame</label>
       </node>
-      <node id="23">
+      <node id="41">
+        <label>dtsgui</label>
+        <link refid="classdtsgui"/>
+        <childnode refid="39" relation="usage">
+          <edgelabel>appframe</edgelabel>
+        </childnode>
+        <childnode refid="41" relation="usage">
+          <edgelabel>cb</edgelabel>
+        </childnode>
+        <childnode refid="42" relation="usage">
+          <edgelabel>wsize</edgelabel>
+          <edgelabel>wpos</edgelabel>
+        </childnode>
+      </node>
+      <node id="42">
+        <label>point</label>
+        <link refid="structpoint"/>
+      </node>
+      <node id="39">
         <label>DTSFrame</label>
         <link refid="class_d_t_s_frame"/>
-        <childnode refid="24" relation="public-inheritance">
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+        <childnode refid="41" relation="usage">
+          <edgelabel>dtsgui</edgelabel>
+          <edgelabel>tbcb</edgelabel>
         </childnode>
       </node>
-      <node id="19">
+      <node id="35">
         <label>DTSStaticPanel</label>
         <link refid="class_d_t_s_static_panel"/>
-        <childnode refid="20" relation="public-inheritance">
+        <childnode refid="36" relation="public-inheritance">
         </childnode>
-        <childnode refid="25" relation="public-inheritance">
+        <childnode refid="43" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="18">
+      <node id="34">
         <label>DTSDialog</label>
         <link refid="class_d_t_s_dialog"/>
-        <childnode refid="19" relation="public-inheritance">
+        <childnode refid="35" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

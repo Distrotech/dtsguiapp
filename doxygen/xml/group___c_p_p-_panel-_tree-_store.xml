@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="group___c_p_p-_panel-_tree-_store" kind="group">
+    <compoundname>CPP-Panel-Tree-Store</compoundname>
+    <title>Treewindow implementation.</title>
+    <innerfile refid="_d_t_s_list_view_8cpp">DTSListView.cpp</innerfile>
+    <briefdescription>
+<para>Data Store/View/Control model for tree window. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

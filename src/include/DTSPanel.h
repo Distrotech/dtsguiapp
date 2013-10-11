@@ -152,7 +152,7 @@ class DTSTabPage: public DTSScrollPanel {
 		bool hasconfig;
 };
 
-class DTSWindow: public DTSPanel, public virtual wxWindow {
+class DTSWindow: public DTSPanel {
 	public:
 		DTSWindow(wxWindow *, DTSFrame* = NULL, wxString = wxEmptyString);
 		bool Show(bool = true);

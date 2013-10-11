@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
@@ -94,7 +95,7 @@ $(document).ready(function(){initNavTree('classxml__element.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,6 +107,7 @@ $(document).ready(function(){initNavTree('classxml__element.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classxml__element-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">xml_element Class Reference</div>  </div>
@@ -124,6 +126,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a232e850ca67d3d065d1c16bea79cb441"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0415b9bbe906cbab04e2c78c84ae5bc"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxml__element.html#ae0415b9bbe906cbab04e2c78c84ae5bc">GetValue</a> ()</td></tr>
 <tr class="separator:ae0415b9bbe906cbab04e2c78c84ae5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a7064cb97bc7806a0d2fb792d9c0891e5"><td class="memItemLeft" align="right" valign="top">struct xml_search *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxml__element.html#a7064cb97bc7806a0d2fb792d9c0891e5">xsearch</a></td></tr>
+<tr class="separator:a7064cb97bc7806a0d2fb792d9c0891e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78560d170e3256faa79d79679552b717"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxml__element.html#a78560d170e3256faa79d79679552b717">xpath</a></td></tr>
+<tr class="separator:a78560d170e3256faa79d79679552b717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e1c544e39cc117f13e692f59cf020c1"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxml__element.html#a5e1c544e39cc117f13e692f59cf020c1">attr</a></td></tr>
+<tr class="separator:a5e1c544e39cc117f13e692f59cf020c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -159,7 +170,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00038">38</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00046">46</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+
+<p>References <a class="el" href="pitems_8h_source.html#l00035">attr</a>, <a class="el" href="pitems_8h_source.html#l00034">xpath</a>, and <a class="el" href="pitems_8h_source.html#l00033">xsearch</a>.</p>
 
 </div>
 </div>
@@ -193,7 +206,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00059">59</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00067">67</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+
+<p>References <a class="el" href="pitems_8h_source.html#l00035">attr</a>, and <a class="el" href="pitems_8h_source.html#l00033">xsearch</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00628">DTSPanel::XMLCheckBox()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00707">DTSPanel::XMLComboBox()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00667">DTSPanel::XMLListBox()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00585">DTSPanel::XMLTextBox()</a>.</p>
 
 </div>
 </div>
@@ -221,7 +238,84 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00046">46</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+<p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00054">54</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
+
+<p>References <a class="el" href="pitems_8h_source.html#l00035">attr</a>, and <a class="el" href="pitems_8h_source.html#l00033">xsearch</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00746">DTSPanel::Update_XML()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a5e1c544e39cc117f13e692f59cf020c1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* xml_element::attr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="pitems_8h_source.html#l00035">35</a> of file <a class="el" href="pitems_8h_source.html">pitems.h</a>.</p>
+
+<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00067">GetValue()</a>, <a class="el" href="pitems_8cpp_source.html#l00054">Modify()</a>, and <a class="el" href="pitems_8cpp_source.html#l00046">xml_element()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a78560d170e3256faa79d79679552b717"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* xml_element::xpath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="pitems_8h_source.html#l00034">34</a> of file <a class="el" href="pitems_8h_source.html">pitems.h</a>.</p>
+
+<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00046">xml_element()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7064cb97bc7806a0d2fb792d9c0891e5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct xml_search* xml_element::xsearch</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="pitems_8h_source.html#l00033">33</a> of file <a class="el" href="pitems_8h_source.html">pitems.h</a>.</p>
+
+<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00067">GetValue()</a>, <a class="el" href="pitems_8cpp_source.html#l00054">Modify()</a>, and <a class="el" href="pitems_8cpp_source.html#l00046">xml_element()</a>.</p>
 
 </div>
 </div>
@@ -235,7 +329,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classxml__element.html">xml_element</a></li>
-    <li class="footer">Generated on Wed Oct 9 2013 22:32:56 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

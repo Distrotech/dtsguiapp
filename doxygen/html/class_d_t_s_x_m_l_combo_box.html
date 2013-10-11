@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
@@ -94,7 +95,7 @@ $(document).ready(function(){initNavTree('class_d_t_s_x_m_l_combo_box.html','');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,6 +107,8 @@ $(document).ready(function(){initNavTree('class_d_t_s_x_m_l_combo_box.html','');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_d_t_s_x_m_l_combo_box-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">DTSXMLComboBox Class Reference</div>  </div>
@@ -124,12 +127,38 @@ Inheritance diagram for DTSXMLComboBox:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa0ef061b697a527a559d56a6c5914e08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_x_m_l_combo_box.html#aa0ef061b697a527a559d56a6c5914e08">DTSXMLComboBox</a> (<a class="el" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *parent, int id, wxString url, wxString xpath, struct curl_post *(*getpost)(const wxString &amp;), size_t minlen)</td></tr>
+<tr class="memitem:aa0ef061b697a527a559d56a6c5914e08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_x_m_l_combo_box.html#aa0ef061b697a527a559d56a6c5914e08">DTSXMLComboBox</a> (<a class="el" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *parent, int id, wxString <a class="el" href="class_d_t_s_x_m_l_combo_box.html#a573345fd24fe84285cd88a15387ca1c1">url</a>, wxString <a class="el" href="class_d_t_s_x_m_l_combo_box.html#aa1f6979f243bb50a3f690b7a82162773">xpath</a>, struct curl_post *(*<a class="el" href="class_d_t_s_x_m_l_combo_box.html#afa4ceb66dab1fc8beda14047dfb3d1e6">getpost</a>)(const wxString &amp;), size_t <a class="el" href="class_d_t_s_x_m_l_combo_box.html#a9ce866cc4f74a2447db49cf23968e351">minlen</a>)</td></tr>
 <tr class="separator:aa0ef061b697a527a559d56a6c5914e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a026821df9109a287aff26b12859fbf7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_x_m_l_combo_box.html#a026821df9109a287aff26b12859fbf7c">~DTSXMLComboBox</a> ()</td></tr>
 <tr class="separator:a026821df9109a287aff26b12859fbf7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab73ab96a2dddeb756b984db6e0fa9106"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_x_m_l_combo_box.html#ab73ab96a2dddeb756b984db6e0fa9106">HasXMLList</a> ()</td></tr>
 <tr class="separator:ab73ab96a2dddeb756b984db6e0fa9106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aeec14b4880ff9d69bb1b19a4549e082c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_x_m_l_combo_box.html#aeec14b4880ff9d69bb1b19a4549e082c">HandleEvent</a> (wxCommandEvent &amp;event)</td></tr>
+<tr class="separator:aeec14b4880ff9d69bb1b19a4549e082c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f983fc429c2fa50b9b46d7c5fa0538d"><td class="memItemLeft" align="right" valign="top">struct xml_doc *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_x_m_l_combo_box.html#a3f983fc429c2fa50b9b46d7c5fa0538d">GetXMLDoc</a> (const wxString &amp;val, struct xml_node *xn)</td></tr>
+<tr class="separator:a3f983fc429c2fa50b9b46d7c5fa0538d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefd4fde2c41d00b0a9d8068265ee42c6"><td class="memItemLeft" align="right" valign="top">struct curl_post *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_x_m_l_combo_box.html#aefd4fde2c41d00b0a9d8068265ee42c6">GetPostInfo</a> (const wxString &amp;val)</td></tr>
+<tr class="separator:aefd4fde2c41d00b0a9d8068265ee42c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf258ad2d53caf6b87d48cbb53e32a65"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_x_m_l_combo_box.html#acf258ad2d53caf6b87d48cbb53e32a65">AppendXMLNodes</a> (struct xml_doc *xmldoc)</td></tr>
+<tr class="separator:acf258ad2d53caf6b87d48cbb53e32a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5294d28f4b31cbc166cd984f0babb6b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_x_m_l_combo_box.html#a5294d28f4b31cbc166cd984f0babb6b3">EmptyServerList</a> ()</td></tr>
+<tr class="separator:a5294d28f4b31cbc166cd984f0babb6b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aaa8b7abd7e0b36967b4af91c7d9bfecc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a></td></tr>
+<tr class="separator:aaa8b7abd7e0b36967b4af91c7d9bfecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ce866cc4f74a2447db49cf23968e351"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_x_m_l_combo_box.html#a9ce866cc4f74a2447db49cf23968e351">minlen</a></td></tr>
+<tr class="separator:a9ce866cc4f74a2447db49cf23968e351"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a573345fd24fe84285cd88a15387ca1c1"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_x_m_l_combo_box.html#a573345fd24fe84285cd88a15387ca1c1">url</a></td></tr>
+<tr class="separator:a573345fd24fe84285cd88a15387ca1c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1f6979f243bb50a3f690b7a82162773"><td class="memItemLeft" align="right" valign="top">wxString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_x_m_l_combo_box.html#aa1f6979f243bb50a3f690b7a82162773">xpath</a></td></tr>
+<tr class="separator:aa1f6979f243bb50a3f690b7a82162773"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa4ceb66dab1fc8beda14047dfb3d1e6"><td class="memItemLeft" align="right" valign="top">struct curl_post *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_x_m_l_combo_box.html#afa4ceb66dab1fc8beda14047dfb3d1e6">getpost</a> )(const wxString &amp;)</td></tr>
+<tr class="separator:afa4ceb66dab1fc8beda14047dfb3d1e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -183,7 +212,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00026">26</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html">DTSXMLComboBox.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00034">34</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html">DTSXMLComboBox.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00042">getpost</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00106">HandleEvent()</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00039">minlen</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00038">sflags</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00040">url</a>, and <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00041">xpath</a>.</p>
 
 </div>
 </div>
@@ -200,11 +231,162 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00086">86</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html">DTSXMLComboBox.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00094">94</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html">DTSXMLComboBox.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00162">EmptyServerList()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="acf258ad2d53caf6b87d48cbb53e32a65"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DTSXMLComboBox::AppendXMLNodes </td>
+          <td>(</td>
+          <td class="paramtype">struct xml_doc *&#160;</td>
+          <td class="paramname"><em>xmldoc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00072">72</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html">DTSXMLComboBox.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00106">HandleEvent()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5294d28f4b31cbc166cd984f0babb6b3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DTSXMLComboBox::EmptyServerList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00162">162</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html">DTSXMLComboBox.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00106">HandleEvent()</a>, and <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00094">~DTSXMLComboBox()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aefd4fde2c41d00b0a9d8068265ee42c6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct curl_post* DTSXMLComboBox::GetPostInfo </td>
+          <td>(</td>
+          <td class="paramtype">const wxString &amp;&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3f983fc429c2fa50b9b46d7c5fa0538d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct xml_doc * DTSXMLComboBox::GetXMLDoc </td>
+          <td>(</td>
+          <td class="paramtype">const wxString &amp;&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct xml_node *&#160;</td>
+          <td class="paramname"><em>xn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00051">51</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html">DTSXMLComboBox.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00042">getpost</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00106">HandleEvent()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aeec14b4880ff9d69bb1b19a4549e082c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DTSXMLComboBox::HandleEvent </td>
+          <td>(</td>
+          <td class="paramtype">wxCommandEvent &amp;&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00106">106</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html">DTSXMLComboBox.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00072">AppendXMLNodes()</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00023">DTSAPPTB_SERVER_POP</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00024">DTSAPPTB_SERVER_SET</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00162">EmptyServerList()</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00051">GetXMLDoc()</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00039">minlen</a>, and <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00038">sflags</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00034">DTSXMLComboBox()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ab73ab96a2dddeb756b984db6e0fa9106"></a>
 <div class="memitem">
 <div class="memproto">
@@ -218,7 +400,132 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00090">90</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html">DTSXMLComboBox.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00098">98</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html">DTSXMLComboBox.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00023">DTSAPPTB_SERVER_POP</a>, and <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00038">sflags</a>.</p>
+
+<p>Referenced by <a class="el" href="toolbar_8cpp_source.html#l00095">DTSAPPToolBar::HandleEvent()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="afa4ceb66dab1fc8beda14047dfb3d1e6"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct curl_post*(* DTSXMLComboBox::getpost)(const wxString &amp;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00042">42</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html">DTSXMLComboBox.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00034">DTSXMLComboBox()</a>, and <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00051">GetXMLDoc()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9ce866cc4f74a2447db49cf23968e351"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t DTSXMLComboBox::minlen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00039">39</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html">DTSXMLComboBox.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00034">DTSXMLComboBox()</a>, and <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00106">HandleEvent()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaa8b7abd7e0b36967b4af91c7d9bfecc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DTSXMLComboBox::sflags</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00038">38</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html">DTSXMLComboBox.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00034">DTSXMLComboBox()</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00106">HandleEvent()</a>, and <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00098">HasXMLList()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a573345fd24fe84285cd88a15387ca1c1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxString DTSXMLComboBox::url</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00040">40</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html">DTSXMLComboBox.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00034">DTSXMLComboBox()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa1f6979f243bb50a3f690b7a82162773"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxString DTSXMLComboBox::xpath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00041">41</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html">DTSXMLComboBox.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00034">DTSXMLComboBox()</a>.</p>
 
 </div>
 </div>
@@ -232,7 +539,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_x_m_l_combo_box.html">DTSXMLComboBox</a></li>
-    <li class="footer">Generated on Wed Oct 9 2013 22:32:56 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

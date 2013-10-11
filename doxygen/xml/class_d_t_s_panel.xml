@@ -21,6 +21,11 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="114" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="114" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_panel_1ae2385ab076d14fdecc0d58285063c520" compoundref="_d_t_s_panel_8cpp" startline="724" endline="744">Buttons</referencedby>
+        <referencedby refid="class_d_t_s_dialog_1a09808605e28e0870bd717a975fd0d856" compoundref="_d_t_s_panel_8cpp" startline="1048" endline="1067">DTSDialog::DTSDialog</referencedby>
+        <referencedby refid="class_d_t_s_panel_1abfe32d536cdcb2eee87a5c0ef1df826f" compoundref="_d_t_s_panel_8cpp" startline="348" endline="367">DTSPanel</referencedby>
+        <referencedby refid="class_d_t_s_wizard_window_1a5b360c03b6bfd75b420b9c8b56b6e7fd" compoundref="_d_t_s_panel_8cpp" startline="1091" endline="1096">DTSWizardWindow::DTSWizardWindow</referencedby>
+        <referencedby refid="class_d_t_s_tab_page_1a99f09a166ea777c2dcc572284594b00e" compoundref="_d_t_s_panel_8cpp" startline="962" endline="1010">DTSTabPage::operator=</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -36,6 +41,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="117" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_panel_1abfe32d536cdcb2eee87a5c0ef1df826f" compoundref="_d_t_s_panel_8cpp" startline="348" endline="367">DTSPanel</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a58daeb533cce1e4bdac57118cce7c7ea" compoundref="_d_t_s_panel_8cpp" startline="482" endline="488">SetTitle</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_panel_1ad2cca5a57cb57721f09e58b054235347" prot="private" static="no" mutable="no">
         <type>wxGridBagSizer *</type>
@@ -49,6 +56,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="118" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="118" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_panel_1a714c09276642d4a0cf20cc5d941f62a1" compoundref="_d_t_s_panel_8cpp" startline="452" endline="458">AddItem</referencedby>
+        <referencedby refid="class_d_t_s_panel_1ae2385ab076d14fdecc0d58285063c520" compoundref="_d_t_s_panel_8cpp" startline="724" endline="744">Buttons</referencedby>
+        <referencedby refid="class_d_t_s_panel_1abfe32d536cdcb2eee87a5c0ef1df826f" compoundref="_d_t_s_panel_8cpp" startline="348" endline="367">DTSPanel</referencedby>
+        <referencedby refid="class_d_t_s_panel_1afd0a6ee00e2e13185c240178850e368e" compoundref="_d_t_s_panel_8cpp" startline="382" endline="388">SetSizerSize</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a9e90d0d7b1466eb3e8005343ce787974" compoundref="_d_t_s_panel_8cpp" startline="390" endline="404">SetupWin</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a0c1a3aa81559298e059473bde57ab23e" compoundref="_d_t_s_panel_8cpp" startline="432" endline="450">ShowPanel</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_panel_1a40a4abd45ab1af5aff6eb893aeb0eede" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -62,9 +75,17 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="119" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="119" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_panel_1a714c09276642d4a0cf20cc5d941f62a1" compoundref="_d_t_s_panel_8cpp" startline="452" endline="458">AddItem</referencedby>
+        <referencedby refid="class_d_t_s_panel_1ae2385ab076d14fdecc0d58285063c520" compoundref="_d_t_s_panel_8cpp" startline="724" endline="744">Buttons</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a1bfea883644cb1052752528b89b8c71f" compoundref="_d_t_s_panel_8cpp" startline="608" endline="626">CheckBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1ad91d3ca25ab8349403efc7cc78cb1869" compoundref="_d_t_s_panel_8cpp" startline="684" endline="705">ComboBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a08cb04c83c8e5668592bd2f3bacf8267" compoundref="_d_t_s_panel_8cpp" startline="648" endline="665">ListBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a9e90d0d7b1466eb3e8005343ce787974" compoundref="_d_t_s_panel_8cpp" startline="390" endline="404">SetupWin</referencedby>
+        <referencedby refid="class_d_t_s_panel_1acd1b20a134272f1bc2d048d5977a3d3c" compoundref="_d_t_s_panel_8cpp" startline="567" endline="583">TextBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1ae0135da688bb9046fd2cafbf5eaf7ffc" compoundref="_d_t_s_panel_8cpp" startline="460" endline="480">Title</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_panel_1a92c2c65336702cf1315967eb8f1951a7" prot="private" static="no" mutable="no">
-        <type><ref refid="group___c-_a_p_i_1gad3b80490c86b8275c47382588f2ecfd4" kindref="member">dtsgui_configcb</ref></type>
+        <type><ref refid="group___c_o_r_e_1gad3b80490c86b8275c47382588f2ecfd4" kindref="member">dtsgui_configcb</ref></type>
         <definition>dtsgui_configcb DTSPanel::configcb</definition>
         <argsstring></argsstring>
         <name>configcb</name>
@@ -75,6 +96,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="120" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="120" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_panel_1abfe32d536cdcb2eee87a5c0ef1df826f" compoundref="_d_t_s_panel_8cpp" startline="348" endline="367">DTSPanel</referencedby>
+        <referencedby refid="class_d_t_s_panel_1acdb57729ace5f3c0fc76cce4d41c36cc" compoundref="_d_t_s_panel_8cpp" startline="417" endline="430">SetConfigCallback</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_panel_1afeb3f176d41017d2daf3b2f2c9e25818" prot="private" static="no" mutable="no">
         <type>void *</type>
@@ -88,6 +111,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="121" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" bodystart="121" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_panel_1abfe32d536cdcb2eee87a5c0ef1df826f" compoundref="_d_t_s_panel_8cpp" startline="348" endline="367">DTSPanel</referencedby>
+        <referencedby refid="class_d_t_s_panel_1acdb57729ace5f3c0fc76cce4d41c36cc" compoundref="_d_t_s_panel_8cpp" startline="417" endline="430">SetConfigCallback</referencedby>
+        <referencedby refid="class_d_t_s_panel_1acfa1f9a5350e95f2898f875113be95e3" compoundref="_d_t_s_panel_8cpp" startline="369" endline="380">~DTSPanel</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -117,7 +143,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="85" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="336" bodyend="355"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="85" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="348" bodyend="367"/>
+        <references refid="class_d_t_s_panel_event_1af2333021915425cd85ab9544170e7152" compoundref="_d_t_s_panel_8cpp" startline="228" endline="230">DTSPanelEvent::BindDTSEvent</references>
+        <references refid="class_d_t_s_panel_1af25bdb7e04f715c228774c2be0dd8251" compoundref="_d_t_s_panel_8h" startline="114">button_mask</references>
+        <references refid="class_d_t_s_object_1abcce46b892d3c17810d4551c495512ce" compoundref="_d_t_s_panel_8h" startline="70">DTSObject::buttons</references>
+        <references refid="class_d_t_s_panel_1afeb3f176d41017d2daf3b2f2c9e25818" compoundref="_d_t_s_panel_8h" startline="121">config_data</references>
+        <references refid="class_d_t_s_panel_1a92c2c65336702cf1315967eb8f1951a7" compoundref="_d_t_s_panel_8h" startline="120">configcb</references>
+        <references refid="group___c_p_p-_panel_1ga138f34819b90ed241ed77fc27958f745" compoundref="_d_t_s_panel_8cpp" startline="47">def_buttons</references>
+        <references refid="class_d_t_s_object_1a132481851865629352e4aefa7f822e4b" compoundref="_d_t_s_panel_8h" startline="76">DTSObject::dtsevthandler</references>
+        <references refid="class_d_t_s_panel_1ad2cca5a57cb57721f09e58b054235347" compoundref="_d_t_s_panel_8h" startline="118">fgs</references>
+        <references refid="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" compoundref="_d_t_s_panel_8h" startline="77">DTSObject::fitems</references>
+        <references refid="class_d_t_s_panel_1aa804939e8221c211303c535a40ae4f5f" compoundref="_d_t_s_panel_8cpp" startline="49" endline="62">fitems_hash</references>
+        <references refid="class_d_t_s_object_1a8ca3e7c6f66685caf07fa93fb5e14337" compoundref="_d_t_s_panel_8h" startline="73">DTSObject::frame</references>
+        <references refid="class_d_t_s_panel_1accbfebfa3c737d3bf33386616f6771f4" compoundref="_d_t_s_panel_8h" startline="117">title</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1acfa1f9a5350e95f2898f875113be95e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -130,7 +168,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="86" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="357" bodyend="368"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="86" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="369" bodyend="380"/>
+        <references refid="class_d_t_s_panel_1afeb3f176d41017d2daf3b2f2c9e25818" compoundref="_d_t_s_panel_8h" startline="121">config_data</references>
+        <references refid="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" compoundref="_d_t_s_panel_8h" startline="77">DTSObject::fitems</references>
+        <references refid="class_d_t_s_object_1a941fc98555b60d021a6c2f488ce9ae3e" compoundref="_d_t_s_panel_8h" startline="72">DTSObject::refobj</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1acd1b20a134272f1bc2d048d5977a3d3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -166,9 +207,9 @@
           <defval>NULL</defval>
         </param>
         <param>
-          <type>enum <ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
+          <type>enum <ref refid="group___c_o_r_e_1gaa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
           <declname>dtype</declname>
-          <defval><ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kindref="member">DTSGUI_FORM_DATA_PTR</ref></defval>
+          <defval><ref refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kindref="member">DTSGUI_FORM_DATA_PTR</ref></defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -176,7 +217,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="87" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="554" bodyend="570"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="87" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="567" bodyend="583"/>
+        <references refid="class_d_t_s_panel_1a714c09276642d4a0cf20cc5d941f62a1" compoundref="_d_t_s_panel_8cpp" startline="452" endline="458">AddItem</references>
+        <references refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84a30946b987fd9b1a681425eb86c33b836" compoundref="dtsgui_8h" startline="258">DTS_WIDGET_TEXTBOX</references>
+        <references refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9a5c592b75994135a5de470f79e40aafda" compoundref="dtsgui_8h" startline="52">DTSGUI_FORM_DATA_XML</references>
+        <references refid="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" compoundref="_d_t_s_panel_8h" startline="77">DTSObject::fitems</references>
+        <references refid="class_d_t_s_panel_1a40a4abd45ab1af5aff6eb893aeb0eede" compoundref="_d_t_s_panel_8h" startline="119">g_row</references>
+        <references refid="group___c_p_p-_panel_1ga00fc562a7d9ef5cac917f9697dfdb769" compoundref="_d_t_s_panel_8cpp" startline="43">PADING</references>
+        <references refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" compoundref="_d_t_s_panel_8h" startline="75">DTSObject::panel</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga42a80bcfa5dfb41d87e548eb146261e1" compoundref="wrapper_8cpp" startline="1279" endline="1282">DTS_C_API::dtsgui_passwdbox</referencedby>
+        <referencedby refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga9bbd9bb4aa7a921fc64742ecf3b0f61d" compoundref="wrapper_8cpp" startline="1253" endline="1256">DTS_C_API::dtsgui_textbox</referencedby>
+        <referencedby refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga89eb3889f372aaec58543d51d881c822" compoundref="wrapper_8cpp" startline="1266" endline="1269">DTS_C_API::dtsgui_textbox_multi</referencedby>
+        <referencedby refid="class_d_t_s_frame_1a5a7ad78662b511e7ef6ac513f8d1a28b" compoundref="_d_t_s_frame_8cpp" startline="495" endline="510">DTSFrame::Passwd</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a1276b3add451cab10d57ea0005211194" compoundref="_d_t_s_panel_8cpp" startline="600" endline="602">PasswdBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a2b893b30f6265079a143bb23029aa083" compoundref="_d_t_s_panel_8cpp" startline="585" endline="598">XMLTextBox</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1a1276b3add451cab10d57ea0005211194" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -207,9 +261,9 @@
           <defval>NULL</defval>
         </param>
         <param>
-          <type>enum <ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
+          <type>enum <ref refid="group___c_o_r_e_1gaa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
           <declname>dtype</declname>
-          <defval><ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kindref="member">DTSGUI_FORM_DATA_PTR</ref></defval>
+          <defval><ref refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kindref="member">DTSGUI_FORM_DATA_PTR</ref></defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -217,7 +271,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="88" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="587" bodyend="589"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="88" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="600" bodyend="602"/>
+        <references refid="class_d_t_s_panel_1acd1b20a134272f1bc2d048d5977a3d3c" compoundref="_d_t_s_panel_8cpp" startline="567" endline="583">TextBox</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1a1bfea883644cb1052752528b89b8c71f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -250,9 +305,9 @@
           <defval>NULL</defval>
         </param>
         <param>
-          <type>enum <ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
+          <type>enum <ref refid="group___c_o_r_e_1gaa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
           <declname>dtype</declname>
-          <defval><ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kindref="member">DTSGUI_FORM_DATA_PTR</ref></defval>
+          <defval><ref refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kindref="member">DTSGUI_FORM_DATA_PTR</ref></defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -260,7 +315,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="89" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="595" bodyend="613"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="89" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="608" bodyend="626"/>
+        <references refid="class_d_t_s_panel_1a714c09276642d4a0cf20cc5d941f62a1" compoundref="_d_t_s_panel_8cpp" startline="452" endline="458">AddItem</references>
+        <references refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84af8b07c907089ef8cf8534af437682a28" compoundref="dtsgui_8h" startline="259">DTS_WIDGET_CHECKBOX</references>
+        <references refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9a5c592b75994135a5de470f79e40aafda" compoundref="dtsgui_8h" startline="52">DTSGUI_FORM_DATA_XML</references>
+        <references refid="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" compoundref="_d_t_s_panel_8h" startline="77">DTSObject::fitems</references>
+        <references refid="class_d_t_s_panel_1a40a4abd45ab1af5aff6eb893aeb0eede" compoundref="_d_t_s_panel_8h" startline="119">g_row</references>
+        <references refid="group___c_p_p-_panel_1ga00fc562a7d9ef5cac917f9697dfdb769" compoundref="_d_t_s_panel_8cpp" startline="43">PADING</references>
+        <references refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" compoundref="_d_t_s_panel_8h" startline="75">DTSObject::panel</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1gad9a5fa9a5623850a3889e305ef3da717" compoundref="wrapper_8cpp" startline="1294" endline="1297">DTS_C_API::dtsgui_checkbox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a1495f670e901f45cbbc3a4d2c471aa53" compoundref="_d_t_s_panel_8cpp" startline="628" endline="646">XMLCheckBox</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1a08cb04c83c8e5668592bd2f3bacf8267" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>class <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
@@ -285,9 +349,9 @@
           <defval>NULL</defval>
         </param>
         <param>
-          <type>enum <ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
+          <type>enum <ref refid="group___c_o_r_e_1gaa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
           <declname>dtype</declname>
-          <defval><ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kindref="member">DTSGUI_FORM_DATA_PTR</ref></defval>
+          <defval><ref refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kindref="member">DTSGUI_FORM_DATA_PTR</ref></defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -295,7 +359,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="90" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="635" bodyend="652"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="90" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="648" bodyend="665"/>
+        <references refid="class_d_t_s_panel_1a714c09276642d4a0cf20cc5d941f62a1" compoundref="_d_t_s_panel_8cpp" startline="452" endline="458">AddItem</references>
+        <references refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84a617d0a94e82cae830c769b66b1751b9a" compoundref="dtsgui_8h" startline="260">DTS_WIDGET_LISTBOX</references>
+        <references refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9a5c592b75994135a5de470f79e40aafda" compoundref="dtsgui_8h" startline="52">DTSGUI_FORM_DATA_XML</references>
+        <references refid="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" compoundref="_d_t_s_panel_8h" startline="77">DTSObject::fitems</references>
+        <references refid="class_d_t_s_panel_1a40a4abd45ab1af5aff6eb893aeb0eede" compoundref="_d_t_s_panel_8h" startline="119">g_row</references>
+        <references refid="group___c_p_p-_panel_1ga00fc562a7d9ef5cac917f9697dfdb769" compoundref="_d_t_s_panel_8cpp" startline="43">PADING</references>
+        <references refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" compoundref="_d_t_s_panel_8h" startline="75">DTSObject::panel</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga21dbebc529c734dffe528f2b15b2a441" compoundref="wrapper_8cpp" startline="1307" endline="1310">DTS_C_API::dtsgui_listbox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a03d63a8c380ee62e263d7bc3a3c86396" compoundref="_d_t_s_panel_8cpp" startline="667" endline="682">XMLListBox</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1ad91d3ca25ab8349403efc7cc78cb1869" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>class <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
@@ -320,9 +393,9 @@
           <defval>NULL</defval>
         </param>
         <param>
-          <type>enum <ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
+          <type>enum <ref refid="group___c_o_r_e_1gaa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
           <declname>dtype</declname>
-          <defval><ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kindref="member">DTSGUI_FORM_DATA_PTR</ref></defval>
+          <defval><ref refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" kindref="member">DTSGUI_FORM_DATA_PTR</ref></defval>
         </param>
         <briefdescription>
         </briefdescription>
@@ -330,7 +403,19 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="91" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="671" bodyend="692"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="91" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="684" bodyend="705"/>
+        <references refid="class_d_t_s_panel_1a714c09276642d4a0cf20cc5d941f62a1" compoundref="_d_t_s_panel_8cpp" startline="452" endline="458">AddItem</references>
+        <references refid="class_d_t_s_panel_event_1a65d4d4e41f8fe4501dfccab666b46123" compoundref="_d_t_s_panel_8cpp" startline="236" endline="239">DTSPanelEvent::BindCombo</references>
+        <references refid="classform__item_1a601ff328ce4165b07d5ad23bd96967b7" compoundref="pitems_8h" startline="66">form_item::data</references>
+        <references refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84ad091872a88b66595cb453008b03565cc" compoundref="dtsgui_8h" startline="261">DTS_WIDGET_COMBOBOX</references>
+        <references refid="class_d_t_s_object_1a132481851865629352e4aefa7f822e4b" compoundref="_d_t_s_panel_8h" startline="76">DTSObject::dtsevthandler</references>
+        <references refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9a5c592b75994135a5de470f79e40aafda" compoundref="dtsgui_8h" startline="52">DTSGUI_FORM_DATA_XML</references>
+        <references refid="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" compoundref="_d_t_s_panel_8h" startline="77">DTSObject::fitems</references>
+        <references refid="class_d_t_s_panel_1a40a4abd45ab1af5aff6eb893aeb0eede" compoundref="_d_t_s_panel_8h" startline="119">g_row</references>
+        <references refid="group___c_p_p-_panel_1ga00fc562a7d9ef5cac917f9697dfdb769" compoundref="_d_t_s_panel_8cpp" startline="43">PADING</references>
+        <references refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" compoundref="_d_t_s_panel_8h" startline="75">DTSObject::panel</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga554b15e578927450a5ee9128483885ca" compoundref="wrapper_8cpp" startline="1320" endline="1323">DTS_C_API::dtsgui_combobox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a4d294755a98b6194df04292abe18d1b0" compoundref="_d_t_s_panel_8cpp" startline="707" endline="722">XMLComboBox</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1a2b893b30f6265079a143bb23029aa083" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -381,7 +466,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="92" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="572" bodyend="585"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="92" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="585" bodyend="598"/>
+        <references refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9a5c592b75994135a5de470f79e40aafda" compoundref="dtsgui_8h" startline="52">DTSGUI_FORM_DATA_XML</references>
+        <references refid="class_d_t_s_panel_1aab8f3d3fbeb44163401d558d903f45ad" compoundref="_d_t_s_panel_8cpp" startline="496" endline="565">GetNode</references>
+        <references refid="classxml__element_1ae0415b9bbe906cbab04e2c78c84ae5bc" compoundref="pitems_8cpp" startline="67" endline="87">xml_element::GetValue</references>
+        <references refid="class_d_t_s_panel_1acd1b20a134272f1bc2d048d5977a3d3c" compoundref="_d_t_s_panel_8cpp" startline="567" endline="583">TextBox</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">DTS_C_API::dtsgui_xmltextbox</referencedby>
+        <referencedby refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga1e60e1a55957b1055c99df5a45f18bce" compoundref="wrapper_8cpp" startline="1352" endline="1355">DTS_C_API::dtsgui_xmltextbox_multi</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a5bbe4bfc295ef7b772c09628e80976c7" compoundref="_d_t_s_panel_8cpp" startline="604" endline="606">XMLPasswdBox</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1a5bbe4bfc295ef7b772c09628e80976c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -426,7 +518,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="93" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="591" bodyend="593"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="93" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="604" bodyend="606"/>
+        <references refid="class_d_t_s_panel_1a2b893b30f6265079a143bb23029aa083" compoundref="_d_t_s_panel_8cpp" startline="585" endline="598">XMLTextBox</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1gab8e603da01cb2c17d0ecfbbe216ac750" compoundref="wrapper_8cpp" startline="1368" endline="1371">DTS_C_API::dtsgui_xmlpasswdbox</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1a1495f670e901f45cbbc3a4d2c471aa53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -475,7 +569,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="94" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="615" bodyend="633"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="94" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="628" bodyend="646"/>
+        <references refid="class_d_t_s_panel_1a1bfea883644cb1052752528b89b8c71f" compoundref="_d_t_s_panel_8cpp" startline="608" endline="626">CheckBox</references>
+        <references refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9a5c592b75994135a5de470f79e40aafda" compoundref="dtsgui_8h" startline="52">DTSGUI_FORM_DATA_XML</references>
+        <references refid="class_d_t_s_panel_1aab8f3d3fbeb44163401d558d903f45ad" compoundref="_d_t_s_panel_8cpp" startline="496" endline="565">GetNode</references>
+        <references refid="classxml__element_1ae0415b9bbe906cbab04e2c78c84ae5bc" compoundref="pitems_8cpp" startline="67" endline="87">xml_element::GetValue</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" compoundref="wrapper_8cpp" startline="1386" endline="1389">DTS_C_API::dtsgui_xmlcheckbox</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1a03d63a8c380ee62e263d7bc3a3c86396" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>class <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
@@ -516,7 +615,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="95" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="654" bodyend="669"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="95" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="667" bodyend="682"/>
+        <references refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9a5c592b75994135a5de470f79e40aafda" compoundref="dtsgui_8h" startline="52">DTSGUI_FORM_DATA_XML</references>
+        <references refid="class_d_t_s_panel_1aab8f3d3fbeb44163401d558d903f45ad" compoundref="_d_t_s_panel_8cpp" startline="496" endline="565">GetNode</references>
+        <references refid="classxml__element_1ae0415b9bbe906cbab04e2c78c84ae5bc" compoundref="pitems_8cpp" startline="67" endline="87">xml_element::GetValue</references>
+        <references refid="class_d_t_s_panel_1a08cb04c83c8e5668592bd2f3bacf8267" compoundref="_d_t_s_panel_8cpp" startline="648" endline="665">ListBox</references>
+        <references refid="classform__item_1a031f8fb162f54579bc1ba53a751c5414" compoundref="pitems_8h" startline="69">form_item::value</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" compoundref="wrapper_8cpp" startline="1403" endline="1406">DTS_C_API::dtsgui_xmllistbox</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1a4d294755a98b6194df04292abe18d1b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>class <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
@@ -557,7 +662,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="96" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="694" bodyend="709"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="96" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="707" bodyend="722"/>
+        <references refid="class_d_t_s_panel_1ad91d3ca25ab8349403efc7cc78cb1869" compoundref="_d_t_s_panel_8cpp" startline="684" endline="705">ComboBox</references>
+        <references refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9a5c592b75994135a5de470f79e40aafda" compoundref="dtsgui_8h" startline="52">DTSGUI_FORM_DATA_XML</references>
+        <references refid="class_d_t_s_panel_1aab8f3d3fbeb44163401d558d903f45ad" compoundref="_d_t_s_panel_8cpp" startline="496" endline="565">GetNode</references>
+        <references refid="classxml__element_1ae0415b9bbe906cbab04e2c78c84ae5bc" compoundref="pitems_8cpp" startline="67" endline="87">xml_element::GetValue</references>
+        <references refid="classform__item_1a031f8fb162f54579bc1ba53a751c5414" compoundref="pitems_8h" startline="69">form_item::value</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga9472a3941bf352a063fa5e55a6016fdc" compoundref="wrapper_8cpp" startline="1420" endline="1423">DTS_C_API::dtsgui_xmlcombobox</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1a714c09276642d4a0cf20cc5d941f62a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -598,7 +709,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="97" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="440" bodyend="446"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="97" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="452" bodyend="458"/>
+        <references refid="class_d_t_s_panel_1ad2cca5a57cb57721f09e58b054235347" compoundref="_d_t_s_panel_8h" startline="118">fgs</references>
+        <references refid="class_d_t_s_panel_1a40a4abd45ab1af5aff6eb893aeb0eede" compoundref="_d_t_s_panel_8h" startline="119">g_row</references>
+        <referencedby refid="class_d_t_s_panel_1ae2385ab076d14fdecc0d58285063c520" compoundref="_d_t_s_panel_8cpp" startline="724" endline="744">Buttons</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a1bfea883644cb1052752528b89b8c71f" compoundref="_d_t_s_panel_8cpp" startline="608" endline="626">CheckBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1ad91d3ca25ab8349403efc7cc78cb1869" compoundref="_d_t_s_panel_8cpp" startline="684" endline="705">ComboBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a08cb04c83c8e5668592bd2f3bacf8267" compoundref="_d_t_s_panel_8cpp" startline="648" endline="665">ListBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1acd1b20a134272f1bc2d048d5977a3d3c" compoundref="_d_t_s_panel_8cpp" startline="567" endline="583">TextBox</referencedby>
+        <referencedby refid="class_d_t_s_frame_1afc0dae8ce7b26ef38297d520a3144d2a" compoundref="_d_t_s_frame_8cpp" startline="421" endline="433">DTSFrame::TextPanel</referencedby>
+        <referencedby refid="class_d_t_s_panel_1ae0135da688bb9046fd2cafbf5eaf7ffc" compoundref="_d_t_s_panel_8cpp" startline="460" endline="480">Title</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1ac18de08077529d488ea329a72ee14d98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -606,7 +726,7 @@
         <argsstring>(event_callback evcb, void *userdata=NULL, bool useref=false)</argsstring>
         <name>SetEventCallback</name>
         <param>
-          <type><ref refid="dtsgui_8h_1acfd3355668ba382f87a9aab4ea2c4e9c" kindref="member">event_callback</ref></type>
+          <type><ref refid="group___c_o_r_e_1ga06d1a959e1581116961bca636a919043" kindref="member">event_callback</ref></type>
           <declname>evcb</declname>
         </param>
         <param>
@@ -625,7 +745,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="98" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="394" bodyend="403"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="98" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="406" bodyend="415"/>
+        <references refid="class_d_t_s_object_1a132481851865629352e4aefa7f822e4b" compoundref="_d_t_s_panel_8h" startline="76">DTSObject::dtsevthandler</references>
+        <references refid="class_d_t_s_panel_event_1ad6d0fb736bf45162b6bf2082e437195b" compoundref="_d_t_s_panel_8cpp" startline="82" endline="94">DTSPanelEvent::SetCallback</references>
+        <referencedby refid="group___c-_a_p_i-_panel_1gaa85445ee6c9a2c24d76824bb67cc2ab2" compoundref="wrapper_8cpp" startline="853" endline="856">DTS_C_API::dtsgui_setevcallback</referencedby>
+        <referencedby refid="class_d_t_s_dialog_1af1e6be7e08913149d128839b7e535cd0" compoundref="_d_t_s_panel_8cpp" startline="1077" endline="1089">DTSDialog::RunDialog</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1acdb57729ace5f3c0fc76cce4d41c36cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -633,7 +757,7 @@
         <argsstring>(dtsgui_configcb cb, void *userdata=NULL)</argsstring>
         <name>SetConfigCallback</name>
         <param>
-          <type><ref refid="group___c-_a_p_i_1gad3b80490c86b8275c47382588f2ecfd4" kindref="member">dtsgui_configcb</ref></type>
+          <type><ref refid="group___c_o_r_e_1gad3b80490c86b8275c47382588f2ecfd4" kindref="member">dtsgui_configcb</ref></type>
           <declname>cb</declname>
         </param>
         <param>
@@ -647,7 +771,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="99" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="405" bodyend="418"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="99" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="417" bodyend="430"/>
+        <references refid="class_d_t_s_panel_1afeb3f176d41017d2daf3b2f2c9e25818" compoundref="_d_t_s_panel_8h" startline="121">config_data</references>
+        <references refid="class_d_t_s_panel_1a92c2c65336702cf1315967eb8f1951a7" compoundref="_d_t_s_panel_8h" startline="120">configcb</references>
+        <references refid="class_d_t_s_object_1a941fc98555b60d021a6c2f488ce9ae3e" compoundref="_d_t_s_panel_8h" startline="72">DTSObject::refobj</references>
+        <references refid="class_d_t_s_object_1a783949e39ffd9e00aec15fa2b8cc12ed" compoundref="_d_t_s_panel_8h" startline="78">DTSObject::userdata</references>
+        <referencedby refid="group___c-_a_p_i-_panel_1gab2f995a29a5b461ac67c7d9aa7091686" compoundref="wrapper_8cpp" startline="938" endline="941">DTS_C_API::dtsgui_configcallback</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1adc5131960a24dfa65adba935a1be0f79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -660,7 +789,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="100" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="733" bodyend="762"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="100" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="746" bodyend="775"/>
+        <references refid="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" compoundref="_d_t_s_panel_8h" startline="77">DTSObject::fitems</references>
+        <references refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" compoundref="pitems_8cpp" startline="192" endline="219">form_item::GetValue</references>
+        <references refid="classform__item_1a1e08369cee96e1b5417c767be9b086ce" compoundref="pitems_8cpp" startline="134" endline="142">form_item::GetXMLData</references>
+        <references refid="classxml__element_1a232e850ca67d3d065d1c16bea79cb441" compoundref="pitems_8cpp" startline="54" endline="65">xml_element::Modify</references>
+        <references refid="class_d_t_s_object_1a0e9b6e22629a9aa1fd5227cefaa25e6f" compoundref="_d_t_s_panel_8h" startline="79">DTSObject::xmldoc</references>
+        <referencedby refid="group___c-_a_p_i-_panel_1ga28e2dbe2171ea35e32fa615aca55b934" compoundref="wrapper_8cpp" startline="869" endline="872">DTS_C_API::dtsgui_xmlpanel_update</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1a7523413f0f0cbe621c630730b8b1713f" compoundref="_d_t_s_tree_window_8cpp" startline="524" endline="542">DTSTreeWindowEvent::OnButton</referencedby>
+        <referencedby refid="class_d_t_s_tab_window_event_1a0d4bd622b3c1ef90ca87cd6b052b4f76" compoundref="_d_t_s_tree_window_8cpp" startline="840" endline="857">DTSTabWindowEvent::OnButton</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1ad28f5ed6bd19e9d685a18df8bf568f92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct xml_node *</type>
@@ -689,7 +826,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="101" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="764" bodyend="826"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="101" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="777" bodyend="839"/>
+        <references refid="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" compoundref="_d_t_s_panel_8h" startline="77">DTSObject::fitems</references>
+        <references refid="classform__item_1a4f3558ce5670e789ad51d1f489ec5b14" compoundref="pitems_8cpp" startline="188" endline="190">form_item::GetName</references>
+        <references refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" compoundref="pitems_8cpp" startline="192" endline="219">form_item::GetValue</references>
+        <references refid="class_d_t_s_object_1a0e9b6e22629a9aa1fd5227cefaa25e6f" compoundref="_d_t_s_panel_8h" startline="79">DTSObject::xmldoc</references>
+        <referencedby refid="group___c-_a_p_i-_panel_1ga9c1222d2fe8fa5066a2c55e4b71c2cac" compoundref="wrapper_8cpp" startline="957" endline="960">DTS_C_API::dtsgui_panetoxml</referencedby>
+        <referencedby refid="classtab__newpane_1af3f96c0ce186f089d5e5598ea4814179" compoundref="_d_t_s_tree_window_8cpp" startline="216" endline="253">tab_newpane::handle_newtabpane</referencedby>
+        <referencedby refid="classtree__newnode_1a64abbefc5f204cfbf9b7ad0bd7e035cf" compoundref="_d_t_s_tree_window_8cpp" startline="103" endline="143">tree_newnode::handle_newtreenode</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1a7ce048cedd00ee1f1d9ea1c1fd504a6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct curl_post *</type>
@@ -702,7 +846,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="102" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="828" bodyend="867"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="102" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="841" bodyend="880"/>
+        <references refid="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" compoundref="_d_t_s_panel_8h" startline="77">DTSObject::fitems</references>
+        <references refid="classform__item_1a4f3558ce5670e789ad51d1f489ec5b14" compoundref="pitems_8cpp" startline="188" endline="190">form_item::GetName</references>
+        <references refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" compoundref="pitems_8cpp" startline="192" endline="219">form_item::GetValue</references>
+        <references refid="classform__item_1a4b647b26beee4bb3f3935645f3eb1a9b" compoundref="pitems_8h" startline="64">form_item::name</references>
+        <referencedby refid="group___c-_a_p_i-_panel_1ga4d0d6742f61c91fb590b3728a7229150" compoundref="wrapper_8cpp" startline="887" endline="890">DTS_C_API::dtsgui_pane2post</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1aab8f3d3fbeb44163401d558d903f45ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>class <ref refid="classxml__element" kindref="compound">xml_element</ref> *</type>
@@ -735,7 +884,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="103" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="484" bodyend="552"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="103" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="496" bodyend="565"/>
+        <references refid="class_d_t_s_object_1ae177d1cfd85be759810b252b98f2050d" compoundref="_d_t_s_panel_8cpp" startline="305" endline="314">DTSObject::GetXMLDoc</references>
+        <referencedby refid="class_d_t_s_panel_1a1495f670e901f45cbbc3a4d2c471aa53" compoundref="_d_t_s_panel_8cpp" startline="628" endline="646">XMLCheckBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a4d294755a98b6194df04292abe18d1b0" compoundref="_d_t_s_panel_8cpp" startline="707" endline="722">XMLComboBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a03d63a8c380ee62e263d7bc3a3c86396" compoundref="_d_t_s_panel_8cpp" startline="667" endline="682">XMLListBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a2b893b30f6265079a143bb23029aa083" compoundref="_d_t_s_panel_8cpp" startline="585" endline="598">XMLTextBox</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1a0c1a3aa81559298e059473bde57ab23e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -753,7 +907,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="104" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="420" bodyend="438"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="104" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="432" bodyend="450"/>
+        <references refid="class_d_t_s_object_1ab4249f538d36789b20bb15e29ab4121f" compoundref="_d_t_s_panel_8h" startline="80">DTSObject::beenshown</references>
+        <references refid="class_d_t_s_panel_1ae2385ab076d14fdecc0d58285063c520" compoundref="_d_t_s_panel_8cpp" startline="724" endline="744">Buttons</references>
+        <references refid="class_d_t_s_panel_1ad2cca5a57cb57721f09e58b054235347" compoundref="_d_t_s_panel_8h" startline="118">fgs</references>
+        <references refid="class_d_t_s_object_1a8ca3e7c6f66685caf07fa93fb5e14337" compoundref="_d_t_s_panel_8h" startline="73">DTSObject::frame</references>
+        <references refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" compoundref="_d_t_s_panel_8h" startline="75">DTSObject::panel</references>
+        <references refid="class_d_t_s_object_1a1292b4804b31450f0ee960fa59fcfc7a" compoundref="_d_t_s_panel_8h" startline="74">DTSObject::status</references>
+        <references refid="class_d_t_s_object_1ad191e42b5daa056f9ea8247d752df3b0" compoundref="_d_t_s_panel_8h" startline="69">DTSObject::type</references>
+        <references refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a94b4b5412dbd78fdf58517c74afa9dad" compoundref="dtsgui_8h" startline="251">wx_DTSPANEL_TAB</references>
+        <references refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a8aa14d05cc73bd9438f302f6f2cb29c3" compoundref="dtsgui_8h" startline="249">wx_DTSPANEL_TREE</references>
+        <referencedby refid="class_d_t_s_tab_page_1a433bdbb8af0ded1fb884b45c5d9259a9" compoundref="_d_t_s_panel_8cpp" startline="945" endline="960">DTSTabPage::ConfigPane</referencedby>
+        <referencedby refid="class_d_t_s_static_panel_1adc4c9227ed43facbd7a202f220eb4382" compoundref="_d_t_s_panel_8cpp" startline="1026" endline="1029">DTSStaticPanel::Show</referencedby>
+        <referencedby refid="class_d_t_s_scroll_panel_1a4aea715d4e6ac3257c482813c8ab2bbc" compoundref="_d_t_s_panel_8cpp" startline="911" endline="914">DTSScrollPanel::Show</referencedby>
+        <referencedby refid="class_d_t_s_window_1a0c09a82da8cb97cf387c14d18ae056d9" compoundref="_d_t_s_panel_8cpp" startline="1043" endline="1046">DTSWindow::Show</referencedby>
+        <referencedby refid="class_d_t_s_dialog_1a569e3d1caa1405354a2a090725b76071" compoundref="_d_t_s_panel_8cpp" startline="1072" endline="1075">DTSDialog::Show</referencedby>
+        <referencedby refid="class_d_t_s_wizard_window_1acf99ea3a36ad6da056456e5fc31c8bee" compoundref="_d_t_s_panel_8cpp" startline="1098" endline="1106">DTSWizardWindow::Show</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1a58daeb533cce1e4bdac57118cce7c7ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -775,7 +944,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="105" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="470" bodyend="476"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="105" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="482" bodyend="488"/>
+        <references refid="class_d_t_s_panel_1ae0135da688bb9046fd2cafbf5eaf7ffc" compoundref="_d_t_s_panel_8cpp" startline="460" endline="480">Title</references>
+        <references refid="class_d_t_s_panel_1accbfebfa3c737d3bf33386616f6771f4" compoundref="_d_t_s_panel_8h" startline="117">title</references>
+        <referencedby refid="classdtsgui__wizard_1a02984b1d70df5100e8b6200e0bb1b421" compoundref="_d_t_s_wizard_8cpp" startline="56" endline="87">dtsgui_wizard::AddPage</referencedby>
+        <referencedby refid="class_d_t_s_frame_1a3b1105fb9c8e3b6909994e7f993eee20" compoundref="_d_t_s_frame_8cpp" startline="375" endline="406">DTSFrame::CreatePane</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_1a7457dc767b9cbc873e0e963644fa1fda" compoundref="_d_t_s_tree_window_8cpp" startline="715" endline="734">DTSTreeWindow::CreatePane</referencedby>
+        <referencedby refid="group___c-_a_p_i-_panel_1ga3f8f0e22fd2ecdcb915ec06851d12e3d" compoundref="wrapper_8cpp" startline="911" endline="914">DTS_C_API::dtsgui_settitle</referencedby>
+        <referencedby refid="class_d_t_s_tab_page_1ae29cbd93440f0d485b2f186fcdbc9c7c" compoundref="_d_t_s_panel_8cpp" startline="916" endline="931">DTSTabPage::DTSTabPage</referencedby>
+        <referencedby refid="class_d_t_s_tab_page_1a99f09a166ea777c2dcc572284594b00e" compoundref="_d_t_s_panel_8cpp" startline="962" endline="1010">DTSTabPage::operator=</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_1a2ed14675c69eebc630e82b65ddb2bb4a" compoundref="_d_t_s_tree_window_8cpp" startline="673" endline="681">DTSTreeWindow::SetPaneTitle</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1a03be174c3cb033ba74b6abce543347e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -792,7 +970,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="106" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="478" bodyend="482"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="106" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="490" bodyend="494"/>
+        <references refid="class_d_t_s_object_1a941fc98555b60d021a6c2f488ce9ae3e" compoundref="_d_t_s_panel_8h" startline="72">DTSObject::refobj</references>
+        <references refid="class_d_t_s_object_1a1292b4804b31450f0ee960fa59fcfc7a" compoundref="_d_t_s_panel_8h" startline="74">DTSObject::status</references>
+        <referencedby refid="group___c-_a_p_i-_panel_1gad561196144c72953e31b83aff17054e5" compoundref="wrapper_8cpp" startline="922" endline="925">DTS_C_API::dtsgui_setstatus</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1a3c4a20a1c122851ae935dcac34697361" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>class <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
@@ -809,7 +990,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="107" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="869" bodyend="871"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="107" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="882" bodyend="884"/>
+        <references refid="class_d_t_s_object_1a53fa1242a31d95bc3fec2824ff055cae" compoundref="_d_t_s_panel_8h" startline="77">DTSObject::fitems</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_items_1ga3af426dd6bf50cb6bd7232c4ea5b92f6" compoundref="wrapper_8cpp" startline="1089" endline="1092">DTS_C_API::dtsgui_finditem</referencedby>
+        <referencedby refid="class_d_t_s_panel_1aaeef18ad561346699ed24e0aa6fa47b3" compoundref="_d_t_s_panel_8cpp" startline="886" endline="897">FindValue</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1aaeef18ad561346699ed24e0aa6fa47b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const char *</type>
@@ -826,7 +1010,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="108" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="873" bodyend="884"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="108" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="886" bodyend="897"/>
+        <references refid="class_d_t_s_panel_1a3c4a20a1c122851ae935dcac34697361" compoundref="_d_t_s_panel_8cpp" startline="882" endline="884">FindItem</references>
+        <references refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" compoundref="pitems_8cpp" startline="192" endline="219">form_item::GetValue</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_items_1ga37f578498eb38e545906898e7250e6bb" compoundref="wrapper_8cpp" startline="1140" endline="1143">DTS_C_API::dtsgui_findvalue</referencedby>
+        <referencedby refid="class_d_t_s_frame_1adb19cc1077af840c132d8e11fd163a15" compoundref="_d_t_s_frame_8cpp" startline="470" endline="493">DTSFrame::pwevent</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -845,7 +1033,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="110" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="448" bodyend="468"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="110" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="460" bodyend="480"/>
+        <references refid="class_d_t_s_panel_1a714c09276642d4a0cf20cc5d941f62a1" compoundref="_d_t_s_panel_8cpp" startline="452" endline="458">AddItem</references>
+        <references refid="class_d_t_s_panel_1a40a4abd45ab1af5aff6eb893aeb0eede" compoundref="_d_t_s_panel_8h" startline="119">g_row</references>
+        <references refid="group___c_p_p-_panel_1ga00fc562a7d9ef5cac917f9697dfdb769" compoundref="_d_t_s_panel_8cpp" startline="43">PADING</references>
+        <references refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" compoundref="_d_t_s_panel_8h" startline="75">DTSObject::panel</references>
+        <referencedby refid="class_d_t_s_panel_1a58daeb533cce1e4bdac57118cce7c7ea" compoundref="_d_t_s_panel_8cpp" startline="482" endline="488">SetTitle</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1afd0a6ee00e2e13185c240178850e368e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -866,7 +1059,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="111" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="370" bodyend="376"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="111" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="382" bodyend="388"/>
+        <references refid="class_d_t_s_panel_1ad2cca5a57cb57721f09e58b054235347" compoundref="_d_t_s_panel_8h" startline="118">fgs</references>
+        <referencedby refid="class_d_t_s_wizard_window_1acf99ea3a36ad6da056456e5fc31c8bee" compoundref="_d_t_s_panel_8cpp" startline="1098" endline="1106">DTSWizardWindow::Show</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1a9e90d0d7b1466eb3e8005343ce787974" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -879,7 +1074,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="112" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="378" bodyend="392"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="112" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="390" bodyend="404"/>
+        <references refid="class_d_t_s_object_1ab4249f538d36789b20bb15e29ab4121f" compoundref="_d_t_s_panel_8h" startline="80">DTSObject::beenshown</references>
+        <references refid="class_d_t_s_panel_1ad2cca5a57cb57721f09e58b054235347" compoundref="_d_t_s_panel_8h" startline="118">fgs</references>
+        <references refid="class_d_t_s_panel_1a40a4abd45ab1af5aff6eb893aeb0eede" compoundref="_d_t_s_panel_8h" startline="119">g_row</references>
+        <references refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" compoundref="_d_t_s_panel_8h" startline="75">DTSObject::panel</references>
+        <references refid="class_d_t_s_object_1a941fc98555b60d021a6c2f488ce9ae3e" compoundref="_d_t_s_panel_8h" startline="72">DTSObject::refobj</references>
+        <references refid="class_d_t_s_object_1a1292b4804b31450f0ee960fa59fcfc7a" compoundref="_d_t_s_panel_8h" startline="74">DTSObject::status</references>
+        <references refid="class_d_t_s_object_1ad191e42b5daa056f9ea8247d752df3b0" compoundref="_d_t_s_panel_8h" startline="69">DTSObject::type</references>
+        <references refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a8aa14d05cc73bd9438f302f6f2cb29c3" compoundref="dtsgui_8h" startline="249">wx_DTSPANEL_TREE</references>
+        <referencedby refid="class_d_t_s_dialog_1a09808605e28e0870bd717a975fd0d856" compoundref="_d_t_s_panel_8cpp" startline="1048" endline="1067">DTSDialog::DTSDialog</referencedby>
+        <referencedby refid="class_d_t_s_scroll_panel_1a3ded23df3221978b4f78e2ff6cc53366" compoundref="_d_t_s_panel_8cpp" startline="899" endline="909">DTSScrollPanel::DTSScrollPanel</referencedby>
+        <referencedby refid="class_d_t_s_static_panel_1ac982605cd17112ca73ede769814cca47" compoundref="_d_t_s_panel_8cpp" startline="1012" endline="1020">DTSStaticPanel::DTSStaticPanel</referencedby>
+        <referencedby refid="class_d_t_s_window_1a1b755f48a71c0a749b7b5d0e43eec20e" compoundref="_d_t_s_panel_8cpp" startline="1035" endline="1041">DTSWindow::DTSWindow</referencedby>
+        <referencedby refid="class_d_t_s_wizard_window_1a5b360c03b6bfd75b420b9c8b56b6e7fd" compoundref="_d_t_s_panel_8cpp" startline="1091" endline="1096">DTSWizardWindow::DTSWizardWindow</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_panel_1ae2385ab076d14fdecc0d58285063c520" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -895,7 +1103,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="113" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="711" bodyend="731"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="113" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="724" bodyend="744"/>
+        <references refid="class_d_t_s_panel_1a714c09276642d4a0cf20cc5d941f62a1" compoundref="_d_t_s_panel_8cpp" startline="452" endline="458">AddItem</references>
+        <references refid="class_d_t_s_panel_event_1ac885bd160c79e96062605dc1f0fcd4f4" compoundref="_d_t_s_panel_8cpp" startline="232" endline="234">DTSPanelEvent::BindButton</references>
+        <references refid="class_d_t_s_panel_1af25bdb7e04f715c228774c2be0dd8251" compoundref="_d_t_s_panel_8h" startline="114">button_mask</references>
+        <references refid="class_d_t_s_object_1abcce46b892d3c17810d4551c495512ce" compoundref="_d_t_s_panel_8h" startline="70">DTSObject::buttons</references>
+        <references refid="class_d_t_s_object_1a132481851865629352e4aefa7f822e4b" compoundref="_d_t_s_panel_8h" startline="76">DTSObject::dtsevthandler</references>
+        <references refid="class_d_t_s_panel_1ad2cca5a57cb57721f09e58b054235347" compoundref="_d_t_s_panel_8h" startline="118">fgs</references>
+        <references refid="class_d_t_s_panel_1a40a4abd45ab1af5aff6eb893aeb0eede" compoundref="_d_t_s_panel_8h" startline="119">g_row</references>
+        <references refid="group___c_p_p-_panel_1ga00fc562a7d9ef5cac917f9697dfdb769" compoundref="_d_t_s_panel_8cpp" startline="43">PADING</references>
+        <references refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" compoundref="_d_t_s_panel_8h" startline="75">DTSObject::panel</references>
+        <referencedby refid="class_d_t_s_panel_1a0c1a3aa81559298e059473bde57ab23e" compoundref="_d_t_s_panel_8cpp" startline="432" endline="450">ShowPanel</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
@@ -918,7 +1136,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="116" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="37" bodyend="50"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="116" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="49" bodyend="62"/>
+        <references refid="classform__item_1a4f3558ce5670e789ad51d1f489ec5b14" compoundref="pitems_8cpp" startline="188" endline="190">form_item::GetName</references>
+        <referencedby refid="class_d_t_s_panel_1abfe32d536cdcb2eee87a5c0ef1df826f" compoundref="_d_t_s_panel_8cpp" startline="348" endline="367">DTSPanel</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -926,90 +1146,115 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="64">
+      <node id="100">
         <label>DTSObject</label>
         <link refid="class_d_t_s_object"/>
-        <childnode refid="65" relation="public-inheritance">
+        <childnode refid="101" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="63">
+      <node id="99">
         <label>DTSPanel</label>
         <link refid="class_d_t_s_panel"/>
-        <childnode refid="64" relation="public-inheritance">
+        <childnode refid="100" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="70">
+      <node id="106">
         <label>DTSTextPanel</label>
         <link refid="class_d_t_s_text_panel"/>
-        <childnode refid="68" relation="public-inheritance">
+        <childnode refid="104" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="66">
+      <node id="102">
         <label>DTSScrollPanel</label>
         <link refid="class_d_t_s_scroll_panel"/>
-        <childnode refid="63" relation="public-inheritance">
+        <childnode refid="99" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="65">
+      <node id="101">
         <label>wxWindow</label>
       </node>
-      <node id="67">
+      <node id="103">
         <label>DTSTabPage</label>
         <link refid="class_d_t_s_tab_page"/>
-        <childnode refid="66" relation="public-inheritance">
+        <childnode refid="102" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="72">
+      <node id="108">
         <label>DTSWizardWindow</label>
         <link refid="class_d_t_s_wizard_window"/>
-        <childnode refid="63" relation="public-inheritance">
+        <childnode refid="99" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="68">
+      <node id="104">
         <label>DTSStaticPanel</label>
         <link refid="class_d_t_s_static_panel"/>
-        <childnode refid="63" relation="public-inheritance">
+        <childnode refid="99" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="71">
+      <node id="107">
         <label>DTSWindow</label>
         <link refid="class_d_t_s_window"/>
-        <childnode refid="63" relation="public-inheritance">
+        <childnode refid="99" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="69">
+      <node id="105">
         <label>DTSDialog</label>
         <link refid="class_d_t_s_dialog"/>
-        <childnode refid="68" relation="public-inheritance">
+        <childnode refid="104" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="74">
+      <node id="110">
         <label>DTSObject</label>
         <link refid="class_d_t_s_object"/>
-        <childnode refid="75" relation="public-inheritance">
+        <childnode refid="111" relation="public-inheritance">
         </childnode>
-        <childnode refid="76" relation="usage">
+        <childnode refid="112" relation="usage">
           <edgelabel>frame</edgelabel>
         </childnode>
       </node>
-      <node id="73">
+      <node id="109">
         <label>DTSPanel</label>
         <link refid="class_d_t_s_panel"/>
-        <childnode refid="74" relation="public-inheritance">
+        <childnode refid="110" relation="public-inheritance">
+        </childnode>
+        <childnode refid="114" relation="usage">
+          <edgelabel>configcb</edgelabel>
         </childnode>
       </node>
-      <node id="75">
+      <node id="111">
         <label>wxWindow</label>
       </node>
-      <node id="77">
+      <node id="113">
         <label>wxFrame</label>
       </node>
-      <node id="76">
+      <node id="114">
+        <label>dtsgui</label>
+        <link refid="classdtsgui"/>
+        <childnode refid="112" relation="usage">
+          <edgelabel>appframe</edgelabel>
+        </childnode>
+        <childnode refid="114" relation="usage">
+          <edgelabel>cb</edgelabel>
+        </childnode>
+        <childnode refid="115" relation="usage">
+          <edgelabel>wsize</edgelabel>
+          <edgelabel>wpos</edgelabel>
+        </childnode>
+      </node>
+      <node id="115">
+        <label>point</label>
+        <link refid="structpoint"/>
+      </node>
+      <node id="112">
         <label>DTSFrame</label>
         <link refid="class_d_t_s_frame"/>
-        <childnode refid="77" relation="public-inheritance">
+        <childnode refid="113" relation="public-inheritance">
+        </childnode>
+        <childnode refid="114" relation="usage">
+          <edgelabel>dtsgui</edgelabel>
+          <edgelabel>tbcb</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

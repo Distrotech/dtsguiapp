@@ -34,7 +34,6 @@ var annotated =
     [ "iface_cdata", "structiface__cdata.html", "structiface__cdata" ],
     [ "listitem", "structlistitem.html", "structlistitem" ],
     [ "new_iface_data", "structnew__iface__data.html", "structnew__iface__data" ],
-    [ "point", "structpoint.html", "structpoint" ],
     [ "tab_newpane", "classtab__newpane.html", "classtab__newpane" ],
     [ "tree_newnode", "classtree__newnode.html", "classtree__newnode" ],
     [ "treemenu", "classtreemenu.html", "classtreemenu" ],

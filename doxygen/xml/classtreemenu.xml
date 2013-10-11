@@ -16,6 +16,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="80" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="80" bodyend="-1"/>
+        <referencedby refid="classtreemenu_1ad011350ad24e3c8c9ec9816dd057ad34" compoundref="_d_t_s_tree_window_8cpp" startline="268" endline="293">Show</referencedby>
+        <referencedby refid="classtreemenu_1a886f95a39537bdff27d990c6f0f7f9b8" compoundref="_d_t_s_tree_window_8cpp" startline="255" endline="262">treemenu</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtreemenu_1ac8ada77439f8096d693791fe5ca9464e" prot="private" static="no" mutable="no">
         <type>wxMenuItem *</type>
@@ -29,6 +31,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="81" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="81" bodyend="-1"/>
+        <referencedby refid="classtreemenu_1ad011350ad24e3c8c9ec9816dd057ad34" compoundref="_d_t_s_tree_window_8cpp" startline="268" endline="293">Show</referencedby>
+        <referencedby refid="classtreemenu_1a886f95a39537bdff27d990c6f0f7f9b8" compoundref="_d_t_s_tree_window_8cpp" startline="255" endline="262">treemenu</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtreemenu_1af1f838f6a51672e2d55e59514f77ccfe" prot="private" static="no" mutable="no">
         <type>wxMenuItem *</type>
@@ -42,6 +46,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="82" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="82" bodyend="-1"/>
+        <referencedby refid="classtreemenu_1ad011350ad24e3c8c9ec9816dd057ad34" compoundref="_d_t_s_tree_window_8cpp" startline="268" endline="293">Show</referencedby>
+        <referencedby refid="classtreemenu_1a886f95a39537bdff27d990c6f0f7f9b8" compoundref="_d_t_s_tree_window_8cpp" startline="255" endline="262">treemenu</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtreemenu_1a662ecad63db574b8e5766be9875ddd3a" prot="private" static="no" mutable="no">
         <type>wxMenuItem *</type>
@@ -55,6 +61,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="83" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="classtreemenu_1ad011350ad24e3c8c9ec9816dd057ad34" compoundref="_d_t_s_tree_window_8cpp" startline="268" endline="293">Show</referencedby>
+        <referencedby refid="classtreemenu_1a886f95a39537bdff27d990c6f0f7f9b8" compoundref="_d_t_s_tree_window_8cpp" startline="255" endline="262">treemenu</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtreemenu_1a359469982a21e31368621e0cda9c5f5d" prot="private" static="no" mutable="no">
         <type>wxMenuItem *</type>
@@ -68,6 +76,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="84" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="84" bodyend="-1"/>
+        <referencedby refid="classtreemenu_1ad011350ad24e3c8c9ec9816dd057ad34" compoundref="_d_t_s_tree_window_8cpp" startline="268" endline="293">Show</referencedby>
+        <referencedby refid="classtreemenu_1a886f95a39537bdff27d990c6f0f7f9b8" compoundref="_d_t_s_tree_window_8cpp" startline="255" endline="262">treemenu</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -98,7 +108,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="77" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="241" bodyend="248"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="77" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="255" bodyend="262"/>
+        <references refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486a4a0c85437a842221377dac401285454f" compoundref="_d_t_s_tree_window_8cpp" startline="45">DTS_TREEWIN_MENU_DELETE</references>
+        <references refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486a097ecad73656ee80fb0c9e7ddf464e5d" compoundref="_d_t_s_tree_window_8cpp" startline="43">DTS_TREEWIN_MENU_MOVEDOWN</references>
+        <references refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486af5bd57193f475f49c63b9b7271586daf" compoundref="_d_t_s_tree_window_8cpp" startline="41">DTS_TREEWIN_MENU_MOVEUP</references>
+        <references refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486aed80ef06b46ae100a6f5c56da1674ba7" compoundref="_d_t_s_tree_window_8cpp" startline="39">DTS_TREEWIN_MENU_SORT</references>
+        <references refid="classtreemenu_1a359469982a21e31368621e0cda9c5f5d" compoundref="_d_t_s_tree_window_8h" startline="84">mdelete</references>
+        <references refid="classtreemenu_1a662ecad63db574b8e5766be9875ddd3a" compoundref="_d_t_s_tree_window_8h" startline="83">mdown</references>
+        <references refid="classtreemenu_1ac4c099bd171f3b9a862c1b117e90d23a" compoundref="_d_t_s_tree_window_8h" startline="80">menu</references>
+        <references refid="classtreemenu_1ac8ada77439f8096d693791fe5ca9464e" compoundref="_d_t_s_tree_window_8h" startline="81">msort</references>
+        <references refid="classtreemenu_1af1f838f6a51672e2d55e59514f77ccfe" compoundref="_d_t_s_tree_window_8h" startline="82">mup</references>
       </memberdef>
       <memberdef kind="function" id="classtreemenu_1ad011350ad24e3c8c9ec9816dd057ad34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -139,7 +158,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="78" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="254" bodyend="279"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="78" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="268" bodyend="293"/>
+        <references refid="classtreemenu_1a359469982a21e31368621e0cda9c5f5d" compoundref="_d_t_s_tree_window_8h" startline="84">mdelete</references>
+        <references refid="classtreemenu_1a662ecad63db574b8e5766be9875ddd3a" compoundref="_d_t_s_tree_window_8h" startline="83">mdown</references>
+        <references refid="classtreemenu_1ac4c099bd171f3b9a862c1b117e90d23a" compoundref="_d_t_s_tree_window_8h" startline="80">menu</references>
+        <references refid="classtreemenu_1ac8ada77439f8096d693791fe5ca9464e" compoundref="_d_t_s_tree_window_8h" startline="81">msort</references>
+        <references refid="classtreemenu_1af1f838f6a51672e2d55e59514f77ccfe" compoundref="_d_t_s_tree_window_8h" startline="82">mup</references>
+        <referencedby refid="class_d_t_s_tree_window_1a0df3486cd55349c3e7efe33f0304d76d" compoundref="_d_t_s_tree_window_8cpp" startline="711" endline="713">DTSTreeWindow::ShowRMenu</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

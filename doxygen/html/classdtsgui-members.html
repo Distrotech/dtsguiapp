@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
@@ -94,7 +95,7 @@ $(document).ready(function(){initNavTree('classdtsgui.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,6 +113,8 @@ $(document).ready(function(){initNavTree('classdtsgui.html','');});
 <p>This is the complete list of members for <a class="el" href="classdtsgui.html">dtsgui</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="classdtsgui.html#a9d7432eacf96358d22797b37ee73caed">AppendTitle</a>(const char *text)</td><td class="entry"><a class="el" href="classdtsgui.html">dtsgui</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classdtsgui.html#a23186f0e51311156f54f9f9882806414">appframe</a></td><td class="entry"><a class="el" href="classdtsgui.html">dtsgui</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classdtsgui.html#aa47c583745cf2afd984cd09088d8fa00">cb</a></td><td class="entry"><a class="el" href="classdtsgui.html">dtsgui</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr><td class="entry"><a class="el" href="classdtsgui.html#a04bd33691e2479644d61cf3cf51f377f">DTS_OJBREF_CLASS</a>(dtsgui)</td><td class="entry"><a class="el" href="classdtsgui.html">dtsgui</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classdtsgui.html#a96324bdb4d6457ea0c815959092bee84">dtsgui</a>(const char *title, const char *stat, struct point w_size, struct point w_pos, dtsgui_configcb confcallback_cb, void *userdata)</td><td class="entry"><a class="el" href="classdtsgui.html">dtsgui</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>(void)</td><td class="entry"><a class="el" href="classdtsgui.html">dtsgui</a></td><td class="entry"></td></tr>
@@ -119,12 +122,17 @@ $(document).ready(function(){initNavTree('classdtsgui.html','');});
   <tr><td class="entry"><a class="el" href="classdtsgui.html#a67a85f336d93a287e5ec3434a79620ed">SetStatusText</a>(void)</td><td class="entry"><a class="el" href="classdtsgui.html">dtsgui</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classdtsgui.html#a8dd69405dd8fe95341e0a99c14a6f431">SetupAPPFrame</a>(void)</td><td class="entry"><a class="el" href="classdtsgui.html">dtsgui</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classdtsgui.html#adbf932006dfc6df2266b5fbf34af67ac">ShowToolbar</a>(bool show=true)</td><td class="entry"><a class="el" href="classdtsgui.html">dtsgui</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classdtsgui.html#a8ae0201b6a08daf9d9804c1f7550da4e">status</a></td><td class="entry"><a class="el" href="classdtsgui.html">dtsgui</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classdtsgui.html#a949562ecff03159461686f2ddc36b936">title</a></td><td class="entry"><a class="el" href="classdtsgui.html">dtsgui</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classdtsgui.html#a9c7541fac0311f9b2ffcb5c2699719ca">userdata</a></td><td class="entry"><a class="el" href="classdtsgui.html">dtsgui</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classdtsgui.html#a7a64aff083bfba24859a4c47e9d89c53">wpos</a></td><td class="entry"><a class="el" href="classdtsgui.html">dtsgui</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classdtsgui.html#a04955c97163ded998019001b749a1883">wsize</a></td><td class="entry"><a class="el" href="classdtsgui.html">dtsgui</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 9 2013 22:32:56 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

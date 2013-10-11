@@ -5,5 +5,7 @@ var class_d_t_s_tab_window_event =
     [ "OnButton", "class_d_t_s_tab_window_event.html#a0d4bd622b3c1ef90ca87cd6b052b4f76", null ],
     [ "PageChange", "class_d_t_s_tab_window_event.html#a0ef3c51fe26036ac2cb0353940307eb6", null ],
     [ "PageChanged", "class_d_t_s_tab_window_event.html#a373ea755544153574d3d93018ebc2f9c", null ],
-    [ "RightMenu", "class_d_t_s_tab_window_event.html#af41c21b5d534856a22eb64ccf1281807", null ]
+    [ "RightMenu", "class_d_t_s_tab_window_event.html#af41c21b5d534856a22eb64ccf1281807", null ],
+    [ "data", "class_d_t_s_tab_window_event.html#a4d7e06b09353386e0c891fb2f5c82b55", null ],
+    [ "tw", "class_d_t_s_tab_window_event.html#a7e79f616df8c47b3ce95535b0d13fd76", null ]
 ];

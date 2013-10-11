@@ -16,6 +16,14 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @defgroup CPP-Wizard Wizard Classes
+  * @brief Implementation of wizard classes.
+  * @ingroup CPP*/
+
+/** @file
+  * @brief Implementation of wizard classes.
+  * @ingroup CPP-Wizard*/
+
 #ifdef __WIN32__
 #define UNICODE 1
 #endif

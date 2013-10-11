@@ -16,9 +16,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_frame_1a8b1d7dbacb2a99f3758a35ef06046963" compoundref="_d_t_s_frame_8cpp" startline="272" endline="298">DTSFrame::DynamicPanelEvent</referencedby>
+        <referencedby refid="classdynamic__panel_1ab636fa1300532545f6c6fbf31e5e4971" compoundref="evdata_8cpp" startline="64" endline="66">operator==</referencedby>
+        <referencedby refid="classdynamic__panel_1a5774ea0571dc1748c346129fcddf63de" compoundref="evdata_8cpp" startline="68" endline="83">RunCallback</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classdynamic__panel_1ace913453518c31659ba1ecdbede98d99" prot="private" static="no" mutable="no">
-        <type><ref refid="dtsgui_8h_1a080f931027861c0021f72ac2562b45d7" kindref="member">dtsgui_dynpanel</ref></type>
+        <type><ref refid="group___c_o_r_e_1ga080f931027861c0021f72ac2562b45d7" kindref="member">dtsgui_dynpanel</ref></type>
         <definition>dtsgui_dynpanel dynamic_panel::cb</definition>
         <argsstring></argsstring>
         <name>cb</name>
@@ -29,12 +32,15 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="34" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="classdynamic__panel_1ab9bd460c0e6acd3b84806f908d53df49" compoundref="evdata_8cpp" startline="36" endline="45">dynamic_panel</referencedby>
+        <referencedby refid="classdynamic__panel_1a52940fe2d7c72ec45a2aff77ad7ec8d0" compoundref="evdata_8cpp" startline="56" endline="58">HasCallback</referencedby>
+        <referencedby refid="classdynamic__panel_1a5774ea0571dc1748c346129fcddf63de" compoundref="evdata_8cpp" startline="68" endline="83">RunCallback</referencedby>
       </memberdef>
-      <memberdef kind="variable" id="classdynamic__panel_1a4310f04b6e6208d757a8e8e4d9de2607" prot="private" static="no" mutable="no">
+      <memberdef kind="variable" id="classdynamic__panel_1ab6472f891f994a9f4dddd9572eb8adab" prot="private" static="no" mutable="no">
         <type>const char *</type>
-        <definition>const char* dynamic_panel::title</definition>
+        <definition>const char* dynamic_panel::name</definition>
         <argsstring></argsstring>
-        <name>title</name>
+        <name>name</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -42,6 +48,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="35" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classdynamic__panel_1a5774ea0571dc1748c346129fcddf63de" compoundref="evdata_8cpp" startline="68" endline="83">RunCallback</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classdynamic__panel_1a829939df89ab897c11179a31b8cd46be" prot="private" static="no" mutable="no">
         <type>void *</type>
@@ -55,6 +62,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="36" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="classdynamic__panel_1ab9bd460c0e6acd3b84806f908d53df49" compoundref="evdata_8cpp" startline="36" endline="45">dynamic_panel</referencedby>
+        <referencedby refid="classdynamic__panel_1a5774ea0571dc1748c346129fcddf63de" compoundref="evdata_8cpp" startline="68" endline="83">RunCallback</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classdynamic__panel_1a590542c18fbe042c59612a8d630fb974" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -68,6 +77,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="37" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classdynamic__panel_1ab9bd460c0e6acd3b84806f908d53df49" compoundref="evdata_8cpp" startline="36" endline="45">dynamic_panel</referencedby>
+        <referencedby refid="classdynamic__panel_1a001a227c89e7998e18b88f7c49d4d035" compoundref="evdata_8cpp" startline="60" endline="62">IsBlank</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -87,21 +98,21 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="26"/>
       </memberdef>
-      <memberdef kind="function" id="classdynamic__panel_1ae6689acea2cf5d984fbcb191a680c4cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classdynamic__panel_1ab9bd460c0e6acd3b84806f908d53df49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>dynamic_panel::dynamic_panel</definition>
-        <argsstring>(const char *title, int blank, dtsgui_dynpanel cb, void *udata)</argsstring>
+        <argsstring>(const char *name, int blank, dtsgui_dynpanel cb, void *udata)</argsstring>
         <name>dynamic_panel</name>
         <param>
           <type>const char *</type>
-          <declname>title</declname>
+          <declname>name</declname>
         </param>
         <param>
           <type>int</type>
           <declname>blank</declname>
         </param>
         <param>
-          <type><ref refid="dtsgui_8h_1a080f931027861c0021f72ac2562b45d7" kindref="member">dtsgui_dynpanel</ref></type>
+          <type><ref refid="group___c_o_r_e_1ga080f931027861c0021f72ac2562b45d7" kindref="member">dtsgui_dynpanel</ref></type>
           <declname>cb</declname>
         </param>
         <param>
@@ -114,7 +125,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="27" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="28" bodyend="37"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="27" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="36" bodyend="45"/>
+        <references refid="classdynamic__panel_1a590542c18fbe042c59612a8d630fb974" compoundref="evdata_8h" startline="37">blank</references>
+        <references refid="classdynamic__panel_1ace913453518c31659ba1ecdbede98d99" compoundref="evdata_8h" startline="34">cb</references>
+        <references refid="classdynamic__panel_1a829939df89ab897c11179a31b8cd46be" compoundref="evdata_8h" startline="36">data</references>
       </memberdef>
       <memberdef kind="function" id="classdynamic__panel_1a52940fe2d7c72ec45a2aff77ad7ec8d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -127,7 +141,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="28" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="48" bodyend="50"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="28" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="56" bodyend="58"/>
+        <references refid="classdynamic__panel_1ace913453518c31659ba1ecdbede98d99" compoundref="evdata_8h" startline="34">cb</references>
+        <referencedby refid="class_d_t_s_frame_1a8b1d7dbacb2a99f3758a35ef06046963" compoundref="_d_t_s_frame_8cpp" startline="272" endline="298">DTSFrame::DynamicPanelEvent</referencedby>
       </memberdef>
       <memberdef kind="function" id="classdynamic__panel_1a001a227c89e7998e18b88f7c49d4d035" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -140,7 +156,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="52" bodyend="54"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="60" bodyend="62"/>
+        <references refid="classdynamic__panel_1a590542c18fbe042c59612a8d630fb974" compoundref="evdata_8h" startline="37">blank</references>
+        <referencedby refid="class_d_t_s_frame_1a8b1d7dbacb2a99f3758a35ef06046963" compoundref="_d_t_s_frame_8cpp" startline="272" endline="298">DTSFrame::DynamicPanelEvent</referencedby>
       </memberdef>
       <memberdef kind="function" id="classdynamic__panel_1ab636fa1300532545f6c6fbf31e5e4971" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -157,7 +175,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="56" bodyend="58"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="64" bodyend="66"/>
+        <references refid="classdynamic__panel_1a5d13849f704cffb0ecfde8dfdb072571" compoundref="evdata_8h" startline="33">w</references>
       </memberdef>
       <memberdef kind="function" id="classdynamic__panel_1a5774ea0571dc1748c346129fcddf63de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref> *</type>
@@ -174,25 +193,71 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="60" bodyend="75"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp" bodystart="68" bodyend="83"/>
+        <references refid="classdynamic__panel_1ace913453518c31659ba1ecdbede98d99" compoundref="evdata_8h" startline="34">cb</references>
+        <references refid="classdynamic__panel_1a829939df89ab897c11179a31b8cd46be" compoundref="evdata_8h" startline="36">data</references>
+        <references refid="class_d_t_s_object_1ae88ef1ea6f28346b6cd6d2d898d7acde" compoundref="_d_t_s_panel_8cpp" startline="282" endline="284">DTSObject::GetPanel</references>
+        <references refid="classdynamic__panel_1ab6472f891f994a9f4dddd9572eb8adab" compoundref="evdata_8h" startline="35">name</references>
+        <references refid="classdynamic__panel_1a5d13849f704cffb0ecfde8dfdb072571" compoundref="evdata_8h" startline="33">w</references>
+        <referencedby refid="class_d_t_s_frame_1a8b1d7dbacb2a99f3758a35ef06046963" compoundref="_d_t_s_frame_8cpp" startline="272" endline="298">DTSFrame::DynamicPanelEvent</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="285">
+        <label>wxFrame</label>
+      </node>
+      <node id="283">
+        <label>dtsgui</label>
+        <link refid="classdtsgui"/>
+        <childnode refid="284" relation="usage">
+          <edgelabel>appframe</edgelabel>
+        </childnode>
+        <childnode refid="283" relation="usage">
+          <edgelabel>cb</edgelabel>
+        </childnode>
+        <childnode refid="286" relation="usage">
+          <edgelabel>wsize</edgelabel>
+          <edgelabel>wpos</edgelabel>
+        </childnode>
+      </node>
+      <node id="286">
+        <label>point</label>
+        <link refid="structpoint"/>
+      </node>
+      <node id="284">
+        <label>DTSFrame</label>
+        <link refid="class_d_t_s_frame"/>
+        <childnode refid="285" relation="public-inheritance">
+        </childnode>
+        <childnode refid="283" relation="usage">
+          <edgelabel>dtsgui</edgelabel>
+          <edgelabel>tbcb</edgelabel>
+        </childnode>
+      </node>
+      <node id="282">
+        <label>dynamic_panel</label>
+        <link refid="classdynamic__panel"/>
+        <childnode refid="283" relation="usage">
+          <edgelabel>cb</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" line="24" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/evdata.h" bodystart="24" bodyend="38"/>
     <listofallmembers>
       <member refid="classdynamic__panel_1a590542c18fbe042c59612a8d630fb974" prot="private" virt="non-virtual"><scope>dynamic_panel</scope><name>blank</name></member>
       <member refid="classdynamic__panel_1ace913453518c31659ba1ecdbede98d99" prot="private" virt="non-virtual"><scope>dynamic_panel</scope><name>cb</name></member>
       <member refid="classdynamic__panel_1a829939df89ab897c11179a31b8cd46be" prot="private" virt="non-virtual"><scope>dynamic_panel</scope><name>data</name></member>
       <member refid="classdynamic__panel_1a85d6e3235706cc6f50d14be843a563f6" prot="public" virt="non-virtual"><scope>dynamic_panel</scope><name>DTS_OJBREF_CLASS</name></member>
-      <member refid="classdynamic__panel_1ae6689acea2cf5d984fbcb191a680c4cb" prot="public" virt="non-virtual"><scope>dynamic_panel</scope><name>dynamic_panel</name></member>
+      <member refid="classdynamic__panel_1ab9bd460c0e6acd3b84806f908d53df49" prot="public" virt="non-virtual"><scope>dynamic_panel</scope><name>dynamic_panel</name></member>
       <member refid="classdynamic__panel_1a52940fe2d7c72ec45a2aff77ad7ec8d0" prot="public" virt="non-virtual"><scope>dynamic_panel</scope><name>HasCallback</name></member>
       <member refid="classdynamic__panel_1a001a227c89e7998e18b88f7c49d4d035" prot="public" virt="non-virtual"><scope>dynamic_panel</scope><name>IsBlank</name></member>
+      <member refid="classdynamic__panel_1ab6472f891f994a9f4dddd9572eb8adab" prot="private" virt="non-virtual"><scope>dynamic_panel</scope><name>name</name></member>
       <member refid="classdynamic__panel_1ab636fa1300532545f6c6fbf31e5e4971" prot="public" virt="non-virtual"><scope>dynamic_panel</scope><name>operator==</name></member>
       <member refid="classdynamic__panel_1a5774ea0571dc1748c346129fcddf63de" prot="public" virt="non-virtual"><scope>dynamic_panel</scope><name>RunCallback</name></member>
-      <member refid="classdynamic__panel_1a4310f04b6e6208d757a8e8e4d9de2607" prot="private" virt="non-virtual"><scope>dynamic_panel</scope><name>title</name></member>
       <member refid="classdynamic__panel_1a5d13849f704cffb0ecfde8dfdb072571" prot="private" virt="non-virtual"><scope>dynamic_panel</scope><name>w</name></member>
     </listofallmembers>
   </compounddef>

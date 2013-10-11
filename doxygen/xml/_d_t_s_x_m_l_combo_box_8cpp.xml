@@ -39,7 +39,7 @@
       </node>
     </incdepgraph>
     <briefdescription>
-    </briefdescription>
+<para>Combo box that populates list from the XML returned in XML Post. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <programlisting>
@@ -61,154 +61,154 @@
 <codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
 <codeline lineno="17"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wx/combobox.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dtsgui_8h" kindref="compound" tooltip="Main include file for the GUI Library.">dtsgui.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_d_t_s_x_m_l_combo_box_8h" kindref="compound">DTSXMLComboBox.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="class_d_t_s_x_m_l_combo_box_1aa0ef061b697a527a559d56a6c5914e08" refkind="member"><highlight class="normal"><ref refid="class_d_t_s_x_m_l_combo_box_1aa0ef061b697a527a559d56a6c5914e08" kindref="member">DTSXMLComboBox::DTSXMLComboBox</ref>(<ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>*parent,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wxString<sp/>url,<sp/>wxString<sp/>xpath,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>curl_post*(*getpost)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString&amp;),<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>minlen)<sp/>{</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>sflags<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor">#include<sp/>&lt;wx/combobox.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;minlen<sp/>=<sp/>minlen;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;url<sp/>=<sp/>url;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;xpath<sp/>=<sp/>xpath;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;getpost<sp/>=<sp/>getpost;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dtsgui_8h" kindref="compound" tooltip="Main include file for the GUI Library.">dtsgui.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_d_t_s_x_m_l_combo_box_8h" kindref="compound">DTSXMLComboBox.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>Create(parent,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wxEmptyString,<sp/>wxDefaultPosition,<sp/>wxDefaultSize,<sp/>0,<sp/>NULL,<sp/>wxTE_PROCESS_ENTER<sp/>|<sp/>wxCB_DROPDOWN);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>Append(wxEmptyString,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)NULL);</highlight></codeline>
+<codeline lineno="34" refid="class_d_t_s_x_m_l_combo_box_1aa0ef061b697a527a559d56a6c5914e08" refkind="member"><highlight class="normal"><ref refid="class_d_t_s_x_m_l_combo_box_1aa0ef061b697a527a559d56a6c5914e08" kindref="member">DTSXMLComboBox::DTSXMLComboBox</ref>(<ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>*parent,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wxString<sp/>url,<sp/>wxString<sp/>xpath,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>curl_post*(*getpost)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString&amp;),<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>minlen)<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>Bind(wxEVT_TEXT_ENTER,<sp/>&amp;DTSXMLComboBox::HandleEvent,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>Bind(wxEVT_COMBOBOX,<sp/>&amp;DTSXMLComboBox::HandleEvent,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>Bind(wxEVT_COMBOBOX_DROPDOWN,<sp/>&amp;DTSXMLComboBox::HandleEvent,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>Bind(wxEVT_COMMAND_TEXT_UPDATED,<sp/>&amp;DTSXMLComboBox::HandleEvent,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*DTSXMLComboBox::GetXMLDoc(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString&amp;<sp/>val,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_node<sp/>*xn)<sp/>{</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*xmldoc<sp/>=<sp/>NULL;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">curl_post<sp/>*post;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">curlbuf<sp/>*cbuf;</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getpost)<sp/>{</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>post<sp/>=<sp/>getpost(val);</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(cbuf<sp/>=<sp/>curl_posturl(url,<sp/>NULL,<sp/>post,<sp/>NULL,<sp/>NULL)))<sp/>{</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>xmldoc<sp/>=<sp/>curl_buf2xml(cbuf);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(cbuf);</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>xmldoc;</highlight></codeline>
-<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>DTSXMLComboBox::AppendXMLNodes(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_doc<sp/>*xmldoc)<sp/>{</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_search<sp/>*xp;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_node<sp/>*xn;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*iter;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;minlen<sp/>=<sp/><ref refid="class_d_t_s_x_m_l_combo_box_1a9ce866cc4f74a2447db49cf23968e351" kindref="member">minlen</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;url<sp/>=<sp/><ref refid="class_d_t_s_x_m_l_combo_box_1a573345fd24fe84285cd88a15387ca1c1" kindref="member">url</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;xpath<sp/>=<sp/><ref refid="class_d_t_s_x_m_l_combo_box_1aa1f6979f243bb50a3f690b7a82162773" kindref="member">xpath</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_d_t_s_x_m_l_combo_box_1afa4ceb66dab1fc8beda14047dfb3d1e6" kindref="member">getpost</ref><sp/>=<sp/><ref refid="class_d_t_s_x_m_l_combo_box_1afa4ceb66dab1fc8beda14047dfb3d1e6" kindref="member">getpost</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>Create(parent,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wxEmptyString,<sp/>wxDefaultPosition,<sp/>wxDefaultSize,<sp/>0,<sp/>NULL,<sp/>wxTE_PROCESS_ENTER<sp/>|<sp/>wxCB_DROPDOWN);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>Append(wxEmptyString,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)NULL);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>Bind(wxEVT_TEXT_ENTER,<sp/>&amp;<ref refid="class_d_t_s_x_m_l_combo_box_1aeec14b4880ff9d69bb1b19a4549e082c" kindref="member">DTSXMLComboBox::HandleEvent</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>Bind(wxEVT_COMBOBOX,<sp/>&amp;<ref refid="class_d_t_s_x_m_l_combo_box_1aeec14b4880ff9d69bb1b19a4549e082c" kindref="member">DTSXMLComboBox::HandleEvent</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>Bind(wxEVT_COMBOBOX_DROPDOWN,<sp/>&amp;<ref refid="class_d_t_s_x_m_l_combo_box_1aeec14b4880ff9d69bb1b19a4549e082c" kindref="member">DTSXMLComboBox::HandleEvent</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>Bind(wxEVT_COMMAND_TEXT_UPDATED,<sp/>&amp;<ref refid="class_d_t_s_x_m_l_combo_box_1aeec14b4880ff9d69bb1b19a4549e082c" kindref="member">DTSXMLComboBox::HandleEvent</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="class_d_t_s_x_m_l_combo_box_1a3f983fc429c2fa50b9b46d7c5fa0538d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*<ref refid="class_d_t_s_x_m_l_combo_box_1a3f983fc429c2fa50b9b46d7c5fa0538d" kindref="member">DTSXMLComboBox::GetXMLDoc</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString&amp;<sp/>val,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_node<sp/>*xn)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*xmldoc<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">curl_post<sp/>*post;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">curlbuf<sp/>*cbuf;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_d_t_s_x_m_l_combo_box_1afa4ceb66dab1fc8beda14047dfb3d1e6" kindref="member">getpost</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>post<sp/>=<sp/><ref refid="class_d_t_s_x_m_l_combo_box_1afa4ceb66dab1fc8beda14047dfb3d1e6" kindref="member">getpost</ref>(val);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(cbuf<sp/>=<sp/>curl_posturl(url,<sp/>NULL,<sp/>post,<sp/>NULL,<sp/>NULL)))<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>xmldoc<sp/>=<sp/>curl_buf2xml(cbuf);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(cbuf);</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>xp<sp/>=<sp/>xml_xpath(xmldoc,<sp/>xpath,<sp/>NULL);</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!xp<sp/>||<sp/>!xml_nodecount(xp))<sp/>{</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(xp)<sp/>{</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(xp);</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(xn<sp/>=<sp/>xml_getfirstnode(xp,<sp/>&amp;iter);<sp/>xn;<sp/>xn<sp/>=<sp/>xml_getnextnode(iter))<sp/>{</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Append(xn-&gt;value,<sp/>xn);</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(iter);</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xp);</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight></codeline>
-<codeline lineno="86" refid="class_d_t_s_x_m_l_combo_box_1a026821df9109a287aff26b12859fbf7c" refkind="member"><highlight class="normal"><ref refid="class_d_t_s_x_m_l_combo_box_1a026821df9109a287aff26b12859fbf7c" kindref="member">DTSXMLComboBox::~DTSXMLComboBox</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>EmptyServerList();</highlight></codeline>
-<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90" refid="class_d_t_s_x_m_l_combo_box_1ab73ab96a2dddeb756b984db6e0fa9106" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1ab73ab96a2dddeb756b984db6e0fa9106" kindref="member">DTSXMLComboBox::HasXMLList</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sflags<sp/>&amp;<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520ae6478ae16db29ffeaa6fee0389fb2057" kindref="member">DTSAPPTB_SERVER_POP</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>xmldoc;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="class_d_t_s_x_m_l_combo_box_1acf258ad2d53caf6b87d48cbb53e32a65" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1acf258ad2d53caf6b87d48cbb53e32a65" kindref="member">DTSXMLComboBox::AppendXMLNodes</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_doc<sp/>*xmldoc)<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_search<sp/>*xp;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_node<sp/>*xn;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*iter;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>xp<sp/>=<sp/>xml_xpath(xmldoc,<sp/>xpath,<sp/>NULL);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!xp<sp/>||<sp/>!xml_nodecount(xp))<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(xp)<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(xp);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(xn<sp/>=<sp/>xml_getfirstnode(xp,<sp/>&amp;iter);<sp/>xn;<sp/>xn<sp/>=<sp/>xml_getnextnode(iter))<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Append(xn-&gt;value,<sp/>xn);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(iter);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xp);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="class_d_t_s_x_m_l_combo_box_1a026821df9109a287aff26b12859fbf7c" refkind="member"><highlight class="normal"><ref refid="class_d_t_s_x_m_l_combo_box_1a026821df9109a287aff26b12859fbf7c" kindref="member">DTSXMLComboBox::~DTSXMLComboBox</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1a5294d28f4b31cbc166cd984f0babb6b3" kindref="member">EmptyServerList</ref>();</highlight></codeline>
 <codeline lineno="96"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DTSXMLComboBox::HandleEvent(wxCommandEvent&amp;<sp/>event)<sp/>{</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*xmldoc;</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>wxString<sp/>newval;</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>etype<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.GetEventType();</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>wxString<sp/>val;</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_node<sp/>*xn<sp/>=<sp/>NULL;</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"></highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>val<sp/>=<sp/>GetValue();</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((sflags<sp/>&amp;<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520ae6478ae16db29ffeaa6fee0389fb2057" kindref="member">DTSAPPTB_SERVER_POP</ref>)<sp/>&amp;&amp;<sp/>!(sflags<sp/>&amp;<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" kindref="member">DTSAPPTB_SERVER_SET</ref>)<sp/>&amp;&amp;<sp/>(etype<sp/>==<sp/>wxEVT_COMMAND_TEXT_UPDATED))<sp/>{</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sflags<sp/>&amp;=<sp/>~DTSAPPTB_SERVER_POP;</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Skip();</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((sflags<sp/>&amp;<sp/>DTSAPPTB_SERVER_SET)<sp/>&amp;&amp;<sp/>(etype<sp/>==<sp/>wxEVT_COMMAND_TEXT_UPDATED))<sp/>{</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sflags<sp/>&amp;=<sp/>~DTSAPPTB_SERVER_SET;</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Skip();</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(sflags<sp/>&amp;<sp/>DTSAPPTB_SERVER_POP)<sp/>&amp;&amp;<sp/>!(sflags<sp/>&amp;<sp/>DTSAPPTB_SERVER_SET)<sp/>&amp;&amp;<sp/>(etype<sp/>==<sp/>wxEVT_COMBOBOX_DROPDOWN)<sp/>&amp;&amp;<sp/>(val.Len()<sp/>&lt;<sp/>minlen))<sp/>{</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sflags<sp/>&amp;=<sp/>~DTSAPPTB_SERVER_SET;</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EmptyServerList();</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Append(wxEmptyString,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)NULL);</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Dismiss();</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Skip();</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(sflags<sp/>&amp;<sp/>DTSAPPTB_SERVER_POP)<sp/>&amp;&amp;<sp/>(etype<sp/>==<sp/>wxEVT_COMBOBOX_DROPDOWN)<sp/>&amp;&amp;<sp/>(val.Len()<sp/>&gt;=<sp/>minlen))<sp/>{</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Dismiss();</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EmptyServerList();</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sflags<sp/>&amp;=<sp/>~(DTSAPPTB_SERVER_SET<sp/>|<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520ae6478ae16db29ffeaa6fee0389fb2057" kindref="member">DTSAPPTB_SERVER_POP</ref>);</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((xmldoc<sp/>=<sp/>GetXMLDoc(val,<sp/>xn)))<sp/>{</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!AppendXMLNodes(xmldoc))<sp/>{</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Append(wxEmptyString,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)NULL);</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sflags<sp/>&amp;=<sp/>~(DTSAPPTB_SERVER_POP<sp/>|<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" kindref="member">DTSAPPTB_SERVER_SET</ref>);</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sflags<sp/>|=<sp/>(DTSAPPTB_SERVER_POP<sp/>|<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" kindref="member">DTSAPPTB_SERVER_SET</ref>);</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Skip();</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Popup();</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Append(wxEmptyString,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)NULL);</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sflags<sp/>&amp;=<sp/>~(DTSAPPTB_SERVER_POP<sp/>|<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" kindref="member">DTSAPPTB_SERVER_SET</ref>);</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(sflags<sp/>&amp;<sp/>DTSAPPTB_SERVER_POP)<sp/>&amp;&amp;<sp/>(etype<sp/>==<sp/>wxEVT_COMBOBOX_DROPDOWN))<sp/>{</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EmptyServerList();</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Append(wxEmptyString,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)NULL);</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Dismiss();</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((sflags<sp/>&amp;<sp/>DTSAPPTB_SERVER_POP)<sp/>&amp;&amp;<sp/>etype<sp/>==<sp/>wxEVT_COMBOBOX)<sp/>{</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*Windows<sp/>Barfs<sp/>if<sp/>you<sp/>change<sp/>the<sp/>value*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__WIN332</highlight></codeline>
-<codeline lineno="144"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sflags<sp/>|=<sp/>(DTSAPPTB_SERVER_POP<sp/>|<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" kindref="member">DTSAPPTB_SERVER_SET</ref>);</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
-<codeline lineno="146"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sflags<sp/>|=<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" kindref="member">DTSAPPTB_SERVER_SET</ref>;</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>__WIN32</highlight></codeline>
-<codeline lineno="148"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Skip();</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(etype<sp/>!=<sp/>wxEVT_COMBOBOX_DROPDOWN)<sp/>{</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Skip();</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"></highlight></codeline>
-<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>DTSXMLComboBox::EmptyServerList()<sp/>{</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data;</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/>cnt;</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"></highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>cnt<sp/>=<sp/>GetCount();</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i<sp/>&lt;<sp/>cnt;i++)<sp/>{</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((data<sp/>=<sp/>GetClientData(i)))<sp/>{</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(data);</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetClientData(i,<sp/>NULL);</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>Clear();</highlight></codeline>
-<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98" refid="class_d_t_s_x_m_l_combo_box_1ab73ab96a2dddeb756b984db6e0fa9106" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1ab73ab96a2dddeb756b984db6e0fa9106" kindref="member">DTSXMLComboBox::HasXMLList</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>&amp;<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520ae6478ae16db29ffeaa6fee0389fb2057" kindref="member">DTSAPPTB_SERVER_POP</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="class_d_t_s_x_m_l_combo_box_1aeec14b4880ff9d69bb1b19a4549e082c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1aeec14b4880ff9d69bb1b19a4549e082c" kindref="member">DTSXMLComboBox::HandleEvent</ref>(wxCommandEvent&amp;<sp/>event)<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*xmldoc;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>wxString<sp/>newval;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>etype<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.GetEventType();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>wxString<sp/>val;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_node<sp/>*xn<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>val<sp/>=<sp/>GetValue();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>&amp;<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520ae6478ae16db29ffeaa6fee0389fb2057" kindref="member">DTSAPPTB_SERVER_POP</ref>)<sp/>&amp;&amp;<sp/>!(<ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>&amp;<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" kindref="member">DTSAPPTB_SERVER_SET</ref>)<sp/>&amp;&amp;<sp/>(etype<sp/>==<sp/>wxEVT_COMMAND_TEXT_UPDATED))<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>&amp;=<sp/>~DTSAPPTB_SERVER_POP;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Skip();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>&amp;<sp/>DTSAPPTB_SERVER_SET)<sp/>&amp;&amp;<sp/>(etype<sp/>==<sp/>wxEVT_COMMAND_TEXT_UPDATED))<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>&amp;=<sp/>~DTSAPPTB_SERVER_SET;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Skip();</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(<ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>&amp;<sp/>DTSAPPTB_SERVER_POP)<sp/>&amp;&amp;<sp/>!(<ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>&amp;<sp/>DTSAPPTB_SERVER_SET)<sp/>&amp;&amp;<sp/>(etype<sp/>==<sp/>wxEVT_COMBOBOX_DROPDOWN)<sp/>&amp;&amp;<sp/>(val.Len()<sp/>&lt;<sp/><ref refid="class_d_t_s_x_m_l_combo_box_1a9ce866cc4f74a2447db49cf23968e351" kindref="member">minlen</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>&amp;=<sp/>~DTSAPPTB_SERVER_SET;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1a5294d28f4b31cbc166cd984f0babb6b3" kindref="member">EmptyServerList</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Append(wxEmptyString,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)NULL);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Dismiss();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Skip();</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(<ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>&amp;<sp/>DTSAPPTB_SERVER_POP)<sp/>&amp;&amp;<sp/>(etype<sp/>==<sp/>wxEVT_COMBOBOX_DROPDOWN)<sp/>&amp;&amp;<sp/>(val.Len()<sp/>&gt;=<sp/><ref refid="class_d_t_s_x_m_l_combo_box_1a9ce866cc4f74a2447db49cf23968e351" kindref="member">minlen</ref>))<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Dismiss();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1a5294d28f4b31cbc166cd984f0babb6b3" kindref="member">EmptyServerList</ref>();</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>&amp;=<sp/>~(DTSAPPTB_SERVER_SET<sp/>|<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520ae6478ae16db29ffeaa6fee0389fb2057" kindref="member">DTSAPPTB_SERVER_POP</ref>);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((xmldoc<sp/>=<sp/><ref refid="class_d_t_s_x_m_l_combo_box_1a3f983fc429c2fa50b9b46d7c5fa0538d" kindref="member">GetXMLDoc</ref>(val,<sp/>xn)))<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_d_t_s_x_m_l_combo_box_1acf258ad2d53caf6b87d48cbb53e32a65" kindref="member">AppendXMLNodes</ref>(xmldoc))<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Append(wxEmptyString,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)NULL);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>&amp;=<sp/>~(DTSAPPTB_SERVER_POP<sp/>|<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" kindref="member">DTSAPPTB_SERVER_SET</ref>);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>|=<sp/>(DTSAPPTB_SERVER_POP<sp/>|<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" kindref="member">DTSAPPTB_SERVER_SET</ref>);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Skip();</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Popup();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Append(wxEmptyString,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)NULL);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>&amp;=<sp/>~(DTSAPPTB_SERVER_POP<sp/>|<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" kindref="member">DTSAPPTB_SERVER_SET</ref>);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(<ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>&amp;<sp/>DTSAPPTB_SERVER_POP)<sp/>&amp;&amp;<sp/>(etype<sp/>==<sp/>wxEVT_COMBOBOX_DROPDOWN))<sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1a5294d28f4b31cbc166cd984f0babb6b3" kindref="member">EmptyServerList</ref>();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Append(wxEmptyString,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)NULL);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Dismiss();</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>&amp;<sp/>DTSAPPTB_SERVER_POP)<sp/>&amp;&amp;<sp/>etype<sp/>==<sp/>wxEVT_COMBOBOX)<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*Windows<sp/>Barfs<sp/>if<sp/>you<sp/>change<sp/>the<sp/>value*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__WIN332</highlight></codeline>
+<codeline lineno="152"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>|=<sp/>(DTSAPPTB_SERVER_POP<sp/>|<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" kindref="member">DTSAPPTB_SERVER_SET</ref>);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight></codeline>
+<codeline lineno="154"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" kindref="member">sflags</ref><sp/>|=<sp/><ref refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" kindref="member">DTSAPPTB_SERVER_SET</ref>;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>__WIN32</highlight></codeline>
+<codeline lineno="156"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Skip();</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(etype<sp/>!=<sp/>wxEVT_COMBOBOX_DROPDOWN)<sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.Skip();</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="class_d_t_s_x_m_l_combo_box_1a5294d28f4b31cbc166cd984f0babb6b3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_x_m_l_combo_box_1a5294d28f4b31cbc166cd984f0babb6b3" kindref="member">DTSXMLComboBox::EmptyServerList</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/>cnt;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>cnt<sp/>=<sp/>GetCount();</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i<sp/>&lt;<sp/>cnt;i++)<sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((data<sp/>=<sp/>GetClientData(i)))<sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(data);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SetClientData(i,<sp/>NULL);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>Clear();</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp"/>
   </compounddef>

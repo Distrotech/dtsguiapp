@@ -17,6 +17,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="145" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="145" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_tab_window_event_1a3d14f7f7f09cc1d16fc2ddcb8dd36cb9" compoundref="_d_t_s_tree_window_8cpp" startline="825" endline="832">DTSTabWindowEvent</referencedby>
+        <referencedby refid="class_d_t_s_tab_window_event_1a0df6bfbb94e538ba1ab10aea9915aa4c" compoundref="_d_t_s_tree_window_8cpp" startline="834" endline="838">~DTSTabWindowEvent</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_tab_window_event_1a7e79f616df8c47b3ce95535b0d13fd76" prot="private" static="no" mutable="no">
         <type><ref refid="class_d_t_s_tab_window" kindref="compound">DTSTabWindow</ref> *</type>
@@ -30,6 +32,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="146" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="146" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_tab_window_event_1a3d14f7f7f09cc1d16fc2ddcb8dd36cb9" compoundref="_d_t_s_tree_window_8cpp" startline="825" endline="832">DTSTabWindowEvent</referencedby>
+        <referencedby refid="class_d_t_s_tab_window_event_1a0d4bd622b3c1ef90ca87cd6b052b4f76" compoundref="_d_t_s_tree_window_8cpp" startline="840" endline="857">OnButton</referencedby>
+        <referencedby refid="class_d_t_s_tab_window_event_1a0ef3c51fe26036ac2cb0353940307eb6" compoundref="_d_t_s_tree_window_8cpp" startline="864" endline="874">PageChange</referencedby>
+        <referencedby refid="class_d_t_s_tab_window_event_1a373ea755544153574d3d93018ebc2f9c" compoundref="_d_t_s_tree_window_8cpp" startline="876" endline="886">PageChanged</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -54,7 +60,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="138" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="811" bodyend="818"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="138" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="825" bodyend="832"/>
+        <references refid="class_d_t_s_tab_window_event_1a4d7e06b09353386e0c891fb2f5c82b55" compoundref="_d_t_s_tree_window_8h" startline="145">data</references>
+        <references refid="class_d_t_s_tab_window_event_1a7e79f616df8c47b3ce95535b0d13fd76" compoundref="_d_t_s_tree_window_8h" startline="146">tw</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_tab_window_event_1a0df6bfbb94e538ba1ab10aea9915aa4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -67,7 +75,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="139" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="820" bodyend="824"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="139" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="834" bodyend="838"/>
+        <references refid="class_d_t_s_tab_window_event_1a4d7e06b09353386e0c891fb2f5c82b55" compoundref="_d_t_s_tree_window_8h" startline="145">data</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_tab_window_event_1a0ef3c51fe26036ac2cb0353940307eb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -84,7 +93,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="140" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="850" bodyend="860"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="140" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="864" bodyend="874"/>
+        <references refid="class_d_t_s_tab_page_1a433bdbb8af0ded1fb884b45c5d9259a9" compoundref="_d_t_s_panel_8cpp" startline="945" endline="960">DTSTabPage::ConfigPane</references>
+        <references refid="class_d_t_s_tab_window_event_1a7e79f616df8c47b3ce95535b0d13fd76" compoundref="_d_t_s_tree_window_8h" startline="146">tw</references>
+        <referencedby refid="class_d_t_s_tab_window_1a7e438e77899502fc316577e972d9ef28" compoundref="_d_t_s_tree_window_8cpp" startline="941" endline="979">DTSTabWindow::Show</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_tab_window_event_1a373ea755544153574d3d93018ebc2f9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -101,7 +113,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="141" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="862" bodyend="872"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="141" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="876" bodyend="886"/>
+        <references refid="class_d_t_s_tab_window_event_1a7e79f616df8c47b3ce95535b0d13fd76" compoundref="_d_t_s_tree_window_8h" startline="146">tw</references>
+        <referencedby refid="class_d_t_s_tab_window_1a7e438e77899502fc316577e972d9ef28" compoundref="_d_t_s_tree_window_8cpp" startline="941" endline="979">DTSTabWindow::Show</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_tab_window_event_1af41c21b5d534856a22eb64ccf1281807" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -118,7 +132,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="142" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="846" bodyend="848"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="142" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="860" bodyend="862"/>
+        <referencedby refid="class_d_t_s_tab_window_1af62011731508681950ec835f6293095b" compoundref="_d_t_s_tree_window_8cpp" startline="888" endline="910">DTSTabWindow::DTSTabWindow</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_tab_window_event_1a0d4bd622b3c1ef90ca87cd6b052b4f76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -135,7 +150,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="143" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="826" bodyend="843"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="143" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="840" bodyend="857"/>
+        <references refid="class_d_t_s_tab_window_event_1a7e79f616df8c47b3ce95535b0d13fd76" compoundref="_d_t_s_tree_window_8h" startline="146">tw</references>
+        <references refid="class_d_t_s_tab_window_1aa52e98a59b0ad81e28f5463be5e85051" compoundref="_d_t_s_tree_window_8cpp" startline="919" endline="939">DTSTabWindow::Undo</references>
+        <references refid="class_d_t_s_panel_1adc5131960a24dfa65adba935a1be0f79" compoundref="_d_t_s_panel_8cpp" startline="746" endline="775">DTSPanel::Update_XML</references>
+        <references refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302ecadb8742f8472eb90558cfbf8e3914553b" compoundref="dtsgui_8h" startline="210">wx_PANEL_EVENT_BUTTON_NO</references>
+        <references refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca6ce91176e6c929e87d7acbd000d07f79" compoundref="dtsgui_8h" startline="208">wx_PANEL_EVENT_BUTTON_YES</references>
+        <referencedby refid="class_d_t_s_tab_window_1a7e438e77899502fc316577e972d9ef28" compoundref="_d_t_s_tree_window_8cpp" startline="941" endline="979">DTSTabWindow::Show</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -143,25 +164,82 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="134">
+      <node id="186">
         <label>wxEvtHandler</label>
       </node>
-      <node id="133">
+      <node id="185">
         <label>DTSTabWindowEvent</label>
         <link refid="class_d_t_s_tab_window_event"/>
-        <childnode refid="134" relation="public-inheritance">
+        <childnode refid="186" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="136">
+      <node id="190">
+        <label>DTSObject</label>
+        <link refid="class_d_t_s_object"/>
+        <childnode refid="191" relation="public-inheritance">
+        </childnode>
+        <childnode refid="192" relation="usage">
+          <edgelabel>frame</edgelabel>
+        </childnode>
+      </node>
+      <node id="188">
         <label>wxEvtHandler</label>
       </node>
-      <node id="135">
+      <node id="189">
+        <label>DTSTabWindow</label>
+        <link refid="class_d_t_s_tab_window"/>
+        <childnode refid="190" relation="public-inheritance">
+        </childnode>
+        <childnode refid="196" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="191">
+        <label>wxWindow</label>
+      </node>
+      <node id="193">
+        <label>wxFrame</label>
+      </node>
+      <node id="194">
+        <label>dtsgui</label>
+        <link refid="classdtsgui"/>
+        <childnode refid="192" relation="usage">
+          <edgelabel>appframe</edgelabel>
+        </childnode>
+        <childnode refid="194" relation="usage">
+          <edgelabel>cb</edgelabel>
+        </childnode>
+        <childnode refid="195" relation="usage">
+          <edgelabel>wsize</edgelabel>
+          <edgelabel>wpos</edgelabel>
+        </childnode>
+      </node>
+      <node id="195">
+        <label>point</label>
+        <link refid="structpoint"/>
+      </node>
+      <node id="192">
+        <label>DTSFrame</label>
+        <link refid="class_d_t_s_frame"/>
+        <childnode refid="193" relation="public-inheritance">
+        </childnode>
+        <childnode refid="194" relation="usage">
+          <edgelabel>dtsgui</edgelabel>
+          <edgelabel>tbcb</edgelabel>
+        </childnode>
+      </node>
+      <node id="187">
         <label>DTSTabWindowEvent</label>
         <link refid="class_d_t_s_tab_window_event"/>
-        <childnode refid="136" relation="public-inheritance">
+        <childnode refid="188" relation="public-inheritance">
         </childnode>
+        <childnode refid="189" relation="usage">
+          <edgelabel>tw</edgelabel>
+        </childnode>
+      </node>
+      <node id="196">
+        <label>wxNotebook</label>
       </node>
     </collaborationgraph>
     <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="136" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="136" bodyend="147"/>

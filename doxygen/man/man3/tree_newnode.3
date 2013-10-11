@@ -1,0 +1,176 @@
+.TH "tree_newnode" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+tree_newnode \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DTSTreeWindow\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTS_OJBREF_CLASS\fP (\fBtree_newnode\fP)"
+.br
+.ti -1c
+.RI "\fBtree_newnode\fP (\fBdtsgui_treeview\fP tree, \fBdtsgui_treenode\fP \fBtn\fP, const char *\fBxpath\fP, const char *\fBnode\fP, const char *\fBvitem\fP, const char *\fBtattr\fP, int nid, int \fBflags\fP, \fBdtsgui_xmltreenode_cb\fP \fBnode_cb\fP, void *\fBdata\fP, \fBdtsgui_treeviewpanel_cb\fP \fBp_cb\fP)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBhandle_newtreenode_cb\fP (class \fBdtsgui\fP *\fBdtsgui\fP, \fBdtsgui_pane\fP p, int \fBtype\fP, int event, void *\fBdata\fP)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBhandle_newtreenode\fP (class \fBdtsgui\fP *\fBdtsgui\fP, \fBDTSPanel\fP *dp)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "void * \fBdata\fP"
+.br
+.ti -1c
+.RI "\fBdtsgui_treeview\fP \fBtv\fP"
+.br
+.ti -1c
+.RI "\fBdtsgui_treenode\fP \fBtn\fP"
+.br
+.ti -1c
+.RI "\fBdtsgui_xmltreenode_cb\fP \fBnode_cb\fP"
+.br
+.ti -1c
+.RI "\fBdtsgui_treeviewpanel_cb\fP \fBp_cb\fP"
+.br
+.ti -1c
+.RI "const char * \fBxpath\fP"
+.br
+.ti -1c
+.RI "const char * \fBnode\fP"
+.br
+.ti -1c
+.RI "const char * \fBvitem\fP"
+.br
+.ti -1c
+.RI "const char * \fBtattr\fP"
+.br
+.ti -1c
+.RI "int \fBtype\fP"
+.br
+.ti -1c
+.RI "int \fBflags\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 33 of file DTSTreeWindow\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "tree_newnode::tree_newnode (\fBdtsgui_treeview\fPtree, \fBdtsgui_treenode\fPtn, const char *xpath, const char *node, const char *vitem, const char *tattr, intnid, intflags, \fBdtsgui_xmltreenode_cb\fPnode_cb, void *data, \fBdtsgui_treeviewpanel_cb\fPp_cb)"
+
+.PP
+Definition at line 66 of file DTSTreeWindow\&.cpp\&.
+.PP
+References data, flags, node_cb, p_cb, tn, tv, and type\&.
+.PP
+Referenced by DTS_C_API::dtsgui_newxmltreenode()\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "tree_newnode::DTS_OJBREF_CLASS (\fBtree_newnode\fP)"
+
+.SS "int tree_newnode::handle_newtreenode (class \fBdtsgui\fP *dtsgui, \fBDTSPanel\fP *dp)\fC [private]\fP"
+
+.PP
+Definition at line 103 of file DTSTreeWindow\&.cpp\&.
+.PP
+References DTSDVMCtrl::AppendContainer(), DTSDVMCtrl::AppendItem(), data, DTS_TREE_NEW_NODE_CONTAINER, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, flags, DTSTreeWindow::GetTreeCtrl(), node, node_cb, p_cb, DTSPanel::Panel2XML(), DTSTreeWindow::Select(), DTSDVMListStore::SetXMLData(), tattr, tn, tv, type, vitem, and xpath\&.
+.PP
+Referenced by handle_newtreenode_cb()\&.
+.SS "int tree_newnode::handle_newtreenode_cb (class \fBdtsgui\fP *dtsgui, \fBdtsgui_pane\fPp, inttype, intevent, void *data)\fC [static]\fP"
+
+.PP
+Definition at line 85 of file DTSTreeWindow\&.cpp\&.
+.PP
+References handle_newtreenode(), wx_PANEL_EVENT_BUTTON, and wx_PANEL_EVENT_BUTTON_YES\&.
+.PP
+Referenced by DTS_C_API::dtsgui_newxmltreenode()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "void* tree_newnode::data\fC [private]\fP"
+
+.PP
+Definition at line 41 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtreenode(), and tree_newnode()\&.
+.SS "int tree_newnode::flags\fC [private]\fP"
+
+.PP
+Definition at line 51 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtreenode(), and tree_newnode()\&.
+.SS "const char* tree_newnode::node\fC [private]\fP"
+
+.PP
+Definition at line 47 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtreenode()\&.
+.SS "\fBdtsgui_xmltreenode_cb\fP tree_newnode::node_cb\fC [private]\fP"
+
+.PP
+Definition at line 44 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtreenode(), and tree_newnode()\&.
+.SS "\fBdtsgui_treeviewpanel_cb\fP tree_newnode::p_cb\fC [private]\fP"
+
+.PP
+Definition at line 45 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtreenode(), and tree_newnode()\&.
+.SS "const char* tree_newnode::tattr\fC [private]\fP"
+
+.PP
+Definition at line 49 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtreenode()\&.
+.SS "\fBdtsgui_treenode\fP tree_newnode::tn\fC [private]\fP"
+
+.PP
+Definition at line 43 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtreenode(), and tree_newnode()\&.
+.SS "\fBdtsgui_treeview\fP tree_newnode::tv\fC [private]\fP"
+
+.PP
+Definition at line 42 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtreenode(), and tree_newnode()\&.
+.SS "int tree_newnode::type\fC [private]\fP"
+
+.PP
+Definition at line 50 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtreenode(), and tree_newnode()\&.
+.SS "const char* tree_newnode::vitem\fC [private]\fP"
+
+.PP
+Definition at line 48 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtreenode()\&.
+.SS "const char* tree_newnode::xpath\fC [private]\fP"
+
+.PP
+Definition at line 46 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtreenode()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

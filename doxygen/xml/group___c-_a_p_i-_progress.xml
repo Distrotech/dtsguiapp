@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="group___c-_a_p_i-_progress" kind="group">
     <compoundname>C-API-Progress</compoundname>
-    <title>C API Progress Dialog Functions</title>
+    <title>Progress dialog interface.</title>
       <sectiondef kind="func">
       <memberdef kind="function" id="group___c-_a_p_i-_progress_1gac4185ec71523c1735f1da2cb6dc876d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -62,7 +62,9 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="983" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="983" bodyend="986"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1027" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1027" bodyend="1030"/>
+        <references refid="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" compoundref="_d_t_s_app_8cpp" startline="137" endline="139">dtsgui::GetFrame</references>
+        <references refid="class_d_t_s_frame_1a55bbe89f24dc6ad3fbe78589bcbd9686" compoundref="_d_t_s_frame_8cpp" startline="129" endline="149">DTSFrame::StartProgress</references>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_progress_1gabda6276de46c13fb4e0831bb8c8d1ec1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -111,7 +113,9 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="998" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="998" bodyend="1001"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1042" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1042" bodyend="1045"/>
+        <references refid="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" compoundref="_d_t_s_app_8cpp" startline="137" endline="139">dtsgui::GetFrame</references>
+        <references refid="class_d_t_s_frame_1a3b057f8c85958444049063e75b602108" compoundref="_d_t_s_frame_8cpp" startline="151" endline="164">DTSFrame::UpdateProgress</references>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_progress_1ga7bd617a3f00cb21ae6df7a37eba0dc7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -160,7 +164,9 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1010" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1010" bodyend="1013"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1054" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1054" bodyend="1057"/>
+        <references refid="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" compoundref="_d_t_s_app_8cpp" startline="137" endline="139">dtsgui::GetFrame</references>
+        <references refid="class_d_t_s_frame_1a8b1f1c4cf298ef550edec3fa3bf96738" compoundref="_d_t_s_frame_8cpp" startline="166" endline="179">DTSFrame::IncProgress</references>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_progress_1ga528f638b6cb7b0d813e350a0b0c7262c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -186,12 +192,14 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1019" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1019" bodyend="1022"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1063" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1063" bodyend="1066"/>
+        <references refid="class_d_t_s_frame_1aa33b0ba3ce50a7ec4434a78c2be498b7" compoundref="_d_t_s_frame_8cpp" startline="181" endline="190">DTSFrame::EndProgress</references>
+        <references refid="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" compoundref="_d_t_s_app_8cpp" startline="137" endline="139">dtsgui::GetFrame</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>C API for managing progress dialog</para><para>Resources controlling and manipulating the progress dialog. </para>    </briefdescription>
+<para>Popup dialog containing a progress bar and posible cancel button. </para>    </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para><xrefsect id="todo_1_todo000008"><xreftitle>Todo</xreftitle><xrefdescription><para>Allow multiple instances of progress dialog not only the single interface at present. </para></xrefdescription></xrefsect></para>    </detaileddescription>
   </compounddef>
 </doxygen>

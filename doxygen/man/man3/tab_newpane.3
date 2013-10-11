@@ -1,0 +1,176 @@
+.TH "tab_newpane" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+tab_newpane \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DTSTreeWindow\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTS_OJBREF_CLASS\fP (\fBtab_newpane\fP)"
+.br
+.ti -1c
+.RI "\fBtab_newpane\fP (\fBDTSTabWindow\fP *\fBtabv\fP, const char *\fBxpath\fP, const char *\fBnode\fP, const char *\fBvitem\fP, const char *\fBtattr\fP, \fBdtsgui_tabpane_newdata_cb\fP \fBdata_cb\fP, \fBdtsgui_tabpanel_cb\fP \fBcb\fP, void *\fBcdata\fP, struct xml_doc *\fBxmldoc\fP, void *\fBdata\fP)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBhandle_newtabpane_cb\fP (class \fBdtsgui\fP *\fBdtsgui\fP, \fBdtsgui_pane\fP p, int type, int event, void *\fBdata\fP)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBhandle_newtabpane\fP (class \fBdtsgui\fP *\fBdtsgui\fP, \fBDTSPanel\fP *dp)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "struct xml_doc * \fBxmldoc\fP"
+.br
+.ti -1c
+.RI "\fBDTSTabWindow\fP * \fBtabv\fP"
+.br
+.ti -1c
+.RI "\fBdtsgui_tabpanel_cb\fP \fBcb\fP"
+.br
+.ti -1c
+.RI "\fBdtsgui_tabpane_newdata_cb\fP \fBdata_cb\fP"
+.br
+.ti -1c
+.RI "const char * \fBxpath\fP"
+.br
+.ti -1c
+.RI "const char * \fBnode\fP"
+.br
+.ti -1c
+.RI "const char * \fBvitem\fP"
+.br
+.ti -1c
+.RI "const char * \fBtattr\fP"
+.br
+.ti -1c
+.RI "void * \fBcdata\fP"
+.br
+.ti -1c
+.RI "void * \fBdata\fP"
+.br
+.ti -1c
+.RI "int \fBlast\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 54 of file DTSTreeWindow\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "tab_newpane::tab_newpane (\fBDTSTabWindow\fP *tabv, const char *xpath, const char *node, const char *vitem, const char *tattr, \fBdtsgui_tabpane_newdata_cb\fPdata_cb, \fBdtsgui_tabpanel_cb\fPcb, void *cdata, struct xml_doc *xmldoc, void *data)"
+
+.PP
+Definition at line 145 of file DTSTreeWindow\&.cpp\&.
+.PP
+References cb, cdata, data, data_cb, last, tabv, and xmldoc\&.
+.PP
+Referenced by DTS_C_API::dtsgui_newxmltabpane()\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "tab_newpane::DTS_OJBREF_CLASS (\fBtab_newpane\fP)"
+
+.SS "int tab_newpane::handle_newtabpane (class \fBdtsgui\fP *dtsgui, \fBDTSPanel\fP *dp)\fC [private]\fP"
+
+.PP
+Definition at line 216 of file DTSTreeWindow\&.cpp\&.
+.PP
+References cb, cdata, DTSTabWindow::CreateTab(), data, data_cb, DTSTabWindow::InsertTab(), last, node, DTSPanel::Panel2XML(), tabv, tattr, DTSTabWindow::Undo(), vitem, wx_PANEL_BUTTON_ACTION, xmldoc, and xpath\&.
+.PP
+Referenced by handle_newtabpane_cb()\&.
+.SS "int tab_newpane::handle_newtabpane_cb (class \fBdtsgui\fP *dtsgui, \fBdtsgui_pane\fPp, inttype, intevent, void *data)\fC [static]\fP"
+
+.PP
+Definition at line 198 of file DTSTreeWindow\&.cpp\&.
+.PP
+References handle_newtabpane(), wx_PANEL_EVENT_BUTTON, and wx_PANEL_EVENT_BUTTON_YES\&.
+.PP
+Referenced by DTS_C_API::dtsgui_newxmltabpane()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBdtsgui_tabpanel_cb\fP tab_newpane::cb\fC [private]\fP"
+
+.PP
+Definition at line 63 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtabpane(), and tab_newpane()\&.
+.SS "void* tab_newpane::cdata\fC [private]\fP"
+
+.PP
+Definition at line 69 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtabpane(), and tab_newpane()\&.
+.SS "void* tab_newpane::data\fC [private]\fP"
+
+.PP
+Definition at line 70 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtabpane(), and tab_newpane()\&.
+.SS "\fBdtsgui_tabpane_newdata_cb\fP tab_newpane::data_cb\fC [private]\fP"
+
+.PP
+Definition at line 64 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtabpane(), and tab_newpane()\&.
+.SS "int tab_newpane::last\fC [private]\fP"
+
+.PP
+Definition at line 71 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtabpane(), and tab_newpane()\&.
+.SS "const char* tab_newpane::node\fC [private]\fP"
+
+.PP
+Definition at line 66 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtabpane()\&.
+.SS "\fBDTSTabWindow\fP* tab_newpane::tabv\fC [private]\fP"
+
+.PP
+Definition at line 62 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtabpane(), and tab_newpane()\&.
+.SS "const char* tab_newpane::tattr\fC [private]\fP"
+
+.PP
+Definition at line 68 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtabpane()\&.
+.SS "const char* tab_newpane::vitem\fC [private]\fP"
+
+.PP
+Definition at line 67 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtabpane()\&.
+.SS "struct xml_doc* tab_newpane::xmldoc\fC [private]\fP"
+
+.PP
+Definition at line 61 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtabpane(), and tab_newpane()\&.
+.SS "const char* tab_newpane::xpath\fC [private]\fP"
+
+.PP
+Definition at line 65 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by handle_newtabpane()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

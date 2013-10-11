@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="group___d_t_s-_a_p_p" kind="group">
+    <compoundname>DTS-APP</compoundname>
+    <title>Distrotech Server Configuration Application</title>
+    <innerfile refid="wxforms_8c">wxforms.c</innerfile>
+    <innergroup refid="group___d_t_s-_a_p_p-_wizard">Distrotech Application Wizard Interface</innergroup>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p_1ga063bbba7cc37af45b7989f2838fae1e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void xml_config</definition>
+        <argsstring>(struct xml_doc *xmldoc)</argsstring>
+        <name>xml_config</name>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xmldoc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="40" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="40" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct xml_doc *</type>
+        <definition>struct xml_doc* app_getxmldoc</definition>
+        <argsstring>(struct dtsgui *dtsgui)</argsstring>
+        <name>app_getxmldoc</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="48" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="48" bodyend="67"/>
+        <references refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" compoundref="wrapper_8cpp" startline="235" endline="237">dtsgui_userdata</references>
+        <references refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" compoundref="private_8h" startline="60">app_data::xmldoc</references>
+        <referencedby refid="private_8h_1a6d9d2b0105df87000cb2bdecbff91239" compoundref="netconfig_8c" startline="740" endline="769">advanced_config</referencedby>
+        <referencedby refid="private_8h_1a01bdf27a0760d9da4bb77918735171c1" compoundref="config_8c" startline="150" endline="187">export_config</referencedby>
+        <referencedby refid="private_8h_1abf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="145" endline="184">iface_config</referencedby>
+        <referencedby refid="private_8h_1aa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="325" endline="350">pbx_settings</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga0be336c09b5cd473a616326c4cb227d2" compoundref="wizard_8c" startline="481" endline="490">reconfig_wizard</referencedby>
+        <referencedby refid="private_8h_1abc9a4e54439d7a701992752ec7b3f6b9" compoundref="config_8c" startline="112" endline="148">view_config_conf</referencedby>
+        <referencedby refid="private_8h_1abe0b9ce2252ec72774af23a0ec71424f" compoundref="config_8c" startline="94" endline="110">view_config_xml</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p_1ga011cd0b131174029fed8babdf1c7a101" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void file_menu</definition>
+        <argsstring>(struct dtsgui *dtsgui)</argsstring>
+        <name>file_menu</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="69" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="69" bodyend="92"/>
+        <references refid="structapp__data_1a68690abb28e424749f67339ea3736a41" compoundref="private_8h" startline="65">app_data::c_open</references>
+        <references refid="group___c-_a_p_i-_menus_1ga58e38f8ef567c8f50e15a53507ee4a72" compoundref="wrapper_8cpp" startline="401" endline="404">dtsgui_close</references>
+        <references refid="group___c-_a_p_i-_menus_1gabf67f1b041be315b58ccacc7d193b273" compoundref="wrapper_8cpp" startline="383" endline="386">dtsgui_exit</references>
+        <references refid="group___c-_a_p_i-_menus_1gaf655828d94de128cfd8269d03d649092" compoundref="wrapper_8cpp" startline="433" endline="436">dtsgui_menusep</references>
+        <references refid="group___c-_a_p_i-_menus_1gadd0f3eab51bf576378a6438c3982fd48" compoundref="wrapper_8cpp" startline="316" endline="319">dtsgui_newmenu</references>
+        <references refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" compoundref="wrapper_8cpp" startline="365" endline="368">dtsgui_newmenucb</references>
+        <references refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" compoundref="wrapper_8cpp" startline="235" endline="237">dtsgui_userdata</references>
+        <references refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" compoundref="private_8h" startline="64">app_data::e_wiz</references>
+        <references refid="group___d_t_s-_a_p_p-_wizard_1ga126b309803052977061662f97fb9012a" compoundref="wizard_8c" startline="461" endline="479">editsys_wizard</references>
+        <references refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" compoundref="private_8h" startline="63">app_data::n_wiz</references>
+        <references refid="group___d_t_s-_a_p_p-_wizard_1ga56c78e0d32a18452dcea4f026de2c889" compoundref="wizard_8c" startline="436" endline="459">newsys_wizard</references>
+        <references refid="config_8c_1a72af4355dbc5afe93fef750a81a3e572" compoundref="config_8c" startline="27" endline="67">open_config</references>
+        <referencedby refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" compoundref="wxforms_8c" startline="110" endline="123">guiconfig_cb</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p_1gae1b0e521306d90ee09f460064c015b2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void help_menu</definition>
+        <argsstring>(struct dtsgui *dtsgui)</argsstring>
+        <name>help_menu</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="94" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="94" bodyend="108"/>
+        <references refid="group___c-_a_p_i-_menus_1gaf06c34986c04d800883694733554033e" compoundref="wrapper_8cpp" startline="418" endline="421">dtsgui_about</references>
+        <references refid="group___c-_a_p_i-_menus_1gaf655828d94de128cfd8269d03d649092" compoundref="wrapper_8cpp" startline="433" endline="436">dtsgui_menusep</references>
+        <references refid="group___c-_a_p_i-_menus_1gadd0f3eab51bf576378a6438c3982fd48" compoundref="wrapper_8cpp" startline="316" endline="319">dtsgui_newmenu</references>
+        <references refid="group___c-_a_p_i-_menus_1gabb8b44357ce2ce4a3fd028939cf8c700" compoundref="wrapper_8cpp" startline="338" endline="341">dtsgui_newmenuitem</references>
+        <references refid="group___c-_a_p_i-_panel_1gafb8efe017917a372826f7ddedb0e8bba" compoundref="wrapper_8cpp" startline="483" endline="486">dtsgui_textpane</references>
+        <references refid="private_8h_1a77cb81a619f8c9ccd83cdf1e7c97aae9" compoundref="testing_8c" startline="94" endline="105">test_menu</references>
+        <referencedby refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" compoundref="wxforms_8c" startline="110" endline="123">guiconfig_cb</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int guiconfig_cb</definition>
+        <argsstring>(struct dtsgui *dtsgui, void *data)</argsstring>
+        <name>guiconfig_cb</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="110" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="110" bodyend="123"/>
+        <references refid="private_8h_1ab33c9c3228455b45318900a842c7a693" compoundref="toolbar_8cpp" startline="111" endline="117">app_toolbar</references>
+        <references refid="config_8c_1a2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="189" endline="217">config_menu</references>
+        <references refid="group___c-_a_p_i_1ga1734b840fc0696b13d5b616df0ec3bbb" compoundref="wrapper_8cpp" startline="278" endline="281">dtsgui_setuptoolbar</references>
+        <references refid="group___d_t_s-_a_p_p_1ga011cd0b131174029fed8babdf1c7a101" compoundref="wxforms_8c" startline="69" endline="92">file_menu</references>
+        <references refid="group___d_t_s-_a_p_p_1gae1b0e521306d90ee09f460064c015b2b" compoundref="wxforms_8c" startline="94" endline="108">help_menu</references>
+        <referencedby refid="group___d_t_s-_a_p_p_1ga3c04138a5bfe5d72780bb7e82a18e627" compoundref="wxforms_8c" startline="137" endline="177">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p_1ga5fe0b449ba347b98cc9acad0f5608ca1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void free_appdata</definition>
+        <argsstring>(void *data)</argsstring>
+        <name>free_appdata</name>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="125" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="125" bodyend="135"/>
+        <references refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" compoundref="private_8h" startline="61">app_data::datadir</references>
+        <references refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" compoundref="private_8h" startline="60">app_data::xmldoc</references>
+        <referencedby refid="group___d_t_s-_a_p_p_1ga3c04138a5bfe5d72780bb7e82a18e627" compoundref="wxforms_8c" startline="137" endline="177">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p_1ga3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="137" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="137" bodyend="177"/>
+        <references refid="private_8h_1a48cc0a91e8f54c62f3341c21c8cc74e8" compoundref="private_8h" startline="24">DATA_DIR</references>
+        <references refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" compoundref="private_8h" startline="61">app_data::datadir</references>
+        <references refid="group___c-_a_p_i_1gacecdb36b65ac3d5522a419a6b69c9f7f" compoundref="wrapper_8cpp" startline="207" endline="209">dtsgui_config</references>
+        <references refid="group___c-_a_p_i_1ga3ac9d5ef153d17266a704a373d591962" compoundref="wrapper_8cpp" startline="222" endline="224">dtsgui_run</references>
+        <references refid="group___d_t_s-_a_p_p_1ga5fe0b449ba347b98cc9acad0f5608ca1" compoundref="wxforms_8c" startline="125" endline="135">free_appdata</references>
+        <references refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" compoundref="wxforms_8c" startline="110" endline="123">guiconfig_cb</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Multi platform GUI server management application. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

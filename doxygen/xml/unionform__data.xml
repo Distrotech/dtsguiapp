@@ -16,6 +16,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="39" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="classform__item_1a45b4a4db5526c1032f15ba20d3f28249" compoundref="pitems_8cpp" startline="144" endline="153">form_item::GetData</referencedby>
       </memberdef>
       <memberdef kind="variable" id="unionform__data_1a3dcf61d4a1bf598d238248b6a2fd84c0" prot="public" static="no" mutable="no">
         <type>class <ref refid="classxml__element" kindref="compound">xml_element</ref> *</type>
@@ -29,6 +30,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="40" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classform__item_1a1e08369cee96e1b5417c767be9b086ce" compoundref="pitems_8cpp" startline="134" endline="142">form_item::GetXMLData</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -36,14 +38,14 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="199">
+      <node id="293">
         <label>xml_element</label>
         <link refid="classxml__element"/>
       </node>
-      <node id="198">
+      <node id="292">
         <label>form_data</label>
         <link refid="unionform__data"/>
-        <childnode refid="199" relation="usage">
+        <childnode refid="293" relation="usage">
           <edgelabel>xml</edgelabel>
         </childnode>
       </node>

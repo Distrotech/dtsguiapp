@@ -1,4 +1,4 @@
-.TH "DTSTabPage" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "DTSTabPage" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -29,6 +29,19 @@ Inherits \fBDTSScrollPanel\fP\&.
 .RI "\fBDTSTabPage\fP & \fBoperator=\fP (const \fBDTSTabPage\fP &orig)"
 .br
 .in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdtsgui_tabpanel_cb\fP \fBcb\fP"
+.br
+.ti -1c
+.RI "void * \fBcdata\fP"
+.br
+.ti -1c
+.RI "bool \fBhasconfig\fP"
+.br
+.in -1c
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
@@ -38,27 +51,57 @@ Definition at line 142 of file DTSPanel\&.h\&.
 .SS "DTSTabPage::DTSTabPage (\fBwxBookCtrlBase\fP *parent, \fBDTSFrame\fP *frame = \fCNULL\fP, wxStringstatus = \fCwxEmptyString\fP, intbutmask = \fC0\fP, \fBdtsgui_tabpanel_cb\fPc_cb = \fCNULL\fP, void *c_data = \fCNULL\fP, struct xml_doc *xmldoc = \fCNULL\fP)"
 
 .PP
-Definition at line 903 of file DTSPanel\&.cpp\&.
+Definition at line 916 of file DTSPanel\&.cpp\&.
+.PP
+References cb, cdata, hasconfig, DTSPanel::SetTitle(), DTSObject::SetXMLDoc(), DTSObject::type, and wx_DTSPANEL_TAB\&.
 .SS "DTSTabPage::~DTSTabPage ()"
 
 .PP
-Definition at line 920 of file DTSPanel\&.cpp\&.
+Definition at line 933 of file DTSPanel\&.cpp\&.
+.PP
+References cdata, and DTSObject::refobj\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void DTSTabPage::ConfigPane ()"
 
 .PP
-Definition at line 932 of file DTSPanel\&.cpp\&.
+Definition at line 945 of file DTSPanel\&.cpp\&.
+.PP
+References cb, cdata, hasconfig, and DTSPanel::ShowPanel()\&.
+.PP
+Referenced by DTSTabWindowEvent::PageChange(), and DTSTabWindow::Show()\&.
 .SS "\fBDTSTabPage\fP & DTSTabPage::operator= (const \fBDTSTabPage\fP &orig)"
 
 .PP
-Definition at line 949 of file DTSPanel\&.cpp\&.
+Definition at line 962 of file DTSPanel\&.cpp\&.
+.PP
+References DTSPanelEvent::BindDTSEvent(), DTSPanel::button_mask, cb, cdata, DTSObject::dtsevthandler, DTSObject::frame, DTSObject::panel, DTSObject::refobj, DTSPanel::SetTitle(), DTSObject::status, and DTSObject::xmldoc\&.
 .SS "bool DTSTabPage::Show (boolshow)\fC [virtual]\fP"
 
 .PP
 Reimplemented from \fBDTSScrollPanel\fP\&.
 .PP
-Definition at line 928 of file DTSPanel\&.cpp\&.
+Definition at line 941 of file DTSPanel\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBdtsgui_tabpanel_cb\fP DTSTabPage::cb\fC [private]\fP"
+
+.PP
+Definition at line 150 of file DTSPanel\&.h\&.
+.PP
+Referenced by ConfigPane(), DTSTabPage(), and operator=()\&.
+.SS "void* DTSTabPage::cdata\fC [private]\fP"
+
+.PP
+Definition at line 151 of file DTSPanel\&.h\&.
+.PP
+Referenced by ConfigPane(), DTSTabPage(), operator=(), and ~DTSTabPage()\&.
+.SS "bool DTSTabPage::hasconfig\fC [private]\fP"
+
+.PP
+Definition at line 152 of file DTSPanel\&.h\&.
+.PP
+Referenced by ConfigPane(), and DTSTabPage()\&.
 
 .SH "Author"
 .PP 

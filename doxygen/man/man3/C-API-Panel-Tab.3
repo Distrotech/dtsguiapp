@@ -1,12 +1,10 @@
-.TH "C API Tab View Interface" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "Tab view panel interface." 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-C API Tab View Interface \- 
+Tab view panel interface. \- 
 .PP
-C API for managing tab view panels\&.
-.PP
-Resources controlling and manipulating tab view in the C API\&.  
+A tree view is a panel with tabs along the top and display area underneath\&.  
 
 .SS "Functions"
 
@@ -18,7 +16,7 @@ Resources controlling and manipulating tab view in the C API\&.
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBDTS_C_API::dtsgui_tabpage_insert\fP (\fBdtsgui_tabview\fP tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc, \fBdtsgui_tabpanel_cb\fP cb, void *cdata, int pos, int undo)"
 .br
-.RI "\fICreate and append a tab to the view\&. \fP"
+.RI "\fICreate and insert a tab in the view\&. \fP"
 .ti -1c
 .RI "void \fBDTS_C_API::dtsgui_newxmltabpane\fP (\fBdtsgui_tabview\fP tabv, \fBdtsgui_pane\fP p, const char *xpath, const char *node, const char *vitem, const char *tattr, \fBdtsgui_tabpane_newdata_cb\fP data_cb, \fBdtsgui_tabpanel_cb\fP cb, void *cdata, struct xml_doc *xmldoc, void *data)"
 .br
@@ -26,10 +24,18 @@ Resources controlling and manipulating tab view in the C API\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-C API for managing tab view panels\&.
-.PP
-Resources controlling and manipulating tab view in the C API\&. 
+A tree view is a panel with tabs along the top and display area underneath\&. 
 
+\fBTodo\fP
+.RS 4
+Implement a right click action to allow for deletion via a confirmation dialog\&. 
+.RE
+.PP
+\fBRemarks:\fP
+.RS 4
+The tab window allows grouping related panels together via the tab control when the tab is clicked its display area displays the panel associated with this control\&. 
+.RE
+.PP
 
 .SH "Function Documentation"
 .PP 
@@ -79,7 +85,11 @@ On win32 all tabs are configured when the view is activated\&.
 .PP
 
 .PP
-Definition at line 565 of file wrapper\&.cpp\&.
+Definition at line 588 of file wrapper\&.cpp\&.
+.PP
+References DTSTabWindow::CreateTab()\&.
+.PP
+Referenced by iface_config(), and pbx_settings()\&.
 .SS "void DTS_C_API::dtsgui_newxmltabpane (\fBdtsgui_tabview\fPtabv, \fBdtsgui_pane\fPp, const char *xpath, const char *node, const char *vitem, const char *tattr, \fBdtsgui_tabpane_newdata_cb\fPdata_cb, \fBdtsgui_tabpanel_cb\fPcb, void *cdata, struct xml_doc *xmldoc, void *data)"
 
 .PP
@@ -111,6 +121,8 @@ this callback helper is rather complex\&.
 .br
 \fIdata_cb\fP Callback to allow setting the data used in pane creation\&. 
 .br
+\fIcb\fP Callback to configure the pane\&. 
+.br
 \fIcdata\fP Referrenced object containing initial callback data\&. 
 .br
 \fIxmldoc\fP XML doc reference for creating the node / panel\&. 
@@ -125,11 +137,15 @@ Nothing is returned the callback is registered on the panel\&.
 .PP
 
 .PP
-Definition at line 621 of file wrapper\&.cpp\&.
+Definition at line 645 of file wrapper\&.cpp\&.
+.PP
+References tab_newpane::handle_newtabpane_cb(), and tab_newpane::tab_newpane()\&.
+.PP
+Referenced by network_iface_new_pane_cb()\&.
 .SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_tabpage_insert (\fBdtsgui_tabview\fPtv, const char *name, intbutmask, void *userdata, struct xml_doc *xmldoc, \fBdtsgui_tabpanel_cb\fPcb, void *cdata, intpos, intundo)"
 
 .PP
-Create and append a tab to the view\&. Insert a tab at the position specified and recreate the panel at position undo\&.
+Create and insert a tab in the view\&. Insert a tab at the position specified and recreate the panel at position undo\&.
 .PP
 \fBSee Also:\fP
 .RS 4
@@ -161,11 +177,22 @@ dtsgui_tabpage_newtabpage
 \fIcb\fP Callback called to configure the panel\&. 
 .br
 \fIcdata\fP Referenced object passed to the configuration callback\&. 
+.br
+\fIpos\fP Position to insert into 
+.br
+\fIundo\fP Delete and recreate the panel at this position 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+New Tab Pane 
 .RE
 .PP
 
 .PP
-Definition at line 593 of file wrapper\&.cpp\&.
+Definition at line 617 of file wrapper\&.cpp\&.
+.PP
+References DTSTabWindow::CreateTab()\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

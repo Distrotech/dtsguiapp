@@ -70,8 +70,7 @@ var hierarchy =
         ] ],
         [ "DTSTabWindow", "class_d_t_s_tab_window.html", null ],
         [ "DTSTreeWindow", "class_d_t_s_tree_window.html", null ]
-      ] ],
-      [ "DTSWindow", "class_d_t_s_window.html", null ]
+      ] ]
     ] ],
     [ "wxWizardPageSimple", null, [
       [ "DTSWizardWindow", "class_d_t_s_wizard_window.html", null ]

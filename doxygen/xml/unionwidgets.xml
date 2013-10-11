@@ -16,6 +16,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="44" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" compoundref="pitems_8cpp" startline="192" endline="219">form_item::GetValue</referencedby>
       </memberdef>
       <memberdef kind="variable" id="unionwidgets_1a9e5583bcc42f0273b9c6a1605e0e1b6d" prot="public" static="no" mutable="no">
         <type><ref refid="pitems_8h_1abd3381f4db4e2b967199254324c78f71" kindref="member">wxComboBox</ref> *</type>
@@ -29,6 +30,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="45" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="classform__item_1ad99d224a37a5bc6f99835afb2347fac8" compoundref="pitems_8cpp" startline="155" endline="174">form_item::Append</referencedby>
+        <referencedby refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" compoundref="pitems_8cpp" startline="192" endline="219">form_item::GetValue</referencedby>
+        <referencedby refid="classform__item_1a9f108735a3f81f0f419fd828a29b2938" compoundref="pitems_8cpp" startline="176" endline="186">form_item::SetSelection</referencedby>
       </memberdef>
       <memberdef kind="variable" id="unionwidgets_1aa5bb8e792fd60fca871e8782e39993cc" prot="public" static="no" mutable="no">
         <type><ref refid="pitems_8h_1aef96dbf274b0324394cd30671b01d2bb" kindref="member">wxCheckBox</ref> *</type>
@@ -42,6 +46,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="46" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" compoundref="pitems_8cpp" startline="192" endline="219">form_item::GetValue</referencedby>
       </memberdef>
       <memberdef kind="variable" id="unionwidgets_1a5dbc3a005c0d466449a1be8c20db8cfc" prot="public" static="no" mutable="no">
         <type>void *</type>
@@ -55,6 +60,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="47" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classform__item_1a9d5508fb933bef9f078f702338e3d166" compoundref="pitems_8cpp" startline="221" endline="223">form_item::GetWidget</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

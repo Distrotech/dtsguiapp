@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>DTS Application wxWidgets GUI Library: C API Progress Dialog Functions</title>
+<title>DTS Application wxWidgets GUI Library: Progress dialog interface.</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
@@ -86,7 +87,7 @@ $(document).ready(function(){initNavTree('group___c-_a_p_i-_progress.html','');}
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,11 +100,11 @@ $(document).ready(function(){initNavTree('group___c-_a_p_i-_progress.html','');}
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">C API Progress Dialog Functions</div>  </div>
-<div class="ingroups"><a class="el" href="group___c-_a_p_i.html">Library C API</a></div></div><!--header-->
+<div class="title">Progress dialog interface.</div>  </div>
+<div class="ingroups"><a class="el" href="group___c-_a_p_i.html">Distrotech GUI Library C API</a></div></div><!--header-->
 <div class="contents">
 
-<p>C API for managing progress dialogResources controlling and manipulating the progress dialog.  
+<p>Popup dialog containing a progress bar and posible cancel button.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -122,8 +123,8 @@ Functions</h2></td></tr>
 <tr class="separator:ga528f638b6cb7b0d813e350a0b0c7262c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>C API for managing progress dialog</p>
-<p>Resources controlling and manipulating the progress dialog. </p>
+<p>Popup dialog containing a progress bar and posible cancel button. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>Allow multiple instances of progress dialog not only the single interface at present. </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ga528f638b6cb7b0d813e350a0b0c7262c"></a>
 <div class="memitem">
@@ -148,7 +149,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l01019">1019</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l01063">1063</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_frame_8cpp_source.html#l00181">DTSFrame::EndProgress()</a>, and <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>.</p>
 
 </div>
 </div>
@@ -194,7 +197,9 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success may fail when the user presses cancel. </dd></dl>
 
-<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l01010">1010</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l01054">1054</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00166">DTSFrame::IncProgress()</a>.</p>
 
 </div>
 </div>
@@ -247,7 +252,9 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>zero on failure </dd></dl>
 
-<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00983">983</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l01027">1027</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00129">DTSFrame::StartProgress()</a>.</p>
 
 </div>
 </div>
@@ -293,7 +300,9 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success may fail when the user presses cancel. </dd></dl>
 
-<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00998">998</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l01042">1042</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00151">DTSFrame::UpdateProgress()</a>.</p>
 
 </div>
 </div>
@@ -302,7 +311,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 9 2013 22:32:56 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

@@ -1,4 +1,4 @@
-.TH "DTSTreeWindowEvent" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "DTSTreeWindowEvent" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -35,6 +35,41 @@ Inherits wxEvtHandler\&.
 .RI "void \fBTreeCallback\fP (const wxDataViewItem item, enum \fBtree_cbtype\fP cbtype)"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBSortParent\fP (const wxDataViewItem \fBparent\fP, int action)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "void * \fBdata\fP"
+.br
+.ti -1c
+.RI "\fBdtsgui_tree_cb\fP \fBtreecb\fP"
+.br
+.ti -1c
+.RI "\fBDTSTreeWindow\fP * \fBparent\fP"
+.br
+.ti -1c
+.RI "\fBDTSDVMListView\fP * \fBvm\fP"
+.br
+.ti -1c
+.RI "\fBDTSDVMCtrl\fP * \fBtree\fP"
+.br
+.ti -1c
+.RI "wxDataViewItem \fBa_item\fP"
+.br
+.ti -1c
+.RI "wxDataViewItem \fBa_cont\fP"
+.br
+.ti -1c
+.RI "class \fBdtsgui\fP * \fBdtsgui\fP"
+.br
+.in -1c
 .SH "Detailed Description"
 .PP 
 Definition at line 87 of file DTSTreeWindow\&.h\&.
@@ -43,33 +78,115 @@ Definition at line 87 of file DTSTreeWindow\&.h\&.
 .SS "DTSTreeWindowEvent::DTSTreeWindowEvent (void *userdata = \fCNULL\fP, \fBdtsgui_tree_cb\fPtree_cb = \fCNULL\fP, class \fBdtsgui\fP *dtsgui = \fCNULL\fP, \fBDTSTreeWindow\fP *win = \fCNULL\fP)"
 
 .PP
-Definition at line 281 of file DTSTreeWindow\&.cpp\&.
+Definition at line 295 of file DTSTreeWindow\&.cpp\&.
+.PP
+References data, dtsgui, DTSDVMCtrl::GetStore(), DTSTreeWindow::GetTreeCtrl(), parent, tree, treecb, and vm\&.
 .SS "DTSTreeWindowEvent::~DTSTreeWindowEvent ()"
 
 .PP
-Definition at line 298 of file DTSTreeWindow\&.cpp\&.
+Definition at line 312 of file DTSTreeWindow\&.cpp\&.
+.PP
+References data\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void DTSTreeWindowEvent::MenuEvent (wxCommandEvent &event)"
 
 .PP
-Definition at line 431 of file DTSTreeWindow\&.cpp\&.
+Definition at line 445 of file DTSTreeWindow\&.cpp\&.
+.PP
+References a_cont, a_item, DTSFrame::Confirm(), DTSDVMListView::Delete(), DTS_TREEWIN_MENU_DELETE, DTS_TREEWIN_MENU_MOVEDOWN, DTS_TREEWIN_MENU_MOVEUP, DTS_TREEWIN_MENU_SORT, DTSGUI_TREE_CB_DELETE, DTSGUI_TREE_CB_SELECT, DTSObject::GetFrame(), DTSDVMListView::GetParent(), parent, SortParent(), tree, TreeCallback(), and vm\&.
+.PP
+Referenced by DTSTreeWindow::DTSTreeWindow()\&.
 .SS "void DTSTreeWindowEvent::OnButton (wxCommandEvent &event)"
 
 .PP
-Definition at line 510 of file DTSTreeWindow\&.cpp\&.
+Definition at line 524 of file DTSTreeWindow\&.cpp\&.
+.PP
+References DTSTreeWindow::GetActiveNode(), DTSTreeWindow::GetClientPane(), parent, DTSTreeWindow::Select(), DTSPanel::Update_XML(), wx_PANEL_EVENT_BUTTON_NO, and wx_PANEL_EVENT_BUTTON_YES\&.
+.PP
+Referenced by DTSTreeWindow::DTSTreeWindow()\&.
+.SS "void DTSTreeWindowEvent::SortParent (const wxDataViewItemparent, intaction)\fC [private]\fP"
+
+.PP
+Definition at line 396 of file DTSTreeWindow\&.cpp\&.
+.PP
+References a_cont, a_item, data, DTS_TREEWIN_MENU_MOVEDOWN, DTS_TREEWIN_MENU_MOVEUP, DTS_TREEWIN_MENU_SORT, DTSDVMListView::GetContainers(), DTSDVMListStore::IsExpanded(), DTSDVMListView::MoveChildDown(), DTSDVMListView::MoveChildUp(), DTSDVMListStore::SetExpanded(), DTSDVMListView::SetExpanded(), DTSDVMListView::SortChildren(), tree, and vm\&.
+.PP
+Referenced by MenuEvent()\&.
 .SS "void DTSTreeWindowEvent::SplitterEvent (wxSplitterEvent &event)"
 
 .PP
-Definition at line 457 of file DTSTreeWindow\&.cpp\&.
+Definition at line 471 of file DTSTreeWindow\&.cpp\&.
+.PP
+References parent, and DTSTreeWindow::SetTreePaneSize()\&.
+.PP
+Referenced by DTSTreeWindow::DTSTreeWindow()\&.
 .SS "void DTSTreeWindowEvent::TreeCallback (const wxDataViewItemitem, enum \fBtree_cbtype\fPcbtype)"
 
 .PP
-Definition at line 469 of file DTSTreeWindow\&.cpp\&.
+Definition at line 483 of file DTSTreeWindow\&.cpp\&.
+.PP
+References DTSDVMListStore::ConfigPanel(), DTSTreeWindow::CreatePane(), data, DTSGUI_TREE_CB_DELETE, DTSGUI_TREE_CB_EDIT, DTSGUI_TREE_CB_SELECT, DTSDVMListStore::GetTitle(), parent, DTSTreeWindow::SetWindow(), treecb, and DTSTreeWindow::UpdateNodeXML()\&.
+.PP
+Referenced by MenuEvent(), and TreeEvent()\&.
 .SS "void DTSTreeWindowEvent::TreeEvent (wxDataViewEvent &event)"
 
 .PP
-Definition at line 307 of file DTSTreeWindow\&.cpp\&.
+Definition at line 321 of file DTSTreeWindow\&.cpp\&.
+.PP
+References a_cont, a_item, DTSDVMListStore::can_delete, DTSDVMListStore::can_edit, DTSDVMListStore::can_sort, data, DTSGUI_TREE_CB_EDIT, DTSGUI_TREE_CB_SELECT, DTSDVMListView::GetChildCount(), DTSDVMListView::GetNodeID(), DTSDVMListView::GetNthChild(), DTSDVMListView::GetParent(), DTSDVMListStore::GetTitle(), DTSDVMListStore::IsContainer(), DTSDVMListView::IsContainer(), parent, DTSTreeWindow::SetPaneTitle(), DTSTreeWindow::ShowRMenu(), tree, TreeCallback(), DTSTreeWindow::TreeResize(), and vm\&.
+.PP
+Referenced by DTSTreeWindow::DTSTreeWindow()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "wxDataViewItem DTSTreeWindowEvent::a_cont\fC [private]\fP"
+
+.PP
+Definition at line 104 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by MenuEvent(), SortParent(), and TreeEvent()\&.
+.SS "wxDataViewItem DTSTreeWindowEvent::a_item\fC [private]\fP"
+
+.PP
+Definition at line 103 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by MenuEvent(), SortParent(), and TreeEvent()\&.
+.SS "void* DTSTreeWindowEvent::data\fC [private]\fP"
+
+.PP
+Definition at line 98 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by DTSTreeWindowEvent(), SortParent(), TreeCallback(), TreeEvent(), and ~DTSTreeWindowEvent()\&.
+.SS "class \fBdtsgui\fP* DTSTreeWindowEvent::dtsgui\fC [private]\fP"
+
+.PP
+Definition at line 105 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by DTSTreeWindowEvent()\&.
+.SS "\fBDTSTreeWindow\fP* DTSTreeWindowEvent::parent\fC [private]\fP"
+
+.PP
+Definition at line 100 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by DTSTreeWindowEvent(), MenuEvent(), OnButton(), SplitterEvent(), TreeCallback(), and TreeEvent()\&.
+.SS "\fBDTSDVMCtrl\fP* DTSTreeWindowEvent::tree\fC [private]\fP"
+
+.PP
+Definition at line 102 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by DTSTreeWindowEvent(), MenuEvent(), SortParent(), and TreeEvent()\&.
+.SS "\fBdtsgui_tree_cb\fP DTSTreeWindowEvent::treecb\fC [private]\fP"
+
+.PP
+Definition at line 99 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by DTSTreeWindowEvent(), and TreeCallback()\&.
+.SS "\fBDTSDVMListView\fP* DTSTreeWindowEvent::vm\fC [private]\fP"
+
+.PP
+Definition at line 101 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by DTSTreeWindowEvent(), MenuEvent(), SortParent(), and TreeEvent()\&.
 
 .SH "Author"
 .PP 

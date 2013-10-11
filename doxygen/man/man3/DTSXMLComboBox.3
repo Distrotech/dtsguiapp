@@ -1,0 +1,156 @@
+.TH "DTSXMLComboBox" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DTSXMLComboBox \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DTSXMLComboBox\&.h>\fP
+.PP
+Inherits wxComboBox\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTSXMLComboBox\fP (\fBwxWindow\fP *parent, int id, wxString \fBurl\fP, wxString \fBxpath\fP, struct curl_post *(*\fBgetpost\fP)(const wxString &), size_t \fBminlen\fP)"
+.br
+.ti -1c
+.RI "\fB~DTSXMLComboBox\fP ()"
+.br
+.ti -1c
+.RI "bool \fBHasXMLList\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBHandleEvent\fP (wxCommandEvent &event)"
+.br
+.ti -1c
+.RI "struct xml_doc * \fBGetXMLDoc\fP (const wxString &val, struct xml_node *xn)"
+.br
+.ti -1c
+.RI "struct curl_post * \fBGetPostInfo\fP (const wxString &val)"
+.br
+.ti -1c
+.RI "bool \fBAppendXMLNodes\fP (struct xml_doc *xmldoc)"
+.br
+.ti -1c
+.RI "void \fBEmptyServerList\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBsflags\fP"
+.br
+.ti -1c
+.RI "size_t \fBminlen\fP"
+.br
+.ti -1c
+.RI "wxString \fBurl\fP"
+.br
+.ti -1c
+.RI "wxString \fBxpath\fP"
+.br
+.ti -1c
+.RI "struct curl_post *(* \fBgetpost\fP )(const wxString &)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 27 of file DTSXMLComboBox\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DTSXMLComboBox::DTSXMLComboBox (\fBwxWindow\fP *parent, intid, wxStringurl, wxStringxpath, struct curl_post *(*)(const wxString &)getpost, size_tminlen)"
+
+.PP
+Definition at line 34 of file DTSXMLComboBox\&.cpp\&.
+.PP
+References getpost, HandleEvent(), minlen, sflags, url, and xpath\&.
+.SS "DTSXMLComboBox::~DTSXMLComboBox ()"
+
+.PP
+Definition at line 94 of file DTSXMLComboBox\&.cpp\&.
+.PP
+References EmptyServerList()\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool DTSXMLComboBox::AppendXMLNodes (struct xml_doc *xmldoc)\fC [private]\fP"
+
+.PP
+Definition at line 72 of file DTSXMLComboBox\&.cpp\&.
+.PP
+Referenced by HandleEvent()\&.
+.SS "void DTSXMLComboBox::EmptyServerList ()\fC [private]\fP"
+
+.PP
+Definition at line 162 of file DTSXMLComboBox\&.cpp\&.
+.PP
+Referenced by HandleEvent(), and ~DTSXMLComboBox()\&.
+.SS "struct curl_post* DTSXMLComboBox::GetPostInfo (const wxString &val)\fC [read]\fP, \fC [private]\fP"
+
+.SS "struct xml_doc * DTSXMLComboBox::GetXMLDoc (const wxString &val, struct xml_node *xn)\fC [read]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 51 of file DTSXMLComboBox\&.cpp\&.
+.PP
+References getpost\&.
+.PP
+Referenced by HandleEvent()\&.
+.SS "void DTSXMLComboBox::HandleEvent (wxCommandEvent &event)\fC [private]\fP"
+
+.PP
+Definition at line 106 of file DTSXMLComboBox\&.cpp\&.
+.PP
+References AppendXMLNodes(), DTSAPPTB_SERVER_POP, DTSAPPTB_SERVER_SET, EmptyServerList(), GetXMLDoc(), minlen, and sflags\&.
+.PP
+Referenced by DTSXMLComboBox()\&.
+.SS "bool DTSXMLComboBox::HasXMLList ()"
+
+.PP
+Definition at line 98 of file DTSXMLComboBox\&.cpp\&.
+.PP
+References DTSAPPTB_SERVER_POP, and sflags\&.
+.PP
+Referenced by DTSAPPToolBar::HandleEvent()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "struct curl_post*(* DTSXMLComboBox::getpost)(const wxString &)\fC [read]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 42 of file DTSXMLComboBox\&.h\&.
+.PP
+Referenced by DTSXMLComboBox(), and GetXMLDoc()\&.
+.SS "size_t DTSXMLComboBox::minlen\fC [private]\fP"
+
+.PP
+Definition at line 39 of file DTSXMLComboBox\&.h\&.
+.PP
+Referenced by DTSXMLComboBox(), and HandleEvent()\&.
+.SS "int DTSXMLComboBox::sflags\fC [private]\fP"
+
+.PP
+Definition at line 38 of file DTSXMLComboBox\&.h\&.
+.PP
+Referenced by DTSXMLComboBox(), HandleEvent(), and HasXMLList()\&.
+.SS "wxString DTSXMLComboBox::url\fC [private]\fP"
+
+.PP
+Definition at line 40 of file DTSXMLComboBox\&.h\&.
+.PP
+Referenced by DTSXMLComboBox()\&.
+.SS "wxString DTSXMLComboBox::xpath\fC [private]\fP"
+
+.PP
+Definition at line 41 of file DTSXMLComboBox\&.h\&.
+.PP
+Referenced by DTSXMLComboBox()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

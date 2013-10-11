@@ -14,5 +14,13 @@ var class_d_t_s_tree_window =
     [ "Show", "class_d_t_s_tree_window.html#a7c6941ddc90e0539d219561556e2e455", null ],
     [ "ShowRMenu", "class_d_t_s_tree_window.html#a0df3486cd55349c3e7efe33f0304d76d", null ],
     [ "TreeResize", "class_d_t_s_tree_window.html#a45a0f5740984258b0d318104e7aef932", null ],
-    [ "UpdateNodeXML", "class_d_t_s_tree_window.html#a3a7d1d1ce34864f71d5ffd154ca18210", null ]
+    [ "UpdateNodeXML", "class_d_t_s_tree_window.html#a3a7d1d1ce34864f71d5ffd154ca18210", null ],
+    [ "a_node", "class_d_t_s_tree_window.html#a996e933c35328c5302c52880c85d005f", null ],
+    [ "a_window", "class_d_t_s_tree_window.html#a37362520ed70a72d3b1888cdae337ad4", null ],
+    [ "c_pane", "class_d_t_s_tree_window.html#a0fdb1692f73b9e9b2e000754092bc8f2", null ],
+    [ "rmenu", "class_d_t_s_tree_window.html#ae6ae4cafa2647a549f709206ac35bd81", null ],
+    [ "t_pane", "class_d_t_s_tree_window.html#a7ea74947094602a9ad9c3ca3ebd078e2", null ],
+    [ "tree", "class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d", null ],
+    [ "treesizer", "class_d_t_s_tree_window.html#a34f907b7b676ad866ada6d4198de7322", null ],
+    [ "vm", "class_d_t_s_tree_window.html#a57f82dd35e2ad0c6f50041b40c6e67f5", null ]
 ];

@@ -17,9 +17,14 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="98" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_tree_window_event_1ab42e89c20d43eb8b536c3601158b6f7a" compoundref="_d_t_s_tree_window_8cpp" startline="295" endline="310">DTSTreeWindowEvent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1aaf5ca29397996f44de6f0e73a1070795" compoundref="_d_t_s_tree_window_8cpp" startline="396" endline="443">SortParent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1a98ac8a3612545e1eaeb99fa9b5662048" compoundref="_d_t_s_tree_window_8cpp" startline="483" endline="522">TreeCallback</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac0c3b48a9c6227d016dcffe7dc17a250" compoundref="_d_t_s_tree_window_8cpp" startline="321" endline="394">TreeEvent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1a27f73ab3778ec2cf8ccfb6a9d0000a48" compoundref="_d_t_s_tree_window_8cpp" startline="312" endline="319">~DTSTreeWindowEvent</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_tree_window_event_1a1f06b3a5f60fad712c725e0f4541a281" prot="private" static="no" mutable="no">
-        <type><ref refid="dtsgui_8h_1a32927ee58215cd957e5134af0f13303f" kindref="member">dtsgui_tree_cb</ref></type>
+        <type><ref refid="group___c_o_r_e_1gae088feda00f338f6ddd35daaacc44817" kindref="member">dtsgui_tree_cb</ref></type>
         <definition>dtsgui_tree_cb DTSTreeWindowEvent::treecb</definition>
         <argsstring></argsstring>
         <name>treecb</name>
@@ -30,6 +35,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="99" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="99" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_tree_window_event_1ab42e89c20d43eb8b536c3601158b6f7a" compoundref="_d_t_s_tree_window_8cpp" startline="295" endline="310">DTSTreeWindowEvent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1a98ac8a3612545e1eaeb99fa9b5662048" compoundref="_d_t_s_tree_window_8cpp" startline="483" endline="522">TreeCallback</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_tree_window_event_1a182862c6039a3636a3b2a8fad26f15a9" prot="private" static="no" mutable="no">
         <type><ref refid="class_d_t_s_tree_window" kindref="compound">DTSTreeWindow</ref> *</type>
@@ -43,6 +50,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="100" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="100" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_tree_window_event_1ab42e89c20d43eb8b536c3601158b6f7a" compoundref="_d_t_s_tree_window_8cpp" startline="295" endline="310">DTSTreeWindowEvent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac629b258d688fee58bdccd9d165c076e" compoundref="_d_t_s_tree_window_8cpp" startline="445" endline="469">MenuEvent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1a7523413f0f0cbe621c630730b8b1713f" compoundref="_d_t_s_tree_window_8cpp" startline="524" endline="542">OnButton</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1a70409a54c0a1a20707105e67c2ebfd81" compoundref="_d_t_s_tree_window_8cpp" startline="471" endline="481">SplitterEvent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1a98ac8a3612545e1eaeb99fa9b5662048" compoundref="_d_t_s_tree_window_8cpp" startline="483" endline="522">TreeCallback</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac0c3b48a9c6227d016dcffe7dc17a250" compoundref="_d_t_s_tree_window_8cpp" startline="321" endline="394">TreeEvent</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_tree_window_event_1a0bd0e58c2359eeb0c46aa332dac696af" prot="private" static="no" mutable="no">
         <type><ref refid="class_d_t_s_d_v_m_list_view" kindref="compound">DTSDVMListView</ref> *</type>
@@ -56,6 +69,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="101" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="101" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_tree_window_event_1ab42e89c20d43eb8b536c3601158b6f7a" compoundref="_d_t_s_tree_window_8cpp" startline="295" endline="310">DTSTreeWindowEvent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac629b258d688fee58bdccd9d165c076e" compoundref="_d_t_s_tree_window_8cpp" startline="445" endline="469">MenuEvent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1aaf5ca29397996f44de6f0e73a1070795" compoundref="_d_t_s_tree_window_8cpp" startline="396" endline="443">SortParent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac0c3b48a9c6227d016dcffe7dc17a250" compoundref="_d_t_s_tree_window_8cpp" startline="321" endline="394">TreeEvent</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_tree_window_event_1ad88ac828c98c880e1976abea11512c76" prot="private" static="no" mutable="no">
         <type><ref refid="class_d_t_s_d_v_m_ctrl" kindref="compound">DTSDVMCtrl</ref> *</type>
@@ -69,6 +86,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="102" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="102" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_tree_window_event_1ab42e89c20d43eb8b536c3601158b6f7a" compoundref="_d_t_s_tree_window_8cpp" startline="295" endline="310">DTSTreeWindowEvent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac629b258d688fee58bdccd9d165c076e" compoundref="_d_t_s_tree_window_8cpp" startline="445" endline="469">MenuEvent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1aaf5ca29397996f44de6f0e73a1070795" compoundref="_d_t_s_tree_window_8cpp" startline="396" endline="443">SortParent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac0c3b48a9c6227d016dcffe7dc17a250" compoundref="_d_t_s_tree_window_8cpp" startline="321" endline="394">TreeEvent</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_tree_window_event_1a0ddcc163d191bdc198bbb3929656a957" prot="private" static="no" mutable="no">
         <type>wxDataViewItem</type>
@@ -82,6 +103,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="103" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="103" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac629b258d688fee58bdccd9d165c076e" compoundref="_d_t_s_tree_window_8cpp" startline="445" endline="469">MenuEvent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1aaf5ca29397996f44de6f0e73a1070795" compoundref="_d_t_s_tree_window_8cpp" startline="396" endline="443">SortParent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac0c3b48a9c6227d016dcffe7dc17a250" compoundref="_d_t_s_tree_window_8cpp" startline="321" endline="394">TreeEvent</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_tree_window_event_1a3932c00abcbe147fa18b4d689eb3b376" prot="private" static="no" mutable="no">
         <type>wxDataViewItem</type>
@@ -95,6 +119,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="104" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="104" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac629b258d688fee58bdccd9d165c076e" compoundref="_d_t_s_tree_window_8cpp" startline="445" endline="469">MenuEvent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1aaf5ca29397996f44de6f0e73a1070795" compoundref="_d_t_s_tree_window_8cpp" startline="396" endline="443">SortParent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac0c3b48a9c6227d016dcffe7dc17a250" compoundref="_d_t_s_tree_window_8cpp" startline="321" endline="394">TreeEvent</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_tree_window_event_1a88eb3a82035ee504cc380b094b763e3a" prot="private" static="no" mutable="no">
         <type>class <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
@@ -108,6 +135,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="105" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="105" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_tree_window_event_1ab42e89c20d43eb8b536c3601158b6f7a" compoundref="_d_t_s_tree_window_8cpp" startline="295" endline="310">DTSTreeWindowEvent</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -122,7 +150,7 @@
           <defval>NULL</defval>
         </param>
         <param>
-          <type><ref refid="dtsgui_8h_1a32927ee58215cd957e5134af0f13303f" kindref="member">dtsgui_tree_cb</ref></type>
+          <type><ref refid="group___c_o_r_e_1gae088feda00f338f6ddd35daaacc44817" kindref="member">dtsgui_tree_cb</ref></type>
           <declname>tree_cb</declname>
           <defval>NULL</defval>
         </param>
@@ -142,7 +170,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="89" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="281" bodyend="296"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="89" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="295" bodyend="310"/>
+        <references refid="class_d_t_s_tree_window_event_1a97dc4c3c5cebbaa4c5f7f5dcad70f104" compoundref="_d_t_s_tree_window_8h" startline="98">data</references>
+        <references refid="class_d_t_s_tree_window_event_1a88eb3a82035ee504cc380b094b763e3a" compoundref="_d_t_s_tree_window_8h" startline="105">dtsgui</references>
+        <references refid="class_d_t_s_d_v_m_ctrl_1a5ccdd2f6d3b2652ddfec7d0dc2ade0b1" compoundref="_d_t_s_list_view_8cpp" startline="604" endline="606">DTSDVMCtrl::GetStore</references>
+        <references refid="class_d_t_s_tree_window_1aae9e856659f3701452382e2cdcba8463" compoundref="_d_t_s_tree_window_8cpp" startline="655" endline="657">DTSTreeWindow::GetTreeCtrl</references>
+        <references refid="class_d_t_s_tree_window_event_1a182862c6039a3636a3b2a8fad26f15a9" compoundref="_d_t_s_tree_window_8h" startline="100">parent</references>
+        <references refid="class_d_t_s_tree_window_event_1ad88ac828c98c880e1976abea11512c76" compoundref="_d_t_s_tree_window_8h" startline="102">tree</references>
+        <references refid="class_d_t_s_tree_window_event_1a1f06b3a5f60fad712c725e0f4541a281" compoundref="_d_t_s_tree_window_8h" startline="99">treecb</references>
+        <references refid="class_d_t_s_tree_window_event_1a0bd0e58c2359eeb0c46aa332dac696af" compoundref="_d_t_s_tree_window_8h" startline="101">vm</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_tree_window_event_1a27f73ab3778ec2cf8ccfb6a9d0000a48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -155,7 +191,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="90" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="298" bodyend="305"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="90" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="312" bodyend="319"/>
+        <references refid="class_d_t_s_tree_window_event_1a97dc4c3c5cebbaa4c5f7f5dcad70f104" compoundref="_d_t_s_tree_window_8h" startline="98">data</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_tree_window_event_1ac0c3b48a9c6227d016dcffe7dc17a250" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -172,7 +209,30 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="91" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="307" bodyend="380"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="91" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="321" bodyend="394"/>
+        <references refid="class_d_t_s_tree_window_event_1a3932c00abcbe147fa18b4d689eb3b376" compoundref="_d_t_s_tree_window_8h" startline="104">a_cont</references>
+        <references refid="class_d_t_s_tree_window_event_1a0ddcc163d191bdc198bbb3929656a957" compoundref="_d_t_s_tree_window_8h" startline="103">a_item</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a6794906e84f9d97761f95ff7d3b8a452" compoundref="_d_t_s_list_view_8h" startline="50">DTSDVMListStore::can_delete</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a5f2a6fd27284866f4cfd264a91b8fdb3" compoundref="_d_t_s_list_view_8h" startline="48">DTSDVMListStore::can_edit</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a6de730ce6b6115eaa164161529d9bfd2" compoundref="_d_t_s_list_view_8h" startline="49">DTSDVMListStore::can_sort</references>
+        <references refid="class_d_t_s_tree_window_event_1a97dc4c3c5cebbaa4c5f7f5dcad70f104" compoundref="_d_t_s_tree_window_8h" startline="98">data</references>
+        <references refid="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368a629392b319c09bfdb44b638c858381e8" compoundref="dtsgui_8h" startline="44">DTSGUI_TREE_CB_EDIT</references>
+        <references refid="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368adac89e1845cacd5358022cbc20aba1a9" compoundref="dtsgui_8h" startline="40">DTSGUI_TREE_CB_SELECT</references>
+        <references refid="class_d_t_s_d_v_m_list_view_1a75b2584818b50c6d05adde7ac20dfd5d" compoundref="_d_t_s_list_view_8cpp" startline="391" endline="403">DTSDVMListView::GetChildCount</references>
+        <references refid="class_d_t_s_d_v_m_list_view_1ac8cd1cebdb6a6c3d03cbc7697e4ac9ed" compoundref="_d_t_s_list_view_8cpp" startline="507" endline="517">DTSDVMListView::GetNodeID</references>
+        <references refid="class_d_t_s_d_v_m_list_view_1aee18c001df2dc0a5c907b5d17ea3ece6" compoundref="_d_t_s_list_view_8cpp" startline="405" endline="420">DTSDVMListView::GetNthChild</references>
+        <references refid="class_d_t_s_d_v_m_list_view_1a764737b69417b79b1f57ee862746d7dc" compoundref="_d_t_s_list_view_8cpp" startline="266" endline="279">DTSDVMListView::GetParent</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a2bea28788838dd5c214e8cf23a5e8a2e" compoundref="_d_t_s_list_view_8cpp" startline="138" endline="140">DTSDVMListStore::GetTitle</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a39054039fd35cb8ac46ba0b27be04821" compoundref="_d_t_s_list_view_8cpp" startline="79" endline="81">DTSDVMListStore::IsContainer</references>
+        <references refid="class_d_t_s_d_v_m_list_view_1a3b8181057f6c202ccb8a096a8550d6d1" compoundref="_d_t_s_list_view_8cpp" startline="257" endline="264">DTSDVMListView::IsContainer</references>
+        <references refid="class_d_t_s_tree_window_event_1a182862c6039a3636a3b2a8fad26f15a9" compoundref="_d_t_s_tree_window_8h" startline="100">parent</references>
+        <references refid="class_d_t_s_tree_window_1a2ed14675c69eebc630e82b65ddb2bb4a" compoundref="_d_t_s_tree_window_8cpp" startline="673" endline="681">DTSTreeWindow::SetPaneTitle</references>
+        <references refid="class_d_t_s_tree_window_1a0df3486cd55349c3e7efe33f0304d76d" compoundref="_d_t_s_tree_window_8cpp" startline="711" endline="713">DTSTreeWindow::ShowRMenu</references>
+        <references refid="class_d_t_s_tree_window_event_1ad88ac828c98c880e1976abea11512c76" compoundref="_d_t_s_tree_window_8h" startline="102">tree</references>
+        <references refid="class_d_t_s_tree_window_event_1a98ac8a3612545e1eaeb99fa9b5662048" compoundref="_d_t_s_tree_window_8cpp" startline="483" endline="522">TreeCallback</references>
+        <references refid="class_d_t_s_tree_window_1a45a0f5740984258b0d318104e7aef932" compoundref="_d_t_s_tree_window_8cpp" startline="668" endline="671">DTSTreeWindow::TreeResize</references>
+        <references refid="class_d_t_s_tree_window_event_1a0bd0e58c2359eeb0c46aa332dac696af" compoundref="_d_t_s_tree_window_8h" startline="101">vm</references>
+        <referencedby refid="class_d_t_s_tree_window_1a1664835725e0e19ce3e4cced298fac39" compoundref="_d_t_s_tree_window_8cpp" startline="544" endline="653">DTSTreeWindow::DTSTreeWindow</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_tree_window_event_1a7523413f0f0cbe621c630730b8b1713f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -189,7 +249,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="92" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="510" bodyend="528"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="92" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="524" bodyend="542"/>
+        <references refid="class_d_t_s_tree_window_1a13f1a1a56891ccba3df14c857e09197e" compoundref="_d_t_s_tree_window_8cpp" startline="683" endline="685">DTSTreeWindow::GetActiveNode</references>
+        <references refid="class_d_t_s_tree_window_1ad5c187ebc6203b19afae00ea5a42b78d" compoundref="_d_t_s_tree_window_8cpp" startline="810" endline="812">DTSTreeWindow::GetClientPane</references>
+        <references refid="class_d_t_s_tree_window_event_1a182862c6039a3636a3b2a8fad26f15a9" compoundref="_d_t_s_tree_window_8h" startline="100">parent</references>
+        <references refid="class_d_t_s_tree_window_1a16e8b0b7de01806b70235b4eac89345e" compoundref="_d_t_s_tree_window_8cpp" startline="814" endline="823">DTSTreeWindow::Select</references>
+        <references refid="class_d_t_s_panel_1adc5131960a24dfa65adba935a1be0f79" compoundref="_d_t_s_panel_8cpp" startline="746" endline="775">DTSPanel::Update_XML</references>
+        <references refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302ecadb8742f8472eb90558cfbf8e3914553b" compoundref="dtsgui_8h" startline="210">wx_PANEL_EVENT_BUTTON_NO</references>
+        <references refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca6ce91176e6c929e87d7acbd000d07f79" compoundref="dtsgui_8h" startline="208">wx_PANEL_EVENT_BUTTON_YES</references>
+        <referencedby refid="class_d_t_s_tree_window_1a1664835725e0e19ce3e4cced298fac39" compoundref="_d_t_s_tree_window_8cpp" startline="544" endline="653">DTSTreeWindow::DTSTreeWindow</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_tree_window_event_1ac629b258d688fee58bdccd9d165c076e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -206,7 +274,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="93" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="431" bodyend="455"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="93" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="445" bodyend="469"/>
+        <references refid="class_d_t_s_tree_window_event_1a3932c00abcbe147fa18b4d689eb3b376" compoundref="_d_t_s_tree_window_8h" startline="104">a_cont</references>
+        <references refid="class_d_t_s_tree_window_event_1a0ddcc163d191bdc198bbb3929656a957" compoundref="_d_t_s_tree_window_8h" startline="103">a_item</references>
+        <references refid="class_d_t_s_frame_1a937f276b15be00e81087ef1a73605478" compoundref="_d_t_s_frame_8cpp" startline="104" endline="118">DTSFrame::Confirm</references>
+        <references refid="class_d_t_s_d_v_m_list_view_1aae01dd71efaebb94dfea9e35d552237e" compoundref="_d_t_s_list_view_8cpp" startline="341" endline="365">DTSDVMListView::Delete</references>
+        <references refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486a4a0c85437a842221377dac401285454f" compoundref="_d_t_s_tree_window_8cpp" startline="45">DTS_TREEWIN_MENU_DELETE</references>
+        <references refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486a097ecad73656ee80fb0c9e7ddf464e5d" compoundref="_d_t_s_tree_window_8cpp" startline="43">DTS_TREEWIN_MENU_MOVEDOWN</references>
+        <references refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486af5bd57193f475f49c63b9b7271586daf" compoundref="_d_t_s_tree_window_8cpp" startline="41">DTS_TREEWIN_MENU_MOVEUP</references>
+        <references refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486aed80ef06b46ae100a6f5c56da1674ba7" compoundref="_d_t_s_tree_window_8cpp" startline="39">DTS_TREEWIN_MENU_SORT</references>
+        <references refid="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368a95978182db76e342ba406456dc935258" compoundref="dtsgui_8h" startline="42">DTSGUI_TREE_CB_DELETE</references>
+        <references refid="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368adac89e1845cacd5358022cbc20aba1a9" compoundref="dtsgui_8h" startline="40">DTSGUI_TREE_CB_SELECT</references>
+        <references refid="class_d_t_s_object_1ae5239b912c725a7a5720954767c3537a" compoundref="_d_t_s_panel_8cpp" startline="286" endline="288">DTSObject::GetFrame</references>
+        <references refid="class_d_t_s_d_v_m_list_view_1a764737b69417b79b1f57ee862746d7dc" compoundref="_d_t_s_list_view_8cpp" startline="266" endline="279">DTSDVMListView::GetParent</references>
+        <references refid="class_d_t_s_tree_window_event_1a182862c6039a3636a3b2a8fad26f15a9" compoundref="_d_t_s_tree_window_8h" startline="100">parent</references>
+        <references refid="class_d_t_s_tree_window_event_1aaf5ca29397996f44de6f0e73a1070795" compoundref="_d_t_s_tree_window_8cpp" startline="396" endline="443">SortParent</references>
+        <references refid="class_d_t_s_tree_window_event_1ad88ac828c98c880e1976abea11512c76" compoundref="_d_t_s_tree_window_8h" startline="102">tree</references>
+        <references refid="class_d_t_s_tree_window_event_1a98ac8a3612545e1eaeb99fa9b5662048" compoundref="_d_t_s_tree_window_8cpp" startline="483" endline="522">TreeCallback</references>
+        <references refid="class_d_t_s_tree_window_event_1a0bd0e58c2359eeb0c46aa332dac696af" compoundref="_d_t_s_tree_window_8h" startline="101">vm</references>
+        <referencedby refid="class_d_t_s_tree_window_1a1664835725e0e19ce3e4cced298fac39" compoundref="_d_t_s_tree_window_8cpp" startline="544" endline="653">DTSTreeWindow::DTSTreeWindow</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_tree_window_event_1a70409a54c0a1a20707105e67c2ebfd81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -223,7 +309,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="94" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="457" bodyend="467"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="94" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="471" bodyend="481"/>
+        <references refid="class_d_t_s_tree_window_event_1a182862c6039a3636a3b2a8fad26f15a9" compoundref="_d_t_s_tree_window_8h" startline="100">parent</references>
+        <references refid="class_d_t_s_tree_window_1acef5712c7e881b7fbca765d32530737d" compoundref="_d_t_s_tree_window_8cpp" startline="659" endline="666">DTSTreeWindow::SetTreePaneSize</references>
+        <referencedby refid="class_d_t_s_tree_window_1a1664835725e0e19ce3e4cced298fac39" compoundref="_d_t_s_tree_window_8cpp" startline="544" endline="653">DTSTreeWindow::DTSTreeWindow</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_tree_window_event_1a98ac8a3612545e1eaeb99fa9b5662048" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -235,7 +324,7 @@
           <declname>item</declname>
         </param>
         <param>
-          <type>enum <ref refid="dtsgui_8h_1a465794df2cb30731dfe34d3e7a4ed368" kindref="member">tree_cbtype</ref></type>
+          <type>enum <ref refid="group___c_o_r_e_1ga465794df2cb30731dfe34d3e7a4ed368" kindref="member">tree_cbtype</ref></type>
           <declname>cbtype</declname>
         </param>
         <briefdescription>
@@ -244,7 +333,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="95" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="469" bodyend="508"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="95" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="483" bodyend="522"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a235c78752ca007f5189806e95abcefe2" compoundref="_d_t_s_list_view_8cpp" startline="240" endline="245">DTSDVMListStore::ConfigPanel</references>
+        <references refid="class_d_t_s_tree_window_1a7457dc767b9cbc873e0e963644fa1fda" compoundref="_d_t_s_tree_window_8cpp" startline="715" endline="734">DTSTreeWindow::CreatePane</references>
+        <references refid="class_d_t_s_tree_window_event_1a97dc4c3c5cebbaa4c5f7f5dcad70f104" compoundref="_d_t_s_tree_window_8h" startline="98">data</references>
+        <references refid="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368a95978182db76e342ba406456dc935258" compoundref="dtsgui_8h" startline="42">DTSGUI_TREE_CB_DELETE</references>
+        <references refid="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368a629392b319c09bfdb44b638c858381e8" compoundref="dtsgui_8h" startline="44">DTSGUI_TREE_CB_EDIT</references>
+        <references refid="group___c_o_r_e_1gga465794df2cb30731dfe34d3e7a4ed368adac89e1845cacd5358022cbc20aba1a9" compoundref="dtsgui_8h" startline="40">DTSGUI_TREE_CB_SELECT</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a2bea28788838dd5c214e8cf23a5e8a2e" compoundref="_d_t_s_list_view_8cpp" startline="138" endline="140">DTSDVMListStore::GetTitle</references>
+        <references refid="class_d_t_s_tree_window_event_1a182862c6039a3636a3b2a8fad26f15a9" compoundref="_d_t_s_tree_window_8h" startline="100">parent</references>
+        <references refid="class_d_t_s_tree_window_1a491a55218197db09e099be00afe06850" compoundref="_d_t_s_tree_window_8cpp" startline="687" endline="709">DTSTreeWindow::SetWindow</references>
+        <references refid="class_d_t_s_tree_window_event_1a1f06b3a5f60fad712c725e0f4541a281" compoundref="_d_t_s_tree_window_8h" startline="99">treecb</references>
+        <references refid="class_d_t_s_tree_window_1a3a7d1d1ce34864f71d5ffd154ca18210" compoundref="_d_t_s_tree_window_8cpp" startline="754" endline="776">DTSTreeWindow::UpdateNodeXML</references>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac629b258d688fee58bdccd9d165c076e" compoundref="_d_t_s_tree_window_8cpp" startline="445" endline="469">MenuEvent</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac0c3b48a9c6227d016dcffe7dc17a250" compoundref="_d_t_s_tree_window_8cpp" startline="321" endline="394">TreeEvent</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -267,7 +369,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="97" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="382" bodyend="429"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="97" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="396" bodyend="443"/>
+        <references refid="class_d_t_s_tree_window_event_1a3932c00abcbe147fa18b4d689eb3b376" compoundref="_d_t_s_tree_window_8h" startline="104">a_cont</references>
+        <references refid="class_d_t_s_tree_window_event_1a0ddcc163d191bdc198bbb3929656a957" compoundref="_d_t_s_tree_window_8h" startline="103">a_item</references>
+        <references refid="class_d_t_s_tree_window_event_1a97dc4c3c5cebbaa4c5f7f5dcad70f104" compoundref="_d_t_s_tree_window_8h" startline="98">data</references>
+        <references refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486a097ecad73656ee80fb0c9e7ddf464e5d" compoundref="_d_t_s_tree_window_8cpp" startline="43">DTS_TREEWIN_MENU_MOVEDOWN</references>
+        <references refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486af5bd57193f475f49c63b9b7271586daf" compoundref="_d_t_s_tree_window_8cpp" startline="41">DTS_TREEWIN_MENU_MOVEUP</references>
+        <references refid="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486aed80ef06b46ae100a6f5c56da1674ba7" compoundref="_d_t_s_tree_window_8cpp" startline="39">DTS_TREEWIN_MENU_SORT</references>
+        <references refid="class_d_t_s_d_v_m_list_view_1a03a9867dcd09b6c74c33f9d79c2d887d" compoundref="_d_t_s_list_view_8cpp" startline="436" endline="453">DTSDVMListView::GetContainers</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a2582294901d9db1e1e27940539ddbdc1" compoundref="_d_t_s_list_view_8cpp" startline="180" endline="182">DTSDVMListStore::IsExpanded</references>
+        <references refid="class_d_t_s_d_v_m_list_view_1a4fd06f54c22ab48fddd25fa77bf90034" compoundref="_d_t_s_list_view_8cpp" startline="475" endline="493">DTSDVMListView::MoveChildDown</references>
+        <references refid="class_d_t_s_d_v_m_list_view_1a1d0cb108cee3efdf2acbc813ec66e812" compoundref="_d_t_s_list_view_8cpp" startline="455" endline="473">DTSDVMListView::MoveChildUp</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a069aaa01111b9ae71e09d14134023ef7" compoundref="_d_t_s_list_view_8cpp" startline="150" endline="152">DTSDVMListStore::SetExpanded</references>
+        <references refid="class_d_t_s_d_v_m_list_view_1a216845800003f23bf035f0eb561d4df3" compoundref="_d_t_s_list_view_8cpp" startline="422" endline="434">DTSDVMListView::SetExpanded</references>
+        <references refid="class_d_t_s_d_v_m_list_view_1a463cffa4280decda9cb36655a200caae" compoundref="_d_t_s_list_view_8cpp" startline="377" endline="389">DTSDVMListView::SortChildren</references>
+        <references refid="class_d_t_s_tree_window_event_1ad88ac828c98c880e1976abea11512c76" compoundref="_d_t_s_tree_window_8h" startline="102">tree</references>
+        <references refid="class_d_t_s_tree_window_event_1a0bd0e58c2359eeb0c46aa332dac696af" compoundref="_d_t_s_tree_window_8h" startline="101">vm</references>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac629b258d688fee58bdccd9d165c076e" compoundref="_d_t_s_tree_window_8cpp" startline="445" endline="469">MenuEvent</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -275,25 +393,148 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="161">
+      <node id="232">
         <label>DTSTreeWindowEvent</label>
         <link refid="class_d_t_s_tree_window_event"/>
-        <childnode refid="162" relation="public-inheritance">
+        <childnode refid="233" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="162">
+      <node id="233">
         <label>wxEvtHandler</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="163">
-        <label>DTSTreeWindowEvent</label>
-        <link refid="class_d_t_s_tree_window_event"/>
-        <childnode refid="164" relation="public-inheritance">
+      <node id="243">
+        <label>DTSTreeWindow</label>
+        <link refid="class_d_t_s_tree_window"/>
+        <childnode refid="244" relation="public-inheritance">
+        </childnode>
+        <childnode refid="246" relation="public-inheritance">
+        </childnode>
+        <childnode refid="236" relation="usage">
+          <edgelabel>vm</edgelabel>
+        </childnode>
+        <childnode refid="247" relation="usage">
+          <edgelabel>a_window</edgelabel>
+        </childnode>
+        <childnode refid="248" relation="usage">
+          <edgelabel>rmenu</edgelabel>
+        </childnode>
+        <childnode refid="249" relation="usage">
+          <edgelabel>tree</edgelabel>
         </childnode>
       </node>
-      <node id="164">
+      <node id="244">
+        <label>DTSObject</label>
+        <link refid="class_d_t_s_object"/>
+        <childnode refid="245" relation="public-inheritance">
+        </childnode>
+        <childnode refid="240" relation="usage">
+          <edgelabel>frame</edgelabel>
+        </childnode>
+      </node>
+      <node id="234">
+        <label>DTSTreeWindowEvent</label>
+        <link refid="class_d_t_s_tree_window_event"/>
+        <childnode refid="235" relation="public-inheritance">
+        </childnode>
+        <childnode refid="236" relation="usage">
+          <edgelabel>vm</edgelabel>
+        </childnode>
+        <childnode refid="239" relation="usage">
+          <edgelabel>dtsgui</edgelabel>
+          <edgelabel>treecb</edgelabel>
+        </childnode>
+        <childnode refid="243" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+        <childnode refid="249" relation="usage">
+          <edgelabel>tree</edgelabel>
+        </childnode>
+      </node>
+      <node id="248">
+        <label>treemenu</label>
+        <link refid="classtreemenu"/>
+      </node>
+      <node id="247">
+        <label>DTSPanel</label>
+        <link refid="class_d_t_s_panel"/>
+        <childnode refid="244" relation="public-inheritance">
+        </childnode>
+        <childnode refid="239" relation="usage">
+          <edgelabel>configcb</edgelabel>
+        </childnode>
+      </node>
+      <node id="237">
+        <label>wxDataViewModel</label>
+      </node>
+      <node id="235">
         <label>wxEvtHandler</label>
+      </node>
+      <node id="249">
+        <label>DTSDVMCtrl</label>
+        <link refid="class_d_t_s_d_v_m_ctrl"/>
+        <childnode refid="250" relation="public-inheritance">
+        </childnode>
+        <childnode refid="236" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+      </node>
+      <node id="246">
+        <label>wxSplitterWindow</label>
+      </node>
+      <node id="245">
+        <label>wxWindow</label>
+      </node>
+      <node id="241">
+        <label>wxFrame</label>
+      </node>
+      <node id="239">
+        <label>dtsgui</label>
+        <link refid="classdtsgui"/>
+        <childnode refid="240" relation="usage">
+          <edgelabel>appframe</edgelabel>
+        </childnode>
+        <childnode refid="239" relation="usage">
+          <edgelabel>cb</edgelabel>
+        </childnode>
+        <childnode refid="242" relation="usage">
+          <edgelabel>wsize</edgelabel>
+          <edgelabel>wpos</edgelabel>
+        </childnode>
+      </node>
+      <node id="250">
+        <label>wxDataViewCtrl</label>
+      </node>
+      <node id="242">
+        <label>point</label>
+        <link refid="structpoint"/>
+      </node>
+      <node id="238">
+        <label>DTSDVMListStore</label>
+        <link refid="class_d_t_s_d_v_m_list_store"/>
+        <childnode refid="238" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+      </node>
+      <node id="240">
+        <label>DTSFrame</label>
+        <link refid="class_d_t_s_frame"/>
+        <childnode refid="241" relation="public-inheritance">
+        </childnode>
+        <childnode refid="239" relation="usage">
+          <edgelabel>dtsgui</edgelabel>
+          <edgelabel>tbcb</edgelabel>
+        </childnode>
+      </node>
+      <node id="236">
+        <label>DTSDVMListView</label>
+        <link refid="class_d_t_s_d_v_m_list_view"/>
+        <childnode refid="237" relation="public-inheritance">
+        </childnode>
+        <childnode refid="238" relation="usage">
+          <edgelabel>root</edgelabel>
+        </childnode>
       </node>
     </collaborationgraph>
     <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" line="87" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSTreeWindow.h" bodystart="87" bodyend="106"/>

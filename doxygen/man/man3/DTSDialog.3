@@ -1,4 +1,4 @@
-.TH "DTSDialog" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "DTSDialog" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -26,6 +26,16 @@ Inherits \fBDTSStaticPanel\fP\&.
 .RI "void \fBRunDialog\fP (\fBevent_callback\fP evcb, void *data)"
 .br
 .in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBwxBoxSizer\fP * \fBsizer\fP"
+.br
+.ti -1c
+.RI "\fBwxDialog\fP * \fBdialog\fP"
+.br
+.in -1c
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
@@ -35,23 +45,47 @@ Definition at line 161 of file DTSPanel\&.h\&.
 .SS "DTSDialog::DTSDialog (\fBDTSFrame\fP *frame = \fCNULL\fP, wxStringname = \fCwxEmptyString\fP, intbutmask = \fC\fBwx_PANEL_BUTTON_ACTION\fP\fP)"
 
 .PP
-Definition at line 1035 of file DTSPanel\&.cpp\&.
+Definition at line 1048 of file DTSPanel\&.cpp\&.
+.PP
+References DTSPanel::button_mask, DTSObject::buttons, dialog, DTSObject::dtsevthandler, DTSPanelEvent::OnDialog(), DTSObject::panel, DTSPanel::SetupWin(), sizer, DTSObject::type, and wx_DTSPANEL_DIALOG\&.
 .SS "DTSDialog::~DTSDialog ()"
 
 .PP
-Definition at line 1056 of file DTSPanel\&.cpp\&.
+Definition at line 1069 of file DTSPanel\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void DTSDialog::RunDialog (\fBevent_callback\fPevcb, void *data)"
 
 .PP
-Definition at line 1064 of file DTSPanel\&.cpp\&.
+Definition at line 1077 of file DTSPanel\&.cpp\&.
+.PP
+References dialog, DTSObject::panel, DTSPanel::SetEventCallback(), Show(), and sizer\&.
+.PP
+Referenced by DTS_C_API::dtsgui_rundialog(), and DTSFrame::Passwd()\&.
 .SS "bool DTSDialog::Show (boolshow = \fCtrue\fP)\fC [virtual]\fP"
 
 .PP
 Reimplemented from \fBDTSStaticPanel\fP\&.
 .PP
-Definition at line 1059 of file DTSPanel\&.cpp\&.
+Definition at line 1072 of file DTSPanel\&.cpp\&.
+.PP
+References DTSPanel::ShowPanel()\&.
+.PP
+Referenced by RunDialog()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBwxDialog\fP* DTSDialog::dialog\fC [private]\fP"
+
+.PP
+Definition at line 169 of file DTSPanel\&.h\&.
+.PP
+Referenced by DTSDialog(), and RunDialog()\&.
+.SS "\fBwxBoxSizer\fP* DTSDialog::sizer\fC [private]\fP"
+
+.PP
+Definition at line 168 of file DTSPanel\&.h\&.
+.PP
+Referenced by DTSDialog(), and RunDialog()\&.
 
 .SH "Author"
 .PP 

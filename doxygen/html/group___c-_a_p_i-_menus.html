@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>DTS Application wxWidgets GUI Library: C API Menu Bar Interface</title>
+<title>DTS Application wxWidgets GUI Library: Menu bar interface.</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
@@ -86,7 +87,7 @@ $(document).ready(function(){initNavTree('group___c-_a_p_i-_menus.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,40 +100,51 @@ $(document).ready(function(){initNavTree('group___c-_a_p_i-_menus.html','');});
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">C API Menu Bar Interface</div>  </div>
-<div class="ingroups"><a class="el" href="group___c-_a_p_i.html">Library C API</a></div></div><!--header-->
+<div class="title">Menu bar interface.</div>  </div>
+<div class="ingroups"><a class="el" href="group___c-_a_p_i.html">Distrotech GUI Library C API</a></div></div><!--header-->
 <div class="contents">
 
-<p>C-API Menu ManagementResources controlling the menu bar in the C API.  
+<p>Create and manage menus.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gadd0f3eab51bf576378a6438c3982fd48"><td class="memItemLeft" align="right" valign="top"><a class="el" href="dtsgui_8h.html#afb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#gadd0f3eab51bf576378a6438c3982fd48">DTS_C_API::dtsgui_newmenu</a> (struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>, const char *name)</td></tr>
+<tr class="memitem:gab20156180905342ce3bc648253507f73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#gab20156180905342ce3bc648253507f73">DTS_C_API::dtsgui_menuenable</a> (<a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a> dm, int enable)</td></tr>
+<tr class="memdesc:gab20156180905342ce3bc648253507f73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable all items in menu.  <a href="#gab20156180905342ce3bc648253507f73"></a><br/></td></tr>
+<tr class="separator:gab20156180905342ce3bc648253507f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd0f3eab51bf576378a6438c3982fd48"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#gadd0f3eab51bf576378a6438c3982fd48">DTS_C_API::dtsgui_newmenu</a> (struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>, const char *name)</td></tr>
 <tr class="memdesc:gadd0f3eab51bf576378a6438c3982fd48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new menu and append it to the menu bar.  <a href="#gadd0f3eab51bf576378a6438c3982fd48"></a><br/></td></tr>
 <tr class="separator:gadd0f3eab51bf576378a6438c3982fd48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabb8b44357ce2ce4a3fd028939cf8c700"><td class="memItemLeft" align="right" valign="top"><a class="el" href="dtsgui_8h.html#af59302244664352117c2669055da5850">dtsgui_menuitem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#gabb8b44357ce2ce4a3fd028939cf8c700">DTS_C_API::dtsgui_newmenuitem</a> (<a class="el" href="dtsgui_8h.html#afb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a> dtsmenu, struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>, const char *hint, <a class="el" href="dtsgui_8h.html#a80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a> p)</td></tr>
+<tr class="memitem:gabb8b44357ce2ce4a3fd028939cf8c700"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_o_r_e.html#gaf59302244664352117c2669055da5850">dtsgui_menuitem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#gabb8b44357ce2ce4a3fd028939cf8c700">DTS_C_API::dtsgui_newmenuitem</a> (<a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a> dtsmenu, struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>, const char *hint, <a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a> p)</td></tr>
 <tr class="memdesc:gabb8b44357ce2ce4a3fd028939cf8c700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a menu item that will activate the pane provided.  <a href="#gabb8b44357ce2ce4a3fd028939cf8c700"></a><br/></td></tr>
 <tr class="separator:gabb8b44357ce2ce4a3fd028939cf8c700"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga045cc441a11f42796d6bd89dfa52e4ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="dtsgui_8h.html#af59302244664352117c2669055da5850">dtsgui_menuitem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#ga045cc441a11f42796d6bd89dfa52e4ec">DTS_C_API::dtsgui_newmenucb</a> (<a class="el" href="dtsgui_8h.html#afb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a> dtsmenu, struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>, const char *hint, const char *name, int blank, <a class="el" href="dtsgui_8h.html#a080f931027861c0021f72ac2562b45d7">dtsgui_dynpanel</a> cb, void *data)</td></tr>
-<tr class="memdesc:ga045cc441a11f42796d6bd89dfa52e4ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a menu item that will call a function with supplied data.  <a href="#ga045cc441a11f42796d6bd89dfa52e4ec"></a><br/></td></tr>
+<tr class="memitem:ga045cc441a11f42796d6bd89dfa52e4ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_o_r_e.html#gaf59302244664352117c2669055da5850">dtsgui_menuitem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#ga045cc441a11f42796d6bd89dfa52e4ec">DTS_C_API::dtsgui_newmenucb</a> (<a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a> dtsmenu, struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>, const char *hint, const char *name, int blank, <a class="el" href="group___c_o_r_e.html#ga080f931027861c0021f72ac2562b45d7">dtsgui_dynpanel</a> cb, void *data)</td></tr>
+<tr class="memdesc:ga045cc441a11f42796d6bd89dfa52e4ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a menu item that will call a function with supplied data to execute when selected.  <a href="#ga045cc441a11f42796d6bd89dfa52e4ec"></a><br/></td></tr>
 <tr class="separator:ga045cc441a11f42796d6bd89dfa52e4ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabf67f1b041be315b58ccacc7d193b273"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#gabf67f1b041be315b58ccacc7d193b273">DTS_C_API::dtsgui_exit</a> (<a class="el" href="dtsgui_8h.html#afb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a> dtsmenu, struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>)</td></tr>
+<tr class="memitem:gabf67f1b041be315b58ccacc7d193b273"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#gabf67f1b041be315b58ccacc7d193b273">DTS_C_API::dtsgui_exit</a> (<a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a> dtsmenu, struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>)</td></tr>
 <tr class="memdesc:gabf67f1b041be315b58ccacc7d193b273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add Menu item that will abort the app without save event been generated.  <a href="#gabf67f1b041be315b58ccacc7d193b273"></a><br/></td></tr>
 <tr class="separator:gabf67f1b041be315b58ccacc7d193b273"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga58e38f8ef567c8f50e15a53507ee4a72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#ga58e38f8ef567c8f50e15a53507ee4a72">DTS_C_API::dtsgui_close</a> (<a class="el" href="dtsgui_8h.html#afb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a> dtsmenu, struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>)</td></tr>
+<tr class="memitem:ga58e38f8ef567c8f50e15a53507ee4a72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#ga58e38f8ef567c8f50e15a53507ee4a72">DTS_C_API::dtsgui_close</a> (<a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a> dtsmenu, struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>)</td></tr>
 <tr class="memdesc:ga58e38f8ef567c8f50e15a53507ee4a72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add Menu item that will close the app after sending a save event.  <a href="#ga58e38f8ef567c8f50e15a53507ee4a72"></a><br/></td></tr>
 <tr class="separator:ga58e38f8ef567c8f50e15a53507ee4a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf06c34986c04d800883694733554033e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#gaf06c34986c04d800883694733554033e">DTS_C_API::dtsgui_about</a> (<a class="el" href="dtsgui_8h.html#afb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a> dtsmenu, struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>, const char *text)</td></tr>
+<tr class="memitem:gaf06c34986c04d800883694733554033e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#gaf06c34986c04d800883694733554033e">DTS_C_API::dtsgui_about</a> (<a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a> dtsmenu, struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>, const char *text)</td></tr>
 <tr class="memdesc:gaf06c34986c04d800883694733554033e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add Menu item will pop up a "about" box.  <a href="#gaf06c34986c04d800883694733554033e"></a><br/></td></tr>
 <tr class="separator:gaf06c34986c04d800883694733554033e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf655828d94de128cfd8269d03d649092"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#gaf655828d94de128cfd8269d03d649092">DTS_C_API::dtsgui_menusep</a> (<a class="el" href="dtsgui_8h.html#afb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a> dtsmenu)</td></tr>
+<tr class="memitem:gaf655828d94de128cfd8269d03d649092"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#gaf655828d94de128cfd8269d03d649092">DTS_C_API::dtsgui_menusep</a> (<a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a> dtsmenu)</td></tr>
 <tr class="memdesc:gaf655828d94de128cfd8269d03d649092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add Menu seperator to the menu.  <a href="#gaf655828d94de128cfd8269d03d649092"></a><br/></td></tr>
 <tr class="separator:gaf655828d94de128cfd8269d03d649092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga99f0bbb3bf979d0102b7b19899ad79dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c-_a_p_i-_menus.html#ga99f0bbb3bf979d0102b7b19899ad79dd">DTS_C_API::dtsgui_menuitemenable</a> (<a class="el" href="group___c_o_r_e.html#gaf59302244664352117c2669055da5850">dtsgui_menuitem</a> dmi, int enable)</td></tr>
+<tr class="memdesc:ga99f0bbb3bf979d0102b7b19899ad79dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable/Disable an menu item.  <a href="#ga99f0bbb3bf979d0102b7b19899ad79dd"></a><br/></td></tr>
+<tr class="separator:ga99f0bbb3bf979d0102b7b19899ad79dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>C-API Menu Management</p>
-<p>Resources controlling the menu bar in the C API. </p>
+<p>Create and manage menus. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>The menu bar at the top of the application contains menus, these menus contain menuitems these are the primary control interface. </dd>
+<dd>
+Menu items when selected can call a function or place a pre created panel in the display area. If the function returns a panel it will be placed in the display area. </dd>
+<dd>
+Menuitems can also be enabled / disabled programatically, disabled menu items are shown greyed out. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Define and implement Exit/Quit events </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="gaf06c34986c04d800883694733554033e"></a>
 <div class="memitem">
@@ -141,7 +153,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void DTS_C_API::dtsgui_about </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dtsgui_8h.html#afb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a>&#160;</td>
           <td class="paramname"><em>dtsmenu</em>, </td>
         </tr>
         <tr>
@@ -179,7 +191,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The fuction does not return. </dd></dl>
 
-<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00376">376</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00418">418</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00094">DTSFrame::SetAbout()</a>.</p>
+
+<p>Referenced by <a class="el" href="wxforms_8c_source.html#l00094">help_menu()</a>.</p>
 
 </div>
 </div>
@@ -190,7 +206,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void DTS_C_API::dtsgui_close </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dtsgui_8h.html#afb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a>&#160;</td>
           <td class="paramname"><em>dtsmenu</em>, </td>
         </tr>
         <tr>
@@ -223,7 +239,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The fuction does not return. </dd></dl>
 
-<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00357">357</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00401">401</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_frame_8cpp_source.html#l00353">DTSFrame::CloseMenu()</a>, and <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>.</p>
+
+<p>Referenced by <a class="el" href="wxforms_8c_source.html#l00069">file_menu()</a>.</p>
 
 </div>
 </div>
@@ -234,7 +254,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void DTS_C_API::dtsgui_exit </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dtsgui_8h.html#afb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a>&#160;</td>
           <td class="paramname"><em>dtsmenu</em>, </td>
         </tr>
         <tr>
@@ -267,7 +287,89 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The fuction does not return. </dd></dl>
 
-<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00337">337</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00383">383</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_frame_8cpp_source.html#l00353">DTSFrame::CloseMenu()</a>, and <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>.</p>
+
+<p>Referenced by <a class="el" href="wxforms_8c_source.html#l00069">file_menu()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gab20156180905342ce3bc648253507f73"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DTS_C_API::dtsgui_menuenable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a>&#160;</td>
+          <td class="paramname"><em>dm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>enable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable or disable all items in menu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dm</td><td>Menu to enable/disable. </td></tr>
+    <tr><td class="paramname">enable</td><td>Enable all items if set to non zero. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="cxxapi_8cpp_source.html#l00051">51</a> of file <a class="el" href="cxxapi_8cpp_source.html">cxxapi.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="config_8c_source.html#l00189">config_menu()</a>, <a class="el" href="config_8c_source.html#l00027">open_config()</a>, and <a class="el" href="config_8c_source.html#l00069">save_config()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga99f0bbb3bf979d0102b7b19899ad79dd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DTS_C_API::dtsgui_menuitemenable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#gaf59302244664352117c2669055da5850">dtsgui_menuitem</a>&#160;</td>
+          <td class="paramname"><em>dmi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>enable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable/Disable an menu item. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dmi</td><td>Menuitem </td></tr>
+    <tr><td class="paramname">enable</td><td>Disable the menu if set to 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00443">443</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="config_8c_source.html#l00027">open_config()</a>, and <a class="el" href="config_8c_source.html#l00069">save_config()</a>.</p>
 
 </div>
 </div>
@@ -278,7 +380,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void DTS_C_API::dtsgui_menusep </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dtsgui_8h.html#afb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a>&#160;</td>
           <td class="paramname"><em>dtsmenu</em></td><td>)</td>
           <td></td>
         </tr>
@@ -298,7 +400,9 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The fuction does not return. </dd></dl>
 
-<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00393">393</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00433">433</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="config_8c_source.html#l00189">config_menu()</a>, <a class="el" href="wxforms_8c_source.html#l00069">file_menu()</a>, and <a class="el" href="wxforms_8c_source.html#l00094">help_menu()</a>.</p>
 
 </div>
 </div>
@@ -307,7 +411,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="dtsgui_8h.html#afb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a> DTS_C_API::dtsgui_newmenu </td>
+          <td class="memname"><a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a> DTS_C_API::dtsgui_newmenu </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="classdtsgui.html">dtsgui</a> *&#160;</td>
           <td class="paramname"><em>dtsgui</em>, </td>
@@ -338,7 +442,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The fuction does not return. </dd></dl>
 
-<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00264">264</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00316">316</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00366">DTSFrame::NewMenu()</a>.</p>
+
+<p>Referenced by <a class="el" href="config_8c_source.html#l00189">config_menu()</a>, <a class="el" href="wxforms_8c_source.html#l00069">file_menu()</a>, and <a class="el" href="wxforms_8c_source.html#l00094">help_menu()</a>.</p>
 
 </div>
 </div>
@@ -347,9 +455,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="dtsgui_8h.html#af59302244664352117c2669055da5850">dtsgui_menuitem</a> DTS_C_API::dtsgui_newmenucb </td>
+          <td class="memname"><a class="el" href="group___c_o_r_e.html#gaf59302244664352117c2669055da5850">dtsgui_menuitem</a> DTS_C_API::dtsgui_newmenucb </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dtsgui_8h.html#afb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a>&#160;</td>
           <td class="paramname"><em>dtsmenu</em>, </td>
         </tr>
         <tr>
@@ -379,7 +487,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="dtsgui_8h.html#a080f931027861c0021f72ac2562b45d7">dtsgui_dynpanel</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#ga080f931027861c0021f72ac2562b45d7">dtsgui_dynpanel</a>&#160;</td>
           <td class="paramname"><em>cb</em>, </td>
         </tr>
         <tr>
@@ -396,13 +504,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create a menu item that will call a function with supplied data. </p>
+<p>Create a menu item that will call a function with supplied data to execute when selected. </p>
 <p>The specified call back will be called passing the application pointer (dtsgui), the name and data ptr supplied. if this function returns a <a class="el" href="class_d_t_s_object.html">DTSObject</a> pane it will be displayed.</p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_d_t_s_frame.html#a55fe07b66530435bce652e8ab3091707">DTSFrame::NewMenuItem()</a> </dd>
 <dd>
 <a class="el" href="group___c-_a_p_i-_menus.html#gadd0f3eab51bf576378a6438c3982fd48" title="Create a new menu and append it to the menu bar.">dtsgui_newmenu()</a> </dd>
 <dd>
-<a class="el" href="dtsgui_8h.html#a080f931027861c0021f72ac2562b45d7">dtsgui_dynpanel</a> </dd>
+<a class="el" href="group___c_o_r_e.html#ga080f931027861c0021f72ac2562b45d7" title="Callback called when a dynamic menu item is selected.">dtsgui_dynpanel</a> </dd>
 <dd>
 <a class="el" href="group___c-_a_p_i-_menus.html#gadd0f3eab51bf576378a6438c3982fd48" title="Create a new menu and append it to the menu bar.">dtsgui_newmenu()</a> </dd>
 <dd>
@@ -421,7 +529,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Created menu item. </dd></dl>
 
-<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00317">317</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00365">365</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>, <a class="el" href="wrapper_8cpp_source.html#l00181">DTS_C_API::menuid</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00435">DTSFrame::NewMenuItem()</a>.</p>
+
+<p>Referenced by <a class="el" href="config_8c_source.html#l00189">config_menu()</a>, and <a class="el" href="wxforms_8c_source.html#l00069">file_menu()</a>.</p>
 
 </div>
 </div>
@@ -430,9 +542,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="dtsgui_8h.html#af59302244664352117c2669055da5850">dtsgui_menuitem</a> DTS_C_API::dtsgui_newmenuitem </td>
+          <td class="memname"><a class="el" href="group___c_o_r_e.html#gaf59302244664352117c2669055da5850">dtsgui_menuitem</a> DTS_C_API::dtsgui_newmenuitem </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="dtsgui_8h.html#afb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#gafb1e28bd82fd8ea9d43a188c06095682">dtsgui_menu</a>&#160;</td>
           <td class="paramname"><em>dtsmenu</em>, </td>
         </tr>
         <tr>
@@ -450,7 +562,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="dtsgui_8h.html#a80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a>&#160;</td>
           <td class="paramname"><em>p</em>&#160;</td>
         </tr>
         <tr>
@@ -465,7 +577,7 @@ Functions</h2></td></tr>
 <p>this pane needs to be created and not deleted use of this function is discouraged. the callback menu function is recomended where a panel can be dynamically created and returned.</p>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_d_t_s_frame.html#a55fe07b66530435bce652e8ab3091707">DTSFrame::NewMenuItem()</a> </dd>
 <dd>
-<a class="el" href="group___c-_a_p_i-_menus.html#ga045cc441a11f42796d6bd89dfa52e4ec" title="Create a menu item that will call a function with supplied data.">dtsgui_newmenucb()</a> </dd>
+<a class="el" href="group___c-_a_p_i-_menus.html#ga045cc441a11f42796d6bd89dfa52e4ec" title="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb()</a> </dd>
 <dd>
 <a class="el" href="group___c-_a_p_i-_menus.html#gadd0f3eab51bf576378a6438c3982fd48" title="Create a new menu and append it to the menu bar.">dtsgui_newmenu()</a> </dd>
 <dd>
@@ -481,7 +593,11 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Created menu item. </dd></dl>
 
-<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00288">288</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+<p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00338">338</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>, <a class="el" href="wrapper_8cpp_source.html#l00181">DTS_C_API::menuid</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00435">DTSFrame::NewMenuItem()</a>.</p>
+
+<p>Referenced by <a class="el" href="wxforms_8c_source.html#l00094">help_menu()</a>, and <a class="el" href="testing_8c_source.html#l00094">test_menu()</a>.</p>
 
 </div>
 </div>
@@ -490,7 +606,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Wed Oct 9 2013 22:32:56 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>
