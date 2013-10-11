@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
@@ -92,7 +93,7 @@ $(document).ready(function(){initNavTree('_d_t_s_panel_8cpp.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -103,11 +104,15 @@ $(document).ready(function(){initNavTree('_d_t_s_panel_8cpp.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">DTSPanel.cpp File Reference</div>  </div>
+<div class="title">DTSPanel.cpp File Reference<div class="ingroups"><a class="el" href="group___c_p_p-_panel.html">Core panel classes</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of core panel classes and event handler.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br/>
 <code>#include &lt;wx/combobox.h&gt;</code><br/>
 <code>#include &lt;wx/stattext.h&gt;</code><br/>
@@ -123,31 +128,27 @@ $(document).ready(function(){initNavTree('_d_t_s_panel_8cpp.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a00fc562a7d9ef5cac917f9697dfdb769"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_d_t_s_panel_8cpp.html#a00fc562a7d9ef5cac917f9697dfdb769">PADING</a>&#160;&#160;&#160;10</td></tr>
-<tr class="separator:a00fc562a7d9ef5cac917f9697dfdb769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga00fc562a7d9ef5cac917f9697dfdb769"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_p_p-_panel.html#ga00fc562a7d9ef5cac917f9697dfdb769">PADING</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memdesc:ga00fc562a7d9ef5cac917f9697dfdb769"><td class="mdescLeft">&#160;</td><td class="mdescRight">Border used when placing elements.  <a href="group___c_p_p-_panel.html#ga00fc562a7d9ef5cac917f9697dfdb769"></a><br/></td></tr>
+<tr class="separator:ga00fc562a7d9ef5cac917f9697dfdb769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga138f34819b90ed241ed77fc27958f745"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___c_p_p-_panel.html#ga138f34819b90ed241ed77fc27958f745">def_buttons</a> [6] = {wxID_FIRST, wxID_BACKWARD, wxID_FORWARD, wxID_LAST, wxID_APPLY, wxID_UNDO}</td></tr>
+<tr class="memdesc:ga138f34819b90ed241ed77fc27958f745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array mapping wxWidgets buttons to DTS Buttons.  <a href="group___c_p_p-_panel.html#ga138f34819b90ed241ed77fc27958f745"></a><br/></td></tr>
+<tr class="separator:ga138f34819b90ed241ed77fc27958f745"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a00fc562a7d9ef5cac917f9697dfdb769"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PADING&#160;&#160;&#160;10</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of core panel classes and event handler. </p>
 
-<p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00033">33</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+<p>Definition in file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_d_t_s_panel_8cpp.html">DTSPanel.cpp</a></li>
-    <li class="footer">Generated on Wed Oct 9 2013 22:32:56 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

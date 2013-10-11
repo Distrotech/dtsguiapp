@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
@@ -94,7 +95,7 @@ $(document).ready(function(){initNavTree('classtab__newpane.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -107,6 +108,8 @@ $(document).ready(function(){initNavTree('classtab__newpane.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classtab__newpane-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">tab_newpane Class Reference</div>  </div>
@@ -119,13 +122,43 @@ $(document).ready(function(){initNavTree('classtab__newpane.html','');});
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2a9e328d10b6f803969edf7621df3681"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#a2a9e328d10b6f803969edf7621df3681">DTS_OJBREF_CLASS</a> (<a class="el" href="classtab__newpane.html">tab_newpane</a>)</td></tr>
 <tr class="separator:a2a9e328d10b6f803969edf7621df3681"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66f664e9d0212bd0415953c72afbbacd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#a66f664e9d0212bd0415953c72afbbacd">tab_newpane</a> (<a class="el" href="class_d_t_s_tab_window.html">DTSTabWindow</a> *tabv, const char *xpath, const char *node, const char *vitem, const char *tattr, <a class="el" href="dtsgui_8h.html#ab5e1fa276d48b20d35f4ef20110c39ed">dtsgui_tabpane_newdata_cb</a> data_cb, <a class="el" href="dtsgui_8h.html#ab65db729662a3b0d109158d2fb51f93c">dtsgui_tabpanel_cb</a> cb, void *cdata, struct xml_doc *xmldoc, void *data)</td></tr>
+<tr class="memitem:a66f664e9d0212bd0415953c72afbbacd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#a66f664e9d0212bd0415953c72afbbacd">tab_newpane</a> (<a class="el" href="class_d_t_s_tab_window.html">DTSTabWindow</a> *<a class="el" href="classtab__newpane.html#ab354d877d932ffb47de092bf1e1a8ab8">tabv</a>, const char *<a class="el" href="classtab__newpane.html#a7a0581f47af3ab66c26fd6ea82b3ee9a">xpath</a>, const char *<a class="el" href="classtab__newpane.html#a6ba77ba36491f4faaa975fe4264e0da5">node</a>, const char *<a class="el" href="classtab__newpane.html#a91aa2bdcdc5a40fc55c922d779ce24e3">vitem</a>, const char *<a class="el" href="classtab__newpane.html#a1fdfec0a57f980f16a83892b0da294b9">tattr</a>, <a class="el" href="group___c_o_r_e.html#gab5e1fa276d48b20d35f4ef20110c39ed">dtsgui_tabpane_newdata_cb</a> <a class="el" href="classtab__newpane.html#ad411183382cacce488de4bad08fa1e74">data_cb</a>, <a class="el" href="group___c_o_r_e.html#gab65db729662a3b0d109158d2fb51f93c">dtsgui_tabpanel_cb</a> <a class="el" href="classtab__newpane.html#a8eb7f1e451ea29a942fe94c5e79842bc">cb</a>, void *<a class="el" href="classtab__newpane.html#ab8134f20a45410b664c3853e4ef5f499">cdata</a>, struct xml_doc *<a class="el" href="classtab__newpane.html#af58db0bde709efe63fd806ca6753eff4">xmldoc</a>, void *<a class="el" href="classtab__newpane.html#a70f33dd22d1a121e7d8e84cd52f1efd0">data</a>)</td></tr>
 <tr class="separator:a66f664e9d0212bd0415953c72afbbacd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a8084796f246b29a21c9077aefa40fc18"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#a8084796f246b29a21c9077aefa40fc18">handle_newtabpane_cb</a> (class <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>, <a class="el" href="dtsgui_8h.html#a80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a> p, int type, int event, void *data)</td></tr>
+<tr class="memitem:a8084796f246b29a21c9077aefa40fc18"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#a8084796f246b29a21c9077aefa40fc18">handle_newtabpane_cb</a> (class <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>, <a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a> p, int type, int event, void *<a class="el" href="classtab__newpane.html#a70f33dd22d1a121e7d8e84cd52f1efd0">data</a>)</td></tr>
 <tr class="separator:a8084796f246b29a21c9077aefa40fc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:af3f96c0ce186f089d5e5598ea4814179"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#af3f96c0ce186f089d5e5598ea4814179">handle_newtabpane</a> (class <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>, <a class="el" href="class_d_t_s_panel.html">DTSPanel</a> *dp)</td></tr>
+<tr class="separator:af3f96c0ce186f089d5e5598ea4814179"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af58db0bde709efe63fd806ca6753eff4"><td class="memItemLeft" align="right" valign="top">struct xml_doc *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#af58db0bde709efe63fd806ca6753eff4">xmldoc</a></td></tr>
+<tr class="separator:af58db0bde709efe63fd806ca6753eff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab354d877d932ffb47de092bf1e1a8ab8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_t_s_tab_window.html">DTSTabWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#ab354d877d932ffb47de092bf1e1a8ab8">tabv</a></td></tr>
+<tr class="separator:ab354d877d932ffb47de092bf1e1a8ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eb7f1e451ea29a942fe94c5e79842bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_o_r_e.html#gab65db729662a3b0d109158d2fb51f93c">dtsgui_tabpanel_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#a8eb7f1e451ea29a942fe94c5e79842bc">cb</a></td></tr>
+<tr class="separator:a8eb7f1e451ea29a942fe94c5e79842bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad411183382cacce488de4bad08fa1e74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_o_r_e.html#gab5e1fa276d48b20d35f4ef20110c39ed">dtsgui_tabpane_newdata_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#ad411183382cacce488de4bad08fa1e74">data_cb</a></td></tr>
+<tr class="separator:ad411183382cacce488de4bad08fa1e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a0581f47af3ab66c26fd6ea82b3ee9a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#a7a0581f47af3ab66c26fd6ea82b3ee9a">xpath</a></td></tr>
+<tr class="separator:a7a0581f47af3ab66c26fd6ea82b3ee9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ba77ba36491f4faaa975fe4264e0da5"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#a6ba77ba36491f4faaa975fe4264e0da5">node</a></td></tr>
+<tr class="separator:a6ba77ba36491f4faaa975fe4264e0da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91aa2bdcdc5a40fc55c922d779ce24e3"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#a91aa2bdcdc5a40fc55c922d779ce24e3">vitem</a></td></tr>
+<tr class="separator:a91aa2bdcdc5a40fc55c922d779ce24e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fdfec0a57f980f16a83892b0da294b9"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#a1fdfec0a57f980f16a83892b0da294b9">tattr</a></td></tr>
+<tr class="separator:a1fdfec0a57f980f16a83892b0da294b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8134f20a45410b664c3853e4ef5f499"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#ab8134f20a45410b664c3853e4ef5f499">cdata</a></td></tr>
+<tr class="separator:ab8134f20a45410b664c3853e4ef5f499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70f33dd22d1a121e7d8e84cd52f1efd0"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#a70f33dd22d1a121e7d8e84cd52f1efd0">data</a></td></tr>
+<tr class="separator:a70f33dd22d1a121e7d8e84cd52f1efd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3c901ac96fe24f4f57e2052dd459361"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtab__newpane.html#ad3c901ac96fe24f4f57e2052dd459361">last</a></td></tr>
+<tr class="separator:ad3c901ac96fe24f4f57e2052dd459361"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -168,13 +201,13 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="dtsgui_8h.html#ab5e1fa276d48b20d35f4ef20110c39ed">dtsgui_tabpane_newdata_cb</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#gab5e1fa276d48b20d35f4ef20110c39ed">dtsgui_tabpane_newdata_cb</a>&#160;</td>
           <td class="paramname"><em>data_cb</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="dtsgui_8h.html#ab65db729662a3b0d109158d2fb51f93c">dtsgui_tabpanel_cb</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#gab65db729662a3b0d109158d2fb51f93c">dtsgui_tabpanel_cb</a>&#160;</td>
           <td class="paramname"><em>cb</em>, </td>
         </tr>
         <tr>
@@ -203,7 +236,11 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00131">131</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00145">145</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00063">cb</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00069">cdata</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00070">data</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00064">data_cb</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00071">last</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00062">tabv</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00061">xmldoc</a>.</p>
+
+<p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00645">DTS_C_API::dtsgui_newxmltabpane()</a>.</p>
 
 </div>
 </div>
@@ -224,6 +261,46 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="af3f96c0ce186f089d5e5598ea4814179"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tab_newpane::handle_newtabpane </td>
+          <td>(</td>
+          <td class="paramtype">class <a class="el" href="classdtsgui.html">dtsgui</a> *&#160;</td>
+          <td class="paramname"><em>dtsgui</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_d_t_s_panel.html">DTSPanel</a> *&#160;</td>
+          <td class="paramname"><em>dp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">216</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00063">cb</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00069">cdata</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00991">DTSTabWindow::CreateTab()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00070">data</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00064">data_cb</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l01014">DTSTabWindow::InsertTab()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00071">last</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00066">node</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00777">DTSPanel::Panel2XML()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00062">tabv</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00068">tattr</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00919">DTSTabWindow::Undo()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00067">vitem</a>, <a class="el" href="dtsgui_8h_source.html#l00271">wx_PANEL_BUTTON_ACTION</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00061">xmldoc</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00065">xpath</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00198">handle_newtabpane_cb()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a8084796f246b29a21c9077aefa40fc18"></a>
 <div class="memitem">
 <div class="memproto">
@@ -240,7 +317,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="dtsgui_8h.html#a80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a>&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
@@ -274,7 +351,276 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00184">184</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00198">198</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">handle_newtabpane()</a>, <a class="el" href="dtsgui_8h_source.html#l00216">wx_PANEL_EVENT_BUTTON</a>, and <a class="el" href="dtsgui_8h_source.html#l00208">wx_PANEL_EVENT_BUTTON_YES</a>.</p>
+
+<p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00645">DTS_C_API::dtsgui_newxmltabpane()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a8eb7f1e451ea29a942fe94c5e79842bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group___c_o_r_e.html#gab65db729662a3b0d109158d2fb51f93c">dtsgui_tabpanel_cb</a> tab_newpane::cb</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00063">63</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">handle_newtabpane()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00145">tab_newpane()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab8134f20a45410b664c3853e4ef5f499"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* tab_newpane::cdata</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00069">69</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">handle_newtabpane()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00145">tab_newpane()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a70f33dd22d1a121e7d8e84cd52f1efd0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* tab_newpane::data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00070">70</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">handle_newtabpane()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00145">tab_newpane()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad411183382cacce488de4bad08fa1e74"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group___c_o_r_e.html#gab5e1fa276d48b20d35f4ef20110c39ed">dtsgui_tabpane_newdata_cb</a> tab_newpane::data_cb</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00064">64</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">handle_newtabpane()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00145">tab_newpane()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad3c901ac96fe24f4f57e2052dd459361"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tab_newpane::last</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00071">71</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">handle_newtabpane()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00145">tab_newpane()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ba77ba36491f4faaa975fe4264e0da5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* tab_newpane::node</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00066">66</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">handle_newtabpane()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab354d877d932ffb47de092bf1e1a8ab8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_t_s_tab_window.html">DTSTabWindow</a>* tab_newpane::tabv</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00062">62</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">handle_newtabpane()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00145">tab_newpane()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1fdfec0a57f980f16a83892b0da294b9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* tab_newpane::tattr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00068">68</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">handle_newtabpane()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a91aa2bdcdc5a40fc55c922d779ce24e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* tab_newpane::vitem</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00067">67</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">handle_newtabpane()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af58db0bde709efe63fd806ca6753eff4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct xml_doc* tab_newpane::xmldoc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00061">61</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">handle_newtabpane()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00145">tab_newpane()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a0581f47af3ab66c26fd6ea82b3ee9a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* tab_newpane::xpath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00065">65</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">handle_newtabpane()</a>.</p>
 
 </div>
 </div>
@@ -288,7 +634,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classtab__newpane.html">tab_newpane</a></li>
-    <li class="footer">Generated on Wed Oct 9 2013 22:32:56 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

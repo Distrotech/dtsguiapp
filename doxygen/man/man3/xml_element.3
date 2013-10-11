@@ -1,0 +1,94 @@
+.TH "xml_element" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+xml_element \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <pitems\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTS_OJBREF_CLASS\fP (\fBxml_element\fP)"
+.br
+.ti -1c
+.RI "\fBxml_element\fP (const char *xp, struct xml_search *xs, const char *xa)"
+.br
+.ti -1c
+.RI "void \fBModify\fP (struct xml_doc *xmldoc, const char *value)"
+.br
+.ti -1c
+.RI "const char * \fBGetValue\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "struct xml_search * \fBxsearch\fP"
+.br
+.ti -1c
+.RI "const char * \fBxpath\fP"
+.br
+.ti -1c
+.RI "const char * \fBattr\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 26 of file pitems\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "xml_element::xml_element (const char *xp, struct xml_search *xs, const char *xa)"
+
+.PP
+Definition at line 46 of file pitems\&.cpp\&.
+.PP
+References attr, xpath, and xsearch\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "xml_element::DTS_OJBREF_CLASS (\fBxml_element\fP)"
+
+.SS "const char * xml_element::GetValue ()"
+
+.PP
+Definition at line 67 of file pitems\&.cpp\&.
+.PP
+References attr, and xsearch\&.
+.PP
+Referenced by DTSPanel::XMLCheckBox(), DTSPanel::XMLComboBox(), DTSPanel::XMLListBox(), and DTSPanel::XMLTextBox()\&.
+.SS "void xml_element::Modify (struct xml_doc *xmldoc, const char *value)"
+
+.PP
+Definition at line 54 of file pitems\&.cpp\&.
+.PP
+References attr, and xsearch\&.
+.PP
+Referenced by DTSPanel::Update_XML()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const char* xml_element::attr\fC [private]\fP"
+
+.PP
+Definition at line 35 of file pitems\&.h\&.
+.PP
+Referenced by GetValue(), Modify(), and xml_element()\&.
+.SS "const char* xml_element::xpath\fC [private]\fP"
+
+.PP
+Definition at line 34 of file pitems\&.h\&.
+.PP
+Referenced by xml_element()\&.
+.SS "struct xml_search* xml_element::xsearch\fC [private]\fP"
+
+.PP
+Definition at line 33 of file pitems\&.h\&.
+.PP
+Referenced by GetValue(), Modify(), and xml_element()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

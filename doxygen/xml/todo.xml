@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="todo" kind="page">
+    <compoundname>todo</compoundname>
+    <title>Todo List</title>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term><anchor id="todo_1_todo000001"/>Group <ref refid="group___c-_a_p_i-_menus" kindref="compound">C-API-Menus</ref>  </term></varlistentry>
+<listitem><para>Define and implement Exit/Quit events  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000002"/>Group <ref refid="group___c-_a_p_i-_panel" kindref="compound">C-API-Panel</ref>  </term></varlistentry>
+<listitem><para>Emit and allow panels to manage a event when a new panel is requested to allow saving the displayed panel.  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000005"/>Group <ref refid="group___c-_a_p_i-_panel-_elements" kindref="compound">C-API-Panel-Elements</ref>  </term></varlistentry>
+<listitem><para>Add a JSON API  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000006"/>Group <ref refid="group___c-_a_p_i-_panel-_elements-_x_m_l" kindref="compound">C-API-Panel-Elements-XML</ref>  </term></varlistentry>
+<listitem><para>Adding functions to work from a search path will be better than the current interface that alloacates a new search for each element.  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000004"/>Group <ref refid="group___c-_a_p_i-_panel-_tab" kindref="compound">C-API-Panel-Tab</ref>  </term></varlistentry>
+<listitem><para>Implement a right click action to allow for deletion via a confirmation dialog.  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000003"/>Group <ref refid="group___c-_a_p_i-_panel-_tree" kindref="compound">C-API-Panel-Tree</ref>  </term></varlistentry>
+<listitem><para>Allow for the deletion of branch/container/folder nodes.  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000008"/>Group <ref refid="group___c-_a_p_i-_progress" kindref="compound">C-API-Progress</ref>  </term></varlistentry>
+<listitem><para>Allow multiple instances of progress dialog not only the single interface at present.  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000007"/>Group <ref refid="group___c-_a_p_i-_wizard" kindref="compound">C-API-Wizard</ref>  </term></varlistentry>
+<listitem><para>Add a hashed list to the wizard class storing the panels to no longer need to keep a array of panels. </para></listitem>
+</variablelist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

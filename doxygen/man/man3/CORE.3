@@ -1,0 +1,705 @@
+.TH "Core API Interface Common to C and C++" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Core API Interface Common to C and C++ \- 
+.PP
+Core elements shared by all API's\&.  
+
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBdtsgui\&.h\fP"
+.br
+.RI "\fIMain include file for the GUI Library\&. \fP"
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBpoint\fP"
+.br
+.RI "\fIA simple data structure to store a coordinate\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBwx_PANEL_BUTTON_NAV\fP   \fBwx_PANEL_EVENT_BUTTON_FIRST\fP | \fBwx_PANEL_EVENT_BUTTON_BACK\fP | \fBwx_PANEL_EVENT_BUTTON_FWD\fP | \fBwx_PANEL_EVENT_BUTTON_LAST\fP"
+.br
+.RI "\fIShortcut flags for navigation buttons\&. \fP"
+.ti -1c
+.RI "#define \fBwx_PANEL_BUTTON_DIR\fP   \fBwx_PANEL_EVENT_BUTTON_BACK\fP | \fBwx_PANEL_EVENT_BUTTON_FWD\fP"
+.br
+.RI "\fIShortcut flags for direction buttons\&. \fP"
+.ti -1c
+.RI "#define \fBwx_PANEL_BUTTON_ACTION\fP   \fBwx_PANEL_EVENT_BUTTON_YES\fP | \fBwx_PANEL_EVENT_BUTTON_NO\fP"
+.br
+.RI "\fIShortcut flags for action buttons\&. \fP"
+.ti -1c
+.RI "#define \fBwx_PANEL_BUTTON_ALL\fP   \fBwx_PANEL_BUTTON_ACTION\fP | \fBwx_PANEL_BUTTON_NAV\fP"
+.br
+.RI "\fIShortcut flags for all buttons\&. \fP"
+.ti -1c
+.RI "#define \fBwx_PANEL_EVENT_BUTTON_NONE\fP   0"
+.br
+.RI "\fIShortcut flags for no buttons\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBdtsgui\fP \fBdtsgui\fP"
+.br
+.RI "\fIForward decleration of the application data class\&. \fP"
+.ti -1c
+.RI "typedef struct \fBdtsgui_wizard\fP \fBdtsgui_wizard\fP"
+.br
+.RI "\fIForward decleration of wizard class\&. \fP"
+.ti -1c
+.RI "typedef struct \fBform_item\fP \fBform_item\fP"
+.br
+.RI "\fIForward definition of \fBform_item\fP\&. \fP"
+.ti -1c
+.RI "typedef struct \fBdynamic_panel\fP \fBdynamic_panel\fP"
+.br
+.RI "\fIForward definition of \fBdynamic_panel\fP\&. \fP"
+.ti -1c
+.RI "typedef void * \fBdtsgui_menu\fP"
+.br
+.RI "\fIDefine menu as void* it is not exported to API\&. \fP"
+.ti -1c
+.RI "typedef void * \fBdtsgui_menuitem\fP"
+.br
+.RI "\fIDefine menuitem as void* it is not exported to API\&. \fP"
+.ti -1c
+.RI "typedef void * \fBdtsgui_pane\fP"
+.br
+.RI "\fIDefine panel as void* it is not exported to API\&. \fP"
+.ti -1c
+.RI "typedef void * \fBdtsgui_notebook\fP"
+.br
+.RI "\fIDefine notebook as void* it is not exported to API\&. \fP"
+.ti -1c
+.RI "typedef void * \fBdtsgui_treeview\fP"
+.br
+.RI "\fIDefine treeview as void* it is not exported to API\&. \fP"
+.ti -1c
+.RI "typedef void * \fBdtsgui_tabview\fP"
+.br
+.RI "\fIDefine tabview as void* it is not exported to API\&. \fP"
+.ti -1c
+.RI "typedef void * \fBdtsgui_treenode\fP"
+.br
+.RI "\fIDefine treenode as void* it is not exported to API\&. \fP"
+.ti -1c
+.RI "typedef void * \fBdtsgui_progress\fP"
+.br
+.RI "\fIDefine progress as void* it is not exported to API\&. \fP"
+.ti -1c
+.RI "typedef int(* \fBdtsgui_configcb\fP )(struct \fBdtsgui\fP *, void *)"
+.br
+.RI "\fICallback called on application execution\&. \fP"
+.ti -1c
+.RI "typedef int(* \fBevent_callback\fP )(struct \fBdtsgui\fP *, \fBdtsgui_pane\fP, int type, int, void *)"
+.br
+.RI "\fICallback run on panel event\&. \fP"
+.ti -1c
+.RI "typedef void *(* \fBdtsgui_toolbar_create\fP )(struct \fBdtsgui\fP *, void *, long, int, const char *, void *data)"
+.br
+.RI "\fICalback to configure and return a wxToolbar objecct\&. \fP"
+.ti -1c
+.RI "typedef \fBdtsgui_pane\fP(* \fBdtsgui_dynpanel\fP )(struct \fBdtsgui\fP *, const char *, void *)"
+.br
+.RI "\fICallback called when a dynamic menu item is selected\&. \fP"
+.ti -1c
+.RI "typedef \fBdtsgui_pane\fP(* \fBdtsgui_tree_cb\fP )(struct \fBdtsgui\fP *, \fBdtsgui_treeview\fP, \fBdtsgui_treenode\fP, enum \fBtree_cbtype\fP, const char *, void *)"
+.br
+.RI "\fICallback used for tree view events\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBdtsgui_treeviewpanel_cb\fP )(\fBdtsgui_pane\fP, \fBdtsgui_treeview\fP, \fBdtsgui_treenode\fP, void *)"
+.br
+.RI "\fICallback called after dtsgui_tree_cb to allow configuration of the panel\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBdtsgui_xmltreenode_cb\fP )(\fBdtsgui_treeview\fP, \fBdtsgui_treenode\fP, struct xml_node *, void *)"
+.br
+.RI "\fICallback called as part of the creation of a new node\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBdtsgui_tabpanel_cb\fP )(\fBdtsgui_pane\fP, void *)"
+.br
+.RI "\fIConfigure a tab view panel prior to display\&. \fP"
+.ti -1c
+.RI "typedef void(* \fBdtsgui_tabpane_newdata_cb\fP )(struct xml_doc *, struct xml_node *, void *, void **, int *)"
+.br
+.RI "\fIAllow setting the configuration data before tab pane is created\&. \fP"
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBtree_cbtype\fP { \fBDTSGUI_TREE_CB_SELECT\fP, \fBDTSGUI_TREE_CB_DELETE\fP, \fBDTSGUI_TREE_CB_EDIT\fP }"
+.br
+.RI "\fICallback event for tree view\&. \fP"
+.ti -1c
+.RI "enum \fBform_data_type\fP { \fBDTSGUI_FORM_DATA_PTR\fP, \fBDTSGUI_FORM_DATA_XML\fP }"
+.br
+.RI "\fIData storage type on form element\&. \fP"
+.ti -1c
+.RI "enum \fBpanel_buttons\fP { \fBwx_PANEL_EVENT_BUTTON_FIRST\fP = 1 << 0, \fBwx_PANEL_EVENT_BUTTON_BACK\fP = 1 << 1, \fBwx_PANEL_EVENT_BUTTON_FWD\fP = 1 << 2, \fBwx_PANEL_EVENT_BUTTON_LAST\fP = 1 << 3, \fBwx_PANEL_EVENT_BUTTON_YES\fP = 1 << 4, \fBwx_PANEL_EVENT_BUTTON_NO\fP = 1 << 5 }"
+.br
+.RI "\fIDefine all buttons that are used in creating a panel\&. \fP"
+.ti -1c
+.RI "enum \fBpanel_events\fP { \fBwx_PANEL_EVENT_BUTTON\fP = 1 << 0, \fBwx_PANEL_EVENT_COMBO_ENTER\fP = 1 << 1, \fBwx_PANEL_EVENT_COMBO_UPDATE\fP = 1 << 2, \fBwx_PANEL_EVENT_DTS\fP = 1 << 3 }"
+.br
+.RI "\fIDefine all possible events that are passed to event handler\&. \fP"
+.ti -1c
+.RI "enum \fBtree_newnode_flags\fP { \fBDTS_TREE_NEW_NODE_EDIT\fP = 1 << 0, \fBDTS_TREE_NEW_NODE_DELETE\fP = 1 << 1, \fBDTS_TREE_NEW_NODE_CONTAINER\fP = 1 << 2, \fBDTS_TREE_NEW_NODE_SORT\fP = 1 << 3 }"
+.br
+.RI "\fIOptions set on tree nodes\&. \fP"
+.ti -1c
+.RI "enum \fBpanel_type\fP { \fBwx_DTSPANEL_WINDOW\fP, \fBwx_DTSPANEL_PANEL\fP, \fBwx_DTSPANEL_SCROLLPANEL\fP, \fBwx_DTSPANEL_DIALOG\fP, \fBwx_DTSPANEL_TREE\fP, \fBwx_DTSPANEL_TAB\fP, \fBwx_DTSPANEL_WIZARD\fP }"
+.br
+.RI "\fIPanel Type\&. \fP"
+.ti -1c
+.RI "enum \fBwidget_type\fP { \fBDTS_WIDGET_TEXTBOX\fP, \fBDTS_WIDGET_CHECKBOX\fP, \fBDTS_WIDGET_LISTBOX\fP, \fBDTS_WIDGET_COMBOBOX\fP }"
+.br
+.RI "\fIType of list item\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Core elements shared by all API's\&. 
+
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define wx_PANEL_BUTTON_ACTION   \fBwx_PANEL_EVENT_BUTTON_YES\fP | \fBwx_PANEL_EVENT_BUTTON_NO\fP"
+
+.PP
+Shortcut flags for action buttons\&. 
+.PP
+Definition at line 271 of file dtsgui\&.h\&.
+.PP
+Referenced by DTSTreeWindow::CreatePane(), tab_newpane::handle_newtabpane(), iface_config(), DTSFrame::Passwd(), and pbx_settings()\&.
+.SS "#define wx_PANEL_BUTTON_ALL   \fBwx_PANEL_BUTTON_ACTION\fP | \fBwx_PANEL_BUTTON_NAV\fP"
+
+.PP
+Shortcut flags for all buttons\&. 
+.PP
+Definition at line 274 of file dtsgui\&.h\&.
+.PP
+Referenced by test_menu()\&.
+.SS "#define wx_PANEL_BUTTON_DIR   \fBwx_PANEL_EVENT_BUTTON_BACK\fP | \fBwx_PANEL_EVENT_BUTTON_FWD\fP"
+
+.PP
+Shortcut flags for direction buttons\&. 
+.PP
+Definition at line 268 of file dtsgui\&.h\&.
+.SS "#define wx_PANEL_BUTTON_NAV   \fBwx_PANEL_EVENT_BUTTON_FIRST\fP | \fBwx_PANEL_EVENT_BUTTON_BACK\fP | \fBwx_PANEL_EVENT_BUTTON_FWD\fP | \fBwx_PANEL_EVENT_BUTTON_LAST\fP"
+
+.PP
+Shortcut flags for navigation buttons\&. 
+.PP
+Definition at line 265 of file dtsgui\&.h\&.
+.SS "#define wx_PANEL_EVENT_BUTTON_NONE   0"
+
+.PP
+Shortcut flags for no buttons\&. 
+.PP
+Definition at line 277 of file dtsgui\&.h\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBdtsgui\fP \fBdtsgui\fP"
+
+.PP
+Forward decleration of the application data class\&. 
+.PP
+Definition at line 56 of file dtsgui\&.h\&.
+.SS "typedef int(* dtsgui_configcb)(struct \fBdtsgui\fP *, void *)"
+
+.PP
+Callback called on application execution\&. The callback is called with the application pointer and supplied userdata 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSApp::DTSApp()\fP 
+.PP
+\fBdtsgui_config()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fIdata\fP Userdata reference\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returning 0 will cause application execution to fail\&. 
+.RE
+.PP
+
+.PP
+Definition at line 89 of file dtsgui\&.h\&.
+.SS "typedef \fBdtsgui_pane\fP(* dtsgui_dynpanel)(struct \fBdtsgui\fP *, const char *, void *)"
+
+.PP
+Callback called when a dynamic menu item is selected\&. This function is called and allows returning a pane to be displayed\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSFrame::NewMenuItem()\fP 
+.PP
+\fBdtsgui_newmenucb\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fIname\fP Name of the menu item\&. 
+.br
+\fIdata\fP Reference to data set when menu is created\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+If a panel is returned it will be displayed\&. 
+.RE
+.PP
+
+.PP
+Definition at line 129 of file dtsgui\&.h\&.
+.SS "typedef void* \fBdtsgui_menu\fP"
+
+.PP
+Define menu as void* it is not exported to API\&. 
+.PP
+Definition at line 65 of file dtsgui\&.h\&.
+.SS "typedef void* \fBdtsgui_menuitem\fP"
+
+.PP
+Define menuitem as void* it is not exported to API\&. 
+.PP
+Definition at line 67 of file dtsgui\&.h\&.
+.SS "typedef void* \fBdtsgui_notebook\fP"
+
+.PP
+Define notebook as void* it is not exported to API\&. 
+.PP
+Definition at line 71 of file dtsgui\&.h\&.
+.SS "typedef void* \fBdtsgui_pane\fP"
+
+.PP
+Define panel as void* it is not exported to API\&. 
+.PP
+Definition at line 69 of file dtsgui\&.h\&.
+.SS "typedef void* \fBdtsgui_progress\fP"
+
+.PP
+Define progress as void* it is not exported to API\&. 
+.PP
+Definition at line 79 of file dtsgui\&.h\&.
+.SS "typedef void(* dtsgui_tabpane_newdata_cb)(struct xml_doc *, struct xml_node *, void *, void **, int *)"
+
+.PP
+Allow setting the configuration data before tab pane is created\&. This callback is called as part of the new tab creation to allow setting callback data\&.The position of the pane can also be set\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBtab_newpane::handle_newtabpane()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIxmldoc\fP XML Document\&. 
+.br
+\fIxn\fP XML Node reference\&. 
+.br
+\fIdata\fP Panel data reference\&. 
+.br
+\fIcdata\fP Pointer to reference of cdata can be replaced by setting cdata[0] to new reference\&. 
+.br
+\fIpos\fP Pointer to integer containing panel position can be overwritten setting *pos\&. 
+.RE
+.PP
+
+.PP
+Definition at line 185 of file dtsgui\&.h\&.
+.SS "typedef void(* dtsgui_tabpanel_cb)(\fBdtsgui_pane\fP, void *)"
+
+.PP
+Configure a tab view panel prior to display\&. Tab panels are dynanic and created as needed by calling this callback\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSTabPage::ConfigPane()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel been configured\&. 
+.br
+\fIdata\fP Reference to the config data held by panel\&. 
+.RE
+.PP
+
+.PP
+Definition at line 173 of file dtsgui\&.h\&.
+.SS "typedef void* \fBdtsgui_tabview\fP"
+
+.PP
+Define tabview as void* it is not exported to API\&. 
+.PP
+Definition at line 75 of file dtsgui\&.h\&.
+.SS "typedef void*(* dtsgui_toolbar_create)(struct \fBdtsgui\fP *, void *, long, int, const char *, void *data)"
+
+.PP
+Calback to configure and return a wxToolbar objecct\&. \fBSee Also:\fP
+.RS 4
+\fBDTSFrame::SetupToolbar()\fP 
+.PP
+\fBdtsgui_setuptoolbar\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fIwindow\fP Application frame (Parent window wxWindow) 
+.br
+\fIstyle\fP Style to be supplied to wxToolbar constructor\&. 
+.br
+\fIwid\fP Window id to be supplied\&. 
+.br
+\fIname\fP Name to be supplied\&. 
+.br
+\fIdata\fP Reference to data supplied when setting upt the tool bar\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Must return a wxToolbar object\&. 
+.RE
+.PP
+
+.PP
+Definition at line 118 of file dtsgui\&.h\&.
+.SS "typedef \fBdtsgui_pane\fP(* dtsgui_tree_cb)(struct \fBdtsgui\fP *, \fBdtsgui_treeview\fP, \fBdtsgui_treenode\fP, enum \fBtree_cbtype\fP, const char *, void *)"
+
+.PP
+Callback used for tree view events\&. \fBSee Also:\fP
+.RS 4
+\fBDTSTreeWindowEvent::TreeCallback()\fP 
+.PP
+\fBtree_cbtype\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fItree\fP Treeview\&. 
+.br
+\fInode\fP Tree node that generated the event\&. 
+.br
+\fItype\fP Callback type\&. 
+.br
+\fItitle\fP Name of node\&. 
+.br
+\fIdata\fP Userdata refernece of data passed too treeview\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+If a panel is returned it will be placed int the display area\&. 
+.RE
+.PP
+
+.PP
+Definition at line 142 of file dtsgui\&.h\&.
+.SS "typedef void* \fBdtsgui_treenode\fP"
+
+.PP
+Define treenode as void* it is not exported to API\&. 
+.PP
+Definition at line 77 of file dtsgui\&.h\&.
+.SS "typedef void* \fBdtsgui_treeview\fP"
+
+.PP
+Define treeview as void* it is not exported to API\&. 
+.PP
+Definition at line 73 of file dtsgui\&.h\&.
+.SS "typedef void(* dtsgui_treeviewpanel_cb)(\fBdtsgui_pane\fP, \fBdtsgui_treeview\fP, \fBdtsgui_treenode\fP, void *)"
+
+.PP
+Callback called after dtsgui_tree_cb to allow configuration of the panel\&. This callback is stored on the node and allows the panel to be configured per node allowing generic tree callback\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDTSTreeWindowEvent::TreeCallback()\fP 
+.PP
+\fBDTSDVMListStore::ConfigPanel()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to be configured\&. 
+.br
+\fItree\fP Treeview that contains the node/panel\&. 
+.br
+\fInode\fP Node that this panel represents\&. 
+.br
+\fIdata\fP Reference to user data stored on node\&. 
+.RE
+.PP
+
+.PP
+Definition at line 154 of file dtsgui\&.h\&.
+.SS "typedef struct \fBdtsgui_wizard\fP \fBdtsgui_wizard\fP"
+
+.PP
+Forward decleration of wizard class\&. 
+.PP
+Definition at line 58 of file dtsgui\&.h\&.
+.SS "typedef void(* dtsgui_xmltreenode_cb)(\fBdtsgui_treeview\fP, \fBdtsgui_treenode\fP, struct xml_node *, void *)"
+
+.PP
+Callback called as part of the creation of a new node\&. This callback will allow manipulation of the newly created node if required\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBdtsgui_newxmltreenode()\fP 
+.PP
+\fBtree_newnode::tree_newnode()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItree\fP Tree view that contains the node\&. 
+.br
+\fInode\fP Newly created tree node\&. 
+.br
+\fIxn\fP XML Node assigned to the node\&. 
+.br
+\fIdata\fP Reference to user data\&. 
+.RE
+.PP
+
+.PP
+Definition at line 165 of file dtsgui\&.h\&.
+.SS "typedef struct \fBdynamic_panel\fP \fBdynamic_panel\fP"
+
+.PP
+Forward definition of \fBdynamic_panel\fP\&. 
+.PP
+Definition at line 62 of file dtsgui\&.h\&.
+.SS "typedef int(* event_callback)(struct \fBdtsgui\fP *, \fBdtsgui_pane\fP, int type, int, void *)"
+
+.PP
+Callback run on panel event\&. When a panel event is triggered and a callback has been registered it will be called\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBpanel_events\fP 
+.PP
+\fBpanel_buttons\fP 
+.PP
+\fBDTSPanel::SetEventCallback()\fP 
+.PP
+\fBdtsgui_setevcallback()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fIp\fP Panel that the event originated on\&. 
+.br
+\fItype\fP Event type\&. 
+.br
+\fIeid\fP Event ID Depends on the event type\&. 
+.br
+\fIdata\fP Data attached to the event handler\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A non zero value to allow further processing of the event\&. 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file dtsgui\&.h\&.
+.SS "typedef struct \fBform_item\fP \fBform_item\fP"
+
+.PP
+Forward definition of \fBform_item\fP\&. 
+.PP
+Definition at line 60 of file dtsgui\&.h\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBform_data_type\fP"
+
+.PP
+Data storage type on form element\&. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIDTSGUI_FORM_DATA_PTR \fP\fP
+Reference to data\&. 
+.TP
+\fB\fIDTSGUI_FORM_DATA_XML \fP\fP
+Reference to XML Node\&. 
+.PP
+Definition at line 48 of file dtsgui\&.h\&.
+.SS "enum \fBpanel_buttons\fP"
+
+.PP
+Define all buttons that are used in creating a panel\&. \fBRemarks:\fP
+.RS 4
+These buttons are placed in this order at the bottom of the panel buttons not in the mask are not displayed and are blank spaces 
+.RE
+.PP
+
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIwx_PANEL_EVENT_BUTTON_FIRST \fP\fP
+A Rewind button used to indicate select first record\&. 
+.TP
+\fB\fIwx_PANEL_EVENT_BUTTON_BACK \fP\fP
+A Back button used to go one record back\&. 
+.TP
+\fB\fIwx_PANEL_EVENT_BUTTON_FWD \fP\fP
+A Forward button indicating to proceed to next record\&. 
+.TP
+\fB\fIwx_PANEL_EVENT_BUTTON_LAST \fP\fP
+A Fast Forward button used to indicate select lasr record\&. 
+.TP
+\fB\fIwx_PANEL_EVENT_BUTTON_YES \fP\fP
+A Affirmative button\&. 
+.TP
+\fB\fIwx_PANEL_EVENT_BUTTON_NO \fP\fP
+A Cancel/No/Undo button\&. 
+.PP
+Definition at line 198 of file dtsgui\&.h\&.
+.SS "enum \fBpanel_events\fP"
+
+.PP
+Define all possible events that are passed to event handler\&. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIwx_PANEL_EVENT_BUTTON \fP\fP
+Button press event\&. 
+.TP
+\fB\fIwx_PANEL_EVENT_COMBO_ENTER \fP\fP
+Enter was pressed in a Combo box\&. 
+.TP
+\fB\fIwx_PANEL_EVENT_COMBO_UPDATE \fP\fP
+Combo box text has been updated\&. 
+.TP
+\fB\fIwx_PANEL_EVENT_DTS \fP\fP
+DTS Application event\&.\&. 
+.PP
+Definition at line 214 of file dtsgui\&.h\&.
+.SS "enum \fBpanel_type\fP"
+
+.PP
+Panel Type\&. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIwx_DTSPANEL_WINDOW \fP\fP
+\fBDTSWindow\fP (wx_DTSPANEL_WINDOW) is a basic panel without tab traversal controls and is rarely used (\fBDTSFrame::TextPanel\fP)\&. 
+.TP
+\fB\fIwx_DTSPANEL_PANEL \fP\fP
+\fBDTSStaticPanel\fP (wx_DTSPANEL_PANEL) includes tab traversal\&. 
+.TP
+\fB\fIwx_DTSPANEL_SCROLLPANEL \fP\fP
+\fBDTSScrollPanel\fP (wx_DTSPANEL_SCROLLPANEL) adds scrollbar support\&. 
+.TP
+\fB\fIwx_DTSPANEL_DIALOG \fP\fP
+\fBDTSDialog\fP (wx_DTSPANEL_DIALOG) is a wx_DTSPANEL_PANEL displayed in a pop up dialog box\&. 
+.TP
+\fB\fIwx_DTSPANEL_TREE \fP\fP
+\fBDTSTreeWindow\fP (wx_DTSPANEL_TREE) see \fBTree view panel interface\&.\fP\&. 
+.TP
+\fB\fIwx_DTSPANEL_TAB \fP\fP
+\fBDTSTabWindow\fP (wx_DTSPANEL_TAB) see \fBTab view panel interface\&.\fP\&. 
+.TP
+\fB\fIwx_DTSPANEL_WIZARD \fP\fP
+\fBDTSWizardWindow\fP (wx_DTSPANEL_WIZARD) see \fBWizard Interface\&.\fP\&. 
+.PP
+Definition at line 239 of file dtsgui\&.h\&.
+.SS "enum \fBtree_cbtype\fP"
+
+.PP
+Callback event for tree view\&. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIDTSGUI_TREE_CB_SELECT \fP\fP
+Treenods is selected\&. 
+.TP
+\fB\fIDTSGUI_TREE_CB_DELETE \fP\fP
+Treenods is to be deleted\&. 
+.TP
+\fB\fIDTSGUI_TREE_CB_EDIT \fP\fP
+Treenods is edited\&. 
+.PP
+Definition at line 38 of file dtsgui\&.h\&.
+.SS "enum \fBtree_newnode_flags\fP"
+
+.PP
+Options set on tree nodes\&. \fBRemarks:\fP
+.RS 4
+Not all options apply to containers and leaf nodes\&. 
+.RE
+.PP
+
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIDTS_TREE_NEW_NODE_EDIT \fP\fP
+Allow editing of the node\&. 
+.TP
+\fB\fIDTS_TREE_NEW_NODE_DELETE \fP\fP
+Allow deleteing the node from right click menu\&. 
+.TP
+\fB\fIDTS_TREE_NEW_NODE_CONTAINER \fP\fP
+Node is a Container\&. 
+.TP
+\fB\fIDTS_TREE_NEW_NODE_SORT \fP\fP
+Container node allows sorting\&. 
+.PP
+Definition at line 227 of file dtsgui\&.h\&.
+.SS "enum \fBwidget_type\fP"
+
+.PP
+Type of list item\&. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIDTS_WIDGET_TEXTBOX \fP\fP
+.TP
+\fB\fIDTS_WIDGET_CHECKBOX \fP\fP
+.TP
+\fB\fIDTS_WIDGET_LISTBOX \fP\fP
+.TP
+\fB\fIDTS_WIDGET_COMBOBOX \fP\fP
+
+.PP
+Definition at line 257 of file dtsgui\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

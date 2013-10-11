@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['g_5frow',['g_row',['../class_d_t_s_panel.html#a40a4abd45ab1af5aff6eb893aeb0eede',1,'DTSPanel']]],
   ['get_5fiface_5fcdata',['get_iface_cdata',['../interface_8c.html#a3a6216b44ef12f4343578439ea097c50',1,'interface.c']]],
   ['get_5fnewiface_5fdata',['get_newiface_data',['../interface_8c.html#a23ef5c5cf103f36dd179c5625f8f8576',1,'interface.c']]],
   ['getactivenode',['GetActiveNode',['../class_d_t_s_tree_window.html#a13f1a1a56891ccba3df14c857e09197e',1,'DTSTreeWindow']]],
@@ -22,7 +23,8 @@ var searchData=
   ['getpanel',['GetPanel',['../class_d_t_s_object.html#ae88ef1ea6f28346b6cd6d2d898d7acde',1,'DTSObject']]],
   ['getparent',['GetParent',['../class_d_t_s_d_v_m_list_store.html#a0d389a6d98f49cabd9b8526849682f5f',1,'DTSDVMListStore::GetParent()'],['../class_d_t_s_d_v_m_list_view.html#a764737b69417b79b1f57ee862746d7dc',1,'DTSDVMListView::GetParent()']]],
   ['getparenttitle',['GetParentTitle',['../class_d_t_s_d_v_m_list_store.html#a06805bea00fbdbf5df1f995b87897b5e',1,'DTSDVMListStore']]],
-  ['getpostinfo',['GetPostInfo',['../class_d_t_s_a_p_p_tool_bar.html#a3a6b7d6e0c40ace8cb298cebb2d108d4',1,'DTSAPPToolBar']]],
+  ['getpost',['getpost',['../class_d_t_s_x_m_l_combo_box.html#afa4ceb66dab1fc8beda14047dfb3d1e6',1,'DTSXMLComboBox']]],
+  ['getpostinfo',['GetPostInfo',['../class_d_t_s_a_p_p_tool_bar.html#a3a6b7d6e0c40ace8cb298cebb2d108d4',1,'DTSAPPToolBar::GetPostInfo()'],['../class_d_t_s_x_m_l_combo_box.html#aefd4fde2c41d00b0a9d8068265ee42c6',1,'DTSXMLComboBox::GetPostInfo()']]],
   ['getroot',['GetRoot',['../class_d_t_s_d_v_m_list_view.html#adc923eb492e77cb825121688fc73764c',1,'DTSDVMListView']]],
   ['getstore',['GetStore',['../class_d_t_s_d_v_m_ctrl.html#a5ccdd2f6d3b2652ddfec7d0dc2ade0b1',1,'DTSDVMCtrl']]],
   ['gettitle',['GetTitle',['../class_d_t_s_d_v_m_list_store.html#a2bea28788838dd5c214e8cf23a5e8a2e',1,'DTSDVMListStore::GetTitle()'],['../class_d_t_s_d_v_m_list_view.html#ab6290667fa8c72eedc83399220fee834',1,'DTSDVMListView::GetTitle()']]],
@@ -31,6 +33,6 @@ var searchData=
   ['getvalue',['GetValue',['../class_d_t_s_d_v_m_list_view.html#adb0653ec593332765c9b44c7cbe14e0b',1,'DTSDVMListView::GetValue()'],['../classxml__element.html#ae0415b9bbe906cbab04e2c78c84ae5bc',1,'xml_element::GetValue()'],['../classform__item.html#a6377c3eeefcf7272d5200cd462c9eba7',1,'form_item::GetValue()']]],
   ['getwidget',['GetWidget',['../classform__item.html#a9d5508fb933bef9f078f702338e3d166',1,'form_item']]],
   ['getxmldata',['GetXMLData',['../class_d_t_s_d_v_m_list_store.html#a61adea3902f8c4b1c746546b1b9bbff0',1,'DTSDVMListStore::GetXMLData()'],['../class_d_t_s_d_v_m_list_view.html#a90439ae943298c9d7104e3f09dbd3abf',1,'DTSDVMListView::GetXMLData()'],['../classform__item.html#a1e08369cee96e1b5417c767be9b086ce',1,'form_item::GetXMLData()']]],
-  ['getxmldoc',['GetXMLDoc',['../class_d_t_s_object.html#ae177d1cfd85be759810b252b98f2050d',1,'DTSObject']]],
-  ['guiconfig_5fcb',['guiconfig_cb',['../wxforms_8c.html#af12c2714c0878b7565d8b788931f9e50',1,'wxforms.c']]]
+  ['getxmldoc',['GetXMLDoc',['../class_d_t_s_object.html#ae177d1cfd85be759810b252b98f2050d',1,'DTSObject::GetXMLDoc()'],['../class_d_t_s_x_m_l_combo_box.html#a3f983fc429c2fa50b9b46d7c5fa0538d',1,'DTSXMLComboBox::GetXMLDoc()']]],
+  ['guiconfig_5fcb',['guiconfig_cb',['../group___d_t_s-_a_p_p.html#gaf12c2714c0878b7565d8b788931f9e50',1,'wxforms.c']]]
 ];

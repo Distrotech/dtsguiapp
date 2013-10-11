@@ -1,0 +1,353 @@
+.TH "DTS_C_API" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DTS_C_API \- 
+.PP
+Namespace containing exported functions used by C\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdtsgui_menuenable\fP (\fBdtsgui_menu\fP dm, int enable)"
+.br
+.RI "\fIEnable or disable all items in menu\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_config\fP (\fBdtsgui_configcb\fP confcallback_cb, void *userdata, struct \fBpoint\fP wsize, struct \fBpoint\fP wpos, const char *title, const char *status)"
+.br
+.RI "\fIConfigure the GUI and create a application frame\&. \fP"
+.ti -1c
+.RI "int \fBdtsgui_run\fP (int argc, char **argv)"
+.br
+.RI "\fIPass execution to the GUI and activate the frame\&. \fP"
+.ti -1c
+.RI "void * \fBdtsgui_userdata\fP (struct \fBdtsgui\fP *\fBdtsgui\fP)"
+.br
+.RI "\fIObtain a reference for the application userdata\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_setwindow\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, \fBdtsgui_pane\fP p)"
+.br
+.RI "\fISet the displayed panel to pane provided\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_sendevent\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, int eid)"
+.br
+.RI "\fIEmit a event handled by event callback's\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_setuptoolbar\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, \fBdtsgui_toolbar_create\fP cb, void *data)"
+.br
+.RI "\fISpecify callback to run to create and activate the toolbar\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_set_toolbar\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, int show)"
+.br
+.RI "\fIDisable or enable the toolbar\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_titleappend\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *text)"
+.br
+.RI "\fIAppend text to the application frame title enclosed in square brackets\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_menu\fP \fBdtsgui_newmenu\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *name)"
+.br
+.RI "\fICreate a new menu and append it to the menu bar\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_menuitem\fP \fBdtsgui_newmenuitem\fP (\fBdtsgui_menu\fP dtsmenu, struct \fBdtsgui\fP *\fBdtsgui\fP, const char *hint, \fBdtsgui_pane\fP p)"
+.br
+.RI "\fICreate a menu item that will activate the pane provided\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_menuitem\fP \fBdtsgui_newmenucb\fP (\fBdtsgui_menu\fP dtsmenu, struct \fBdtsgui\fP *\fBdtsgui\fP, const char *hint, const char *name, int blank, \fBdtsgui_dynpanel\fP cb, void *data)"
+.br
+.RI "\fICreate a menu item that will call a function with supplied data to execute when selected\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_exit\fP (\fBdtsgui_menu\fP dtsmenu, struct \fBdtsgui\fP *\fBdtsgui\fP)"
+.br
+.RI "\fIAdd Menu item that will abort the app without save event been generated\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_close\fP (\fBdtsgui_menu\fP dtsmenu, struct \fBdtsgui\fP *\fBdtsgui\fP)"
+.br
+.RI "\fIAdd Menu item that will close the app after sending a save event\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_about\fP (\fBdtsgui_menu\fP dtsmenu, struct \fBdtsgui\fP *\fBdtsgui\fP, const char *text)"
+.br
+.RI "\fIAdd Menu item will pop up a 'about' box\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_menusep\fP (\fBdtsgui_menu\fP dtsmenu)"
+.br
+.RI "\fIAdd Menu seperator to the menu\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_menuitemenable\fP (\fBdtsgui_menuitem\fP dmi, int enable)"
+.br
+.RI "\fIEnable/Disable an menu item\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBdtsgui_panel\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *name, const char *title, int butmask, enum \fBpanel_type\fP type, void *userdata)"
+.br
+.RI "\fICreate a pannel to be displayed\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBdtsgui_textpane\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, const char *buf)"
+.br
+.RI "\fICreate a text display box with the text in the buffer been displayed\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_treeview\fP \fBdtsgui_treewindow\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, \fBdtsgui_tree_cb\fP tree_cb, void *userdata, struct xml_doc *xmldoc)"
+.br
+.RI "\fICreate a treepane view\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_tabview\fP \fBdtsgui_tabwindow\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.RI "\fICreate a tab view panel\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_panel_setxml\fP (\fBdtsgui_pane\fP pane, struct xml_doc *xmldoc)"
+.br
+.RI "\fIPass a reference to a XML Doc Structure to the panel\&. \fP"
+.ti -1c
+.RI "struct xml_doc * \fBdtsgui_panelxml\fP (\fBdtsgui_pane\fP pane)"
+.br
+.RI "\fIGet reference to previously allocated XML Doc\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_delpane\fP (\fBdtsgui_pane\fP pane)"
+.br
+.RI "\fIDelete a panel\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBdtsgui_newtabpage\fP (\fBdtsgui_tabview\fP tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc, \fBdtsgui_tabpanel_cb\fP cb, void *cdata)"
+.br
+.RI "\fICreate and append a tab to the view\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBdtsgui_tabpage_insert\fP (\fBdtsgui_tabview\fP tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc, \fBdtsgui_tabpanel_cb\fP cb, void *cdata, int pos, int undo)"
+.br
+.RI "\fICreate and insert a tab in the view\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_newxmltabpane\fP (\fBdtsgui_tabview\fP tabv, \fBdtsgui_pane\fP p, const char *xpath, const char *node, const char *vitem, const char *tattr, \fBdtsgui_tabpane_newdata_cb\fP data_cb, \fBdtsgui_tabpanel_cb\fP cb, void *cdata, struct xml_doc *xmldoc, void *data)"
+.br
+.RI "\fIHelper function to handle 'Adding' a new tab from a existing tab\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBdtsgui_treepane\fP (\fBdtsgui_treeview\fP tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc)"
+.br
+.RI "\fICreate a panel owned by the tree\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBdtsgui_treepane_default\fP (\fBdtsgui_treeview\fP tv, \fBdtsgui_treenode\fP node)"
+.br
+.RI "\fICreate a panel owned by the tree configured from the specified node\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_treenode\fP \fBdtsgui_treecont\fP (\fBdtsgui_treeview\fP tree, \fBdtsgui_treenode\fP node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, \fBdtsgui_treeviewpanel_cb\fP p_cb, void *data)"
+.br
+.RI "\fICreate a container in the tree view\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_treenode\fP \fBdtsgui_treeitem\fP (\fBdtsgui_treeview\fP tree, \fBdtsgui_treenode\fP node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, \fBdtsgui_treeviewpanel_cb\fP p_cb, void *data)"
+.br
+.RI "\fICreate a item in a container in the tree view\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_newxmltreenode\fP (\fBdtsgui_treeview\fP tree, \fBdtsgui_pane\fP p, \fBdtsgui_treenode\fP tn, const char *xpath, const char *node, const char *vitem, const char *tattr, int nid, int flags, \fBdtsgui_xmltreenode_cb\fP node_cb, void *data, \fBdtsgui_treeviewpanel_cb\fP p_cb)"
+.br
+.RI "\fIHelper function to handle 'Adding' a new node from a existing node\&. \fP"
+.ti -1c
+.RI "int \fBdtsgui_treenodeid\fP (\fBdtsgui_treenode\fP tn)"
+.br
+.RI "\fIGet the node id of a tree node\&. \fP"
+.ti -1c
+.RI "const char * \fBdtsgui_treenodeparent\fP (\fBdtsgui_treenode\fP tn)"
+.br
+.RI "\fIGet the name of the nodes parent\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_treenodesetxml\fP (\fBdtsgui_treenode\fP tn, struct xml_node *xn, const char *tattr)"
+.br
+.RI "\fIAdd a XML node to the tree node\&. \fP"
+.ti -1c
+.RI "struct xml_node * \fBdtsgui_treenodegetxml\fP (\fBdtsgui_treenode\fP tn, char **buf)"
+.br
+.RI "\fIReturn the XML node reference held by the tree node\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_nodesetxml\fP (\fBdtsgui_treeview\fP tree, \fBdtsgui_treenode\fP node, const char *newname)"
+.br
+.RI "\fIUpdate the XML Node or title attribute with a new name\&. \fP"
+.ti -1c
+.RI "void * \fBdtsgui_treenodegetdata\fP (\fBdtsgui_treenode\fP tn)"
+.br
+.RI "\fIGet reference for the user data of node\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_setevcallback\fP (\fBdtsgui_pane\fP pane, \fBevent_callback\fP evcb, void *data)"
+.br
+.RI "\fISet event callback function for panel\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_xmlpanel_update\fP (\fBdtsgui_pane\fP pane)"
+.br
+.RI "\fIupdate all XML items in the panel from current element values\&. \fP"
+.ti -1c
+.RI "struct curl_post * \fBdtsgui_pane2post\fP (\fBdtsgui_pane\fP p)"
+.br
+.RI "\fIPrepare a HTTP POST structure from panel\&. \fP"
+.ti -1c
+.RI "void * \fBdtsgui_paneldata\fP (\fBdtsgui_pane\fP pane)"
+.br
+.RI "\fIObtain a reference to the userdata of panel\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_settitle\fP (\fBdtsgui_pane\fP pane, const char *title)"
+.br
+.RI "\fIUpdate the title on the panel if it exists\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_setstatus\fP (\fBdtsgui_pane\fP pane, const char *status)"
+.br
+.RI "\fIUpdate the status bar message of panel\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_configcallback\fP (\fBdtsgui_pane\fP pane, \fBdtsgui_configcb\fP cb, void *data)"
+.br
+.RI "\fISet config callback function for panel (UNUSED)\&. \fP"
+.ti -1c
+.RI "struct xml_node * \fBdtsgui_panetoxml\fP (\fBdtsgui_pane\fP p, const char *xpath, const char *node, const char *nodeval, const char *attrkey)"
+.br
+.RI "\fICreate a XML node from the elements on the panel\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_rundialog\fP (\fBdtsgui_pane\fP pane, \fBevent_callback\fP evcb, void *data)"
+.br
+.RI "\fIExecute a dialog panel\&. Pop up and run a dialog pane the result will be obtained in the event handler\&. \fP"
+.ti -1c
+.RI "struct \fBdtsgui_wizard\fP * \fBdtsgui_newwizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title)"
+.br
+.RI "\fICreate a new wizard\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBdtsgui_wizard_addpage\fP (struct \fBdtsgui_wizard\fP *dtswiz, const char *title, void *userdata, struct xml_doc *xmldoc)"
+.br
+.RI "\fICreate a panel and append it to the wizard\&. \fP"
+.ti -1c
+.RI "int \fBdtsgui_runwizard\fP (struct \fBdtsgui_wizard\fP *dtswiz)"
+.br
+.RI "\fIRun the wizard\&. \fP"
+.ti -1c
+.RI "int \fBdtsgui_progress_start\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *text, int maxval, int quit)"
+.br
+.RI "\fIInitialise the progress dialog Pop up a dialog box that can be updated to showprogress with a optional cancel button\&. \fP"
+.ti -1c
+.RI "int \fBdtsgui_progress_update\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, int newval, const char *newtext)"
+.br
+.RI "\fIUpdate the progress bar counter This function updates the current progress value and optionally allows setting new displayed text\&. \fP"
+.ti -1c
+.RI "int \fBdtsgui_progress_increment\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, int ival, const char *newtext)"
+.br
+.RI "\fIIncrements the counter by adding to it not setting it\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_progress_end\fP (struct \fBdtsgui\fP *\fBdtsgui\fP)"
+.br
+.RI "\fIDisable the progress bar\&. \fP"
+.ti -1c
+.RI "struct bucket_list * \fBdtsgui_panel_items\fP (\fBdtsgui_pane\fP pane)"
+.br
+.RI "\fIReturn reference to hashed bucket list of items\&. \fP"
+.ti -1c
+.RI "struct \fBform_item\fP * \fBdtsgui_finditem\fP (\fBdtsgui_pane\fP p, const char *name)"
+.br
+.RI "\fIReturn refernece to a form element\&. Find a item and return it searcing the bucket list for the specified name\&. \fP"
+.ti -1c
+.RI "void * \fBdtsgui_item_data\fP (struct \fBform_item\fP *fi)"
+.br
+.RI "\fIGet refernece to data stoed on element\&. \fP"
+.ti -1c
+.RI "const char * \fBdtsgui_item_value\fP (struct \fBform_item\fP *fi)"
+.br
+.RI "\fIReturn value of element\&. The value of the panel element is returned fo the item\&. \fP"
+.ti -1c
+.RI "const char * \fBdtsgui_item_name\fP (struct \fBform_item\fP *fi)"
+.br
+.RI "\fIReturn name of element\&. \fP"
+.ti -1c
+.RI "const char * \fBdtsgui_findvalue\fP (\fBdtsgui_pane\fP p, const char *name)"
+.br
+.RI "\fIHelper function to return a value of a item\&. This function finds a value by name returning the value\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_alert\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *text)"
+.br
+.RI "\fIAlert the user and expect a confirmation\&. \fP"
+.ti -1c
+.RI "int \fBdtsgui_confirm\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *text)"
+.br
+.RI "\fIRequest Yes/No Confirmation from the user\&. \fP"
+.ti -1c
+.RI "const char * \fBdtsgui_filesave\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, const char *path, const char *name, const char *filter)"
+.br
+.RI "\fIOpen file save dialog box\&. \fP"
+.ti -1c
+.RI "const char * \fBdtsgui_fileopen\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, const char *path, const char *name, const char *filter)"
+.br
+.RI "\fIOpen file open dialog box\&. \fP"
+.ti -1c
+.RI "struct basic_auth * \fBdtsgui_pwdialog\fP (const char *user, const char *passwd, void *data)"
+.br
+.RI "\fIReturn basic auth reference from a password dialog box\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_listbox_add\fP (struct \fBform_item\fP *listbox, const char *text, const char *value)"
+.br
+.RI "\fIAdd a name / value to the list box for selection\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_listbox_set\fP (struct \fBform_item\fP *listbox, int idx)"
+.br
+.RI "\fISet the selected item on a list box or combobox to the index\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_listbox_addxml\fP (struct \fBform_item\fP *lb, struct xml_doc *xmldoc, const char *xpath, const char *nattr, const char *vattr)"
+.br
+.RI "\fIPopulate a listbox or combobox from a XML path\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_textbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *value, void *data)"
+.br
+.RI "\fIPlace a text element on the panel\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_textbox_multi\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *value, void *data)"
+.br
+.RI "\fIPlace a multi line text element on the panel\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_passwdbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *value, void *data)"
+.br
+.RI "\fIPlace a password element on the panel\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_checkbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *checkval, const char *uncheck, int ischecked, void *data)"
+.br
+.RI "\fIPlace a checkbox element on the panel\&. \fP"
+.ti -1c
+.RI "struct \fBform_item\fP * \fBdtsgui_listbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, void *data)"
+.br
+.RI "\fIPlace a listbox element on the panel\&. \fP"
+.ti -1c
+.RI "struct \fBform_item\fP * \fBdtsgui_combobox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, void *data)"
+.br
+.RI "\fIPlace a combobox element on the panel\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_xmltextbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.RI "\fIPlace a XML text element on the panel\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_xmltextbox_multi\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.RI "\fIPlace a XML multi line text element on the panel\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_xmlpasswdbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.RI "\fIPlace a XML password element on the panel\&. \fP"
+.ti -1c
+.RI "void \fBdtsgui_xmlcheckbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *checkval, const char *uncheckval, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.RI "\fIPlace a XML checkbox element on the panel\&. \fP"
+.ti -1c
+.RI "struct \fBform_item\fP * \fBdtsgui_xmllistbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.RI "\fIPlace a XML listbox element on the panel\&. \fP"
+.ti -1c
+.RI "struct \fBform_item\fP * \fBdtsgui_xmlcombobox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.RI "\fIPlace a XML combobox element on the panel\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static int \fBmenuid\fP = wxID_AUTO_LOWEST"
+.br
+.RI "\fIStatic variable containing menuid incremented each time a menu is created\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Namespace containing exported functions used by C\&. 
+
+These functions should not be used in C++ code use of the native API is recomended\&.
+.PP
+Allocate all exported fuctions for C to the namespace \fBDTS_C_API\fP Functions in this namespace are wrappers and should not be used in C++ code\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

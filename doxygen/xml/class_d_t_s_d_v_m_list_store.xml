@@ -16,6 +16,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="48" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_d_v_m_ctrl_1aff491c87f47b924fd0d6d26fb319b82c" compoundref="_d_t_s_list_view_8cpp" startline="616" endline="636">DTSDVMCtrl::AppendNode</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac0c3b48a9c6227d016dcffe7dc17a250" compoundref="_d_t_s_tree_window_8cpp" startline="321" endline="394">DTSTreeWindowEvent::TreeEvent</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_d_v_m_list_store_1a6de730ce6b6115eaa164161529d9bfd2" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -29,6 +31,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="49" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_d_v_m_ctrl_1aff491c87f47b924fd0d6d26fb319b82c" compoundref="_d_t_s_list_view_8cpp" startline="616" endline="636">DTSDVMCtrl::AppendNode</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac0c3b48a9c6227d016dcffe7dc17a250" compoundref="_d_t_s_tree_window_8cpp" startline="321" endline="394">DTSTreeWindowEvent::TreeEvent</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_d_v_m_list_store_1a6794906e84f9d97761f95ff7d3b8a452" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -42,6 +46,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="50" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_d_v_m_ctrl_1aff491c87f47b924fd0d6d26fb319b82c" compoundref="_d_t_s_list_view_8cpp" startline="616" endline="636">DTSDVMCtrl::AppendNode</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac0c3b48a9c6227d016dcffe7dc17a250" compoundref="_d_t_s_tree_window_8cpp" startline="321" endline="394">DTSTreeWindowEvent::TreeEvent</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -57,9 +63,21 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="57" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="57" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1aa12273287bfd185a52224543fcae3b23" compoundref="_d_t_s_list_view_8cpp" startline="96" endline="98">Append</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a273068c9c62e05ef41609ee3b784d797" compoundref="_d_t_s_list_view_8cpp" startline="92" endline="94">GetChildCount</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1ac3114326313888981ecff0f93eb7bff5" compoundref="_d_t_s_list_view_8cpp" startline="118" endline="127">GetChildIndex</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a0b9344c83e4b5255c9dda28398c60b62" compoundref="_d_t_s_list_view_8cpp" startline="154" endline="163">GetChildren</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1aa74ad713c4fad25945a08a9643cf7989" compoundref="_d_t_s_list_view_8cpp" startline="165" endline="178">GetContainers</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1afd9dc74d1cfb86a19e385c5adfd29e70" compoundref="_d_t_s_list_view_8cpp" startline="110" endline="116">GetNthChild</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1ad4898a4b6987bc5b28695a96c16ca2c1" compoundref="_d_t_s_list_view_8cpp" startline="100" endline="108">Insert</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1ab4e8b7c639095f8e79ee5a14b140a97e" compoundref="_d_t_s_list_view_8cpp" startline="196" endline="206">MoveChildDown</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a65b937ebdaa75661e2ff974c23e1e35a" compoundref="_d_t_s_list_view_8cpp" startline="184" endline="194">MoveChildUp</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a5b514355fd683cc7917a50403ac8a6de" compoundref="_d_t_s_list_view_8cpp" startline="129" endline="136">RemoveChildReference</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1af15ec04eead9616fea2b06e750c6b81c" compoundref="_d_t_s_list_view_8cpp" startline="146" endline="148">SortChildren</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a1dd7792a2c6fd86cc2cc55033c7f5595" compoundref="_d_t_s_list_view_8cpp" startline="62" endline="77">~DTSDVMListStore</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_d_v_m_list_store_1a71c0dfe1d46cbf2b92ab0d3d39b2a010" prot="private" static="no" mutable="no">
-        <type><ref refid="dtsgui_8h_1a8bf800adcd2392cf7722c3cf2f603f96" kindref="member">dtsgui_treeviewpanel_cb</ref></type>
+        <type><ref refid="group___c_o_r_e_1ga8bf800adcd2392cf7722c3cf2f603f96" kindref="member">dtsgui_treeviewpanel_cb</ref></type>
         <definition>dtsgui_treeviewpanel_cb DTSDVMListStore::p_cb</definition>
         <argsstring></argsstring>
         <name>p_cb</name>
@@ -70,6 +88,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="58" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="58" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a235c78752ca007f5189806e95abcefe2" compoundref="_d_t_s_list_view_8cpp" startline="240" endline="245">ConfigPanel</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a1022266fe75605fdcded5c30163ce800" compoundref="_d_t_s_list_view_8cpp" startline="47" endline="60">DTSDVMListStore</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_d_v_m_list_store_1af24276723ed08f86c1f95c9f3117ced7" prot="private" static="no" mutable="no">
         <type><ref refid="class_d_t_s_d_v_m_list_store" kindref="compound">DTSDVMListStore</ref> *</type>
@@ -83,6 +103,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="59" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="59" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a1022266fe75605fdcded5c30163ce800" compoundref="_d_t_s_list_view_8cpp" startline="47" endline="60">DTSDVMListStore</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a0d389a6d98f49cabd9b8526849682f5f" compoundref="_d_t_s_list_view_8cpp" startline="83" endline="85">GetParent</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a06805bea00fbdbf5df1f995b87897b5e" compoundref="_d_t_s_list_view_8cpp" startline="87" endline="90">GetParentTitle</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_d_v_m_list_store_1a92118dc06f2c70dea29103fd004228da" prot="private" static="no" mutable="no">
         <type>struct xml_node *</type>
@@ -96,6 +119,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="60" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="60" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a1022266fe75605fdcded5c30163ce800" compoundref="_d_t_s_list_view_8cpp" startline="47" endline="60">DTSDVMListStore</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a61adea3902f8c4b1c746546b1b9bbff0" compoundref="_d_t_s_list_view_8cpp" startline="228" endline="238">GetXMLData</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1aa82d333247a2bf537c3acdeae7635e15" compoundref="_d_t_s_list_view_8cpp" startline="219" endline="226">SetXMLData</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a1dd7792a2c6fd86cc2cc55033c7f5595" compoundref="_d_t_s_list_view_8cpp" startline="62" endline="77">~DTSDVMListStore</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_d_v_m_list_store_1a98d60f46ee8ad5e7263dc8d3f12d7e3e" prot="private" static="no" mutable="no">
         <type>const char *</type>
@@ -109,6 +136,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="61" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="61" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a1022266fe75605fdcded5c30163ce800" compoundref="_d_t_s_list_view_8cpp" startline="47" endline="60">DTSDVMListStore</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a61adea3902f8c4b1c746546b1b9bbff0" compoundref="_d_t_s_list_view_8cpp" startline="228" endline="238">GetXMLData</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a1dd7792a2c6fd86cc2cc55033c7f5595" compoundref="_d_t_s_list_view_8cpp" startline="62" endline="77">~DTSDVMListStore</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_d_v_m_list_store_1a9508b0ac56ebb67c21c46977a4a4f228" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -122,6 +152,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="62" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a1022266fe75605fdcded5c30163ce800" compoundref="_d_t_s_list_view_8cpp" startline="47" endline="60">DTSDVMListStore</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1aa74ad713c4fad25945a08a9643cf7989" compoundref="_d_t_s_list_view_8cpp" startline="165" endline="178">GetContainers</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a39054039fd35cb8ac46ba0b27be04821" compoundref="_d_t_s_list_view_8cpp" startline="79" endline="81">IsContainer</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_d_v_m_list_store_1a9a6df6dbd6c84fd0cfbb987266203c20" prot="private" static="no" mutable="no">
         <type>wxString</type>
@@ -135,6 +168,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="63" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a1022266fe75605fdcded5c30163ce800" compoundref="_d_t_s_list_view_8cpp" startline="47" endline="60">DTSDVMListStore</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a2bea28788838dd5c214e8cf23a5e8a2e" compoundref="_d_t_s_list_view_8cpp" startline="138" endline="140">GetTitle</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a9464b7e487e9c4dccec977a6b6894b98" compoundref="_d_t_s_list_view_8cpp" startline="142" endline="144">SetTitle</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_d_v_m_list_store_1ae7dc669c541e00c95ec04713bf88abac" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -148,6 +184,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="64" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1aa74ad713c4fad25945a08a9643cf7989" compoundref="_d_t_s_list_view_8cpp" startline="165" endline="178">GetContainers</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a2582294901d9db1e1e27940539ddbdc1" compoundref="_d_t_s_list_view_8cpp" startline="180" endline="182">IsExpanded</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a069aaa01111b9ae71e09d14134023ef7" compoundref="_d_t_s_list_view_8cpp" startline="150" endline="152">SetExpanded</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_d_v_m_list_store_1a9d9977d520e8871cfdc9abae581801d5" prot="private" static="no" mutable="no">
         <type>void *</type>
@@ -161,6 +200,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="65" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a235c78752ca007f5189806e95abcefe2" compoundref="_d_t_s_list_view_8cpp" startline="240" endline="245">ConfigPanel</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a1022266fe75605fdcded5c30163ce800" compoundref="_d_t_s_list_view_8cpp" startline="47" endline="60">DTSDVMListStore</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a35aa2204af134770c1fab2f5426c50a7" compoundref="_d_t_s_list_view_8cpp" startline="208" endline="213">GetUserData</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a1dd7792a2c6fd86cc2cc55033c7f5595" compoundref="_d_t_s_list_view_8cpp" startline="62" endline="77">~DTSDVMListStore</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_d_v_m_list_store_1a7b6738784e2ddbafe71da24babd29e68" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -174,6 +217,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="66" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a1022266fe75605fdcded5c30163ce800" compoundref="_d_t_s_list_view_8cpp" startline="47" endline="60">DTSDVMListStore</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a9744dc2bb294481c69a55fcdd667b357" compoundref="_d_t_s_list_view_8cpp" startline="215" endline="217">GetNodeID</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -200,7 +245,7 @@
           <defval>-1</defval>
         </param>
         <param>
-          <type><ref refid="dtsgui_8h_1a8bf800adcd2392cf7722c3cf2f603f96" kindref="member">dtsgui_treeviewpanel_cb</ref></type>
+          <type><ref refid="group___c_o_r_e_1ga8bf800adcd2392cf7722c3cf2f603f96" kindref="member">dtsgui_treeviewpanel_cb</ref></type>
           <declname>p_cb</declname>
           <defval>NULL</defval>
         </param>
@@ -215,7 +260,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="27" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="39" bodyend="52"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="27" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="47" bodyend="60"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a9d9977d520e8871cfdc9abae581801d5" compoundref="_d_t_s_list_view_8h" startline="65">data</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a9508b0ac56ebb67c21c46977a4a4f228" compoundref="_d_t_s_list_view_8h" startline="62">is_container</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a7b6738784e2ddbafe71da24babd29e68" compoundref="_d_t_s_list_view_8h" startline="66">nodeid</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a71c0dfe1d46cbf2b92ab0d3d39b2a010" compoundref="_d_t_s_list_view_8h" startline="58">p_cb</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1af24276723ed08f86c1f95c9f3117ced7" compoundref="_d_t_s_list_view_8h" startline="59">parent</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a98d60f46ee8ad5e7263dc8d3f12d7e3e" compoundref="_d_t_s_list_view_8h" startline="61">tattr</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a9a6df6dbd6c84fd0cfbb987266203c20" compoundref="_d_t_s_list_view_8h" startline="63">title</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a92118dc06f2c70dea29103fd004228da" compoundref="_d_t_s_list_view_8h" startline="60">xml</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a1dd7792a2c6fd86cc2cc55033c7f5595" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -228,7 +281,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="28" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="54" bodyend="69"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="28" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="62" bodyend="77"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a0b6a3da4ad7be5d55855e90632ced851" compoundref="_d_t_s_list_view_8h" startline="57">children</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a9d9977d520e8871cfdc9abae581801d5" compoundref="_d_t_s_list_view_8h" startline="65">data</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a98d60f46ee8ad5e7263dc8d3f12d7e3e" compoundref="_d_t_s_list_view_8h" startline="61">tattr</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a92118dc06f2c70dea29103fd004228da" compoundref="_d_t_s_list_view_8h" startline="60">xml</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a39054039fd35cb8ac46ba0b27be04821" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -241,7 +298,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="71" bodyend="73"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="79" bodyend="81"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a9508b0ac56ebb67c21c46977a4a4f228" compoundref="_d_t_s_list_view_8h" startline="62">is_container</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1a3b8181057f6c202ccb8a096a8550d6d1" compoundref="_d_t_s_list_view_8cpp" startline="257" endline="264">DTSDVMListView::IsContainer</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac0c3b48a9c6227d016dcffe7dc17a250" compoundref="_d_t_s_tree_window_8cpp" startline="321" endline="394">DTSTreeWindowEvent::TreeEvent</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a0d389a6d98f49cabd9b8526849682f5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_d_t_s_d_v_m_list_store" kindref="compound">DTSDVMListStore</ref> *</type>
@@ -254,7 +314,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="75" bodyend="77"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="83" bodyend="85"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1af24276723ed08f86c1f95c9f3117ced7" compoundref="_d_t_s_list_view_8h" startline="59">parent</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1aae01dd71efaebb94dfea9e35d552237e" compoundref="_d_t_s_list_view_8cpp" startline="341" endline="365">DTSDVMListView::Delete</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1a764737b69417b79b1f57ee862746d7dc" compoundref="_d_t_s_list_view_8cpp" startline="266" endline="279">DTSDVMListView::GetParent</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a06805bea00fbdbf5df1f995b87897b5e" compoundref="_d_t_s_list_view_8cpp" startline="87" endline="90">GetParentTitle</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1a4fd06f54c22ab48fddd25fa77bf90034" compoundref="_d_t_s_list_view_8cpp" startline="475" endline="493">DTSDVMListView::MoveChildDown</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1a1d0cb108cee3efdf2acbc813ec66e812" compoundref="_d_t_s_list_view_8cpp" startline="455" endline="473">DTSDVMListView::MoveChildUp</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a06805bea00fbdbf5df1f995b87897b5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const wxString</type>
@@ -267,7 +333,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="79" bodyend="82"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="87" bodyend="90"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a0d389a6d98f49cabd9b8526849682f5f" compoundref="_d_t_s_list_view_8cpp" startline="83" endline="85">GetParent</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a2bea28788838dd5c214e8cf23a5e8a2e" compoundref="_d_t_s_list_view_8cpp" startline="138" endline="140">GetTitle</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1af24276723ed08f86c1f95c9f3117ced7" compoundref="_d_t_s_list_view_8h" startline="59">parent</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_tree_1gaedca58250011ea48c67fbc4faa14278f" compoundref="wrapper_8cpp" startline="785" endline="788">DTS_C_API::dtsgui_treenodeparent</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a273068c9c62e05ef41609ee3b784d797" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>size_t</type>
@@ -280,7 +350,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="32" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="84" bodyend="86"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="32" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="92" bodyend="94"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a0b6a3da4ad7be5d55855e90632ced851" compoundref="_d_t_s_list_view_8h" startline="57">children</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1a75b2584818b50c6d05adde7ac20dfd5d" compoundref="_d_t_s_list_view_8cpp" startline="391" endline="403">DTSDVMListView::GetChildCount</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1aa12273287bfd185a52224543fcae3b23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -297,7 +369,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="88" bodyend="90"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="96" bodyend="98"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a0b6a3da4ad7be5d55855e90632ced851" compoundref="_d_t_s_list_view_8h" startline="57">children</references>
+        <referencedby refid="class_d_t_s_d_v_m_ctrl_1aff491c87f47b924fd0d6d26fb319b82c" compoundref="_d_t_s_list_view_8cpp" startline="616" endline="636">DTSDVMCtrl::AppendNode</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1ad4898a4b6987bc5b28695a96c16ca2c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -318,7 +392,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="34" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="92" bodyend="100"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="34" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="100" bodyend="108"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a0b6a3da4ad7be5d55855e90632ced851" compoundref="_d_t_s_list_view_8h" startline="57">children</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1afd9dc74d1cfb86a19e385c5adfd29e70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_d_t_s_d_v_m_list_store" kindref="compound">DTSDVMListStore</ref> *</type>
@@ -335,7 +410,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="35" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="102" bodyend="108"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="35" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="110" bodyend="116"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a0b6a3da4ad7be5d55855e90632ced851" compoundref="_d_t_s_list_view_8h" startline="57">children</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1aee18c001df2dc0a5c907b5d17ea3ece6" compoundref="_d_t_s_list_view_8cpp" startline="405" endline="420">DTSDVMListView::GetNthChild</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1ac3114326313888981ecff0f93eb7bff5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>size_t</type>
@@ -352,7 +429,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="36" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="110" bodyend="119"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="36" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="118" bodyend="127"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a0b6a3da4ad7be5d55855e90632ced851" compoundref="_d_t_s_list_view_8h" startline="57">children</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1a4fd06f54c22ab48fddd25fa77bf90034" compoundref="_d_t_s_list_view_8cpp" startline="475" endline="493">DTSDVMListView::MoveChildDown</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1a1d0cb108cee3efdf2acbc813ec66e812" compoundref="_d_t_s_list_view_8cpp" startline="455" endline="473">DTSDVMListView::MoveChildUp</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a5b514355fd683cc7917a50403ac8a6de" compoundref="_d_t_s_list_view_8cpp" startline="129" endline="136">RemoveChildReference</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a5b514355fd683cc7917a50403ac8a6de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -369,7 +450,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="37" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="121" bodyend="128"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="37" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="129" bodyend="136"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a0b6a3da4ad7be5d55855e90632ced851" compoundref="_d_t_s_list_view_8h" startline="57">children</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1ac3114326313888981ecff0f93eb7bff5" compoundref="_d_t_s_list_view_8cpp" startline="118" endline="127">GetChildIndex</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1aae01dd71efaebb94dfea9e35d552237e" compoundref="_d_t_s_list_view_8cpp" startline="341" endline="365">DTSDVMListView::Delete</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a2bea28788838dd5c214e8cf23a5e8a2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const wxString</type>
@@ -382,7 +466,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="38" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="130" bodyend="132"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="38" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="138" bodyend="140"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a9a6df6dbd6c84fd0cfbb987266203c20" compoundref="_d_t_s_list_view_8h" startline="63">title</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a6a0982ded59dc351c68607d892edac01" compoundref="_d_t_s_list_view_8cpp" startline="38" endline="45">cmp_title</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1a06805bea00fbdbf5df1f995b87897b5e" compoundref="_d_t_s_list_view_8cpp" startline="87" endline="90">GetParentTitle</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1ab6290667fa8c72eedc83399220fee834" compoundref="_d_t_s_list_view_8cpp" startline="540" endline="549">DTSDVMListView::GetTitle</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1adb0653ec593332765c9b44c7cbe14e0b" compoundref="_d_t_s_list_view_8cpp" startline="312" endline="318">DTSDVMListView::GetValue</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1a98ac8a3612545e1eaeb99fa9b5662048" compoundref="_d_t_s_tree_window_8cpp" startline="483" endline="522">DTSTreeWindowEvent::TreeCallback</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1ac0c3b48a9c6227d016dcffe7dc17a250" compoundref="_d_t_s_tree_window_8cpp" startline="321" endline="394">DTSTreeWindowEvent::TreeEvent</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a9464b7e487e9c4dccec977a6b6894b98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -399,7 +490,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="39" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="134" bodyend="136"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="39" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="142" bodyend="144"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a9a6df6dbd6c84fd0cfbb987266203c20" compoundref="_d_t_s_list_view_8h" startline="63">title</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1acccd8efb3d7b81849ea504799ac8d638" compoundref="_d_t_s_list_view_8cpp" startline="320" endline="330">DTSDVMListView::SetValue</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1af15ec04eead9616fea2b06e750c6b81c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -412,7 +505,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="40" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="138" bodyend="140"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="40" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="146" bodyend="148"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a0b6a3da4ad7be5d55855e90632ced851" compoundref="_d_t_s_list_view_8h" startline="57">children</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a6a0982ded59dc351c68607d892edac01" compoundref="_d_t_s_list_view_8cpp" startline="38" endline="45">cmp_title</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1a463cffa4280decda9cb36655a200caae" compoundref="_d_t_s_list_view_8cpp" startline="377" endline="389">DTSDVMListView::SortChildren</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a069aaa01111b9ae71e09d14134023ef7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -430,7 +526,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="41" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="142" bodyend="144"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="41" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="150" bodyend="152"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1ae7dc669c541e00c95ec04713bf88abac" compoundref="_d_t_s_list_view_8h" startline="64">expanded</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1a216845800003f23bf035f0eb561d4df3" compoundref="_d_t_s_list_view_8cpp" startline="422" endline="434">DTSDVMListView::SetExpanded</referencedby>
+        <referencedby refid="class_d_t_s_tree_window_event_1aaf5ca29397996f44de6f0e73a1070795" compoundref="_d_t_s_tree_window_8cpp" startline="396" endline="443">DTSTreeWindowEvent::SortParent</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a0b9344c83e4b5255c9dda28398c60b62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>unsigned int</type>
@@ -447,7 +546,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="42" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="146" bodyend="155"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="42" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="154" bodyend="163"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a0b6a3da4ad7be5d55855e90632ced851" compoundref="_d_t_s_list_view_8h" startline="57">children</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1ade8f140548e87dce4f43782b82928be3" compoundref="_d_t_s_list_view_8cpp" startline="281" endline="298">DTSDVMListView::GetChildren</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1aa74ad713c4fad25945a08a9643cf7989" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>unsigned int</type>
@@ -469,7 +570,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="43" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="157" bodyend="170"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="43" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="165" bodyend="178"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a0b6a3da4ad7be5d55855e90632ced851" compoundref="_d_t_s_list_view_8h" startline="57">children</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1ae7dc669c541e00c95ec04713bf88abac" compoundref="_d_t_s_list_view_8h" startline="64">expanded</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a9508b0ac56ebb67c21c46977a4a4f228" compoundref="_d_t_s_list_view_8h" startline="62">is_container</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1a03a9867dcd09b6c74c33f9d79c2d887d" compoundref="_d_t_s_list_view_8cpp" startline="436" endline="453">DTSDVMListView::GetContainers</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a2582294901d9db1e1e27940539ddbdc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -482,7 +587,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="44" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="172" bodyend="174"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="44" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="180" bodyend="182"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1ae7dc669c541e00c95ec04713bf88abac" compoundref="_d_t_s_list_view_8h" startline="64">expanded</references>
+        <referencedby refid="class_d_t_s_tree_window_event_1aaf5ca29397996f44de6f0e73a1070795" compoundref="_d_t_s_tree_window_8cpp" startline="396" endline="443">DTSTreeWindowEvent::SortParent</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a65b937ebdaa75661e2ff974c23e1e35a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -499,7 +606,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="45" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="176" bodyend="186"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="45" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="184" bodyend="194"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a0b6a3da4ad7be5d55855e90632ced851" compoundref="_d_t_s_list_view_8h" startline="57">children</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1a1d0cb108cee3efdf2acbc813ec66e812" compoundref="_d_t_s_list_view_8cpp" startline="455" endline="473">DTSDVMListView::MoveChildUp</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1ab4e8b7c639095f8e79ee5a14b140a97e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -516,7 +625,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="46" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="188" bodyend="198"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="46" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="196" bodyend="206"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a0b6a3da4ad7be5d55855e90632ced851" compoundref="_d_t_s_list_view_8h" startline="57">children</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1a4fd06f54c22ab48fddd25fa77bf90034" compoundref="_d_t_s_list_view_8cpp" startline="475" endline="493">DTSDVMListView::MoveChildDown</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a35aa2204af134770c1fab2f5426c50a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
@@ -529,7 +640,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="47" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="200" bodyend="205"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="47" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="208" bodyend="213"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a9d9977d520e8871cfdc9abae581801d5" compoundref="_d_t_s_list_view_8h" startline="65">data</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_tree_1ga00767aae723dce154065e0bb090c0e70" compoundref="wrapper_8cpp" startline="836" endline="839">DTS_C_API::dtsgui_treenodegetdata</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1a5dbe05ed1e31ca2896d5f5c57229a0a3" compoundref="_d_t_s_list_view_8cpp" startline="495" endline="505">DTSDVMListView::GetUserData</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a9744dc2bb294481c69a55fcdd667b357" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -542,7 +656,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="51" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="207" bodyend="209"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="51" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="215" bodyend="217"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a7b6738784e2ddbafe71da24babd29e68" compoundref="_d_t_s_list_view_8h" startline="66">nodeid</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_tree_1gadc59452935e169e8e78c178aed0b77c0" compoundref="wrapper_8cpp" startline="775" endline="778">DTS_C_API::dtsgui_treenodeid</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1ac8cd1cebdb6a6c3d03cbc7697e4ac9ed" compoundref="_d_t_s_list_view_8cpp" startline="507" endline="517">DTSDVMListView::GetNodeID</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1aa82d333247a2bf537c3acdeae7635e15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -563,7 +680,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="52" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="211" bodyend="218"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="52" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="219" bodyend="226"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a92118dc06f2c70dea29103fd004228da" compoundref="_d_t_s_list_view_8h" startline="60">xml</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_tree_1ga3e6618e889e7b58e3bf2ae3d63332178" compoundref="wrapper_8cpp" startline="796" endline="799">DTS_C_API::dtsgui_treenodesetxml</referencedby>
+        <referencedby refid="classtree__newnode_1a64abbefc5f204cfbf9b7ad0bd7e035cf" compoundref="_d_t_s_tree_window_8cpp" startline="103" endline="143">tree_newnode::handle_newtreenode</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1a53608928d1ea68114e65ba7b92695f32" compoundref="_d_t_s_list_view_8cpp" startline="519" endline="527">DTSDVMListView::SetXMLData</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a61adea3902f8c4b1c746546b1b9bbff0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct xml_node *</type>
@@ -580,7 +701,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="53" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="220" bodyend="230"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="53" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="228" bodyend="238"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a98d60f46ee8ad5e7263dc8d3f12d7e3e" compoundref="_d_t_s_list_view_8h" startline="61">tattr</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a92118dc06f2c70dea29103fd004228da" compoundref="_d_t_s_list_view_8h" startline="60">xml</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1aae01dd71efaebb94dfea9e35d552237e" compoundref="_d_t_s_list_view_8cpp" startline="341" endline="365">DTSDVMListView::Delete</referencedby>
+        <referencedby refid="group___c-_a_p_i-_panel-_tree_1gaf56a924134315107e80c8b01bfbeee68" compoundref="wrapper_8cpp" startline="810" endline="813">DTS_C_API::dtsgui_treenodegetxml</referencedby>
+        <referencedby refid="class_d_t_s_d_v_m_list_view_1a90439ae943298c9d7104e3f09dbd3abf" compoundref="_d_t_s_list_view_8cpp" startline="529" endline="538">DTSDVMListView::GetXMLData</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_d_v_m_list_store_1a235c78752ca007f5189806e95abcefe2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -588,11 +714,11 @@
         <argsstring>(dtsgui_pane p, dtsgui_treeview tw)</argsstring>
         <name>ConfigPanel</name>
         <param>
-          <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
           <declname>p</declname>
         </param>
         <param>
-          <type><ref refid="dtsgui_8h_1a91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
           <declname>tw</declname>
         </param>
         <briefdescription>
@@ -601,7 +727,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="54" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="232" bodyend="237"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="54" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="240" bodyend="245"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a9d9977d520e8871cfdc9abae581801d5" compoundref="_d_t_s_list_view_8h" startline="65">data</references>
+        <references refid="class_d_t_s_d_v_m_list_store_1a71c0dfe1d46cbf2b92ab0d3d39b2a010" compoundref="_d_t_s_list_view_8h" startline="58">p_cb</references>
+        <referencedby refid="class_d_t_s_tree_window_event_1a98ac8a3612545e1eaeb99fa9b5662048" compoundref="_d_t_s_tree_window_8cpp" startline="483" endline="522">DTSTreeWindowEvent::TreeCallback</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -624,13 +753,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="55" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="30" bodyend="37"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="55" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSListView.cpp" bodystart="38" bodyend="45"/>
+        <references refid="class_d_t_s_d_v_m_list_store_1a2bea28788838dd5c214e8cf23a5e8a2e" compoundref="_d_t_s_list_view_8cpp" startline="138" endline="140">GetTitle</references>
+        <referencedby refid="class_d_t_s_d_v_m_list_store_1af15ec04eead9616fea2b06e750c6b81c" compoundref="_d_t_s_list_view_8cpp" startline="146" endline="148">SortChildren</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="52">
+        <label>DTSDVMListStore</label>
+        <link refid="class_d_t_s_d_v_m_list_store"/>
+        <childnode refid="52" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" line="25" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSListView.h" bodystart="25" bodyend="67"/>
     <listofallmembers>
       <member refid="class_d_t_s_d_v_m_list_store_1aa12273287bfd185a52224543fcae3b23" prot="public" virt="non-virtual"><scope>DTSDVMListStore</scope><name>Append</name></member>

@@ -28,5 +28,15 @@ var class_d_t_s_d_v_m_list_store =
     [ "SortChildren", "class_d_t_s_d_v_m_list_store.html#af15ec04eead9616fea2b06e750c6b81c", null ],
     [ "can_delete", "class_d_t_s_d_v_m_list_store.html#a6794906e84f9d97761f95ff7d3b8a452", null ],
     [ "can_edit", "class_d_t_s_d_v_m_list_store.html#a5f2a6fd27284866f4cfd264a91b8fdb3", null ],
-    [ "can_sort", "class_d_t_s_d_v_m_list_store.html#a6de730ce6b6115eaa164161529d9bfd2", null ]
+    [ "can_sort", "class_d_t_s_d_v_m_list_store.html#a6de730ce6b6115eaa164161529d9bfd2", null ],
+    [ "children", "class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851", null ],
+    [ "data", "class_d_t_s_d_v_m_list_store.html#a9d9977d520e8871cfdc9abae581801d5", null ],
+    [ "expanded", "class_d_t_s_d_v_m_list_store.html#ae7dc669c541e00c95ec04713bf88abac", null ],
+    [ "is_container", "class_d_t_s_d_v_m_list_store.html#a9508b0ac56ebb67c21c46977a4a4f228", null ],
+    [ "nodeid", "class_d_t_s_d_v_m_list_store.html#a7b6738784e2ddbafe71da24babd29e68", null ],
+    [ "p_cb", "class_d_t_s_d_v_m_list_store.html#a71c0dfe1d46cbf2b92ab0d3d39b2a010", null ],
+    [ "parent", "class_d_t_s_d_v_m_list_store.html#af24276723ed08f86c1f95c9f3117ced7", null ],
+    [ "tattr", "class_d_t_s_d_v_m_list_store.html#a98d60f46ee8ad5e7263dc8d3f12d7e3e", null ],
+    [ "title", "class_d_t_s_d_v_m_list_store.html#a9a6df6dbd6c84fd0cfbb987266203c20", null ],
+    [ "xml", "class_d_t_s_d_v_m_list_store.html#a92118dc06f2c70dea29103fd004228da", null ]
 ];

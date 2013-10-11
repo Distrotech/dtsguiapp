@@ -1,4 +1,4 @@
-.TH "dtsgui_curl" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "dtsgui_curl" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -24,6 +24,32 @@ dtsgui_curl \-
 .RI "\fBDTSFrame\fP * \fBGetFrame\fP ()"
 .br
 .in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static struct basic_auth * \fBCurlPasswd\fP (const char *user, const char *passwd, void *data)"
+.br
+.ti -1c
+.RI "static void * \fBcurl_startprogress\fP (void *data)"
+.br
+.ti -1c
+.RI "static void \fBcurl_progress_ctrl\fP (void *data, int pause)"
+.br
+.ti -1c
+.RI "static int \fBcurl_progress_function\fP (void *data, double dltotal, double dlnow, double ultotal, double ulnow)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "class \fBDTSFrame\fP * \fBframe\fP"
+.br
+.ti -1c
+.RI "int \fBcurl\fP"
+.br
+.in -1c
 .SH "Detailed Description"
 .PP 
 Definition at line 42 of file DTSApp\&.h\&.
@@ -32,19 +58,69 @@ Definition at line 42 of file DTSApp\&.h\&.
 .SS "dtsgui_curl::dtsgui_curl (class \fBdtsgui\fP *dtsgui)"
 
 .PP
-Definition at line 135 of file DTSApp\&.cpp\&.
+Definition at line 141 of file DTSApp\&.cpp\&.
+.PP
+References curl, curl_progress_ctrl(), curl_progress_function(), curl_startprogress(), CurlPasswd(), frame, and dtsgui::GetFrame()\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void dtsgui_curl::Close ()"
 
 .PP
-Definition at line 148 of file DTSApp\&.cpp\&.
+Definition at line 154 of file DTSApp\&.cpp\&.
+.PP
+References curl\&.
+.SS "void dtsgui_curl::curl_progress_ctrl (void *data, intpause)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 194 of file DTSApp\&.cpp\&.
+.PP
+References DTSFrame::EndProgress(), curl_progress::GetFrame(), curl_progress::pause, and curl_progress::pd\&.
+.PP
+Referenced by dtsgui_curl()\&.
+.SS "int dtsgui_curl::curl_progress_function (void *data, doubledltotal, doubledlnow, doubleultotal, doubleulnow)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 168 of file DTSApp\&.cpp\&.
+.PP
+References curl_progress::GetFrame(), curl_progress::pause, curl_progress::pd, DTSFrame::StartProgress(), and DTSFrame::UpdateProgress()\&.
+.PP
+Referenced by dtsgui_curl()\&.
+.SS "void * dtsgui_curl::curl_startprogress (void *data)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 162 of file DTSApp\&.cpp\&.
+.PP
+Referenced by dtsgui_curl()\&.
+.SS "struct basic_auth * dtsgui_curl::CurlPasswd (const char *user, const char *passwd, void *data)\fC [static]\fP, \fC [read]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 216 of file DTSApp\&.cpp\&.
+.PP
+References frame, and DTSFrame::Passwd()\&.
+.PP
+Referenced by dtsgui_curl()\&.
 .SS "dtsgui_curl::DTS_OJBREF_CLASS (\fBdtsgui_curl\fP)"
 
 .SS "\fBDTSFrame\fP * dtsgui_curl::GetFrame (void)"
 
 .PP
-Definition at line 215 of file DTSApp\&.cpp\&.
+Definition at line 223 of file DTSApp\&.cpp\&.
+.PP
+References frame\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int dtsgui_curl::curl\fC [private]\fP"
+
+.PP
+Definition at line 54 of file DTSApp\&.h\&.
+.PP
+Referenced by Close(), dtsgui_curl(), DTSApp::OnInit(), and DTSApp::~DTSApp()\&.
+.SS "class \fBDTSFrame\fP* dtsgui_curl::frame\fC [private]\fP"
+
+.PP
+Definition at line 53 of file DTSApp\&.h\&.
+.PP
+Referenced by CurlPasswd(), dtsgui_curl(), and GetFrame()\&.
 
 .SH "Author"
 .PP 

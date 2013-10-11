@@ -1,0 +1,71 @@
+.TH "evdata" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+evdata \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <evdata\&.h>\fP
+.PP
+Inherits wxObject\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBevdata\fP (void *, int uref=0)"
+.br
+.ti -1c
+.RI "\fB~evdata\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "void * \fBdata\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBunref\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 40 of file evdata\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "evdata::evdata (void *userdata, inturef = \fC0\fP)"
+
+.PP
+Definition at line 85 of file evdata\&.cpp\&.
+.PP
+References data, and unref\&.
+.SS "evdata::~evdata ()"
+
+.PP
+Definition at line 94 of file evdata\&.cpp\&.
+.PP
+References data, and unref\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "void* evdata::data"
+
+.PP
+Definition at line 44 of file evdata\&.h\&.
+.PP
+Referenced by DTSFrame::DynamicPanelEvent(), evdata(), DTSFrame::SwitchWindow(), and ~evdata()\&.
+.SS "int evdata::unref\fC [private]\fP"
+
+.PP
+Definition at line 46 of file evdata\&.h\&.
+.PP
+Referenced by evdata(), and ~evdata()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

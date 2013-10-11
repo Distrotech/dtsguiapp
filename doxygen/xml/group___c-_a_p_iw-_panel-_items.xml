@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="group___c-_a_p_iw-_panel-_items" kind="group">
+    <compoundname>C-APIw-Panel-Items</compoundname>
+    <title>C API Form Element Interface</title>
+    <briefdescription>
+<para>C API for managing elements of a panel.</para><para>Element items include Text / Password / Check / List / Combo boxes. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

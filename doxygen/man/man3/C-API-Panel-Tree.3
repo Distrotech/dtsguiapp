@@ -1,28 +1,22 @@
-.TH "C API Tree View Interface" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "Tree view panel interface." 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
-C API Tree View Interface \- 
+Tree view panel interface. \- 
 .PP
-C API for managing tree view panels\&.
-.PP
-Resources controlling and manipulating tree view in the C API\&.  
+A tree view is a split window with a tree in the left window and display area on right\&.  
 
 .SS "Functions"
 
 .in +1c
 .ti -1c
-.RI "void \fBDTS_C_API::dtsgui_nodesetxml\fP (\fBdtsgui_treeview\fP tree, \fBdtsgui_treenode\fP node, const char *newname)"
-.br
-.RI "\fIUpdate the XML Node with a new name\&. \fP"
-.ti -1c
 .RI "\fBdtsgui_pane\fP \fBDTS_C_API::dtsgui_treepane\fP (\fBdtsgui_treeview\fP tv, const char *name, int butmask, void *userdata, struct xml_doc *xmldoc)"
 .br
-.RI "\fICreate a tree view panel with information\&. \fP"
+.RI "\fICreate a panel owned by the tree\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBDTS_C_API::dtsgui_treepane_default\fP (\fBdtsgui_treeview\fP tv, \fBdtsgui_treenode\fP node)"
 .br
-.RI "\fICreate a tree view panel with information\&. \fP"
+.RI "\fICreate a panel owned by the tree configured from the specified node\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_treenode\fP \fBDTS_C_API::dtsgui_treecont\fP (\fBdtsgui_treeview\fP tree, \fBdtsgui_treenode\fP node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, \fBdtsgui_treeviewpanel_cb\fP p_cb, void *data)"
 .br
@@ -30,7 +24,7 @@ Resources controlling and manipulating tree view in the C API\&.
 .ti -1c
 .RI "\fBdtsgui_treenode\fP \fBDTS_C_API::dtsgui_treeitem\fP (\fBdtsgui_treeview\fP tree, \fBdtsgui_treenode\fP node, const char *title, int can_edit, int can_sort, int can_del, int nodeid, \fBdtsgui_treeviewpanel_cb\fP p_cb, void *data)"
 .br
-.RI "\fICreate a item in a container\&. \fP"
+.RI "\fICreate a item in a container in the tree view\&. \fP"
 .ti -1c
 .RI "void \fBDTS_C_API::dtsgui_newxmltreenode\fP (\fBdtsgui_treeview\fP tree, \fBdtsgui_pane\fP p, \fBdtsgui_treenode\fP tn, const char *xpath, const char *node, const char *vitem, const char *tattr, int nid, int flags, \fBdtsgui_xmltreenode_cb\fP node_cb, void *data, \fBdtsgui_treeviewpanel_cb\fP p_cb)"
 .br
@@ -48,16 +42,34 @@ Resources controlling and manipulating tree view in the C API\&.
 .br
 .RI "\fIAdd a XML node to the tree node\&. \fP"
 .ti -1c
+.RI "struct xml_node * \fBDTS_C_API::dtsgui_treenodegetxml\fP (\fBdtsgui_treenode\fP tn, char **buf)"
+.br
+.RI "\fIReturn the XML node reference held by the tree node\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_nodesetxml\fP (\fBdtsgui_treeview\fP tree, \fBdtsgui_treenode\fP node, const char *newname)"
+.br
+.RI "\fIUpdate the XML Node or title attribute with a new name\&. \fP"
+.ti -1c
 .RI "void * \fBDTS_C_API::dtsgui_treenodegetdata\fP (\fBdtsgui_treenode\fP tn)"
 .br
 .RI "\fIGet reference for the user data of node\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-C API for managing tree view panels\&.
-.PP
-Resources controlling and manipulating tree view in the C API\&. 
+A tree view is a split window with a tree in the left window and display area on right\&. 
 
+\fBRemarks:\fP
+.RS 4
+The tree can contain branches (folder containers) and leaf nodes each node when clicked will create and place a panel in the display area\&. 
+.PP
+The tree window supports sorting and deletion via a menu displayed when right clicking\&. 
+.RE
+.PP
+\fBTodo\fP
+.RS 4
+Allow for the deletion of branch/container/folder nodes\&. 
+.RE
+.PP
 
 .SH "Function Documentation"
 .PP 
@@ -81,6 +93,8 @@ this callback helper is rather complex\&.
 \fItree\fP Tree view the new panel will be added too\&. 
 .br
 \fIp\fP The panel this callback is attached too\&. 
+.br
+\fItn\fP Root treenode to add too\&. 
 .br
 \fIxpath\fP the path of the new node\&. 
 .br
@@ -108,11 +122,15 @@ Nothing is returned the callback is registered on the panel\&.
 .PP
 
 .PP
-Definition at line 739 of file wrapper\&.cpp\&.
+Definition at line 762 of file wrapper\&.cpp\&.
+.PP
+References tree_newnode::handle_newtreenode_cb(), and tree_newnode::tree_newnode()\&.
+.PP
+Referenced by network_adsl_link_new(), network_adsl_user_new(), network_config_dns_domain_new(), network_config_dns_domain_server_new(), network_config_dns_host_new(), network_newiface(), network_newroute(), network_newwan(), network_newwifi(), and network_tos_new()\&.
 .SS "void DTS_C_API::dtsgui_nodesetxml (\fBdtsgui_treeview\fPtree, \fBdtsgui_treenode\fPnode, const char *newname)"
 
 .PP
-Update the XML Node with a new name\&. This helper function will update the node's XML after a edit event\&.
+Update the XML Node or title attribute with a new name\&. This helper function will update the node's XML after a edit event\&.
 .PP
 \fBSee Also:\fP
 .RS 4
@@ -130,7 +148,9 @@ Update the XML Node with a new name\&. This helper function will update the node
 .PP
 
 .PP
-Definition at line 492 of file wrapper\&.cpp\&.
+Definition at line 825 of file wrapper\&.cpp\&.
+.PP
+References DTSTreeWindow::UpdateNodeXML()\&.
 .SS "\fBdtsgui_treenode\fP DTS_C_API::dtsgui_treecont (\fBdtsgui_treeview\fPtree, \fBdtsgui_treenode\fPnode, const char *title, intcan_edit, intcan_sort, intcan_del, intnodeid, \fBdtsgui_treeviewpanel_cb\fPp_cb, void *data)"
 
 .PP
@@ -158,6 +178,8 @@ DTSTreeWindow::AppendContainer
 .br
 \fIcan_edit\fP Allow editing of this node the XML node will be updated\&. 
 .br
+\fIcan_sort\fP Allow sorting of this node the XML node will be updated\&. 
+.br
 \fIcan_del\fP Not yet implemented for containers but will allow right click menu to delete\&. 
 .br
 \fInodeid\fP A value passed to the callback as convinence can be any value -1 will cause a blank panel\&. 
@@ -169,11 +191,15 @@ DTSTreeWindow::AppendContainer
 .PP
 
 .PP
-Definition at line 686 of file wrapper\&.cpp\&.
+Definition at line 708 of file wrapper\&.cpp\&.
+.PP
+References DTSDVMCtrl::AppendContainer(), and DTSTreeWindow::GetTreeCtrl()\&.
+.PP
+Referenced by network_config_dns_domain_node(), and network_tree_setup()\&.
 .SS "\fBdtsgui_treenode\fP DTS_C_API::dtsgui_treeitem (\fBdtsgui_treeview\fPtree, \fBdtsgui_treenode\fPnode, const char *title, intcan_edit, intcan_sort, intcan_del, intnodeid, \fBdtsgui_treeviewpanel_cb\fPp_cb, void *data)"
 
 .PP
-Create a item in a container\&. Create and insert a new item in the tree view in the node specified with properties / call back\&. A panel will be created and supplied to the callback too implement on selection\&.
+Create a item in a container in the tree view\&. Create and insert a new item in the tree view in the node specified with properties / call back\&. A panel will be created and supplied to the callback too implement on selection\&.
 .PP
 \fBSee Also:\fP
 .RS 4
@@ -192,6 +218,8 @@ DTSTreeWindow::AppendItem
 .br
 \fIcan_edit\fP Allow editing of this node the XML node will be updated\&. 
 .br
+\fIcan_sort\fP Allow sorting of this node the XML node will be updated\&. 
+.br
 \fIcan_del\fP Allow right click menu to delete\&. 
 .br
 \fInodeid\fP A value passed to the callback as convinence can be any value -1 will cause a blank panel\&. 
@@ -203,7 +231,11 @@ DTSTreeWindow::AppendItem
 .PP
 
 .PP
-Definition at line 710 of file wrapper\&.cpp\&.
+Definition at line 732 of file wrapper\&.cpp\&.
+.PP
+References DTSDVMCtrl::AppendItem(), and DTSTreeWindow::GetTreeCtrl()\&.
+.PP
+Referenced by network_tree_setup()\&.
 .SS "void* DTS_C_API::dtsgui_treenodegetdata (\fBdtsgui_treenode\fPtn)"
 
 .PP
@@ -229,7 +261,40 @@ Reference to user data
 .PP
 
 .PP
-Definition at line 788 of file wrapper\&.cpp\&.
+Definition at line 836 of file wrapper\&.cpp\&.
+.PP
+References DTSDVMListStore::GetUserData()\&.
+.PP
+Referenced by network_config_dns_domain_server()\&.
+.SS "struct xml_node* DTS_C_API::dtsgui_treenodegetxml (\fBdtsgui_treenode\fPtn, char **buf)\fC [read]\fP"
+
+.PP
+Return the XML node reference held by the tree node\&. Returns the XML node of the node and optionally the title attribute\&.
+.PP
+\fBNote:\fP
+.RS 4
+The reference to the buffer and node needs to be droped\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fItn\fP Tree node to obtain XML node from\&. 
+.br
+\fIbuf\fP a pointer to a buffer that will be set to the title attribute (Optional)\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Reference to the XML node stored in the tree node\&. 
+.RE
+.PP
+
+.PP
+Definition at line 810 of file wrapper\&.cpp\&.
+.PP
+References DTSDVMListStore::GetXMLData()\&.
+.PP
+Referenced by network_adsl_link(), network_adsl_user(), network_config_dns_domain(), network_config_dns_domain_server(), network_config_dns_host(), network_iface(), network_route(), network_tos(), network_wan(), and network_wifi()\&.
 .SS "int DTS_C_API::dtsgui_treenodeid (\fBdtsgui_treenode\fPtn)"
 
 .PP
@@ -250,7 +315,9 @@ the user defined tree node ID
 .PP
 
 .PP
-Definition at line 752 of file wrapper\&.cpp\&.
+Definition at line 775 of file wrapper\&.cpp\&.
+.PP
+References DTSDVMListStore::GetNodeID()\&.
 .SS "const char* DTS_C_API::dtsgui_treenodeparent (\fBdtsgui_treenode\fPtn)"
 
 .PP
@@ -271,7 +338,11 @@ Name og the nodes parentI
 .PP
 
 .PP
-Definition at line 762 of file wrapper\&.cpp\&.
+Definition at line 785 of file wrapper\&.cpp\&.
+.PP
+References DTSDVMListStore::GetParentTitle()\&.
+.PP
+Referenced by network_config_dns_domain_server_new()\&.
 .SS "void DTS_C_API::dtsgui_treenodesetxml (\fBdtsgui_treenode\fPtn, struct xml_node *xn, const char *tattr)"
 
 .PP
@@ -282,24 +353,35 @@ Add a XML node to the tree node\&. \fBSee Also:\fP
 .PP
 \fBParameters:\fP
 .RS 4
-\fIxn\fP XML node\&. 
+\fItn\fP Tree node to set\&. 
+.br
+\fIxn\fP XML Node to reference\&. 
 .br
 \fItattr\fP Attribute in the XN that represents the title NULL if the value is the title\&. 
 .RE
 .PP
 
 .PP
-Definition at line 772 of file wrapper\&.cpp\&.
+Definition at line 796 of file wrapper\&.cpp\&.
+.PP
+References DTSDVMListStore::SetXMLData()\&.
+.PP
+Referenced by network_tree_setup()\&.
 .SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_treepane (\fBdtsgui_treeview\fPtv, const char *name, intbutmask, void *userdata, struct xml_doc *xmldoc)"
 
 .PP
-Create a tree view panel with information\&. This will seldom be needed as panels are created and supplied in callbacks\&.
+Create a panel owned by the tree\&. This will seldom be needed as panels are created and supplied in callbacks\&.
 .PP
 \fBSee Also:\fP
 .RS 4
 \fBDTSTreeWindow::CreatePane()\fP 
 .PP
-\fBpanel_buttons\fP
+\fBpanel_buttons\fP 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+Panels used in tree views must be created as children of the tree\&. 
 .RE
 .PP
 \fBParameters:\fP
@@ -322,11 +404,13 @@ New Tree Pane\&.
 .PP
 
 .PP
-Definition at line 642 of file wrapper\&.cpp\&.
+Definition at line 665 of file wrapper\&.cpp\&.
+.PP
+References DTSTreeWindow::CreatePane()\&.
 .SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_treepane_default (\fBdtsgui_treeview\fPtv, \fBdtsgui_treenode\fPnode)"
 
 .PP
-Create a tree view panel with information\&. Create a pane from information obtained from node\&. Name of node is used for the panel title and a Accept/Undo button\&.
+Create a panel owned by the tree configured from the specified node\&. Create a pane from information obtained from node\&. Name of node is used for the panel title and a Accept/Undo button\&.
 .PP
 \fBNote:\fP
 .RS 4
@@ -352,7 +436,9 @@ New Tree Pane\&.
 .PP
 
 .PP
-Definition at line 661 of file wrapper\&.cpp\&.
+Definition at line 683 of file wrapper\&.cpp\&.
+.PP
+References DTSTreeWindow::CreatePane()\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

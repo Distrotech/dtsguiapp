@@ -36,5 +36,5 @@ var searchData=
   ['network_5fwifi',['network_wifi',['../netconfig_8c.html#adceac66b5b38e18e528fc5a2adb2d649',1,'netconfig.c']]],
   ['newmenu',['NewMenu',['../class_d_t_s_frame.html#a27cb5c393f6f9bbab0d087db9e6338ce',1,'DTSFrame']]],
   ['newmenuitem',['NewMenuItem',['../class_d_t_s_frame.html#a55fe07b66530435bce652e8ab3091707',1,'DTSFrame::NewMenuItem(wxMenu *m, DTSObject *panel, int menuid, const wxString &amp;hint)'],['../class_d_t_s_frame.html#a658114abb50692e826e18593a0e3ba73',1,'DTSFrame::NewMenuItem(wxMenu *m, int menuid, const wxString &amp;name, const wxString &amp;hint, int blank, dtsgui_dynpanel cb, void *data)']]],
-  ['newsys_5fwizard',['newsys_wizard',['../private_8h.html#a56c78e0d32a18452dcea4f026de2c889',1,'newsys_wizard(struct dtsgui *dtsgui, const char *title, void *data):&#160;wizard.c'],['../wizard_8c.html#a56c78e0d32a18452dcea4f026de2c889',1,'newsys_wizard(struct dtsgui *dtsgui, const char *title, void *data):&#160;wizard.c']]]
+  ['newsys_5fwizard',['newsys_wizard',['../group___d_t_s-_a_p_p-_wizard.html#ga56c78e0d32a18452dcea4f026de2c889',1,'newsys_wizard(struct dtsgui *dtsgui, const char *title, void *data):&#160;wizard.c'],['../group___d_t_s-_a_p_p-_wizard.html#ga56c78e0d32a18452dcea4f026de2c889',1,'newsys_wizard(struct dtsgui *dtsgui, const char *title, void *data):&#160;wizard.c']]]
 ];

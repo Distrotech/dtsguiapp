@@ -16,6 +16,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @defgroup DTS-APP Distrotech Server Configuration Application
+  * @brief Multi platform GUI server management application.
+  * @{
+  * @file
+  * @brief Main application file.*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -169,3 +175,5 @@ int main(int argc, char **argv) {
 
 	return res;
 }
+
+/**@}*/

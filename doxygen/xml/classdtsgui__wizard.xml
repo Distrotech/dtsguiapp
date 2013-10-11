@@ -16,6 +16,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="classdtsgui__wizard_1a02984b1d70df5100e8b6200e0bb1b421" compoundref="_d_t_s_wizard_8cpp" startline="56" endline="87">AddPage</referencedby>
+        <referencedby refid="classdtsgui__wizard_1aef1a3023055dee016ead1826c44731d1" compoundref="_d_t_s_wizard_8cpp" startline="38" endline="45">dtsgui_wizard</referencedby>
+        <referencedby refid="classdtsgui__wizard_1ab0554e6b9fe1d2c0419a6659d883edf3" compoundref="_d_t_s_wizard_8cpp" startline="89" endline="94">RunWizard</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classdtsgui__wizard_1aaffe8d8784abd52b3496bce01bc17491" prot="private" static="no" mutable="no">
         <type><ref refid="_d_t_s_wizard_8h_1a0692504754593e8beb0333a4d1f6c80e" kindref="member">wxWizardPageSimple</ref> *</type>
@@ -29,6 +32,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="34" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="classdtsgui__wizard_1a02984b1d70df5100e8b6200e0bb1b421" compoundref="_d_t_s_wizard_8cpp" startline="56" endline="87">AddPage</referencedby>
+        <referencedby refid="classdtsgui__wizard_1aef1a3023055dee016ead1826c44731d1" compoundref="_d_t_s_wizard_8cpp" startline="38" endline="45">dtsgui_wizard</referencedby>
+        <referencedby refid="classdtsgui__wizard_1ab0554e6b9fe1d2c0419a6659d883edf3" compoundref="_d_t_s_wizard_8cpp" startline="89" endline="94">RunWizard</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classdtsgui__wizard_1abb0f21895a9868f84f9ce7390ddcd14a" prot="private" static="no" mutable="no">
         <type>class <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
@@ -84,7 +90,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSWizard.cpp" bodystart="30" bodyend="37"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSWizard.cpp" bodystart="38" bodyend="45"/>
+        <references refid="classdtsgui__wizard_1aaffe8d8784abd52b3496bce01bc17491" compoundref="_d_t_s_wizard_8h" startline="34">start</references>
+        <references refid="classdtsgui__wizard_1a54ee023336fe1f000bb593c7dcbbcc9d" compoundref="_d_t_s_wizard_8h" startline="33">wiz</references>
       </memberdef>
       <memberdef kind="function" id="classdtsgui__wizard_1a02984b1d70df5100e8b6200e0bb1b421" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_d_t_s_wizard_window" kindref="compound">DTSWizardWindow</ref> *</type>
@@ -109,7 +117,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSWizard.cpp" bodystart="48" bodyend="79"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSWizard.cpp" bodystart="56" bodyend="87"/>
+        <references refid="class_d_t_s_frame_1a3b1105fb9c8e3b6909994e7f993eee20" compoundref="_d_t_s_frame_8cpp" startline="375" endline="406">DTSFrame::CreatePane</references>
+        <references refid="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" compoundref="_d_t_s_app_8cpp" startline="137" endline="139">dtsgui::GetFrame</references>
+        <references refid="class_d_t_s_panel_1a58daeb533cce1e4bdac57118cce7c7ea" compoundref="_d_t_s_panel_8cpp" startline="482" endline="488">DTSPanel::SetTitle</references>
+        <references refid="class_d_t_s_object_1a1ae63425d8e5770a8b0717f37fd695b2" compoundref="_d_t_s_panel_8cpp" startline="290" endline="303">DTSObject::SetXMLDoc</references>
+        <references refid="classdtsgui__wizard_1aaffe8d8784abd52b3496bce01bc17491" compoundref="_d_t_s_wizard_8h" startline="34">start</references>
+        <references refid="classdtsgui__wizard_1a54ee023336fe1f000bb593c7dcbbcc9d" compoundref="_d_t_s_wizard_8h" startline="33">wiz</references>
+        <references refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373aa108fde55f9c1830cf68cd368aba1d02" compoundref="dtsgui_8h" startline="253">wx_DTSPANEL_WIZARD</references>
+        <referencedby refid="group___c-_a_p_i-_wizard_1ga3e76b1ea2eebb91e1d0b5a55649d65e6" compoundref="wrapper_8cpp" startline="999" endline="1001">DTS_C_API::dtsgui_wizard_addpage</referencedby>
       </memberdef>
       <memberdef kind="function" id="classdtsgui__wizard_1ab0554e6b9fe1d2c0419a6659d883edf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -122,13 +138,56 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSWizard.cpp" bodystart="81" bodyend="86"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSWizard.cpp" bodystart="89" bodyend="94"/>
+        <references refid="classdtsgui__wizard_1aaffe8d8784abd52b3496bce01bc17491" compoundref="_d_t_s_wizard_8h" startline="34">start</references>
+        <references refid="classdtsgui__wizard_1a54ee023336fe1f000bb593c7dcbbcc9d" compoundref="_d_t_s_wizard_8h" startline="33">wiz</references>
+        <referencedby refid="group___c-_a_p_i-_wizard_1ga25174d47f2e9680d41aebdf08ff9b979" compoundref="wrapper_8cpp" startline="1014" endline="1016">DTS_C_API::dtsgui_runwizard</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="76">
+        <label>dtsgui_wizard</label>
+        <link refid="classdtsgui__wizard"/>
+        <childnode refid="77" relation="usage">
+          <edgelabel>dtsgui</edgelabel>
+        </childnode>
+      </node>
+      <node id="79">
+        <label>wxFrame</label>
+      </node>
+      <node id="77">
+        <label>dtsgui</label>
+        <link refid="classdtsgui"/>
+        <childnode refid="78" relation="usage">
+          <edgelabel>appframe</edgelabel>
+        </childnode>
+        <childnode refid="77" relation="usage">
+          <edgelabel>cb</edgelabel>
+        </childnode>
+        <childnode refid="80" relation="usage">
+          <edgelabel>wsize</edgelabel>
+          <edgelabel>wpos</edgelabel>
+        </childnode>
+      </node>
+      <node id="80">
+        <label>point</label>
+        <link refid="structpoint"/>
+      </node>
+      <node id="78">
+        <label>DTSFrame</label>
+        <link refid="class_d_t_s_frame"/>
+        <childnode refid="79" relation="public-inheritance">
+        </childnode>
+        <childnode refid="77" relation="usage">
+          <edgelabel>dtsgui</edgelabel>
+          <edgelabel>tbcb</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" line="26" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSWizard.h" bodystart="26" bodyend="36"/>
     <listofallmembers>
       <member refid="classdtsgui__wizard_1a02984b1d70df5100e8b6200e0bb1b421" prot="public" virt="non-virtual"><scope>dtsgui_wizard</scope><name>AddPage</name></member>

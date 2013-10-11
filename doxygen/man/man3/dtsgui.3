@@ -1,4 +1,4 @@
-.TH "dtsgui" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "dtsgui" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,7 +15,7 @@ dtsgui \-
 .RI "\fBDTS_OJBREF_CLASS\fP (\fBdtsgui\fP)"
 .br
 .ti -1c
-.RI "\fBdtsgui\fP (const char *title, const char *stat, struct \fBpoint\fP w_size, struct \fBpoint\fP w_pos, \fBdtsgui_configcb\fP confcallback_cb, void *userdata)"
+.RI "\fBdtsgui\fP (const char *\fBtitle\fP, const char *stat, struct \fBpoint\fP w_size, struct \fBpoint\fP w_pos, \fBdtsgui_configcb\fP confcallback_cb, void *\fBuserdata\fP)"
 .br
 .ti -1c
 .RI "int \fBSetupAPPFrame\fP (void)"
@@ -36,6 +36,31 @@ dtsgui \-
 .RI "void \fBShowToolbar\fP (bool show=true)"
 .br
 .in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "void * \fBuserdata\fP"
+.br
+.ti -1c
+.RI "class \fBDTSFrame\fP * \fBappframe\fP"
+.br
+.ti -1c
+.RI "const char * \fBtitle\fP"
+.br
+.ti -1c
+.RI "const char * \fBstatus\fP"
+.br
+.ti -1c
+.RI "\fBdtsgui_configcb\fP \fBcb\fP"
+.br
+.ti -1c
+.RI "struct \fBpoint\fP \fBwsize\fP"
+.br
+.ti -1c
+.RI "struct \fBpoint\fP \fBwpos\fP"
+.br
+.in -1c
 .SH "Detailed Description"
 .PP 
 Definition at line 22 of file DTSApp\&.h\&.
@@ -44,35 +69,105 @@ Definition at line 22 of file DTSApp\&.h\&.
 .SS "dtsgui::dtsgui (const char *title, const char *stat, struct \fBpoint\fPw_size, struct \fBpoint\fPw_pos, \fBdtsgui_configcb\fPconfcallback_cb, void *userdata)"
 
 .PP
-Definition at line 29 of file DTSApp\&.cpp\&.
+Definition at line 35 of file DTSApp\&.cpp\&.
+.PP
+References cb, status, userdata, wpos, and wsize\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void dtsgui::AppendTitle (const char *text)"
 
 .PP
-Definition at line 99 of file DTSApp\&.cpp\&.
+Definition at line 105 of file DTSApp\&.cpp\&.
+.PP
+References appframe, and title\&.
+.PP
+Referenced by DTS_C_API::dtsgui_titleappend()\&.
 .SS "dtsgui::DTS_OJBREF_CLASS (\fBdtsgui\fP)"
 
 .SS "class \fBDTSFrame\fP * dtsgui::GetFrame (void)"
 
 .PP
-Definition at line 131 of file DTSApp\&.cpp\&.
+Definition at line 137 of file DTSApp\&.cpp\&.
+.PP
+References appframe\&.
+.PP
+Referenced by dtsgui_wizard::AddPage(), DTS_C_API::dtsgui_about(), DTS_C_API::dtsgui_alert(), DTS_C_API::dtsgui_close(), DTS_C_API::dtsgui_confirm(), dtsgui_curl::dtsgui_curl(), DTS_C_API::dtsgui_exit(), DTS_C_API::dtsgui_fileopen(), DTS_C_API::dtsgui_filesave(), DTS_C_API::dtsgui_newmenu(), DTS_C_API::dtsgui_newmenucb(), DTS_C_API::dtsgui_newmenuitem(), DTS_C_API::dtsgui_newwizard(), DTS_C_API::dtsgui_panel(), DTS_C_API::dtsgui_progress_end(), DTS_C_API::dtsgui_progress_increment(), DTS_C_API::dtsgui_progress_start(), DTS_C_API::dtsgui_progress_update(), DTS_C_API::dtsgui_sendevent(), DTS_C_API::dtsgui_setuptoolbar(), DTS_C_API::dtsgui_setwindow(), DTS_C_API::dtsgui_tabwindow(), DTS_C_API::dtsgui_textpane(), and DTS_C_API::dtsgui_treewindow()\&.
 .SS "void * dtsgui::GetUserData (void)"
 
 .PP
-Definition at line 79 of file DTSApp\&.cpp\&.
+Definition at line 85 of file DTSApp\&.cpp\&.
+.PP
+References userdata\&.
+.PP
+Referenced by DTS_C_API::dtsgui_userdata()\&.
 .SS "void dtsgui::SetStatusText (void)"
 
 .PP
-Definition at line 91 of file DTSApp\&.cpp\&.
+Definition at line 97 of file DTSApp\&.cpp\&.
+.PP
+References appframe, and status\&.
+.PP
+Referenced by SetupAPPFrame(), and DTSFrame::SetWindow()\&.
 .SS "int dtsgui::SetupAPPFrame (void)"
 
 .PP
-Definition at line 58 of file DTSApp\&.cpp\&.
+Definition at line 64 of file DTSApp\&.cpp\&.
+.PP
+References appframe, cb, SetStatusText(), title, userdata, wpos, wsize, point::x, and point::y\&.
+.PP
+Referenced by DTSApp::OnInit()\&.
 .SS "void dtsgui::ShowToolbar (boolshow = \fCtrue\fP)"
 
 .PP
-Definition at line 123 of file DTSApp\&.cpp\&.
+Definition at line 129 of file DTSApp\&.cpp\&.
+.PP
+References appframe\&.
+.PP
+Referenced by DTS_C_API::dtsgui_set_toolbar()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "class \fBDTSFrame\fP* dtsgui::appframe\fC [private]\fP"
+
+.PP
+Definition at line 34 of file DTSApp\&.h\&.
+.PP
+Referenced by AppendTitle(), GetFrame(), SetStatusText(), SetupAPPFrame(), and ShowToolbar()\&.
+.SS "\fBdtsgui_configcb\fP dtsgui::cb\fC [private]\fP"
+
+.PP
+Definition at line 37 of file DTSApp\&.h\&.
+.PP
+Referenced by dtsgui(), DTSPanelEvent::OnCombo(), SetupAPPFrame(), and DTSFrame::SetupToolbar()\&.
+.SS "const char* dtsgui::status\fC [private]\fP"
+
+.PP
+Definition at line 36 of file DTSApp\&.h\&.
+.PP
+Referenced by dtsgui(), and SetStatusText()\&.
+.SS "const char* dtsgui::title\fC [private]\fP"
+
+.PP
+Definition at line 35 of file DTSApp\&.h\&.
+.PP
+Referenced by AppendTitle(), and SetupAPPFrame()\&.
+.SS "void* dtsgui::userdata\fC [private]\fP"
+
+.PP
+Definition at line 33 of file DTSApp\&.h\&.
+.PP
+Referenced by dtsgui(), GetUserData(), and SetupAPPFrame()\&.
+.SS "struct \fBpoint\fP dtsgui::wpos\fC [private]\fP"
+
+.PP
+Definition at line 39 of file DTSApp\&.h\&.
+.PP
+Referenced by dtsgui(), and SetupAPPFrame()\&.
+.SS "struct \fBpoint\fP dtsgui::wsize\fC [private]\fP"
+
+.PP
+Definition at line 38 of file DTSApp\&.h\&.
+.PP
+Referenced by dtsgui(), and SetupAPPFrame()\&.
 
 .SH "Author"
 .PP 

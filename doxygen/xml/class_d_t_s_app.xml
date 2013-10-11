@@ -39,7 +39,7 @@
         <argsstring>(dtsgui_configcb confcallback_cb, void *data, struct point wsize, struct point wpos, const char *title, const char *status)</argsstring>
         <name>DTSApp</name>
         <param>
-          <type><ref refid="group___c-_a_p_i_1gad3b80490c86b8275c47382588f2ecfd4" kindref="member">dtsgui_configcb</ref></type>
+          <type><ref refid="group___c_o_r_e_1gad3b80490c86b8275c47382588f2ecfd4" kindref="member">dtsgui_configcb</ref></type>
           <declname>confcallback_cb</declname>
         </param>
         <param>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="70" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="239" bodyend="241"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="70" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="247" bodyend="249"/>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_app_1a4b4ef9b0d2e3ae5fda50e81f4ade664c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -81,7 +81,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="71" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="243" bodyend="252"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="71" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="251" bodyend="260"/>
+        <references refid="classdtsgui__curl_1aba670f1e03229a05d40fd5dc5881a241" compoundref="_d_t_s_app_8h" startline="54">dtsgui_curl::curl</references>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -96,7 +97,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="73" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="254" bodyend="260"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="73" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="262" bodyend="268"/>
+        <references refid="classdtsgui__curl_1aba670f1e03229a05d40fd5dc5881a241" compoundref="_d_t_s_app_8h" startline="54">dtsgui_curl::curl</references>
+        <references refid="classdtsgui_1a8dd69405dd8fe95341e0a99c14a6f431" compoundref="_d_t_s_app_8cpp" startline="64" endline="83">dtsgui::SetupAPPFrame</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -104,24 +107,68 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="4">
+      <node id="9">
         <label>DTSApp</label>
         <link refid="class_d_t_s_app"/>
-        <childnode refid="5" relation="public-inheritance">
+        <childnode refid="10" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="5">
+      <node id="10">
         <label>wxApp</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="6">
-        <label>DTSApp</label>
-        <link refid="class_d_t_s_app"/>
-        <childnode refid="7" relation="public-inheritance">
+      <node id="13">
+        <label>dtsgui_curl</label>
+        <link refid="classdtsgui__curl"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>frame</edgelabel>
         </childnode>
       </node>
-      <node id="7">
+      <node id="11">
+        <label>DTSApp</label>
+        <link refid="class_d_t_s_app"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13" relation="usage">
+          <edgelabel>curl</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>dtsgui</edgelabel>
+        </childnode>
+      </node>
+      <node id="15">
+        <label>wxFrame</label>
+      </node>
+      <node id="16">
+        <label>dtsgui</label>
+        <link refid="classdtsgui"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>appframe</edgelabel>
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>cb</edgelabel>
+        </childnode>
+        <childnode refid="17" relation="usage">
+          <edgelabel>wsize</edgelabel>
+          <edgelabel>wpos</edgelabel>
+        </childnode>
+      </node>
+      <node id="17">
+        <label>point</label>
+        <link refid="structpoint"/>
+      </node>
+      <node id="14">
+        <label>DTSFrame</label>
+        <link refid="class_d_t_s_frame"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+        <childnode refid="16" relation="usage">
+          <edgelabel>dtsgui</edgelabel>
+          <edgelabel>tbcb</edgelabel>
+        </childnode>
+      </node>
+      <node id="12">
         <label>wxApp</label>
       </node>
     </collaborationgraph>

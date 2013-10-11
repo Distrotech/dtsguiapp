@@ -8,6 +8,7 @@ var class_d_t_s_panel =
     [ "ComboBox", "class_d_t_s_panel.html#ad91d3ca25ab8349403efc7cc78cb1869", null ],
     [ "FindItem", "class_d_t_s_panel.html#a3c4a20a1c122851ae935dcac34697361", null ],
     [ "FindValue", "class_d_t_s_panel.html#aaeef18ad561346699ed24e0aa6fa47b3", null ],
+    [ "fitems_hash", "class_d_t_s_panel.html#aa804939e8221c211303c535a40ae4f5f", null ],
     [ "GetNode", "class_d_t_s_panel.html#aab8f3d3fbeb44163401d558d903f45ad", null ],
     [ "ListBox", "class_d_t_s_panel.html#a08cb04c83c8e5668592bd2f3bacf8267", null ],
     [ "Panel2Post", "class_d_t_s_panel.html#a7ce048cedd00ee1f1d9ea1c1fd504a6f", null ],
@@ -28,5 +29,10 @@ var class_d_t_s_panel =
     [ "XMLListBox", "class_d_t_s_panel.html#a03d63a8c380ee62e263d7bc3a3c86396", null ],
     [ "XMLPasswdBox", "class_d_t_s_panel.html#a5bbe4bfc295ef7b772c09628e80976c7", null ],
     [ "XMLTextBox", "class_d_t_s_panel.html#a2b893b30f6265079a143bb23029aa083", null ],
-    [ "button_mask", "class_d_t_s_panel.html#af25bdb7e04f715c228774c2be0dd8251", null ]
+    [ "button_mask", "class_d_t_s_panel.html#af25bdb7e04f715c228774c2be0dd8251", null ],
+    [ "config_data", "class_d_t_s_panel.html#afeb3f176d41017d2daf3b2f2c9e25818", null ],
+    [ "configcb", "class_d_t_s_panel.html#a92c2c65336702cf1315967eb8f1951a7", null ],
+    [ "fgs", "class_d_t_s_panel.html#ad2cca5a57cb57721f09e58b054235347", null ],
+    [ "g_row", "class_d_t_s_panel.html#a40a4abd45ab1af5aff6eb893aeb0eede", null ],
+    [ "title", "class_d_t_s_panel.html#accbfebfa3c737d3bf33386616f6771f4", null ]
 ];

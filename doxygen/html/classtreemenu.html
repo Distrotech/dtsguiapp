@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
@@ -94,7 +95,7 @@ $(document).ready(function(){initNavTree('classtreemenu.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,6 +107,7 @@ $(document).ready(function(){initNavTree('classtreemenu.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classtreemenu-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">treemenu Class Reference</div>  </div>
@@ -122,6 +124,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a886f95a39537bdff27d990c6f0f7f9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad011350ad24e3c8c9ec9816dd057ad34"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtreemenu.html#ad011350ad24e3c8c9ec9816dd057ad34">Show</a> (<a class="el" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *w, bool cont, int cnt, bool first, bool last, bool c_sort, bool del)</td></tr>
 <tr class="separator:ad011350ad24e3c8c9ec9816dd057ad34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ac4c099bd171f3b9a862c1b117e90d23a"><td class="memItemLeft" align="right" valign="top">wxMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtreemenu.html#ac4c099bd171f3b9a862c1b117e90d23a">menu</a></td></tr>
+<tr class="separator:ac4c099bd171f3b9a862c1b117e90d23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8ada77439f8096d693791fe5ca9464e"><td class="memItemLeft" align="right" valign="top">wxMenuItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtreemenu.html#ac8ada77439f8096d693791fe5ca9464e">msort</a></td></tr>
+<tr class="separator:ac8ada77439f8096d693791fe5ca9464e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1f838f6a51672e2d55e59514f77ccfe"><td class="memItemLeft" align="right" valign="top">wxMenuItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtreemenu.html#af1f838f6a51672e2d55e59514f77ccfe">mup</a></td></tr>
+<tr class="separator:af1f838f6a51672e2d55e59514f77ccfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a662ecad63db574b8e5766be9875ddd3a"><td class="memItemLeft" align="right" valign="top">wxMenuItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtreemenu.html#a662ecad63db574b8e5766be9875ddd3a">mdown</a></td></tr>
+<tr class="separator:a662ecad63db574b8e5766be9875ddd3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a359469982a21e31368621e0cda9c5f5d"><td class="memItemLeft" align="right" valign="top">wxMenuItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtreemenu.html#a359469982a21e31368621e0cda9c5f5d">mdelete</a></td></tr>
+<tr class="separator:a359469982a21e31368621e0cda9c5f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -140,7 +155,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00241">241</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00255">255</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00045">DTS_TREEWIN_MENU_DELETE</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00043">DTS_TREEWIN_MENU_MOVEDOWN</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00041">DTS_TREEWIN_MENU_MOVEUP</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00039">DTS_TREEWIN_MENU_SORT</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00084">mdelete</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00083">mdown</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00080">menu</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00081">msort</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00082">mup</a>.</p>
 
 </div>
 </div>
@@ -215,7 +232,132 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00254">254</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00268">268</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00084">mdelete</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00083">mdown</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00080">menu</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00081">msort</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00082">mup</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00711">DTSTreeWindow::ShowRMenu()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a359469982a21e31368621e0cda9c5f5d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxMenuItem* treemenu::mdelete</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00084">84</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00268">Show()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00255">treemenu()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a662ecad63db574b8e5766be9875ddd3a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxMenuItem* treemenu::mdown</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00083">83</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00268">Show()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00255">treemenu()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac4c099bd171f3b9a862c1b117e90d23a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxMenu* treemenu::menu</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00080">80</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00268">Show()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00255">treemenu()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac8ada77439f8096d693791fe5ca9464e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxMenuItem* treemenu::msort</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00081">81</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00268">Show()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00255">treemenu()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af1f838f6a51672e2d55e59514f77ccfe"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxMenuItem* treemenu::mup</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00082">82</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00268">Show()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00255">treemenu()</a>.</p>
 
 </div>
 </div>
@@ -229,7 +371,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classtreemenu.html">treemenu</a></li>
-    <li class="footer">Generated on Wed Oct 9 2013 22:32:56 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

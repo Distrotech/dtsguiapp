@@ -16,6 +16,13 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @defgroup DTS-APP-Wizard Distrotech Application Wizard Interface
+  * @brief System configuration wizard
+  * @ingroup DTS-APP
+  * @{
+  * @file
+  * @brief System configuration wizard*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -481,3 +488,5 @@ dtsgui_pane reconfig_wizard(struct dtsgui *dtsgui, const char *title, void *data
 	system_wizard(dtsgui, data, NULL, xmldoc, 0);
 	return NULL;
 }
+
+/**@}*/

@@ -1,0 +1,205 @@
+.TH "form_item" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+form_item \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <pitems\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTS_OJBREF_CLASS\fP (\fBform_item\fP)"
+.br
+.ti -1c
+.RI "\fBform_item\fP (void *\fBwidget\fP, enum \fBwidget_type\fP \fBtype\fP, const char *\fBname\fP, const char *\fBvalue\fP, const char *\fBvalue2\fP, void *\fBdata\fP, enum \fBform_data_type\fP \fBdtype\fP)"
+.br
+.ti -1c
+.RI "class \fBxml_element\fP * \fBGetXMLData\fP ()"
+.br
+.ti -1c
+.RI "void * \fBGetData\fP ()"
+.br
+.ti -1c
+.RI "void \fBAppend\fP (const char *text, const char *val)"
+.br
+.ti -1c
+.RI "void \fBSetSelection\fP (int i)"
+.br
+.ti -1c
+.RI "const char * \fBGetName\fP ()"
+.br
+.ti -1c
+.RI "const char * \fBGetValue\fP ()"
+.br
+.ti -1c
+.RI "void * \fBGetWidget\fP ()"
+.br
+.ti -1c
+.RI "void \fBAppendXML\fP (struct xml_doc *xmldoc, const char *xpath, const char *nattr, const char *vattr)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "enum \fBwidget_type\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "const char * \fBname\fP"
+.br
+.ti -1c
+.RI "int \fBidx\fP"
+.br
+.ti -1c
+.RI "union \fBform_data\fP \fBdata\fP"
+.br
+.ti -1c
+.RI "union \fBwidgets\fP \fBwidget\fP"
+.br
+.ti -1c
+.RI "enum \fBform_data_type\fP \fBdtype\fP"
+.br
+.ti -1c
+.RI "const char * \fBvalue\fP"
+.br
+.ti -1c
+.RI "const char * \fBvalue2\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 50 of file pitems\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "form_item::form_item (void *widget, enum \fBwidget_type\fPtype, const char *name, const char *value, const char *value2, void *data, enum \fBform_data_type\fPdtype)"
+
+.PP
+Definition at line 89 of file pitems\&.cpp\&.
+.PP
+References data, dtype, idx, type, and widget\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void form_item::Append (const char *text, const char *val)"
+
+.PP
+Definition at line 155 of file pitems\&.cpp\&.
+.PP
+References DTS_WIDGET_COMBOBOX, DTS_WIDGET_LISTBOX, idx, widgets::l, SetSelection(), type, value, and widget\&.
+.PP
+Referenced by AppendXML(), and DTS_C_API::dtsgui_listbox_add()\&.
+.SS "void form_item::AppendXML (struct xml_doc *xmldoc, const char *xpath, const char *nattr, const char *vattr)"
+
+.PP
+Definition at line 225 of file pitems\&.cpp\&.
+.PP
+References Append(), name, and value\&.
+.PP
+Referenced by DTS_C_API::dtsgui_listbox_addxml()\&.
+.SS "form_item::DTS_OJBREF_CLASS (\fBform_item\fP)"
+
+.SS "void * form_item::GetData ()"
+
+.PP
+Definition at line 144 of file pitems\&.cpp\&.
+.PP
+References data, and form_data::ptr\&.
+.PP
+Referenced by DTS_C_API::dtsgui_item_data()\&.
+.SS "const char * form_item::GetName ()"
+
+.PP
+Definition at line 188 of file pitems\&.cpp\&.
+.PP
+References name\&.
+.PP
+Referenced by DTS_C_API::dtsgui_item_name(), DTSPanel::fitems_hash(), DTSPanel::Panel2Post(), and DTSPanel::Panel2XML()\&.
+.SS "const char * form_item::GetValue ()"
+
+.PP
+Definition at line 192 of file pitems\&.cpp\&.
+.PP
+References widgets::c, DTS_WIDGET_CHECKBOX, DTS_WIDGET_COMBOBOX, DTS_WIDGET_LISTBOX, DTS_WIDGET_TEXTBOX, widgets::l, widgets::t, type, value, value2, and widget\&.
+.PP
+Referenced by DTS_C_API::dtsgui_item_value(), DTSPanel::FindValue(), DTSPanel::Panel2Post(), DTSPanel::Panel2XML(), and DTSPanel::Update_XML()\&.
+.SS "void * form_item::GetWidget ()"
+
+.PP
+Definition at line 221 of file pitems\&.cpp\&.
+.PP
+References widgets::p, and widget\&.
+.PP
+Referenced by DTSPanelEvent::OnCombo()\&.
+.SS "class \fBxml_element\fP * form_item::GetXMLData ()"
+
+.PP
+Definition at line 134 of file pitems\&.cpp\&.
+.PP
+References data, DTSGUI_FORM_DATA_XML, dtype, and form_data::xml\&.
+.PP
+Referenced by DTSPanel::Update_XML()\&.
+.SS "void form_item::SetSelection (inti)"
+
+.PP
+Definition at line 176 of file pitems\&.cpp\&.
+.PP
+References DTS_WIDGET_COMBOBOX, DTS_WIDGET_LISTBOX, widgets::l, type, and widget\&.
+.PP
+Referenced by Append(), and DTS_C_API::dtsgui_listbox_set()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "union \fBform_data\fP form_item::data\fC [private]\fP"
+
+.PP
+Definition at line 66 of file pitems\&.h\&.
+.PP
+Referenced by DTSPanel::ComboBox(), form_item(), GetData(), and GetXMLData()\&.
+.SS "enum \fBform_data_type\fP form_item::dtype\fC [private]\fP"
+
+.PP
+Definition at line 68 of file pitems\&.h\&.
+.PP
+Referenced by form_item(), GetXMLData(), and DTSPanelEvent::OnCombo()\&.
+.SS "int form_item::idx\fC [private]\fP"
+
+.PP
+Definition at line 65 of file pitems\&.h\&.
+.PP
+Referenced by Append(), and form_item()\&.
+.SS "const char* form_item::name\fC [private]\fP"
+
+.PP
+Definition at line 64 of file pitems\&.h\&.
+.PP
+Referenced by AppendXML(), GetName(), network_tos(), DTSPanel::Panel2Post(), pbxconf_default(), and pbxconf_trunk()\&.
+.SS "enum \fBwidget_type\fP form_item::type\fC [private]\fP"
+
+.PP
+Definition at line 63 of file pitems\&.h\&.
+.PP
+Referenced by Append(), form_item(), GetValue(), and SetSelection()\&.
+.SS "const char* form_item::value\fC [private]\fP"
+
+.PP
+Definition at line 69 of file pitems\&.h\&.
+.PP
+Referenced by Append(), AppendXML(), GetValue(), pbxconf_default(), pbxconf_trunk(), DTSPanel::XMLComboBox(), and DTSPanel::XMLListBox()\&.
+.SS "const char* form_item::value2\fC [private]\fP"
+
+.PP
+Definition at line 70 of file pitems\&.h\&.
+.PP
+Referenced by GetValue()\&.
+.SS "union \fBwidgets\fP form_item::widget\fC [private]\fP"
+
+.PP
+Definition at line 67 of file pitems\&.h\&.
+.PP
+Referenced by Append(), form_item(), GetValue(), GetWidget(), and SetSelection()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

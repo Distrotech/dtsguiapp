@@ -1,12 +1,14 @@
 var NAVTREE =
 [
   [ "DTS Application wxWidgets GUI Library", "index.html", [
+    [ "Todo List", "todo.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ]
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ]
       ] ]
     ] ],
     [ "Classes", null, [
@@ -24,6 +26,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", "globals_dup" ],
         [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
         [ "Enumerator", "globals_eval.html", null ],
@@ -36,9 +39,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_d_t_s_app_8cpp.html",
-"class_d_t_s_panel_event.html#ae1fda2b21c16c83d067c5305d5338bd6",
-"dtsgui_8h.html#ga045cc441a11f42796d6bd89dfa52e4ec",
-"netconfig_8c.html#a8736362ad99edb6b363f2238131368d7"
+"class_d_t_s_panel.html",
+"classtree__newnode.html#a6d2aeccaa71eac80144dfb2353b51adc",
+"globals_0x6c.html",
+"mingw_2config_8h.html#aca8570fb706c81df371b7f9bc454ae03",
+"wrapper_8cpp.html#gad91055a12542c30dab4aacbd0761c785"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -17,6 +17,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="38" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_x_m_l_combo_box_1aa0ef061b697a527a559d56a6c5914e08" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="34" endline="49">DTSXMLComboBox</referencedby>
+        <referencedby refid="class_d_t_s_x_m_l_combo_box_1aeec14b4880ff9d69bb1b19a4549e082c" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="106" endline="160">HandleEvent</referencedby>
+        <referencedby refid="class_d_t_s_x_m_l_combo_box_1ab73ab96a2dddeb756b984db6e0fa9106" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="98" endline="104">HasXMLList</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_x_m_l_combo_box_1a9ce866cc4f74a2447db49cf23968e351" prot="private" static="no" mutable="no">
         <type>size_t</type>
@@ -30,6 +33,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="39" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_x_m_l_combo_box_1aa0ef061b697a527a559d56a6c5914e08" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="34" endline="49">DTSXMLComboBox</referencedby>
+        <referencedby refid="class_d_t_s_x_m_l_combo_box_1aeec14b4880ff9d69bb1b19a4549e082c" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="106" endline="160">HandleEvent</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_x_m_l_combo_box_1a573345fd24fe84285cd88a15387ca1c1" prot="private" static="no" mutable="no">
         <type>wxString</type>
@@ -43,6 +48,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="40" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_x_m_l_combo_box_1aa0ef061b697a527a559d56a6c5914e08" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="34" endline="49">DTSXMLComboBox</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_x_m_l_combo_box_1aa1f6979f243bb50a3f690b7a82162773" prot="private" static="no" mutable="no">
         <type>wxString</type>
@@ -56,6 +62,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="41" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_x_m_l_combo_box_1aa0ef061b697a527a559d56a6c5914e08" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="34" endline="49">DTSXMLComboBox</referencedby>
       </memberdef>
       <memberdef kind="variable" id="class_d_t_s_x_m_l_combo_box_1afa4ceb66dab1fc8beda14047dfb3d1e6" prot="private" static="no" mutable="no">
         <type>struct curl_post *(*</type>
@@ -69,6 +76,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="42" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_x_m_l_combo_box_1aa0ef061b697a527a559d56a6c5914e08" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="34" endline="49">DTSXMLComboBox</referencedby>
+        <referencedby refid="class_d_t_s_x_m_l_combo_box_1a3f983fc429c2fa50b9b46d7c5fa0538d" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="51" endline="70">GetXMLDoc</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -107,7 +116,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="26" bodyend="41"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="29" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="34" bodyend="49"/>
+        <references refid="class_d_t_s_x_m_l_combo_box_1afa4ceb66dab1fc8beda14047dfb3d1e6" compoundref="_d_t_s_x_m_l_combo_box_8h" startline="42">getpost</references>
+        <references refid="class_d_t_s_x_m_l_combo_box_1aeec14b4880ff9d69bb1b19a4549e082c" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="106" endline="160">HandleEvent</references>
+        <references refid="class_d_t_s_x_m_l_combo_box_1a9ce866cc4f74a2447db49cf23968e351" compoundref="_d_t_s_x_m_l_combo_box_8h" startline="39">minlen</references>
+        <references refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" compoundref="_d_t_s_x_m_l_combo_box_8h" startline="38">sflags</references>
+        <references refid="class_d_t_s_x_m_l_combo_box_1a573345fd24fe84285cd88a15387ca1c1" compoundref="_d_t_s_x_m_l_combo_box_8h" startline="40">url</references>
+        <references refid="class_d_t_s_x_m_l_combo_box_1aa1f6979f243bb50a3f690b7a82162773" compoundref="_d_t_s_x_m_l_combo_box_8h" startline="41">xpath</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_x_m_l_combo_box_1a026821df9109a287aff26b12859fbf7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -120,7 +135,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="86" bodyend="88"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="30" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="94" bodyend="96"/>
+        <references refid="class_d_t_s_x_m_l_combo_box_1a5294d28f4b31cbc166cd984f0babb6b3" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="162" endline="174">EmptyServerList</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_x_m_l_combo_box_1ab73ab96a2dddeb756b984db6e0fa9106" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -133,7 +149,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="90" bodyend="96"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="98" bodyend="104"/>
+        <references refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520ae6478ae16db29ffeaa6fee0389fb2057" compoundref="_d_t_s_x_m_l_combo_box_8h" startline="23">DTSAPPTB_SERVER_POP</references>
+        <references refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" compoundref="_d_t_s_x_m_l_combo_box_8h" startline="38">sflags</references>
+        <referencedby refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" compoundref="toolbar_8cpp" startline="95" endline="109">DTSAPPToolBar::HandleEvent</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -152,7 +171,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="98" bodyend="152"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="33" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="106" bodyend="160"/>
+        <references refid="class_d_t_s_x_m_l_combo_box_1acf258ad2d53caf6b87d48cbb53e32a65" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="72" endline="92">AppendXMLNodes</references>
+        <references refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520ae6478ae16db29ffeaa6fee0389fb2057" compoundref="_d_t_s_x_m_l_combo_box_8h" startline="23">DTSAPPTB_SERVER_POP</references>
+        <references refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80" compoundref="_d_t_s_x_m_l_combo_box_8h" startline="24">DTSAPPTB_SERVER_SET</references>
+        <references refid="class_d_t_s_x_m_l_combo_box_1a5294d28f4b31cbc166cd984f0babb6b3" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="162" endline="174">EmptyServerList</references>
+        <references refid="class_d_t_s_x_m_l_combo_box_1a3f983fc429c2fa50b9b46d7c5fa0538d" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="51" endline="70">GetXMLDoc</references>
+        <references refid="class_d_t_s_x_m_l_combo_box_1a9ce866cc4f74a2447db49cf23968e351" compoundref="_d_t_s_x_m_l_combo_box_8h" startline="39">minlen</references>
+        <references refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" compoundref="_d_t_s_x_m_l_combo_box_8h" startline="38">sflags</references>
+        <referencedby refid="class_d_t_s_x_m_l_combo_box_1aa0ef061b697a527a559d56a6c5914e08" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="34" endline="49">DTSXMLComboBox</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_x_m_l_combo_box_1a3f983fc429c2fa50b9b46d7c5fa0538d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct xml_doc *</type>
@@ -173,7 +200,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="34" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="43" bodyend="62"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="34" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="51" bodyend="70"/>
+        <references refid="class_d_t_s_x_m_l_combo_box_1afa4ceb66dab1fc8beda14047dfb3d1e6" compoundref="_d_t_s_x_m_l_combo_box_8h" startline="42">getpost</references>
+        <referencedby refid="class_d_t_s_x_m_l_combo_box_1aeec14b4880ff9d69bb1b19a4549e082c" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="106" endline="160">HandleEvent</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_x_m_l_combo_box_1aefd4fde2c41d00b0a9d8068265ee42c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct curl_post *</type>
@@ -207,7 +236,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="36" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="64" bodyend="84"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="36" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="72" bodyend="92"/>
+        <referencedby refid="class_d_t_s_x_m_l_combo_box_1aeec14b4880ff9d69bb1b19a4549e082c" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="106" endline="160">HandleEvent</referencedby>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_x_m_l_combo_box_1a5294d28f4b31cbc166cd984f0babb6b3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -220,7 +250,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="37" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="154" bodyend="166"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="37" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="162" bodyend="174"/>
+        <referencedby refid="class_d_t_s_x_m_l_combo_box_1aeec14b4880ff9d69bb1b19a4549e082c" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="106" endline="160">HandleEvent</referencedby>
+        <referencedby refid="class_d_t_s_x_m_l_combo_box_1a026821df9109a287aff26b12859fbf7c" compoundref="_d_t_s_x_m_l_combo_box_8cpp" startline="94" endline="96">~DTSXMLComboBox</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -228,24 +260,24 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="187">
+      <node id="277">
         <label>DTSXMLComboBox</label>
         <link refid="class_d_t_s_x_m_l_combo_box"/>
-        <childnode refid="188" relation="public-inheritance">
+        <childnode refid="278" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="188">
+      <node id="278">
         <label>wxComboBox</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="189">
+      <node id="279">
         <label>DTSXMLComboBox</label>
         <link refid="class_d_t_s_x_m_l_combo_box"/>
-        <childnode refid="190" relation="public-inheritance">
+        <childnode refid="280" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="190">
+      <node id="280">
         <label>wxComboBox</label>
       </node>
     </collaborationgraph>

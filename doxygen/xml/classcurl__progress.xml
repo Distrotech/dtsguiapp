@@ -16,6 +16,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="62" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="62" bodyend="-1"/>
+        <referencedby refid="classdtsgui__curl_1ab1654abd596655f85087851d8d459ee9" compoundref="_d_t_s_app_8cpp" startline="194" endline="214">dtsgui_curl::curl_progress_ctrl</referencedby>
+        <referencedby refid="classdtsgui__curl_1a2fecec8a1192e94da4125de619ce13e7" compoundref="_d_t_s_app_8cpp" startline="168" endline="192">dtsgui_curl::curl_progress_function</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classcurl__progress_1a966b43ffd5e1e8e0447f5fa934f327c0" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -29,6 +31,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="63" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="classdtsgui__curl_1ab1654abd596655f85087851d8d459ee9" compoundref="_d_t_s_app_8cpp" startline="194" endline="214">dtsgui_curl::curl_progress_ctrl</referencedby>
+        <referencedby refid="classdtsgui__curl_1a2fecec8a1192e94da4125de619ce13e7" compoundref="_d_t_s_app_8cpp" startline="168" endline="192">dtsgui_curl::curl_progress_function</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -78,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="60" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="219" bodyend="227"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="60" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="227" bodyend="235"/>
       </memberdef>
       <memberdef kind="function" id="classcurl__progress_1a8ac357b0cb0498c02528ef12d1c9c1cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_d_t_s_frame" kindref="compound">DTSFrame</ref> *</type>
@@ -91,13 +95,62 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="61" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="235" bodyend="237"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="61" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSApp.cpp" bodystart="243" bodyend="245"/>
+        <referencedby refid="classdtsgui__curl_1ab1654abd596655f85087851d8d459ee9" compoundref="_d_t_s_app_8cpp" startline="194" endline="214">dtsgui_curl::curl_progress_ctrl</referencedby>
+        <referencedby refid="classdtsgui__curl_1a2fecec8a1192e94da4125de619ce13e7" compoundref="_d_t_s_app_8cpp" startline="168" endline="192">dtsgui_curl::curl_progress_function</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>dtsgui_curl</label>
+        <link refid="classdtsgui__curl"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>frame</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>wxFrame</label>
+      </node>
+      <node id="7">
+        <label>dtsgui</label>
+        <link refid="classdtsgui"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>appframe</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>cb</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>wsize</edgelabel>
+          <edgelabel>wpos</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>point</label>
+        <link refid="structpoint"/>
+      </node>
+      <node id="3">
+        <label>curl_progress</label>
+        <link refid="classcurl__progress"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>owner</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>DTSFrame</label>
+        <link refid="class_d_t_s_frame"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>dtsgui</edgelabel>
+          <edgelabel>tbcb</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" line="57" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/DTSApp.h" bodystart="57" bodyend="66"/>
     <listofallmembers>
       <member refid="classcurl__progress_1a855a2ff30ced56e3344ce6a6d76b0e01" prot="public" virt="non-virtual"><scope>curl_progress</scope><name>curl_progress</name></member>

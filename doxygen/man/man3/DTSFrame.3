@@ -1,4 +1,4 @@
-.TH "DTSFrame" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "DTSFrame" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -71,13 +71,13 @@ Inherits wxFrame\&.
 .RI "\fBDTSPanel\fP * \fBCreatePane\fP (const wxString &name, const wxString &title, int butmask, enum \fBpanel_type\fP type, void *udata)"
 .br
 .ti -1c
-.RI "\fBDTSPanel\fP * \fBTextPanel\fP (const wxString &title, const char *buf)"
+.RI "\fBDTSWindow\fP * \fBTextPanel\fP (const wxString &title, const char *buf)"
 .br
 .ti -1c
 .RI "wxMenuItem * \fBNewMenuItem\fP (wxMenu *m, \fBDTSObject\fP *panel, int menuid, const wxString &hint)"
 .br
 .ti -1c
-.RI "wxMenuItem * \fBNewMenuItem\fP (wxMenu *m, int menuid, const wxString &name, const wxString &hint, int blank, \fBdtsgui_dynpanel\fP cb, void *data)"
+.RI "wxMenuItem * \fBNewMenuItem\fP (wxMenu *m, int menuid, const wxString &name, const wxString &hint, int \fBblank\fP, \fBdtsgui_dynpanel\fP cb, void *data)"
 .br
 .ti -1c
 .RI "void \fBSendDTSEvent\fP (int eid, wxObject *evobj)"
@@ -98,125 +98,361 @@ Inherits wxFrame\&.
 .RI "void \fBOnAbout\fP (wxCommandEvent &event)"
 .br
 .in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBOnDTSEvent\fP (wxCommandEvent &event)"
+.br
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBpwevent\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, \fBdtsgui_pane\fP p, int type, int event, void *data)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBwxBoxSizer\fP * \fBsizer\fP"
+.br
+.ti -1c
+.RI "\fBwxWindow\fP * \fBblank\fP"
+.br
+.ti -1c
+.RI "\fBwxWindow\fP * \fBa_window\fP"
+.br
+.ti -1c
+.RI "wxToolBar * \fBtoolbar\fP"
+.br
+.ti -1c
+.RI "wxString \fBabout\fP"
+.br
+.ti -1c
+.RI "wxMenuBar * \fBmenubar\fP"
+.br
+.ti -1c
+.RI "class \fBdtsgui\fP * \fBdtsgui\fP"
+.br
+.ti -1c
+.RI "bool \fBabortconfirm\fP"
+.br
+.ti -1c
+.RI "\fBwxGauge\fP * \fBpbar\fP"
+.br
+.ti -1c
+.RI "\fBwxProgressDialog\fP * \fBpdia\fP"
+.br
+.ti -1c
+.RI "\fBdtsgui_toolbar_create\fP \fBtbcb\fP"
+.br
+.ti -1c
+.RI "void * \fBtb_data\fP"
+.br
+.in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 30 of file DTSFrame\&.h\&.
+Definition at line 31 of file DTSFrame\&.h\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "DTSFrame::DTSFrame (const wxString &title, const wxPoint &pos, const wxSize &size, class \fBdtsgui\fP *dtsgui)"
 
 .PP
-Definition at line 35 of file DTSFrame\&.cpp\&.
+Definition at line 43 of file DTSFrame\&.cpp\&.
+.PP
+References a_window, abortconfirm, about, blank, dtsgui, menubar, OnAbort(), OnDTSEvent(), pbar, pdia, sizer, tb_data, and tbcb\&.
 .SS "DTSFrame::~DTSFrame ()"
 
 .PP
-Definition at line 78 of file DTSFrame\&.cpp\&.
+Definition at line 86 of file DTSFrame\&.cpp\&.
+.PP
+References blank, and tb_data\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "void DTSFrame::Alert (wxStringtext)"
 
 .PP
-Definition at line 112 of file DTSFrame\&.cpp\&.
+Definition at line 120 of file DTSFrame\&.cpp\&.
+.PP
+Referenced by DTS_C_API::dtsgui_alert()\&.
 .SS "void DTSFrame::CloseMenu (wxMenu *m, inttype)"
 
 .PP
-Definition at line 345 of file DTSFrame\&.cpp\&.
+Definition at line 353 of file DTSFrame\&.cpp\&.
+.PP
+References OnClose()\&.
+.PP
+Referenced by DTS_C_API::dtsgui_close(), and DTS_C_API::dtsgui_exit()\&.
 .SS "bool DTSFrame::Confirm (wxStringtext)"
 
 .PP
-Definition at line 96 of file DTSFrame\&.cpp\&.
+Definition at line 104 of file DTSFrame\&.cpp\&.
+.PP
+Referenced by DTS_C_API::dtsgui_confirm(), DTSTreeWindowEvent::MenuEvent(), OnAbort(), and OnClose()\&.
 .SS "\fBDTSPanel\fP * DTSFrame::CreatePane (const wxString &name, const wxString &title, intbutmask, enum \fBpanel_type\fPtype, void *udata)"
 
 .PP
-Definition at line 367 of file DTSFrame\&.cpp\&.
+Definition at line 375 of file DTSFrame\&.cpp\&.
+.PP
+References DTSPanel::SetTitle(), DTSObject::SetUserData(), wx_DTSPANEL_DIALOG, wx_DTSPANEL_PANEL, wx_DTSPANEL_SCROLLPANEL, wx_DTSPANEL_TAB, wx_DTSPANEL_TREE, wx_DTSPANEL_WINDOW, and wx_DTSPANEL_WIZARD\&.
+.PP
+Referenced by dtsgui_wizard::AddPage(), DTS_C_API::dtsgui_panel(), and Passwd()\&.
 .SS "void DTSFrame::DynamicPanelEvent (wxCommandEvent &event)"
 
 .PP
-Definition at line 264 of file DTSFrame\&.cpp\&.
+Definition at line 272 of file DTSFrame\&.cpp\&.
+.PP
+References a_window, evdata::data, dynamic_panel::HasCallback(), dynamic_panel::IsBlank(), dynamic_panel::RunCallback(), SetWindow(), and dynamic_panel::w\&.
+.PP
+Referenced by NewMenuItem()\&.
 .SS "void DTSFrame::EndProgress (void)"
 
 .PP
-Definition at line 173 of file DTSFrame\&.cpp\&.
+Definition at line 181 of file DTSFrame\&.cpp\&.
+.PP
+References pdia\&.
+.PP
+Referenced by dtsgui_curl::curl_progress_ctrl(), and DTS_C_API::dtsgui_progress_end()\&.
 .SS "const char * DTSFrame::FileDialog (const char *title, const char *path, const char *name, const char *filter, longstyle)"
 
 .PP
-Definition at line 400 of file DTSFrame\&.cpp\&.
+Definition at line 408 of file DTSFrame\&.cpp\&.
+.PP
+Referenced by DTS_C_API::dtsgui_fileopen(), and DTS_C_API::dtsgui_filesave()\&.
 .SS "class \fBdtsgui\fP * DTSFrame::GetDTSData (void)"
 
 .PP
-Definition at line 299 of file DTSFrame\&.cpp\&.
+Definition at line 307 of file DTSFrame\&.cpp\&.
+.PP
+References dtsgui\&.
+.PP
+Referenced by DTSTreeWindow::DTSTreeWindow(), and DTSPanelEvent::RunCallBack()\&.
 .SS "wxMenuBar * DTSFrame::GetMenuBar (void)"
 
 .PP
-Definition at line 341 of file DTSFrame\&.cpp\&.
+Definition at line 349 of file DTSFrame\&.cpp\&.
+.PP
+References menubar\&.
 .SS "int DTSFrame::IncProgress (intival, const wxString &msg)"
 
 .PP
-Definition at line 158 of file DTSFrame\&.cpp\&.
+Definition at line 166 of file DTSFrame\&.cpp\&.
+.PP
+References pdia\&.
+.PP
+Referenced by DTS_C_API::dtsgui_progress_increment()\&.
 .SS "wxMenu * DTSFrame::NewMenu (const wxString &name)"
 
 .PP
-Definition at line 358 of file DTSFrame\&.cpp\&.
+Definition at line 366 of file DTSFrame\&.cpp\&.
+.PP
+References menubar\&.
+.PP
+Referenced by DTS_C_API::dtsgui_newmenu()\&.
 .SS "wxMenuItem * DTSFrame::NewMenuItem (wxMenu *m, \fBDTSObject\fP *panel, intmenuid, const wxString &hint)"
 
 .PP
-Definition at line 427 of file DTSFrame\&.cpp\&.
+Definition at line 435 of file DTSFrame\&.cpp\&.
+.PP
+References DTSObject::GetName(), DTSObject::GetPanel(), and SwitchWindow()\&.
+.PP
+Referenced by DTS_C_API::dtsgui_newmenucb(), and DTS_C_API::dtsgui_newmenuitem()\&.
 .SS "wxMenuItem * DTSFrame::NewMenuItem (wxMenu *m, intmenuid, const wxString &name, const wxString &hint, intblank, \fBdtsgui_dynpanel\fPcb, void *data)"
 
 .PP
-Definition at line 445 of file DTSFrame\&.cpp\&.
+Definition at line 453 of file DTSFrame\&.cpp\&.
+.PP
+References DynamicPanelEvent()\&.
 .SS "void DTSFrame::OnAbort (wxCloseEvent &event)"
 
 .PP
-Definition at line 188 of file DTSFrame\&.cpp\&.
+Definition at line 196 of file DTSFrame\&.cpp\&.
+.PP
+References abortconfirm, and Confirm()\&.
+.PP
+Referenced by DTSFrame()\&.
 .SS "void DTSFrame::OnAbout (wxCommandEvent &event)"
 
 .PP
-Definition at line 223 of file DTSFrame\&.cpp\&.
+Definition at line 231 of file DTSFrame\&.cpp\&.
+.PP
+References about\&.
+.PP
+Referenced by SetAbout()\&.
 .SS "void DTSFrame::OnClose (wxCommandEvent &event)"
 
 .PP
-Definition at line 196 of file DTSFrame\&.cpp\&.
+Definition at line 204 of file DTSFrame\&.cpp\&.
+.PP
+References abortconfirm, and Confirm()\&.
+.PP
+Referenced by CloseMenu()\&.
 .SS "wxToolBar * DTSFrame::OnCreateToolBar (longstyle, wxWindowIDid, const wxString &name)\fC [virtual]\fP"
 
 .PP
-Definition at line 306 of file DTSFrame\&.cpp\&.
+Definition at line 314 of file DTSFrame\&.cpp\&.
+.PP
+References tb_data, and tbcb\&.
+.SS "void DTSFrame::OnDTSEvent (wxCommandEvent &event)\fC [private]\fP"
+
+.PP
+Definition at line 192 of file DTSFrame\&.cpp\&.
+.PP
+Referenced by DTSFrame()\&.
 .SS "class basic_auth * DTSFrame::Passwd (const char *user, const char *passwd)"
 
 .PP
-Definition at line 487 of file DTSFrame\&.cpp\&.
+Definition at line 495 of file DTSFrame\&.cpp\&.
+.PP
+References CreatePane(), DTSGUI_FORM_DATA_PTR, pwevent(), DTSDialog::RunDialog(), DTSPanel::TextBox(), wx_DTSPANEL_DIALOG, and wx_PANEL_BUTTON_ACTION\&.
+.PP
+Referenced by dtsgui_curl::CurlPasswd(), and DTS_C_API::dtsgui_pwdialog()\&.
+.SS "int DTSFrame::pwevent (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_pane\fPp, inttype, intevent, void *data)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 470 of file DTSFrame\&.cpp\&.
+.PP
+References DTSPanel::FindValue(), DTSObject::GetUserData(), and wx_PANEL_EVENT_BUTTON_YES\&.
+.PP
+Referenced by Passwd()\&.
 .SS "void DTSFrame::SendDTSEvent (inteid, wxObject *evobj)"
 
 .PP
-Definition at line 292 of file DTSFrame\&.cpp\&.
+Definition at line 300 of file DTSFrame\&.cpp\&.
+.PP
+Referenced by DTS_C_API::dtsgui_sendevent()\&.
 .SS "void DTSFrame::SetAbout (wxMenu *m, const char *a_text)"
 
 .PP
-Definition at line 86 of file DTSFrame\&.cpp\&.
+Definition at line 94 of file DTSFrame\&.cpp\&.
+.PP
+References about, and OnAbout()\&.
+.PP
+Referenced by DTS_C_API::dtsgui_about()\&.
 .SS "void DTSFrame::SetupToolbar (\fBdtsgui_toolbar_create\fPcb, void *data)"
 
 .PP
-Definition at line 320 of file DTSFrame\&.cpp\&.
+Definition at line 328 of file DTSFrame\&.cpp\&.
+.PP
+References dtsgui::cb, pbar, tb_data, tbcb, and toolbar\&.
+.PP
+Referenced by DTS_C_API::dtsgui_setuptoolbar()\&.
 .SS "void DTSFrame::SetWindow (\fBwxWindow\fP *window)"
 
 .PP
-Definition at line 227 of file DTSFrame\&.cpp\&.
+Definition at line 235 of file DTSFrame\&.cpp\&.
+.PP
+References a_window, blank, dtsgui::SetStatusText(), and sizer\&.
+.PP
+Referenced by DTS_C_API::dtsgui_setwindow(), DynamicPanelEvent(), and SwitchWindow()\&.
 .SS "int DTSFrame::StartProgress (const wxString &text, intmaxval, intquit)"
 
 .PP
-Definition at line 121 of file DTSFrame\&.cpp\&.
+Definition at line 129 of file DTSFrame\&.cpp\&.
+.PP
+References pbar, and pdia\&.
+.PP
+Referenced by dtsgui_curl::curl_progress_function(), and DTS_C_API::dtsgui_progress_start()\&.
 .SS "void DTSFrame::SwitchWindow (wxCommandEvent &event)"
 
 .PP
-Definition at line 249 of file DTSFrame\&.cpp\&.
-.SS "\fBDTSPanel\fP * DTSFrame::TextPanel (const wxString &title, const char *buf)"
+Definition at line 257 of file DTSFrame\&.cpp\&.
+.PP
+References a_window, blank, evdata::data, and SetWindow()\&.
+.PP
+Referenced by NewMenuItem()\&.
+.SS "\fBDTSWindow\fP * DTSFrame::TextPanel (const wxString &title, const char *buf)"
 
 .PP
-Definition at line 413 of file DTSFrame\&.cpp\&.
+Definition at line 421 of file DTSFrame\&.cpp\&.
+.PP
+References DTSPanel::AddItem(), and DTSObject::GetPanel()\&.
+.PP
+Referenced by DTS_C_API::dtsgui_textpane()\&.
 .SS "int DTSFrame::UpdateProgress (intcval, const wxString &msg)"
 
 .PP
-Definition at line 143 of file DTSFrame\&.cpp\&.
+Definition at line 151 of file DTSFrame\&.cpp\&.
+.PP
+References pdia\&.
+.PP
+Referenced by dtsgui_curl::curl_progress_function(), and DTS_C_API::dtsgui_progress_update()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBwxWindow\fP* DTSFrame::a_window\fC [private]\fP"
+
+.PP
+Definition at line 69 of file DTSFrame\&.h\&.
+.PP
+Referenced by DTSFrame(), DynamicPanelEvent(), SetWindow(), and SwitchWindow()\&.
+.SS "bool DTSFrame::abortconfirm\fC [private]\fP"
+
+.PP
+Definition at line 74 of file DTSFrame\&.h\&.
+.PP
+Referenced by DTSFrame(), OnAbort(), and OnClose()\&.
+.SS "wxString DTSFrame::about\fC [private]\fP"
+
+.PP
+Definition at line 71 of file DTSFrame\&.h\&.
+.PP
+Referenced by DTSFrame(), OnAbout(), and SetAbout()\&.
+.SS "\fBwxWindow\fP* DTSFrame::blank\fC [private]\fP"
+
+.PP
+Definition at line 68 of file DTSFrame\&.h\&.
+.PP
+Referenced by DTSFrame(), SetWindow(), SwitchWindow(), and ~DTSFrame()\&.
+.SS "class \fBdtsgui\fP* DTSFrame::dtsgui\fC [private]\fP"
+
+.PP
+Definition at line 73 of file DTSFrame\&.h\&.
+.PP
+Referenced by DTSFrame(), and GetDTSData()\&.
+.SS "wxMenuBar* DTSFrame::menubar\fC [private]\fP"
+
+.PP
+Definition at line 72 of file DTSFrame\&.h\&.
+.PP
+Referenced by DTSFrame(), GetMenuBar(), and NewMenu()\&.
+.SS "\fBwxGauge\fP* DTSFrame::pbar\fC [private]\fP"
+
+.PP
+Definition at line 75 of file DTSFrame\&.h\&.
+.PP
+Referenced by DTSFrame(), SetupToolbar(), and StartProgress()\&.
+.SS "\fBwxProgressDialog\fP* DTSFrame::pdia\fC [private]\fP"
+
+.PP
+Definition at line 76 of file DTSFrame\&.h\&.
+.PP
+Referenced by DTSFrame(), EndProgress(), IncProgress(), StartProgress(), and UpdateProgress()\&.
+.SS "\fBwxBoxSizer\fP* DTSFrame::sizer\fC [private]\fP"
+
+.PP
+Definition at line 67 of file DTSFrame\&.h\&.
+.PP
+Referenced by DTSFrame(), and SetWindow()\&.
+.SS "void* DTSFrame::tb_data\fC [private]\fP"
+
+.PP
+Definition at line 78 of file DTSFrame\&.h\&.
+.PP
+Referenced by DTSFrame(), OnCreateToolBar(), SetupToolbar(), and ~DTSFrame()\&.
+.SS "\fBdtsgui_toolbar_create\fP DTSFrame::tbcb\fC [private]\fP"
+
+.PP
+Definition at line 77 of file DTSFrame\&.h\&.
+.PP
+Referenced by DTSFrame(), OnCreateToolBar(), and SetupToolbar()\&.
+.SS "wxToolBar* DTSFrame::toolbar\fC [private]\fP"
+
+.PP
+Definition at line 70 of file DTSFrame\&.h\&.
+.PP
+Referenced by SetupToolbar()\&.
 
 .SH "Author"
 .PP 

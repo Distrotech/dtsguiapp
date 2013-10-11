@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="group___c-_a_p_i-_panel-_items" kind="group">
+    <compoundname>C-API-Panel-Items</compoundname>
+    <title>Panel item interface.</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_items_1ga9a2e87bf30be8644653d11754fcb4e26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct bucket_list *</type>
+        <definition>struct bucket_list* DTS_C_API::dtsgui_panel_items</definition>
+        <argsstring>(dtsgui_pane pane)</argsstring>
+        <name>dtsgui_panel_items</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pane</declname>
+        </param>
+        <briefdescription>
+<para>Return reference to hashed bucket list of items. </para>        </briefdescription>
+        <detaileddescription>
+<para>The bucket list API in dtsapplib contains more information.</para><para><simplesect kind="see"><para><ref refid="class_d_t_s_object_1a4cadcce0480e7e8f4a9a07a4aedd3c1f" kindref="member">DTSObject::GetItems()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to obtain list from. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to hashed bucket list. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1076" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1076" bodyend="1079"/>
+        <references refid="class_d_t_s_object_1a4cadcce0480e7e8f4a9a07a4aedd3c1f" compoundref="_d_t_s_panel_8cpp" startline="316" endline="321">DTSObject::GetItems</references>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_items_1ga3af426dd6bf50cb6bd7232c4ea5b92f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
+        <definition>struct form_item* DTS_C_API::dtsgui_finditem</definition>
+        <argsstring>(dtsgui_pane p, const char *name)</argsstring>
+        <name>dtsgui_finditem</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Return refernece to a form element. Find a item and return it searcing the bucket list for the specified name. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_d_t_s_panel_1a3c4a20a1c122851ae935dcac34697361" kindref="member">DTSPanel::FindItem()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel who&apos;s item list is to be searched. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return item with this name. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Form item if found matching the name. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1089" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1089" bodyend="1092"/>
+        <references refid="class_d_t_s_panel_1a3c4a20a1c122851ae935dcac34697361" compoundref="_d_t_s_panel_8cpp" startline="882" endline="884">DTSPanel::FindItem</references>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_items_1ga30bc1422cf3395b150773320ffda00ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* DTS_C_API::dtsgui_item_data</definition>
+        <argsstring>(struct form_item *fi)</argsstring>
+        <name>dtsgui_item_data</name>
+        <param>
+          <type>struct <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
+          <declname>fi</declname>
+        </param>
+        <briefdescription>
+<para>Get refernece to data stoed on element. </para>        </briefdescription>
+        <detaileddescription>
+<para>Each element is capable of storing user supplied data this returns a reference to this data. <simplesect kind="see"><para><ref refid="classform__item_1a45b4a4db5526c1032f15ba20d3f28249" kindref="member">form_item::GetData()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Form item to obtain data from. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to data stored in item. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1102" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1102" bodyend="1104"/>
+        <references refid="classform__item_1a45b4a4db5526c1032f15ba20d3f28249" compoundref="pitems_8cpp" startline="144" endline="153">form_item::GetData</references>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_items_1gadc168d1ed91fc91be2bb7bf7b060dd62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* DTS_C_API::dtsgui_item_value</definition>
+        <argsstring>(struct form_item *fi)</argsstring>
+        <name>dtsgui_item_value</name>
+        <param>
+          <type>struct <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
+          <declname>fi</declname>
+        </param>
+        <briefdescription>
+<para>Return value of element. The value of the panel element is returned fo the item. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The return value must be freed. </para></simplesect>
+<simplesect kind="see"><para><ref refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" kindref="member">form_item::GetValue()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Form item to obtain value of. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Value of the element. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1113" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1113" bodyend="1115"/>
+        <references refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" compoundref="pitems_8cpp" startline="192" endline="219">form_item::GetValue</references>
+        <referencedby refid="netconfig_8c_1a53ff57cbb1a4442c4428c95746229150" compoundref="netconfig_8c" startline="37" endline="74">network_config</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_items_1ga2cb1581f47559805b221f9290f9ec83e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* DTS_C_API::dtsgui_item_name</definition>
+        <argsstring>(struct form_item *fi)</argsstring>
+        <name>dtsgui_item_name</name>
+        <param>
+          <type>struct <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
+          <declname>fi</declname>
+        </param>
+        <briefdescription>
+<para>Return name of element. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>the name must not be freed and the form itme must not be un referenced </para></simplesect>
+<simplesect kind="see"><para><ref refid="classform__item_1a4f3558ce5670e789ad51d1f489ec5b14" kindref="member">form_item::GetName()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fi</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Form item. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Name of item. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1124" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1124" bodyend="1126"/>
+        <references refid="classform__item_1a4f3558ce5670e789ad51d1f489ec5b14" compoundref="pitems_8cpp" startline="188" endline="190">form_item::GetName</references>
+      </memberdef>
+      <memberdef kind="function" id="group___c-_a_p_i-_panel-_items_1ga37f578498eb38e545906898e7250e6bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* DTS_C_API::dtsgui_findvalue</definition>
+        <argsstring>(dtsgui_pane p, const char *name)</argsstring>
+        <name>dtsgui_findvalue</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>Helper function to return a value of a item. This function finds a value by name returning the value. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>the returned value must be freeed. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group___c-_a_p_i-_panel-_items_1ga3af426dd6bf50cb6bd7232c4ea5b92f6" kindref="member">dtsgui_finditem()</ref> </para><simplesectsep/><para><ref refid="group___c-_a_p_i-_panel-_items_1gadc168d1ed91fc91be2bb7bf7b060dd62" kindref="member">dtsgui_item_value()</ref> </para><simplesectsep/><para><ref refid="class_d_t_s_panel_1aaeef18ad561346699ed24e0aa6fa47b3" kindref="member">DTSPanel::FindValue()</ref> </para><simplesectsep/><para><ref refid="class_d_t_s_panel_1a3c4a20a1c122851ae935dcac34697361" kindref="member">DTSPanel::FindItem()</ref> </para><simplesectsep/><para><ref refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" kindref="member">form_item::GetValue()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to search element. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Return value of element with this name. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Value of element. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1140" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1140" bodyend="1143"/>
+        <references refid="class_d_t_s_panel_1aaeef18ad561346699ed24e0aa6fa47b3" compoundref="_d_t_s_panel_8cpp" startline="886" endline="897">DTSPanel::FindValue</references>
+        <referencedby refid="interface_8c_1a2079939d5d21847b07c782120206b7ce" compoundref="interface_8c" startline="86" endline="121">handle_updatetabpane</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Access and manage panel elements in a consistant way. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="group___c-_a_p_i-_panel-_elements" kindref="compound">Panel element interface.</ref> </para></simplesect>
+<simplesect kind="remark"><para>Element items include Text / Password / Check / List / Combo boxes. </para><simplesectsep/><para>Information of each element is stored in a hashed bucket to provide a consistant interface to the values and references to data (XML). </para></simplesect>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

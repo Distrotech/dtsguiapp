@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="group___c_p_p-_panel-_tree" kind="group">
+    <compoundname>CPP-Panel-Tree</compoundname>
+    <title>Tree/Tab view implemnetation.</title>
+    <innerfile refid="_d_t_s_tree_window_8cpp">DTSTreeWindow.cpp</innerfile>
+    <innergroup refid="group___c_p_p-_panel-_tree-_store">Treewindow implementation.</innergroup>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group___c_p_p-_panel-_tree_1ga1ed19fc940f9de92a2ac518ffbc04486" prot="public" static="no">
+        <name>treewinmenu</name>
+        <enumvalue id="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486aed80ef06b46ae100a6f5c56da1674ba7" prot="public">
+          <name>DTS_TREEWIN_MENU_SORT</name>
+          <initializer>= 127</initializer>
+          <briefdescription>
+<para>Sort the container. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486af5bd57193f475f49c63b9b7271586daf" prot="public">
+          <name>DTS_TREEWIN_MENU_MOVEUP</name>
+          <briefdescription>
+<para>Move the node up. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486a097ecad73656ee80fb0c9e7ddf464e5d" prot="public">
+          <name>DTS_TREEWIN_MENU_MOVEDOWN</name>
+          <briefdescription>
+<para>Move the node down. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___c_p_p-_panel-_tree_1gga1ed19fc940f9de92a2ac518ffbc04486a4a0c85437a842221377dac401285454f" prot="public">
+          <name>DTS_TREEWIN_MENU_DELETE</name>
+          <briefdescription>
+<para>Delete the node. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Menu id&apos;s for right click popup. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" line="37" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSTreeWindow.cpp" bodystart="37" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation of Tree and Tab view and event handlers. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
@@ -94,7 +95,7 @@ $(document).ready(function(){initNavTree('class_d_t_s_tree_window_event.html',''
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,6 +107,8 @@ $(document).ready(function(){initNavTree('class_d_t_s_tree_window_event.html',''
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_d_t_s_tree_window_event-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">DTSTreeWindowEvent Class Reference</div>  </div>
@@ -124,7 +127,7 @@ Inheritance diagram for DTSTreeWindowEvent:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab42e89c20d43eb8b536c3601158b6f7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_tree_window_event.html#ab42e89c20d43eb8b536c3601158b6f7a">DTSTreeWindowEvent</a> (void *userdata=NULL, <a class="el" href="dtsgui_8h.html#a32927ee58215cd957e5134af0f13303f">dtsgui_tree_cb</a> tree_cb=NULL, class <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>=NULL, <a class="el" href="class_d_t_s_tree_window.html">DTSTreeWindow</a> *win=NULL)</td></tr>
+<tr class="memitem:ab42e89c20d43eb8b536c3601158b6f7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_tree_window_event.html#ab42e89c20d43eb8b536c3601158b6f7a">DTSTreeWindowEvent</a> (void *userdata=NULL, <a class="el" href="group___c_o_r_e.html#gae088feda00f338f6ddd35daaacc44817">dtsgui_tree_cb</a> tree_cb=NULL, class <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>=NULL, <a class="el" href="class_d_t_s_tree_window.html">DTSTreeWindow</a> *win=NULL)</td></tr>
 <tr class="separator:ab42e89c20d43eb8b536c3601158b6f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27f73ab3778ec2cf8ccfb6a9d0000a48"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_tree_window_event.html#a27f73ab3778ec2cf8ccfb6a9d0000a48">~DTSTreeWindowEvent</a> ()</td></tr>
 <tr class="separator:a27f73ab3778ec2cf8ccfb6a9d0000a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,8 +139,32 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac629b258d688fee58bdccd9d165c076e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70409a54c0a1a20707105e67c2ebfd81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_tree_window_event.html#a70409a54c0a1a20707105e67c2ebfd81">SplitterEvent</a> (wxSplitterEvent &amp;event)</td></tr>
 <tr class="separator:a70409a54c0a1a20707105e67c2ebfd81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98ac8a3612545e1eaeb99fa9b5662048"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_tree_window_event.html#a98ac8a3612545e1eaeb99fa9b5662048">TreeCallback</a> (const wxDataViewItem item, enum <a class="el" href="dtsgui_8h.html#a465794df2cb30731dfe34d3e7a4ed368">tree_cbtype</a> cbtype)</td></tr>
+<tr class="memitem:a98ac8a3612545e1eaeb99fa9b5662048"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_tree_window_event.html#a98ac8a3612545e1eaeb99fa9b5662048">TreeCallback</a> (const wxDataViewItem item, enum <a class="el" href="group___c_o_r_e.html#ga465794df2cb30731dfe34d3e7a4ed368">tree_cbtype</a> cbtype)</td></tr>
 <tr class="separator:a98ac8a3612545e1eaeb99fa9b5662048"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aaf5ca29397996f44de6f0e73a1070795"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_tree_window_event.html#aaf5ca29397996f44de6f0e73a1070795">SortParent</a> (const wxDataViewItem <a class="el" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>, int action)</td></tr>
+<tr class="separator:aaf5ca29397996f44de6f0e73a1070795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a97dc4c3c5cebbaa4c5f7f5dcad70f104"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_tree_window_event.html#a97dc4c3c5cebbaa4c5f7f5dcad70f104">data</a></td></tr>
+<tr class="separator:a97dc4c3c5cebbaa4c5f7f5dcad70f104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f06b3a5f60fad712c725e0f4541a281"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_o_r_e.html#gae088feda00f338f6ddd35daaacc44817">dtsgui_tree_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_tree_window_event.html#a1f06b3a5f60fad712c725e0f4541a281">treecb</a></td></tr>
+<tr class="separator:a1f06b3a5f60fad712c725e0f4541a281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a182862c6039a3636a3b2a8fad26f15a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_t_s_tree_window.html">DTSTreeWindow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a></td></tr>
+<tr class="separator:a182862c6039a3636a3b2a8fad26f15a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bd0e58c2359eeb0c46aa332dac696af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_t_s_d_v_m_list_view.html">DTSDVMListView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a></td></tr>
+<tr class="separator:a0bd0e58c2359eeb0c46aa332dac696af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad88ac828c98c880e1976abea11512c76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_t_s_d_v_m_ctrl.html">DTSDVMCtrl</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_tree_window_event.html#ad88ac828c98c880e1976abea11512c76">tree</a></td></tr>
+<tr class="separator:ad88ac828c98c880e1976abea11512c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddcc163d191bdc198bbb3929656a957"><td class="memItemLeft" align="right" valign="top">wxDataViewItem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a></td></tr>
+<tr class="separator:a0ddcc163d191bdc198bbb3929656a957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3932c00abcbe147fa18b4d689eb3b376"><td class="memItemLeft" align="right" valign="top">wxDataViewItem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_tree_window_event.html#a3932c00abcbe147fa18b4d689eb3b376">a_cont</a></td></tr>
+<tr class="separator:a3932c00abcbe147fa18b4d689eb3b376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88eb3a82035ee504cc380b094b763e3a"><td class="memItemLeft" align="right" valign="top">class <a class="el" href="classdtsgui.html">dtsgui</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_tree_window_event.html#a88eb3a82035ee504cc380b094b763e3a">dtsgui</a></td></tr>
+<tr class="separator:a88eb3a82035ee504cc380b094b763e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -156,7 +183,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="dtsgui_8h.html#a32927ee58215cd957e5134af0f13303f">dtsgui_tree_cb</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#gae088feda00f338f6ddd35daaacc44817">dtsgui_tree_cb</a>&#160;</td>
           <td class="paramname"><em>tree_cb</em> = <code>NULL</code>, </td>
         </tr>
         <tr>
@@ -179,7 +206,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00281">281</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00295">295</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00098">data</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00105">dtsgui</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00604">DTSDVMCtrl::GetStore()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00655">DTSTreeWindow::GetTreeCtrl()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00100">parent</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00102">tree</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00099">treecb</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00101">vm</a>.</p>
 
 </div>
 </div>
@@ -196,7 +225,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00298">298</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00312">312</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00098">data</a>.</p>
 
 </div>
 </div>
@@ -215,7 +246,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00431">431</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00445">445</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00104">a_cont</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00103">a_item</a>, <a class="el" href="_d_t_s_frame_8cpp_source.html#l00104">DTSFrame::Confirm()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00341">DTSDVMListView::Delete()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00045">DTS_TREEWIN_MENU_DELETE</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00043">DTS_TREEWIN_MENU_MOVEDOWN</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00041">DTS_TREEWIN_MENU_MOVEUP</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00039">DTS_TREEWIN_MENU_SORT</a>, <a class="el" href="dtsgui_8h_source.html#l00042">DTSGUI_TREE_CB_DELETE</a>, <a class="el" href="dtsgui_8h_source.html#l00040">DTSGUI_TREE_CB_SELECT</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00286">DTSObject::GetFrame()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00266">DTSDVMListView::GetParent()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00100">parent</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00396">SortParent()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00102">tree</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00483">TreeCallback()</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00101">vm</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00544">DTSTreeWindow::DTSTreeWindow()</a>.</p>
 
 </div>
 </div>
@@ -233,7 +268,51 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00510">510</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00524">524</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00683">DTSTreeWindow::GetActiveNode()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00810">DTSTreeWindow::GetClientPane()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00100">parent</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00814">DTSTreeWindow::Select()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00746">DTSPanel::Update_XML()</a>, <a class="el" href="dtsgui_8h_source.html#l00210">wx_PANEL_EVENT_BUTTON_NO</a>, and <a class="el" href="dtsgui_8h_source.html#l00208">wx_PANEL_EVENT_BUTTON_YES</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00544">DTSTreeWindow::DTSTreeWindow()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaf5ca29397996f44de6f0e73a1070795"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DTSTreeWindowEvent::SortParent </td>
+          <td>(</td>
+          <td class="paramtype">const wxDataViewItem&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>action</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00396">396</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00104">a_cont</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00103">a_item</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00098">data</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00043">DTS_TREEWIN_MENU_MOVEDOWN</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00041">DTS_TREEWIN_MENU_MOVEUP</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00039">DTS_TREEWIN_MENU_SORT</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00436">DTSDVMListView::GetContainers()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00180">DTSDVMListStore::IsExpanded()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00475">DTSDVMListView::MoveChildDown()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00455">DTSDVMListView::MoveChildUp()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00150">DTSDVMListStore::SetExpanded()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00422">DTSDVMListView::SetExpanded()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00377">DTSDVMListView::SortChildren()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00102">tree</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00101">vm</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00445">MenuEvent()</a>.</p>
 
 </div>
 </div>
@@ -251,7 +330,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00457">457</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00471">471</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00100">parent</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00659">DTSTreeWindow::SetTreePaneSize()</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00544">DTSTreeWindow::DTSTreeWindow()</a>.</p>
 
 </div>
 </div>
@@ -268,7 +351,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">enum <a class="el" href="dtsgui_8h.html#a465794df2cb30731dfe34d3e7a4ed368">tree_cbtype</a>&#160;</td>
+          <td class="paramtype">enum <a class="el" href="group___c_o_r_e.html#ga465794df2cb30731dfe34d3e7a4ed368">tree_cbtype</a>&#160;</td>
           <td class="paramname"><em>cbtype</em>&#160;</td>
         </tr>
         <tr>
@@ -279,7 +362,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00469">469</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00483">483</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00240">DTSDVMListStore::ConfigPanel()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00715">DTSTreeWindow::CreatePane()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00098">data</a>, <a class="el" href="dtsgui_8h_source.html#l00042">DTSGUI_TREE_CB_DELETE</a>, <a class="el" href="dtsgui_8h_source.html#l00044">DTSGUI_TREE_CB_EDIT</a>, <a class="el" href="dtsgui_8h_source.html#l00040">DTSGUI_TREE_CB_SELECT</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00138">DTSDVMListStore::GetTitle()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00100">parent</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00687">DTSTreeWindow::SetWindow()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00099">treecb</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00754">DTSTreeWindow::UpdateNodeXML()</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00445">MenuEvent()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">TreeEvent()</a>.</p>
 
 </div>
 </div>
@@ -297,7 +384,204 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00307">307</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">321</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00104">a_cont</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00103">a_item</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00050">DTSDVMListStore::can_delete</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00048">DTSDVMListStore::can_edit</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00049">DTSDVMListStore::can_sort</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00098">data</a>, <a class="el" href="dtsgui_8h_source.html#l00044">DTSGUI_TREE_CB_EDIT</a>, <a class="el" href="dtsgui_8h_source.html#l00040">DTSGUI_TREE_CB_SELECT</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00391">DTSDVMListView::GetChildCount()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00507">DTSDVMListView::GetNodeID()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00405">DTSDVMListView::GetNthChild()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00266">DTSDVMListView::GetParent()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00138">DTSDVMListStore::GetTitle()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00079">DTSDVMListStore::IsContainer()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00257">DTSDVMListView::IsContainer()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00100">parent</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00673">DTSTreeWindow::SetPaneTitle()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00711">DTSTreeWindow::ShowRMenu()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00102">tree</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00483">TreeCallback()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00668">DTSTreeWindow::TreeResize()</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00101">vm</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00544">DTSTreeWindow::DTSTreeWindow()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a3932c00abcbe147fa18b4d689eb3b376"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxDataViewItem DTSTreeWindowEvent::a_cont</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00104">104</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00445">MenuEvent()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00396">SortParent()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">TreeEvent()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0ddcc163d191bdc198bbb3929656a957"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxDataViewItem DTSTreeWindowEvent::a_item</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00103">103</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00445">MenuEvent()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00396">SortParent()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">TreeEvent()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a97dc4c3c5cebbaa4c5f7f5dcad70f104"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* DTSTreeWindowEvent::data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00098">98</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00295">DTSTreeWindowEvent()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00396">SortParent()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00483">TreeCallback()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">TreeEvent()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00312">~DTSTreeWindowEvent()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a88eb3a82035ee504cc380b094b763e3a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">class <a class="el" href="classdtsgui.html">dtsgui</a>* DTSTreeWindowEvent::dtsgui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00105">105</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00295">DTSTreeWindowEvent()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a182862c6039a3636a3b2a8fad26f15a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_t_s_tree_window.html">DTSTreeWindow</a>* DTSTreeWindowEvent::parent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00100">100</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00295">DTSTreeWindowEvent()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00445">MenuEvent()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00524">OnButton()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00471">SplitterEvent()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00483">TreeCallback()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">TreeEvent()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad88ac828c98c880e1976abea11512c76"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_t_s_d_v_m_ctrl.html">DTSDVMCtrl</a>* DTSTreeWindowEvent::tree</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00102">102</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00295">DTSTreeWindowEvent()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00445">MenuEvent()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00396">SortParent()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">TreeEvent()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1f06b3a5f60fad712c725e0f4541a281"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group___c_o_r_e.html#gae088feda00f338f6ddd35daaacc44817">dtsgui_tree_cb</a> DTSTreeWindowEvent::treecb</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00099">99</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00295">DTSTreeWindowEvent()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00483">TreeCallback()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0bd0e58c2359eeb0c46aa332dac696af"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_t_s_d_v_m_list_view.html">DTSDVMListView</a>* DTSTreeWindowEvent::vm</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_tree_window_8h_source.html#l00101">101</a> of file <a class="el" href="_d_t_s_tree_window_8h_source.html">DTSTreeWindow.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00295">DTSTreeWindowEvent()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00445">MenuEvent()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00396">SortParent()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">TreeEvent()</a>.</p>
 
 </div>
 </div>
@@ -311,7 +595,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_tree_window_event.html">DTSTreeWindowEvent</a></li>
-    <li class="footer">Generated on Wed Oct 9 2013 22:32:56 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

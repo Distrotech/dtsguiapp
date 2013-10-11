@@ -1,0 +1,138 @@
+.TH "Panel element interface." 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Panel element interface. \- 
+.PP
+Interface for creating and placing elements on the panel\&.  
+
+.SS "Modules"
+
+.in +1c
+.ti -1c
+.RI "\fBBasic Elements\&.\fP"
+.br
+.RI "\fIElements consisting Name/Value/Data\&. \fP"
+.ti -1c
+.RI "\fBXML Elements\fP"
+.br
+.RI "\fIElements derived from a XML node\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_listbox_add\fP (struct \fBform_item\fP *listbox, const char *text, const char *value)"
+.br
+.RI "\fIAdd a name / value to the list box for selection\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_listbox_set\fP (struct \fBform_item\fP *listbox, int idx)"
+.br
+.RI "\fISet the selected item on a list box or combobox to the index\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_listbox_addxml\fP (struct \fBform_item\fP *lb, struct xml_doc *xmldoc, const char *xpath, const char *nattr, const char *vattr)"
+.br
+.RI "\fIPopulate a listbox or combobox from a XML path\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Interface for creating and placing elements on the panel\&. 
+
+\fBTodo\fP
+.RS 4
+Add a JSON API 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBPanel item interface\&.\fP 
+.RE
+.PP
+\fBRemarks:\fP
+.RS 4
+Element items include Text / Password / Check / List / Combo boxes\&. 
+.PP
+They are placed with the title on the left and element on the right\&. 
+.PP
+Elements are accessed via the item interface\&. 
+.PP
+There multiple API's for managing elements but a common interface for controling list and combo boxes\&. 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "void DTS_C_API::dtsgui_listbox_add (struct \fBform_item\fP *listbox, const char *text, const char *value)"
+
+.PP
+Add a name / value to the list box for selection\&. \fBSee Also:\fP
+.RS 4
+\fBform_item::Append()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlistbox\fP A form item containing a listbox or combobox\&. 
+.br
+\fItext\fP The text appearing on the drop down box\&. 
+.br
+\fIvalue\fP The value set when this item is selected\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1219 of file wrapper\&.cpp\&.
+.PP
+References form_item::Append()\&.
+.PP
+Referenced by network_config(), network_modem(), network_modem_ana(), network_newwifi(), network_tos(), network_tos_new(), network_wifi(), pbxconf_default(), pbxconf_e1(), pbxconf_global(), pbxconf_incoming(), pbxconf_mfcr2(), pbxconf_trunk(), testpanel(), wizz_exten(), wizz_location(), wizz_network(), wizz_trunk(), and wizz_voip()\&.
+.SS "void DTS_C_API::dtsgui_listbox_addxml (struct \fBform_item\fP *lb, struct xml_doc *xmldoc, const char *xpath, const char *nattr, const char *vattr)"
+
+.PP
+Populate a listbox or combobox from a XML path\&. A entry is added for each node found using the supplied attributes for displayed text and value 
+.PP
+\fBRemarks:\fP
+.RS 4
+passing NULL as either or both of the attributes will use the value of the node\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlb\fP A form item containing a listbox or combobox\&. 
+.br
+\fIxmldoc\fP XML Document to search\&. 
+.br
+\fIxpath\fP XML search path\&. 
+.br
+\fInattr\fP Attribute whoose value will be used for name on list\&. 
+.br
+\fIvattr\fP Attribute whoose value will be used for value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1241 of file wrapper\&.cpp\&.
+.PP
+References form_item::AppendXML()\&.
+.PP
+Referenced by network_adsl_link(), network_adsl_link_new(), network_config(), and network_newwifi()\&.
+.SS "void DTS_C_API::dtsgui_listbox_set (struct \fBform_item\fP *listbox, intidx)"
+
+.PP
+Set the selected item on a list box or combobox to the index\&. \fBParameters:\fP
+.RS 4
+\fIlistbox\fP A form item containing a listbox or combobox\&. 
+.br
+\fIidx\fP the index to set as the selected value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1227 of file wrapper\&.cpp\&.
+.PP
+References form_item::SetSelection()\&.
+.PP
+Referenced by network_newwifi()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

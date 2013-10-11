@@ -35,21 +35,21 @@ var private_8h =
       [ "DTS_NODE_NETWORK_TOS", "private_8h.html#a018cb6fe637d3a25a67e794d620808ecae4d8c8164988e426b306b81ba7a54551", null ]
     ] ],
     [ "advanced_config", "private_8h.html#a6d9d2b0105df87000cb2bdecbff91239", null ],
-    [ "app_getxmldoc", "private_8h.html#a65a24b9322f0fd002413f3e9e13272f0", null ],
+    [ "app_getxmldoc", "private_8h.html#ga65a24b9322f0fd002413f3e9e13272f0", null ],
     [ "app_toolbar", "private_8h.html#ab33c9c3228455b45318900a842c7a693", null ],
     [ "config_menu", "private_8h.html#a2bcdb1dc60a2dc5383e027578faeb44e", null ],
-    [ "editsys_wizard", "private_8h.html#a126b309803052977061662f97fb9012a", null ],
+    [ "editsys_wizard", "private_8h.html#ga126b309803052977061662f97fb9012a", null ],
     [ "export_config", "private_8h.html#a01bdf27a0760d9da4bb77918735171c1", null ],
     [ "iface_config", "private_8h.html#abf43f59e582eee9f27734b14c8307819", null ],
     [ "network_iface_new_pane", "private_8h.html#a3d43e57bb96cf8bd603872099c3bc038", null ],
     [ "network_iface_pane", "private_8h.html#ab77c80061336502da4c2cc2d2c11f4a0", null ],
-    [ "newsys_wizard", "private_8h.html#a56c78e0d32a18452dcea4f026de2c889", null ],
+    [ "newsys_wizard", "private_8h.html#ga56c78e0d32a18452dcea4f026de2c889", null ],
     [ "open_config", "private_8h.html#a72af4355dbc5afe93fef750a81a3e572", null ],
     [ "pbx_settings", "private_8h.html#aa1aa69985689f9714422c273fe968fdf", null ],
-    [ "reconfig_wizard", "private_8h.html#a0be336c09b5cd473a616326c4cb227d2", null ],
+    [ "reconfig_wizard", "private_8h.html#ga0be336c09b5cd473a616326c4cb227d2", null ],
     [ "save_config", "private_8h.html#ae1a63d1e8add52ca63e83582891054fa", null ],
     [ "test_menu", "private_8h.html#a77cb81a619f8c9ccd83cdf1e7c97aae9", null ],
     [ "view_config_conf", "private_8h.html#abc9a4e54439d7a701992752ec7b3f6b9", null ],
     [ "view_config_xml", "private_8h.html#abe0b9ce2252ec72774af23a0ec71424f", null ],
-    [ "wizz_custinfo", "private_8h.html#accc1788f03d17d487ce09a1d07d53018", null ]
+    [ "wizz_custinfo", "private_8h.html#gaccc1788f03d17d487ce09a1d07d53018", null ]
 ];

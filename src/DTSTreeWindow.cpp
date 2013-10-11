@@ -16,6 +16,14 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @defgroup CPP-Panel-Tree Tree/Tab view implemnetation.
+  * @brief Implementation of Tree and Tab view and event handlers.
+  * @ingroup CPP-Panel*/
+
+/** @file
+  * @brief Implementation of Tree and Tab view and event handlers.
+  * @ingroup CPP-Panel-Tree*/
+
 #include <wx/menu.h>
 
 #include "dtsgui.h"
@@ -24,10 +32,16 @@
 #include "DTSListView.h"
 #include "DTSTreeWindow.h"
 
+/** @brief Menu id's for right click popup.
+  * @ingroup CPP-Panel-Tree*/
 enum treewinmenu {
+	/** @brief Sort the container.*/
 	DTS_TREEWIN_MENU_SORT = 127,
+	/** @brief Move the node up.*/
 	DTS_TREEWIN_MENU_MOVEUP,
+	/** @brief Move the node down.*/
 	DTS_TREEWIN_MENU_MOVEDOWN,
+	/** @brief Delete the node.*/
 	DTS_TREEWIN_MENU_DELETE
 };
 

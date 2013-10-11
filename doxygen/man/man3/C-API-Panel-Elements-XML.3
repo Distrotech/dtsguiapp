@@ -1,0 +1,302 @@
+.TH "XML Elements" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XML Elements \- 
+.PP
+Elements derived from a XML node\&.  
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_xmltextbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.RI "\fIPlace a XML text element on the panel\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_xmltextbox_multi\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.RI "\fIPlace a XML multi line text element on the panel\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_xmlpasswdbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.RI "\fIPlace a XML password element on the panel\&. \fP"
+.ti -1c
+.RI "void \fBDTS_C_API::dtsgui_xmlcheckbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *checkval, const char *uncheckval, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.RI "\fIPlace a XML checkbox element on the panel\&. \fP"
+.ti -1c
+.RI "struct \fBform_item\fP * \fBDTS_C_API::dtsgui_xmllistbox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.RI "\fIPlace a XML listbox element on the panel\&. \fP"
+.ti -1c
+.RI "struct \fBform_item\fP * \fBDTS_C_API::dtsgui_xmlcombobox\fP (\fBdtsgui_pane\fP pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+.br
+.RI "\fIPlace a XML combobox element on the panel\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Elements derived from a XML node\&. 
+
+\fBSee Also:\fP
+.RS 4
+\fBDTSPanel::GetNode()\fP 
+.RE
+.PP
+\fBTodo\fP
+.RS 4
+Adding functions to work from a search path will be better than the current interface that alloacates a new search for each element\&. 
+.RE
+.PP
+\fBRemarks:\fP
+.RS 4
+XML elements require a xpath to the parent , node name , filter attribute , filter value and attribute name to derive the value from\&. 
+.PP
+If a node name is supplied a XML node will be attempted to be created\&. 
+.PP
+If no XML node is found or can be created the element will be disabled\&. 
+.PP
+the resulting path will be 
+.PP
+.nf
+XPATH/Node<[<Filter attribute|.> = 'Filter Value']>
+.fi
+.PP
+ 
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+node, filter attribute, filter value and attribute may be NULL\&. 
+.PP
+If the node name is not supplied a node will not be created\&. 
+.PP
+If the attribute is NULL the value of the node will be used for value\&. 
+.PP
+If no filter value is supplied the filter attribute is ignored 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "void DTS_C_API::dtsgui_xmlcheckbox (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *checkval, const char *uncheckval, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+
+.PP
+Place a XML checkbox element on the panel\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::XMLCheckBox()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to place element on\&. 
+.br
+\fItitle\fP Title of element\&. 
+.br
+\fIname\fP Name of element\&. 
+.br
+\fIcheckval\fP The value will be set to this if checked\&. 
+.br
+\fIuncheckval\fP The value will be set to this if unchecked\&. 
+.br
+\fIxpath\fP Xpath of the element\&. 
+.br
+\fInode\fP Node to create in path if it does not exist\&. 
+.br
+\fIfattr\fP Attribute to create a filter on\&. 
+.br
+\fIfval\fP Value to equate to filter attr in filter\&. 
+.br
+\fIattr\fP Attribute in the node to assign value of\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1386 of file wrapper\&.cpp\&.
+.PP
+References DTSPanel::XMLCheckBox()\&.
+.PP
+Referenced by network_config_dns(), network_config_dns_domain(), network_config_dns_dyn(), network_config_dns_serv(), network_modem_adv(), network_modem_ana(), pbxconf_autoadd(), pbxconf_default(), pbxconf_e1(), pbxconf_global(), pbxconf_incoming(), pbxconf_mfcr2(), pbxconf_misdn(), pbxconf_topts(), wizz_acd(), wizz_exten(), wizz_location(), wizz_network(), wizz_samba(), wizz_trunk(), and wizz_voip()\&.
+.SS "struct \fBform_item\fP* DTS_C_API::dtsgui_xmlcombobox (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)\fC [read]\fP"
+
+.PP
+Place a XML combobox element on the panel\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::XMLComboBox()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to place element on\&. 
+.br
+\fItitle\fP Title of element\&. 
+.br
+\fIname\fP Name of element\&. 
+.br
+\fIxpath\fP Xpath of the element\&. 
+.br
+\fInode\fP Node to create in path if it does not exist\&. 
+.br
+\fIfattr\fP Attribute to create a filter on\&. 
+.br
+\fIfval\fP Value to equate to filter attr in filter\&. 
+.br
+\fIattr\fP Attribute in the node to assign value of\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Form item that can be used to add values this must be unreferenced 
+.RE
+.PP
+
+.PP
+Definition at line 1420 of file wrapper\&.cpp\&.
+.PP
+References DTSPanel::XMLComboBox()\&.
+.PP
+Referenced by network_wifi(), and wizz_network()\&.
+.SS "struct \fBform_item\fP* DTS_C_API::dtsgui_xmllistbox (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)\fC [read]\fP"
+
+.PP
+Place a XML listbox element on the panel\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::XMLListBox()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to place element on\&. 
+.br
+\fItitle\fP Title of element\&. 
+.br
+\fIname\fP Name of element\&. 
+.br
+\fIxpath\fP Xpath of the element\&. 
+.br
+\fInode\fP Node to create in path if it does not exist\&. 
+.br
+\fIfattr\fP Attribute to create a filter on\&. 
+.br
+\fIfval\fP Value to equate to filter attr in filter\&. 
+.br
+\fIattr\fP Attribute in the node to assign value of\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Form item that can be used to add values this must be unreferenced 
+.RE
+.PP
+
+.PP
+Definition at line 1403 of file wrapper\&.cpp\&.
+.PP
+References DTSPanel::XMLListBox()\&.
+.PP
+Referenced by network_adsl_link(), network_config(), network_modem(), network_modem_ana(), network_tos(), pbxconf_default(), pbxconf_e1(), pbxconf_global(), pbxconf_incoming(), pbxconf_mfcr2(), pbxconf_trunk(), wizz_exten(), wizz_location(), wizz_trunk(), and wizz_voip()\&.
+.SS "void DTS_C_API::dtsgui_xmlpasswdbox (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+
+.PP
+Place a XML password element on the panel\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::XMLPasswdBox()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to place element on\&. 
+.br
+\fItitle\fP Title of element\&. 
+.br
+\fIname\fP Name of element\&. 
+.br
+\fIxpath\fP Xpath of the element\&. 
+.br
+\fInode\fP Node to create in path if it does not exist\&. 
+.br
+\fIfattr\fP Attribute to create a filter on\&. 
+.br
+\fIfval\fP Value to equate to filter attr in filter\&. 
+.br
+\fIattr\fP Attribute in the node to assign value of\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1368 of file wrapper\&.cpp\&.
+.PP
+References DTSPanel::XMLPasswdBox()\&.
+.PP
+Referenced by pbxconf_global()\&.
+.SS "void DTS_C_API::dtsgui_xmltextbox (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+
+.PP
+Place a XML text element on the panel\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::XMLTextBox()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to place element on\&. 
+.br
+\fItitle\fP Title of element\&. 
+.br
+\fIname\fP Name of element\&. 
+.br
+\fIxpath\fP Xpath of the element\&. 
+.br
+\fInode\fP Node to create in path if it does not exist\&. 
+.br
+\fIfattr\fP Attribute to create a filter on\&. 
+.br
+\fIfval\fP Value to equate to filter attr in filter\&. 
+.br
+\fIattr\fP Attribute in the node to assign value of\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1336 of file wrapper\&.cpp\&.
+.PP
+References DTSPanel::XMLTextBox()\&.
+.PP
+Referenced by network_adsl_link(), network_adsl_user(), network_config(), network_config_dns(), network_config_dns_domain(), network_config_dns_domain_server(), network_config_dns_dyn(), network_config_dns_host(), network_config_dns_serv(), network_config_dns_zone(), network_iface_pane(), network_iface_pane_cb(), network_modem(), network_modem_adv(), network_modem_ana(), network_route(), network_tos(), network_wan(), network_wifi(), pbxconf_acd(), pbxconf_autoadd(), pbxconf_default(), pbxconf_global(), pbxconf_location(), pbxconf_mfcr2(), pbxconf_misdn(), pbxconf_numplan(), pbxconf_topts(), pbxconf_trunk(), wizz_acd(), wizz_custinfo(), wizz_dnsinfo(), wizz_dyndns(), wizz_exten(), wizz_location(), wizz_netinfo(), wizz_network(), wizz_samba(), wizz_trunk(), and wizz_x509()\&.
+.SS "void DTS_C_API::dtsgui_xmltextbox_multi (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
+
+.PP
+Place a XML multi line text element on the panel\&. \fBSee Also:\fP
+.RS 4
+\fBDTSPanel::XMLTextBox()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpane\fP Panel to place element on\&. 
+.br
+\fItitle\fP Title of element\&. 
+.br
+\fIname\fP Name of element\&. 
+.br
+\fIxpath\fP Xpath of the element\&. 
+.br
+\fInode\fP Node to create in path if it does not exist\&. 
+.br
+\fIfattr\fP Attribute to create a filter on\&. 
+.br
+\fIfval\fP Value to equate to filter attr in filter\&. 
+.br
+\fIattr\fP Attribute in the node to assign value of\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1352 of file wrapper\&.cpp\&.
+.PP
+References DTSPanel::XMLTextBox()\&.
+.PP
+Referenced by wizz_custinfo()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

@@ -5,7 +5,7 @@
     <includes refid="pitems_8h" local="no">pitems.h</includes>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="classform__item_1aa7364e00d99d22b9a594767915caa4be" prot="private" static="no" mutable="no">
-        <type>enum <ref refid="dtsgui_8h_1afd296180392ef5681415b9fb0590be84" kindref="member">widget_type</ref></type>
+        <type>enum <ref refid="group___c_o_r_e_1gafd296180392ef5681415b9fb0590be84" kindref="member">widget_type</ref></type>
         <definition>enum widget_type form_item::type</definition>
         <argsstring></argsstring>
         <name>type</name>
@@ -16,6 +16,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="63" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="63" bodyend="-1"/>
+        <referencedby refid="classform__item_1ad99d224a37a5bc6f99835afb2347fac8" compoundref="pitems_8cpp" startline="155" endline="174">Append</referencedby>
+        <referencedby refid="classform__item_1a9fe4dea1dbc9692a1511c6ba5256665e" compoundref="pitems_8cpp" startline="89" endline="102">form_item</referencedby>
+        <referencedby refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" compoundref="pitems_8cpp" startline="192" endline="219">GetValue</referencedby>
+        <referencedby refid="classform__item_1a9f108735a3f81f0f419fd828a29b2938" compoundref="pitems_8cpp" startline="176" endline="186">SetSelection</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classform__item_1a4b647b26beee4bb3f3935645f3eb1a9b" prot="private" static="no" mutable="no">
         <type>const char *</type>
@@ -29,6 +33,12 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="64" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="64" bodyend="-1"/>
+        <referencedby refid="classform__item_1a7bbc5ad6365c6b104f230afb35b0996b" compoundref="pitems_8cpp" startline="225" endline="245">AppendXML</referencedby>
+        <referencedby refid="classform__item_1a4f3558ce5670e789ad51d1f489ec5b14" compoundref="pitems_8cpp" startline="188" endline="190">GetName</referencedby>
+        <referencedby refid="netconfig_8c_1a0b2d5249167dfdc0b972bff2091b5745" compoundref="netconfig_8c" startline="524" endline="563">network_tos</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a7ce048cedd00ee1f1d9ea1c1fd504a6f" compoundref="_d_t_s_panel_8cpp" startline="841" endline="880">DTSPanel::Panel2Post</referencedby>
+        <referencedby refid="pbxconfig_8c_1af79c511cab086f9152e08d0625f78b05" compoundref="pbxconfig_8c" startline="220" endline="266">pbxconf_default</referencedby>
+        <referencedby refid="pbxconfig_8c_1a02bdd2b74e929bf843bed40de61f9c97" compoundref="pbxconfig_8c" startline="25" endline="105">pbxconf_trunk</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classform__item_1a9c5388b8962be531b51920c7775f8d2d" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -42,6 +52,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="65" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classform__item_1ad99d224a37a5bc6f99835afb2347fac8" compoundref="pitems_8cpp" startline="155" endline="174">Append</referencedby>
+        <referencedby refid="classform__item_1a9fe4dea1dbc9692a1511c6ba5256665e" compoundref="pitems_8cpp" startline="89" endline="102">form_item</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classform__item_1a601ff328ce4165b07d5ad23bd96967b7" prot="private" static="no" mutable="no">
         <type>union <ref refid="unionform__data" kindref="compound">form_data</ref></type>
@@ -55,6 +67,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="66" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="66" bodyend="-1"/>
+        <referencedby refid="class_d_t_s_panel_1ad91d3ca25ab8349403efc7cc78cb1869" compoundref="_d_t_s_panel_8cpp" startline="684" endline="705">DTSPanel::ComboBox</referencedby>
+        <referencedby refid="classform__item_1a9fe4dea1dbc9692a1511c6ba5256665e" compoundref="pitems_8cpp" startline="89" endline="102">form_item</referencedby>
+        <referencedby refid="classform__item_1a45b4a4db5526c1032f15ba20d3f28249" compoundref="pitems_8cpp" startline="144" endline="153">GetData</referencedby>
+        <referencedby refid="classform__item_1a1e08369cee96e1b5417c767be9b086ce" compoundref="pitems_8cpp" startline="134" endline="142">GetXMLData</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classform__item_1a6720d7a562d897686e128fc2146702e7" prot="private" static="no" mutable="no">
         <type>union <ref refid="unionwidgets" kindref="compound">widgets</ref></type>
@@ -68,9 +84,14 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="67" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="67" bodyend="-1"/>
+        <referencedby refid="classform__item_1ad99d224a37a5bc6f99835afb2347fac8" compoundref="pitems_8cpp" startline="155" endline="174">Append</referencedby>
+        <referencedby refid="classform__item_1a9fe4dea1dbc9692a1511c6ba5256665e" compoundref="pitems_8cpp" startline="89" endline="102">form_item</referencedby>
+        <referencedby refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" compoundref="pitems_8cpp" startline="192" endline="219">GetValue</referencedby>
+        <referencedby refid="classform__item_1a9d5508fb933bef9f078f702338e3d166" compoundref="pitems_8cpp" startline="221" endline="223">GetWidget</referencedby>
+        <referencedby refid="classform__item_1a9f108735a3f81f0f419fd828a29b2938" compoundref="pitems_8cpp" startline="176" endline="186">SetSelection</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classform__item_1acaa83eeebb557f7e66ae998bc45dc6c9" prot="private" static="no" mutable="no">
-        <type>enum <ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
+        <type>enum <ref refid="group___c_o_r_e_1gaa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
         <definition>enum form_data_type form_item::dtype</definition>
         <argsstring></argsstring>
         <name>dtype</name>
@@ -81,6 +102,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="68" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="68" bodyend="-1"/>
+        <referencedby refid="classform__item_1a9fe4dea1dbc9692a1511c6ba5256665e" compoundref="pitems_8cpp" startline="89" endline="102">form_item</referencedby>
+        <referencedby refid="classform__item_1a1e08369cee96e1b5417c767be9b086ce" compoundref="pitems_8cpp" startline="134" endline="142">GetXMLData</referencedby>
+        <referencedby refid="class_d_t_s_panel_event_1a8e755136313a6c423167af1d44dfc710" compoundref="_d_t_s_panel_8cpp" startline="163" endline="216">DTSPanelEvent::OnCombo</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classform__item_1a031f8fb162f54579bc1ba53a751c5414" prot="private" static="no" mutable="no">
         <type>const char *</type>
@@ -94,6 +118,13 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="69" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="69" bodyend="-1"/>
+        <referencedby refid="classform__item_1ad99d224a37a5bc6f99835afb2347fac8" compoundref="pitems_8cpp" startline="155" endline="174">Append</referencedby>
+        <referencedby refid="classform__item_1a7bbc5ad6365c6b104f230afb35b0996b" compoundref="pitems_8cpp" startline="225" endline="245">AppendXML</referencedby>
+        <referencedby refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" compoundref="pitems_8cpp" startline="192" endline="219">GetValue</referencedby>
+        <referencedby refid="pbxconfig_8c_1af79c511cab086f9152e08d0625f78b05" compoundref="pbxconfig_8c" startline="220" endline="266">pbxconf_default</referencedby>
+        <referencedby refid="pbxconfig_8c_1a02bdd2b74e929bf843bed40de61f9c97" compoundref="pbxconfig_8c" startline="25" endline="105">pbxconf_trunk</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a4d294755a98b6194df04292abe18d1b0" compoundref="_d_t_s_panel_8cpp" startline="707" endline="722">DTSPanel::XMLComboBox</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a03d63a8c380ee62e263d7bc3a3c86396" compoundref="_d_t_s_panel_8cpp" startline="667" endline="682">DTSPanel::XMLListBox</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classform__item_1abb8668ad59e583a7a73bc03f2c4503da" prot="private" static="no" mutable="no">
         <type>const char *</type>
@@ -107,6 +138,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="70" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="70" bodyend="-1"/>
+        <referencedby refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" compoundref="pitems_8cpp" startline="192" endline="219">GetValue</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -136,7 +168,7 @@
           <declname>widget</declname>
         </param>
         <param>
-          <type>enum <ref refid="dtsgui_8h_1afd296180392ef5681415b9fb0590be84" kindref="member">widget_type</ref></type>
+          <type>enum <ref refid="group___c_o_r_e_1gafd296180392ef5681415b9fb0590be84" kindref="member">widget_type</ref></type>
           <declname>type</declname>
         </param>
         <param>
@@ -156,7 +188,7 @@
           <declname>data</declname>
         </param>
         <param>
-          <type>enum <ref refid="dtsgui_8h_1aa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
+          <type>enum <ref refid="group___c_o_r_e_1gaa648ae9cc0927fecec3a6f705930f8a9" kindref="member">form_data_type</ref></type>
           <declname>dtype</declname>
         </param>
         <briefdescription>
@@ -165,7 +197,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="53" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="81" bodyend="94"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="53" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="89" bodyend="102"/>
+        <references refid="classform__item_1a601ff328ce4165b07d5ad23bd96967b7" compoundref="pitems_8h" startline="66">data</references>
+        <references refid="classform__item_1acaa83eeebb557f7e66ae998bc45dc6c9" compoundref="pitems_8h" startline="68">dtype</references>
+        <references refid="classform__item_1a9c5388b8962be531b51920c7775f8d2d" compoundref="pitems_8h" startline="65">idx</references>
+        <references refid="classform__item_1aa7364e00d99d22b9a594767915caa4be" compoundref="pitems_8h" startline="63">type</references>
+        <references refid="classform__item_1a6720d7a562d897686e128fc2146702e7" compoundref="pitems_8h" startline="67">widget</references>
       </memberdef>
       <memberdef kind="function" id="classform__item_1a1e08369cee96e1b5417c767be9b086ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>class <ref refid="classxml__element" kindref="compound">xml_element</ref> *</type>
@@ -178,7 +215,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="54" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="126" bodyend="134"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="54" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="134" bodyend="142"/>
+        <references refid="classform__item_1a601ff328ce4165b07d5ad23bd96967b7" compoundref="pitems_8h" startline="66">data</references>
+        <references refid="group___c_o_r_e_1ggaa648ae9cc0927fecec3a6f705930f8a9a5c592b75994135a5de470f79e40aafda" compoundref="dtsgui_8h" startline="52">DTSGUI_FORM_DATA_XML</references>
+        <references refid="classform__item_1acaa83eeebb557f7e66ae998bc45dc6c9" compoundref="pitems_8h" startline="68">dtype</references>
+        <references refid="unionform__data_1a3dcf61d4a1bf598d238248b6a2fd84c0" compoundref="pitems_8h" startline="40">form_data::xml</references>
+        <referencedby refid="class_d_t_s_panel_1adc5131960a24dfa65adba935a1be0f79" compoundref="_d_t_s_panel_8cpp" startline="746" endline="775">DTSPanel::Update_XML</referencedby>
       </memberdef>
       <memberdef kind="function" id="classform__item_1a45b4a4db5526c1032f15ba20d3f28249" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
@@ -191,7 +233,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="55" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="136" bodyend="145"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="55" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="144" bodyend="153"/>
+        <references refid="classform__item_1a601ff328ce4165b07d5ad23bd96967b7" compoundref="pitems_8h" startline="66">data</references>
+        <references refid="unionform__data_1a5906eb68e54829e44467b3d082f9eee4" compoundref="pitems_8h" startline="39">form_data::ptr</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_items_1ga30bc1422cf3395b150773320ffda00ea" compoundref="wrapper_8cpp" startline="1102" endline="1104">DTS_C_API::dtsgui_item_data</referencedby>
       </memberdef>
       <memberdef kind="function" id="classform__item_1ad99d224a37a5bc6f99835afb2347fac8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -212,7 +257,17 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="56" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="147" bodyend="166"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="56" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="155" bodyend="174"/>
+        <references refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84ad091872a88b66595cb453008b03565cc" compoundref="dtsgui_8h" startline="261">DTS_WIDGET_COMBOBOX</references>
+        <references refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84a617d0a94e82cae830c769b66b1751b9a" compoundref="dtsgui_8h" startline="260">DTS_WIDGET_LISTBOX</references>
+        <references refid="classform__item_1a9c5388b8962be531b51920c7775f8d2d" compoundref="pitems_8h" startline="65">idx</references>
+        <references refid="unionwidgets_1a9e5583bcc42f0273b9c6a1605e0e1b6d" compoundref="pitems_8h" startline="45">widgets::l</references>
+        <references refid="classform__item_1a9f108735a3f81f0f419fd828a29b2938" compoundref="pitems_8cpp" startline="176" endline="186">SetSelection</references>
+        <references refid="classform__item_1aa7364e00d99d22b9a594767915caa4be" compoundref="pitems_8h" startline="63">type</references>
+        <references refid="classform__item_1a031f8fb162f54579bc1ba53a751c5414" compoundref="pitems_8h" startline="69">value</references>
+        <references refid="classform__item_1a6720d7a562d897686e128fc2146702e7" compoundref="pitems_8h" startline="67">widget</references>
+        <referencedby refid="classform__item_1a7bbc5ad6365c6b104f230afb35b0996b" compoundref="pitems_8cpp" startline="225" endline="245">AppendXML</referencedby>
+        <referencedby refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" compoundref="wrapper_8cpp" startline="1219" endline="1221">DTS_C_API::dtsgui_listbox_add</referencedby>
       </memberdef>
       <memberdef kind="function" id="classform__item_1a9f108735a3f81f0f419fd828a29b2938" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -229,7 +284,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="57" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="168" bodyend="178"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="57" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="176" bodyend="186"/>
+        <references refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84ad091872a88b66595cb453008b03565cc" compoundref="dtsgui_8h" startline="261">DTS_WIDGET_COMBOBOX</references>
+        <references refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84a617d0a94e82cae830c769b66b1751b9a" compoundref="dtsgui_8h" startline="260">DTS_WIDGET_LISTBOX</references>
+        <references refid="unionwidgets_1a9e5583bcc42f0273b9c6a1605e0e1b6d" compoundref="pitems_8h" startline="45">widgets::l</references>
+        <references refid="classform__item_1aa7364e00d99d22b9a594767915caa4be" compoundref="pitems_8h" startline="63">type</references>
+        <references refid="classform__item_1a6720d7a562d897686e128fc2146702e7" compoundref="pitems_8h" startline="67">widget</references>
+        <referencedby refid="classform__item_1ad99d224a37a5bc6f99835afb2347fac8" compoundref="pitems_8cpp" startline="155" endline="174">Append</referencedby>
+        <referencedby refid="group___c-_a_p_i-_panel-_elements_1gaaa4e4de11048d7e32151628f4428cf3e" compoundref="wrapper_8cpp" startline="1227" endline="1229">DTS_C_API::dtsgui_listbox_set</referencedby>
       </memberdef>
       <memberdef kind="function" id="classform__item_1a4f3558ce5670e789ad51d1f489ec5b14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const char *</type>
@@ -242,7 +304,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="58" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="180" bodyend="182"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="58" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="188" bodyend="190"/>
+        <references refid="classform__item_1a4b647b26beee4bb3f3935645f3eb1a9b" compoundref="pitems_8h" startline="64">name</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_items_1ga2cb1581f47559805b221f9290f9ec83e" compoundref="wrapper_8cpp" startline="1124" endline="1126">DTS_C_API::dtsgui_item_name</referencedby>
+        <referencedby refid="class_d_t_s_panel_1aa804939e8221c211303c535a40ae4f5f" compoundref="_d_t_s_panel_8cpp" startline="49" endline="62">DTSPanel::fitems_hash</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a7ce048cedd00ee1f1d9ea1c1fd504a6f" compoundref="_d_t_s_panel_8cpp" startline="841" endline="880">DTSPanel::Panel2Post</referencedby>
+        <referencedby refid="class_d_t_s_panel_1ad28f5ed6bd19e9d685a18df8bf568f92" compoundref="_d_t_s_panel_8cpp" startline="777" endline="839">DTSPanel::Panel2XML</referencedby>
       </memberdef>
       <memberdef kind="function" id="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const char *</type>
@@ -255,7 +322,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="59" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="184" bodyend="211"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="59" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="192" bodyend="219"/>
+        <references refid="unionwidgets_1aa5bb8e792fd60fca871e8782e39993cc" compoundref="pitems_8h" startline="46">widgets::c</references>
+        <references refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84af8b07c907089ef8cf8534af437682a28" compoundref="dtsgui_8h" startline="259">DTS_WIDGET_CHECKBOX</references>
+        <references refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84ad091872a88b66595cb453008b03565cc" compoundref="dtsgui_8h" startline="261">DTS_WIDGET_COMBOBOX</references>
+        <references refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84a617d0a94e82cae830c769b66b1751b9a" compoundref="dtsgui_8h" startline="260">DTS_WIDGET_LISTBOX</references>
+        <references refid="group___c_o_r_e_1ggafd296180392ef5681415b9fb0590be84a30946b987fd9b1a681425eb86c33b836" compoundref="dtsgui_8h" startline="258">DTS_WIDGET_TEXTBOX</references>
+        <references refid="unionwidgets_1a9e5583bcc42f0273b9c6a1605e0e1b6d" compoundref="pitems_8h" startline="45">widgets::l</references>
+        <references refid="unionwidgets_1ad9dbdf416e8ba75e55b8030549c2d5ac" compoundref="pitems_8h" startline="44">widgets::t</references>
+        <references refid="classform__item_1aa7364e00d99d22b9a594767915caa4be" compoundref="pitems_8h" startline="63">type</references>
+        <references refid="classform__item_1a031f8fb162f54579bc1ba53a751c5414" compoundref="pitems_8h" startline="69">value</references>
+        <references refid="classform__item_1abb8668ad59e583a7a73bc03f2c4503da" compoundref="pitems_8h" startline="70">value2</references>
+        <references refid="classform__item_1a6720d7a562d897686e128fc2146702e7" compoundref="pitems_8h" startline="67">widget</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_items_1gadc168d1ed91fc91be2bb7bf7b060dd62" compoundref="wrapper_8cpp" startline="1113" endline="1115">DTS_C_API::dtsgui_item_value</referencedby>
+        <referencedby refid="class_d_t_s_panel_1aaeef18ad561346699ed24e0aa6fa47b3" compoundref="_d_t_s_panel_8cpp" startline="886" endline="897">DTSPanel::FindValue</referencedby>
+        <referencedby refid="class_d_t_s_panel_1a7ce048cedd00ee1f1d9ea1c1fd504a6f" compoundref="_d_t_s_panel_8cpp" startline="841" endline="880">DTSPanel::Panel2Post</referencedby>
+        <referencedby refid="class_d_t_s_panel_1ad28f5ed6bd19e9d685a18df8bf568f92" compoundref="_d_t_s_panel_8cpp" startline="777" endline="839">DTSPanel::Panel2XML</referencedby>
+        <referencedby refid="class_d_t_s_panel_1adc5131960a24dfa65adba935a1be0f79" compoundref="_d_t_s_panel_8cpp" startline="746" endline="775">DTSPanel::Update_XML</referencedby>
       </memberdef>
       <memberdef kind="function" id="classform__item_1a9d5508fb933bef9f078f702338e3d166" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
@@ -268,7 +351,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="60" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="213" bodyend="215"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="60" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="221" bodyend="223"/>
+        <references refid="unionwidgets_1a5dbc3a005c0d466449a1be8c20db8cfc" compoundref="pitems_8h" startline="47">widgets::p</references>
+        <references refid="classform__item_1a6720d7a562d897686e128fc2146702e7" compoundref="pitems_8h" startline="67">widget</references>
+        <referencedby refid="class_d_t_s_panel_event_1a8e755136313a6c423167af1d44dfc710" compoundref="_d_t_s_panel_8cpp" startline="163" endline="216">DTSPanelEvent::OnCombo</referencedby>
       </memberdef>
       <memberdef kind="function" id="classform__item_1a7bbc5ad6365c6b104f230afb35b0996b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -297,13 +383,44 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="61" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="217" bodyend="237"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="61" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/pitems.cpp" bodystart="225" bodyend="245"/>
+        <references refid="classform__item_1ad99d224a37a5bc6f99835afb2347fac8" compoundref="pitems_8cpp" startline="155" endline="174">Append</references>
+        <references refid="classform__item_1a4b647b26beee4bb3f3935645f3eb1a9b" compoundref="pitems_8h" startline="64">name</references>
+        <references refid="classform__item_1a031f8fb162f54579bc1ba53a751c5414" compoundref="pitems_8h" startline="69">value</references>
+        <referencedby refid="group___c-_a_p_i-_panel-_elements_1ga6585281832905a2e769f8b0f813a67e0" compoundref="wrapper_8cpp" startline="1241" endline="1243">DTS_C_API::dtsgui_listbox_addxml</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
+    <collaborationgraph>
+      <node id="298">
+        <label>widgets</label>
+        <link refid="unionwidgets"/>
+      </node>
+      <node id="297">
+        <label>xml_element</label>
+        <link refid="classxml__element"/>
+      </node>
+      <node id="296">
+        <label>form_data</label>
+        <link refid="unionform__data"/>
+        <childnode refid="297" relation="usage">
+          <edgelabel>xml</edgelabel>
+        </childnode>
+      </node>
+      <node id="295">
+        <label>form_item</label>
+        <link refid="classform__item"/>
+        <childnode refid="296" relation="usage">
+          <edgelabel>data</edgelabel>
+        </childnode>
+        <childnode refid="298" relation="usage">
+          <edgelabel>widget</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
     <location file="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" line="50" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/pitems.h" bodystart="50" bodyend="71"/>
     <listofallmembers>
       <member refid="classform__item_1ad99d224a37a5bc6f99835afb2347fac8" prot="public" virt="non-virtual"><scope>form_item</scope><name>Append</name></member>

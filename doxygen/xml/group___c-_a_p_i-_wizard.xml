@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
   <compounddef id="group___c-_a_p_i-_wizard" kind="group">
     <compoundname>C-API-Wizard</compoundname>
-    <title>C API Wizard Interface</title>
+    <title>Wizard Interface.</title>
       <sectiondef kind="func">
       <memberdef kind="function" id="group___c-_a_p_i-_wizard_1ga2e1e2013214ae275160b8c87e6cb3d89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="classdtsgui__wizard" kindref="compound">dtsgui_wizard</ref> *</type>
@@ -40,10 +40,12 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="941" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="941" bodyend="943"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="985" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="985" bodyend="987"/>
+        <references refid="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" compoundref="_d_t_s_app_8cpp" startline="137" endline="139">dtsgui::GetFrame</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gae99af9389a848fe0d810a538d0b64d53" compoundref="wizard_8c" startline="363" endline="434">system_wizard</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_wizard_1ga3e76b1ea2eebb91e1d0b5a55649d65e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="dtsgui_8h_1a80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
         <definition>dtsgui_pane DTS_C_API::dtsgui_wizard_addpage</definition>
         <argsstring>(struct dtsgui_wizard *dtswiz, const char *title, void *userdata, struct xml_doc *xmldoc)</argsstring>
         <name>dtsgui_wizard_addpage</name>
@@ -64,7 +66,7 @@
           <declname>xmldoc</declname>
         </param>
         <briefdescription>
-<para>Create a panel appended to the wizard. </para>        </briefdescription>
+<para>Create a panel and append it to the wizard. </para>        </briefdescription>
         <detaileddescription>
 <para><simplesect kind="see"><para><ref refid="classdtsgui__wizard_1a02984b1d70df5100e8b6200e0bb1b421" kindref="member">dtsgui_wizard::AddPage()</ref></para></simplesect>
 <parameterlist kind="param"><parameteritem>
@@ -100,7 +102,9 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="955" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="955" bodyend="957"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="999" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="999" bodyend="1001"/>
+        <references refid="classdtsgui__wizard_1a02984b1d70df5100e8b6200e0bb1b421" compoundref="_d_t_s_wizard_8cpp" startline="56" endline="87">dtsgui_wizard::AddPage</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gae99af9389a848fe0d810a538d0b64d53" compoundref="wizard_8c" startline="363" endline="434">system_wizard</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_wizard_1ga25174d47f2e9680d41aebdf08ff9b979" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -127,12 +131,16 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="970" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="970" bodyend="972"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1014" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1014" bodyend="1016"/>
+        <references refid="classdtsgui__wizard_1ab0554e6b9fe1d2c0419a6659d883edf3" compoundref="_d_t_s_wizard_8cpp" startline="89" endline="94">dtsgui_wizard::RunWizard</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gae99af9389a848fe0d810a538d0b64d53" compoundref="wizard_8c" startline="363" endline="434">system_wizard</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>C API Wizard Management</para><para>Resources controlling and manipulating wizards in the C API. </para>    </briefdescription>
+<para>Multi panel pop up wizard user interface. </para>    </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para><simplesect kind="remark"><para>A wizard is a dialog box that allows for multiple panels to be dispalayed in sequence via Back/Next controls. </para></simplesect>
+<simplesect kind="note"><para>It is important to process the panels on complition before un refrencing the wizard. </para></simplesect>
+<xrefsect id="todo_1_todo000007"><xreftitle>Todo</xreftitle><xrefdescription><para>Add a hashed list to the wizard class storing the panels to no longer need to keep a array of panels. </para></xrefdescription></xrefsect></para>    </detaileddescription>
   </compounddef>
 </doxygen>

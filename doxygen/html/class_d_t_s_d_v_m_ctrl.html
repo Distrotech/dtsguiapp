@@ -44,6 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
@@ -94,7 +95,7 @@ $(document).ready(function(){initNavTree('class_d_t_s_d_v_m_ctrl.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,6 +107,8 @@ $(document).ready(function(){initNavTree('class_d_t_s_d_v_m_ctrl.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_d_t_s_d_v_m_ctrl-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">DTSDVMCtrl Class Reference</div>  </div>
@@ -126,20 +129,30 @@ Inheritance diagram for DTSDVMCtrl:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac8307143bb74f4596bf0f025ada2dbad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_d_v_m_ctrl.html#ac8307143bb74f4596bf0f025ada2dbad">DTSDVMCtrl</a> ()</td></tr>
 <tr class="separator:ac8307143bb74f4596bf0f025ada2dbad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3759d070daa1fe0fca15d894e57d9ae8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_d_v_m_ctrl.html#a3759d070daa1fe0fca15d894e57d9ae8">DTSDVMCtrl</a> (<a class="el" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *parent, wxWindowID id=wxID_ANY, <a class="el" href="class_d_t_s_d_v_m_list_view.html">DTSDVMListView</a> *model=NULL, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=wxDV_ROW_LINES, const wxValidator &amp;validator=wxDefaultValidator)</td></tr>
+<tr class="memitem:a3759d070daa1fe0fca15d894e57d9ae8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_d_v_m_ctrl.html#a3759d070daa1fe0fca15d894e57d9ae8">DTSDVMCtrl</a> (<a class="el" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *parent, wxWindowID id=wxID_ANY, <a class="el" href="class_d_t_s_d_v_m_list_view.html">DTSDVMListView</a> *<a class="el" href="class_d_t_s_d_v_m_ctrl.html#abc8f34f1960b033d7f7aaa44ecbec272">model</a>=NULL, const wxPoint &amp;pos=wxDefaultPosition, const wxSize &amp;size=wxDefaultSize, long style=wxDV_ROW_LINES, const wxValidator &amp;validator=wxDefaultValidator)</td></tr>
 <tr class="separator:a3759d070daa1fe0fca15d894e57d9ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae0b56e080e40b35346ce6cb118dbc4f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_d_v_m_ctrl.html#aae0b56e080e40b35346ce6cb118dbc4f">~DTSDVMCtrl</a> ()</td></tr>
 <tr class="separator:aae0b56e080e40b35346ce6cb118dbc4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad844ee2c061ae2233ac8cca01c0a6a92"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_d_v_m_ctrl.html#ad844ee2c061ae2233ac8cca01c0a6a92">AssociateModel</a> (<a class="el" href="class_d_t_s_d_v_m_list_view.html">DTSDVMListView</a> *model)</td></tr>
+<tr class="memitem:ad844ee2c061ae2233ac8cca01c0a6a92"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_d_v_m_ctrl.html#ad844ee2c061ae2233ac8cca01c0a6a92">AssociateModel</a> (<a class="el" href="class_d_t_s_d_v_m_list_view.html">DTSDVMListView</a> *<a class="el" href="class_d_t_s_d_v_m_ctrl.html#abc8f34f1960b033d7f7aaa44ecbec272">model</a>)</td></tr>
 <tr class="separator:ad844ee2c061ae2233ac8cca01c0a6a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bf8dde8f655b23a36c41c0f210fa846"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_d_v_m_ctrl.html#a1bf8dde8f655b23a36c41c0f210fa846">Sort</a> (const wxDataViewItem &amp;parent)</td></tr>
 <tr class="separator:a1bf8dde8f655b23a36c41c0f210fa846"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ccdd2f6d3b2652ddfec7d0dc2ade0b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_t_s_d_v_m_list_view.html">DTSDVMListView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_d_v_m_ctrl.html#a5ccdd2f6d3b2652ddfec7d0dc2ade0b1">GetStore</a> ()</td></tr>
 <tr class="separator:a5ccdd2f6d3b2652ddfec7d0dc2ade0b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60de6e9342a4c140fa2b72acfbfd97dc"><td class="memItemLeft" align="right" valign="top">wxDataViewItem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_d_v_m_ctrl.html#a60de6e9342a4c140fa2b72acfbfd97dc">AppendItem</a> (wxDataViewItem parent, const wxString &amp;title, bool can_edit=true, bool can_sort=true, bool can_del=false, int nodeid=-1, <a class="el" href="dtsgui_8h.html#a8bf800adcd2392cf7722c3cf2f603f96">dtsgui_treeviewpanel_cb</a> p_cb=NULL, void *userdata=NULL)</td></tr>
+<tr class="memitem:a60de6e9342a4c140fa2b72acfbfd97dc"><td class="memItemLeft" align="right" valign="top">wxDataViewItem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_d_v_m_ctrl.html#a60de6e9342a4c140fa2b72acfbfd97dc">AppendItem</a> (wxDataViewItem parent, const wxString &amp;title, bool can_edit=true, bool can_sort=true, bool can_del=false, int nodeid=-1, <a class="el" href="group___c_o_r_e.html#ga8bf800adcd2392cf7722c3cf2f603f96">dtsgui_treeviewpanel_cb</a> p_cb=NULL, void *userdata=NULL)</td></tr>
 <tr class="separator:a60de6e9342a4c140fa2b72acfbfd97dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a853bc63ae2098cf907897dfe896f38b2"><td class="memItemLeft" align="right" valign="top">wxDataViewItem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_d_v_m_ctrl.html#a853bc63ae2098cf907897dfe896f38b2">AppendContainer</a> (wxDataViewItem parent, const wxString &amp;title, bool can_edit=true, bool can_sort=true, bool can_del=false, int nodeid=-1, <a class="el" href="dtsgui_8h.html#a8bf800adcd2392cf7722c3cf2f603f96">dtsgui_treeviewpanel_cb</a> p_cb=NULL, void *userdata=NULL)</td></tr>
+<tr class="memitem:a853bc63ae2098cf907897dfe896f38b2"><td class="memItemLeft" align="right" valign="top">wxDataViewItem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_d_v_m_ctrl.html#a853bc63ae2098cf907897dfe896f38b2">AppendContainer</a> (wxDataViewItem parent, const wxString &amp;title, bool can_edit=true, bool can_sort=true, bool can_del=false, int nodeid=-1, <a class="el" href="group___c_o_r_e.html#ga8bf800adcd2392cf7722c3cf2f603f96">dtsgui_treeviewpanel_cb</a> p_cb=NULL, void *userdata=NULL)</td></tr>
 <tr class="separator:a853bc63ae2098cf907897dfe896f38b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aff491c87f47b924fd0d6d26fb319b82c"><td class="memItemLeft" align="right" valign="top">wxDataViewItem&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_d_v_m_ctrl.html#aff491c87f47b924fd0d6d26fb319b82c">AppendNode</a> (wxDataViewItem parent, const wxString &amp;title, bool iscont, bool can_edit=true, bool can_sort=true, bool can_del=false, int nodeid=-1, <a class="el" href="group___c_o_r_e.html#ga8bf800adcd2392cf7722c3cf2f603f96">dtsgui_treeviewpanel_cb</a> p_cb=NULL, void *userdata=NULL)</td></tr>
+<tr class="separator:aff491c87f47b924fd0d6d26fb319b82c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:abc8f34f1960b033d7f7aaa44ecbec272"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_d_t_s_d_v_m_list_view.html">DTSDVMListView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_d_v_m_ctrl.html#abc8f34f1960b033d7f7aaa44ecbec272">model</a></td></tr>
+<tr class="separator:abc8f34f1960b033d7f7aaa44ecbec272"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -158,7 +171,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00543">543</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00551">551</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00118">model</a>.</p>
 
 </div>
 </div>
@@ -216,7 +231,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00547">547</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00555">555</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00586">AssociateModel()</a>.</p>
 
 </div>
 </div>
@@ -233,7 +250,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00574">574</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00582">582</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00367">DTSDVMListView::DeleteAll()</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00118">model</a>.</p>
 
 </div>
 </div>
@@ -281,7 +300,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="dtsgui_8h.html#a8bf800adcd2392cf7722c3cf2f603f96">dtsgui_treeviewpanel_cb</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#ga8bf800adcd2392cf7722c3cf2f603f96">dtsgui_treeviewpanel_cb</a>&#160;</td>
           <td class="paramname"><em>p_cb</em> = <code>NULL</code>, </td>
         </tr>
         <tr>
@@ -298,7 +317,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00604">604</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00612">612</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00616">AppendNode()</a>.</p>
+
+<p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00708">DTS_C_API::dtsgui_treecont()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00103">tree_newnode::handle_newtreenode()</a>.</p>
 
 </div>
 </div>
@@ -345,7 +368,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="dtsgui_8h.html#a8bf800adcd2392cf7722c3cf2f603f96">dtsgui_treeviewpanel_cb</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#ga8bf800adcd2392cf7722c3cf2f603f96">dtsgui_treeviewpanel_cb</a>&#160;</td>
           <td class="paramname"><em>p_cb</em> = <code>NULL</code>, </td>
         </tr>
         <tr>
@@ -362,7 +385,93 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00600">600</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00608">608</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00616">AppendNode()</a>.</p>
+
+<p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00732">DTS_C_API::dtsgui_treeitem()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00103">tree_newnode::handle_newtreenode()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aff491c87f47b924fd0d6d26fb319b82c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">wxDataViewItem DTSDVMCtrl::AppendNode </td>
+          <td>(</td>
+          <td class="paramtype">wxDataViewItem&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const wxString &amp;&#160;</td>
+          <td class="paramname"><em>title</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>iscont</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>can_edit</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>can_sort</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>can_del</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nodeid</em> = <code>-1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#ga8bf800adcd2392cf7722c3cf2f603f96">dtsgui_treeviewpanel_cb</a>&#160;</td>
+          <td class="paramname"><em>p_cb</em> = <code>NULL</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>userdata</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00616">616</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00096">DTSDVMListStore::Append()</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00050">DTSDVMListStore::can_delete</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00048">DTSDVMListStore::can_edit</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00049">DTSDVMListStore::can_sort</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00332">DTSDVMListView::GetRoot()</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00118">model</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00336">DTSDVMListView::SetRoot()</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00612">AppendContainer()</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00608">AppendItem()</a>.</p>
 
 </div>
 </div>
@@ -388,7 +497,11 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00578">578</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00586">586</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00367">DTSDVMListView::DeleteAll()</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00118">model</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00555">DTSDVMCtrl()</a>.</p>
 
 </div>
 </div>
@@ -405,7 +518,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00596">596</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00604">604</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00118">model</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00295">DTSTreeWindowEvent::DTSTreeWindowEvent()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00787">DTSTreeWindow::Show()</a>.</p>
 
 </div>
 </div>
@@ -423,7 +540,34 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00592">592</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00600">600</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
+
+<p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00118">model</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00377">DTSDVMListView::SortChildren()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="abc8f34f1960b033d7f7aaa44ecbec272"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_d_t_s_d_v_m_list_view.html">DTSDVMListView</a>* DTSDVMCtrl::model</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_d_t_s_list_view_8h_source.html#l00118">118</a> of file <a class="el" href="_d_t_s_list_view_8h_source.html">DTSListView.h</a>.</p>
+
+<p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00616">AppendNode()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00586">AssociateModel()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00551">DTSDVMCtrl()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00604">GetStore()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00600">Sort()</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00582">~DTSDVMCtrl()</a>.</p>
 
 </div>
 </div>
@@ -437,7 +581,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_d_v_m_ctrl.html">DTSDVMCtrl</a></li>
-    <li class="footer">Generated on Wed Oct 9 2013 22:32:56 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

@@ -1,0 +1,101 @@
+.TH "treemenu" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+treemenu \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DTSTreeWindow\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDTS_OJBREF_CLASS\fP (\fBtreemenu\fP)"
+.br
+.ti -1c
+.RI "\fBtreemenu\fP ()"
+.br
+.ti -1c
+.RI "bool \fBShow\fP (\fBwxWindow\fP *w, bool cont, int cnt, bool first, bool last, bool c_sort, bool del)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "wxMenu * \fBmenu\fP"
+.br
+.ti -1c
+.RI "wxMenuItem * \fBmsort\fP"
+.br
+.ti -1c
+.RI "wxMenuItem * \fBmup\fP"
+.br
+.ti -1c
+.RI "wxMenuItem * \fBmdown\fP"
+.br
+.ti -1c
+.RI "wxMenuItem * \fBmdelete\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 74 of file DTSTreeWindow\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "treemenu::treemenu ()"
+
+.PP
+Definition at line 255 of file DTSTreeWindow\&.cpp\&.
+.PP
+References DTS_TREEWIN_MENU_DELETE, DTS_TREEWIN_MENU_MOVEDOWN, DTS_TREEWIN_MENU_MOVEUP, DTS_TREEWIN_MENU_SORT, mdelete, mdown, menu, msort, and mup\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "treemenu::DTS_OJBREF_CLASS (\fBtreemenu\fP)"
+
+.SS "bool treemenu::Show (\fBwxWindow\fP *w, boolcont, intcnt, boolfirst, boollast, boolc_sort, booldel)"
+
+.PP
+Definition at line 268 of file DTSTreeWindow\&.cpp\&.
+.PP
+References mdelete, mdown, menu, msort, and mup\&.
+.PP
+Referenced by DTSTreeWindow::ShowRMenu()\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "wxMenuItem* treemenu::mdelete\fC [private]\fP"
+
+.PP
+Definition at line 84 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by Show(), and treemenu()\&.
+.SS "wxMenuItem* treemenu::mdown\fC [private]\fP"
+
+.PP
+Definition at line 83 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by Show(), and treemenu()\&.
+.SS "wxMenu* treemenu::menu\fC [private]\fP"
+
+.PP
+Definition at line 80 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by Show(), and treemenu()\&.
+.SS "wxMenuItem* treemenu::msort\fC [private]\fP"
+
+.PP
+Definition at line 81 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by Show(), and treemenu()\&.
+.SS "wxMenuItem* treemenu::mup\fC [private]\fP"
+
+.PP
+Definition at line 82 of file DTSTreeWindow\&.h\&.
+.PP
+Referenced by Show(), and treemenu()\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

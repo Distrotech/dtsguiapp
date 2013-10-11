@@ -37,7 +37,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="138" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="886" bodyend="896"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="138" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="899" bodyend="909"/>
+        <references refid="class_d_t_s_object_1a132481851865629352e4aefa7f822e4b" compoundref="_d_t_s_panel_8h" startline="76">DTSObject::dtsevthandler</references>
+        <references refid="class_d_t_s_panel_event_1ae7b3a422bc55f7f9f676b2b640614fd9" compoundref="_d_t_s_panel_8cpp" startline="156" endline="161">DTSPanelEvent::OnDialog</references>
+        <references refid="class_d_t_s_object_1af8c7a75701ac05261749552eef4bc6ed" compoundref="_d_t_s_panel_8h" startline="75">DTSObject::panel</references>
+        <references refid="class_d_t_s_panel_1a9e90d0d7b1466eb3e8005343ce787974" compoundref="_d_t_s_panel_8cpp" startline="390" endline="404">DTSPanel::SetupWin</references>
+        <references refid="class_d_t_s_object_1ad191e42b5daa056f9ea8247d752df3b0" compoundref="_d_t_s_panel_8h" startline="69">DTSObject::type</references>
+        <references refid="group___c_o_r_e_1gga9275874ac61d3750aa677a36da714373a51268d1576c4e816f1416435cfe61500" compoundref="dtsgui_8h" startline="245">wx_DTSPANEL_SCROLLPANEL</references>
       </memberdef>
       <memberdef kind="function" id="class_d_t_s_scroll_panel_1a4aea715d4e6ac3257c482813c8ab2bbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>bool</type>
@@ -55,7 +61,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="139" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="898" bodyend="901"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSPanel.h" line="139" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSPanel.cpp" bodystart="911" bodyend="914"/>
+        <references refid="class_d_t_s_panel_1a0c1a3aa81559298e059473bde57ab23e" compoundref="_d_t_s_panel_8cpp" startline="432" endline="450">DTSPanel::ShowPanel</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -63,76 +70,101 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="84">
+      <node id="128">
         <label>DTSObject</label>
         <link refid="class_d_t_s_object"/>
-        <childnode refid="85" relation="public-inheritance">
+        <childnode refid="129" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="86">
+      <node id="130">
         <label>wxScrolledWindow</label>
       </node>
-      <node id="83">
+      <node id="127">
         <label>DTSPanel</label>
         <link refid="class_d_t_s_panel"/>
-        <childnode refid="84" relation="public-inheritance">
+        <childnode refid="128" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="82">
+      <node id="126">
         <label>DTSScrollPanel</label>
         <link refid="class_d_t_s_scroll_panel"/>
-        <childnode refid="83" relation="public-inheritance">
+        <childnode refid="127" relation="public-inheritance">
         </childnode>
-        <childnode refid="86" relation="public-inheritance">
+        <childnode refid="130" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="85">
+      <node id="129">
         <label>wxWindow</label>
       </node>
-      <node id="87">
+      <node id="131">
         <label>DTSTabPage</label>
         <link refid="class_d_t_s_tab_page"/>
-        <childnode refid="82" relation="public-inheritance">
+        <childnode refid="126" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="90">
+      <node id="134">
         <label>DTSObject</label>
         <link refid="class_d_t_s_object"/>
-        <childnode refid="91" relation="public-inheritance">
+        <childnode refid="135" relation="public-inheritance">
         </childnode>
-        <childnode refid="92" relation="usage">
+        <childnode refid="136" relation="usage">
           <edgelabel>frame</edgelabel>
         </childnode>
       </node>
-      <node id="94">
+      <node id="140">
         <label>wxScrolledWindow</label>
       </node>
-      <node id="89">
+      <node id="133">
         <label>DTSPanel</label>
         <link refid="class_d_t_s_panel"/>
-        <childnode refid="90" relation="public-inheritance">
+        <childnode refid="134" relation="public-inheritance">
+        </childnode>
+        <childnode refid="138" relation="usage">
+          <edgelabel>configcb</edgelabel>
         </childnode>
       </node>
-      <node id="88">
+      <node id="132">
         <label>DTSScrollPanel</label>
         <link refid="class_d_t_s_scroll_panel"/>
-        <childnode refid="89" relation="public-inheritance">
+        <childnode refid="133" relation="public-inheritance">
         </childnode>
-        <childnode refid="94" relation="public-inheritance">
+        <childnode refid="140" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="91">
+      <node id="135">
         <label>wxWindow</label>
       </node>
-      <node id="93">
+      <node id="137">
         <label>wxFrame</label>
       </node>
-      <node id="92">
+      <node id="138">
+        <label>dtsgui</label>
+        <link refid="classdtsgui"/>
+        <childnode refid="136" relation="usage">
+          <edgelabel>appframe</edgelabel>
+        </childnode>
+        <childnode refid="138" relation="usage">
+          <edgelabel>cb</edgelabel>
+        </childnode>
+        <childnode refid="139" relation="usage">
+          <edgelabel>wsize</edgelabel>
+          <edgelabel>wpos</edgelabel>
+        </childnode>
+      </node>
+      <node id="139">
+        <label>point</label>
+        <link refid="structpoint"/>
+      </node>
+      <node id="136">
         <label>DTSFrame</label>
         <link refid="class_d_t_s_frame"/>
-        <childnode refid="93" relation="public-inheritance">
+        <childnode refid="137" relation="public-inheritance">
+        </childnode>
+        <childnode refid="138" relation="usage">
+          <edgelabel>dtsgui</edgelabel>
+          <edgelabel>tbcb</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>

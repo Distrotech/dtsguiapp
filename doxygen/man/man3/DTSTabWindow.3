@@ -1,4 +1,4 @@
-.TH "DTSTabWindow" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "DTSTabWindow" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -44,33 +44,55 @@ Definition at line 149 of file DTSTreeWindow\&.h\&.
 .SS "DTSTabWindow::DTSTabWindow (\fBDTSFrame\fP *frame = \fCNULL\fP, wxStringstat_msg = \fCwxEmptyString\fP, void *u_data = \fCNULL\fP)"
 
 .PP
-Definition at line 874 of file DTSTreeWindow\&.cpp\&.
+Definition at line 888 of file DTSTreeWindow\&.cpp\&.
+.PP
+References DTSObject::dtsevthandler, DTSObject::frame, DTSObject::panel, DTSTabWindowEvent::RightMenu(), Show(), DTSObject::type, DTSObject::userdata, and wx_DTSPANEL_TAB\&.
 .SS "DTSTabWindow::~DTSTabWindow ()"
 
 .PP
-Definition at line 898 of file DTSTreeWindow\&.cpp\&.
+Definition at line 912 of file DTSTreeWindow\&.cpp\&.
+.PP
+References DTSObject::userdata\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "\fBDTSTabPage\fP * DTSTabWindow::CreateTab (const wxString &name, intbutmask = \fC0\fP, void *userdata = \fCNULL\fP, \fBdtsgui_tabpanel_cb\fPcb = \fCNULL\fP, void *cdata = \fCNULL\fP, struct xml_doc *xmldoc = \fCNULL\fP, booladdpage = \fCtrue\fP)"
 
 .PP
-Definition at line 977 of file DTSTreeWindow\&.cpp\&.
+Definition at line 991 of file DTSTreeWindow\&.cpp\&.
+.PP
+References DTSObject::GetFrame(), DTSObject::GetPanel(), and DTSObject::SetUserData()\&.
+.PP
+Referenced by CreateTab(), DTS_C_API::dtsgui_newtabpage(), DTS_C_API::dtsgui_tabpage_insert(), and tab_newpane::handle_newtabpane()\&.
 .SS "\fBDTSTabPage\fP * DTSTabWindow::CreateTab (const wxString &name, intbutmask, void *userdata, \fBdtsgui_tabpanel_cb\fPcb, void *cdata, struct xml_doc *xmldoc, intpos, intundo)"
 
 .PP
-Definition at line 967 of file DTSTreeWindow\&.cpp\&.
+Definition at line 981 of file DTSTreeWindow\&.cpp\&.
+.PP
+References CreateTab(), and InsertTab()\&.
 .SS "void DTSTabWindow::InsertTab (\fBDTSTabPage\fP *panel, intpos, boolshow = \fCtrue\fP, intundo = \fC0\fP)"
 
 .PP
-Definition at line 1000 of file DTSTreeWindow\&.cpp\&.
+Definition at line 1014 of file DTSTreeWindow\&.cpp\&.
+.PP
+References DTSObject::GetName(), DTSObject::GetPanel(), DTSObject::panel, DTSObject::refobj, and Undo()\&.
+.PP
+Referenced by CreateTab(), tab_newpane::handle_newtabpane(), and Undo()\&.
 .SS "bool DTSTabWindow::Show (boolshow = \fCtrue\fP)"
 
 .PP
-Definition at line 927 of file DTSTreeWindow\&.cpp\&.
+Definition at line 941 of file DTSTreeWindow\&.cpp\&.
+.PP
+References DTSObject::beenshown, DTSTabPage::ConfigPane(), DTSObject::dtsevthandler, DTSObject::frame, DTSTabWindowEvent::OnButton(), DTSTabWindowEvent::PageChange(), DTSTabWindowEvent::PageChanged(), and DTSObject::status\&.
+.PP
+Referenced by DTSTabWindow()\&.
 .SS "void DTSTabWindow::Undo (intpg)"
 
 .PP
-Definition at line 905 of file DTSTreeWindow\&.cpp\&.
+Definition at line 919 of file DTSTreeWindow\&.cpp\&.
+.PP
+References InsertTab()\&.
+.PP
+Referenced by tab_newpane::handle_newtabpane(), InsertTab(), and DTSTabWindowEvent::OnButton()\&.
 
 .SH "Author"
 .PP 

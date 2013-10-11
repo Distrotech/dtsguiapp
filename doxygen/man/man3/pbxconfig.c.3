@@ -1,4 +1,4 @@
-.TH "app/pbxconfig.c" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "app/pbxconfig.c" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -62,54 +62,106 @@ app/pbxconfig.c \-
 
 .PP
 Definition at line 325 of file pbxconfig\&.c\&.
+.PP
+References app_getxmldoc(), dtsgui_newtabpage(), dtsgui_tabwindow(), pbxconf_acd(), pbxconf_autoadd(), pbxconf_default(), pbxconf_e1(), pbxconf_global(), pbxconf_incoming(), pbxconf_location(), pbxconf_mfcr2(), pbxconf_misdn(), pbxconf_numplan(), pbxconf_topts(), pbxconf_trunk(), and wx_PANEL_BUTTON_ACTION\&.
+.PP
+Referenced by config_menu()\&.
 .SS "void pbxconf_acd (\fBdtsgui_pane\fPpg, void *data)"
 
 .PP
 Definition at line 214 of file pbxconfig\&.c\&.
+.PP
+References dtsgui_xmltextbox()\&.
+.PP
+Referenced by pbx_settings()\&.
 .SS "void pbxconf_autoadd (\fBdtsgui_pane\fPpg, void *data)"
 
 .PP
 Definition at line 315 of file pbxconfig\&.c\&.
+.PP
+References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by pbx_settings()\&.
 .SS "void pbxconf_default (\fBdtsgui_pane\fPpg, void *data)"
 
 .PP
 Definition at line 220 of file pbxconfig\&.c\&.
+.PP
+References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), dtsgui_xmllistbox(), dtsgui_xmltextbox(), form_item::name, and form_item::value\&.
+.PP
+Referenced by pbx_settings()\&.
 .SS "void pbxconf_e1 (\fBdtsgui_pane\fPpg, void *data)"
 
 .PP
 Definition at line 134 of file pbxconfig\&.c\&.
+.PP
+References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), and dtsgui_xmllistbox()\&.
+.PP
+Referenced by pbx_settings()\&.
 .SS "void pbxconf_global (\fBdtsgui_pane\fPpg, void *data)"
 
 .PP
 Definition at line 195 of file pbxconfig\&.c\&.
+.PP
+References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), dtsgui_xmllistbox(), dtsgui_xmlpasswdbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by pbx_settings()\&.
 .SS "void pbxconf_incoming (\fBdtsgui_pane\fPpg, void *data)"
 
 .PP
 Definition at line 279 of file pbxconfig\&.c\&.
+.PP
+References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), and dtsgui_xmllistbox()\&.
+.PP
+Referenced by pbx_settings()\&.
 .SS "void pbxconf_location (\fBdtsgui_pane\fPpg, void *data)"
 
 .PP
 Definition at line 268 of file pbxconfig\&.c\&.
+.PP
+References dtsgui_xmltextbox()\&.
+.PP
+Referenced by pbx_settings()\&.
 .SS "void pbxconf_mfcr2 (\fBdtsgui_pane\fPpg, void *data)"
 
 .PP
 Definition at line 161 of file pbxconfig\&.c\&.
+.PP
+References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), dtsgui_xmllistbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by pbx_settings()\&.
 .SS "void pbxconf_misdn (\fBdtsgui_pane\fPpg, void *data)"
 
 .PP
 Definition at line 121 of file pbxconfig\&.c\&.
+.PP
+References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by pbx_settings()\&.
 .SS "void pbxconf_numplan (\fBdtsgui_pane\fPpg, void *data)"
 
 .PP
 Definition at line 301 of file pbxconfig\&.c\&.
+.PP
+References dtsgui_xmltextbox()\&.
+.PP
+Referenced by pbx_settings()\&.
 .SS "void pbxconf_topts (\fBdtsgui_pane\fPpg, void *data)"
 
 .PP
 Definition at line 107 of file pbxconfig\&.c\&.
+.PP
+References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by pbx_settings()\&.
 .SS "void pbxconf_trunk (\fBdtsgui_pane\fPpg, void *data)"
 
 .PP
 Definition at line 25 of file pbxconfig\&.c\&.
+.PP
+References dtsgui_listbox_add(), dtsgui_xmllistbox(), dtsgui_xmltextbox(), form_item::name, and form_item::value\&.
+.PP
+Referenced by pbx_settings()\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

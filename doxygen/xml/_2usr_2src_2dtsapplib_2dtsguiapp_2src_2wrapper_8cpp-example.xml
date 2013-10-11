@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="_2usr_2src_2dtsapplib_2dtsguiapp_2src_2wrapper_8cpp-example" kind="example">
+    <compoundname>/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp</compoundname>
+    <detaileddescription>
+<para>Open file open dialog box. <simplesect kind="remark"><para>All implementations of the wxFileDialog provide a wildcard filter. Typing a filename containing wildcards (*, ?) in the filename text item, and clicking on Ok, will result in only those files matching the pattern being displayed. The wildcard may be a specification for multiple types of file with a description for each, such as:</para></simplesect>
+&quot;BMP and GIF files (*.bmp;*.gif)|*.bmp;*.gif|PNG files (*.png)|*.png&quot;</para><para><simplesect kind="see"><para><ref refid="class_d_t_s_frame_1af996b558ba17ecc23cf6ed1a3d1873fb" kindref="member">DTSFrame::FileDialog()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Title of the file dialog. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Original path to open dialog in. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Suggested name to open. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File namr filter. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the filename that must be unreferenced. <programlisting></programlisting> </para></simplesect>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

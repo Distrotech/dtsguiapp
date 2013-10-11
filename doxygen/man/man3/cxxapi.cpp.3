@@ -1,8 +1,11 @@
-.TH "src/cxxapi.cpp" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "src/cxxapi.cpp" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 src/cxxapi.cpp \- 
+.PP
+C++ Functions exported to C API\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -25,6 +28,7 @@ src/cxxapi.cpp \-
 .ti -1c
 .RI "#define \fB__DTS_C_API\fP"
 .br
+.RI "\fIDefining __DTS_C_API allows access to C API from inside a C++ file\&. \fP"
 .in -1c
 .SS "Functions"
 
@@ -32,13 +36,24 @@ src/cxxapi.cpp \-
 .ti -1c
 .RI "void \fBDTS_C_API::dtsgui_menuenable\fP (\fBdtsgui_menu\fP dm, int enable)"
 .br
+.RI "\fIEnable or disable all items in menu\&. \fP"
 .in -1c
-.SH "Macro Definition Documentation"
+.SH "Detailed Description"
 .PP 
-.SS "#define __DTS_C_API"
+C++ Functions exported to C API\&. 
 
+\fBSee Also:\fP
+.RS 4
+\fBDTS_C_API\fP 
 .PP
-Definition at line 19 of file cxxapi\&.cpp\&.
+\fB__DTS_C_API\fP 
+.PP
+\fBDistrotech GUI Library C API\fP
+.RE
+.PP
+These functions should not be used in C++ applications\&. 
+.PP
+Definition in file \fBcxxapi\&.cpp\fP\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

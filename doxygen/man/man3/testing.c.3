@@ -1,4 +1,4 @@
-.TH "app/testing.c" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "app/testing.c" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -35,18 +35,34 @@ app/testing.c \-
 
 .PP
 Definition at line 44 of file testing\&.c\&.
+.PP
+References dtsgui_alert(), post_items(), wx_PANEL_EVENT_BUTTON, wx_PANEL_EVENT_BUTTON_BACK, wx_PANEL_EVENT_BUTTON_FIRST, wx_PANEL_EVENT_BUTTON_FWD, wx_PANEL_EVENT_BUTTON_LAST, wx_PANEL_EVENT_BUTTON_NO, and wx_PANEL_EVENT_BUTTON_YES\&.
+.PP
+Referenced by test_menu()\&.
 .SS "void post_items (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_pane\fPp)"
 
 .PP
 Definition at line 25 of file testing\&.c\&.
+.PP
+References dtsgui_alert(), dtsgui_pane2post(), and dtsgui_paneldata()\&.
+.PP
+Referenced by handle_test()\&.
 .SS "void test_menu (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_menu\fPmenu, const char *url)"
 
 .PP
 Definition at line 94 of file testing\&.c\&.
+.PP
+References dtsgui_newmenuitem(), dtsgui_panel(), dtsgui_setevcallback(), handle_test(), testpanel(), and wx_PANEL_BUTTON_ALL\&.
+.PP
+Referenced by help_menu()\&.
 .SS "void testpanel (\fBdtsgui_pane\fPp)"
 
 .PP
 Definition at line 72 of file testing\&.c\&.
+.PP
+References dtsgui_checkbox(), dtsgui_combobox(), dtsgui_listbox(), dtsgui_listbox_add(), dtsgui_textbox(), and dtsgui_textbox_multi()\&.
+.PP
+Referenced by test_menu()\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

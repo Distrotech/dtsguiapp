@@ -1,8 +1,11 @@
-.TH "src/DTSPanel.cpp" 3 "Wed Oct 9 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.TH "src/DTSPanel.cpp" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 src/DTSPanel.cpp \- 
+.PP
+Implementation of core panel classes and event handler\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -33,13 +36,23 @@ src/DTSPanel.cpp \-
 .ti -1c
 .RI "#define \fBPADING\fP   10"
 .br
+.RI "\fIBorder used when placing elements\&. \fP"
 .in -1c
-.SH "Macro Definition Documentation"
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBdef_buttons\fP [6] = {wxID_FIRST, wxID_BACKWARD, wxID_FORWARD, wxID_LAST, wxID_APPLY, wxID_UNDO}"
+.br
+.RI "\fIArray mapping wxWidgets buttons to DTS Buttons\&. \fP"
+.in -1c
+.SH "Detailed Description"
 .PP 
-.SS "#define PADING   10"
+Implementation of core panel classes and event handler\&. 
+
 
 .PP
-Definition at line 33 of file DTSPanel\&.cpp\&.
+Definition in file \fBDTSPanel\&.cpp\fP\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

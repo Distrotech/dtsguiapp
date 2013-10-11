@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="group___c_p_p-_wizard" kind="group">
+    <compoundname>CPP-Wizard</compoundname>
+    <title>Wizard Classes</title>
+    <innerfile refid="_d_t_s_wizard_8cpp">DTSWizard.cpp</innerfile>
+    <briefdescription>
+<para>Implementation of wizard classes. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -75,7 +75,7 @@
       </node>
     </incdepgraph>
     <briefdescription>
-    </briefdescription>
+<para>Implementation of panel event classes. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <programlisting>
@@ -97,78 +97,78 @@
 <codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
 <codeline lineno="17"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__WIN32__</highlight></codeline>
-<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>UNICODE<sp/>1</highlight></codeline>
-<codeline lineno="21"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
-<codeline lineno="22"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dtsgui_8h" kindref="compound" tooltip="Main include file for the GUI Library.">dtsgui.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="evdata_8h" kindref="compound">evdata.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_d_t_s_panel_8h" kindref="compound">DTSPanel.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28" refid="classdynamic__panel_1ae6689acea2cf5d984fbcb191a680c4cb" refkind="member"><highlight class="normal"><ref refid="classdynamic__panel_1ae6689acea2cf5d984fbcb191a680c4cb" kindref="member">dynamic_panel::dynamic_panel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blank,<sp/><ref refid="dtsgui_8h_1a080f931027861c0021f72ac2562b45d7" kindref="member">dtsgui_dynpanel</ref><sp/>cb,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*udata)<sp/>{</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(udata<sp/>&amp;&amp;<sp/>objref(udata))<sp/>{</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data<sp/>=<sp/>udata;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data<sp/>=<sp/>NULL;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>ALLOC_CONST(this-&gt;title,<sp/>title);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;cb<sp/>=<sp/>cb;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;blank<sp/>=<sp/>blank;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal">dynamic_panel::~dynamic_panel()<sp/>{</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(title)<sp/>{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)title);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data)<sp/>{</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(data);</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48" refid="classdynamic__panel_1a52940fe2d7c72ec45a2aff77ad7ec8d0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classdynamic__panel_1a52940fe2d7c72ec45a2aff77ad7ec8d0" kindref="member">dynamic_panel::HasCallback</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(cb);</highlight></codeline>
-<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52" refid="classdynamic__panel_1a001a227c89e7998e18b88f7c49d4d035" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classdynamic__panel_1a001a227c89e7998e18b88f7c49d4d035" kindref="member">dynamic_panel::IsBlank</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(blank);</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor">#ifdef<sp/>__WIN32__</highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>UNICODE<sp/>1</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dtsgui_8h" kindref="compound" tooltip="Main include file for the GUI Library.">dtsgui.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="evdata_8h" kindref="compound">evdata.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_d_t_s_panel_8h" kindref="compound">DTSPanel.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classdynamic__panel_1ab9bd460c0e6acd3b84806f908d53df49" refkind="member"><highlight class="normal"><ref refid="classdynamic__panel_1ab9bd460c0e6acd3b84806f908d53df49" kindref="member">dynamic_panel::dynamic_panel</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>blank,<sp/><ref refid="group___c_o_r_e_1ga080f931027861c0021f72ac2562b45d7" kindref="member" tooltip="Callback called when a dynamic menu item is selected.">dtsgui_dynpanel</ref><sp/>cb,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*udata)<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(udata<sp/>&amp;&amp;<sp/>objref(udata))<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamic__panel_1a829939df89ab897c11179a31b8cd46be" kindref="member">data</ref><sp/>=<sp/>udata;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamic__panel_1a829939df89ab897c11179a31b8cd46be" kindref="member">data</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>ALLOC_CONST(this-&gt;name,<sp/>name);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;cb<sp/>=<sp/><ref refid="classdynamic__panel_1ace913453518c31659ba1ecdbede98d99" kindref="member">cb</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;blank<sp/>=<sp/><ref refid="classdynamic__panel_1a590542c18fbe042c59612a8d630fb974" kindref="member">blank</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">dynamic_panel::~dynamic_panel()<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classdynamic__panel_1ab6472f891f994a9f4dddd9572eb8adab" kindref="member">name</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)<ref refid="classdynamic__panel_1ab6472f891f994a9f4dddd9572eb8adab" kindref="member">name</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classdynamic__panel_1a829939df89ab897c11179a31b8cd46be" kindref="member">data</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(<ref refid="classdynamic__panel_1a829939df89ab897c11179a31b8cd46be" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="54"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56" refid="classdynamic__panel_1ab636fa1300532545f6c6fbf31e5e4971" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classdynamic__panel_1ab636fa1300532545f6c6fbf31e5e4971" kindref="member">dynamic_panel::operator==</ref>(<ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>&amp;rhs)<sp/>{</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(this-&gt;w<sp/>==<sp/>&amp;rhs);</highlight></codeline>
+<codeline lineno="56" refid="classdynamic__panel_1a52940fe2d7c72ec45a2aff77ad7ec8d0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classdynamic__panel_1a52940fe2d7c72ec45a2aff77ad7ec8d0" kindref="member">dynamic_panel::HasCallback</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="classdynamic__panel_1ace913453518c31659ba1ecdbede98d99" kindref="member">cb</ref>);</highlight></codeline>
 <codeline lineno="58"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60" refid="classdynamic__panel_1a5774ea0571dc1748c346129fcddf63de" refkind="member"><highlight class="normal"><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>*<ref refid="classdynamic__panel_1a5774ea0571dc1748c346129fcddf63de" kindref="member">dynamic_panel::RunCallback</ref>(</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_object" kindref="compound">DTSObject</ref><sp/>*p;</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(w)<sp/>{</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>w;</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>w<sp/>=<sp/>NULL;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60" refid="classdynamic__panel_1a001a227c89e7998e18b88f7c49d4d035" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classdynamic__panel_1a001a227c89e7998e18b88f7c49d4d035" kindref="member">dynamic_panel::IsBlank</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="classdynamic__panel_1a590542c18fbe042c59612a8d630fb974" kindref="member">blank</ref>);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="classdynamic__panel_1ab636fa1300532545f6c6fbf31e5e4971" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classdynamic__panel_1ab636fa1300532545f6c6fbf31e5e4971" kindref="member">dynamic_panel::operator==</ref>(<ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>&amp;rhs)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="classdynamic__panel_1a5d13849f704cffb0ecfde8dfdb072571" kindref="member">w</ref><sp/>==<sp/>&amp;rhs);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dtsgui<sp/>&amp;&amp;<sp/>objref(dtsgui))<sp/>{</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((p<sp/>=<sp/>(<ref refid="class_d_t_s_object" kindref="compound">DTSObject</ref>*)cb(dtsgui,<sp/>title,<sp/>data)))<sp/>{</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>w<sp/>=<sp/>p-&gt;<ref refid="class_d_t_s_object_1ae88ef1ea6f28346b6cd6d2d898d7acde" kindref="member">GetPanel</ref>();</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(dtsgui);</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>w;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77" refid="classevdata_1ad136a65ea4c324ecbd9b98e953c10afc" refkind="member"><highlight class="normal"><ref refid="classevdata_1ad136a65ea4c324ecbd9b98e953c10afc" kindref="member">evdata::evdata</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*userdata,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uref)<sp/>{</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(userdata<sp/>&amp;&amp;<sp/>uref)<sp/>{</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classevdata_1ab8569cae7cd7a33fde4e51872ef29090" kindref="member">data</ref><sp/>=<sp/>(objref(userdata))<sp/>?<sp/>userdata<sp/>:<sp/>NULL;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classevdata_1ab8569cae7cd7a33fde4e51872ef29090" kindref="member">data</ref><sp/>=<sp/>userdata;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;unref<sp/>=<sp/>uref;</highlight></codeline>
-<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight></codeline>
-<codeline lineno="86" refid="classevdata_1a2d73a5260935f0e089c1f660c950786d" refkind="member"><highlight class="normal"><ref refid="classevdata_1a2d73a5260935f0e089c1f660c950786d" kindref="member">evdata::~evdata</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(unref<sp/>&amp;&amp;<sp/><ref refid="classevdata_1ab8569cae7cd7a33fde4e51872ef29090" kindref="member">data</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(<ref refid="classevdata_1ab8569cae7cd7a33fde4e51872ef29090" kindref="member">data</ref>);</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68" refid="classdynamic__panel_1a5774ea0571dc1748c346129fcddf63de" refkind="member"><highlight class="normal"><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>*<ref refid="classdynamic__panel_1a5774ea0571dc1748c346129fcddf63de" kindref="member">dynamic_panel::RunCallback</ref>(</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_object" kindref="compound">DTSObject</ref><sp/>*p;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classdynamic__panel_1a5d13849f704cffb0ecfde8dfdb072571" kindref="member">w</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="classdynamic__panel_1a5d13849f704cffb0ecfde8dfdb072571" kindref="member">w</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamic__panel_1a5d13849f704cffb0ecfde8dfdb072571" kindref="member">w</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dtsgui<sp/>&amp;&amp;<sp/>objref(dtsgui))<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((p<sp/>=<sp/>(<ref refid="class_d_t_s_object" kindref="compound">DTSObject</ref>*)<ref refid="classdynamic__panel_1ace913453518c31659ba1ecdbede98d99" kindref="member">cb</ref>(dtsgui,<sp/><ref refid="classdynamic__panel_1ab6472f891f994a9f4dddd9572eb8adab" kindref="member">name</ref>,<sp/><ref refid="classdynamic__panel_1a829939df89ab897c11179a31b8cd46be" kindref="member">data</ref>)))<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classdynamic__panel_1a5d13849f704cffb0ecfde8dfdb072571" kindref="member">w</ref><sp/>=<sp/>p-&gt;<ref refid="class_d_t_s_object_1ae88ef1ea6f28346b6cd6d2d898d7acde" kindref="member">GetPanel</ref>();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(dtsgui);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classdynamic__panel_1a5d13849f704cffb0ecfde8dfdb072571" kindref="member">w</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="classevdata_1ad136a65ea4c324ecbd9b98e953c10afc" refkind="member"><highlight class="normal"><ref refid="classevdata_1ad136a65ea4c324ecbd9b98e953c10afc" kindref="member">evdata::evdata</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*userdata,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uref)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(userdata<sp/>&amp;&amp;<sp/>uref)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classevdata_1ab8569cae7cd7a33fde4e51872ef29090" kindref="member">data</ref><sp/>=<sp/>(objref(userdata))<sp/>?<sp/>userdata<sp/>:<sp/>NULL;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classevdata_1ab8569cae7cd7a33fde4e51872ef29090" kindref="member">data</ref><sp/>=<sp/>userdata;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classevdata_1a5ccf23487f6c2b58bedf37bf6da3adf5" kindref="member">unref</ref><sp/>=<sp/>uref;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="classevdata_1a2d73a5260935f0e089c1f660c950786d" refkind="member"><highlight class="normal"><ref refid="classevdata_1a2d73a5260935f0e089c1f660c950786d" kindref="member">evdata::~evdata</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classevdata_1a5ccf23487f6c2b58bedf37bf6da3adf5" kindref="member">unref</ref><sp/>&amp;&amp;<sp/><ref refid="classevdata_1ab8569cae7cd7a33fde4e51872ef29090" kindref="member">data</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(<ref refid="classevdata_1ab8569cae7cd7a33fde4e51872ef29090" kindref="member">data</ref>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/usr/src/dtsapplib/dtsguiapp/src/evdata.cpp"/>
   </compounddef>

@@ -17,7 +17,7 @@
 */
 
 /** @file
-  * @ingroup C-API
+  * @ingroup CORE C-API
   * @brief Main include file for the GUI Library
   *
   * This file needs to be included to use the defined functions and API.
@@ -25,8 +25,8 @@
   * allow access to the namespace DTS_C_API.
   *
   * It is not recomended to use the C API from C++.
-  *
-  */
+  * @addtogroup CORE
+  * @{*/
 
 #ifndef DTSGUI_H_INCLUDED
 #define DTSGUI_H_INCLUDED
@@ -34,97 +34,226 @@
 #include <stdint.h>
 #include <dtsapp.h>
 
-/*application struct*/
-typedef struct dtsgui dtsgui;
-typedef struct dtsgui_wizard dtsgui_wizard;
-
-/*menu controls*/
-typedef void *dtsgui_menu;
-typedef void *dtsgui_menuitem;
-
-/*viewable windows*/
-typedef void *dtsgui_pane;
-typedef void *dtsgui_notebook;
-typedef void *dtsgui_treeview;
-typedef void *dtsgui_tabview;
-
-typedef void *dtsgui_treenode;
-typedef void *dtsgui_progress;
-
-/*forward def*/
-typedef struct form_item form_item;
-typedef struct dynamic_panel dynamic_panel;
-
+/** @brief Callback event for tree view.*/
 enum tree_cbtype {
+	/**@brief Treenods is selected*/ 
 	DTSGUI_TREE_CB_SELECT,
+	/**@brief Treenods is to be deleted*/ 
 	DTSGUI_TREE_CB_DELETE,
+	/**@brief Treenods is edited*/ 
 	DTSGUI_TREE_CB_EDIT
 };
 
+/** @brief Data storage type on form element*/
 enum form_data_type {
+	/** @brief Reference to data.*/
 	DTSGUI_FORM_DATA_PTR,
+	/** @brief Reference to XML Node.*/
 	DTSGUI_FORM_DATA_XML
 };
 
-/*callbacks*/
-/** @ingroup C-API
-  * @brief Callback called on application execution
+/** @brief Forward decleration of the application data class*/
+typedef struct dtsgui dtsgui;
+/** @brief Forward decleration of wizard class*/
+typedef struct dtsgui_wizard dtsgui_wizard;
+/** @brief Forward definition of form_item*/
+typedef struct form_item form_item;
+/** @brief Forward definition of dynamic_panel*/
+typedef struct dynamic_panel dynamic_panel;
+
+/** @brief Define menu as void* it is not exported to API*/
+typedef void *dtsgui_menu;
+/** @brief Define menuitem as void* it is not exported to API*/
+typedef void *dtsgui_menuitem;
+/** @brief Define panel as void* it is not exported to API*/
+typedef void *dtsgui_pane;
+/** @brief Define notebook as void* it is not exported to API*/
+typedef void *dtsgui_notebook;
+/** @brief Define treeview as void* it is not exported to API*/
+typedef void *dtsgui_treeview;
+/** @brief Define tabview as void* it is not exported to API*/
+typedef void *dtsgui_tabview;
+/** @brief Define treenode as void* it is not exported to API*/
+typedef void *dtsgui_treenode;
+/** @brief Define progress as void* it is not exported to API*/
+typedef void *dtsgui_progress;
+
+/** @brief Callback called on application execution
   *
   * The callback is called with the application pointer and supplied userdata
-  *
-  * Returning 0 will cause application execution to fail.
-  *
-  */
+  * @see DTSApp::DTSApp()
+  * @see dtsgui_config()
+  * @param dtsgui Application data ptr.
+  * @param data Userdata reference.
+  * @return Returning 0 will cause application execution to fail.*/
 typedef int (*dtsgui_configcb)(struct dtsgui*, void*);
-typedef dtsgui_pane (*dtsgui_menucb)(struct dtsgui*, void*);
-typedef int (*event_callback)(struct dtsgui*, dtsgui_pane, int, int, void *);
-typedef dtsgui_pane (*dtsgui_dynpanel)(struct dtsgui*, const char*, void*);
-typedef dtsgui_pane (*dtsgui_tree_cb)(struct dtsgui *, dtsgui_treeview, dtsgui_treenode, enum tree_cbtype cb_type, const char*, void*);
-typedef void (*dtsgui_xmltreenode_cb)(dtsgui_treeview, dtsgui_treenode, struct xml_node*, void*);
-typedef void (*dtsgui_treeviewpanel_cb)(dtsgui_pane, dtsgui_treeview, dtsgui_treenode, void*);
-typedef void (*dtsgui_tabpanel_cb)(dtsgui_pane, void*);
+
+/** @brief Callback run on panel event
+  *
+  * When a panel event is triggered and a callback has been registered it will
+  * be called.
+  * @see panel_events
+  * @see panel_buttons
+  * @see DTSPanel::SetEventCallback()
+  * @see dtsgui_setevcallback()
+  * @param dtsgui Application data ptr.
+  * @param p Panel that the event originated on.
+  * @param type Event type.
+  * @param eid Event ID Depends on the event type.
+  * @param data Data attached to the event handler.
+  * @return A non zero value to allow further processing of the event.*/ 
+typedef int (*event_callback)(struct dtsgui*, dtsgui_pane, int type, int, void*);
+
+/** @brief Calback to configure and return a wxToolbar objecct.
+  *
+  * @see DTSFrame::SetupToolbar()
+  * @see dtsgui_setuptoolbar
+  * @param dtsgui Application data ptr.
+  * @param window Application frame (Parent window wxWindow)
+  * @param style Style to be supplied to wxToolbar constructor.
+  * @param wid Window id to be supplied.
+  * @param name Name to be supplied.
+  * @param data Reference to data supplied when setting upt the tool bar.
+  * @return Must return a wxToolbar object.*/
 typedef void* (*dtsgui_toolbar_create)(struct dtsgui*, void *, long, int, const char*, void *data);
+
+/** @brief Callback called when a dynamic menu item is selected
+  *
+  * This function is called and allows returning a pane to be displayed.
+  * @see DTSFrame::NewMenuItem()
+  * @see dtsgui_newmenucb
+  * @param dtsgui Application data ptr.
+  * @param name Name of the menu item.
+  * @param data Reference to data set when menu is created.
+  * @return If a panel is returned it will be displayed.*/
+typedef dtsgui_pane (*dtsgui_dynpanel)(struct dtsgui*, const char*, void*);
+
+/** @brief Callback used for tree view events
+  *
+  * @see DTSTreeWindowEvent::TreeCallback()
+  * @see tree_cbtype
+  * @param dtsgui Application data ptr.
+  * @param tree Treeview.
+  * @param node Tree node that generated the event.
+  * @param type Callback type.
+  * @param title Name of node.
+  * @param data Userdata refernece of data passed too treeview.
+  * @return If a panel is returned it will be placed int the display area.*/
+typedef dtsgui_pane (*dtsgui_tree_cb)(struct dtsgui *, dtsgui_treeview, dtsgui_treenode, enum tree_cbtype, const char*, void*);
+
+/** @brief Callback called after dtsgui_tree_cb to allow configuration of the panel.
+  *
+  * This callback is stored on the node and allows the panel to be configured per node allowing generic
+  * tree callback.
+  * @see DTSTreeWindowEvent::TreeCallback()
+  * @see DTSDVMListStore::ConfigPanel()
+  * @param pane Panel to be configured.
+  * @param tree Treeview that contains the node/panel.
+  * @param node Node that this panel represents.
+  * @param data Reference to user data stored on node.*/
+typedef void (*dtsgui_treeviewpanel_cb)(dtsgui_pane, dtsgui_treeview, dtsgui_treenode, void*);
+
+/** @brief Callback called as part of the creation of a new node.
+  *
+  * This callback will allow manipulation of the newly created node if required.
+  * @see dtsgui_newxmltreenode()
+  * @see tree_newnode::tree_newnode()
+  * @param tree Tree view that contains the node.
+  * @param node Newly created tree node.
+  * @param xn XML Node assigned to the node.
+  * @param data Reference to user data.*/
+typedef void (*dtsgui_xmltreenode_cb)(dtsgui_treeview, dtsgui_treenode, struct xml_node*, void*);
+
+/** @brief Configure a tab view panel prior to display.
+  *
+  * Tab panels are dynanic and created as needed by calling this callback.
+  * @see DTSTabPage::ConfigPane()
+  * @param pane Panel been configured.
+  * @param data Reference to the config data held by panel.*/
+typedef void (*dtsgui_tabpanel_cb)(dtsgui_pane, void*);
+
+/** @brief Allow setting the configuration data before tab pane is created.
+  *
+  * This callback is called as part of the new tab creation to allow setting callback
+  * data.The position of the pane can also be set.
+  * @see tab_newpane::handle_newtabpane()
+  * @param xmldoc XML Document.
+  * @param xn XML Node reference.
+  * @param data Panel data reference.
+  * @param cdata Pointer to reference of cdata can be replaced by setting cdata[0] to new reference.
+  * @param pos Pointer to integer containing panel position can be overwritten setting *pos.*/
 typedef void (*dtsgui_tabpane_newdata_cb)(struct xml_doc*, struct xml_node*, void*, void**, int*);
 
+/** @brief A simple data structure to store a coordinate*/
 struct point {
+	/**@brief X axis*/
 	int x;
+	/**@brief Y axis*/
 	int y;
 };
 
-/*buttons YES / No may be YES/NO APPLY/REFRESH OK/CANCEL*/
+/** @brief Define all buttons that are used in creating a panel.
+  * @remark These buttons are placed in this order at the bottom of the panel
+  * buttons not in the mask are not displayed and are blank spaces*/
 enum panel_buttons {
+	/**@brief A Rewind button used to indicate select first record.*/
 	wx_PANEL_EVENT_BUTTON_FIRST		= 1 << 0,
+	/**@brief A Back button used to go one record back.*/
 	wx_PANEL_EVENT_BUTTON_BACK		= 1 << 1,
+	/**@brief A Forward button indicating to proceed to next record.*/
 	wx_PANEL_EVENT_BUTTON_FWD		= 1 << 2,
+	/**@brief A Fast Forward button used to indicate select lasr record.*/
 	wx_PANEL_EVENT_BUTTON_LAST		= 1 << 3,
+	/**@brief A Affirmative button.*/
 	wx_PANEL_EVENT_BUTTON_YES		= 1 << 4,
+	/**@brief A Cancel/No/Undo button*/
 	wx_PANEL_EVENT_BUTTON_NO		= 1 << 5
 };
 
+/** @brief Define all possible events that are passed to event handler.*/
 enum panel_events {
+	/**@brief Button press event.*/
 	wx_PANEL_EVENT_BUTTON			= 1 << 0,
+	/**@brief Enter was pressed in a Combo box.*/
 	wx_PANEL_EVENT_COMBO_ENTER		= 1 << 1,
+	/**@brief Combo box text has been updated.*/
 	wx_PANEL_EVENT_COMBO_UPDATE		= 1 << 2,
-	wx_PANEL_EVENT_DTS				= 1 << 3
+	/**@brief DTS Application event..*/
+	wx_PANEL_EVENT_DTS			= 1 << 3
 };
 
+/** @brief Options set on tree nodes
+  * @remark Not all options apply to containers and leaf nodes.*/
 enum tree_newnode_flags {
+	/**@brief Allow editing of the node.*/
 	DTS_TREE_NEW_NODE_EDIT = 1 << 0,
+	/**@brief Allow deleteing the node from right click menu.*/
 	DTS_TREE_NEW_NODE_DELETE = 1 << 1,
+	/**@brief Node is a Container.*/
 	DTS_TREE_NEW_NODE_CONTAINER = 1 << 2,
+	/**@brief Container node allows sorting.*/
 	DTS_TREE_NEW_NODE_SORT = 1 << 3
 };
 
+/** @brief Panel Type.*/
 enum panel_type {
+	/** @brief DTSWindow (wx_DTSPANEL_WINDOW) is a basic panel without tab traversal controls and is rarely used (DTSFrame::TextPanel).*/
 	wx_DTSPANEL_WINDOW,
+	/** @brief DTSStaticPanel (wx_DTSPANEL_PANEL) includes tab traversal.*/
 	wx_DTSPANEL_PANEL,
+	/** @brief DTSScrollPanel (wx_DTSPANEL_SCROLLPANEL) adds scrollbar support.*/
 	wx_DTSPANEL_SCROLLPANEL,
+	/** @brief DTSDialog (wx_DTSPANEL_DIALOG) is a wx_DTSPANEL_PANEL displayed in a pop up dialog box.*/
 	wx_DTSPANEL_DIALOG,
+	/** @brief DTSTreeWindow (wx_DTSPANEL_TREE) see @ref C-API-Panel-Tree.*/
 	wx_DTSPANEL_TREE,
-	wx_DTSPANEL_WIZARD,
-	wx_DTSPANEL_TAB
+	/** @brief DTSTabWindow (wx_DTSPANEL_TAB) see @ref C-API-Panel-Tab.*/
+	wx_DTSPANEL_TAB,
+	/** @brief DTSWizardWindow (wx_DTSPANEL_WIZARD) see @ref C-API-Wizard.*/
+	wx_DTSPANEL_WIZARD
 };
 
+/** @brief Type of list item.*/
 enum widget_type {
 	DTS_WIDGET_TEXTBOX,
 	DTS_WIDGET_CHECKBOX,
@@ -132,11 +261,22 @@ enum widget_type {
 	DTS_WIDGET_COMBOBOX
 };
 
+/** @brief Shortcut flags for navigation buttons.*/
 #define wx_PANEL_BUTTON_NAV		wx_PANEL_EVENT_BUTTON_FIRST | wx_PANEL_EVENT_BUTTON_BACK | wx_PANEL_EVENT_BUTTON_FWD | wx_PANEL_EVENT_BUTTON_LAST
+
+/** @brief Shortcut flags for direction buttons.*/
 #define wx_PANEL_BUTTON_DIR		wx_PANEL_EVENT_BUTTON_BACK | wx_PANEL_EVENT_BUTTON_FWD
-#define wx_PANEL_BUTTON_ACTION	wx_PANEL_EVENT_BUTTON_YES | wx_PANEL_EVENT_BUTTON_NO
-#define wx_PANEL_BUTTON_ALL		wx_PANEL_BUTTON_ACTION | wx_PANEL_BUTTON_NAV
-#define wx_PANEL_EVENT_BUTTON_NONE	0
+
+/** @brief Shortcut flags for action buttons.*/
+#define wx_PANEL_BUTTON_ACTION wx_PANEL_EVENT_BUTTON_YES | wx_PANEL_EVENT_BUTTON_NO
+
+/** @brief Shortcut flags for all buttons.*/
+#define wx_PANEL_BUTTON_ALL wx_PANEL_BUTTON_ACTION | wx_PANEL_BUTTON_NAV
+
+/** @brief Shortcut flags for no buttons.*/
+#define wx_PANEL_EVENT_BUTTON_NONE 0
+
+/**@}*/
 
 /*
  * These are used in C only or when __DTS_C_API is defined in the DTS_C_API namespace
@@ -235,12 +375,13 @@ struct form_item *dtsgui_xmllistbox(dtsgui_pane pane, const char *title, const c
 struct form_item *dtsgui_xmlcombobox(dtsgui_pane pane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr);
 
 /*XML form items - see above for need to unref list/combo boxes*/
+/*
 extern void dtsgui_xnode_textbox(dtsgui_pane pane, const char *title, const char *attr);
 extern void dtsgui_xnode_textbox_multi(dtsgui_pane pane, const char *title, const char *attr);
 extern void dtsgui_xnode_passwdbox(dtsgui_pane pane, const char *title, const char *attr);
 extern void dtsgui_xnode_checkbox(dtsgui_pane pane, const char *title, const char *checkval, const char *uncheckval, const char *attr);
 struct form_item *dtsgui_xnode_listbox(dtsgui_pane pane, const char *title, const char *attr);
-struct form_item *dtsgui_xnode_combobox(dtsgui_pane pane, const char *title, const char *attr);
+struct form_item *dtsgui_xnode_combobox(dtsgui_pane pane, const char *title, const char *attr);*/
 
 /*add item to list*/
 void dtsgui_listbox_add(struct form_item *lbox, const char *text, const char *value);
