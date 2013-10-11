@@ -9,23 +9,23 @@
         <argsstring></argsstring>
         <name>name</name>
         <briefdescription>
-        </briefdescription>
+<para>Name of new interface. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="32" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="32" bodyend="-1"/>
-        <referencedby refid="interface_8c_1af0850a1d3d424533abf6f42eb7603b58" compoundref="interface_8c" startline="35" endline="41">free_iface_cdata</referencedby>
-        <referencedby refid="interface_8c_1a3a6216b44ef12f4343578439ea097c50" compoundref="interface_8c" startline="43" endline="52">get_iface_cdata</referencedby>
-        <referencedby refid="interface_8c_1a2079939d5d21847b07c782120206b7ce" compoundref="interface_8c" startline="86" endline="121">handle_updatetabpane</referencedby>
-        <referencedby refid="interface_8c_1aec69e5698c53680c3551eeb9e05cbaf6" compoundref="interface_8c" startline="123" endline="135">network_iface_pane_cb</referencedby>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="47" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="47" bodyend="-1"/>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gaf0850a1d3d424533abf6f42eb7603b58" compoundref="interface_8c" startline="52" endline="58">free_iface_cdata</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1ga3a6216b44ef12f4343578439ea097c50" compoundref="interface_8c" startline="62" endline="71">get_iface_cdata</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1ga2079939d5d21847b07c782120206b7ce" compoundref="interface_8c" startline="124" endline="159">handle_updatetabpane</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gaec69e5698c53680c3551eeb9e05cbaf6" compoundref="interface_8c" startline="164" endline="176">network_iface_pane_cb</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Pretty pointless structure holding interface name. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="31" bodyend="33"/>
+    <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="45" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="45" bodyend="48"/>
     <listofallmembers>
       <member refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" prot="public" virt="non-virtual"><scope>iface_cdata</scope><name>name</name></member>
     </listofallmembers>

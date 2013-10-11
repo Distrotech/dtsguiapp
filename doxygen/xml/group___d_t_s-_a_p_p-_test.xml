@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="group___d_t_s-_a_p_p-_test" kind="group">
+    <compoundname>DTS-APP-Test</compoundname>
+    <title>Application test panel</title>
+    <innerfile refid="testing_8c">testing.c</innerfile>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_test_1ga467cf1f57bc5317de7fa356f87b324a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void post_items</definition>
+        <argsstring>(struct dtsgui *dtsgui, dtsgui_pane p)</argsstring>
+        <name>post_items</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Create a curl post object and submit to url. </para>        </briefdescription>
+        <detaileddescription>
+<para>The panel data contains the URL <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be posted. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Nothing is returned a alert box is popped up on success. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/testing.c" line="41" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/testing.c" bodystart="41" bodyend="58"/>
+        <references refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" compoundref="wrapper_8cpp" startline="1151" endline="1154">dtsgui_alert</references>
+        <references refid="group___c-_a_p_i-_panel_1ga4d0d6742f61c91fb590b3728a7229150" compoundref="wrapper_8cpp" startline="887" endline="890">dtsgui_pane2post</references>
+        <references refid="group___c-_a_p_i-_panel_1ga6728901f40e67a95bc46150e1cf3c450" compoundref="wrapper_8cpp" startline="901" endline="904">dtsgui_paneldata</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_test_1gaf1d7f330874be6beda389c9ea4a4545c" compoundref="testing_8c" startline="70" endline="96">handle_test</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_test_1gaf1d7f330874be6beda389c9ea4a4545c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int handle_test</definition>
+        <argsstring>(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data)</argsstring>
+        <name>handle_test</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>panel event handler. </para>        </briefdescription>
+        <detaileddescription>
+<para>Filter all but button events and on Apply/Yes post the panel to URL. Other butons pressed will pop up a alert box with the button pressed. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The panel generating the events. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of event generated. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event generated. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to userdata set with eventhandler. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 to mark the event as handled or non zero to pass handling on. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/testing.c" line="70" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/testing.c" bodystart="70" bodyend="96"/>
+        <references refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" compoundref="wrapper_8cpp" startline="1151" endline="1154">dtsgui_alert</references>
+        <references refid="group___d_t_s-_a_p_p-_test_1ga467cf1f57bc5317de7fa356f87b324a6" compoundref="testing_8c" startline="41" endline="58">post_items</references>
+        <references refid="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a331937b86eb259d1d84728d28fbed79d" compoundref="dtsgui_8h" startline="216">wx_PANEL_EVENT_BUTTON</references>
+        <references refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca5092915b2da9df3365a956562b3d3663" compoundref="dtsgui_8h" startline="202">wx_PANEL_EVENT_BUTTON_BACK</references>
+        <references refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca332b4d1a5e1ae1425b5f77c49edd311c" compoundref="dtsgui_8h" startline="200">wx_PANEL_EVENT_BUTTON_FIRST</references>
+        <references refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca95b3613970d7acac3b1b3f4adbebf186" compoundref="dtsgui_8h" startline="204">wx_PANEL_EVENT_BUTTON_FWD</references>
+        <references refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302ecaff2d58b46c16f29654d00ae290e25a63" compoundref="dtsgui_8h" startline="206">wx_PANEL_EVENT_BUTTON_LAST</references>
+        <references refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302ecadb8742f8472eb90558cfbf8e3914553b" compoundref="dtsgui_8h" startline="210">wx_PANEL_EVENT_BUTTON_NO</references>
+        <references refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca6ce91176e6c929e87d7acbd000d07f79" compoundref="dtsgui_8h" startline="208">wx_PANEL_EVENT_BUTTON_YES</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_test_1ga77cb81a619f8c9ccd83cdf1e7c97aae9" compoundref="testing_8c" startline="128" endline="139">test_menu</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_test_1ga7436ba5c38bedec1d9ddda07ea99815d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void testpanel</definition>
+        <argsstring>(dtsgui_pane p)</argsstring>
+        <name>testpanel</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Configure a panel with test elements. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to configure </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/testing.c" line="100" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/testing.c" bodystart="100" bodyend="120"/>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1gad9a5fa9a5623850a3889e305ef3da717" compoundref="wrapper_8cpp" startline="1294" endline="1297">dtsgui_checkbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga554b15e578927450a5ee9128483885ca" compoundref="wrapper_8cpp" startline="1320" endline="1323">dtsgui_combobox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga21dbebc529c734dffe528f2b15b2a441" compoundref="wrapper_8cpp" startline="1307" endline="1310">dtsgui_listbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" compoundref="wrapper_8cpp" startline="1219" endline="1221">dtsgui_listbox_add</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga9bbd9bb4aa7a921fc64742ecf3b0f61d" compoundref="wrapper_8cpp" startline="1253" endline="1256">dtsgui_textbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga89eb3889f372aaec58543d51d881c822" compoundref="wrapper_8cpp" startline="1266" endline="1269">dtsgui_textbox_multi</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_test_1ga77cb81a619f8c9ccd83cdf1e7c97aae9" compoundref="testing_8c" startline="128" endline="139">test_menu</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_test_1ga77cb81a619f8c9ccd83cdf1e7c97aae9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void test_menu</definition>
+        <argsstring>(struct dtsgui *dtsgui, dtsgui_menu menu, const char *url)</argsstring>
+        <name>test_menu</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1gafb1e28bd82fd8ea9d43a188c06095682" kindref="member">dtsgui_menu</ref></type>
+          <declname>menu</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>url</declname>
+        </param>
+        <briefdescription>
+<para>Add test option to menu. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>menu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Menu to append new item too. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>URL to post the panel too. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/testing.c" line="128" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/testing.c" bodystart="128" bodyend="139"/>
+        <references refid="group___c-_a_p_i-_menus_1gabb8b44357ce2ce4a3fd028939cf8c700" compoundref="wrapper_8cpp" startline="338" endline="341">dtsgui_newmenuitem</references>
+        <references refid="group___c-_a_p_i-_panel_1gac763bff39863668014931022b469d836" compoundref="wrapper_8cpp" startline="464" endline="467">dtsgui_panel</references>
+        <references refid="group___c-_a_p_i-_panel_1gaa85445ee6c9a2c24d76824bb67cc2ab2" compoundref="wrapper_8cpp" startline="853" endline="856">dtsgui_setevcallback</references>
+        <references refid="group___d_t_s-_a_p_p-_test_1gaf1d7f330874be6beda389c9ea4a4545c" compoundref="testing_8c" startline="70" endline="96">handle_test</references>
+        <references refid="group___d_t_s-_a_p_p-_test_1ga7436ba5c38bedec1d9ddda07ea99815d" compoundref="testing_8c" startline="100" endline="120">testpanel</references>
+        <references refid="group___c_o_r_e_1ga6fd6c8004323d4605940ac5fb2ff9c9b" compoundref="dtsgui_8h" startline="274">wx_PANEL_BUTTON_ALL</references>
+        <referencedby refid="group___d_t_s-_a_p_p_1gae1b0e521306d90ee09f460064c015b2b" compoundref="wxforms_8c" startline="106" endline="120">help_menu</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Static window with standard elements that will post to a URL and pop up the result. </para>    </briefdescription>
+    <detaileddescription>
+<para>This is for testing the basic features and curl integration. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

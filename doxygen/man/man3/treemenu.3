@@ -51,6 +51,17 @@ Definition at line 74 of file DTSTreeWindow\&.h\&.
 Definition at line 255 of file DTSTreeWindow\&.cpp\&.
 .PP
 References DTS_TREEWIN_MENU_DELETE, DTS_TREEWIN_MENU_MOVEDOWN, DTS_TREEWIN_MENU_MOVEUP, DTS_TREEWIN_MENU_SORT, mdelete, mdown, menu, msort, and mup\&.
+.PP
+.nf
+                   {
+    menu = new wxMenu();
+    msort = menu->Append(DTS_TREEWIN_MENU_SORT, 'Sort');
+    mup = menu->Append(DTS_TREEWIN_MENU_MOVEUP, 'Move Up');
+    mdown = menu->Append(DTS_TREEWIN_MENU_MOVEDOWN, 'Move Down');
+    menu->AppendSeparator();
+    mdelete = menu->Append(DTS_TREEWIN_MENU_DELETE, 'Delete');
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "treemenu::DTS_OJBREF_CLASS (\fBtreemenu\fP)"
@@ -63,6 +74,35 @@ Definition at line 268 of file DTSTreeWindow\&.cpp\&.
 References mdelete, mdown, menu, msort, and mup\&.
 .PP
 Referenced by DTSTreeWindow::ShowRMenu()\&.
+.PP
+.nf
+                                                                                                 {
+    int scnt = 0;
+
+    if (!cont && del) {
+        scnt++;
+    }
+    mdelete->Enable(!cont && del);
+
+    if (!(cnt < 2) && c_sort) {
+        scnt++;
+    }
+    msort->Enable(!(cnt < 2) && c_sort);
+
+    if (!first || !last) {
+        scnt++;
+    }
+    mup->Enable(!first);
+    mdown->Enable(!last);
+
+    if (scnt) {
+        w->PopupMenu(menu);
+        return true;
+    } else {
+        return false;
+    }
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "wxMenuItem* treemenu::mdelete\fC [private]\fP"

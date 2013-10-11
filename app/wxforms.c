@@ -37,6 +37,8 @@
 
 #include "private.h"
 
+/** @brief Display formated XML Document on the console.
+  * @param xmldoc XML Document to display*/
 void xml_config(struct xml_doc *xmldoc) {
 	void *xmlbuf;
 
@@ -45,6 +47,12 @@ void xml_config(struct xml_doc *xmldoc) {
 	objunref(xmlbuf);
 }
 
+/** @brief return reference to xmldoc stored in userdata.
+  *
+  * The user data is available from the application data
+  * handle the correct referencing und un referencing of the data.
+  * @param dtsgui Application data ptr.
+  * @return XML Document.*/
 struct xml_doc *app_getxmldoc(struct dtsgui *dtsgui) {
 	struct app_data *appdata;
 	struct xml_doc *xmldoc;
@@ -66,6 +74,8 @@ struct xml_doc *app_getxmldoc(struct dtsgui *dtsgui) {
 	return xmldoc;
 }
 
+/** @brief Create the File menu in the menu bar.
+  * @param dtsgui Application data ptr.*/
 void file_menu(struct dtsgui *dtsgui) {
 	dtsgui_menu file;
 	struct app_data *appdata;
@@ -91,6 +101,8 @@ void file_menu(struct dtsgui *dtsgui) {
 	objunref(appdata);
 }
 
+/** @brief Create the Help menu in the menu bar.
+  * @param dtsgui Application data ptr.*/
 void help_menu(struct dtsgui *dtsgui) {
 	dtsgui_menu help;
 	dtsgui_pane p;
@@ -107,6 +119,14 @@ void help_menu(struct dtsgui *dtsgui) {
 	dtsgui_about(help, dtsgui, "This is a test application!!!!");
 }
 
+/** @brief GUI application callback.
+  *
+  * This is called on GUI application creation returning 0 will end
+  * the GUI returning non zero will pass control to the GUI.
+  * @see dtsgui_configcb
+  * @param dtsgui Application data ptr.
+  * @param data Application userdata reference.
+  * @return Non zero value to pass control to the GUI.*/
 int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
 	if (!data) {
 		return 0;
@@ -122,6 +142,10 @@ int guiconfig_cb(struct dtsgui *dtsgui, void *data) {
 	return 1;
 }
 
+/** @brief Callback called when reference count becomes 0
+  *
+  * Free datadir and un reference xmldoc as we going away.
+  * @param data Application user data reference.*/
 void free_appdata(void *data) {
 	struct app_data *appdata = data;
 
@@ -134,6 +158,12 @@ void free_appdata(void *data) {
 	}
 }
 
+/** @brief Application entry point.
+  *
+  * The first argument (argv[0]) is the application name.
+  * @param argc Number of arguments in array argv.
+  * @param argv Array of argumements passed on the commandline.
+  * @return Exit code.*/
 int main(int argc, char **argv) {
 	struct point wsize = {800, 600};
 	struct point wpos = {50, 50};

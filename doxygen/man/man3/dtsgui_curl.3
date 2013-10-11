@@ -61,6 +61,16 @@ Definition at line 42 of file DTSApp\&.h\&.
 Definition at line 141 of file DTSApp\&.cpp\&.
 .PP
 References curl, curl_progress_ctrl(), curl_progress_function(), curl_startprogress(), CurlPasswd(), frame, and dtsgui::GetFrame()\&.
+.PP
+.nf
+                                             {
+    frame = dtsgui->GetFrame();
+
+    curl = curlinit();
+    curl_setprogress(curl_progress_function, curl_progress_ctrl, curl_startprogress, dtsgui);
+    curl_setauth_cb(CurlPasswd, this);
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "void dtsgui_curl::Close ()"
@@ -69,6 +79,15 @@ References curl, curl_progress_ctrl(), curl_progress_function(), curl_startprogr
 Definition at line 154 of file DTSApp\&.cpp\&.
 .PP
 References curl\&.
+.PP
+.nf
+                        {
+    if (curl) {
+        curlclose();
+        curl = 0;
+    }
+}
+.fi
 .SS "void dtsgui_curl::curl_progress_ctrl (void *data, intpause)\fC [static]\fP, \fC [private]\fP"
 
 .PP
@@ -77,6 +96,30 @@ Definition at line 194 of file DTSApp\&.cpp\&.
 References DTSFrame::EndProgress(), curl_progress::GetFrame(), curl_progress::pause, and curl_progress::pd\&.
 .PP
 Referenced by dtsgui_curl()\&.
+.PP
+.nf
+                                                          {
+    class curl_progress *cp = (class curl_progress*)data;
+    DTSFrame *f = cp->GetFrame();
+
+    switch(pause) {
+        case 0:
+            cp->pause = pause;
+            break;
+        case 1:
+            f->EndProgress();
+            cp->pause = pause;
+            cp->pd = 0;
+            break;
+        case -1:
+            if (cp->pd) {
+                f->EndProgress();
+            }
+            objunref(cp);
+            break;
+    }
+}
+.fi
 .SS "int dtsgui_curl::curl_progress_function (void *data, doubledltotal, doubledlnow, doubleultotal, doubleulnow)\fC [static]\fP, \fC [private]\fP"
 
 .PP
@@ -85,12 +128,48 @@ Definition at line 168 of file DTSApp\&.cpp\&.
 References curl_progress::GetFrame(), curl_progress::pause, curl_progress::pd, DTSFrame::StartProgress(), and DTSFrame::UpdateProgress()\&.
 .PP
 Referenced by dtsgui_curl()\&.
+.PP
+.nf
+                                                                                                              {
+    class curl_progress *cp = (class curl_progress*)data;
+    DTSFrame *f;
+    int val, tot, cur;
+
+    if (!cp || cp->pause || !(f = cp->GetFrame())) {
+        return 0;
+    }
+
+    tot = dltotal+ultotal;
+    cur = ulnow+dlnow;
+
+    val = (tot && cur) ? (1000/tot) * cur : 0;
+    val = ceil(val);
+
+    if (!cp->pd) {
+        cp->pd = f->StartProgress('Web Transfer Progress', 1000, 1);
+    };
+
+    if (cp->pd && val && !f->UpdateProgress(val, wxEmptyString)) {
+        return 1;
+    }
+
+    return 0;
+}
+.fi
 .SS "void * dtsgui_curl::curl_startprogress (void *data)\fC [static]\fP, \fC [private]\fP"
 
 .PP
 Definition at line 162 of file DTSApp\&.cpp\&.
 .PP
 Referenced by dtsgui_curl()\&.
+.PP
+.nf
+                                                {
+    class dtsgui_curl *dc = (class dtsgui_curl*)data;
+
+    return new class curl_progress(dc);
+}
+.fi
 .SS "struct basic_auth * dtsgui_curl::CurlPasswd (const char *user, const char *passwd, void *data)\fC [static]\fP, \fC [read]\fP, \fC [private]\fP"
 
 .PP
@@ -99,6 +178,15 @@ Definition at line 216 of file DTSApp\&.cpp\&.
 References frame, and DTSFrame::Passwd()\&.
 .PP
 Referenced by dtsgui_curl()\&.
+.PP
+.nf
+                                                                                           {
+    class dtsgui_curl *dc = (class dtsgui_curl*)data;
+    class DTSFrame *f = dc->frame;
+
+    return f->Passwd(user, passwd);
+}
+.fi
 .SS "dtsgui_curl::DTS_OJBREF_CLASS (\fBdtsgui_curl\fP)"
 
 .SS "\fBDTSFrame\fP * dtsgui_curl::GetFrame (void)"
@@ -107,6 +195,12 @@ Referenced by dtsgui_curl()\&.
 Definition at line 223 of file DTSApp\&.cpp\&.
 .PP
 References frame\&.
+.PP
+.nf
+                                {
+    return frame;
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "int dtsgui_curl::curl\fC [private]\fP"

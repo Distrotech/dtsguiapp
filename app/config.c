@@ -16,6 +16,14 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @defgroup DTS-APP-Config Configuration menu functions
+  * @ingroup DTS-APP
+  * @brief Configuration menu functions.
+  * @addtogroup DTS-APP-Config
+  * @{
+  * @file
+  * @brief Configuration menu functions.*/
+
 #include <stdlib.h>
 #include <limits.h>
 #include <stdio.h>
@@ -24,6 +32,15 @@
 
 #include "private.h"
 
+/** @brief Open XML configuration file callback.
+  *
+  * Present a file open dialog to the user let them select
+  * a configuration file on success enable config menu options
+  * and disable file menu options.
+  * @param dtsgui Application data ptr.
+  * @param title Name supplied to menuitem.
+  * @param data Reference to data held by menu callback.
+  * @return NULL as no pane is displayed.*/
 dtsgui_pane open_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct app_data *appdata;
 	const char *filename;
@@ -66,6 +83,15 @@ dtsgui_pane open_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	return NULL;
 }
 
+/** @brief Close/Save menu option call back.
+  *
+  * This function re enables the file menu items
+  * And disables the config menu.
+  * @todo Actually save the config
+  * @param dtsgui Application data ptr.
+  * @param title Name supplied to menuitem.
+  * @param data Reference to data held by menu callback.
+  * @return NULL as no pane is displayed.*/
 dtsgui_pane save_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct app_data *appdata;
 
@@ -91,6 +117,12 @@ dtsgui_pane save_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	return NULL;
 }
 
+/** @brief Display XML document formated in text display.
+  *
+  * @param dtsgui Application data ptr.
+  * @param title Name supplied to menuitem.
+  * @param data Reference to data held by menu callback.
+  * @return Text Panel.*/
 dtsgui_pane view_config_xml(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct xml_doc *xmldoc = NULL;
 	dtsgui_pane p;
@@ -109,6 +141,14 @@ dtsgui_pane view_config_xml(struct dtsgui *dtsgui, const char *title, void *data
 	return p;
 }
 
+/** @brief Display XML document formated in text display as a dot conf.
+  *
+  * Open the XSLT file to transform to .conf and apply it to the XML
+  * document placing the output in a text panel.
+  * @param dtsgui Application data ptr.
+  * @param title Name supplied to menuitem.
+  * @param data Reference to data held by menu callback.
+  * @return Text Panel.*/
 dtsgui_pane view_config_conf(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct app_data *appdata;
 	struct xml_doc *xmldoc;
@@ -147,6 +187,14 @@ dtsgui_pane view_config_conf(struct dtsgui *dtsgui, const char *title, void *dat
 	return p;
 }
 
+/** @brief Export XML document as a .conf file.
+  *
+  * Openand apply the XSLT xml2conf.xsl and save the result to a file
+  * selected in a file dialog.
+  * @param dtsgui Application data ptr.
+  * @param title Name supplied to menuitem.
+  * @param data Reference to data held by menu callback.
+  * @return NULL as no panel is displayed.*/
 dtsgui_pane export_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct app_data *appdata;
 	struct xml_doc *xmldoc;
@@ -186,6 +234,9 @@ dtsgui_pane export_config(struct dtsgui *dtsgui, const char *title, void *data) 
 	return NULL;
 }
 
+
+/** @brief Add the configure menu to the menu bar and add options.
+    @param dtsgui Application data ptr.*/
 void config_menu(struct dtsgui *dtsgui) {
 	struct app_data *appdata;
 
@@ -215,3 +266,5 @@ void config_menu(struct dtsgui *dtsgui) {
 	objunlock(appdata);
 	objunref(appdata);
 }
+
+/** @}*/

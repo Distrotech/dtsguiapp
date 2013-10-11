@@ -187,7 +187,17 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="evdata_8cpp_source.html#l00036">36</a> of file <a class="el" href="evdata_8cpp_source.html">evdata.cpp</a>.</p>
 
 <p>References <a class="el" href="evdata_8h_source.html#l00037">blank</a>, <a class="el" href="evdata_8h_source.html#l00034">cb</a>, and <a class="el" href="evdata_8h_source.html#l00036">data</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                         {</div>
+<div class="line">    <span class="keywordflow">if</span> (udata &amp;&amp; objref(udata)) {</div>
+<div class="line">        <a class="code" href="classdynamic__panel.html#a829939df89ab897c11179a31b8cd46be">data</a> = udata;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <a class="code" href="classdynamic__panel.html#a829939df89ab897c11179a31b8cd46be">data</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    ALLOC_CONST(this-&gt;<a class="code" href="classdynamic__panel.html#ab6472f891f994a9f4dddd9572eb8adab">name</a>, <a class="code" href="classdynamic__panel.html#ab6472f891f994a9f4dddd9572eb8adab">name</a>);</div>
+<div class="line">    this-&gt;<a class="code" href="classdynamic__panel.html#ace913453518c31659ba1ecdbede98d99">cb</a> = <a class="code" href="classdynamic__panel.html#ace913453518c31659ba1ecdbede98d99">cb</a>;</div>
+<div class="line">    this-&gt;<a class="code" href="classdynamic__panel.html#a590542c18fbe042c59612a8d630fb974">blank</a> = <a class="code" href="classdynamic__panel.html#a590542c18fbe042c59612a8d630fb974">blank</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -225,7 +235,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="evdata_8h_source.html#l00034">cb</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_frame_8cpp_source.html#l00272">DTSFrame::DynamicPanelEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                {</div>
+<div class="line">    <span class="keywordflow">return</span> (<a class="code" href="classdynamic__panel.html#ace913453518c31659ba1ecdbede98d99">cb</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a001a227c89e7998e18b88f7c49d4d035"></a>
@@ -246,7 +259,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="evdata_8h_source.html#l00037">blank</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_frame_8cpp_source.html#l00272">DTSFrame::DynamicPanelEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                            {</div>
+<div class="line">    <span class="keywordflow">return</span> (<a class="code" href="classdynamic__panel.html#a590542c18fbe042c59612a8d630fb974">blank</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab636fa1300532545f6c6fbf31e5e4971"></a>
@@ -266,7 +282,10 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="evdata_8cpp_source.html#l00064">64</a> of file <a class="el" href="evdata_8cpp_source.html">evdata.cpp</a>.</p>
 
 <p>References <a class="el" href="evdata_8h_source.html#l00033">w</a>.</p>
-
+<div class="fragment"><div class="line">                                            {</div>
+<div class="line">    <span class="keywordflow">return</span> (this-&gt;<a class="code" href="classdynamic__panel.html#a5d13849f704cffb0ecfde8dfdb072571">w</a> == &amp;rhs);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5774ea0571dc1748c346129fcddf63de"></a>
@@ -288,7 +307,23 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="evdata_8h_source.html#l00034">cb</a>, <a class="el" href="evdata_8h_source.html#l00036">data</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00282">DTSObject::GetPanel()</a>, <a class="el" href="evdata_8h_source.html#l00035">name</a>, and <a class="el" href="evdata_8h_source.html#l00033">w</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_frame_8cpp_source.html#l00272">DTSFrame::DynamicPanelEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                         {</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html">DTSObject</a> *p;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classdynamic__panel.html#a5d13849f704cffb0ecfde8dfdb072571">w</a>) {</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="classdynamic__panel.html#a5d13849f704cffb0ecfde8dfdb072571">w</a>;</div>
+<div class="line">        <a class="code" href="classdynamic__panel.html#a5d13849f704cffb0ecfde8dfdb072571">w</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classdtsgui.html">dtsgui</a> &amp;&amp; objref(<a class="code" href="classdtsgui.html">dtsgui</a>)) {</div>
+<div class="line">        <span class="keywordflow">if</span> ((p = (<a class="code" href="class_d_t_s_object.html">DTSObject</a>*)<a class="code" href="classdynamic__panel.html#ace913453518c31659ba1ecdbede98d99">cb</a>(<a class="code" href="classdtsgui.html">dtsgui</a>, <a class="code" href="classdynamic__panel.html#ab6472f891f994a9f4dddd9572eb8adab">name</a>, <a class="code" href="classdynamic__panel.html#a829939df89ab897c11179a31b8cd46be">data</a>))) {</div>
+<div class="line">            <a class="code" href="classdynamic__panel.html#a5d13849f704cffb0ecfde8dfdb072571">w</a> = p-&gt;<a class="code" href="class_d_t_s_object.html#ae88ef1ea6f28346b6cd6d2d898d7acde">GetPanel</a>();</div>
+<div class="line">        }</div>
+<div class="line">        objunref(<a class="code" href="classdtsgui.html">dtsgui</a>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="classdynamic__panel.html#a5d13849f704cffb0ecfde8dfdb072571">w</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -422,7 +457,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classdynamic__panel.html">dynamic_panel</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:37 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

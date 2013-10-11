@@ -18,6 +18,10 @@ Allow for the deletion of branch/container/folder nodes\&.
 .IP "\fBGroup \fBC-API-Progress\fP \fP" 1c
 Allow multiple instances of progress dialog not only the single interface at present\&.  
 .IP "\fBGroup \fBC-API-Wizard\fP \fP" 1c
-Add a hashed list to the wizard class storing the panels to no longer need to keep a array of panels\&. 
+Add a hashed list to the wizard class storing the panels to no longer need to keep a array of panels\&.  
+.IP "\fBMember \fBsave_config\fP (struct dtsgui *dtsgui, const char *title, void *data)\fP" 1c
+Actually save the config  
+.IP "\fBMember \fBsystem_wizard\fP (struct dtsgui *dtsgui, void *data, const char *filename, struct xml_doc *xmldoc, int save)\fP" 1c
+Add callback to \fBdtsgui_wizard_addpage()\fP to be called to configure the panel 
 .PP
 

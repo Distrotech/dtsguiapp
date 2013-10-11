@@ -81,6 +81,23 @@ Definition at line 50 of file pitems\&.h\&.
 Definition at line 89 of file pitems\&.cpp\&.
 .PP
 References data, dtype, idx, type, and widget\&.
+.PP
+.nf
+                                                                                                                                                        {
+    this->widget\&.p = widget;
+    this->type = type;
+    this->data\&.ptr = data;
+    this->dtype = dtype;
+    ALLOC_CONST(this->name, name);
+    if (value) {
+        ALLOC_CONST(this->value, value);
+    }
+    if (value2) {
+        ALLOC_CONST(this->value2, value2);
+    }
+    this->idx = -1;
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "void form_item::Append (const char *text, const char *val)"
@@ -91,6 +108,29 @@ Definition at line 155 of file pitems\&.cpp\&.
 References DTS_WIDGET_COMBOBOX, DTS_WIDGET_LISTBOX, idx, widgets::l, SetSelection(), type, value, and widget\&.
 .PP
 Referenced by AppendXML(), and DTS_C_API::dtsgui_listbox_add()\&.
+.PP
+.nf
+                                                        {
+    int i;
+
+    switch(type) {
+        case DTS_WIDGET_COMBOBOX:
+        case DTS_WIDGET_LISTBOX:
+            break;
+        default:
+            return;
+    }
+
+    i = widget\&.l->Append(text, (val) ? (void*)strdup(val) : NULL);
+
+    if ((idx == -1) && value && val && !strcmp(value, val)) {
+        idx = i;
+        SetSelection(idx);
+    } else if (i == 0) {
+        SetSelection(0);
+    }
+}
+.fi
 .SS "void form_item::AppendXML (struct xml_doc *xmldoc, const char *xpath, const char *nattr, const char *vattr)"
 
 .PP
@@ -99,6 +139,30 @@ Definition at line 225 of file pitems\&.cpp\&.
 References Append(), name, and value\&.
 .PP
 Referenced by DTS_C_API::dtsgui_listbox_addxml()\&.
+.PP
+.nf
+                                                                                                         {
+    struct xml_search *xs;
+    struct xml_node *xn;
+    void *iter;
+    const char *name, *value;
+
+    if (!(xs = xml_xpath(xmldoc, xpath, nattr))) {
+        return;
+    }
+
+    for(xn = xml_getfirstnode(xs, &iter); xn ; xn = xml_getnextnode(iter)) {
+        name = (nattr) ? xml_getattr(xn, nattr) : xn->value;
+        value = (vattr) ? xml_getattr(xn, vattr) : xn->value;
+        Append(name, value);
+        objunref(xn);
+    }
+    objunref(xs);
+    if (iter) {
+        objunref(iter);
+    }
+}
+.fi
 .SS "form_item::DTS_OJBREF_CLASS (\fBform_item\fP)"
 
 .SS "void * form_item::GetData ()"
@@ -109,6 +173,19 @@ Definition at line 144 of file pitems\&.cpp\&.
 References data, and form_data::ptr\&.
 .PP
 Referenced by DTS_C_API::dtsgui_item_data()\&.
+.PP
+.nf
+                         {
+    void *fp = NULL;
+
+    objlock(this);
+    if (data\&.ptr && objref(data\&.ptr)) {
+        fp = data\&.ptr;
+    }
+    objunlock(this);
+    return fp;
+}
+.fi
 .SS "const char * form_item::GetName ()"
 
 .PP
@@ -117,6 +194,12 @@ Definition at line 188 of file pitems\&.cpp\&.
 References name\&.
 .PP
 Referenced by DTS_C_API::dtsgui_item_name(), DTSPanel::fitems_hash(), DTSPanel::Panel2Post(), and DTSPanel::Panel2XML()\&.
+.PP
+.nf
+                               {
+    return name;
+}
+.fi
 .SS "const char * form_item::GetValue ()"
 
 .PP
@@ -125,6 +208,37 @@ Definition at line 192 of file pitems\&.cpp\&.
 References widgets::c, DTS_WIDGET_CHECKBOX, DTS_WIDGET_COMBOBOX, DTS_WIDGET_LISTBOX, DTS_WIDGET_TEXTBOX, widgets::l, widgets::t, type, value, value2, and widget\&.
 .PP
 Referenced by DTS_C_API::dtsgui_item_value(), DTSPanel::FindValue(), DTSPanel::Panel2Post(), DTSPanel::Panel2XML(), and DTSPanel::Update_XML()\&.
+.PP
+.nf
+                                {
+    const char *val = NULL;
+    void *tmp;
+
+    switch(type) {
+        case DTS_WIDGET_TEXTBOX:
+            val = strdup(widget\&.t->GetValue()\&.ToUTF8());
+            break;
+        case DTS_WIDGET_LISTBOX:
+        case DTS_WIDGET_COMBOBOX:
+            int pos;
+            pos = widget\&.l->GetSelection();
+            if ((pos !=  wxNOT_FOUND) && widget\&.l->HasClientData() && (tmp = widget\&.l->GetClientData(pos))) {
+                val = strdup((char*)tmp);
+            } else {
+                val = strdup(widget\&.l->GetValue()\&.ToUTF8());
+            }
+            break;
+        case DTS_WIDGET_CHECKBOX:
+            if (widget\&.c->IsChecked()) {
+                val = (value) ? strdup(value) : NULL;
+            } else {
+                val = (value2) ? strdup(value2) : NULL;
+            }
+            break;
+    }
+    return val;
+}
+.fi
 .SS "void * form_item::GetWidget ()"
 
 .PP
@@ -133,6 +247,12 @@ Definition at line 221 of file pitems\&.cpp\&.
 References widgets::p, and widget\&.
 .PP
 Referenced by DTSPanelEvent::OnCombo()\&.
+.PP
+.nf
+                           {
+    return widget\&.p;
+}
+.fi
 .SS "class \fBxml_element\fP * form_item::GetXMLData ()"
 
 .PP
@@ -141,6 +261,18 @@ Definition at line 134 of file pitems\&.cpp\&.
 References data, DTSGUI_FORM_DATA_XML, dtype, and form_data::xml\&.
 .PP
 Referenced by DTSPanel::Update_XML()\&.
+.PP
+.nf
+                                         {
+    class xml_element *ret = NULL;
+    objlock(this);
+    if ((dtype == DTSGUI_FORM_DATA_XML) && data\&.xml && objref(data\&.xml)) {
+        ret = data\&.xml;
+    }
+    objunlock(this);
+    return ret;
+}
+.fi
 .SS "void form_item::SetSelection (inti)"
 
 .PP
@@ -149,6 +281,20 @@ Definition at line 176 of file pitems\&.cpp\&.
 References DTS_WIDGET_COMBOBOX, DTS_WIDGET_LISTBOX, widgets::l, type, and widget\&.
 .PP
 Referenced by Append(), and DTS_C_API::dtsgui_listbox_set()\&.
+.PP
+.nf
+                                  {
+    switch(type) {
+        case DTS_WIDGET_COMBOBOX:
+        case DTS_WIDGET_LISTBOX:
+            break;
+        default:
+            return;
+    }
+
+    widget\&.l->SetSelection(i);
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "union \fBform_data\fP form_item::data\fC [private]\fP"

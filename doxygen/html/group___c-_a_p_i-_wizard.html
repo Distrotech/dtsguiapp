@@ -123,7 +123,7 @@ Functions</h2></td></tr>
 <p>Multi panel pop up wizard user interface. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>A wizard is a dialog box that allows for multiple panels to be dispalayed in sequence via Back/Next controls. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>It is important to process the panels on complition before un refrencing the wizard. </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>Add a hashed list to the wizard class storing the panels to no longer need to keep a array of panels. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo:</a></b></dt><dd>Add a hashed list to the wizard class storing the panels to no longer need to keep a array of panels. </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ga2e1e2013214ae275160b8c87e6cb3d89"></a>
 <div class="memitem">
@@ -173,8 +173,11 @@ Functions</h2></td></tr>
 
 <p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>.</p>
 
-<p>Referenced by <a class="el" href="wizard_8c_source.html#l00363">system_wizard()</a>.</p>
-
+<p>Referenced by <a class="el" href="wizard_8c_source.html#l00408">system_wizard()</a>.</p>
+<div class="fragment"><div class="line">                                                                                        {</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="group___c_o_r_e.html#ga00d1631dc45e8a99d361b5091856abe3" title="Forward decleration of wizard class.">dtsgui_wizard</a>(dtsgui, dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>(), title);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga25174d47f2e9680d41aebdf08ff9b979"></a>
@@ -206,8 +209,11 @@ Functions</h2></td></tr>
 
 <p>References <a class="el" href="_d_t_s_wizard_8cpp_source.html#l00089">dtsgui_wizard::RunWizard()</a>.</p>
 
-<p>Referenced by <a class="el" href="wizard_8c_source.html#l00363">system_wizard()</a>.</p>
-
+<p>Referenced by <a class="el" href="wizard_8c_source.html#l00408">system_wizard()</a>.</p>
+<div class="fragment"><div class="line">                                                          {</div>
+<div class="line">    <span class="keywordflow">return</span> dtswiz-&gt;<a class="code" href="classdtsgui__wizard.html#ab0554e6b9fe1d2c0419a6659d883edf3">RunWizard</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga3e76b1ea2eebb91e1d0b5a55649d65e6"></a>
@@ -263,8 +269,11 @@ Functions</h2></td></tr>
 
 <p>References <a class="el" href="_d_t_s_wizard_8cpp_source.html#l00056">dtsgui_wizard::AddPage()</a>.</p>
 
-<p>Referenced by <a class="el" href="wizard_8c_source.html#l00363">system_wizard()</a>.</p>
-
+<p>Referenced by <a class="el" href="wizard_8c_source.html#l00408">system_wizard()</a>.</p>
+<div class="fragment"><div class="line">                                                                                                                                  {</div>
+<div class="line">    <span class="keywordflow">return</span> dtswiz-&gt;<a class="code" href="classdtsgui__wizard.html#a02984b1d70df5100e8b6200e0bb1b421">AddPage</a>(title, <a class="code" href="classtab__newpane.html#af58db0bde709efe63fd806ca6753eff4">xmldoc</a>, userdata);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -272,7 +281,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

@@ -47,7 +47,7 @@
     <innerclass refid="structnew__iface__data" prot="public">new_iface_data</innerclass>
     <innerclass refid="structiface__cdata" prot="public">iface_cdata</innerclass>
       <sectiondef kind="func">
-      <memberdef kind="function" id="interface_8c_1af0850a1d3d424533abf6f42eb7603b58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_iface_1gaf0850a1d3d424533abf6f42eb7603b58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void free_iface_cdata</definition>
         <argsstring>(void *data)</argsstring>
@@ -57,16 +57,24 @@
           <declname>data</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Relase references held by structure before free. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to <ref refid="structiface__cdata" kindref="compound">iface_cdata</ref> that is about to be freed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="35" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="35" bodyend="41"/>
-        <references refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" compoundref="interface_8c" startline="32">iface_cdata::name</references>
-        <referencedby refid="interface_8c_1a3a6216b44ef12f4343578439ea097c50" compoundref="interface_8c" startline="43" endline="52">get_iface_cdata</referencedby>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="52" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="52" bodyend="58"/>
+        <references refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" compoundref="interface_8c" startline="47">iface_cdata::name</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1ga3a6216b44ef12f4343578439ea097c50" compoundref="interface_8c" startline="62" endline="71">get_iface_cdata</referencedby>
       </memberdef>
-      <memberdef kind="function" id="interface_8c_1a3a6216b44ef12f4343578439ea097c50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_iface_1ga3a6216b44ef12f4343578439ea097c50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="structiface__cdata" kindref="compound">iface_cdata</ref> *</type>
         <definition>struct iface_cdata* get_iface_cdata</definition>
         <argsstring>(const char *val)</argsstring>
@@ -76,18 +84,26 @@
           <declname>val</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Allocate new <ref refid="structiface__cdata" kindref="compound">iface_cdata</ref> structure. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of interface. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="43" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="43" bodyend="52"/>
-        <references refid="interface_8c_1af0850a1d3d424533abf6f42eb7603b58" compoundref="interface_8c" startline="35" endline="41">free_iface_cdata</references>
-        <references refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" compoundref="interface_8c" startline="32">iface_cdata::name</references>
-        <referencedby refid="interface_8c_1ad174419104751f817b6b094628bd9846" compoundref="interface_8c" startline="77" endline="83">handle_newxmltabpane</referencedby>
-        <referencedby refid="private_8h_1abf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="145" endline="184">iface_config</referencedby>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="62" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="62" bodyend="71"/>
+        <references refid="group___d_t_s-_a_p_p-_iface_1gaf0850a1d3d424533abf6f42eb7603b58" compoundref="interface_8c" startline="52" endline="58">free_iface_cdata</references>
+        <references refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" compoundref="interface_8c" startline="47">iface_cdata::name</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gad174419104751f817b6b094628bd9846" compoundref="interface_8c" startline="109" endline="115">handle_newxmltabpane</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gabf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="197" endline="236">iface_config</referencedby>
       </memberdef>
-      <memberdef kind="function" id="interface_8c_1ad806ada5b6aa10cb8e8b21af8fe03c33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_iface_1gad806ada5b6aa10cb8e8b21af8fe03c33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void free_newiface_data</definition>
         <argsstring>(void *data)</argsstring>
@@ -97,16 +113,24 @@
           <declname>data</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Release references held by structure before free. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to <ref refid="structnew__iface__data" kindref="compound">new_iface_data</ref> that is about to be freed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="54" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="54" bodyend="61"/>
-        <references refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" compoundref="interface_8c" startline="28">new_iface_data::xmldoc</references>
-        <referencedby refid="interface_8c_1a23ef5c5cf103f36dd179c5625f8f8576" compoundref="interface_8c" startline="63" endline="75">get_newiface_data</referencedby>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="75" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="75" bodyend="82"/>
+        <references refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" compoundref="interface_8c" startline="41">new_iface_data::xmldoc</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1ga23ef5c5cf103f36dd179c5625f8f8576" compoundref="interface_8c" startline="90" endline="102">get_newiface_data</referencedby>
       </memberdef>
-      <memberdef kind="function" id="interface_8c_1a23ef5c5cf103f36dd179c5625f8f8576" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_iface_1ga23ef5c5cf103f36dd179c5625f8f8576" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="structnew__iface__data" kindref="compound">new_iface_data</ref> *</type>
         <definition>struct new_iface_data* get_newiface_data</definition>
         <argsstring>(dtsgui_tabview tv, struct xml_doc *xmldoc)</argsstring>
@@ -120,18 +144,34 @@
           <declname>xmldoc</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Allocate and return a <ref refid="structnew__iface__data" kindref="compound">new_iface_data</ref> structure. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This structure is used to create and insert a new tab in the treeview. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tabview to allocate new tab too. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xmldoc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>XML Document to create new node in. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to new <ref refid="structnew__iface__data" kindref="compound">new_iface_data</ref> structure </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="63" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="63" bodyend="75"/>
-        <references refid="interface_8c_1ad806ada5b6aa10cb8e8b21af8fe03c33" compoundref="interface_8c" startline="54" endline="61">free_newiface_data</references>
-        <references refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" compoundref="interface_8c" startline="27">new_iface_data::tv</references>
-        <references refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" compoundref="interface_8c" startline="28">new_iface_data::xmldoc</references>
-        <referencedby refid="private_8h_1abf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="145" endline="184">iface_config</referencedby>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="90" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="90" bodyend="102"/>
+        <references refid="group___d_t_s-_a_p_p-_iface_1gad806ada5b6aa10cb8e8b21af8fe03c33" compoundref="interface_8c" startline="75" endline="82">free_newiface_data</references>
+        <references refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" compoundref="interface_8c" startline="39">new_iface_data::tv</references>
+        <references refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" compoundref="interface_8c" startline="41">new_iface_data::xmldoc</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gabf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="197" endline="236">iface_config</referencedby>
       </memberdef>
-      <memberdef kind="function" id="interface_8c_1ad174419104751f817b6b094628bd9846" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_iface_1gad174419104751f817b6b094628bd9846" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void handle_newxmltabpane</definition>
         <argsstring>(struct xml_doc *xmldoc, struct xml_node *xn, void *tdata, void **cdata, int *last)</argsstring>
@@ -157,16 +197,17 @@
           <declname>last</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Configure panel configuration data. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>As the new interface name is not known till creation time the configuration data needs to be configured. <simplesect kind="see"><para><ref refid="group___c_o_r_e_1gab5e1fa276d48b20d35f4ef20110c39ed" kindref="member">dtsgui_tabpane_newdata_cb</ref> </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="77" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="77" bodyend="83"/>
-        <references refid="interface_8c_1a3a6216b44ef12f4343578439ea097c50" compoundref="interface_8c" startline="43" endline="52">get_iface_cdata</references>
-        <referencedby refid="interface_8c_1adcfa585026374cce3c2443ea55cebc25" compoundref="interface_8c" startline="137" endline="142">network_iface_new_pane_cb</referencedby>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="109" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="109" bodyend="115"/>
+        <references refid="group___d_t_s-_a_p_p-_iface_1ga3a6216b44ef12f4343578439ea097c50" compoundref="interface_8c" startline="62" endline="71">get_iface_cdata</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gadcfa585026374cce3c2443ea55cebc25" compoundref="interface_8c" startline="181" endline="189">network_iface_new_pane_cb</referencedby>
       </memberdef>
-      <memberdef kind="function" id="interface_8c_1a2079939d5d21847b07c782120206b7ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_iface_1ga2079939d5d21847b07c782120206b7ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
         <definition>int handle_updatetabpane</definition>
         <argsstring>(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data)</argsstring>
@@ -192,21 +233,58 @@
           <declname>data</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Event handler callback that will only check the interface name and pass handling to default handler. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel generating the event. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event type. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event id. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to data passed to event handler. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>0 on error 1 will allow the event to be handled by default handler. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="86" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="86" bodyend="121"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="124" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="124" bodyend="159"/>
         <references refid="group___c-_a_p_i-_panel-_items_1ga37f578498eb38e545906898e7250e6bb" compoundref="wrapper_8cpp" startline="1140" endline="1143">dtsgui_findvalue</references>
         <references refid="group___c-_a_p_i-_panel_1gad561196144c72953e31b83aff17054e5" compoundref="wrapper_8cpp" startline="922" endline="925">dtsgui_setstatus</references>
-        <references refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" compoundref="interface_8c" startline="32">iface_cdata::name</references>
+        <references refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" compoundref="interface_8c" startline="47">iface_cdata::name</references>
         <references refid="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a331937b86eb259d1d84728d28fbed79d" compoundref="dtsgui_8h" startline="216">wx_PANEL_EVENT_BUTTON</references>
         <references refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302ecadb8742f8472eb90558cfbf8e3914553b" compoundref="dtsgui_8h" startline="210">wx_PANEL_EVENT_BUTTON_NO</references>
         <references refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca6ce91176e6c929e87d7acbd000d07f79" compoundref="dtsgui_8h" startline="208">wx_PANEL_EVENT_BUTTON_YES</references>
-        <referencedby refid="interface_8c_1aec69e5698c53680c3551eeb9e05cbaf6" compoundref="interface_8c" startline="123" endline="135">network_iface_pane_cb</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gaec69e5698c53680c3551eeb9e05cbaf6" compoundref="interface_8c" startline="164" endline="176">network_iface_pane_cb</referencedby>
       </memberdef>
-      <memberdef kind="function" id="interface_8c_1aec69e5698c53680c3551eeb9e05cbaf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_iface_1gaec69e5698c53680c3551eeb9e05cbaf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void network_iface_pane_cb</definition>
         <argsstring>(dtsgui_pane p, void *data)</argsstring>
@@ -220,21 +298,36 @@
           <declname>data</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Callback called to configure a interface pane. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to configure. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to configuration data <ref refid="structiface__cdata" kindref="compound">iface_cdata</ref>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="123" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="123" bodyend="135"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="164" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="164" bodyend="176"/>
         <references refid="group___c-_a_p_i-_panel_1gaa85445ee6c9a2c24d76824bb67cc2ab2" compoundref="wrapper_8cpp" startline="853" endline="856">dtsgui_setevcallback</references>
         <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
-        <references refid="interface_8c_1a2079939d5d21847b07c782120206b7ce" compoundref="interface_8c" startline="86" endline="121">handle_updatetabpane</references>
-        <references refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" compoundref="interface_8c" startline="32">iface_cdata::name</references>
-        <references refid="netconfig_8c_1ab77c80061336502da4c2cc2d2c11f4a0" compoundref="netconfig_8c" startline="201" endline="211">network_iface_pane</references>
-        <referencedby refid="private_8h_1abf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="145" endline="184">iface_config</referencedby>
-        <referencedby refid="interface_8c_1adcfa585026374cce3c2443ea55cebc25" compoundref="interface_8c" startline="137" endline="142">network_iface_new_pane_cb</referencedby>
+        <references refid="group___d_t_s-_a_p_p-_iface_1ga2079939d5d21847b07c782120206b7ce" compoundref="interface_8c" startline="124" endline="159">handle_updatetabpane</references>
+        <references refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" compoundref="interface_8c" startline="47">iface_cdata::name</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gab77c80061336502da4c2cc2d2c11f4a0" compoundref="netconfig_8c" startline="279" endline="289">network_iface_pane</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gabf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="197" endline="236">iface_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gadcfa585026374cce3c2443ea55cebc25" compoundref="interface_8c" startline="181" endline="189">network_iface_new_pane_cb</referencedby>
       </memberdef>
-      <memberdef kind="function" id="interface_8c_1adcfa585026374cce3c2443ea55cebc25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_iface_1gadcfa585026374cce3c2443ea55cebc25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void network_iface_new_pane_cb</definition>
         <argsstring>(dtsgui_pane p, void *data)</argsstring>
@@ -248,21 +341,38 @@
           <declname>data</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Callback called for the &quot;New&quot; interface pane. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to configure. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to configuration data <ref refid="structnew__iface__data" kindref="compound">new_iface_data</ref>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
-        </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="137" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="137" bodyend="142"/>
+<para><simplesect kind="remark"><para>use <ref refid="group___c-_a_p_i-_panel-_tab_1gad3333a23e28993072b5ef4feed86778c" kindref="member">dtsgui_newxmltabpane()</ref> helper to atach a callback that will create a new panel </para></simplesect>
+<simplesect kind="see"><para><ref refid="group___d_t_s-_a_p_p-_iface_1gad174419104751f817b6b094628bd9846" kindref="member">handle_newxmltabpane()</ref> </para><simplesectsep/><para><ref refid="group___d_t_s-_a_p_p-_iface_1gaec69e5698c53680c3551eeb9e05cbaf6" kindref="member">network_iface_pane_cb()</ref> </para></simplesect>
+</para>        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="181" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="181" bodyend="189"/>
         <references refid="group___c-_a_p_i-_panel-_tab_1gad3333a23e28993072b5ef4feed86778c" compoundref="wrapper_8cpp" startline="645" endline="649">dtsgui_newxmltabpane</references>
-        <references refid="interface_8c_1ad174419104751f817b6b094628bd9846" compoundref="interface_8c" startline="77" endline="83">handle_newxmltabpane</references>
-        <references refid="netconfig_8c_1a3d43e57bb96cf8bd603872099c3bc038" compoundref="netconfig_8c" startline="222" endline="233">network_iface_new_pane</references>
-        <references refid="interface_8c_1aec69e5698c53680c3551eeb9e05cbaf6" compoundref="interface_8c" startline="123" endline="135">network_iface_pane_cb</references>
-        <references refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" compoundref="interface_8c" startline="27">new_iface_data::tv</references>
-        <references refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" compoundref="interface_8c" startline="28">new_iface_data::xmldoc</references>
-        <referencedby refid="private_8h_1abf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="145" endline="184">iface_config</referencedby>
+        <references refid="group___d_t_s-_a_p_p-_iface_1gad174419104751f817b6b094628bd9846" compoundref="interface_8c" startline="109" endline="115">handle_newxmltabpane</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gac142d92a078e869acbd50ce58a410f51" compoundref="netconfig_8c" startline="307" endline="318">network_iface_new_pane</references>
+        <references refid="group___d_t_s-_a_p_p-_iface_1gaec69e5698c53680c3551eeb9e05cbaf6" compoundref="interface_8c" startline="164" endline="176">network_iface_pane_cb</references>
+        <references refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" compoundref="interface_8c" startline="39">new_iface_data::tv</references>
+        <references refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" compoundref="interface_8c" startline="41">new_iface_data::xmldoc</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gabf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="197" endline="236">iface_config</referencedby>
       </memberdef>
-      <memberdef kind="function" id="interface_8c_1abf43f59e582eee9f27734b14c8307819" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_iface_1gabf43f59e582eee9f27734b14c8307819" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
         <definition>dtsgui_pane iface_config</definition>
         <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
@@ -280,25 +390,48 @@
           <declname>data</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Callback called when the interface configuration link is selected. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name assigned to the menu item (not name in menubar). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Userdata referenced in menuitem. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Tabview panel to display to configure interface cards. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="145" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="145" bodyend="184"/>
-        <references refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" compoundref="wxforms_8c" startline="48" endline="67">app_getxmldoc</references>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="197" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="197" bodyend="236"/>
+        <references refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" compoundref="wxforms_8c" startline="56" endline="75">app_getxmldoc</references>
         <references refid="group___c-_a_p_i-_panel-_tab_1gae7cf11b65ccca530aecef7f7daa389e9" compoundref="wrapper_8cpp" startline="588" endline="591">dtsgui_newtabpage</references>
         <references refid="group___c-_a_p_i-_panel_1ga05cf1592d301351aa838bd23c710f3bb" compoundref="wrapper_8cpp" startline="520" endline="523">dtsgui_tabwindow</references>
-        <references refid="interface_8c_1a3a6216b44ef12f4343578439ea097c50" compoundref="interface_8c" startline="43" endline="52">get_iface_cdata</references>
-        <references refid="interface_8c_1a23ef5c5cf103f36dd179c5625f8f8576" compoundref="interface_8c" startline="63" endline="75">get_newiface_data</references>
-        <references refid="interface_8c_1adcfa585026374cce3c2443ea55cebc25" compoundref="interface_8c" startline="137" endline="142">network_iface_new_pane_cb</references>
-        <references refid="interface_8c_1aec69e5698c53680c3551eeb9e05cbaf6" compoundref="interface_8c" startline="123" endline="135">network_iface_pane_cb</references>
+        <references refid="group___d_t_s-_a_p_p-_iface_1ga3a6216b44ef12f4343578439ea097c50" compoundref="interface_8c" startline="62" endline="71">get_iface_cdata</references>
+        <references refid="group___d_t_s-_a_p_p-_iface_1ga23ef5c5cf103f36dd179c5625f8f8576" compoundref="interface_8c" startline="90" endline="102">get_newiface_data</references>
+        <references refid="group___d_t_s-_a_p_p-_iface_1gadcfa585026374cce3c2443ea55cebc25" compoundref="interface_8c" startline="181" endline="189">network_iface_new_pane_cb</references>
+        <references refid="group___d_t_s-_a_p_p-_iface_1gaec69e5698c53680c3551eeb9e05cbaf6" compoundref="interface_8c" startline="164" endline="176">network_iface_pane_cb</references>
         <references refid="group___c_o_r_e_1ga4ef37ee1286eb68a9f5663813f134be2" compoundref="dtsgui_8h" startline="271">wx_PANEL_BUTTON_ACTION</references>
-        <referencedby refid="private_8h_1a2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="189" endline="217">config_menu</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="240" endline="268">config_menu</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Interface configuration panel. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <programlisting>
@@ -320,172 +453,173 @@
 <codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
 <codeline lineno="17"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dtsgui_8h" kindref="compound" tooltip="Main include file for the GUI Library.">dtsgui.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="private_8h" kindref="compound">private.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="structnew__iface__data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnew__iface__data" kindref="compound">new_iface_data</ref><sp/>{</highlight></codeline>
-<codeline lineno="27" refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c_o_r_e_1ga29c463cda54f69beb273c77e1aa7ccef" kindref="member" tooltip="Define tabview as void* it is not exported to API.">dtsgui_tabview</ref><sp/><ref refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" kindref="member">tv</ref>;</highlight></codeline>
-<codeline lineno="28" refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*<ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member">xmldoc</ref>;</highlight></codeline>
-<codeline lineno="29"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31" refid="structiface__cdata" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound">iface_cdata</ref><sp/>{</highlight></codeline>
-<codeline lineno="32" refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member">name</ref>;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight></codeline>
-<codeline lineno="35" refid="interface_8c_1af0850a1d3d424533abf6f42eb7603b58" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_8c_1af0850a1d3d424533abf6f42eb7603b58" kindref="member">free_iface_cdata</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound">iface_cdata</ref><sp/>*cdata<sp/>=<sp/>data;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cdata-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member">name</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)cdata-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member">name</ref>);</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43" refid="interface_8c_1a3a6216b44ef12f4343578439ea097c50" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound">iface_cdata</ref><sp/>*<ref refid="interface_8c_1a3a6216b44ef12f4343578439ea097c50" kindref="member">get_iface_cdata</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*val)<sp/>{</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound">iface_cdata</ref><sp/>*cd;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(cd<sp/>=<sp/>objalloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*cd),<sp/><ref refid="interface_8c_1af0850a1d3d424533abf6f42eb7603b58" kindref="member">free_iface_cdata</ref>)))<sp/>{</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dtsgui_8h" kindref="compound" tooltip="Main include file for the GUI Library.">dtsgui.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="private_8h" kindref="compound" tooltip="Main application private includes.">private.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="structnew__iface__data" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnew__iface__data" kindref="compound" tooltip="Structure containing treeview and xmldoc for creating new tab.">new_iface_data</ref><sp/>{</highlight></codeline>
+<codeline lineno="39" refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c_o_r_e_1ga29c463cda54f69beb273c77e1aa7ccef" kindref="member" tooltip="Define tabview as void* it is not exported to API.">dtsgui_tabview</ref><sp/><ref refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" kindref="member" tooltip="Tabview to add new tab too.">tv</ref>;</highlight></codeline>
+<codeline lineno="41" refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*<ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member" tooltip="XML Document to insert new node into.">xmldoc</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="structiface__cdata" refkind="compound"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound" tooltip="Pretty pointless structure holding interface name.">iface_cdata</ref><sp/>{</highlight></codeline>
+<codeline lineno="47" refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member" tooltip="Name of new interface.">name</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>ALLOC_CONST(cd-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member">name</ref>,<sp/>val);</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cd;</highlight></codeline>
-<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54" refid="interface_8c_1ad806ada5b6aa10cb8e8b21af8fe03c33" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_8c_1ad806ada5b6aa10cb8e8b21af8fe03c33" kindref="member">free_newiface_data</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnew__iface__data" kindref="compound">new_iface_data</ref><sp/>*nd<sp/>=<sp/>data;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nd-&gt;<ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member">xmldoc</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(nd-&gt;<ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member">xmldoc</ref>);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63" refid="interface_8c_1a23ef5c5cf103f36dd179c5625f8f8576" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnew__iface__data" kindref="compound">new_iface_data</ref><sp/>*<ref refid="interface_8c_1a23ef5c5cf103f36dd179c5625f8f8576" kindref="member">get_newiface_data</ref>(<ref refid="group___c_o_r_e_1ga29c463cda54f69beb273c77e1aa7ccef" kindref="member" tooltip="Define tabview as void* it is not exported to API.">dtsgui_tabview</ref><sp/><ref refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" kindref="member">tv</ref>,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_doc<sp/>*<ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member">xmldoc</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnew__iface__data" kindref="compound">new_iface_data</ref><sp/>*nd;</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(nd<sp/>=<sp/>objalloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*nd),<sp/><ref refid="interface_8c_1ad806ada5b6aa10cb8e8b21af8fe03c33" kindref="member">free_newiface_data</ref>)))<sp/>{</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(xmldoc<sp/>&amp;&amp;<sp/>objref(xmldoc))<sp/>{</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nd-&gt;<ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member">xmldoc</ref><sp/>=<sp/><ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member">xmldoc</ref>;</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>nd-&gt;<ref refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" kindref="member">tv</ref><sp/>=<sp/><ref refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" kindref="member">tv</ref>;</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>nd;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77" refid="interface_8c_1ad174419104751f817b6b094628bd9846" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_8c_1ad174419104751f817b6b094628bd9846" kindref="member">handle_newxmltabpane</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_doc<sp/>*<ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member">xmldoc</ref>,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_node<sp/>*xn,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*tdata,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**cdata,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*last)<sp/>{</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound">iface_cdata</ref><sp/>*ndat<sp/>=<sp/>NULL;</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(xn-&gt;value<sp/>&amp;&amp;<sp/>(ndat<sp/>=<sp/><ref refid="interface_8c_1a3a6216b44ef12f4343578439ea097c50" kindref="member">get_iface_cdata</ref>(xn-&gt;value)))<sp/>{</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cdata[0]<sp/>=<sp/>ndat;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">/*update<sp/>data<sp/>and<sp/>let<sp/>system<sp/>continue<sp/>by<sp/>&quot;skiping*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86" refid="interface_8c_1a2079939d5d21847b07c782120206b7ce" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="interface_8c_1a2079939d5d21847b07c782120206b7ce" kindref="member">handle_updatetabpane</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/>p,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>event,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound">iface_cdata</ref><sp/>*cdata<sp/>=<sp/>data;</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member">name</ref>;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>!=<sp/><ref refid="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a331937b86eb259d1d84728d28fbed79d" kindref="member" tooltip="Button press event.">wx_PANEL_EVENT_BUTTON</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(event)<sp/>{</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca6ce91176e6c929e87d7acbd000d07f79" kindref="member" tooltip="A Affirmative button.">wx_PANEL_EVENT_BUTTON_YES</ref>:</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302ecadb8742f8472eb90558cfbf8e3914553b" kindref="member" tooltip="A Cancel/No/Undo button.">wx_PANEL_EVENT_BUTTON_NO</ref>:</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!cdata<sp/>||<sp/>!(name<sp/>=<sp/><ref refid="group___c-_a_p_i-_panel-_items_1ga37f578498eb38e545906898e7250e6bb" kindref="member" tooltip="Helper function to return a value of a item. This function finds a value by name returning the value...">dtsgui_findvalue</ref>(p,<sp/></highlight><highlight class="stringliteral">&quot;iface&quot;</highlight><highlight class="normal">)))<sp/>{</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>objlock(cdata);</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cdata-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member">name</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)cdata-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member">name</ref>);</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cdata-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member">name</ref><sp/>=<sp/>NULL;</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>ALLOC_CONST(cdata-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member">name</ref>,<sp/>name);</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>objunlock(cdata);</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((name<sp/>=<sp/><ref refid="group___c-_a_p_i-_panel-_items_1ga37f578498eb38e545906898e7250e6bb" kindref="member" tooltip="Helper function to return a value of a item. This function finds a value by name returning the value...">dtsgui_findvalue</ref>(p,<sp/></highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">)))<sp/>{</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_panel_1gad561196144c72953e31b83aff17054e5" kindref="member" tooltip="Update the status bar message of panel.">dtsgui_setstatus</ref>(p,<sp/>name);</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)name);</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
-<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="123" refid="interface_8c_1aec69e5698c53680c3551eeb9e05cbaf6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_8c_1aec69e5698c53680c3551eeb9e05cbaf6" kindref="member">network_iface_pane_cb</ref>(<ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/>p,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound">iface_cdata</ref><sp/>*cdata<sp/>=<sp/>data;</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*iface;</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*xpre<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;/config/IP/Interfaces&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52" refid="group___d_t_s-_a_p_p-_iface_1gaf0850a1d3d424533abf6f42eb7603b58" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group___d_t_s-_a_p_p-_iface_1gaf0850a1d3d424533abf6f42eb7603b58" kindref="member" tooltip="Relase references held by structure before free.">free_iface_cdata</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound" tooltip="Pretty pointless structure holding interface name.">iface_cdata</ref><sp/>*cdata<sp/>=<sp/>data;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cdata-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member" tooltip="Name of new interface.">name</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)cdata-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member" tooltip="Name of new interface.">name</ref>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="group___d_t_s-_a_p_p-_iface_1ga3a6216b44ef12f4343578439ea097c50" refkind="member"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound" tooltip="Pretty pointless structure holding interface name.">iface_cdata</ref><sp/>*<ref refid="group___d_t_s-_a_p_p-_iface_1ga3a6216b44ef12f4343578439ea097c50" kindref="member" tooltip="Allocate new iface_cdata structure.">get_iface_cdata</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*val)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound" tooltip="Pretty pointless structure holding interface name.">iface_cdata</ref><sp/>*cd;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(cd<sp/>=<sp/>objalloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*cd),<sp/><ref refid="group___d_t_s-_a_p_p-_iface_1gaf0850a1d3d424533abf6f42eb7603b58" kindref="member" tooltip="Relase references held by structure before free.">free_iface_cdata</ref>)))<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>ALLOC_CONST(cd-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member" tooltip="Name of new interface.">name</ref>,<sp/>val);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cd;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="group___d_t_s-_a_p_p-_iface_1gad806ada5b6aa10cb8e8b21af8fe03c33" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group___d_t_s-_a_p_p-_iface_1gad806ada5b6aa10cb8e8b21af8fe03c33" kindref="member" tooltip="Release references held by structure before free.">free_newiface_data</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnew__iface__data" kindref="compound" tooltip="Structure containing treeview and xmldoc for creating new tab.">new_iface_data</ref><sp/>*nd<sp/>=<sp/>data;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nd-&gt;<ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member" tooltip="XML Document to insert new node into.">xmldoc</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(nd-&gt;<ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member" tooltip="XML Document to insert new node into.">xmldoc</ref>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="group___d_t_s-_a_p_p-_iface_1ga23ef5c5cf103f36dd179c5625f8f8576" refkind="member"><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnew__iface__data" kindref="compound" tooltip="Structure containing treeview and xmldoc for creating new tab.">new_iface_data</ref><sp/>*<ref refid="group___d_t_s-_a_p_p-_iface_1ga23ef5c5cf103f36dd179c5625f8f8576" kindref="member" tooltip="Allocate and return a new_iface_data structure.">get_newiface_data</ref>(<ref refid="group___c_o_r_e_1ga29c463cda54f69beb273c77e1aa7ccef" kindref="member" tooltip="Define tabview as void* it is not exported to API.">dtsgui_tabview</ref><sp/><ref refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" kindref="member" tooltip="Tabview to add new tab too.">tv</ref>,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_doc<sp/>*<ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member" tooltip="XML Document to insert new node into.">xmldoc</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnew__iface__data" kindref="compound" tooltip="Structure containing treeview and xmldoc for creating new tab.">new_iface_data</ref><sp/>*nd;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(nd<sp/>=<sp/>objalloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(*nd),<sp/><ref refid="group___d_t_s-_a_p_p-_iface_1gad806ada5b6aa10cb8e8b21af8fe03c33" kindref="member" tooltip="Release references held by structure before free.">free_newiface_data</ref>)))<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(xmldoc<sp/>&amp;&amp;<sp/>objref(xmldoc))<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nd-&gt;<ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member" tooltip="XML Document to insert new node into.">xmldoc</ref><sp/>=<sp/><ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member" tooltip="XML Document to insert new node into.">xmldoc</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>nd-&gt;<ref refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" kindref="member" tooltip="Tabview to add new tab too.">tv</ref><sp/>=<sp/><ref refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" kindref="member" tooltip="Tabview to add new tab too.">tv</ref>;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>nd;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="group___d_t_s-_a_p_p-_iface_1gad174419104751f817b6b094628bd9846" refkind="member"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group___d_t_s-_a_p_p-_iface_1gad174419104751f817b6b094628bd9846" kindref="member" tooltip="Configure panel configuration data.">handle_newxmltabpane</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_doc<sp/>*<ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member" tooltip="XML Document to insert new node into.">xmldoc</ref>,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>xml_node<sp/>*xn,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*tdata,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**cdata,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*last)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound" tooltip="Pretty pointless structure holding interface name.">iface_cdata</ref><sp/>*ndat<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(xn-&gt;value<sp/>&amp;&amp;<sp/>(ndat<sp/>=<sp/><ref refid="group___d_t_s-_a_p_p-_iface_1ga3a6216b44ef12f4343578439ea097c50" kindref="member" tooltip="Allocate new iface_cdata structure.">get_iface_cdata</ref>(xn-&gt;value)))<sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cdata[0]<sp/>=<sp/>ndat;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="group___d_t_s-_a_p_p-_iface_1ga2079939d5d21847b07c782120206b7ce" refkind="member"><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group___d_t_s-_a_p_p-_iface_1ga2079939d5d21847b07c782120206b7ce" kindref="member" tooltip="Event handler callback that will only check the interface name and pass handling to default handler...">handle_updatetabpane</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/>p,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>event,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound" tooltip="Pretty pointless structure holding interface name.">iface_cdata</ref><sp/>*cdata<sp/>=<sp/>data;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member" tooltip="Name of new interface.">name</ref>;</highlight></codeline>
 <codeline lineno="127"><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>objlock(cdata);</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>iface<sp/>=<sp/>cdata-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member">name</ref>;</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>objunlock(cdata);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>!=<sp/><ref refid="group___c_o_r_e_1gga54d7edaba9c015c3b5310ed3080b82e6a331937b86eb259d1d84728d28fbed79d" kindref="member" tooltip="Button press event.">wx_PANEL_EVENT_BUTTON</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" kindref="member" tooltip="Place a XML text element on the panel.">dtsgui_xmltextbox</ref>(p,<sp/></highlight><highlight class="stringliteral">&quot;Name&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">,<sp/>xpre,<sp/></highlight><highlight class="stringliteral">&quot;Interface&quot;</highlight><highlight class="normal">,<sp/>NULL,<sp/>iface,<sp/></highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="netconfig_8c_1ab77c80061336502da4c2cc2d2c11f4a0" kindref="member">network_iface_pane</ref>(p,<sp/>xpre,<sp/>iface);</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_panel_1gaa85445ee6c9a2c24d76824bb67cc2ab2" kindref="member" tooltip="Set event callback function for panel.">dtsgui_setevcallback</ref>(p,<sp/><ref refid="interface_8c_1a2079939d5d21847b07c782120206b7ce" kindref="member">handle_updatetabpane</ref>,<sp/>cdata);</highlight></codeline>
-<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"></highlight></codeline>
-<codeline lineno="137" refid="interface_8c_1adcfa585026374cce3c2443ea55cebc25" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="interface_8c_1adcfa585026374cce3c2443ea55cebc25" kindref="member">network_iface_new_pane_cb</ref>(<ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/>p,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnew__iface__data" kindref="compound">new_iface_data</ref><sp/>*nd<sp/>=<sp/>data;</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="netconfig_8c_1a3d43e57bb96cf8bd603872099c3bc038" kindref="member">network_iface_new_pane</ref>(p,<sp/>data);</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_panel-_tab_1gad3333a23e28993072b5ef4feed86778c" kindref="member" tooltip="Helper function to handle &amp;quot;Adding&amp;quot; a new tab from a existing tab.">dtsgui_newxmltabpane</ref>(nd-&gt;<ref refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" kindref="member">tv</ref>,<sp/>p,<sp/></highlight><highlight class="stringliteral">&quot;/config/IP/Interfaces&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Interface&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;iface&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">,<sp/><ref refid="interface_8c_1ad174419104751f817b6b094628bd9846" kindref="member">handle_newxmltabpane</ref>,<sp/><ref refid="interface_8c_1aec69e5698c53680c3551eeb9e05cbaf6" kindref="member">network_iface_pane_cb</ref>,<sp/>NULL,<sp/>nd-&gt;<ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member">xmldoc</ref>,<sp/>nd);</highlight></codeline>
-<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(event)<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302eca6ce91176e6c929e87d7acbd000d07f79" kindref="member" tooltip="A Affirmative button.">wx_PANEL_EVENT_BUTTON_YES</ref>:</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="group___c_o_r_e_1gga5082bae7f0b5d2b7d715e40450f302ecadb8742f8472eb90558cfbf8e3914553b" kindref="member" tooltip="A Cancel/No/Undo button.">wx_PANEL_EVENT_BUTTON_NO</ref>:</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!cdata<sp/>||<sp/>!(name<sp/>=<sp/><ref refid="group___c-_a_p_i-_panel-_items_1ga37f578498eb38e545906898e7250e6bb" kindref="member" tooltip="Helper function to return a value of a item. This function finds a value by name returning the value...">dtsgui_findvalue</ref>(p,<sp/></highlight><highlight class="stringliteral">&quot;iface&quot;</highlight><highlight class="normal">)))<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="144"><highlight class="normal"></highlight></codeline>
-<codeline lineno="145" refid="private_8h_1abf43f59e582eee9f27734b14c8307819" refkind="member"><highlight class="normal"><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/><ref refid="interface_8c_1abf43f59e582eee9f27734b14c8307819" kindref="member">iface_config</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c_o_r_e_1ga29c463cda54f69beb273c77e1aa7ccef" kindref="member" tooltip="Define tabview as void* it is not exported to API.">dtsgui_tabview</ref><sp/>tabv;</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnew__iface__data" kindref="compound">new_iface_data</ref><sp/>*nd;</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*xmldoc;</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_search<sp/>*xp;</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_node<sp/>*xn;</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name;</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound">iface_cdata</ref><sp/>*cdata;</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*iter<sp/>=<sp/>NULL;</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"></highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(xmldoc<sp/>=<sp/><ref refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" kindref="member">app_getxmldoc</ref>(dtsgui)))<sp/>{</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"></highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(xp<sp/>=<sp/>xml_xpath(xmldoc,<sp/></highlight><highlight class="stringliteral">&quot;/config/IP/Interfaces/Interface&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">)))<sp/>{</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"></highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>tabv<sp/>=<sp/><ref refid="group___c-_a_p_i-_panel_1ga05cf1592d301351aa838bd23c710f3bb" kindref="member" tooltip="Create a tab view panel.">dtsgui_tabwindow</ref>(dtsgui,<sp/>title,<sp/>NULL);</highlight></codeline>
-<codeline lineno="165"><highlight class="normal"></highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(xn<sp/>=<sp/>xml_getfirstnode(xp,<sp/>&amp;iter);<sp/>xn;<sp/>xn<sp/>=<sp/>xml_getnextnode(iter))<sp/>{</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name<sp/>=<sp/>xml_getattr(xn,<sp/></highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cdata<sp/>=<sp/><ref refid="interface_8c_1a3a6216b44ef12f4343578439ea097c50" kindref="member">get_iface_cdata</ref>(xn-&gt;value);</highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_panel-_tab_1gae7cf11b65ccca530aecef7f7daa389e9" kindref="member" tooltip="Create and append a tab to the view.">dtsgui_newtabpage</ref>(tabv,<sp/>name,<sp/><ref refid="group___c_o_r_e_1ga4ef37ee1286eb68a9f5663813f134be2" kindref="member" tooltip="Shortcut flags for action buttons.">wx_PANEL_BUTTON_ACTION</ref>,<sp/>NULL,<sp/>xmldoc,<sp/><ref refid="interface_8c_1aec69e5698c53680c3551eeb9e05cbaf6" kindref="member">network_iface_pane_cb</ref>,<sp/>cdata);</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(cdata);</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(xn);</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"></highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>nd<sp/>=<sp/><ref refid="interface_8c_1a23ef5c5cf103f36dd179c5625f8f8576" kindref="member">get_newiface_data</ref>(tabv,<sp/>xmldoc);</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_panel-_tab_1gae7cf11b65ccca530aecef7f7daa389e9" kindref="member" tooltip="Create and append a tab to the view.">dtsgui_newtabpage</ref>(tabv,<sp/></highlight><highlight class="stringliteral">&quot;Add&quot;</highlight><highlight class="normal">,<sp/><ref refid="group___c_o_r_e_1ga4ef37ee1286eb68a9f5663813f134be2" kindref="member" tooltip="Shortcut flags for action buttons.">wx_PANEL_BUTTON_ACTION</ref>,<sp/>NULL,<sp/>xmldoc,<sp/><ref refid="interface_8c_1adcfa585026374cce3c2443ea55cebc25" kindref="member">network_iface_new_pane_cb</ref>,<sp/>nd);</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(nd);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>objlock(cdata);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cdata-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member" tooltip="Name of new interface.">name</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)cdata-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member" tooltip="Name of new interface.">name</ref>);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cdata-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member" tooltip="Name of new interface.">name</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>ALLOC_CONST(cdata-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member" tooltip="Name of new interface.">name</ref>,<sp/>name);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>objunlock(cdata);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((name<sp/>=<sp/><ref refid="group___c-_a_p_i-_panel-_items_1ga37f578498eb38e545906898e7250e6bb" kindref="member" tooltip="Helper function to return a value of a item. This function finds a value by name returning the value...">dtsgui_findvalue</ref>(p,<sp/></highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">)))<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_panel_1gad561196144c72953e31b83aff17054e5" kindref="member" tooltip="Update the status bar message of panel.">dtsgui_setstatus</ref>(p,<sp/>name);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)name);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="group___d_t_s-_a_p_p-_iface_1gaec69e5698c53680c3551eeb9e05cbaf6" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group___d_t_s-_a_p_p-_iface_1gaec69e5698c53680c3551eeb9e05cbaf6" kindref="member" tooltip="Callback called to configure a interface pane.">network_iface_pane_cb</ref>(<ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/>p,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound" tooltip="Pretty pointless structure holding interface name.">iface_cdata</ref><sp/>*cdata<sp/>=<sp/>data;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*iface;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*xpre<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;/config/IP/Interfaces&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>objlock(cdata);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>iface<sp/>=<sp/>cdata-&gt;<ref refid="structiface__cdata_1afbf1d003b7573fb72ce7a31b527557cb" kindref="member" tooltip="Name of new interface.">name</ref>;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>objunlock(cdata);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" kindref="member" tooltip="Place a XML text element on the panel.">dtsgui_xmltextbox</ref>(p,<sp/></highlight><highlight class="stringliteral">&quot;Name&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">,<sp/>xpre,<sp/></highlight><highlight class="stringliteral">&quot;Interface&quot;</highlight><highlight class="normal">,<sp/>NULL,<sp/>iface,<sp/></highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___d_t_s-_a_p_p-_tree_1gab77c80061336502da4c2cc2d2c11f4a0" kindref="member" tooltip="Network interface stub shared with interface config.">network_iface_pane</ref>(p,<sp/>xpre,<sp/>iface);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_panel_1gaa85445ee6c9a2c24d76824bb67cc2ab2" kindref="member" tooltip="Set event callback function for panel.">dtsgui_setevcallback</ref>(p,<sp/><ref refid="group___d_t_s-_a_p_p-_iface_1ga2079939d5d21847b07c782120206b7ce" kindref="member" tooltip="Event handler callback that will only check the interface name and pass handling to default handler...">handle_updatetabpane</ref>,<sp/>cdata);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"></highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(iter)<sp/>{</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(iter);</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xp);</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tabv;</highlight></codeline>
-<codeline lineno="184"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="181" refid="group___d_t_s-_a_p_p-_iface_1gadcfa585026374cce3c2443ea55cebc25" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group___d_t_s-_a_p_p-_iface_1gadcfa585026374cce3c2443ea55cebc25" kindref="member" tooltip="Callback called for the &amp;quot;New&amp;quot; interface pane.">network_iface_new_pane_cb</ref>(<ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/>p,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnew__iface__data" kindref="compound" tooltip="Structure containing treeview and xmldoc for creating new tab.">new_iface_data</ref><sp/>*nd<sp/>=<sp/>data;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___d_t_s-_a_p_p-_tree_1gac142d92a078e869acbd50ce58a410f51" kindref="member" tooltip="Network interface stub shared with interface config.">network_iface_new_pane</ref>(p);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_panel-_tab_1gad3333a23e28993072b5ef4feed86778c" kindref="member" tooltip="Helper function to handle &amp;quot;Adding&amp;quot; a new tab from a existing tab.">dtsgui_newxmltabpane</ref>(nd-&gt;<ref refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" kindref="member" tooltip="Tabview to add new tab too.">tv</ref>,<sp/>p,<sp/></highlight><highlight class="stringliteral">&quot;/config/IP/Interfaces&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Interface&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;iface&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">,<sp/><ref refid="group___d_t_s-_a_p_p-_iface_1gad174419104751f817b6b094628bd9846" kindref="member" tooltip="Configure panel configuration data.">handle_newxmltabpane</ref>,<sp/><ref refid="group___d_t_s-_a_p_p-_iface_1gaec69e5698c53680c3551eeb9e05cbaf6" kindref="member" tooltip="Callback called to configure a interface pane.">network_iface_pane_cb</ref>,<sp/>NULL,<sp/>nd-&gt;<ref refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" kindref="member" tooltip="XML Document to insert new node into.">xmldoc</ref>,<sp/>nd);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197" refid="group___d_t_s-_a_p_p-_iface_1gabf43f59e582eee9f27734b14c8307819" refkind="member"><highlight class="normal"><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/><ref refid="group___d_t_s-_a_p_p-_iface_1gabf43f59e582eee9f27734b14c8307819" kindref="member" tooltip="Callback called when the interface configuration link is selected.">iface_config</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c_o_r_e_1ga29c463cda54f69beb273c77e1aa7ccef" kindref="member" tooltip="Define tabview as void* it is not exported to API.">dtsgui_tabview</ref><sp/>tabv;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnew__iface__data" kindref="compound" tooltip="Structure containing treeview and xmldoc for creating new tab.">new_iface_data</ref><sp/>*nd;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*xmldoc;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_search<sp/>*xp;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_node<sp/>*xn;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structiface__cdata" kindref="compound" tooltip="Pretty pointless structure holding interface name.">iface_cdata</ref><sp/>*cdata;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*iter<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(xmldoc<sp/>=<sp/><ref refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" kindref="member" tooltip="return reference to xmldoc stored in userdata.">app_getxmldoc</ref>(dtsgui)))<sp/>{</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(xp<sp/>=<sp/>xml_xpath(xmldoc,<sp/></highlight><highlight class="stringliteral">&quot;/config/IP/Interfaces/Interface&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">)))<sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>tabv<sp/>=<sp/><ref refid="group___c-_a_p_i-_panel_1ga05cf1592d301351aa838bd23c710f3bb" kindref="member" tooltip="Create a tab view panel.">dtsgui_tabwindow</ref>(dtsgui,<sp/>title,<sp/>NULL);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(xn<sp/>=<sp/>xml_getfirstnode(xp,<sp/>&amp;iter);<sp/>xn;<sp/>xn<sp/>=<sp/>xml_getnextnode(iter))<sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>name<sp/>=<sp/>xml_getattr(xn,<sp/></highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cdata<sp/>=<sp/><ref refid="group___d_t_s-_a_p_p-_iface_1ga3a6216b44ef12f4343578439ea097c50" kindref="member" tooltip="Allocate new iface_cdata structure.">get_iface_cdata</ref>(xn-&gt;value);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_panel-_tab_1gae7cf11b65ccca530aecef7f7daa389e9" kindref="member" tooltip="Create and append a tab to the view.">dtsgui_newtabpage</ref>(tabv,<sp/>name,<sp/><ref refid="group___c_o_r_e_1ga4ef37ee1286eb68a9f5663813f134be2" kindref="member" tooltip="Shortcut flags for action buttons.">wx_PANEL_BUTTON_ACTION</ref>,<sp/>NULL,<sp/>xmldoc,<sp/><ref refid="group___d_t_s-_a_p_p-_iface_1gaec69e5698c53680c3551eeb9e05cbaf6" kindref="member" tooltip="Callback called to configure a interface pane.">network_iface_pane_cb</ref>,<sp/>cdata);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(cdata);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(xn);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>nd<sp/>=<sp/><ref refid="group___d_t_s-_a_p_p-_iface_1ga23ef5c5cf103f36dd179c5625f8f8576" kindref="member" tooltip="Allocate and return a new_iface_data structure.">get_newiface_data</ref>(tabv,<sp/>xmldoc);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_panel-_tab_1gae7cf11b65ccca530aecef7f7daa389e9" kindref="member" tooltip="Create and append a tab to the view.">dtsgui_newtabpage</ref>(tabv,<sp/></highlight><highlight class="stringliteral">&quot;Add&quot;</highlight><highlight class="normal">,<sp/><ref refid="group___c_o_r_e_1ga4ef37ee1286eb68a9f5663813f134be2" kindref="member" tooltip="Shortcut flags for action buttons.">wx_PANEL_BUTTON_ACTION</ref>,<sp/>NULL,<sp/>xmldoc,<sp/><ref refid="group___d_t_s-_a_p_p-_iface_1gadcfa585026374cce3c2443ea55cebc25" kindref="member" tooltip="Callback called for the &amp;quot;New&amp;quot; interface pane.">network_iface_new_pane_cb</ref>,<sp/>nd);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(nd);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(iter)<sp/>{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(iter);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xp);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tabv;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c"/>
   </compounddef>

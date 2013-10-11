@@ -59,19 +59,19 @@
     </incdepgraph>
     <innerclass refid="class_d_t_s_a_p_p_tool_bar" prot="public">DTSAPPToolBar</innerclass>
       <sectiondef kind="define">
-      <memberdef kind="define" id="toolbar_8cpp_1adc3e6af7bc4df899bca001c49d7f5e07" prot="public" static="no">
+      <memberdef kind="define" id="group___d_t_s-_a_p_p-_toolbar_1gadc3e6af7bc4df899bca001c49d7f5e07" prot="public" static="no">
         <name>__DTS_C_API</name>
         <briefdescription>
-        </briefdescription>
+<para>Allow access to the C API from C++. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" line="19" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" bodystart="19" bodyend="-1"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" bodystart="31" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="toolbar_8cpp_1ab33c9c3228455b45318900a842c7a693" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_toolbar_1gab33c9c3228455b45318900a842c7a693" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
         <definition>void* app_toolbar</definition>
         <argsstring>(struct dtsgui *dtsgui, void *pw, long style, int id, const char *name, void *data)</argsstring>
@@ -101,17 +101,62 @@
           <declname>data</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Callback called when the toolbar is to be created. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="see"><para><ref refid="group___c_o_r_e_1ga53eefce4ace6a7d72e49e9ae4c520226" kindref="member">dtsgui_toolbar_create</ref> </para><simplesectsep/><para><ref refid="class_d_t_s_frame_1a1fe29f6d56f11d1702a372416a659e3e" kindref="member">DTSFrame::SetupToolbar()</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parent window (The application frame) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>style</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Style required by application. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window id to be used. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name to be used. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Userdata reference supplied when configuring callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>wxToolbar. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" line="111" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" bodystart="111" bodyend="117"/>
-        <referencedby refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" compoundref="wxforms_8c" startline="110" endline="123">guiconfig_cb</referencedby>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" line="88" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp" bodystart="88" bodyend="94"/>
+        <referencedby refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" compoundref="wxforms_8c" startline="130" endline="143">guiconfig_cb</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Application toolbar. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <programlisting>
@@ -133,105 +178,104 @@
 <codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
 <codeline lineno="17"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19" refid="toolbar_8cpp_1adc3e6af7bc4df899bca001c49d7f5e07" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__DTS_C_API</highlight></codeline>
-<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wx/toolbar.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wx/combobox.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wx/stattext.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dtsgui_8h" kindref="compound" tooltip="Main include file for the GUI Library.">dtsgui.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="private_8h" kindref="compound">private.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_d_t_s_x_m_l_combo_box_8h" kindref="compound">DTSXMLComboBox.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30" refid="class_d_t_s_a_p_p_tool_bar" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_d_t_s_a_p_p_tool_bar" kindref="compound">DTSAPPToolBar</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>wxToolBar<sp/>{</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a683e5a1240a0721dc0c77c9c6545e147" kindref="member">DTSAPPToolBar</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>*parent,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>style,<sp/>wxWindowID<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wxString<sp/>name,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a46946611cdeeb58af37da61ecf1d8d07" kindref="member">~DTSAPPToolBar</ref>();</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">curl_post<sp/>*<ref refid="class_d_t_s_a_p_p_tool_bar_1a3a6b7d6e0c40ace8cb298cebb2d108d4" kindref="member">GetPostInfo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString&amp;<sp/>val);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="36" refid="class_d_t_s_a_p_p_tool_bar_1abb04f52cac8e987c0ad12eba22f97957" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1abb04f52cac8e987c0ad12eba22f97957" kindref="member">itemid</ref>;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" kindref="member">HandleEvent</ref>(wxCommandEvent<sp/>&amp;event);</highlight></codeline>
-<codeline lineno="38" refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box" kindref="compound">DTSXMLComboBox</ref><sp/>*<ref refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" kindref="member">server</ref>;</highlight></codeline>
-<codeline lineno="39" refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="pitems_8h_1abd3381f4db4e2b967199254324c78f71" kindref="member">wxComboBox</ref><sp/>*<ref refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" kindref="member">proto</ref>;</highlight></codeline>
-<codeline lineno="40" refid="class_d_t_s_a_p_p_tool_bar_1a299c68d2f3d838a1c8d04a94a71afd5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">dtsgui<sp/>*<ref refid="class_d_t_s_a_p_p_tool_bar_1a299c68d2f3d838a1c8d04a94a71afd5d" kindref="member">dtsgui</ref>;</highlight></codeline>
-<codeline lineno="41"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44" refid="class_d_t_s_a_p_p_tool_bar_1a683e5a1240a0721dc0c77c9c6545e147" refkind="member"><highlight class="normal"><ref refid="class_d_t_s_a_p_p_tool_bar_1a683e5a1240a0721dc0c77c9c6545e147" kindref="member">DTSAPPToolBar::DTSAPPToolBar</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>*parent,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>style,<sp/>wxWindowID<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wxString<sp/>name,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>servid;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dtsgui<sp/>&amp;&amp;<sp/>objref(dtsgui))<sp/>{</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;dtsgui<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">dtsgui*)dtsgui;</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;dtsgui<sp/>=<sp/>NULL;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1abb04f52cac8e987c0ad12eba22f97957" kindref="member">itemid</ref><sp/>=<sp/>wxID_AUTO_LOWEST;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>Create(parent,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wxDefaultPosition,<sp/>wxDefaultSize,<sp/>style,<sp/>name);</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" kindref="member">proto</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="pitems_8h_1abd3381f4db4e2b967199254324c78f71" kindref="member">wxComboBox</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1abb04f52cac8e987c0ad12eba22f97957" kindref="member">itemid</ref>++,<sp/>wxEmptyString,<sp/>wxDefaultPosition,<sp/>wxDefaultSize,<sp/>0,<sp/>NULL,<sp/>wxCB_READONLY);</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>servid<sp/>=<sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1abb04f52cac8e987c0ad12eba22f97957" kindref="member">itemid</ref>++;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" kindref="member">server</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_x_m_l_combo_box" kindref="compound">DTSXMLComboBox</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>servid,<sp/></highlight><highlight class="stringliteral">&quot;https://sip1.speakezi.co.za:666/auth/test.php&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;/servers/Server&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_d_t_s_a_p_p_tool_bar_1a3a6b7d6e0c40ace8cb298cebb2d108d4" kindref="member">DTSAPPToolBar::GetPostInfo</ref>,<sp/>3);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" kindref="member">server</ref>-&gt;SetSize(wxSize(300,-1));</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_t_s_panel_8h_1a0ee20cbe771deb52d64bc265fb97ae4d" kindref="member">wxStaticText</ref><sp/>*text2<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="_d_t_s_panel_8h_1a0ee20cbe771deb52d64bc265fb97ae4d" kindref="member">wxStaticText</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>wxID_ANY,<sp/></highlight><highlight class="stringliteral">&quot;://&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_t_s_panel_8h_1a0ee20cbe771deb52d64bc265fb97ae4d" kindref="member">wxStaticText</ref><sp/>*text<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="_d_t_s_panel_8h_1a0ee20cbe771deb52d64bc265fb97ae4d" kindref="member">wxStaticText</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>wxID_ANY,<sp/></highlight><highlight class="stringliteral">&quot;Server<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>AddControl(text);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" kindref="member">proto</ref>-&gt;Append(</highlight><highlight class="stringliteral">&quot;http&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" kindref="member">proto</ref>-&gt;Append(</highlight><highlight class="stringliteral">&quot;https&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" kindref="member">proto</ref>-&gt;Append(</highlight><highlight class="stringliteral">&quot;https<sp/>[:666]&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" kindref="member">proto</ref>-&gt;SetSelection(2);</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>AddControl(<ref refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" kindref="member">proto</ref>);</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>AddControl(text2);</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>AddControl(<ref refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" kindref="member">server</ref>);</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>AddStretchableSpace();</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>Bind(wxEVT_TEXT_ENTER,<sp/>&amp;<ref refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" kindref="member">DTSAPPToolBar::HandleEvent</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>servid,<sp/>servid,<sp/>NULL);</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>Bind(wxEVT_COMBOBOX,<sp/>&amp;<ref refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" kindref="member">DTSAPPToolBar::HandleEvent</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>servid,<sp/>servid,<sp/>NULL);</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>Bind(wxEVT_COMBOBOX_DROPDOWN,<sp/>&amp;<ref refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" kindref="member">DTSAPPToolBar::HandleEvent</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>servid,<sp/>servid,<sp/>NULL);</highlight></codeline>
-<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79" refid="class_d_t_s_a_p_p_tool_bar_1a46946611cdeeb58af37da61ecf1d8d07" refkind="member"><highlight class="normal"><ref refid="class_d_t_s_a_p_p_tool_bar_1a46946611cdeeb58af37da61ecf1d8d07" kindref="member">DTSAPPToolBar::~DTSAPPToolBar</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classdtsgui" kindref="compound">dtsgui</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(<ref refid="classdtsgui" kindref="compound">dtsgui</ref>);</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85" refid="class_d_t_s_a_p_p_tool_bar_1a3a6b7d6e0c40ace8cb298cebb2d108d4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">curl_post<sp/>*<ref refid="class_d_t_s_a_p_p_tool_bar_1a3a6b7d6e0c40ace8cb298cebb2d108d4" kindref="member">DTSAPPToolBar::GetPostInfo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString&amp;<sp/>val)<sp/>{</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">curl_post<sp/>*post;</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>post<sp/>=<sp/>curl_newpost();</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>curl_postitem(post,<sp/></highlight><highlight class="stringliteral">&quot;function&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;getcust&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>curl_postitem(post,<sp/></highlight><highlight class="stringliteral">&quot;search&quot;</highlight><highlight class="normal">,<sp/>val);</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>post;</highlight></codeline>
-<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95" refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" kindref="member">DTSAPPToolBar::HandleEvent</ref>(wxCommandEvent&amp;<sp/>event)<sp/>{</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>etype<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.GetEventType(),<sp/>idx;</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_node<sp/>*xn;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>idx<sp/>=<sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" kindref="member">server</ref>-&gt;GetSelection();</highlight></codeline>
+<codeline lineno="31" refid="group___d_t_s-_a_p_p-_toolbar_1gadc3e6af7bc4df899bca001c49d7f5e07" refkind="member"><highlight class="preprocessor">#define<sp/>__DTS_C_API</highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wx/toolbar.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wx/combobox.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;wx/stattext.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dtsgui_8h" kindref="compound" tooltip="Main include file for the GUI Library.">dtsgui.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="private_8h" kindref="compound" tooltip="Main application private includes.">private.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_d_t_s_x_m_l_combo_box_8h" kindref="compound">DTSXMLComboBox.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="class_d_t_s_a_p_p_tool_bar" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_d_t_s_a_p_p_tool_bar" kindref="compound" tooltip="Application toolbar class.">DTSAPPToolBar</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>wxToolBar<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a683e5a1240a0721dc0c77c9c6545e147" kindref="member" tooltip="Application toolbar.">DTSAPPToolBar</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>*parent,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>style,<sp/>wxWindowID<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wxString<sp/>name,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a46946611cdeeb58af37da61ecf1d8d07" kindref="member" tooltip="Release references held.">~DTSAPPToolBar</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">curl_post<sp/>*<ref refid="class_d_t_s_a_p_p_tool_bar_1a3a6b7d6e0c40ace8cb298cebb2d108d4" kindref="member" tooltip="Callback from DTSXMLComboBox.">GetPostInfo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString&amp;<sp/>val);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" kindref="member" tooltip="Toolbar event handler callback.">HandleEvent</ref>(wxCommandEvent<sp/>&amp;event);</highlight></codeline>
+<codeline lineno="66" refid="class_d_t_s_a_p_p_tool_bar_1abb04f52cac8e987c0ad12eba22f97957" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1abb04f52cac8e987c0ad12eba22f97957" kindref="member" tooltip="Item id incremented for each item added to toolbar.">itemid</ref>;</highlight></codeline>
+<codeline lineno="71" refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_x_m_l_combo_box" kindref="compound">DTSXMLComboBox</ref><sp/>*<ref refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" kindref="member" tooltip="URL Combo box that will populate list based on XML.">server</ref>;</highlight></codeline>
+<codeline lineno="73" refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="pitems_8h_1abd3381f4db4e2b967199254324c78f71" kindref="member">wxComboBox</ref><sp/>*<ref refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" kindref="member" tooltip="Protocol listbox.">proto</ref>;</highlight></codeline>
+<codeline lineno="75" refid="class_d_t_s_a_p_p_tool_bar_1a299c68d2f3d838a1c8d04a94a71afd5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">dtsgui<sp/>*<ref refid="class_d_t_s_a_p_p_tool_bar_1a299c68d2f3d838a1c8d04a94a71afd5d" kindref="member" tooltip="Reference to application data ptr.">dtsgui</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="group___d_t_s-_a_p_p-_toolbar_1gab33c9c3228455b45318900a842c7a693" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="group___d_t_s-_a_p_p-_toolbar_1gab33c9c3228455b45318900a842c7a693" kindref="member" tooltip="Callback called when the toolbar is to be created.">app_toolbar</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pw,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>style,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar" kindref="compound" tooltip="Application toolbar class.">DTSAPPToolBar</ref><sp/>*tb;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>tb<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_a_p_p_tool_bar" kindref="compound" tooltip="Application toolbar class.">DTSAPPToolBar</ref>(dtsgui,<sp/>(<ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref>*)pw,<sp/>style,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>name,<sp/>data);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tb;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="class_d_t_s_a_p_p_tool_bar_1a683e5a1240a0721dc0c77c9c6545e147" refkind="member"><highlight class="normal"><ref refid="class_d_t_s_a_p_p_tool_bar_1a683e5a1240a0721dc0c77c9c6545e147" kindref="member" tooltip="Application toolbar.">DTSAPPToolBar::DTSAPPToolBar</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/><ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref><sp/>*parent,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>style,<sp/>wxWindowID<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wxString<sp/>name,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>servid;</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(etype<sp/>==<sp/>wxEVT_TEXT_ENTER)<sp/>{</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">DTS_C_API::dtsgui_alert</ref>(<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Got<sp/>Me<sp/>Some<sp/>URL<sp/>ARRRRGh&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(etype<sp/>==<sp/>wxEVT_COMBOBOX)<sp/>{</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xn<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_node*)<ref refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" kindref="member">server</ref>-&gt;GetClientData(idx);</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">DTS_C_API::dtsgui_alert</ref>(<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/>wxString(</highlight><highlight class="stringliteral">&quot;Selected<sp/>IP<sp/>&quot;</highlight><highlight class="normal">).Append(xml_getattr(xn,<sp/></highlight><highlight class="stringliteral">&quot;ipaddr&quot;</highlight><highlight class="normal">)));</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((etype<sp/>==<sp/>wxEVT_COMBOBOX_DROPDOWN)<sp/>&amp;&amp;<sp/>!<ref refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" kindref="member">server</ref>-&gt;<ref refid="class_d_t_s_x_m_l_combo_box_1ab73ab96a2dddeb756b984db6e0fa9106" kindref="member">HasXMLList</ref>())<sp/>{</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">DTS_C_API::dtsgui_alert</ref>(<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Please<sp/>enter<sp/>3<sp/>or<sp/>more<sp/>characters<sp/>to<sp/>search<sp/>!&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="111" refid="toolbar_8cpp_1ab33c9c3228455b45318900a842c7a693" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="private_8h_1ab33c9c3228455b45318900a842c7a693" kindref="member">app_toolbar</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pw,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>style,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar" kindref="compound">DTSAPPToolBar</ref><sp/>*tb;</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>tb<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_a_p_p_tool_bar" kindref="compound">DTSAPPToolBar</ref>(dtsgui,<sp/>(<ref refid="evdata_8h_1a1105ebf7ed384267b36c9594fb95e3f4" kindref="member">wxWindow</ref>*)pw,<sp/>style,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>name,<sp/>data);</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tb;</highlight></codeline>
-<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(dtsgui<sp/>&amp;&amp;<sp/>objref(dtsgui))<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;dtsgui<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">dtsgui*)dtsgui;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;dtsgui<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1abb04f52cac8e987c0ad12eba22f97957" kindref="member" tooltip="Item id incremented for each item added to toolbar.">itemid</ref><sp/>=<sp/>wxID_AUTO_LOWEST;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>Create(parent,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>wxDefaultPosition,<sp/>wxDefaultSize,<sp/>style,<sp/>name);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" kindref="member" tooltip="Protocol listbox.">proto</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="pitems_8h_1abd3381f4db4e2b967199254324c78f71" kindref="member">wxComboBox</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1abb04f52cac8e987c0ad12eba22f97957" kindref="member" tooltip="Item id incremented for each item added to toolbar.">itemid</ref>++,<sp/>wxEmptyString,<sp/>wxDefaultPosition,<sp/>wxDefaultSize,<sp/>0,<sp/>NULL,<sp/>wxCB_READONLY);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>servid<sp/>=<sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1abb04f52cac8e987c0ad12eba22f97957" kindref="member" tooltip="Item id incremented for each item added to toolbar.">itemid</ref>++;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" kindref="member" tooltip="URL Combo box that will populate list based on XML.">server</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_x_m_l_combo_box" kindref="compound">DTSXMLComboBox</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>servid,<sp/></highlight><highlight class="stringliteral">&quot;https://sip1.speakezi.co.za:666/auth/test.php&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;/servers/Server&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_d_t_s_a_p_p_tool_bar_1a3a6b7d6e0c40ace8cb298cebb2d108d4" kindref="member" tooltip="Callback from DTSXMLComboBox.">DTSAPPToolBar::GetPostInfo</ref>,<sp/>3);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" kindref="member" tooltip="URL Combo box that will populate list based on XML.">server</ref>-&gt;SetSize(wxSize(300,-1));</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_t_s_panel_8h_1a0ee20cbe771deb52d64bc265fb97ae4d" kindref="member">wxStaticText</ref><sp/>*text2<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="_d_t_s_panel_8h_1a0ee20cbe771deb52d64bc265fb97ae4d" kindref="member">wxStaticText</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>wxID_ANY,<sp/></highlight><highlight class="stringliteral">&quot;://&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_d_t_s_panel_8h_1a0ee20cbe771deb52d64bc265fb97ae4d" kindref="member">wxStaticText</ref><sp/>*text<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="_d_t_s_panel_8h_1a0ee20cbe771deb52d64bc265fb97ae4d" kindref="member">wxStaticText</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>wxID_ANY,<sp/></highlight><highlight class="stringliteral">&quot;Server<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>AddControl(text);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" kindref="member" tooltip="Protocol listbox.">proto</ref>-&gt;Append(</highlight><highlight class="stringliteral">&quot;http&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" kindref="member" tooltip="Protocol listbox.">proto</ref>-&gt;Append(</highlight><highlight class="stringliteral">&quot;https&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" kindref="member" tooltip="Protocol listbox.">proto</ref>-&gt;Append(</highlight><highlight class="stringliteral">&quot;https<sp/>[:666]&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" kindref="member" tooltip="Protocol listbox.">proto</ref>-&gt;SetSelection(2);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>AddControl(<ref refid="class_d_t_s_a_p_p_tool_bar_1a4c170f1c054a010208fc13afca94274e" kindref="member" tooltip="Protocol listbox.">proto</ref>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>AddControl(text2);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>AddControl(<ref refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" kindref="member" tooltip="URL Combo box that will populate list based on XML.">server</ref>);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>AddStretchableSpace();</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>Bind(wxEVT_TEXT_ENTER,<sp/>&amp;<ref refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" kindref="member" tooltip="Toolbar event handler callback.">DTSAPPToolBar::HandleEvent</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>servid,<sp/>servid,<sp/>NULL);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>Bind(wxEVT_COMBOBOX,<sp/>&amp;<ref refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" kindref="member" tooltip="Toolbar event handler callback.">DTSAPPToolBar::HandleEvent</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>servid,<sp/>servid,<sp/>NULL);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>Bind(wxEVT_COMBOBOX_DROPDOWN,<sp/>&amp;<ref refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" kindref="member" tooltip="Toolbar event handler callback.">DTSAPPToolBar::HandleEvent</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>servid,<sp/>servid,<sp/>NULL);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="class_d_t_s_a_p_p_tool_bar_1a46946611cdeeb58af37da61ecf1d8d07" refkind="member"><highlight class="normal"><ref refid="class_d_t_s_a_p_p_tool_bar_1a46946611cdeeb58af37da61ecf1d8d07" kindref="member" tooltip="Release references held.">DTSAPPToolBar::~DTSAPPToolBar</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classdtsgui" kindref="compound">dtsgui</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(<ref refid="classdtsgui" kindref="compound">dtsgui</ref>);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139" refid="class_d_t_s_a_p_p_tool_bar_1a3a6b7d6e0c40ace8cb298cebb2d108d4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">curl_post<sp/>*<ref refid="class_d_t_s_a_p_p_tool_bar_1a3a6b7d6e0c40ace8cb298cebb2d108d4" kindref="member" tooltip="Callback from DTSXMLComboBox.">DTSAPPToolBar::GetPostInfo</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>wxString&amp;<sp/>val)<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">curl_post<sp/>*post;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>post<sp/>=<sp/>curl_newpost();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>curl_postitem(post,<sp/></highlight><highlight class="stringliteral">&quot;function&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;getcust&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>curl_postitem(post,<sp/></highlight><highlight class="stringliteral">&quot;search&quot;</highlight><highlight class="normal">,<sp/>val);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>post;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" kindref="member" tooltip="Toolbar event handler callback.">DTSAPPToolBar::HandleEvent</ref>(wxCommandEvent&amp;<sp/>event)<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>etype<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">.GetEventType(),<sp/>idx;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_node<sp/>*xn;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>idx<sp/>=<sp/><ref refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" kindref="member" tooltip="URL Combo box that will populate list based on XML.">server</ref>-&gt;GetSelection();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(etype<sp/>==<sp/>wxEVT_TEXT_ENTER)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">DTS_C_API::dtsgui_alert</ref>(<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Got<sp/>Me<sp/>Some<sp/>URL<sp/>ARRRRGh&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(etype<sp/>==<sp/>wxEVT_COMBOBOX)<sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xn<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_node*)<ref refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" kindref="member" tooltip="URL Combo box that will populate list based on XML.">server</ref>-&gt;GetClientData(idx);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">DTS_C_API::dtsgui_alert</ref>(<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/>wxString(</highlight><highlight class="stringliteral">&quot;Selected<sp/>IP<sp/>&quot;</highlight><highlight class="normal">).Append(xml_getattr(xn,<sp/></highlight><highlight class="stringliteral">&quot;ipaddr&quot;</highlight><highlight class="normal">)));</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((etype<sp/>==<sp/>wxEVT_COMBOBOX_DROPDOWN)<sp/>&amp;&amp;<sp/>!<ref refid="class_d_t_s_a_p_p_tool_bar_1a151a662ef084fa456f4a32f6b2977290" kindref="member" tooltip="URL Combo box that will populate list based on XML.">server</ref>-&gt;<ref refid="class_d_t_s_x_m_l_combo_box_1ab73ab96a2dddeb756b984db6e0fa9106" kindref="member">HasXMLList</ref>())<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">DTS_C_API::dtsgui_alert</ref>(<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Please<sp/>enter<sp/>3<sp/>or<sp/>more<sp/>characters<sp/>to<sp/>search<sp/>!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/usr/src/dtsapplib/dtsguiapp/app/toolbar.cpp"/>
   </compounddef>

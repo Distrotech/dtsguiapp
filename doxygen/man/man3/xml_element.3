@@ -48,6 +48,16 @@ Definition at line 26 of file pitems\&.h\&.
 Definition at line 46 of file pitems\&.cpp\&.
 .PP
 References attr, xpath, and xsearch\&.
+.PP
+.nf
+                                                                                 {
+    xpath = xp;
+    xsearch = xs;
+    if (xattr) {
+        attr = strdup(xattr);
+    }
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "xml_element::DTS_OJBREF_CLASS (\fBxml_element\fP)"
@@ -60,6 +70,30 @@ Definition at line 67 of file pitems\&.cpp\&.
 References attr, and xsearch\&.
 .PP
 Referenced by DTSPanel::XMLCheckBox(), DTSPanel::XMLComboBox(), DTSPanel::XMLListBox(), and DTSPanel::XMLTextBox()\&.
+.PP
+.nf
+                                  {
+    struct xml_node *xn;
+    const char *ret = NULL;
+    const char *tmp;
+
+    if (!xsearch) {
+        return NULL;
+    }
+
+    xn = xml_getfirstnode(xsearch, NULL);
+    if (!attr) {
+        if (xn->value) {
+            ret = strdup(xn->value);
+        }
+    } else if ((tmp = xml_getattr(xn, attr))) {
+        ret = strdup(tmp);
+    }
+
+    objunref(xn);
+    return ret;
+}
+.fi
 .SS "void xml_element::Modify (struct xml_doc *xmldoc, const char *value)"
 
 .PP
@@ -68,6 +102,21 @@ Definition at line 54 of file pitems\&.cpp\&.
 References attr, and xsearch\&.
 .PP
 Referenced by DTSPanel::Update_XML()\&.
+.PP
+.nf
+                                                                  {
+    struct xml_node *xn;
+
+    if ((xn = xml_getfirstnode(xsearch, NULL))) {
+        if (attr) {
+            xml_setattr(xmldoc, xn, attr, (value) ? value : '');
+        } else {
+            xml_modify(xmldoc, xn, (value) ? value : '');
+        }
+        objunref(xn);
+    }
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "const char* xml_element::attr\fC [private]\fP"

@@ -16,12 +16,28 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @defgroup DTS-APP-Test Application test panel
+  * @ingroup DTS-APP
+  * @brief Static window with standard elements that will post to a URL and pop up the result.
+  *
+  * This is for testing the basic features and curl integration.
+  * @addtogroup DTS-APP-Test
+  * @{
+  * @file
+  * @brief Test panel.*/
+
 #include <unistd.h>
 
 #include "dtsgui.h"
 
 #include "private.h"
 
+/** @brief Create a curl post object and submit to url.
+  *
+  * The panel data contains the URL
+  * @param dtsgui Application data ptr.
+  * @param p panel to be posted.
+  * @return Nothing is returned a alert box is popped up on success.*/
 void post_items(struct dtsgui *dtsgui, dtsgui_pane p) {
 	struct curl_post *post;
 	struct curlbuf *cbuf;
@@ -41,6 +57,16 @@ void post_items(struct dtsgui *dtsgui, dtsgui_pane p) {
 	objunref((void*)url);
 }
 
+/** @brief panel event handler.
+  *
+  * Filter all but button events and on Apply/Yes post the panel to URL.
+  * Other butons pressed will pop up a alert box with the button pressed.
+  * @param dtsgui Application data ptr.
+  * @param p The panel generating the events.
+  * @param type Type of event generated.
+  * @param event The event generated.
+  * @param data Reference to userdata set with eventhandler.
+  * @return 0 to mark the event as handled or non zero to pass handling on.*/
 int handle_test(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
 	if (type != wx_PANEL_EVENT_BUTTON) {
 		return 1;
@@ -69,6 +95,8 @@ int handle_test(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void 
 	return 1;
 }
 
+/** @brief Configure a panel with test elements.
+    @param p Panel to configure*/
 void testpanel(dtsgui_pane p) {
 	struct form_item *l;
 
@@ -91,6 +119,12 @@ void testpanel(dtsgui_pane p) {
 	objunref(l);
 }
 
+
+/** @brief Add test option to menu.
+  *
+  * @param dtsgui Application data ptr.
+  * @param menu Menu to append new item too.
+  * @param url URL to post the panel too.*/
 void test_menu(struct dtsgui *dtsgui, dtsgui_menu menu, const char *url) {
 	void *purl;
 	dtsgui_pane p;
@@ -104,3 +138,4 @@ void test_menu(struct dtsgui *dtsgui, dtsgui_menu menu, const char *url) {
 	dtsgui_newmenuitem(menu, dtsgui, "&Test", p);
 }
 
+/** @}*/

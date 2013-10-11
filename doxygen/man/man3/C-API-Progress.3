@@ -56,6 +56,13 @@ Disable the progress bar\&. \fBSee Also:\fP
 Definition at line 1063 of file wrapper\&.cpp\&.
 .PP
 References DTSFrame::EndProgress(), and dtsgui::GetFrame()\&.
+.PP
+.nf
+                                                {
+    DTSFrame *f = dtsgui->GetFrame();
+    f->EndProgress();
+}
+.fi
 .SS "int DTS_C_API::dtsgui_progress_increment (struct \fBdtsgui\fP *dtsgui, intival, const char *newtext)"
 
 .PP
@@ -83,6 +90,13 @@ Increments the counter by adding to it not setting it\&. \fBSee Also:\fP
 Definition at line 1054 of file wrapper\&.cpp\&.
 .PP
 References dtsgui::GetFrame(), and DTSFrame::IncProgress()\&.
+.PP
+.nf
+                                                                                    {
+    DTSFrame *f = dtsgui->GetFrame();
+    return f->IncProgress(ival, newtext);
+}
+.fi
 .SS "int DTS_C_API::dtsgui_progress_start (struct \fBdtsgui\fP *dtsgui, const char *text, intmaxval, intquit)"
 
 .PP
@@ -112,6 +126,13 @@ zero on failure
 Definition at line 1027 of file wrapper\&.cpp\&.
 .PP
 References dtsgui::GetFrame(), and DTSFrame::StartProgress()\&.
+.PP
+.nf
+                                                                                         {
+    DTSFrame *f = dtsgui->GetFrame();
+    return f->StartProgress(text, maxval, quit);
+}
+.fi
 .SS "int DTS_C_API::dtsgui_progress_update (struct \fBdtsgui\fP *dtsgui, intnewval, const char *newtext)"
 
 .PP
@@ -139,6 +160,13 @@ Update the progress bar counter This function updates the current progress value
 Definition at line 1042 of file wrapper\&.cpp\&.
 .PP
 References dtsgui::GetFrame(), and DTSFrame::UpdateProgress()\&.
+.PP
+.nf
+                                                                                   {
+    DTSFrame *f = dtsgui->GetFrame();
+    return f->UpdateProgress(newval, newtext);
+}
+.fi
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

@@ -54,12 +54,40 @@ Definition at line 142 of file DTSPanel\&.h\&.
 Definition at line 916 of file DTSPanel\&.cpp\&.
 .PP
 References cb, cdata, hasconfig, DTSPanel::SetTitle(), DTSObject::SetXMLDoc(), DTSObject::type, and wx_DTSPANEL_TAB\&.
+.PP
+.nf
+    :wxScrolledWindow(parent, wxID_ANY),
+    DTSScrollPanel(parent,frame, status, butmask) {
+    type = wx_DTSPANEL_TAB;
+    cb = c_cb;
+    if (c_data && objref(c_data)) {
+        cdata = c_data;
+    } else {
+        cdata = NULL;
+    }
+    if (xmldoc) {
+        SetXMLDoc(xmldoc);
+    }
+    hasconfig = false;
+    SetTitle(status, 1);
+}
+.fi
 .SS "DTSTabPage::~DTSTabPage ()"
 
 .PP
 Definition at line 933 of file DTSPanel\&.cpp\&.
 .PP
 References cdata, and DTSObject::refobj\&.
+.PP
+.nf
+                        {
+    objlock(refobj);
+    if (cdata) {
+        objunref(cdata);
+    }
+    objunlock(refobj);
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "void DTSTabPage::ConfigPane ()"
@@ -70,18 +98,95 @@ Definition at line 945 of file DTSPanel\&.cpp\&.
 References cb, cdata, hasconfig, and DTSPanel::ShowPanel()\&.
 .PP
 Referenced by DTSTabWindowEvent::PageChange(), and DTSTabWindow::Show()\&.
+.PP
+.nf
+                            {
+    if (!hasconfig) {
+        if (cb) {
+            void *dat = NULL;
+            if (cdata && objref(cdata)) {
+                dat = cdata;
+            }
+            cb(this, dat);
+            if (dat) {
+                objunref(dat);
+            }
+        }
+        hasconfig = true;
+        ShowPanel();
+    }
+}
+.fi
 .SS "\fBDTSTabPage\fP & DTSTabPage::operator= (const \fBDTSTabPage\fP &orig)"
 
 .PP
 Definition at line 962 of file DTSPanel\&.cpp\&.
 .PP
 References DTSPanelEvent::BindDTSEvent(), DTSPanel::button_mask, cb, cdata, DTSObject::dtsevthandler, DTSObject::frame, DTSObject::panel, DTSObject::refobj, DTSPanel::SetTitle(), DTSObject::status, and DTSObject::xmldoc\&.
+.PP
+.nf
+                                                        {
+    DTSPanelEvent *dtsevt = (DTSPanelEvent*)dtsevthandler;
+
+    if (this == &orig) {
+        return *this;
+    }
+
+    /*deadlock avoidance*/
+    objlock(orig\&.refobj);
+    while(!objtrylock(this->refobj)) {
+        objunlock(orig\&.refobj);
+#ifdef __WIN32
+        Sleep(1);
+#else
+        usleep(1000);
+#endif
+        objlock(orig\&.refobj);
+    }
+    button_mask = orig\&.button_mask;
+    if (cdata) {
+        objunref(cdata);
+        cdata = NULL;
+    }
+    if (orig\&.cdata && objref(orig\&.cdata)) {
+        cdata = orig\&.cdata;
+    }
+    cb = orig\&.cb;
+
+    if (xmldoc) {
+        objunref(xmldoc);
+        xmldoc = NULL;
+    }
+    if (orig\&.xmldoc && objref(orig\&.xmldoc)) {
+        xmldoc = orig\&.xmldoc;
+    } else {
+        xmldoc = NULL;
+    }
+    status = orig\&.status;
+    SetTitle(status);
+    panel->SetName(status);
+
+    frame = orig\&.frame;
+    if (dtsevt && frame) {
+        dtsevt->BindDTSEvent(frame);
+    }
+    objunlock(this->refobj);
+    objunlock(orig\&.refobj);
+    return *this;
+}
+.fi
 .SS "bool DTSTabPage::Show (boolshow)\fC [virtual]\fP"
 
 .PP
 Reimplemented from \fBDTSScrollPanel\fP\&.
 .PP
 Definition at line 941 of file DTSPanel\&.cpp\&.
+.PP
+.nf
+                               {
+    return wxScrolledWindow::Show(show);
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "\fBdtsgui_tabpanel_cb\fP DTSTabPage::cb\fC [private]\fP"

@@ -45,12 +45,31 @@ Definition at line 40 of file evdata\&.h\&.
 Definition at line 85 of file evdata\&.cpp\&.
 .PP
 References data, and unref\&.
+.PP
+.nf
+                                       {
+    if (userdata && uref) {
+        this->data = (objref(userdata)) ? userdata : NULL;
+    } else {
+        this->data = userdata;
+    }
+    this->unref = uref;
+}
+.fi
 .SS "evdata::~evdata ()"
 
 .PP
 Definition at line 94 of file evdata\&.cpp\&.
 .PP
 References data, and unref\&.
+.PP
+.nf
+                {
+    if (unref && data) {
+        objunref(data);
+    }
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "void* evdata::data"

@@ -86,6 +86,12 @@ Definition at line 1219 of file wrapper\&.cpp\&.
 References form_item::Append()\&.
 .PP
 Referenced by network_config(), network_modem(), network_modem_ana(), network_newwifi(), network_tos(), network_tos_new(), network_wifi(), pbxconf_default(), pbxconf_e1(), pbxconf_global(), pbxconf_incoming(), pbxconf_mfcr2(), pbxconf_trunk(), testpanel(), wizz_exten(), wizz_location(), wizz_network(), wizz_trunk(), and wizz_voip()\&.
+.PP
+.nf
+                                                                                        {
+    listbox->Append(text, value);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_listbox_addxml (struct \fBform_item\fP *lb, struct xml_doc *xmldoc, const char *xpath, const char *nattr, const char *vattr)"
 
 .PP
@@ -116,6 +122,12 @@ Definition at line 1241 of file wrapper\&.cpp\&.
 References form_item::AppendXML()\&.
 .PP
 Referenced by network_adsl_link(), network_adsl_link_new(), network_config(), and network_newwifi()\&.
+.PP
+.nf
+                                                                                                                                  {
+    lb->AppendXML(xmldoc, xpath, nattr, vattr);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_listbox_set (struct \fBform_item\fP *listbox, intidx)"
 
 .PP
@@ -133,6 +145,12 @@ Definition at line 1227 of file wrapper\&.cpp\&.
 References form_item::SetSelection()\&.
 .PP
 Referenced by network_newwifi()\&.
+.PP
+.nf
+                                                            {
+    listbox->SetSelection(idx);
+}
+.fi
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

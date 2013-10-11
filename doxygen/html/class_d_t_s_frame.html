@@ -265,7 +265,48 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_frame_8cpp_source.html#l00043">43</a> of file <a class="el" href="_d_t_s_frame_8cpp_source.html">DTSFrame.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00069">a_window</a>, <a class="el" href="_d_t_s_frame_8h_source.html#l00074">abortconfirm</a>, <a class="el" href="_d_t_s_frame_8h_source.html#l00071">about</a>, <a class="el" href="_d_t_s_frame_8h_source.html#l00068">blank</a>, <a class="el" href="_d_t_s_frame_8h_source.html#l00073">dtsgui</a>, <a class="el" href="_d_t_s_frame_8h_source.html#l00072">menubar</a>, <a class="el" href="_d_t_s_frame_8cpp_source.html#l00196">OnAbort()</a>, <a class="el" href="_d_t_s_frame_8cpp_source.html#l00192">OnDTSEvent()</a>, <a class="el" href="_d_t_s_frame_8h_source.html#l00075">pbar</a>, <a class="el" href="_d_t_s_frame_8h_source.html#l00076">pdia</a>, <a class="el" href="_d_t_s_frame_8h_source.html#l00067">sizer</a>, <a class="el" href="_d_t_s_frame_8h_source.html#l00078">tb_data</a>, and <a class="el" href="_d_t_s_frame_8h_source.html#l00077">tbcb</a>.</p>
-
+<div class="fragment"><div class="line">    : wxFrame(NULL, wxID_ANY, title, pos, size) {</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="classdtsgui.html">dtsgui</a> || !objref(<a class="code" href="classdtsgui.html">dtsgui</a>)) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    this-&gt;<a class="code" href="classdtsgui.html">dtsgui</a> = <a class="code" href="class_d_t_s_frame.html#a6cb9a33c465559941f8ce90ecb27819b">dtsgui</a>;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/*deleted on close*/</span></div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a5f3da41657d6700c5843ce858709f280">menubar</a> = <span class="keyword">new</span> wxMenuBar;</div>
+<div class="line">    SetMenuBar(<a class="code" href="class_d_t_s_frame.html#a5f3da41657d6700c5843ce858709f280">menubar</a>);</div>
+<div class="line"></div>
+<div class="line">    CreateStatusBar();</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a9beabfd1eda04f79c8df588790c83398">tbcb</a> = NULL;</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#ac0f3cd2304aa316d21d15c753eb31a70">tb_data</a> = NULL;</div>
+<div class="line"></div>
+<div class="line"><span class="comment">//  pbar = new wxGauge(toolbar, wxID_ANY, 1000);</span></div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a96185334cac8d4d93c8684ebe152f17c">pbar</a> = NULL;</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a7178b3e879eb8fefe5e7361f349cd275">pdia</a> = NULL;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a18384d2a5e61a59fb0c704fff5475ef4">about</a> = wxEmptyString;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/*deleted on close*/</span></div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#af5ccc418850aa4603c4100b6a93cc051">sizer</a> = <span class="keyword">new</span> <a class="code" href="_d_t_s_frame_8h.html#ad396616e0ef9ed30f9053d7b48712ecd">wxBoxSizer</a>(wxHORIZONTAL);</div>
+<div class="line">    this-&gt;SetSizer(<a class="code" href="class_d_t_s_frame.html#af5ccc418850aa4603c4100b6a93cc051">sizer</a>);</div>
+<div class="line"></div>
+<div class="line">    SetMinSize(size);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a20507dd71a62b698a9070e40755fab26">blank</a> = <span class="keyword">new</span> <a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a>(<span class="keyword">this</span>, -1);</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#af5ccc418850aa4603c4100b6a93cc051">sizer</a>-&gt;Add(<a class="code" href="class_d_t_s_frame.html#a20507dd71a62b698a9070e40755fab26">blank</a>, 1, wxALL | wxEXPAND);</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a4eaa2e530669ee48b4b6d38a4cc3ae6e">a_window</a> = <a class="code" href="class_d_t_s_frame.html#a20507dd71a62b698a9070e40755fab26">blank</a>;</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a20507dd71a62b698a9070e40755fab26">blank</a>-&gt;Show(<span class="keyword">true</span>);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a5206963dd3d2de8dc57ab020d8926c37">abortconfirm</a> = <span class="keyword">true</span>;</div>
+<div class="line">    Bind(wxEVT_CLOSE_WINDOW, &amp;<a class="code" href="class_d_t_s_frame.html#a38dd78f5af3241bc9ff822c883e9a3ad">DTSFrame::OnAbort</a>, <span class="keyword">this</span>);</div>
+<div class="line">    Bind(DTS_APP_EVENT, &amp;<a class="code" href="class_d_t_s_frame.html#a4662602e974661de7c512bbd9dd3115a">DTSFrame::OnDTSEvent</a>, <span class="keyword">this</span>);</div>
+<div class="line"></div>
+<div class="line">    Show(<span class="keyword">true</span>);</div>
+<div class="line">    Raise();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a43d60e05b6719fe6cd215bea5bff2247"></a>
@@ -284,7 +325,14 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_frame_8cpp_source.html#l00086">86</a> of file <a class="el" href="_d_t_s_frame_8cpp_source.html">DTSFrame.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00068">blank</a>, and <a class="el" href="_d_t_s_frame_8h_source.html#l00078">tb_data</a>.</p>
-
+<div class="fragment"><div class="line">                    {</div>
+<div class="line">    objunref(<a class="code" href="classdtsgui.html">dtsgui</a>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_frame.html#ac0f3cd2304aa316d21d15c753eb31a70">tb_data</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_frame.html#ac0f3cd2304aa316d21d15c753eb31a70">tb_data</a>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keyword">delete</span> <a class="code" href="class_d_t_s_frame.html#a20507dd71a62b698a9070e40755fab26">blank</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -305,7 +353,15 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_frame_8cpp_source.html#l00120">120</a> of file <a class="el" href="_d_t_s_frame_8cpp_source.html">DTSFrame.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l01151">DTS_C_API::dtsgui_alert()</a>.</p>
-
+<div class="fragment"><div class="line">                                  {</div>
+<div class="line">    wxMessageDialog *alert;</div>
+<div class="line"></div>
+<div class="line">    alert = <span class="keyword">new</span> wxMessageDialog(NULL, text, wxT(<span class="stringliteral">&quot;Alert&quot;</span>),</div>
+<div class="line">                                  wxOK | wxICON_EXCLAMATION);</div>
+<div class="line">    alert-&gt;ShowModal();</div>
+<div class="line">    alert-&gt;Destroy();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a424fbab6df135ea54b5c62a191e809cd"></a>
@@ -337,7 +393,19 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8cpp_source.html#l00204">OnClose()</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00401">DTS_C_API::dtsgui_close()</a>, and <a class="el" href="wrapper_8cpp_source.html#l00383">DTS_C_API::dtsgui_exit()</a>.</p>
-
+<div class="fragment"><div class="line">                                            {</div>
+<div class="line">    <span class="keywordflow">switch</span> (type) {</div>
+<div class="line">        <span class="keywordflow">case</span> wxID_EXIT:</div>
+<div class="line">            m-&gt;Append(type, <span class="stringliteral">&quot;&amp;Quit&quot;</span>, <span class="stringliteral">&quot;Quit And Exit&quot;</span>);</div>
+<div class="line">            Bind(wxEVT_COMMAND_MENU_SELECTED, &amp;<a class="code" href="class_d_t_s_frame.html#a5bd732df0fb24d07db470c3275504b43">DTSFrame::OnClose</a>, <span class="keyword">this</span>, wxID_EXIT);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> wxID_SAVE:</div>
+<div class="line">            m-&gt;Append(type, <span class="stringliteral">&quot;E&amp;xit&quot;</span>, <span class="stringliteral">&quot;Save And Exit&quot;</span>);</div>
+<div class="line">            Bind(wxEVT_COMMAND_MENU_SELECTED, &amp;<a class="code" href="class_d_t_s_frame.html#a5bd732df0fb24d07db470c3275504b43">DTSFrame::OnClose</a>, <span class="keyword">this</span>, wxID_SAVE);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a937f276b15be00e81087ef1a73605478"></a>
@@ -357,7 +425,22 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_frame_8cpp_source.html#l00104">104</a> of file <a class="el" href="_d_t_s_frame_8cpp_source.html">DTSFrame.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l01162">DTS_C_API::dtsgui_confirm()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00445">DTSTreeWindowEvent::MenuEvent()</a>, <a class="el" href="_d_t_s_frame_8cpp_source.html#l00196">OnAbort()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00204">OnClose()</a>.</p>
-
+<div class="fragment"><div class="line">                                    {</div>
+<div class="line">    wxMessageDialog *confirm;</div>
+<div class="line">    <span class="keywordtype">int</span> res;</div>
+<div class="line"></div>
+<div class="line">    confirm = <span class="keyword">new</span> wxMessageDialog(NULL, text, wxT(<span class="stringliteral">&quot;Confirm&quot;</span>),</div>
+<div class="line">                                  wxYES_NO | wxNO_DEFAULT | wxICON_QUESTION);</div>
+<div class="line">    res = confirm-&gt;ShowModal();</div>
+<div class="line">    confirm-&gt;Destroy();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (res == wxID_YES) {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a3b1105fb9c8e3b6909994e7f993eee20"></a>
@@ -407,7 +490,39 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00482">DTSPanel::SetTitle()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00326">DTSObject::SetUserData()</a>, <a class="el" href="dtsgui_8h_source.html#l00247">wx_DTSPANEL_DIALOG</a>, <a class="el" href="dtsgui_8h_source.html#l00243">wx_DTSPANEL_PANEL</a>, <a class="el" href="dtsgui_8h_source.html#l00245">wx_DTSPANEL_SCROLLPANEL</a>, <a class="el" href="dtsgui_8h_source.html#l00251">wx_DTSPANEL_TAB</a>, <a class="el" href="dtsgui_8h_source.html#l00249">wx_DTSPANEL_TREE</a>, <a class="el" href="dtsgui_8h_source.html#l00241">wx_DTSPANEL_WINDOW</a>, and <a class="el" href="dtsgui_8h_source.html#l00253">wx_DTSPANEL_WIZARD</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_wizard_8cpp_source.html#l00056">dtsgui_wizard::AddPage()</a>, <a class="el" href="wrapper_8cpp_source.html#l00464">DTS_C_API::dtsgui_panel()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00495">Passwd()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                          {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *dp = NULL;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">switch</span> (type) {</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373a51268d1576c4e816f1416435cfe61500" title="DTSScrollPanel (wx_DTSPANEL_SCROLLPANEL) adds scrollbar support.">wx_DTSPANEL_SCROLLPANEL</a>:</div>
+<div class="line">            dp = <span class="keyword">new</span> <a class="code" href="class_d_t_s_scroll_panel.html">DTSScrollPanel</a>(<span class="keyword">this</span>, <span class="keyword">this</span>, name, butmask);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373a0e31c26466ea939007976914785fff2c" title="DTSStaticPanel (wx_DTSPANEL_PANEL) includes tab traversal.">wx_DTSPANEL_PANEL</a>:</div>
+<div class="line">            dp = <span class="keyword">new</span> <a class="code" href="class_d_t_s_static_panel.html">DTSStaticPanel</a>(<span class="keyword">this</span>, <span class="keyword">this</span>, name, butmask);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373ad0213b4d1d51e9f04e084a09e8da1c62" title="DTSWindow (wx_DTSPANEL_WINDOW) is a basic panel without tab traversal controls and is rarely used (DT...">wx_DTSPANEL_WINDOW</a>:</div>
+<div class="line">            dp = <span class="keyword">new</span> <a class="code" href="_d_t_s_frame_8h.html#aaf5c0edaf8bc2cf97613de1b618bff60">DTSWindow</a>(<span class="keyword">this</span>);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373a259d19ace1b7a45cbd7e99697bd2b69a" title="DTSDialog (wx_DTSPANEL_DIALOG) is a wx_DTSPANEL_PANEL displayed in a pop up dialog box...">wx_DTSPANEL_DIALOG</a>:</div>
+<div class="line">            dp = <span class="keyword">new</span> <a class="code" href="class_d_t_s_dialog.html">DTSDialog</a>(<span class="keyword">this</span>, name, butmask);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373aa108fde55f9c1830cf68cd368aba1d02" title="DTSWizardWindow (wx_DTSPANEL_WIZARD) see Wizard Interface..">wx_DTSPANEL_WIZARD</a>:</div>
+<div class="line">            dp = <span class="keyword">new</span> <a class="code" href="_d_t_s_wizard_8h.html#aa8db4e8a4187c26468519a4456933b3b">DTSWizardWindow</a>(name);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373a94b4b5412dbd78fdf58517c74afa9dad" title="DTSTabWindow (wx_DTSPANEL_TAB) see Tab view panel interface..">wx_DTSPANEL_TAB</a>:</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373a8aa14d05cc73bd9438f302f6f2cb29c3" title="DTSTreeWindow (wx_DTSPANEL_TREE) see Tree view panel interface..">wx_DTSPANEL_TREE</a>:</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (title.Len() &gt; 0) {</div>
+<div class="line">        dp-&gt;<a class="code" href="class_d_t_s_panel.html#a58daeb533cce1e4bdac57118cce7c7ea">SetTitle</a>(title, <span class="keyword">true</span>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (udata) {</div>
+<div class="line">        dp-&gt;<a class="code" href="class_d_t_s_object.html#a3e39ba76f7cb701fc9b99f6f059fb49e">SetUserData</a>(udata);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> dp;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8b1d7dbacb2a99f3758a35ef06046963"></a>
@@ -429,7 +544,34 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00069">a_window</a>, <a class="el" href="evdata_8h_source.html#l00044">evdata::data</a>, <a class="el" href="evdata_8cpp_source.html#l00056">dynamic_panel::HasCallback()</a>, <a class="el" href="evdata_8cpp_source.html#l00060">dynamic_panel::IsBlank()</a>, <a class="el" href="evdata_8cpp_source.html#l00068">dynamic_panel::RunCallback()</a>, <a class="el" href="_d_t_s_frame_8cpp_source.html#l00235">SetWindow()</a>, and <a class="el" href="evdata_8h_source.html#l00033">dynamic_panel::w</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_frame_8cpp_source.html#l00453">NewMenuItem()</a>.</p>
-
+<div class="fragment"><div class="line">                                                      {</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="classevdata.html">evdata</a> *evdat;</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="classdynamic__panel.html">dynamic_panel</a> *p_dyn;</div>
+<div class="line">    <a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *<a class="code" href="classdynamic__panel.html#a5d13849f704cffb0ecfde8dfdb072571">w</a>;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!(evdat = (<a class="code" href="classevdata.html">evdata</a> *)event.m_callbackUserData)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_frame.html#a7e9f18961fb55d1b9be667b81681803c">SetWindow</a>(NULL);</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!evdat-&gt;<a class="code" href="classevdata.html#ab8569cae7cd7a33fde4e51872ef29090">data</a> || !(p_dyn = (<span class="keyword">class</span> <a class="code" href="classdynamic__panel.html">dynamic_panel</a>*)evdat-&gt;<a class="code" href="classevdata.html#ab8569cae7cd7a33fde4e51872ef29090">data</a>) || !p_dyn-&gt;<a class="code" href="classdynamic__panel.html#a52940fe2d7c72ec45a2aff77ad7ec8d0">HasCallback</a>() ) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_frame.html#a7e9f18961fb55d1b9be667b81681803c">SetWindow</a>(NULL);</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (*p_dyn == *<a class="code" href="class_d_t_s_frame.html#a4eaa2e530669ee48b4b6d38a4cc3ae6e">a_window</a>) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (p_dyn-&gt;<a class="code" href="classdynamic__panel.html#a001a227c89e7998e18b88f7c49d4d035">IsBlank</a>()) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_frame.html#a7e9f18961fb55d1b9be667b81681803c">SetWindow</a>(NULL);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> ((w = p_dyn-&gt;<a class="code" href="classdynamic__panel.html#a5774ea0571dc1748c346129fcddf63de">RunCallback</a>(<a class="code" href="classdtsgui.html">dtsgui</a>))) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_frame.html#a7e9f18961fb55d1b9be667b81681803c">SetWindow</a>(w);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aa33b0ba3ce50a7ec4434a78c2be498b7"></a>
@@ -451,7 +593,17 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00076">pdia</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_app_8cpp_source.html#l00194">dtsgui_curl::curl_progress_ctrl()</a>, and <a class="el" href="wrapper_8cpp_source.html#l01063">DTS_C_API::dtsgui_progress_end()</a>.</p>
-
+<div class="fragment"><div class="line">                               {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_frame.html#a7178b3e879eb8fefe5e7361f349cd275">pdia</a>) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_frame.html#a7178b3e879eb8fefe5e7361f349cd275">pdia</a>-&gt;Hide();</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="class_d_t_s_frame.html#a7178b3e879eb8fefe5e7361f349cd275">pdia</a>;</div>
+<div class="line">        <a class="code" href="class_d_t_s_frame.html#a7178b3e879eb8fefe5e7361f349cd275">pdia</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line"><span class="comment">/*  if (pbar) {</span></div>
+<div class="line"><span class="comment">        pbar-&gt;Hide();</span></div>
+<div class="line"><span class="comment">    }*/</span></div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af996b558ba17ecc23cf6ed1a3d1873fb"></a>
@@ -499,7 +651,19 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_frame_8cpp_source.html#l00408">408</a> of file <a class="el" href="_d_t_s_frame_8cpp_source.html">DTSFrame.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l01192">DTS_C_API::dtsgui_fileopen()</a>, and <a class="el" href="wrapper_8cpp_source.html#l01176">DTS_C_API::dtsgui_filesave()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                      {</div>
+<div class="line">    <span class="keywordtype">void</span> *filename = NULL;</div>
+<div class="line">    wxFileDialog *fd;</div>
+<div class="line"></div>
+<div class="line">    fd = <span class="keyword">new</span> wxFileDialog(<span class="keyword">this</span>, title, (path) ? path : <span class="stringliteral">&quot;&quot;</span>, (<a class="code" href="classdynamic__panel.html#ab6472f891f994a9f4dddd9572eb8adab">name</a>) ? <a class="code" href="classdynamic__panel.html#ab6472f891f994a9f4dddd9572eb8adab">name</a> : <span class="stringliteral">&quot;&quot;</span>, (filter) ? filter : wxFileSelectorDefaultWildcardStr, style);</div>
+<div class="line">    <span class="keywordflow">if</span> (fd-&gt;ShowModal() != wxID_CANCEL) {</div>
+<div class="line">        filename = objchar(fd-&gt;GetPath().ToUTF8());</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">delete</span> fd;</div>
+<div class="line">    <span class="keywordflow">return</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>*)filename;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0a5798261ab9b56b7938f968b4032a24"></a>
@@ -521,7 +685,13 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00073">dtsgui</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00544">DTSTreeWindow::DTSTreeWindow()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00096">DTSPanelEvent::RunCallBack()</a>.</p>
-
+<div class="fragment"><div class="line">                                       {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classdtsgui.html">dtsgui</a> &amp;&amp; objref(<a class="code" href="classdtsgui.html">dtsgui</a>)) {</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_frame.html#a6cb9a33c465559941f8ce90ecb27819b">dtsgui</a>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> NULL;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8285d1a5b16cff7020e7fe43838906cb"></a>
@@ -541,7 +711,10 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_frame_8cpp_source.html#l00349">349</a> of file <a class="el" href="_d_t_s_frame_8cpp_source.html">DTSFrame.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00072">menubar</a>.</p>
-
+<div class="fragment"><div class="line">                                {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_frame.html#a5f3da41657d6700c5843ce858709f280">menubar</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8b1f1c4cf298ef550edec3fa3bf96738"></a>
@@ -573,7 +746,21 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00076">pdia</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l01054">DTS_C_API::dtsgui_progress_increment()</a>.</p>
-
+<div class="fragment"><div class="line">                                                        {</div>
+<div class="line"><span class="comment">/*  if (pbar) {</span></div>
+<div class="line"><span class="comment">        pbar-&gt;SetValue(pbar-&gt;GetValue()+ival);</span></div>
+<div class="line"><span class="comment">    }*/</span></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_frame.html#a7178b3e879eb8fefe5e7361f349cd275">pdia</a>) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_frame.html#a7178b3e879eb8fefe5e7361f349cd275">pdia</a>-&gt;Update(<a class="code" href="class_d_t_s_frame.html#a7178b3e879eb8fefe5e7361f349cd275">pdia</a>-&gt;GetValue()+ival, text)) {</div>
+<div class="line">            <span class="keywordflow">return</span> 1;</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            <span class="keywordflow">return</span> 0;</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordflow">return</span> 0;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a27cb5c393f6f9bbab0d087db9e6338ce"></a>
@@ -595,7 +782,15 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00072">menubar</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00316">DTS_C_API::dtsgui_newmenu()</a>.</p>
-
+<div class="fragment"><div class="line">                                              {</div>
+<div class="line">    wxMenu *new_menu = NULL;</div>
+<div class="line"></div>
+<div class="line">    new_menu = <span class="keyword">new</span> wxMenu;</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a5f3da41657d6700c5843ce858709f280">menubar</a>-&gt;Append(new_menu, <a class="code" href="classdynamic__panel.html#ab6472f891f994a9f4dddd9572eb8adab">name</a>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> new_menu;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a55fe07b66530435bce652e8ab3091707"></a>
@@ -639,7 +834,24 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00272">DTSObject::GetName()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00282">DTSObject::GetPanel()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00257">SwitchWindow()</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00365">DTS_C_API::dtsgui_newmenucb()</a>, and <a class="el" href="wrapper_8cpp_source.html#l00338">DTS_C_API::dtsgui_newmenuitem()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                               {</div>
+<div class="line">    wxMenuItem *mi;</div>
+<div class="line">    <a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *<a class="code" href="classdynamic__panel.html#a5d13849f704cffb0ecfde8dfdb072571">w</a> = NULL;</div>
+<div class="line">    wxObject *ev_data;</div>
+<div class="line">    wxString <a class="code" href="classdynamic__panel.html#ab6472f891f994a9f4dddd9572eb8adab">name</a> = wxEmptyString;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (panel) {</div>
+<div class="line">        w = panel-&gt;<a class="code" href="class_d_t_s_object.html#ae88ef1ea6f28346b6cd6d2d898d7acde">GetPanel</a>();</div>
+<div class="line">        name = panel-&gt;<a class="code" href="class_d_t_s_object.html#aa800a3664b895617df9884469dbdf1f8">GetName</a>();</div>
+<div class="line">    }</div>
+<div class="line">    ev_data = <span class="keyword">new</span> <a class="code" href="classevdata.html">evdata</a>(w);</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">    mi = m-&gt;Append(<a class="code" href="group___c-_a_p_i.html#ga295fb20974bd3ceb8a6d8ed6e13a6c70" title="Static variable containing menuid incremented each time a menu is created.">menuid</a>, hint, name);</div>
+<div class="line">    Bind(wxEVT_COMMAND_MENU_SELECTED, &amp;<a class="code" href="class_d_t_s_frame.html#a85e9e9e31176870e5d1d7fb96972d236">DTSFrame::SwitchWindow</a>, <span class="keyword">this</span>, <a class="code" href="group___c-_a_p_i.html#ga295fb20974bd3ceb8a6d8ed6e13a6c70" title="Static variable containing menuid incremented each time a menu is created.">menuid</a>, <a class="code" href="group___c-_a_p_i.html#ga295fb20974bd3ceb8a6d8ed6e13a6c70" title="Static variable containing menuid incremented each time a menu is created.">menuid</a>, ev_data);</div>
+<div class="line">    <span class="keywordflow">return</span> mi;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a658114abb50692e826e18593a0e3ba73"></a>
@@ -699,7 +911,23 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_frame_8cpp_source.html#l00453">453</a> of file <a class="el" href="_d_t_s_frame_8cpp_source.html">DTSFrame.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_frame_8cpp_source.html#l00272">DynamicPanelEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                                              {</div>
+<div class="line">    wxMenuItem *mi;</div>
+<div class="line">    wxObject *ev_data;</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="classdynamic__panel.html">dynamic_panel</a> *p_dyn;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!(p_dyn = <span class="keyword">new</span> <a class="code" href="group___c_o_r_e.html#gaa881f6b55dcf9b95108f08bf62d4802f" title="Forward definition of dynamic_panel.">dynamic_panel</a>(<a class="code" href="classdynamic__panel.html#ab6472f891f994a9f4dddd9572eb8adab">name</a>, <a class="code" href="class_d_t_s_frame.html#a20507dd71a62b698a9070e40755fab26">blank</a>, <a class="code" href="classdynamic__panel.html#ace913453518c31659ba1ecdbede98d99">cb</a>, <a class="code" href="classdynamic__panel.html#a829939df89ab897c11179a31b8cd46be">data</a>))) {</div>
+<div class="line">        <span class="keywordflow">return</span> NULL;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    ev_data = <span class="keyword">new</span> <a class="code" href="classevdata.html">evdata</a>(p_dyn, 1);</div>
+<div class="line">    objunref(p_dyn);</div>
+<div class="line"></div>
+<div class="line">    mi = m-&gt;Append(<a class="code" href="group___c-_a_p_i.html#ga295fb20974bd3ceb8a6d8ed6e13a6c70" title="Static variable containing menuid incremented each time a menu is created.">menuid</a>, hint, <a class="code" href="classdynamic__panel.html#ab6472f891f994a9f4dddd9572eb8adab">name</a>);</div>
+<div class="line">    Bind(wxEVT_COMMAND_MENU_SELECTED, &amp;<a class="code" href="class_d_t_s_frame.html#a8b1d7dbacb2a99f3758a35ef06046963">DTSFrame::DynamicPanelEvent</a>, <span class="keyword">this</span>, <a class="code" href="group___c-_a_p_i.html#ga295fb20974bd3ceb8a6d8ed6e13a6c70" title="Static variable containing menuid incremented each time a menu is created.">menuid</a>, <a class="code" href="group___c-_a_p_i.html#ga295fb20974bd3ceb8a6d8ed6e13a6c70" title="Static variable containing menuid incremented each time a menu is created.">menuid</a>, ev_data);</div>
+<div class="line">    <span class="keywordflow">return</span> mi;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a38dd78f5af3241bc9ff822c883e9a3ad"></a>
@@ -721,7 +949,14 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00074">abortconfirm</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00104">Confirm()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_frame_8cpp_source.html#l00043">DTSFrame()</a>.</p>
-
+<div class="fragment"><div class="line">                                          {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_frame.html#a5206963dd3d2de8dc57ab020d8926c37">abortconfirm</a> &amp;&amp; !<a class="code" href="class_d_t_s_frame.html#a937f276b15be00e81087ef1a73605478">Confirm</a>(<span class="stringliteral">&quot;Are You Sure You Want To Abort ?&quot;</span>)) {</div>
+<div class="line">        <span class="keyword">event</span>.Veto();</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keyword">event</span>.Skip(<span class="keyword">true</span>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a117230517edf6e062aad2a22b00b2d56"></a>
@@ -743,7 +978,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00071">about</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_frame_8cpp_source.html#l00094">SetAbout()</a>.</p>
-
+<div class="fragment"><div class="line">                                            {</div>
+<div class="line">    wxMessageBox(<a class="code" href="class_d_t_s_frame.html#a18384d2a5e61a59fb0c704fff5475ef4">about</a>, <span class="stringliteral">&quot;About&quot;</span>, wxOK | wxICON_INFORMATION );</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5bd732df0fb24d07db470c3275504b43"></a>
@@ -765,7 +1003,33 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00074">abortconfirm</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00104">Confirm()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_frame_8cpp_source.html#l00353">CloseMenu()</a>.</p>
-
+<div class="fragment"><div class="line">                                            {</div>
+<div class="line">    <span class="keywordtype">bool</span> confirm;</div>
+<div class="line">    <span class="keywordtype">int</span> eid;</div>
+<div class="line"></div>
+<div class="line">    eid=<span class="keyword">event</span>.GetId();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">switch</span> (eid) {</div>
+<div class="line">        <span class="keywordflow">case</span> wxID_EXIT:</div>
+<div class="line">            confirm = <a class="code" href="class_d_t_s_frame.html#a937f276b15be00e81087ef1a73605478">Confirm</a>(<span class="stringliteral">&quot;Quit Without Saving ?&quot;</span>);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">case</span> wxID_SAVE:</div>
+<div class="line">            confirm = <a class="code" href="class_d_t_s_frame.html#a937f276b15be00e81087ef1a73605478">Confirm</a>(<span class="stringliteral">&quot;Save And Exit ?&quot;</span>);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">default</span>:</div>
+<div class="line">            confirm = <span class="keyword">true</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (confirm) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_frame.html#a5206963dd3d2de8dc57ab020d8926c37">abortconfirm</a> = <span class="keyword">false</span>;</div>
+<div class="line">        Close(<span class="keyword">true</span>);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keyword">event</span>.Skip();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6da5874c6ac49f979251013785b62b0d"></a>
@@ -809,7 +1073,20 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_frame_8cpp_source.html#l00314">314</a> of file <a class="el" href="_d_t_s_frame_8cpp_source.html">DTSFrame.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00078">tb_data</a>, and <a class="el" href="_d_t_s_frame_8h_source.html#l00077">tbcb</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                    {</div>
+<div class="line">    wxToolBar *tb;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_frame.html#a9beabfd1eda04f79c8df588790c83398">tbcb</a>) {</div>
+<div class="line">        objref(<a class="code" href="classdtsgui.html">dtsgui</a>);</div>
+<div class="line">        tb = (wxToolBar*)<a class="code" href="class_d_t_s_frame.html#a9beabfd1eda04f79c8df588790c83398">tbcb</a>(<a class="code" href="classdtsgui.html">dtsgui</a>, <span class="keyword">this</span>, style, <span class="keywordtype">id</span>, <a class="code" href="classdynamic__panel.html#ab6472f891f994a9f4dddd9572eb8adab">name</a>, <a class="code" href="class_d_t_s_frame.html#ac0f3cd2304aa316d21d15c753eb31a70">tb_data</a>);</div>
+<div class="line">        objunref(<a class="code" href="classdtsgui.html">dtsgui</a>);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        tb = <span class="keyword">new</span> wxToolBar(<span class="keyword">this</span>, <span class="keywordtype">id</span>, wxDefaultPosition, wxDefaultSize, style, <a class="code" href="classdynamic__panel.html#ab6472f891f994a9f4dddd9572eb8adab">name</a>);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> tb;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4662602e974661de7c512bbd9dd3115a"></a>
@@ -837,7 +1114,10 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_frame_8cpp_source.html#l00192">192</a> of file <a class="el" href="_d_t_s_frame_8cpp_source.html">DTSFrame.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_frame_8cpp_source.html#l00043">DTSFrame()</a>.</p>
-
+<div class="fragment"><div class="line">                                               {</div>
+<div class="line">    <span class="keyword">event</span>.Skip(<span class="keyword">true</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5a7ad78662b511e7ef6ac513f8d1a28b"></a>
@@ -869,7 +1149,23 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8cpp_source.html#l00375">CreatePane()</a>, <a class="el" href="dtsgui_8h_source.html#l00050">DTSGUI_FORM_DATA_PTR</a>, <a class="el" href="_d_t_s_frame_8cpp_source.html#l00470">pwevent()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l01077">DTSDialog::RunDialog()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00567">DTSPanel::TextBox()</a>, <a class="el" href="dtsgui_8h_source.html#l00247">wx_DTSPANEL_DIALOG</a>, and <a class="el" href="dtsgui_8h_source.html#l00271">wx_PANEL_BUTTON_ACTION</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_app_8cpp_source.html#l00216">dtsgui_curl::CurlPasswd()</a>, and <a class="el" href="wrapper_8cpp_source.html#l01208">DTS_C_API::dtsgui_pwdialog()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                       {</div>
+<div class="line">    <span class="keyword">struct </span>basic_auth *bauth;</div>
+<div class="line">    <a class="code" href="class_d_t_s_dialog.html">DTSDialog</a> *pwbox;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!(bauth = curl_newauth(user, passwd))) {</div>
+<div class="line">        <span class="keywordflow">return</span> NULL;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    pwbox = (<a class="code" href="class_d_t_s_dialog.html">DTSDialog</a>*)<a class="code" href="class_d_t_s_frame.html#a3b1105fb9c8e3b6909994e7f993eee20">CreatePane</a>(<span class="stringliteral">&quot;Athentification&quot;</span>, wxEmptyString, <a class="code" href="group___c_o_r_e.html#ga4ef37ee1286eb68a9f5663813f134be2" title="Shortcut flags for action buttons.">wx_PANEL_BUTTON_ACTION</a>, <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373a259d19ace1b7a45cbd7e99697bd2b69a" title="DTSDialog (wx_DTSPANEL_DIALOG) is a wx_DTSPANEL_PANEL displayed in a pop up dialog box...">wx_DTSPANEL_DIALOG</a>, bauth);</div>
+<div class="line">    pwbox-&gt;<a class="code" href="class_d_t_s_panel.html#acd1b20a134272f1bc2d048d5977a3d3c">TextBox</a>(<span class="stringliteral">&quot;Username&quot;</span>, <span class="stringliteral">&quot;uname&quot;</span>, bauth-&gt;user, wxTE_LEFT | wxTE_PROCESS_ENTER, 1, NULL, <a class="code" href="group___c_o_r_e.html#ggaa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" title="Reference to data.">DTSGUI_FORM_DATA_PTR</a>);</div>
+<div class="line">    pwbox-&gt;<a class="code" href="class_d_t_s_panel.html#acd1b20a134272f1bc2d048d5977a3d3c">TextBox</a>(<span class="stringliteral">&quot;Password&quot;</span>, <span class="stringliteral">&quot;pwd&quot;</span>, bauth-&gt;passwd, wxTE_PASSWORD | wxTE_PROCESS_ENTER, 1, NULL,  <a class="code" href="group___c_o_r_e.html#ggaa648ae9cc0927fecec3a6f705930f8a9aca76bf5a50c1ed8835755c9385c1beee" title="Reference to data.">DTSGUI_FORM_DATA_PTR</a>);</div>
+<div class="line"></div>
+<div class="line">    pwbox-&gt;<a class="code" href="class_d_t_s_dialog.html#af1e6be7e08913149d128839b7e535cd0">RunDialog</a>(<a class="code" href="class_d_t_s_frame.html#adb19cc1077af840c132d8e11fd163a15">pwevent</a>, NULL);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> bauth;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="adb19cc1077af840c132d8e11fd163a15"></a>
@@ -927,7 +1223,31 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00886">DTSPanel::FindValue()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00338">DTSObject::GetUserData()</a>, and <a class="el" href="dtsgui_8h_source.html#l00208">wx_PANEL_EVENT_BUTTON_YES</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_frame_8cpp_source.html#l00495">Passwd()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                           {</div>
+<div class="line">    <span class="keyword">struct </span>basic_auth *auth;</div>
+<div class="line">    <a class="code" href="class_d_t_s_dialog.html">DTSDialog</a> *dp = (<a class="code" href="class_d_t_s_dialog.html">DTSDialog</a>*)p;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (event == <a class="code" href="group___c_o_r_e.html#gga5082bae7f0b5d2b7d715e40450f302eca6ce91176e6c929e87d7acbd000d07f79" title="A Affirmative button.">wx_PANEL_EVENT_BUTTON_YES</a>) {</div>
+<div class="line">        <span class="keywordflow">if</span> (!(auth = (<span class="keyword">struct</span> basic_auth*)dp-&gt;<a class="code" href="class_d_t_s_object.html#a5d32407be34aa68ea2b038ede768d50e">GetUserData</a>())) {</div>
+<div class="line">            <span class="keywordflow">return</span> 0;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span> (auth-&gt;user) {</div>
+<div class="line">            free((<span class="keywordtype">void</span>*)auth-&gt;user);</div>
+<div class="line">            auth-&gt;user = NULL;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span> (auth-&gt;passwd) {</div>
+<div class="line">            memset((<span class="keywordtype">void</span>*)auth-&gt;passwd, 0, strlen(auth-&gt;passwd));</div>
+<div class="line">            free((<span class="keywordtype">void</span>*)auth-&gt;passwd);</div>
+<div class="line">            auth-&gt;passwd = NULL;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        auth-&gt;user = dp-&gt;<a class="code" href="class_d_t_s_panel.html#aaeef18ad561346699ed24e0aa6fa47b3">FindValue</a>(<span class="stringliteral">&quot;uname&quot;</span>);</div>
+<div class="line">        auth-&gt;passwd = dp-&gt;<a class="code" href="class_d_t_s_panel.html#aaeef18ad561346699ed24e0aa6fa47b3">FindValue</a>(<span class="stringliteral">&quot;pwd&quot;</span>);</div>
+<div class="line">        objunref(auth);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> 1;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a63488ecbdbe2770ea7d12ce2b06f1b72"></a>
@@ -957,7 +1277,13 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_frame_8cpp_source.html#l00300">300</a> of file <a class="el" href="_d_t_s_frame_8cpp_source.html">DTSFrame.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00262">DTS_C_API::dtsgui_sendevent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                    {</div>
+<div class="line">    wxCommandEvent event(DTS_APP_EVENT, eid);</div>
+<div class="line">    <span class="keyword">event</span>.SetEventObject(evobj);</div>
+<div class="line">    <span class="keyword">event</span>.ShouldPropagate();</div>
+<div class="line">    ProcessWindowEvent(event);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af57b68ada1f1958582fea200a2a315fc"></a>
@@ -989,7 +1315,16 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00071">about</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00231">OnAbout()</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00418">DTS_C_API::dtsgui_about()</a>.</p>
-
+<div class="fragment"><div class="line">                                                     {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_frame.html#a18384d2a5e61a59fb0c704fff5475ef4">about</a>.Len() &gt; 0) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    m-&gt;Append(wxID_ABOUT);</div>
+<div class="line">    Bind(wxEVT_COMMAND_MENU_SELECTED, &amp;<a class="code" href="class_d_t_s_frame.html#a117230517edf6e062aad2a22b00b2d56">DTSFrame::OnAbout</a>, <span class="keyword">this</span>, wxID_ABOUT);</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a18384d2a5e61a59fb0c704fff5475ef4">about</a> = a_text;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1fe29f6d56f11d1702a372416a659e3e"></a>
@@ -1021,7 +1356,27 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_app_8h_source.html#l00037">dtsgui::cb</a>, <a class="el" href="_d_t_s_frame_8h_source.html#l00075">pbar</a>, <a class="el" href="_d_t_s_frame_8h_source.html#l00078">tb_data</a>, <a class="el" href="_d_t_s_frame_8h_source.html#l00077">tbcb</a>, and <a class="el" href="_d_t_s_frame_8h_source.html#l00070">toolbar</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00278">DTS_C_API::dtsgui_setuptoolbar()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a9beabfd1eda04f79c8df588790c83398">tbcb</a> = cb;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_frame.html#ac0f3cd2304aa316d21d15c753eb31a70">tb_data</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_frame.html#ac0f3cd2304aa316d21d15c753eb31a70">tb_data</a>);</div>
+<div class="line">        <a class="code" href="class_d_t_s_frame.html#ac0f3cd2304aa316d21d15c753eb31a70">tb_data</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (data &amp;&amp; objref(data)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_frame.html#ac0f3cd2304aa316d21d15c753eb31a70">tb_data</a> = data;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a5b1acb9ecd1828ba46aca3524efbe9ea">toolbar</a> = CreateToolBar();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_frame.html#a96185334cac8d4d93c8684ebe152f17c">pbar</a>) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_frame.html#a5b1acb9ecd1828ba46aca3524efbe9ea">toolbar</a>-&gt;AddControl(<a class="code" href="class_d_t_s_frame.html#a96185334cac8d4d93c8684ebe152f17c">pbar</a>);</div>
+<div class="line">        <a class="code" href="class_d_t_s_frame.html#a96185334cac8d4d93c8684ebe152f17c">pbar</a>-&gt;Hide();</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a5b1acb9ecd1828ba46aca3524efbe9ea">toolbar</a>-&gt;Realize();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7e9f18961fb55d1b9be667b81681803c"></a>
@@ -1043,7 +1398,28 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00069">a_window</a>, <a class="el" href="_d_t_s_frame_8h_source.html#l00068">blank</a>, <a class="el" href="_d_t_s_app_8cpp_source.html#l00097">dtsgui::SetStatusText()</a>, and <a class="el" href="_d_t_s_frame_8h_source.html#l00067">sizer</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00249">DTS_C_API::dtsgui_setwindow()</a>, <a class="el" href="_d_t_s_frame_8cpp_source.html#l00272">DynamicPanelEvent()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00257">SwitchWindow()</a>.</p>
-
+<div class="fragment"><div class="line">                                         {</div>
+<div class="line">    <span class="keywordflow">if</span> (!window) {</div>
+<div class="line">        window = <a class="code" href="class_d_t_s_frame.html#a20507dd71a62b698a9070e40755fab26">blank</a>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (window == <a class="code" href="class_d_t_s_frame.html#a4eaa2e530669ee48b4b6d38a4cc3ae6e">a_window</a>) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a4eaa2e530669ee48b4b6d38a4cc3ae6e">a_window</a>-&gt;Show(<span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#af5ccc418850aa4603c4100b6a93cc051">sizer</a>-&gt;Replace(<a class="code" href="class_d_t_s_frame.html#a4eaa2e530669ee48b4b6d38a4cc3ae6e">a_window</a>, window);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (window == <a class="code" href="class_d_t_s_frame.html#a20507dd71a62b698a9070e40755fab26">blank</a>) {</div>
+<div class="line">        <a class="code" href="classdtsgui.html">dtsgui</a>-&gt;<a class="code" href="classdtsgui.html#a67a85f336d93a287e5ec3434a79620ed">SetStatusText</a>();</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    window-&gt;Show(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#af5ccc418850aa4603c4100b6a93cc051">sizer</a>-&gt;Layout();</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#af5ccc418850aa4603c4100b6a93cc051">sizer</a>-&gt;FitInside(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html#a4eaa2e530669ee48b4b6d38a4cc3ae6e">a_window</a> = window;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a55bbe89f24dc6ad3fbe78589bcbd9686"></a>
@@ -1081,7 +1457,28 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00075">pbar</a>, and <a class="el" href="_d_t_s_frame_8h_source.html#l00076">pdia</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_app_8cpp_source.html#l00168">dtsgui_curl::curl_progress_function()</a>, and <a class="el" href="wrapper_8cpp_source.html#l01027">DTS_C_API::dtsgui_progress_start()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                      {</div>
+<div class="line">    <span class="keywordtype">int</span> flags;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!quit &amp;&amp; <a class="code" href="class_d_t_s_frame.html#a96185334cac8d4d93c8684ebe152f17c">pbar</a>) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_frame.html#a96185334cac8d4d93c8684ebe152f17c">pbar</a>-&gt;SetRange(maxval);</div>
+<div class="line">        <a class="code" href="class_d_t_s_frame.html#a96185334cac8d4d93c8684ebe152f17c">pbar</a>-&gt;Show();</div>
+<div class="line">        <a class="code" href="class_d_t_s_frame.html#a96185334cac8d4d93c8684ebe152f17c">pbar</a>-&gt;Pulse();</div>
+<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        flags = wxPD_APP_MODAL | wxPD_AUTO_HIDE | wxPD_ELAPSED_TIME;</div>
+<div class="line">        <span class="keywordflow">if</span> (quit) {</div>
+<div class="line">            flags |= wxPD_CAN_ABORT;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">if</span> ((<a class="code" href="class_d_t_s_frame.html#a7178b3e879eb8fefe5e7361f349cd275">pdia</a> = <span class="keyword">new</span> <a class="code" href="_d_t_s_frame_8h.html#a76cdd62022b409cbb306785d979d5644">wxProgressDialog</a>(<span class="stringliteral">&quot;Progress&quot;</span>, text, maxval, NULL, flags))) {</div>
+<div class="line">            <a class="code" href="class_d_t_s_frame.html#a7178b3e879eb8fefe5e7361f349cd275">pdia</a>-&gt;Show();</div>
+<div class="line">            <a class="code" href="class_d_t_s_frame.html#a7178b3e879eb8fefe5e7361f349cd275">pdia</a>-&gt;Pulse();</div>
+<div class="line">            <span class="keywordflow">return</span> 1;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a85e9e9e31176870e5d1d7fb96972d236"></a>
@@ -1103,7 +1500,21 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00069">a_window</a>, <a class="el" href="_d_t_s_frame_8h_source.html#l00068">blank</a>, <a class="el" href="evdata_8h_source.html#l00044">evdata::data</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00235">SetWindow()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_frame_8cpp_source.html#l00435">NewMenuItem()</a>.</p>
-
+<div class="fragment"><div class="line">                                                 {</div>
+<div class="line">    <a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *window;</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="classevdata.html">evdata</a> *evdat;</div>
+<div class="line"></div>
+<div class="line">    evdat = (<a class="code" href="classevdata.html">evdata</a>*)event.m_callbackUserData;</div>
+<div class="line"></div>
+<div class="line">    if (!evdat || (!(window = (<a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a>*)evdat-&gt;<a class="code" href="classevdata.html#ab8569cae7cd7a33fde4e51872ef29090">data</a>))) {</div>
+<div class="line">        window = <a class="code" href="class_d_t_s_frame.html#a20507dd71a62b698a9070e40755fab26">blank</a>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (window != <a class="code" href="class_d_t_s_frame.html#a4eaa2e530669ee48b4b6d38a4cc3ae6e">a_window</a>) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_frame.html#a7e9f18961fb55d1b9be667b81681803c">SetWindow</a>(window);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="afc0dae8ce7b26ef38297d520a3144d2a"></a>
@@ -1135,7 +1546,20 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00452">DTSPanel::AddItem()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00282">DTSObject::GetPanel()</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00483">DTS_C_API::dtsgui_textpane()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                     {</div>
+<div class="line">    <a class="code" href="class_d_t_s_window.html">DTSWindow</a> *p;</div>
+<div class="line">    <a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *w;</div>
+<div class="line">    wxTextCtrl *tc;</div>
+<div class="line"></div>
+<div class="line">    p = <span class="keyword">new</span> <a class="code" href="_d_t_s_frame_8h.html#aaf5c0edaf8bc2cf97613de1b618bff60">DTSWindow</a>(<span class="keyword">this</span>, <span class="keyword">this</span>, title);</div>
+<div class="line">    w = p-&gt;<a class="code" href="class_d_t_s_object.html#ae88ef1ea6f28346b6cd6d2d898d7acde">GetPanel</a>();</div>
+<div class="line"></div>
+<div class="line">    tc = <span class="keyword">new</span> wxTextCtrl(w, -1, buf, wxDefaultPosition, wxDefaultSize,wxTE_MULTILINE | wxHSCROLL | wxTE_READONLY);</div>
+<div class="line">    p-&gt;<a class="code" href="class_d_t_s_panel.html#a714c09276642d4a0cf20cc5d941f62a1">AddItem</a>(tc, wxGBPosition(0,0), wxGBSpan(10, 6), wxEXPAND|wxGROW, 0, 0);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> p;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a3b057f8c85958444049063e75b602108"></a>
@@ -1167,7 +1591,21 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8h_source.html#l00076">pdia</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_app_8cpp_source.html#l00168">dtsgui_curl::curl_progress_function()</a>, and <a class="el" href="wrapper_8cpp_source.html#l01042">DTS_C_API::dtsgui_progress_update()</a>.</p>
-
+<div class="fragment"><div class="line">                                                           {</div>
+<div class="line"><span class="comment">/*  if (pbar) {</span></div>
+<div class="line"><span class="comment">        pbar-&gt;SetValue(cval);</span></div>
+<div class="line"><span class="comment">    }*/</span></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_frame.html#a7178b3e879eb8fefe5e7361f349cd275">pdia</a>) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_frame.html#a7178b3e879eb8fefe5e7361f349cd275">pdia</a>-&gt;Update(cval, text)) {</div>
+<div class="line">            <span class="keywordflow">return</span> 1;</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            <span class="keywordflow">return</span> 0;</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordflow">return</span> 0;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -1469,7 +1907,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_frame.html">DTSFrame</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

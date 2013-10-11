@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['iface_5fconfig',['iface_config',['../interface_8c.html#abf43f59e582eee9f27734b14c8307819',1,'iface_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;interface.c'],['../private_8h.html#abf43f59e582eee9f27734b14c8307819',1,'iface_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;interface.c']]],
+  ['iface_5fconfig',['iface_config',['../group___d_t_s-_a_p_p-_iface.html#gabf43f59e582eee9f27734b14c8307819',1,'iface_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;interface.c'],['../group___d_t_s-_a_p_p-_iface.html#gabf43f59e582eee9f27734b14c8307819',1,'iface_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;interface.c']]],
   ['incprogress',['IncProgress',['../class_d_t_s_frame.html#a8b1f1c4cf298ef550edec3fa3bf96738',1,'DTSFrame']]],
   ['insert',['Insert',['../class_d_t_s_d_v_m_list_store.html#ad4898a4b6987bc5b28695a96c16ca2c1',1,'DTSDVMListStore']]],
   ['inserttab',['InsertTab',['../class_d_t_s_tab_window.html#a9906beec5aeff80face128b7631f5a8b',1,'DTSTabWindow']]],

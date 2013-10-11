@@ -28,57 +28,75 @@ System configuration wizard\&.
 .ti -1c
 .RI "static void \fBset_temp_xml\fP (struct xml_doc *xmldoc)"
 .br
+.RI "\fIAdd temp nodes used in the wizard\&. \fP"
 .ti -1c
 .RI "static void \fBrem_temp_xml\fP (struct xml_doc *xmldoc)"
 .br
+.RI "\fIRemove tempoary XML nodes updating XML\&. \fP"
 .ti -1c
 .RI "void \fBwizz_custinfo\fP (\fBdtsgui_pane\fP *pg)"
 .br
+.RI "\fICustomer information panel\&. \fP"
 .ti -1c
 .RI "void \fBwizz_netinfo\fP (\fBdtsgui_pane\fP pg)"
 .br
+.RI "\fINetwork information panel\&. \fP"
 .ti -1c
 .RI "void \fBwizz_dyndns\fP (\fBdtsgui_pane\fP pg)"
 .br
+.RI "\fIDynamic DNS configuration panel\&. \fP"
 .ti -1c
 .RI "void \fBwizz_dnsinfo\fP (\fBdtsgui_pane\fP pg)"
 .br
+.RI "\fIDNS/Wins configuration panel\&. \fP"
 .ti -1c
 .RI "void \fBwizz_x509\fP (\fBdtsgui_pane\fP pg)"
 .br
+.RI "\fIX\&.509 configuration panel\&. \fP"
 .ti -1c
 .RI "void \fBwizz_samba\fP (\fBdtsgui_pane\fP pg)"
 .br
+.RI "\fISamba configuration panel\&. \fP"
 .ti -1c
 .RI "void \fBwizz_network\fP (\fBdtsgui_pane\fP pg)"
 .br
+.RI "\fINetwork configuration panel\&. \fP"
 .ti -1c
 .RI "void \fBwizz_exten\fP (\fBdtsgui_pane\fP pg)"
 .br
+.RI "\fIDefault extension settings panel\&. \fP"
 .ti -1c
 .RI "void \fBwizz_location\fP (\fBdtsgui_pane\fP pg)"
 .br
+.RI "\fILocation information panel\&. \fP"
 .ti -1c
 .RI "void \fBwizz_acd\fP (\fBdtsgui_pane\fP pg)"
 .br
+.RI "\fIACD configuration panel\&. \fP"
 .ti -1c
 .RI "void \fBwizz_trunk\fP (\fBdtsgui_pane\fP pg)"
 .br
+.RI "\fITelephony Trunk configuration panel\&. \fP"
 .ti -1c
 .RI "void \fBwizz_voip\fP (\fBdtsgui_pane\fP pg)"
 .br
+.RI "\fIVOIP Configuration panel\&. \fP"
 .ti -1c
 .RI "static int \fBsystem_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, void *data, const char *filename, struct xml_doc *xmldoc, int save)"
 .br
+.RI "\fISystem configuration wizard\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBnewsys_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fICallback from create new system menu item\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBeditsys_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fICallback from edit customer configuration\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBreconfig_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fICallback from configuration menu\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 

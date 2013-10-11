@@ -16,6 +16,15 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @defgroup DTS-APP-Tree Advanced configuration tree
+  * @ingroup DTS-APP
+  * @brief wAdvanced configuration tree
+  * @addtogroup DTS-APP-Tree
+  * @{
+  * @file
+  * @brief Advanced configuration panel.*/
+
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -27,13 +36,23 @@
 
 void network_config_dns_domain_server_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data);
 
+/** @brief Array of network protocols*/
 static const char *protocols[] = {"TCP", "UDP", "GRE", "ESP", "AH", "OSPF", "ALL"};
 
+/** @brief Tree pane configuration call back (Customer Info)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void customer_info(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	wizz_custinfo(p);
 }
 
-/*XXX LDAP Settings server/DN*/
+/** @brief Tree pane configuration call back (Network Configuration)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_config(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	struct xml_doc *xmldoc = dtsgui_panelxml(p);
 	struct form_item *lb, *elb;
@@ -73,6 +92,11 @@ void network_config(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, v
 	objunref(xmldoc);
 }
 
+/** @brief Tree pane configuration call back (DNS Configuration)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_config_dns(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	dtsgui_xmltextbox(p, "Hostname", "Hostname", "/config/DNS/Config", "Option", "option", "Hostname", NULL);
 	dtsgui_xmltextbox(p, "Domain", "Domain", "/config/DNS/Config", "Option", "option", "Domain", NULL);
@@ -86,6 +110,11 @@ void network_config_dns(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode nod
 	dtsgui_xmlcheckbox(p, "Use Internal Interface For DNS First", "IntFirst", "true", "", "/config/DNS/Config", "Option", "option", "IntFirst", NULL);
 }
 
+/** @brief Tree pane configuration call back (Dynamic DNS)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_config_dns_dyn(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	dtsgui_xmltextbox(p, "Dynamic DNS Domain", "DynZone", "/config/DNS/Config", "Option", "option", "DynZone", NULL);
 	dtsgui_xmltextbox(p, "Dynamic DNS Server", "DynServ", "/config/DNS/Config", "Option", "option", "DynServ", NULL);
@@ -94,6 +123,11 @@ void network_config_dns_dyn(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode
 	dtsgui_xmlcheckbox(p, "Add CNAME For host", "DynamicCNAME", "true", "", "/config/DNS/Config", "Option", "option", "DynamicCNAME", NULL);
 }
 
+/** @brief Tree pane configuration call back (DNS Server)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_config_dns_serv(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 
 	dtsgui_xmltextbox(p, "Shared Secret For Domain Updates", "SmartKey", "/config/DNS/Config", "Option", "option", "SmartKey", NULL);
@@ -104,6 +138,11 @@ void network_config_dns_serv(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenod
 	dtsgui_xmlcheckbox(p, "Allow Recursive Lookup Externally", "ExtServ", "true", "", "/config/DNS/Config", "Option", "option", "ExtServ", NULL);
 }
 
+/** @brief Tree pane configuration call back (DNS Zone Defaults)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_config_dns_zone(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	dtsgui_xmltextbox(p, "SOA Serial", "Serial", "/config/DNS/Config", "Option", "option", "Serial", NULL);
 	dtsgui_xmltextbox(p, "SOA Refresh", "Refresh", "/config/DNS/Config", "Option", "option", "Refresh", NULL);
@@ -112,6 +151,11 @@ void network_config_dns_zone(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenod
 	dtsgui_xmltextbox(p, "Default TTL", "DefaultTTL", "/config/DNS/Config", "Option", "option", "DefaultTTL", NULL);
 }
 
+/** @brief Tree pane configuration call back (DNS Hosts)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_config_dns_host(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/DNS/Hosts";
 	struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
@@ -122,6 +166,11 @@ void network_config_dns_host(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenod
 	objunref(xn);
 }
 
+/** @brief Tree pane configuration call back (New DNS Host)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_config_dns_host_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	dtsgui_textbox(p, "Hostame", "host", "", NULL);
 	dtsgui_textbox(p, "IP Address", "ipaddr", "", NULL);
@@ -131,10 +180,20 @@ void network_config_dns_host_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_tre
 							DTS_TREE_NEW_NODE_DELETE | DTS_TREE_NEW_NODE_EDIT | DTS_TREE_NEW_NODE_SORT, NULL, NULL, network_config_dns_host);
 }
 
+/** @brief Add a container for servers to newly added domain.
+  * @param tv Treeview.
+  * @param tn New treenode added.
+  * @param xn XML node reference held by new node.
+  * @param data reference to data held by node*/
 void network_config_dns_domain_node(dtsgui_treeview tv, dtsgui_treenode tn, struct xml_node *xn, void *data) {
 	dtsgui_treecont(tv, tn, "Servers", 0, 1, 0, DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER_NEW, network_config_dns_domain_server_new, NULL);
 }
 
+/** @brief Tree pane configuration call back (Hosted Domain)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_config_dns_domain(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/DNS/Hosted";
 	const char *domain;
@@ -148,6 +207,11 @@ void network_config_dns_domain(dtsgui_pane p, dtsgui_treeview self, dtsgui_treen
 	objunref(xn);
 }
 
+/** @brief Tree pane configuration call back (New Hosted Domain)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_config_dns_domain_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	int flg;
 
@@ -160,6 +224,11 @@ void network_config_dns_domain_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_t
 							network_config_dns_domain_node, NULL, network_config_dns_domain);
 }
 
+/** @brief Tree pane configuration call back (Hosted Domain Server)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_config_dns_domain_server(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre;
 	struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
@@ -174,6 +243,11 @@ void network_config_dns_domain_server(dtsgui_pane p, dtsgui_treeview self, dtsgu
 	objunref(xn);
 }
 
+/** @brief Tree pane configuration call back (New Hosted Domain Server)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_config_dns_domain_server_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *domain;
 	char xpath[PATH_MAX];
@@ -198,6 +272,10 @@ void network_config_dns_domain_server_new(dtsgui_pane p, dtsgui_treeview self, d
 	objunref((void*)domain);
 }
 
+/** @brief Network interface stub shared with interface config.
+  * @param p Panel been configured.
+  * @param xpre Xpath for this interface.
+  * @param iface Interface name.*/
 void network_iface_pane(dtsgui_pane p, const char *xpre, const char *iface) {
 	dtsgui_xmltextbox(p, "Interface", "iface", xpre, "Interface", NULL, iface, NULL);
 	dtsgui_xmltextbox(p, "IP Address", "ipaddr", xpre, "Interface", NULL, iface, "ipaddr");
@@ -210,6 +288,11 @@ void network_iface_pane(dtsgui_pane p, const char *xpre, const char *iface) {
 	dtsgui_xmltextbox(p, "Bandwidth Out", "bwout", xpre, "Interface", NULL, iface, "bwout");
 }
 
+/** @brief Tree pane configuration call back (Network Interface)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_iface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
 	const char *xpre = "/config/IP/Interfaces";
@@ -219,7 +302,9 @@ void network_iface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, vo
 	objunref(xn);
 }
 
-void network_iface_new_pane(dtsgui_pane p, void *data) {
+/** @brief Network interface stub shared with interface config.
+  * @param p Panel been configured.*/
+void network_iface_new_pane(dtsgui_pane p) {
 	dtsgui_textbox(p, "Name", "name", "", NULL);
 	dtsgui_textbox(p, "Interface", "iface", "", NULL);
 	dtsgui_textbox(p, "IP Address", "ipaddr", "0", NULL);
@@ -232,16 +317,26 @@ void network_iface_new_pane(dtsgui_pane p, void *data) {
 	dtsgui_textbox(p, "Bandwidth Out", "bwout", "", NULL);
 }
 
+/** @brief Tree pane configuration call back (New Network Interface)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_newiface(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	int flg;
 
-	network_iface_new_pane(p, data);
+	network_iface_new_pane(p);
 
 	flg = DTS_TREE_NEW_NODE_CONTAINER | DTS_TREE_NEW_NODE_DELETE | DTS_TREE_NEW_NODE_EDIT | DTS_TREE_NEW_NODE_SORT;
 	dtsgui_newxmltreenode(self, p, node, "/config/IP/Interfaces", "Interface", "iface", "name", DTS_NODE_NETWORK_IFACE,
 							flg, NULL, NULL, network_iface);
 }
 
+/** @brief Tree pane configuration call back (WiFi Interface)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_wifi(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/IP";
 	struct form_item *lb;
@@ -274,6 +369,11 @@ void network_wifi(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, voi
 	objunref(xn);
 }
 
+/** @brief Tree pane configuration call back (New WiFi Interface)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_newwifi(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	struct xml_doc *xmldoc = dtsgui_panelxml(p);
 	struct form_item *lb;
@@ -317,6 +417,11 @@ void network_newwifi(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, 
 	objunref(xmldoc);
 }
 
+/** @brief Tree pane configuration call back (WAN Route)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_wan(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/IP/Routes";
 	struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
@@ -330,6 +435,11 @@ void network_wan(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void
 	objunref(xn);
 }
 
+/** @brief Tree pane configuration call back (New Wan Route)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_newwan(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	int flg;
 
@@ -346,6 +456,11 @@ void network_newwan(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, v
 							flg, NULL, NULL, network_wan);
 }
 
+/** @brief Tree pane configuration call back (Static Route)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_route(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/IP/GenRoutes";
 	struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
@@ -356,6 +471,11 @@ void network_route(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, vo
 	objunref(xn);
 }
 
+/** @brief Tree pane configuration call back (New Static Route)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_newroute(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	int flg;
 
@@ -369,6 +489,11 @@ void network_newroute(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node,
 								flg, NULL, NULL, network_route);
 }
 
+/** @brief Tree pane configuration call back (Modem Config)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_modem(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	struct form_item *lb;
 
@@ -387,6 +512,11 @@ void network_modem(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, vo
 	dtsgui_xmltextbox(p, "Password", "Password", "/config/IP/Dialup", "Option", "option", "Password", NULL);
 }
 
+/** @brief Tree pane configuration call back (Advanced Modem Config)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_modem_adv(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	dtsgui_xmltextbox(p, "Holdoff Time", "Holdoff", "/config/IP/Dialup", "Option", "option", "Holdoff", NULL);
 	dtsgui_xmltextbox(p, "MTU/MRU", "MTU", "/config/IP/Dialup", "Option", "option", "MTU", NULL);
@@ -398,6 +528,11 @@ void network_modem_adv(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node
 	dtsgui_xmlcheckbox(p, "Deflate Compression", "Deflate", "true", "", "/config/IP/Dialup", "Option", "option", "Deflate", NULL);
 }
 
+/** @brief Tree pane configuration call back (Analogue Modem Config)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_modem_ana(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	struct form_item *lb;
 
@@ -443,6 +578,11 @@ void network_modem_ana(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node
 	dtsgui_xmlcheckbox(p, "Abort On Busy", "Busy", "true", "", "/config/IP/Dialup", "Option", "option", "Busy", NULL);
 }
 
+/** @brief Tree pane configuration call back (DSL Links)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_adsl_link(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/IP/ADSL/Links";
 	struct xml_node *xn;
@@ -476,6 +616,11 @@ void network_adsl_link(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node
 	objunref(xmldoc);
 }
 
+/** @brief Tree pane configuration call back (New DSL Link)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_adsl_link_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	struct xml_doc *xmldoc = dtsgui_panelxml(p);
 	struct form_item *elb;
@@ -501,6 +646,11 @@ void network_adsl_link_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode 
 	objunref(xmldoc);
 }
 
+/** @brief Tree pane configuration call back (DSL User)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_adsl_user(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	const char *xpre = "/config/IP/ADSL/Users";
 	struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
@@ -510,6 +660,11 @@ void network_adsl_user(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node
 	objunref(xn);
 }
 
+/** @brief Tree pane configuration call back (New DSL User)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_adsl_user_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	int flg;
 
@@ -521,6 +676,11 @@ void network_adsl_user_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode 
 								flg, NULL, NULL, network_adsl_user);
 }
 
+/** @brief Tree pane configuration call back (TOS Config)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_tos(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	struct form_item *lb;
 	int pcnt, i;
@@ -562,6 +722,11 @@ void network_tos(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void
 	objunref(xn);
 }
 
+/** @brief Tree pane configuration call back (New TOS Config)
+  * @param p panel to be configured.
+  * @param self Tree view.
+  * @param node Active tree node.
+  * @param data reference to data held by node*/
 void network_tos_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data) {
 	struct form_item *lb;
 	int pcnt, i, flg;
@@ -599,6 +764,9 @@ void network_tos_new(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, 
 								flg, NULL, NULL, network_tos);
 }
 
+/** @brief Configure the networking noded on the tree.
+  * @param tree Treeview to add nodes too.
+  * @param xmldoc XML document to configure nodes from.*/
 void network_tree_setup(dtsgui_treeview tree, struct xml_doc *xmldoc) {
 	dtsgui_treenode cust, ipconf, tmp, tmp2, tln/*, tmp3*/;
 	struct xml_search *xp;
@@ -737,29 +905,16 @@ void network_tree_setup(dtsgui_treeview tree, struct xml_doc *xmldoc) {
 	dtsgui_treecont(tree, ipconf, "Secuity Certificate Config", 0, 0, 0, -1, NULL, NULL);
 }
 
+/** @brief Advanced configuration menu callback.
+  * @param dtsgui Application data ptr.
+  * @param title Menuitem name.
+  * @param data Reference to data held by menuitem.*/
 dtsgui_pane advanced_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_treeview tree;
 	struct xml_doc *xmldoc;
-	struct app_data *appdata;
-	char defconf[PATH_MAX];
 
-	/*get default for test window*/
 	if (!(xmldoc = app_getxmldoc(dtsgui))) {
-		if (!(appdata = dtsgui_userdata(dtsgui))) {
-			return NULL;
-		}
-		snprintf(defconf, PATH_MAX-1, "%s/default.xml", appdata->datadir);
-		objunref(appdata);
-
-		if (!is_file(defconf)) {
-			dtsgui_alert(dtsgui, "Default configuration not found.\nCheck Installation.");
-			return NULL;
-		}
-
-		if (!(xmldoc = xml_loaddoc(defconf, 1))) {
-			dtsgui_alert(dtsgui, "Default configuration failed to load.\nCheck Installation.");
-			return NULL;
-		}
+		return NULL;
 	}
 
 	tree = dtsgui_treewindow(dtsgui, title, NULL, data, xmldoc);
@@ -767,3 +922,6 @@ dtsgui_pane advanced_config(struct dtsgui *dtsgui, const char *title, void *data
 	objunref(xmldoc);
 	return tree;
 }
+
+
+/** @}*/

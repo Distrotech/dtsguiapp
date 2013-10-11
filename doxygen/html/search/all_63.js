@@ -20,7 +20,7 @@ var searchData=
   ['config_2eh',['config.h',['../mingw_2config_8h.html',1,'']]],
   ['config_2eh',['config.h',['../build_2config_8h.html',1,'']]],
   ['config_5fdata',['config_data',['../class_d_t_s_panel.html#afeb3f176d41017d2daf3b2f2c9e25818',1,'DTSPanel']]],
-  ['config_5fmenu',['config_menu',['../config_8c.html#a2bcdb1dc60a2dc5383e027578faeb44e',1,'config_menu(struct dtsgui *dtsgui):&#160;config.c'],['../private_8h.html#a2bcdb1dc60a2dc5383e027578faeb44e',1,'config_menu(struct dtsgui *dtsgui):&#160;config.c']]],
+  ['config_5fmenu',['config_menu',['../group___d_t_s-_a_p_p-_config.html#ga2bcdb1dc60a2dc5383e027578faeb44e',1,'config_menu(struct dtsgui *dtsgui):&#160;config.c'],['../group___d_t_s-_a_p_p-_config.html#ga2bcdb1dc60a2dc5383e027578faeb44e',1,'config_menu(struct dtsgui *dtsgui):&#160;config.c']]],
   ['configcb',['configcb',['../class_d_t_s_panel.html#a92c2c65336702cf1315967eb8f1951a7',1,'DTSPanel']]],
   ['configpane',['ConfigPane',['../class_d_t_s_tab_page.html#a433bdbb8af0ded1fb884b45c5d9259a9',1,'DTSTabPage']]],
   ['configpanel',['ConfigPanel',['../class_d_t_s_d_v_m_list_store.html#a235c78752ca007f5189806e95abcefe2',1,'DTSDVMListStore']]],
@@ -35,6 +35,7 @@ var searchData=
   ['curl_5fprogress_5ffunction',['curl_progress_function',['../classdtsgui__curl.html#a2fecec8a1192e94da4125de619ce13e7',1,'dtsgui_curl']]],
   ['curl_5fstartprogress',['curl_startprogress',['../classdtsgui__curl.html#a0794340b11b85da4309931132721b4e2',1,'dtsgui_curl']]],
   ['curlpasswd',['CurlPasswd',['../classdtsgui__curl.html#a6185280c5a0b3071a7b34a38131754f3',1,'dtsgui_curl']]],
-  ['customer_5finfo',['customer_info',['../netconfig_8c.html#ae22737be42f8d0e7f4095a937e911578',1,'netconfig.c']]],
-  ['cxxapi_2ecpp',['cxxapi.cpp',['../cxxapi_8cpp.html',1,'']]]
+  ['customer_5finfo',['customer_info',['../group___d_t_s-_a_p_p-_tree.html#gae22737be42f8d0e7f4095a937e911578',1,'netconfig.c']]],
+  ['cxxapi_2ecpp',['cxxapi.cpp',['../cxxapi_8cpp.html',1,'']]],
+  ['configuration_20menu_20functions',['Configuration menu functions',['../group___d_t_s-_a_p_p-_config.html',1,'']]]
 ];

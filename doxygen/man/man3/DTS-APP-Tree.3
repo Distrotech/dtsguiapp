@@ -1,0 +1,1675 @@
+.TH "Advanced configuration tree" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Advanced configuration tree \- 
+.PP
+wAdvanced configuration tree  
+
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBnetconfig\&.c\fP"
+.br
+.RI "\fIAdvanced configuration panel\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBnetwork_config_dns_domain_server_new\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (New Hosted Domain Server) \fP"
+.ti -1c
+.RI "void \fBcustomer_info\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (Customer Info) \fP"
+.ti -1c
+.RI "void \fBnetwork_config\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (Network Configuration) \fP"
+.ti -1c
+.RI "void \fBnetwork_config_dns\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (DNS Configuration) \fP"
+.ti -1c
+.RI "void \fBnetwork_config_dns_dyn\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (Dynamic DNS) \fP"
+.ti -1c
+.RI "void \fBnetwork_config_dns_serv\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (DNS Server) \fP"
+.ti -1c
+.RI "void \fBnetwork_config_dns_zone\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (DNS Zone Defaults) \fP"
+.ti -1c
+.RI "void \fBnetwork_config_dns_host\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (DNS Hosts) \fP"
+.ti -1c
+.RI "void \fBnetwork_config_dns_host_new\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (New DNS Host) \fP"
+.ti -1c
+.RI "void \fBnetwork_config_dns_domain_node\fP (\fBdtsgui_treeview\fP tv, \fBdtsgui_treenode\fP tn, struct xml_node *xn, void *data)"
+.br
+.RI "\fIAdd a container for servers to newly added domain\&. \fP"
+.ti -1c
+.RI "void \fBnetwork_config_dns_domain\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (Hosted Domain) \fP"
+.ti -1c
+.RI "void \fBnetwork_config_dns_domain_new\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (New Hosted Domain) \fP"
+.ti -1c
+.RI "void \fBnetwork_config_dns_domain_server\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (Hosted Domain Server) \fP"
+.ti -1c
+.RI "void \fBnetwork_iface_pane\fP (\fBdtsgui_pane\fP p, const char *xpre, const char *iface)"
+.br
+.RI "\fINetwork interface stub shared with interface config\&. \fP"
+.ti -1c
+.RI "void \fBnetwork_iface\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (Network Interface) \fP"
+.ti -1c
+.RI "void \fBnetwork_iface_new_pane\fP (\fBdtsgui_pane\fP p)"
+.br
+.RI "\fINetwork interface stub shared with interface config\&. \fP"
+.ti -1c
+.RI "void \fBnetwork_newiface\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (New Network Interface) \fP"
+.ti -1c
+.RI "void \fBnetwork_wifi\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (WiFi Interface) \fP"
+.ti -1c
+.RI "void \fBnetwork_newwifi\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (New WiFi Interface) \fP"
+.ti -1c
+.RI "void \fBnetwork_wan\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (WAN Route) \fP"
+.ti -1c
+.RI "void \fBnetwork_newwan\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (New Wan Route) \fP"
+.ti -1c
+.RI "void \fBnetwork_route\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (Static Route) \fP"
+.ti -1c
+.RI "void \fBnetwork_newroute\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (New Static Route) \fP"
+.ti -1c
+.RI "void \fBnetwork_modem\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (Modem Config) \fP"
+.ti -1c
+.RI "void \fBnetwork_modem_adv\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (Advanced Modem Config) \fP"
+.ti -1c
+.RI "void \fBnetwork_modem_ana\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (Analogue Modem Config) \fP"
+.ti -1c
+.RI "void \fBnetwork_adsl_link\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (DSL Links) \fP"
+.ti -1c
+.RI "void \fBnetwork_adsl_link_new\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (New DSL Link) \fP"
+.ti -1c
+.RI "void \fBnetwork_adsl_user\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (DSL User) \fP"
+.ti -1c
+.RI "void \fBnetwork_adsl_user_new\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (New DSL User) \fP"
+.ti -1c
+.RI "void \fBnetwork_tos\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (TOS Config) \fP"
+.ti -1c
+.RI "void \fBnetwork_tos_new\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
+.br
+.RI "\fITree pane configuration call back (New TOS Config) \fP"
+.ti -1c
+.RI "void \fBnetwork_tree_setup\fP (\fBdtsgui_treeview\fP tree, struct xml_doc *xmldoc)"
+.br
+.RI "\fIConfigure the networking noded on the tree\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBadvanced_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.RI "\fIAdvanced configuration menu callback\&. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const char * \fBprotocols\fP [] = {'TCP', 'UDP', 'GRE', 'ESP', 'AH', 'OSPF', 'ALL'}"
+.br
+.RI "\fIArray of network protocols\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+wAdvanced configuration tree 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBdtsgui_pane\fP advanced_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Advanced configuration menu callback\&. \fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fItitle\fP Menuitem name\&. 
+.br
+\fIdata\fP Reference to data held by menuitem\&. 
+.RE
+.PP
+
+.PP
+Definition at line 912 of file netconfig\&.c\&.
+.PP
+References app_getxmldoc(), dtsgui_treewindow(), and network_tree_setup()\&.
+.PP
+Referenced by config_menu()\&.
+.PP
+.nf
+                                                                                  {
+    dtsgui_treeview tree;
+    struct xml_doc *xmldoc;
+    struct app_data *appdata;
+    char defconf[PATH_MAX];
+
+    if (!(xmldoc = app_getxmldoc(dtsgui))) {
+        return NULL;
+    }
+
+    tree = dtsgui_treewindow(dtsgui, title, NULL, data, xmldoc);
+    network_tree_setup(tree, xmldoc);
+    objunref(xmldoc);
+    return tree;
+}
+.fi
+.SS "void customer_info (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (Customer Info) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 47 of file netconfig\&.c\&.
+.PP
+References wizz_custinfo()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                          {
+    wizz_custinfo(p);
+}
+.fi
+.SS "void network_adsl_link (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (DSL Links) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 586 of file netconfig\&.c\&.
+.PP
+References dtsgui_listbox_addxml(), dtsgui_panelxml(), dtsgui_treenodegetxml(), dtsgui_xmllistbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_adsl_link_new(), and network_tree_setup()\&.
+.PP
+.nf
+                                                                                              {
+    const char *xpre = '/config/IP/ADSL/Links';
+    struct xml_node *xn;
+    struct xml_doc *xmldoc;
+    struct form_item *elb;
+
+    if (!(xn = dtsgui_treenodegetxml(node, NULL))) {
+        return;
+    }
+
+    if (!(xmldoc = dtsgui_panelxml(p))) {
+        objunref(xn);
+        return;
+    }
+
+    if ((elb = dtsgui_xmllistbox(p, 'Interface', 'interface', xpre, 'Link', NULL, xn->value, 'interface'))) {
+        dtsgui_listbox_addxml(elb, xmldoc, '/config/IP/Interfaces/Interface', 'name', NULL);
+        objunref(elb);
+    }
+
+    dtsgui_xmltextbox(p, 'PPPoE Service (AC/Service)', 'service', xpre, 'Link', NULL, xn->value, 'service');
+    dtsgui_xmltextbox(p, 'Username', 'username', xpre, 'Link', NULL, xn->value, 'username');
+    dtsgui_xmltextbox(p, 'Password', 'password', xpre, 'Link', NULL, xn->value, 'password');
+    dtsgui_xmltextbox(p, 'Bandwidth In', 'bwin', xpre, 'Link', NULL, xn->value, 'bwin');
+    dtsgui_xmltextbox(p, 'Bandwidth Out', 'bwout', xpre, 'Link', NULL, xn->value, 'bwout');
+    dtsgui_xmltextbox(p, 'TOS Match', 'tos', xpre, 'Link', NULL, xn->value, 'tos');
+    dtsgui_xmltextbox(p, 'Virtual IP', 'virtip', xpre, 'Link', NULL, xn->value, 'virtip');
+    dtsgui_xmltextbox(p, 'Remote IP', 'remip', xpre, 'Link', NULL, xn->value, 'remip');
+
+    objunref(xn);
+    objunref(xmldoc);
+}
+.fi
+.SS "void network_adsl_link_new (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (New DSL Link) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 624 of file netconfig\&.c\&.
+.PP
+References DTS_NODE_NETWORK_ADSL_LINK, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_listbox(), dtsgui_listbox_addxml(), dtsgui_newxmltreenode(), dtsgui_panelxml(), dtsgui_textbox(), and network_adsl_link()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                                  {
+    struct xml_doc *xmldoc = dtsgui_panelxml(p);
+    struct form_item *elb;
+    int flg;
+
+    dtsgui_textbox(p, 'Link Name', 'name', '', NULL);
+    if ((elb = dtsgui_listbox(p, 'Interface', 'interface', NULL))) {
+        dtsgui_listbox_addxml(elb, xmldoc, '/config/IP/Interfaces/Interface', 'name', NULL);
+        objunref(elb);
+    }
+    dtsgui_textbox(p, 'PPPoE Service (AC/Service)', 'service', '', NULL);
+    dtsgui_textbox(p, 'Username', 'username', '', NULL);
+    dtsgui_textbox(p, 'Password', 'password', '', NULL);
+    dtsgui_textbox(p, 'Bandwidth In', 'bwin', '', NULL);
+    dtsgui_textbox(p, 'Bandwidth Out', 'bwout', '', NULL);
+    dtsgui_textbox(p, 'TOS Match', 'tos', '', NULL);
+    dtsgui_textbox(p, 'Virtual IP', 'virtip', '', NULL);
+    dtsgui_textbox(p, 'Remote IP', 'remip', '', NULL);
+
+    flg = DTS_TREE_NEW_NODE_DELETE | DTS_TREE_NEW_NODE_EDIT | DTS_TREE_NEW_NODE_SORT;
+    dtsgui_newxmltreenode(self, p, node, '/config/IP/ADSL/Links', 'Link', 'name', NULL, DTS_NODE_NETWORK_ADSL_LINK,
+                                flg, NULL, NULL, network_adsl_link);
+    objunref(xmldoc);
+}
+.fi
+.SS "void network_adsl_user (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (DSL User) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 654 of file netconfig\&.c\&.
+.PP
+References dtsgui_treenodegetxml(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_adsl_user_new(), and network_tree_setup()\&.
+.PP
+.nf
+                                                                                              {
+    const char *xpre = '/config/IP/ADSL/Users';
+    struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
+
+    dtsgui_xmltextbox(p, 'Password', 'password', xpre, 'User', NULL, xn->value , 'password');
+
+    objunref(xn);
+}
+.fi
+.SS "void network_adsl_user_new (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (New DSL User) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 668 of file netconfig\&.c\&.
+.PP
+References DTS_NODE_NETWORK_ADSL_USER, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_newxmltreenode(), dtsgui_textbox(), and network_adsl_user()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                                  {
+    int flg;
+
+    dtsgui_textbox(p, 'Username', 'username', '', NULL);
+    dtsgui_textbox(p, 'Password', 'password', '', NULL);
+
+    flg = DTS_TREE_NEW_NODE_DELETE | DTS_TREE_NEW_NODE_EDIT | DTS_TREE_NEW_NODE_SORT;
+    dtsgui_newxmltreenode(self, p, node, '/config/IP/ADSL/Users', 'User', 'username', NULL, DTS_NODE_NETWORK_ADSL_USER,
+                                flg, NULL, NULL, network_adsl_user);
+}
+.fi
+.SS "void network_config (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (Network Configuration) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 56 of file netconfig\&.c\&.
+.PP
+References dtsgui_item_value(), dtsgui_listbox_add(), dtsgui_listbox_addxml(), dtsgui_panelxml(), dtsgui_xmllistbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                           {
+    struct xml_doc *xmldoc = dtsgui_panelxml(p);
+    struct form_item *lb, *elb;
+    const char *extint = NULL;
+
+    /*XXX LDAP Settings server/DN*/
+    if ((lb = dtsgui_xmllistbox(p, 'Internal Interface', 'Internal', '/config/IP/SysConf', 'Option', 'option', 'Internal', NULL))) {
+        dtsgui_listbox_addxml(lb, xmldoc, '/config/IP/Interfaces/Interface', 'name', NULL);
+        objunref(lb);
+    }
+    if ((elb = dtsgui_xmllistbox(p, 'External Interface', 'External', '/config/IP/SysConf', 'Option', 'option', 'External', NULL))) {
+        dtsgui_listbox_add(elb, 'Modem', 'Dialup');
+        dtsgui_listbox_addxml(elb, xmldoc, '/config/IP/Interfaces/Interface', 'name', NULL);
+        extint = dtsgui_item_value(elb);
+        objunref(elb);
+    }
+    if ((lb = dtsgui_xmllistbox(p, 'External OVPN Interface', 'OVPNNet', '/config/IP/SysConf', 'Option', 'option', 'OVPNNet', NULL))) {
+        dtsgui_listbox_add(lb, 'Modem', 'Dialup');
+        dtsgui_listbox_addxml(lb, xmldoc, '/config/IP/Interfaces/Interface', 'name', NULL);
+        objunref(lb);
+    }
+
+    if (extint) {
+        free((void*)extint);
+    }
+
+    dtsgui_xmltextbox(p, 'Gateway Address', 'Nexthop', '/config/IP/SysConf', 'Option', 'option', 'Nexthop', NULL);
+    dtsgui_xmltextbox(p, 'External (Natted IP)', 'NattedIP', '/config/IP/SysConf', 'Option', 'option', 'NattedIP', NULL);
+    dtsgui_xmltextbox(p, 'IPSEC VPN Access', 'VPNNet', '/config/IP/SysConf', 'Option', 'option', 'VPNNet', NULL);
+    dtsgui_xmltextbox(p, 'Open VPN Access', 'OVPNNet', '/config/IP/SysConf', 'Option', 'option', 'OVPNNet', NULL);
+    dtsgui_xmltextbox(p, 'L2TP VPN Access', 'L2TPNet', '/config/IP/SysConf', 'Option', 'option', 'L2TPNet', NULL);
+    dtsgui_xmltextbox(p, 'NTP Server[s]', 'NTPServer', '/config/IP/SysConf', 'Option', 'option', 'NTPServer', NULL);
+    dtsgui_xmltextbox(p, 'Bridge Interfaces', 'Bridge', '/config/IP/SysConf', 'Option', 'option', 'Bridge', NULL);
+    dtsgui_xmltextbox(p, 'Incoming Traffic Limit', 'Ingress','/config/IP/SysConf', 'Option', 'option', 'Ingress', NULL);
+    dtsgui_xmltextbox(p, 'Outgoing Traffic Limit', 'Egress', '/config/IP/SysConf', 'Option', 'option', 'Egress', NULL);
+
+    objunref(xmldoc);
+}
+.fi
+.SS "void network_config_dns (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (DNS Configuration) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 100 of file netconfig\&.c\&.
+.PP
+References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                               {
+    dtsgui_xmltextbox(p, 'Hostname', 'Hostname', '/config/DNS/Config', 'Option', 'option', 'Hostname', NULL);
+    dtsgui_xmltextbox(p, 'Domain', 'Domain', '/config/DNS/Config', 'Option', 'option', 'Domain', NULL);
+    dtsgui_xmltextbox(p, 'Aditional Search Domains', 'Search', '/config/DNS/Config', 'Option', 'option', 'Search', NULL);
+    dtsgui_xmltextbox(p, 'Primary DNS', 'PrimaryDns', '/config/IP/SysConf', 'Option', 'option', 'PrimaryDns', NULL);
+    dtsgui_xmltextbox(p, 'Secondary DNS', 'SecondaryDns', '/config/IP/SysConf', 'Option', 'option', 'SecondaryDns', NULL);
+    dtsgui_xmltextbox(p, 'Primary WINS', 'PrimaryWins', '/config/IP/SysConf', 'Option', 'option', 'PrimaryWins', NULL);
+    dtsgui_xmltextbox(p, 'Secondary WINS', 'SecondaryWins', '/config/IP/SysConf', 'Option', 'option', 'SecondaryWins', NULL);
+    dtsgui_xmltextbox(p, 'DHCP Lease', 'DHCPLease', '/config/IP/SysConf', 'Option', 'option', 'DHCPLease', NULL);
+    dtsgui_xmltextbox(p, 'DHCP Max Lease', 'DHCPLease', '/config/IP/SysConf', 'Option', 'option', 'DHCPMaxLease', NULL);
+    dtsgui_xmlcheckbox(p, 'Use Internal Interface For DNS First', 'IntFirst', 'true', '', '/config/DNS/Config', 'Option', 'option', 'IntFirst', NULL);
+}
+.fi
+.SS "void network_config_dns_domain (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (Hosted Domain) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 197 of file netconfig\&.c\&.
+.PP
+References dtsgui_treenodegetxml(), dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_config_dns_domain_new(), and network_tree_setup()\&.
+.PP
+.nf
+                                                                                                      {
+    const char *xpre = '/config/DNS/Hosted';
+    const char *domain;
+    struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
+
+    domain = xml_getattr(xn, 'domain');
+
+    dtsgui_xmltextbox(p, 'TSIG Key [Master]', 'key', xpre, 'Domain', 'domain', domain, 'key');
+    dtsgui_xmlcheckbox(p, 'Internal Domain', 'internal', 'true', '', xpre, 'Domain', 'domain', domain, 'internal');
+
+    objunref(xn);
+}
+.fi
+.SS "void network_config_dns_domain_new (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (New Hosted Domain) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 215 of file netconfig\&.c\&.
+.PP
+References DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN, DTS_TREE_NEW_NODE_CONTAINER, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_checkbox(), dtsgui_newxmltreenode(), dtsgui_textbox(), network_config_dns_domain(), and network_config_dns_domain_node()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                                          {
+    int flg;
+
+    dtsgui_textbox(p, 'Domain', 'domain', '', NULL);
+    dtsgui_textbox(p, 'TSIG Key [Master]', 'key', '', NULL);
+    dtsgui_checkbox(p, 'Internal Domain', 'internal', 'true', '', 0, NULL);
+
+    flg = DTS_TREE_NEW_NODE_CONTAINER | DTS_TREE_NEW_NODE_DELETE | DTS_TREE_NEW_NODE_EDIT | DTS_TREE_NEW_NODE_SORT;
+    dtsgui_newxmltreenode(self, p, node, '/config/DNS/Hosted', 'Domain', NULL, 'domain', DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN, flg,
+                            network_config_dns_domain_node, NULL, network_config_dns_domain);
+}
+.fi
+.SS "void network_config_dns_domain_node (\fBdtsgui_treeview\fPtv, \fBdtsgui_treenode\fPtn, struct xml_node *xn, void *data)"
+
+.PP
+Add a container for servers to newly added domain\&. \fBParameters:\fP
+.RS 4
+\fItv\fP Treeview\&. 
+.br
+\fItn\fP New treenode added\&. 
+.br
+\fIxn\fP XML node reference held by new node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 188 of file netconfig\&.c\&.
+.PP
+References DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER_NEW, dtsgui_treecont(), and network_config_dns_domain_server_new()\&.
+.PP
+Referenced by network_config_dns_domain_new()\&.
+.PP
+.nf
+                                                                                                             {
+    dtsgui_treecont(tv, tn, 'Servers', 0, 1, 0, DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER_NEW, network_config_dns_domain_server_new, NULL);
+}
+.fi
+.SS "void network_config_dns_domain_server (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (Hosted Domain Server) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 232 of file netconfig\&.c\&.
+.PP
+References dtsgui_treenodegetdata(), dtsgui_treenodegetxml(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_config_dns_domain_server_new()\&.
+.PP
+.nf
+                                                                                                             {
+    const char *xpre;
+    struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
+
+    if (!(xpre = dtsgui_treenodegetdata(node))) {
+        objunref(xn);
+        return;
+    }
+
+    dtsgui_xmltextbox(p, 'Name Server IP Address', 'master', xpre, 'NameServer', NULL, xn->value, NULL);
+    objunref((void*)xpre);
+    objunref(xn);
+}
+.fi
+.SS "void network_config_dns_domain_server_new (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (New Hosted Domain Server) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 251 of file netconfig\&.c\&.
+.PP
+References DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_SORT, dtsgui_newxmltreenode(), dtsgui_textbox(), dtsgui_treenodeparent(), and network_config_dns_domain_server()\&.
+.PP
+Referenced by network_config_dns_domain_node()\&.
+.PP
+.nf
+                                                                                                                 {
+    const char *domain;
+    char xpath[PATH_MAX];
+    int len, flg;
+
+    if (!(domain = dtsgui_treenodeparent(node))) {
+        return;
+    }
+
+    snprintf(xpath, PATH_MAX, '/config/DNS/Hosted/Domain[@domain = '%s']', domain);
+    free((void*)domain);
+
+    len = strlen(xpath)+1;
+    domain = objalloc(len, NULL);
+    memcpy((void*)domain, xpath, len);
+
+    dtsgui_textbox(p, 'Name Server IP Address', 'master', '', NULL);
+
+    flg = DTS_TREE_NEW_NODE_DELETE | DTS_TREE_NEW_NODE_SORT;
+    dtsgui_newxmltreenode(self, p, node, xpath, 'NameServer', 'master', 'master', DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER,
+                            flg, NULL, (void*)domain, network_config_dns_domain_server);
+    objunref((void*)domain);
+}
+.fi
+.SS "void network_config_dns_dyn (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (Dynamic DNS) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 118 of file netconfig\&.c\&.
+.PP
+References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                                   {
+    dtsgui_xmltextbox(p, 'Dynamic DNS Domain', 'DynZone', '/config/DNS/Config', 'Option', 'option', 'DynZone', NULL);
+    dtsgui_xmltextbox(p, 'Dynamic DNS Server', 'DynServ', '/config/DNS/Config', 'Option', 'option', 'DynServ', NULL);
+    dtsgui_xmltextbox(p, 'Dynamic DNS Secret', 'DynKey', '/config/DNS/Config', 'Option', 'option', 'DynKey', NULL);
+    dtsgui_xmltextbox(p, 'Dynamic Zone TTL', 'DynamicTTL', '/config/DNS/Config', 'Option', 'option', 'DynamicTTL', NULL);
+    dtsgui_xmlcheckbox(p, 'Add CNAME For host', 'DynamicCNAME', 'true', '', '/config/DNS/Config', 'Option', 'option', 'DynamicCNAME', NULL);
+}
+.fi
+.SS "void network_config_dns_host (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (DNS Hosts) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 159 of file netconfig\&.c\&.
+.PP
+References dtsgui_treenodegetxml(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_config_dns_host_new(), and network_tree_setup()\&.
+.PP
+.nf
+                                                                                                    {
+    const char *xpre = '/config/DNS/Hosts';
+    struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
+
+    dtsgui_xmltextbox(p, 'IP Address', 'ipaddr', xpre, 'Host', NULL, xn->value, 'ipaddr');
+    dtsgui_xmltextbox(p, 'MAC Address', 'macaddr', xpre, 'Host', NULL, xn->value, 'macaddr');
+
+    objunref(xn);
+}
+.fi
+.SS "void network_config_dns_host_new (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (New DNS Host) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 174 of file netconfig\&.c\&.
+.PP
+References DTS_NODE_NETWORK_CONFIG_DNS_HOST, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_newxmltreenode(), dtsgui_textbox(), and network_config_dns_host()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                                        {
+    dtsgui_textbox(p, 'Hostame', 'host', '', NULL);
+    dtsgui_textbox(p, 'IP Address', 'ipaddr', '', NULL);
+    dtsgui_textbox(p, 'Mac Address', 'macaddr', '', NULL);
+
+    dtsgui_newxmltreenode(self, p, node, '/config/DNS/Hosts', 'Host', 'host', 'host', DTS_NODE_NETWORK_CONFIG_DNS_HOST,
+                            DTS_TREE_NEW_NODE_DELETE | DTS_TREE_NEW_NODE_EDIT | DTS_TREE_NEW_NODE_SORT, NULL, NULL, network_config_dns_host);
+}
+.fi
+.SS "void network_config_dns_serv (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (DNS Server) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 131 of file netconfig\&.c\&.
+.PP
+References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                                    {
+
+    dtsgui_xmltextbox(p, 'Shared Secret For Domain Updates', 'SmartKey', '/config/DNS/Config', 'Option', 'option', 'SmartKey', NULL);
+    dtsgui_xmlcheckbox(p, 'Backup Zone Files', 'Backup', 'true', '', '/config/DNS/Config', 'Option', 'option', 'Backup', NULL);
+    dtsgui_xmlcheckbox(p, 'Authorotive [Internal]', 'Auth', 'true', '', '/config/DNS/Config', 'Option', 'option', 'Auth', NULL);
+    dtsgui_xmlcheckbox(p, 'Authorotive [External]', 'AuthX', 'true', '','/config/DNS/Config', 'Option', 'option', 'AuthX', NULL);
+    dtsgui_xmlcheckbox(p, 'Use DNS Servers Obtained From PPP', 'Usepeer', 'true', '', '/config/DNS/Config', 'Option', 'option', 'Usepeer', NULL);
+    dtsgui_xmlcheckbox(p, 'Allow Recursive Lookup Externally', 'ExtServ', 'true', '', '/config/DNS/Config', 'Option', 'option', 'ExtServ', NULL);
+}
+.fi
+.SS "void network_config_dns_zone (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (DNS Zone Defaults) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 146 of file netconfig\&.c\&.
+.PP
+References dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                                    {
+    dtsgui_xmltextbox(p, 'SOA Serial', 'Serial', '/config/DNS/Config', 'Option', 'option', 'Serial', NULL);
+    dtsgui_xmltextbox(p, 'SOA Refresh', 'Refresh', '/config/DNS/Config', 'Option', 'option', 'Refresh', NULL);
+    dtsgui_xmltextbox(p, 'SOA Retry', 'Retry', '/config/DNS/Config', 'Option', 'option', 'Retry', NULL);
+    dtsgui_xmltextbox(p, 'SOA Expire', 'Expire', '/config/DNS/Config', 'Option', 'option', 'Expire', NULL);
+    dtsgui_xmltextbox(p, 'Default TTL', 'DefaultTTL', '/config/DNS/Config', 'Option', 'option', 'DefaultTTL', NULL);
+}
+.fi
+.SS "void network_iface (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (Network Interface) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 296 of file netconfig\&.c\&.
+.PP
+References dtsgui_treenodegetxml(), and network_iface_pane()\&.
+.PP
+Referenced by network_newiface(), and network_tree_setup()\&.
+.PP
+.nf
+                                                                                          {
+    struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
+    const char *xpre = '/config/IP/Interfaces';
+    const char *iface = data;
+
+    network_iface_pane(p, xpre, iface);
+    objunref(xn);
+}
+.fi
+.SS "void network_iface_new_pane (\fBdtsgui_pane\fPp)"
+
+.PP
+Network interface stub shared with interface config\&. \fBParameters:\fP
+.RS 4
+\fIp\fP Panel been configured\&. 
+.RE
+.PP
+
+.PP
+Definition at line 307 of file netconfig\&.c\&.
+.PP
+References dtsgui_textbox()\&.
+.PP
+Referenced by network_iface_new_pane_cb(), and network_newiface()\&.
+.PP
+.nf
+                                           {
+    dtsgui_textbox(p, 'Name', 'name', '', NULL);
+    dtsgui_textbox(p, 'Interface', 'iface', '', NULL);
+    dtsgui_textbox(p, 'IP Address', 'ipaddr', '0', NULL);
+    dtsgui_textbox(p, 'IP Subnet Bits', 'subnet', '32', NULL);
+    dtsgui_textbox(p, 'DHCP Gateway', 'gateway', '', NULL);
+    dtsgui_textbox(p, 'MAC Address', 'macaddr', '00:00:00:00:00:00', NULL);
+    dtsgui_textbox(p, 'DHCP Start Address', 'dhcpstart', '-', NULL);
+    dtsgui_textbox(p, 'DHCP End Address', 'dhcpend', '-', NULL);
+    dtsgui_textbox(p, 'Bandwidth In', 'bwin', '', NULL);
+    dtsgui_textbox(p, 'Bandwidth Out', 'bwout', '', NULL);
+}
+.fi
+.SS "void network_iface_pane (\fBdtsgui_pane\fPp, const char *xpre, const char *iface)"
+
+.PP
+Network interface stub shared with interface config\&. \fBParameters:\fP
+.RS 4
+\fIp\fP Panel been configured\&. 
+.br
+\fIxpre\fP Xpath for this interface\&. 
+.br
+\fIiface\fP Interface name\&. 
+.RE
+.PP
+
+.PP
+Definition at line 279 of file netconfig\&.c\&.
+.PP
+References dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_iface(), and network_iface_pane_cb()\&.
+.PP
+.nf
+                                                                            {
+    dtsgui_xmltextbox(p, 'Interface', 'iface', xpre, 'Interface', NULL, iface, NULL);
+    dtsgui_xmltextbox(p, 'IP Address', 'ipaddr', xpre, 'Interface', NULL, iface, 'ipaddr');
+    dtsgui_xmltextbox(p, 'IP Subnet Bits', 'subnet', xpre, 'Interface', NULL, iface, 'subnet');
+    dtsgui_xmltextbox(p, 'DHCP Gateway', 'gateway', xpre, 'Interface', NULL, iface, 'gateway');
+    dtsgui_xmltextbox(p, 'MAC Address', 'macaddr', xpre, 'Interface', NULL, iface, 'macaddr');
+    dtsgui_xmltextbox(p, 'DHCP Start Address', 'dhcpstart', xpre, 'Interface', NULL, iface, 'dhcpstart');
+    dtsgui_xmltextbox(p, 'DHCP End Address', 'dhcpend', xpre, 'Interface', NULL, iface, 'dhcpend');
+    dtsgui_xmltextbox(p, 'Bandwidth In', 'bwin', xpre, 'Interface', NULL, iface, 'bwin');
+    dtsgui_xmltextbox(p, 'Bandwidth Out', 'bwout', xpre, 'Interface', NULL, iface, 'bwout');
+}
+.fi
+.SS "void network_modem (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (Modem Config) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 497 of file netconfig\&.c\&.
+.PP
+References dtsgui_listbox_add(), dtsgui_xmllistbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                          {
+    struct form_item *lb;
+
+    /*XXX LDAP Settings server/DN*/
+    if ((lb = dtsgui_xmllistbox(p, 'Connection Type', 'Connection', '/config/IP/Dialup', 'Option', 'option', 'Connection', NULL))) {
+        dtsgui_listbox_add(lb, 'Dialup', 'Dialup');
+        dtsgui_listbox_add(lb, 'Leased', 'Leased');
+        dtsgui_listbox_add(lb, 'ADSL', 'ADSL');
+        dtsgui_listbox_add(lb, '3G', '3G');
+        dtsgui_listbox_add(lb, '3GIPW', '3GIPW');
+        objunref(lb);
+    }
+
+    dtsgui_xmltextbox(p, 'Number/Service ID/APN', 'Number', '/config/IP/Dialup', 'Option', 'option', 'Number', NULL);
+    dtsgui_xmltextbox(p, 'Username', 'Username', '/config/IP/Dialup', 'Option', 'option', 'Username', NULL);
+    dtsgui_xmltextbox(p, 'Password', 'Password', '/config/IP/Dialup', 'Option', 'option', 'Password', NULL);
+}
+.fi
+.SS "void network_modem_adv (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (Advanced Modem Config) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 520 of file netconfig\&.c\&.
+.PP
+References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                              {
+    dtsgui_xmltextbox(p, 'Holdoff Time', 'Holdoff', '/config/IP/Dialup', 'Option', 'option', 'Holdoff', NULL);
+    dtsgui_xmltextbox(p, 'MTU/MRU', 'MTU', '/config/IP/Dialup', 'Option', 'option', 'MTU', NULL);
+    dtsgui_xmltextbox(p, 'Idle Timeout', 'IdleTimeout', '/config/IP/Dialup', 'Option', 'option', 'IdleTimeout', NULL);
+    dtsgui_xmltextbox(p, 'Fail Limit', 'MaxFail', '/config/IP/Dialup', 'Option', 'option', 'MaxFail', NULL);
+    dtsgui_xmltextbox(p, 'Connect Dely', 'ConnectDelay', '/config/IP/Dialup', 'Option', 'option', 'ConnectDelay', NULL);
+
+    dtsgui_xmlcheckbox(p, 'BSD Compression', 'BSD', 'true', '', '/config/IP/Dialup', 'Option', 'option', 'BSD', NULL);
+    dtsgui_xmlcheckbox(p, 'Deflate Compression', 'Deflate', 'true', '', '/config/IP/Dialup', 'Option', 'option', 'Deflate', NULL);
+}
+.fi
+.SS "void network_modem_ana (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (Analogue Modem Config) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 536 of file netconfig\&.c\&.
+.PP
+References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), dtsgui_xmllistbox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                              {
+    struct form_item *lb;
+
+    if ((lb = dtsgui_xmllistbox(p, 'Comm Port ', 'ComPort', '/config/IP/Dialup', 'Option', 'option', 'ComPort', NULL))) {
+        dtsgui_listbox_add(lb, 'COM1', 'COM1');
+        dtsgui_listbox_add(lb, 'COM2', 'COM2');
+        dtsgui_listbox_add(lb, 'COM3', 'COM3');
+        dtsgui_listbox_add(lb, 'COM4', 'COM4');
+        dtsgui_listbox_add(lb, 'USB0', 'USB0');
+        dtsgui_listbox_add(lb, 'USB1', 'USB1');
+        dtsgui_listbox_add(lb, 'USB2', 'USB2');
+        dtsgui_listbox_add(lb, 'USB3', 'USB3');
+        objunref(lb);
+    }
+
+    if ((lb = dtsgui_xmllistbox(p, 'Port Speed', 'Speed', '/config/IP/Dialup', 'Option', 'option', 'Speed', NULL))) {
+        dtsgui_listbox_add(lb, '115200', '115200');
+        dtsgui_listbox_add(lb, '57600', '57600');
+        dtsgui_listbox_add(lb, '38400', '38400');
+        dtsgui_listbox_add(lb, '19200', '19200');
+        dtsgui_listbox_add(lb, '9600', '9600');
+        objunref(lb);
+    }
+
+    if ((lb = dtsgui_xmllistbox(p, 'Flow Control ', 'FlowControl', '/config/IP/Dialup', 'Option', 'option', 'FlowControl', NULL))) {
+        dtsgui_listbox_add(lb, 'Hardware (RTS/CTS)', 'crtscts');
+        dtsgui_listbox_add(lb, 'Software (Xon/Xoff)', 'xonxoff');
+        dtsgui_listbox_add(lb, 'Hardware (DTR/CTS)', 'cdtrcts');
+        dtsgui_listbox_add(lb, 'None', '');
+        objunref(lb);
+    }
+
+    dtsgui_xmltextbox(p, 'Local Address', 'Address', '/config/IP/Dialup', 'Option', 'option', 'Address', NULL);
+    dtsgui_xmltextbox(p, 'Remote Address', 'Gateway', '/config/IP/Dialup', 'Option', 'option', 'Gateway', NULL);
+
+    dtsgui_xmltextbox(p, 'Init String 1', 'Init1', '/config/IP/Dialup', 'Option', 'option', 'Init1', NULL);
+    dtsgui_xmltextbox(p, 'Init String 2', 'Init2', '/config/IP/Dialup', 'Option', 'option', 'Init2', NULL);
+    dtsgui_xmltextbox(p, 'Dial String', 'DialString', '/config/IP/Dialup', 'Option', 'option', 'DialString', NULL);
+
+    dtsgui_xmlcheckbox(p, 'Abort On No Carrier', 'NoCarrier', 'true', '','/config/IP/Dialup', 'Option', 'option', 'NoCarrier', NULL);
+    dtsgui_xmlcheckbox(p, 'Abort On No Dialtone', 'NoDialtone', 'true', '', '/config/IP/Dialup', 'Option', 'option', 'NoDialtone', NULL);
+    dtsgui_xmlcheckbox(p, 'Abort On Error', 'Error', 'true', '', '/config/IP/Dialup', 'Option', 'option', 'Error', NULL);
+    dtsgui_xmlcheckbox(p, 'Abort On Busy', 'Busy', 'true', '', '/config/IP/Dialup', 'Option', 'option', 'Busy', NULL);
+}
+.fi
+.SS "void network_newiface (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (New Network Interface) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 325 of file netconfig\&.c\&.
+.PP
+References DTS_NODE_NETWORK_IFACE, DTS_TREE_NEW_NODE_CONTAINER, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_newxmltreenode(), network_iface(), and network_iface_new_pane()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                             {
+    int flg;
+
+    network_iface_new_pane(p);
+
+    flg = DTS_TREE_NEW_NODE_CONTAINER | DTS_TREE_NEW_NODE_DELETE | DTS_TREE_NEW_NODE_EDIT | DTS_TREE_NEW_NODE_SORT;
+    dtsgui_newxmltreenode(self, p, node, '/config/IP/Interfaces', 'Interface', 'iface', 'name', DTS_NODE_NETWORK_IFACE,
+                            flg, NULL, NULL, network_iface);
+}
+.fi
+.SS "void network_newroute (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (New Static Route) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 479 of file netconfig\&.c\&.
+.PP
+References DTS_NODE_NETWORK_ROUTE, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_newxmltreenode(), dtsgui_textbox(), and network_route()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                             {
+    int flg;
+
+    dtsgui_textbox(p, 'Description', 'descrip', '', NULL);
+    dtsgui_textbox(p, 'Network', 'network', '', NULL);
+    dtsgui_textbox(p, 'Subnet Bits', 'subnet', '', NULL);
+    dtsgui_textbox(p, 'Gateway', 'gateway', '', NULL);
+
+    flg = DTS_TREE_NEW_NODE_DELETE | DTS_TREE_NEW_NODE_EDIT | DTS_TREE_NEW_NODE_SORT;
+    dtsgui_newxmltreenode(self, p, node, '/config/IP/GenRoutes', 'Route', 'descrip', NULL, DTS_NODE_NETWORK_ROUTE,
+                                flg, NULL, NULL, network_route);
+}
+.fi
+.SS "void network_newwan (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (New Wan Route) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 443 of file netconfig\&.c\&.
+.PP
+References DTS_NODE_NETWORK_WAN, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_newxmltreenode(), dtsgui_textbox(), and network_wan()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                           {
+    int flg;
+
+    dtsgui_textbox(p, 'Description', 'descrip', '', NULL);
+    dtsgui_textbox(p, 'Network', 'network', '', NULL);
+    dtsgui_textbox(p, 'Subnet Bits', 'subnet', '', NULL);
+    dtsgui_textbox(p, 'Gateway [Local]', 'gateway', '', NULL);
+    dtsgui_textbox(p, 'DHCP Start Address', 'dhcpstart', '', NULL);
+    dtsgui_textbox(p, 'DHCP End Address', 'dhcpend', '', NULL);
+    dtsgui_textbox(p, 'Gateway [Remote]', 'remote', '', NULL);
+
+    flg = DTS_TREE_NEW_NODE_DELETE | DTS_TREE_NEW_NODE_EDIT | DTS_TREE_NEW_NODE_SORT;
+    dtsgui_newxmltreenode(self, p, node, '/config/IP/Routes', 'Route', 'descrip', NULL, DTS_NODE_NETWORK_WAN,
+                            flg, NULL, NULL, network_wan);
+}
+.fi
+.SS "void network_newwifi (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (New WiFi Interface) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 377 of file netconfig\&.c\&.
+.PP
+References DTS_NODE_NETWORK_WIFI, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_SORT, dtsgui_listbox(), dtsgui_listbox_add(), dtsgui_listbox_addxml(), dtsgui_listbox_set(), dtsgui_newxmltreenode(), dtsgui_panelxml(), dtsgui_textbox(), and network_wifi()\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                            {
+    struct xml_doc *xmldoc = dtsgui_panelxml(p);
+    struct form_item *lb;
+    int flg;
+
+    lb = dtsgui_listbox(p, 'WiFi Interface', 'iface', NULL);
+    dtsgui_listbox_addxml(lb, xmldoc, '/config/IP/Interfaces/Interface', 'name', NULL);
+    objunref(lb);
+
+    lb = dtsgui_listbox(p, 'WiFi Configuration', 'type', NULL);
+    dtsgui_listbox_add(lb, 'Access Point', 'AP');
+    dtsgui_listbox_add(lb, 'WiFi Client', 'Client');
+    dtsgui_listbox_add(lb, 'Hotspot', 'Hotspot');
+    dtsgui_listbox_set(lb, 0);
+    objunref(lb);
+
+    lb = dtsgui_listbox(p, 'WiFi Mode', 'mode', NULL);
+    dtsgui_listbox_add(lb, '802\&.11a', '0');
+    dtsgui_listbox_add(lb, '802\&.11b [ch 1/6/11/14]', '1');
+    dtsgui_listbox_add(lb, '802\&.11g [ch 1/5/9/13]', '2');
+    dtsgui_listbox_add(lb, '802\&.11n 20Mhz [ch 1/5/9/13]', '3');
+    dtsgui_listbox_add(lb, '802\&.11n 40Mhz [ch 3/11]', '4');
+    dtsgui_listbox_set(lb, 2);
+    objunref(lb);
+
+    lb = dtsgui_listbox(p, 'WiFi Auth Type', 'auth', NULL);
+    dtsgui_listbox_add(lb, 'WiFi Protected Access', 'WPA');
+    dtsgui_listbox_add(lb, 'Extensible Authentication Protocol', 'EAP');
+    dtsgui_listbox_add(lb, 'None', 'None');
+    dtsgui_listbox_set(lb, 0);
+    objunref(lb);
+
+    dtsgui_textbox(p, 'Channel', 'channel', '', NULL);
+    dtsgui_textbox(p, 'Key (WPA)', 'key', '', NULL);
+    dtsgui_textbox(p, 'Regulatory Domain', 'regdom', 'ZA', NULL);
+    dtsgui_textbox(p, 'TX Power', 'txpower', '25', NULL);
+
+    flg = DTS_TREE_NEW_NODE_DELETE | DTS_TREE_NEW_NODE_SORT;
+    dtsgui_newxmltreenode(self, p, node, '/config/IP', 'WiFi', 'iface', NULL, DTS_NODE_NETWORK_WIFI,
+                            flg, NULL, NULL, network_wifi);
+    objunref(xmldoc);
+}
+.fi
+.SS "void network_route (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (Static Route) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 464 of file netconfig\&.c\&.
+.PP
+References dtsgui_treenodegetxml(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_newroute(), and network_tree_setup()\&.
+.PP
+.nf
+                                                                                          {
+    const char *xpre = '/config/IP/GenRoutes';
+    struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
+
+    dtsgui_xmltextbox(p, 'Network', 'network', xpre, 'Route', NULL, xn->value, 'network');
+    dtsgui_xmltextbox(p, 'Subnet Bits', 'subnet', xpre, 'Route', NULL, xn->value, 'subnet');
+    dtsgui_xmltextbox(p, 'Gateway', 'gateway', xpre, 'Route', NULL, xn->value, 'gateway');
+    objunref(xn);
+}
+.fi
+.SS "void network_tos (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (TOS Config) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 684 of file netconfig\&.c\&.
+.PP
+References dtsgui_listbox_add(), dtsgui_treenodegetxml(), dtsgui_xmllistbox(), dtsgui_xmltextbox(), form_item::name, and protocols\&.
+.PP
+Referenced by network_tos_new(), and network_tree_setup()\&.
+.PP
+.nf
+                                                                                        {
+    struct form_item *lb;
+    int pcnt, i;
+    const char *xpre = '/config/IP/QOS';
+    const char *name;
+    struct xml_node *xn;
+
+    if (!(xn = dtsgui_treenodegetxml(node, NULL))) {
+        return;
+    }
+
+    name = xml_getattr(xn, 'name');
+
+    dtsgui_xmltextbox(p, 'Destination Address', 'ipaddr', xpre, 'TOS', 'name', name, 'ipaddr');
+
+    lb = dtsgui_xmllistbox(p, 'Protocol', 'protocol', xpre, 'TOS', 'name', name, 'protocol');
+    pcnt = sizeof(protocols)/sizeof(protocols[0]);
+    for(i = 0;i < pcnt;i ++) {
+        dtsgui_listbox_add(lb, protocols[i], protocols[i]);
+    }
+    objunref(lb);
+
+    dtsgui_xmltextbox(p, 'Destination Port', 'dport', xpre, 'TOS', 'name', name, 'dport');
+    dtsgui_xmltextbox(p, 'Source Port', 'sport', xpre, 'TOS', 'name', name, 'sport');
+
+    lb = dtsgui_xmllistbox(p, 'TOS Setting', 'tos', xpre, 'TOS', 'name', name, NULL);
+    dtsgui_listbox_add(lb, 'Normal-Service', 'Normal-Service');
+    dtsgui_listbox_add(lb, 'Minimize-Cost', 'Minimize-Cost');
+    dtsgui_listbox_add(lb, 'Maximize-Reliability', 'Maximize-Reliability');
+    dtsgui_listbox_add(lb, 'Maximize-Throughput', 'Maximize-Throughput');
+    dtsgui_listbox_add(lb, 'Minimize-Delay', 'Minimize-Delay');
+    objunref(lb);
+
+    lb = dtsgui_xmllistbox(p, 'Priority', 'priority', xpre, 'TOS', 'name', name, 'priority');
+    dtsgui_listbox_add(lb, 'High', 'High');
+    dtsgui_listbox_add(lb, 'Med', 'Med');
+    dtsgui_listbox_add(lb, 'Low', 'Low');
+    objunref(lb);
+    objunref(xn);
+}
+.fi
+.SS "void network_tos_new (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (New TOS Config) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 730 of file netconfig\&.c\&.
+.PP
+References DTS_NODE_NETWORK_TOS, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_listbox(), dtsgui_listbox_add(), dtsgui_newxmltreenode(), dtsgui_textbox(), network_tos(), and protocols\&.
+.PP
+Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                            {
+    struct form_item *lb;
+    int pcnt, i, flg;
+
+    dtsgui_textbox(p, 'Description', 'name', '', NULL);
+    dtsgui_textbox(p, 'Destination Address', 'ipaddr', '', NULL);
+
+    lb = dtsgui_listbox(p, 'Protocol', 'protocol', NULL);
+    pcnt = sizeof(protocols)/sizeof(protocols[0]);
+    for(i = 0;i < pcnt;i ++) {
+        dtsgui_listbox_add(lb, protocols[i], protocols[i]);
+    }
+    objunref(lb);
+
+    dtsgui_textbox(p, 'Destination Address', 'ipaddr', '', NULL);
+    dtsgui_textbox(p, 'Destination Port', 'dport', '', NULL);
+    dtsgui_textbox(p, 'Source Port', 'sport', '1024:65535', NULL);
+
+    lb = dtsgui_listbox(p, 'TOS Setting', 'tos', NULL);
+    dtsgui_listbox_add(lb, 'Normal-Service', 'Normal-Service');
+    dtsgui_listbox_add(lb, 'Minimize-Cost', 'Minimize-Cost');
+    dtsgui_listbox_add(lb, 'Maximize-Reliability', 'Maximize-Reliability');
+    dtsgui_listbox_add(lb, 'Maximize-Throughput', 'Maximize-Throughput');
+    dtsgui_listbox_add(lb, 'Minimize-Delay', 'Minimize-Delay');
+    objunref(lb);
+
+    lb = dtsgui_listbox(p, 'Priority', 'priority', NULL);
+    dtsgui_listbox_add(lb, 'High', 'High');
+    dtsgui_listbox_add(lb, 'Med', 'Med');
+    dtsgui_listbox_add(lb, 'Low', 'Low');
+    objunref(lb);
+
+    flg = DTS_TREE_NEW_NODE_DELETE | DTS_TREE_NEW_NODE_EDIT | DTS_TREE_NEW_NODE_SORT;
+    dtsgui_newxmltreenode(self, p, node, '/config/IP/QOS', 'TOS', 'name', NULL, DTS_NODE_NETWORK_TOS,
+                                flg, NULL, NULL, network_tos);
+}
+.fi
+.SS "void network_tree_setup (\fBdtsgui_treeview\fPtree, struct xml_doc *xmldoc)"
+
+.PP
+Configure the networking noded on the tree\&. \fBParameters:\fP
+.RS 4
+\fItree\fP Treeview to add nodes too\&. 
+.br
+\fIxmldoc\fP XML document to configure nodes from\&. 
+.RE
+.PP
+
+.PP
+Definition at line 770 of file netconfig\&.c\&.
+.PP
+References customer_info(), DTS_NODE_CUSTOMER, DTS_NODE_NETWORK_ADSL_LINK, DTS_NODE_NETWORK_ADSL_LINK_NEW, DTS_NODE_NETWORK_ADSL_USER, DTS_NODE_NETWORK_ADSL_USER_NEW, DTS_NODE_NETWORK_CONFIG, DTS_NODE_NETWORK_CONFIG_DNS, DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN, DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_NEW, DTS_NODE_NETWORK_CONFIG_DNS_DYN, DTS_NODE_NETWORK_CONFIG_DNS_HOST, DTS_NODE_NETWORK_CONFIG_DNS_HOST_NEW, DTS_NODE_NETWORK_CONFIG_DNS_SERV, DTS_NODE_NETWORK_CONFIG_DNS_ZONE, DTS_NODE_NETWORK_IFACE, DTS_NODE_NETWORK_IFACE_NEW, DTS_NODE_NETWORK_MODEM, DTS_NODE_NETWORK_MODEM_ADV, DTS_NODE_NETWORK_MODEM_ANA, DTS_NODE_NETWORK_ROUTE_NEW, DTS_NODE_NETWORK_TOS, DTS_NODE_NETWORK_TOS_NEW, DTS_NODE_NETWORK_WAN, DTS_NODE_NETWORK_WAN_NEW, DTS_NODE_NETWORK_WIFI, DTS_NODE_NETWORK_WIFI_NEW, dtsgui_treecont(), dtsgui_treeitem(), dtsgui_treenodesetxml(), network_adsl_link(), network_adsl_link_new(), network_adsl_user(), network_adsl_user_new(), network_config(), network_config_dns(), network_config_dns_domain(), network_config_dns_domain_new(), network_config_dns_dyn(), network_config_dns_host(), network_config_dns_host_new(), network_config_dns_serv(), network_config_dns_zone(), network_iface(), network_modem(), network_modem_adv(), network_modem_ana(), network_newiface(), network_newroute(), network_newwan(), network_newwifi(), network_route(), network_tos(), network_tos_new(), network_wan(), and network_wifi()\&.
+.PP
+Referenced by advanced_config()\&.
+.PP
+.nf
+                                                                      {
+    dtsgui_treenode cust, ipconf, tmp, tmp2, tln/*, tmp3*/;
+    struct xml_search *xp;
+    struct xml_node *xn;
+    void *iter = NULL;
+
+    cust = dtsgui_treecont(tree, NULL, 'Customer Information', 0, 0, 0, DTS_NODE_CUSTOMER, customer_info, NULL);
+    ipconf = dtsgui_treecont(tree, cust, 'Global IP Settings', 0, 0, 0, DTS_NODE_NETWORK_CONFIG, network_config, NULL);
+    tln = dtsgui_treecont(tree, ipconf, 'DNS/DHCP Settings', 0, 0, 0, DTS_NODE_NETWORK_CONFIG_DNS, network_config_dns, NULL);
+    dtsgui_treeitem(tree, tln, 'Dynamic DNS', 0, 0, 0, DTS_NODE_NETWORK_CONFIG_DNS_DYN, network_config_dns_dyn, NULL);
+    dtsgui_treeitem(tree, tln, 'DNS Server Options', 0, 0, 0, DTS_NODE_NETWORK_CONFIG_DNS_SERV, network_config_dns_serv, NULL);
+    dtsgui_treeitem(tree, tln, 'DNS Zone Defaults', 0, 0, 0, DTS_NODE_NETWORK_CONFIG_DNS_ZONE, network_config_dns_zone, NULL);
+
+    tmp = dtsgui_treecont(tree, tln, 'Static Hosts', 0, 1, 0, DTS_NODE_NETWORK_CONFIG_DNS_HOST_NEW, network_config_dns_host_new, NULL);
+    xp = xml_xpath(xmldoc, '/config/DNS/Hosts/Host', NULL);
+    for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
+        tmp2 = dtsgui_treeitem(tree, tmp, xn->value, 1, 1, 1, DTS_NODE_NETWORK_CONFIG_DNS_HOST, network_config_dns_host, NULL);
+        dtsgui_treenodesetxml(tmp2, xn, NULL);
+        objunref(xn);
+    }
+    objunref(xp);
+    objunref(iter);
+    iter = NULL;
+
+    dtsgui_treecont(tree, tln, 'Hosted Domains', 0, 1, 0, DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_NEW, network_config_dns_domain_new, NULL);
+    xp = xml_xpath(xmldoc, '/config/DNS/Hosted/Domain', NULL);
+    for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
+        tmp2 = dtsgui_treeitem(tree, tmp, xn->value, 1, 1, 1, DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN, network_config_dns_domain, NULL);
+        dtsgui_treenodesetxml(tmp2, xn, NULL);
+/*      xp2 = xml_xpath(xmldoc, '/config/DNS/Hosted/Domain', NULL);
+        for(xn = xml_getfirstnode(xp2, &iter); xn2; xn2 = xml_getnextnode(iter2)) {
+            tmp3 = dtsgui_treeitem(tree, tmp2, xn2->value, 1, 1, 1, DTS_NODE_NETWORK_CONFIG_DNS_HOST, NULL);
+            dtsgui_treenodesetxml(tree, tmp3, xn2, NULL);
+            objunref(xn2);
+        }
+        objunref(xp2);*/
+        objunref(xn);
+    }
+    objunref(xp);
+    objunref(iter);
+    iter = NULL;
+
+    tln = dtsgui_treecont(tree, ipconf, 'Network Interfaces', 0, 0, 0, -1, NULL, NULL);
+    tmp = dtsgui_treecont(tree, tln, 'Ethernet Interfaces', 0, 1, 0, DTS_NODE_NETWORK_IFACE_NEW, network_newiface, NULL);
+
+    xp = xml_xpath(xmldoc, '/config/IP/Interfaces/Interface', 'name');
+    for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
+        tmp2 = dtsgui_treecont(tree, tmp, xml_getattr(xn, 'name'), 1, 1, 1, DTS_NODE_NETWORK_IFACE, network_iface, NULL);
+        dtsgui_treenodesetxml(tmp2, xn, 'name');
+        objunref(xn);
+    }
+    objunref(xp);
+    objunref(iter);
+    iter = NULL;
+
+    tmp = dtsgui_treecont(tree, tln, 'Wireless Config', 0, 1, 0, DTS_NODE_NETWORK_WIFI_NEW, network_newwifi, NULL);
+    xp = xml_xpath(xmldoc, '/config/IP/WiFi', NULL);
+    for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
+        tmp2 = dtsgui_treeitem(tree, tmp, xn->value, 0, 1, 1, DTS_NODE_NETWORK_WIFI, network_wifi, NULL);
+        dtsgui_treenodesetxml(tmp2, xn, NULL);
+        objunref(xn);
+    }
+    objunref(xp);
+    objunref(iter);
+    iter = NULL;
+
+    tln = dtsgui_treecont(tree, ipconf, 'Static Routes', 0, 0, 0, -1, NULL, NULL);
+    tmp = dtsgui_treecont(tree, tln, 'Wan Routing/Nodes', 0, 1, 0, DTS_NODE_NETWORK_WAN_NEW, network_newwan, NULL);
+    xp = xml_xpath(xmldoc, '/config/IP/Routes/Route', NULL);
+    for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
+        tmp2 = dtsgui_treeitem(tree, tmp, xn->value, 1, 1, 1, DTS_NODE_NETWORK_WAN, network_wan, NULL);
+        dtsgui_treenodesetxml(tmp2, xn, NULL);
+        objunref(xn);
+    }
+    objunref(xp);
+    objunref(iter);
+    iter = NULL;
+
+    tmp = dtsgui_treecont(tree, tln, 'Other Routes', 0, 1, 0, DTS_NODE_NETWORK_ROUTE_NEW, network_newroute, NULL);
+    xp = xml_xpath(xmldoc, '/config/IP/GenRoutes/Route', NULL);
+    for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
+        tmp2 = dtsgui_treeitem(tree, tmp, xn->value, 1, 1, 1, DTS_NODE_NETWORK_WAN, network_route, NULL);
+        dtsgui_treenodesetxml(tmp2, xn, NULL);
+        objunref(xn);
+    }
+    objunref(xp);
+    objunref(iter);
+    iter = NULL;
+
+    tln = dtsgui_treecont(tree, ipconf, 'PPP Config (DSL/3G)', 0, 0, 0, DTS_NODE_NETWORK_MODEM, network_modem, NULL);
+    dtsgui_treeitem(tree, tln, 'Advanced Settings', 0, 0, 0, DTS_NODE_NETWORK_MODEM_ADV, network_modem_adv, NULL);
+    dtsgui_treeitem(tree, tln, 'Dialup/Leased', 0, 0, 0, DTS_NODE_NETWORK_MODEM_ANA, network_modem_ana, NULL);
+    dtsgui_treecont(tree, tln, 'Modem Firewall Rules', 0, 1, 0, -1, NULL, NULL);
+
+    tmp = dtsgui_treecont(tree, tln, 'Additional ADSL Links', 0, 1, 0, DTS_NODE_NETWORK_ADSL_LINK_NEW, network_adsl_link_new, NULL);
+    xp = xml_xpath(xmldoc, '/config/IP/ADSL/Links/Link', NULL);
+    for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
+        tmp2 = dtsgui_treeitem(tree, tmp, xn->value, 1, 1, 1, DTS_NODE_NETWORK_ADSL_LINK, network_adsl_link, NULL);
+        dtsgui_treenodesetxml(tmp2, xn, NULL);
+        objunref(xn);
+    }
+    objunref(xp);
+    objunref(iter);
+    iter = NULL;
+
+    tmp = dtsgui_treecont(tree, tln, 'ADSL Accounts', 0, 1, 0, DTS_NODE_NETWORK_ADSL_USER_NEW, network_adsl_user_new, NULL);
+    xp = xml_xpath(xmldoc, '/config/IP/ADSL/Users/User', NULL);
+    for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
+        tmp2 = dtsgui_treeitem(tree, tmp, xn->value, 1, 1, 1, DTS_NODE_NETWORK_ADSL_USER, network_adsl_user, NULL);
+        dtsgui_treenodesetxml(tmp2, xn, NULL);
+        objunref(xn);
+    }
+    objunref(xp);
+    objunref(iter);
+    iter = NULL;
+
+    tmp = dtsgui_treecont(tree, ipconf, 'Default TOS', 0, 1, 0, DTS_NODE_NETWORK_TOS_NEW, network_tos_new, NULL);
+    xp = xml_xpath(xmldoc, '/config/IP/QOS/TOS', NULL);
+    for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
+        tmp2 = dtsgui_treeitem(tree, tmp, xml_getattr(xn, 'name'), 1, 1, 1, DTS_NODE_NETWORK_TOS, network_tos, NULL);
+        dtsgui_treenodesetxml(tmp2, xn, NULL);
+        objunref(xn);
+    }
+    objunref(xp);
+    objunref(iter);
+    iter = NULL;
+
+    tln = dtsgui_treecont(tree, ipconf, 'VPN Configuration', 0, 0, 0, -1, NULL, NULL);
+    dtsgui_treecont(tree, tln, 'GRE VPN Tunnels', 0, 1, 0, -1, NULL, NULL);
+    dtsgui_treecont(tree, tln, 'ESP VPN Tunnels', 0, 1, 0, -1, NULL, NULL);
+    dtsgui_treecont(tree, tln, 'ESP Remote Access', 0, 1, 0, -1, NULL, NULL);
+
+    tln = dtsgui_treecont(tree, ipconf, 'Voice & FAX Over IP', 0, 0, 0, -1, NULL, NULL);
+    dtsgui_treecont(tree, tln, 'VOIP Registrations', 0, 0, 0, -1, NULL, NULL);
+    dtsgui_treecont(tree, tln, 'FAX Config', 0, 0, 0, -1, NULL, NULL);
+    dtsgui_treecont(tree, ipconf, 'Secuity Certificate Config', 0, 0, 0, -1, NULL, NULL);
+}
+.fi
+.SS "void network_wan (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (WAN Route) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 425 of file netconfig\&.c\&.
+.PP
+References dtsgui_treenodegetxml(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_newwan(), and network_tree_setup()\&.
+.PP
+.nf
+                                                                                        {
+    const char *xpre = '/config/IP/Routes';
+    struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
+
+    dtsgui_xmltextbox(p, 'Network', 'network', xpre, 'Route', NULL, xn->value, 'network');
+    dtsgui_xmltextbox(p, 'Subnet Bits', 'subnet', xpre, 'Route', NULL, xn->value, 'subnet');
+    dtsgui_xmltextbox(p, 'Gateway [Local]', 'gateway', xpre, 'Route', NULL, xn->value, 'gateway');
+    dtsgui_xmltextbox(p, 'DHCP Start Address', 'dhcpstart', xpre, 'Route', NULL, xn->value, 'dhcpstart');
+    dtsgui_xmltextbox(p, 'DHCP End Address', 'dhcpend', xpre, 'Route', NULL, xn->value, 'dhcpend');
+    dtsgui_xmltextbox(p, 'Gateway [Remote]', 'remote', xpre, 'Route', NULL, xn->value, 'remote');
+    objunref(xn);
+}
+.fi
+.SS "void network_wifi (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
+
+.PP
+Tree pane configuration call back (WiFi Interface) \fBParameters:\fP
+.RS 4
+\fIp\fP panel to be configured\&. 
+.br
+\fIself\fP Tree view\&. 
+.br
+\fInode\fP Active tree node\&. 
+.br
+\fIdata\fP reference to data held by node 
+.RE
+.PP
+
+.PP
+Definition at line 340 of file netconfig\&.c\&.
+.PP
+References dtsgui_listbox_add(), dtsgui_treenodegetxml(), dtsgui_xmlcombobox(), and dtsgui_xmltextbox()\&.
+.PP
+Referenced by network_newwifi(), and network_tree_setup()\&.
+.PP
+.nf
+                                                                                         {
+    const char *xpre = '/config/IP';
+    struct form_item *lb;
+    struct xml_node *xn = dtsgui_treenodegetxml(node, NULL);
+
+    lb = dtsgui_xmlcombobox(p, 'WiFi Configuration', 'type', xpre, 'WiFi', NULL, xn->value, 'type');
+    dtsgui_listbox_add(lb, 'Access Point', 'AP');
+    dtsgui_listbox_add(lb, 'WiFi Client', 'Client');
+    dtsgui_listbox_add(lb, 'Hotspot', 'Hotspot');
+    objunref(lb);
+
+    lb = dtsgui_xmlcombobox(p, 'WiFi Mode', 'mode', xpre, 'WiFi', NULL, xn->value, 'mode');
+    dtsgui_listbox_add(lb, '802\&.11a', '0');
+    dtsgui_listbox_add(lb, '802\&.11b [ch 1/6/11/14]', '1');
+    dtsgui_listbox_add(lb, '802\&.11g [ch 1/5/9/13]', '2');
+    dtsgui_listbox_add(lb, '802\&.11n 20Mhz [ch 1/5/9/13]', '3');
+    dtsgui_listbox_add(lb, '802\&.11n 40Mhz [ch 3/11]', '4');
+    objunref(lb);
+
+    lb = dtsgui_xmlcombobox(p, 'WiFi Auth Type', 'auth', xpre, 'WiFi', NULL, xn->value, 'auth');
+    dtsgui_listbox_add(lb, 'WiFi Protected Access', 'WPA');
+    dtsgui_listbox_add(lb, 'Extensible Authentication Protocol', 'EAP');
+    dtsgui_listbox_add(lb, 'None', 'None');
+    objunref(lb);
+
+    dtsgui_xmltextbox(p, 'Channel', 'channel', xpre, 'WiFi', NULL, xn->value, 'channel');
+    dtsgui_xmltextbox(p, 'Key (WPA)', 'key', xpre, 'WiFi', NULL, xn->value, 'key');
+    dtsgui_xmltextbox(p, 'Regulatory Domain', 'regdom', xpre, 'WiFi', NULL, xn->value, 'regdom');
+    dtsgui_xmltextbox(p, 'TX Power', 'txpower', xpre, 'WiFi', NULL, xn->value, 'txpower');
+    objunref(xn);
+}
+.fi
+.SH "Variable Documentation"
+.PP 
+.SS "const char* protocols[] = {'TCP', 'UDP', 'GRE', 'ESP', 'AH', 'OSPF', 'ALL'}\fC [static]\fP"
+
+.PP
+Array of network protocols\&. 
+.PP
+Definition at line 40 of file netconfig\&.c\&.
+.PP
+Referenced by network_tos(), and network_tos_new()\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

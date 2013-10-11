@@ -233,8 +233,8 @@
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="709" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="708" bodyend="712"/>
         <references refid="class_d_t_s_d_v_m_ctrl_1a853bc63ae2098cf907897dfe896f38b2" compoundref="_d_t_s_list_view_8cpp" startline="612" endline="614">DTSDVMCtrl::AppendContainer</references>
         <references refid="class_d_t_s_tree_window_1aae9e856659f3701452382e2cdcba8463" compoundref="_d_t_s_tree_window_8cpp" startline="655" endline="657">DTSTreeWindow::GetTreeCtrl</references>
-        <referencedby refid="netconfig_8c_1a1d7b1d28e9721a0c428be28f6c505875" compoundref="netconfig_8c" startline="134" endline="136">network_config_dns_domain_node</referencedby>
-        <referencedby refid="netconfig_8c_1ad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="602" endline="738">network_tree_setup</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga1d7b1d28e9721a0c428be28f6c505875" compoundref="netconfig_8c" startline="188" endline="190">network_config_dns_domain_node</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1ga0f7146637609d42057e2cd21bd2bf33e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
@@ -351,7 +351,7 @@
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="733" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="732" bodyend="736"/>
         <references refid="class_d_t_s_d_v_m_ctrl_1a60de6e9342a4c140fa2b72acfbfd97dc" compoundref="_d_t_s_list_view_8cpp" startline="608" endline="610">DTSDVMCtrl::AppendItem</references>
         <references refid="class_d_t_s_tree_window_1aae9e856659f3701452382e2cdcba8463" compoundref="_d_t_s_tree_window_8cpp" startline="655" endline="657">DTSTreeWindow::GetTreeCtrl</references>
-        <referencedby refid="netconfig_8c_1ad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="602" endline="738">network_tree_setup</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1ga55a99744231b294667ece32a1087042f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -503,16 +503,16 @@
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="763" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="762" bodyend="766"/>
         <references refid="classtree__newnode_1a307fb2ff9afc18429af055850f3c01a8" compoundref="_d_t_s_tree_window_8cpp" startline="85" endline="101">tree_newnode::handle_newtreenode_cb</references>
         <references refid="classtree__newnode_1a79fd1a82bf40d2d922c1d297f1de3f29" compoundref="_d_t_s_tree_window_8cpp" startline="66" endline="83">tree_newnode::tree_newnode</references>
-        <referencedby refid="netconfig_8c_1aa4d1bbd43067e6a75b7a441658a28646" compoundref="netconfig_8c" startline="479" endline="502">network_adsl_link_new</referencedby>
-        <referencedby refid="netconfig_8c_1a8736362ad99edb6b363f2238131368d7" compoundref="netconfig_8c" startline="513" endline="522">network_adsl_user_new</referencedby>
-        <referencedby refid="netconfig_8c_1aa9efe8e76bc229a36fa2499c892949ce" compoundref="netconfig_8c" startline="151" endline="161">network_config_dns_domain_new</referencedby>
-        <referencedby refid="netconfig_8c_1af6cb7d31e4a663493723310afddf0657" compoundref="netconfig_8c" startline="177" endline="199">network_config_dns_domain_server_new</referencedby>
-        <referencedby refid="netconfig_8c_1a298dbf73bc519972483995caa73e6d94" compoundref="netconfig_8c" startline="125" endline="132">network_config_dns_host_new</referencedby>
-        <referencedby refid="netconfig_8c_1a27bdf0ff7227d24f8b4811af169802a1" compoundref="netconfig_8c" startline="235" endline="243">network_newiface</referencedby>
-        <referencedby refid="netconfig_8c_1a605df16cf428f6c76fe9b0936203b005" compoundref="netconfig_8c" startline="359" endline="370">network_newroute</referencedby>
-        <referencedby refid="netconfig_8c_1a853ca11b890527ee2031a756497e145c" compoundref="netconfig_8c" startline="333" endline="347">network_newwan</referencedby>
-        <referencedby refid="netconfig_8c_1a3a749e8b1e9561bb168ba3aed04444a8" compoundref="netconfig_8c" startline="277" endline="318">network_newwifi</referencedby>
-        <referencedby refid="netconfig_8c_1a3a92d505fabcecdf55524fe8b77f08bc" compoundref="netconfig_8c" startline="565" endline="600">network_tos_new</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gaa4d1bbd43067e6a75b7a441658a28646" compoundref="netconfig_8c" startline="624" endline="647">network_adsl_link_new</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga8736362ad99edb6b363f2238131368d7" compoundref="netconfig_8c" startline="668" endline="677">network_adsl_user_new</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gaa9efe8e76bc229a36fa2499c892949ce" compoundref="netconfig_8c" startline="215" endline="225">network_config_dns_domain_new</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gaf6cb7d31e4a663493723310afddf0657" compoundref="netconfig_8c" startline="251" endline="273">network_config_dns_domain_server_new</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga298dbf73bc519972483995caa73e6d94" compoundref="netconfig_8c" startline="174" endline="181">network_config_dns_host_new</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga27bdf0ff7227d24f8b4811af169802a1" compoundref="netconfig_8c" startline="325" endline="333">network_newiface</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga605df16cf428f6c76fe9b0936203b005" compoundref="netconfig_8c" startline="479" endline="490">network_newroute</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga853ca11b890527ee2031a756497e145c" compoundref="netconfig_8c" startline="443" endline="457">network_newwan</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga3a749e8b1e9561bb168ba3aed04444a8" compoundref="netconfig_8c" startline="377" endline="418">network_newwifi</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga3a92d505fabcecdf55524fe8b77f08bc" compoundref="netconfig_8c" startline="730" endline="765">network_tos_new</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1gadc59452935e169e8e78c178aed0b77c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -569,7 +569,7 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="785" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="785" bodyend="788"/>
         <references refid="class_d_t_s_d_v_m_list_store_1a06805bea00fbdbf5df1f995b87897b5e" compoundref="_d_t_s_list_view_8cpp" startline="87" endline="90">DTSDVMListStore::GetParentTitle</references>
-        <referencedby refid="netconfig_8c_1af6cb7d31e4a663493723310afddf0657" compoundref="netconfig_8c" startline="177" endline="199">network_config_dns_domain_server_new</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gaf6cb7d31e4a663493723310afddf0657" compoundref="netconfig_8c" startline="251" endline="273">network_config_dns_domain_server_new</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1ga3e6618e889e7b58e3bf2ae3d63332178" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -619,7 +619,7 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="796" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="796" bodyend="799"/>
         <references refid="class_d_t_s_d_v_m_list_store_1aa82d333247a2bf537c3acdeae7635e15" compoundref="_d_t_s_list_view_8cpp" startline="219" endline="226">DTSDVMListStore::SetXMLData</references>
-        <referencedby refid="netconfig_8c_1ad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="602" endline="738">network_tree_setup</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1gaf56a924134315107e80c8b01bfbeee68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct xml_node *</type>
@@ -659,16 +659,16 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="810" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="810" bodyend="813"/>
         <references refid="class_d_t_s_d_v_m_list_store_1a61adea3902f8c4b1c746546b1b9bbff0" compoundref="_d_t_s_list_view_8cpp" startline="228" endline="238">DTSDVMListStore::GetXMLData</references>
-        <referencedby refid="netconfig_8c_1afbdf0e8165311538e8b408c7ba2fabbf" compoundref="netconfig_8c" startline="446" endline="477">network_adsl_link</referencedby>
-        <referencedby refid="netconfig_8c_1aa879445eb24134718f10512cbd22df27" compoundref="netconfig_8c" startline="504" endline="511">network_adsl_user</referencedby>
-        <referencedby refid="netconfig_8c_1a07f37413fb1c1cb24c6f3a8a2e542114" compoundref="netconfig_8c" startline="138" endline="149">network_config_dns_domain</referencedby>
-        <referencedby refid="netconfig_8c_1a85464ec7fa78ad423246f4cd96e69cfc" compoundref="netconfig_8c" startline="163" endline="175">network_config_dns_domain_server</referencedby>
-        <referencedby refid="netconfig_8c_1ad08cc595d8b15576d51ce580336f6063" compoundref="netconfig_8c" startline="115" endline="123">network_config_dns_host</referencedby>
-        <referencedby refid="netconfig_8c_1a21ad9729b2e5667d1a71117c3811d428" compoundref="netconfig_8c" startline="213" endline="220">network_iface</referencedby>
-        <referencedby refid="netconfig_8c_1afd9751515d9c36b70349d2a9ef5fae7f" compoundref="netconfig_8c" startline="349" endline="357">network_route</referencedby>
-        <referencedby refid="netconfig_8c_1a0b2d5249167dfdc0b972bff2091b5745" compoundref="netconfig_8c" startline="524" endline="563">network_tos</referencedby>
-        <referencedby refid="netconfig_8c_1a7b1e028eec7d055f71cd0b466131fb1e" compoundref="netconfig_8c" startline="320" endline="331">network_wan</referencedby>
-        <referencedby refid="netconfig_8c_1adceac66b5b38e18e528fc5a2adb2d649" compoundref="netconfig_8c" startline="245" endline="275">network_wifi</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gafbdf0e8165311538e8b408c7ba2fabbf" compoundref="netconfig_8c" startline="586" endline="617">network_adsl_link</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gaa879445eb24134718f10512cbd22df27" compoundref="netconfig_8c" startline="654" endline="661">network_adsl_user</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga07f37413fb1c1cb24c6f3a8a2e542114" compoundref="netconfig_8c" startline="197" endline="208">network_config_dns_domain</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga85464ec7fa78ad423246f4cd96e69cfc" compoundref="netconfig_8c" startline="232" endline="244">network_config_dns_domain_server</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad08cc595d8b15576d51ce580336f6063" compoundref="netconfig_8c" startline="159" endline="167">network_config_dns_host</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga21ad9729b2e5667d1a71117c3811d428" compoundref="netconfig_8c" startline="296" endline="303">network_iface</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gafd9751515d9c36b70349d2a9ef5fae7f" compoundref="netconfig_8c" startline="464" endline="472">network_route</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga0b2d5249167dfdc0b972bff2091b5745" compoundref="netconfig_8c" startline="684" endline="723">network_tos</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga7b1e028eec7d055f71cd0b466131fb1e" compoundref="netconfig_8c" startline="425" endline="436">network_wan</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gadceac66b5b38e18e528fc5a2adb2d649" compoundref="netconfig_8c" startline="340" endline="370">network_wifi</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel-_tree_1gaaaf93911380c2f40eb8adbdc39ac36ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -747,13 +747,13 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="836" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="836" bodyend="839"/>
         <references refid="class_d_t_s_d_v_m_list_store_1a35aa2204af134770c1fab2f5426c50a7" compoundref="_d_t_s_list_view_8cpp" startline="208" endline="213">DTSDVMListStore::GetUserData</references>
-        <referencedby refid="netconfig_8c_1a85464ec7fa78ad423246f4cd96e69cfc" compoundref="netconfig_8c" startline="163" endline="175">network_config_dns_domain_server</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga85464ec7fa78ad423246f4cd96e69cfc" compoundref="netconfig_8c" startline="232" endline="244">network_config_dns_domain_server</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>A tree view is a split window with a tree in the left window and display area on right. </para>    </briefdescription>
     <detaileddescription>
 <para><simplesect kind="remark"><para>The tree can contain branches (folder containers) and leaf nodes each node when clicked will create and place a panel in the display area. </para><simplesectsep/><para>The tree window supports sorting and deletion via a menu displayed when right clicking. </para></simplesect>
-<xrefsect id="todo_1_todo000003"><xreftitle>Todo</xreftitle><xrefdescription><para>Allow for the deletion of branch/container/folder nodes. </para></xrefdescription></xrefsect></para>    </detaileddescription>
+<xrefsect id="todo_1_todo000005"><xreftitle>Todo</xreftitle><xrefdescription><para>Allow for the deletion of branch/container/folder nodes. </para></xrefdescription></xrefsect></para>    </detaileddescription>
   </compounddef>
 </doxygen>

@@ -101,12 +101,47 @@ Definition at line 56 of file DTSPanel\&.h\&.
 Definition at line 241 of file DTSPanel\&.cpp\&.
 .PP
 References beenshown, dtsevthandler, frame, panel, refobj, status, userdata, and xmldoc\&.
+.PP
+.nf
+                                {
+    refobj = (void**)objalloc(sizeof(void*), NULL);
+    *refobj = this;
+    status = st;
+    panel = NULL;
+    frame = NULL;
+    xmldoc = NULL;
+    userdata = NULL;
+    dtsevthandler = NULL;
+    beenshown = false;
+    SetName(status);
+}
+.fi
 .SS "DTSObject::~DTSObject ()"
 
 .PP
 Definition at line 254 of file DTSPanel\&.cpp\&.
 .PP
 References dtsevthandler, refobj, userdata, and xmldoc\&.
+.PP
+.nf
+                      {
+    objlock(refobj);
+    if (userdata) {
+        objunref(userdata);
+        userdata = NULL;
+    }
+    if (xmldoc) {
+        objunref(xmldoc);
+        xmldoc = NULL;
+    }
+    if (dtsevthandler) {
+        delete dtsevthandler;
+        dtsevthandler = NULL;
+    }
+    objunlock(refobj);
+    objunref(refobj);
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "void DTSObject::EventHandler (inteid, wxCommandEvent *event)"
@@ -115,6 +150,11 @@ References dtsevthandler, refobj, userdata, and xmldoc\&.
 Definition at line 323 of file DTSPanel\&.cpp\&.
 .PP
 Referenced by DTSPanelEvent::OnButton()\&.
+.PP
+.nf
+                                                           {
+}
+.fi
 .SS "\fBDTSFrame\fP * DTSObject::GetFrame (void)"
 
 .PP
@@ -123,6 +163,12 @@ Definition at line 286 of file DTSPanel\&.cpp\&.
 References frame\&.
 .PP
 Referenced by DTSTreeWindow::CreatePane(), DTSTabWindow::CreateTab(), DTSTreeWindowEvent::MenuEvent(), and DTSPanelEvent::RunCallBack()\&.
+.PP
+.nf
+                              {
+    return frame;
+}
+.fi
 .SS "struct bucket_list * DTSObject::GetItems (void)\fC [read]\fP"
 
 .PP
@@ -131,6 +177,15 @@ Definition at line 316 of file DTSPanel\&.cpp\&.
 References fitems\&.
 .PP
 Referenced by DTS_C_API::dtsgui_panel_items(), and DTSPanelEvent::OnCombo()\&.
+.PP
+.nf
+                                            {
+    if (fitems && objref(fitems)) {
+        return fitems;
+    }
+    return NULL;
+}
+.fi
 .SS "wxString DTSObject::GetName ()"
 
 .PP
@@ -139,6 +194,18 @@ Definition at line 272 of file DTSPanel\&.cpp\&.
 References refobj, and status\&.
 .PP
 Referenced by DTSTabWindow::InsertTab(), and DTSFrame::NewMenuItem()\&.
+.PP
+.nf
+                            {
+    wxString st;
+
+    objlock(refobj);
+    st = status;
+    objunlock(refobj);
+
+    return st;
+}
+.fi
 .SS "\fBwxWindow\fP * DTSObject::GetPanel ()"
 
 .PP
@@ -147,6 +214,12 @@ Definition at line 282 of file DTSPanel\&.cpp\&.
 References panel\&.
 .PP
 Referenced by DTSTreeWindow::CreatePane(), DTSTabWindow::CreateTab(), DTSTreeWindow::DTSTreeWindow(), DTSTabWindow::InsertTab(), DTSFrame::NewMenuItem(), dynamic_panel::RunCallback(), DTSTreeWindow::SetWindow(), and DTSFrame::TextPanel()\&.
+.PP
+.nf
+                              {
+    return panel;
+}
+.fi
 .SS "void * DTSObject::GetUserData (void)"
 
 .PP
@@ -155,6 +228,18 @@ Definition at line 338 of file DTSPanel\&.cpp\&.
 References refobj, and userdata\&.
 .PP
 Referenced by DTS_C_API::dtsgui_paneldata(), and DTSFrame::pwevent()\&.
+.PP
+.nf
+                                 {
+    void *ud = NULL;
+    objlock(refobj);
+    if (userdata && objref(userdata)) {
+        ud = userdata;
+    }
+    objunlock(refobj);
+    return ud;
+}
+.fi
 .SS "struct xml_doc * DTSObject::GetXMLDoc (void)\fC [read]\fP"
 
 .PP
@@ -163,6 +248,19 @@ Definition at line 305 of file DTSPanel\&.cpp\&.
 References refobj, and xmldoc\&.
 .PP
 Referenced by DTS_C_API::dtsgui_panelxml(), and DTSPanel::GetNode()\&.
+.PP
+.nf
+                                         {
+    struct xml_doc *xd = NULL;
+
+    objlock(refobj);
+    if (xmldoc && objref(xmldoc)) {
+        xd = xmldoc;
+    }
+    objunlock(refobj);
+    return xd;
+}
+.fi
 .SS "void DTSObject::SetUserData (void *data)"
 
 .PP
@@ -171,6 +269,20 @@ Definition at line 326 of file DTSPanel\&.cpp\&.
 References refobj, and userdata\&.
 .PP
 Referenced by DTSFrame::CreatePane(), and DTSTabWindow::CreateTab()\&.
+.PP
+.nf
+                                      {
+    objlock(refobj);
+    if (userdata) {
+        objunref(userdata);
+        userdata = NULL;
+    }
+    if (data && objref(data)) {
+        userdata = data;
+    }
+    objunlock(refobj);
+}
+.fi
 .SS "void DTSObject::SetXMLDoc (struct xml_doc *xmldoc)"
 
 .PP
@@ -179,6 +291,23 @@ Definition at line 290 of file DTSPanel\&.cpp\&.
 References refobj, and xmldoc\&.
 .PP
 Referenced by dtsgui_wizard::AddPage(), DTSTreeWindow::CreatePane(), DTS_C_API::dtsgui_panel_setxml(), DTSTabPage::DTSTabPage(), and DTSTreeWindow::DTSTreeWindow()\&.
+.PP
+.nf
+                                            {
+    objlock(refobj);
+
+    if (xmldoc) {
+        objunref(xmldoc);
+        xmldoc = NULL;
+    }
+
+    if (xd && objref(xd)) {
+        xmldoc = xd;
+    }
+
+    objunlock(refobj);
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "bool DTSObject::beenshown\fC [protected]\fP"

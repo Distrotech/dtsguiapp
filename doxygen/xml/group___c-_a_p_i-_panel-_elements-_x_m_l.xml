@@ -107,46 +107,46 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1336" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1336" bodyend="1339"/>
         <references refid="class_d_t_s_panel_1a2b893b30f6265079a143bb23029aa083" compoundref="_d_t_s_panel_8cpp" startline="585" endline="598">DTSPanel::XMLTextBox</references>
-        <referencedby refid="netconfig_8c_1afbdf0e8165311538e8b408c7ba2fabbf" compoundref="netconfig_8c" startline="446" endline="477">network_adsl_link</referencedby>
-        <referencedby refid="netconfig_8c_1aa879445eb24134718f10512cbd22df27" compoundref="netconfig_8c" startline="504" endline="511">network_adsl_user</referencedby>
-        <referencedby refid="netconfig_8c_1a53ff57cbb1a4442c4428c95746229150" compoundref="netconfig_8c" startline="37" endline="74">network_config</referencedby>
-        <referencedby refid="netconfig_8c_1ae9c5a17913250cf9e849ee49b2398b98" compoundref="netconfig_8c" startline="76" endline="87">network_config_dns</referencedby>
-        <referencedby refid="netconfig_8c_1a07f37413fb1c1cb24c6f3a8a2e542114" compoundref="netconfig_8c" startline="138" endline="149">network_config_dns_domain</referencedby>
-        <referencedby refid="netconfig_8c_1a85464ec7fa78ad423246f4cd96e69cfc" compoundref="netconfig_8c" startline="163" endline="175">network_config_dns_domain_server</referencedby>
-        <referencedby refid="netconfig_8c_1a320c13af10e723f60daea4caa8aa9b50" compoundref="netconfig_8c" startline="89" endline="95">network_config_dns_dyn</referencedby>
-        <referencedby refid="netconfig_8c_1ad08cc595d8b15576d51ce580336f6063" compoundref="netconfig_8c" startline="115" endline="123">network_config_dns_host</referencedby>
-        <referencedby refid="netconfig_8c_1a035e28f34c903ba37365831f1dc546a0" compoundref="netconfig_8c" startline="97" endline="105">network_config_dns_serv</referencedby>
-        <referencedby refid="netconfig_8c_1a9648a33ba3b8a54dc53b527c6604feb5" compoundref="netconfig_8c" startline="107" endline="113">network_config_dns_zone</referencedby>
-        <referencedby refid="private_8h_1ab77c80061336502da4c2cc2d2c11f4a0" compoundref="netconfig_8c" startline="201" endline="211">network_iface_pane</referencedby>
-        <referencedby refid="interface_8c_1aec69e5698c53680c3551eeb9e05cbaf6" compoundref="interface_8c" startline="123" endline="135">network_iface_pane_cb</referencedby>
-        <referencedby refid="netconfig_8c_1aaf6857ee640832afc05a9e158faedde3" compoundref="netconfig_8c" startline="372" endline="388">network_modem</referencedby>
-        <referencedby refid="netconfig_8c_1ab761836f12c4ee80260a57451498d48f" compoundref="netconfig_8c" startline="390" endline="399">network_modem_adv</referencedby>
-        <referencedby refid="netconfig_8c_1a4bab1c305385131091d979ad287b2ea3" compoundref="netconfig_8c" startline="401" endline="444">network_modem_ana</referencedby>
-        <referencedby refid="netconfig_8c_1afd9751515d9c36b70349d2a9ef5fae7f" compoundref="netconfig_8c" startline="349" endline="357">network_route</referencedby>
-        <referencedby refid="netconfig_8c_1a0b2d5249167dfdc0b972bff2091b5745" compoundref="netconfig_8c" startline="524" endline="563">network_tos</referencedby>
-        <referencedby refid="netconfig_8c_1a7b1e028eec7d055f71cd0b466131fb1e" compoundref="netconfig_8c" startline="320" endline="331">network_wan</referencedby>
-        <referencedby refid="netconfig_8c_1adceac66b5b38e18e528fc5a2adb2d649" compoundref="netconfig_8c" startline="245" endline="275">network_wifi</referencedby>
-        <referencedby refid="pbxconfig_8c_1aea392efee7b48a143a527ffe383e6d81" compoundref="pbxconfig_8c" startline="214" endline="218">pbxconf_acd</referencedby>
-        <referencedby refid="pbxconfig_8c_1a5db8461977ca01a926afa5090e12dcdf" compoundref="pbxconfig_8c" startline="315" endline="322">pbxconf_autoadd</referencedby>
-        <referencedby refid="pbxconfig_8c_1af79c511cab086f9152e08d0625f78b05" compoundref="pbxconfig_8c" startline="220" endline="266">pbxconf_default</referencedby>
-        <referencedby refid="pbxconfig_8c_1a13ef8f931ae62e6036a1ac3e6596a424" compoundref="pbxconfig_8c" startline="195" endline="212">pbxconf_global</referencedby>
-        <referencedby refid="pbxconfig_8c_1a8b33d2f08d418e2e390c0d22555cfba0" compoundref="pbxconfig_8c" startline="268" endline="277">pbxconf_location</referencedby>
-        <referencedby refid="pbxconfig_8c_1a085f542ab4bb26773f2a68e636a681e9" compoundref="pbxconfig_8c" startline="161" endline="193">pbxconf_mfcr2</referencedby>
-        <referencedby refid="pbxconfig_8c_1a2ac17cfecd9b9824f342ba665392a502" compoundref="pbxconfig_8c" startline="121" endline="132">pbxconf_misdn</referencedby>
-        <referencedby refid="pbxconfig_8c_1ae6adb6e74265f4c49f5878c8c6bacec5" compoundref="pbxconfig_8c" startline="301" endline="313">pbxconf_numplan</referencedby>
-        <referencedby refid="pbxconfig_8c_1a0f2cc9199cbbf0c942507ee38bbf04d9" compoundref="pbxconfig_8c" startline="107" endline="119">pbxconf_topts</referencedby>
-        <referencedby refid="pbxconfig_8c_1a02bdd2b74e929bf843bed40de61f9c97" compoundref="pbxconfig_8c" startline="25" endline="105">pbxconf_trunk</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga34653c75ebbdc91cadc68180a51b121b" compoundref="wizard_8c" startline="317" endline="324">wizz_acd</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gaccc1788f03d17d487ce09a1d07d53018" compoundref="wizard_8c" startline="164" endline="173">wizz_custinfo</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga2d137c5c2ae4b1407da5442477dd2b36" compoundref="wizard_8c" startline="190" endline="197">wizz_dnsinfo</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga488833f1ea62639df39c4cd7662864db" compoundref="wizard_8c" startline="184" endline="188">wizz_dyndns</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga2385f9d99b5222b879485702af299fd0" compoundref="wizard_8c" startline="233" endline="280">wizz_exten</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gafcf1b2026fe781338918ede3a099a713" compoundref="wizard_8c" startline="282" endline="315">wizz_location</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gaf6a04c61f4efb3d8c9581d1ca2a79f7c" compoundref="wizard_8c" startline="175" endline="182">wizz_netinfo</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga4fc4a7cde0492cbde04a4e0804cc81d8" compoundref="wizard_8c" startline="217" endline="231">wizz_network</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga85fecec1da6b92b910c3810a9f0f431c" compoundref="wizard_8c" startline="209" endline="215">wizz_samba</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gaa274a72a578011082041109b5e2d8b22" compoundref="wizard_8c" startline="326" endline="346">wizz_trunk</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga81b5895e97fa4d47dbd829cccffa1b7b" compoundref="wizard_8c" startline="199" endline="207">wizz_x509</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gafbdf0e8165311538e8b408c7ba2fabbf" compoundref="netconfig_8c" startline="586" endline="617">network_adsl_link</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gaa879445eb24134718f10512cbd22df27" compoundref="netconfig_8c" startline="654" endline="661">network_adsl_user</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga53ff57cbb1a4442c4428c95746229150" compoundref="netconfig_8c" startline="56" endline="93">network_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gae9c5a17913250cf9e849ee49b2398b98" compoundref="netconfig_8c" startline="100" endline="111">network_config_dns</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga07f37413fb1c1cb24c6f3a8a2e542114" compoundref="netconfig_8c" startline="197" endline="208">network_config_dns_domain</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga85464ec7fa78ad423246f4cd96e69cfc" compoundref="netconfig_8c" startline="232" endline="244">network_config_dns_domain_server</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga320c13af10e723f60daea4caa8aa9b50" compoundref="netconfig_8c" startline="118" endline="124">network_config_dns_dyn</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad08cc595d8b15576d51ce580336f6063" compoundref="netconfig_8c" startline="159" endline="167">network_config_dns_host</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga035e28f34c903ba37365831f1dc546a0" compoundref="netconfig_8c" startline="131" endline="139">network_config_dns_serv</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga9648a33ba3b8a54dc53b527c6604feb5" compoundref="netconfig_8c" startline="146" endline="152">network_config_dns_zone</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gab77c80061336502da4c2cc2d2c11f4a0" compoundref="netconfig_8c" startline="279" endline="289">network_iface_pane</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gaec69e5698c53680c3551eeb9e05cbaf6" compoundref="interface_8c" startline="164" endline="176">network_iface_pane_cb</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gaaf6857ee640832afc05a9e158faedde3" compoundref="netconfig_8c" startline="497" endline="513">network_modem</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gab761836f12c4ee80260a57451498d48f" compoundref="netconfig_8c" startline="520" endline="529">network_modem_adv</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga4bab1c305385131091d979ad287b2ea3" compoundref="netconfig_8c" startline="536" endline="579">network_modem_ana</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gafd9751515d9c36b70349d2a9ef5fae7f" compoundref="netconfig_8c" startline="464" endline="472">network_route</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga0b2d5249167dfdc0b972bff2091b5745" compoundref="netconfig_8c" startline="684" endline="723">network_tos</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga7b1e028eec7d055f71cd0b466131fb1e" compoundref="netconfig_8c" startline="425" endline="436">network_wan</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gadceac66b5b38e18e528fc5a2adb2d649" compoundref="netconfig_8c" startline="340" endline="370">network_wifi</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaea392efee7b48a143a527ffe383e6d81" compoundref="pbxconfig_8c" startline="244" endline="248">pbxconf_acd</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga5db8461977ca01a926afa5090e12dcdf" compoundref="pbxconfig_8c" startline="360" endline="367">pbxconf_autoadd</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaf79c511cab086f9152e08d0625f78b05" compoundref="pbxconfig_8c" startline="253" endline="299">pbxconf_default</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga13ef8f931ae62e6036a1ac3e6596a424" compoundref="pbxconfig_8c" startline="222" endline="239">pbxconf_global</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga8b33d2f08d418e2e390c0d22555cfba0" compoundref="pbxconfig_8c" startline="304" endline="313">pbxconf_location</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga085f542ab4bb26773f2a68e636a681e9" compoundref="pbxconfig_8c" startline="185" endline="217">pbxconf_mfcr2</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga2ac17cfecd9b9824f342ba665392a502" compoundref="pbxconfig_8c" startline="139" endline="150">pbxconf_misdn</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gae6adb6e74265f4c49f5878c8c6bacec5" compoundref="pbxconfig_8c" startline="343" endline="355">pbxconf_numplan</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga0f2cc9199cbbf0c942507ee38bbf04d9" compoundref="pbxconfig_8c" startline="122" endline="134">pbxconf_topts</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga02bdd2b74e929bf843bed40de61f9c97" compoundref="pbxconfig_8c" startline="37" endline="117">pbxconf_trunk</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga34653c75ebbdc91cadc68180a51b121b" compoundref="wizard_8c" startline="348" endline="355">wizz_acd</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gaccc1788f03d17d487ce09a1d07d53018" compoundref="wizard_8c" startline="177" endline="186">wizz_custinfo</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga2d137c5c2ae4b1407da5442477dd2b36" compoundref="wizard_8c" startline="209" endline="216">wizz_dnsinfo</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga488833f1ea62639df39c4cd7662864db" compoundref="wizard_8c" startline="201" endline="205">wizz_dyndns</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga2385f9d99b5222b879485702af299fd0" compoundref="wizard_8c" startline="260" endline="307">wizz_exten</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gafcf1b2026fe781338918ede3a099a713" compoundref="wizard_8c" startline="311" endline="344">wizz_location</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gaf6a04c61f4efb3d8c9581d1ca2a79f7c" compoundref="wizard_8c" startline="190" endline="197">wizz_netinfo</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga4fc4a7cde0492cbde04a4e0804cc81d8" compoundref="wizard_8c" startline="242" endline="256">wizz_network</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga85fecec1da6b92b910c3810a9f0f431c" compoundref="wizard_8c" startline="232" endline="238">wizz_samba</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gaa274a72a578011082041109b5e2d8b22" compoundref="wizard_8c" startline="359" endline="379">wizz_trunk</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga81b5895e97fa4d47dbd829cccffa1b7b" compoundref="wizard_8c" startline="220" endline="228">wizz_x509</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga1e60e1a55957b1055c99df5a45f18bce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -251,7 +251,7 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1352" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1352" bodyend="1355"/>
         <references refid="class_d_t_s_panel_1a2b893b30f6265079a143bb23029aa083" compoundref="_d_t_s_panel_8cpp" startline="585" endline="598">DTSPanel::XMLTextBox</references>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gaccc1788f03d17d487ce09a1d07d53018" compoundref="wizard_8c" startline="164" endline="173">wizz_custinfo</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gaccc1788f03d17d487ce09a1d07d53018" compoundref="wizard_8c" startline="177" endline="186">wizz_custinfo</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel-_elements-_x_m_l_1gab8e603da01cb2c17d0ecfbbe216ac750" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -356,7 +356,7 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1368" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1368" bodyend="1371"/>
         <references refid="class_d_t_s_panel_1a5bbe4bfc295ef7b772c09628e80976c7" compoundref="_d_t_s_panel_8cpp" startline="604" endline="606">DTSPanel::XMLPasswdBox</references>
-        <referencedby refid="pbxconfig_8c_1a13ef8f931ae62e6036a1ac3e6596a424" compoundref="pbxconfig_8c" startline="195" endline="212">pbxconf_global</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga13ef8f931ae62e6036a1ac3e6596a424" compoundref="pbxconfig_8c" startline="222" endline="239">pbxconf_global</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -483,27 +483,27 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1386" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1386" bodyend="1389"/>
         <references refid="class_d_t_s_panel_1a1495f670e901f45cbbc3a4d2c471aa53" compoundref="_d_t_s_panel_8cpp" startline="628" endline="646">DTSPanel::XMLCheckBox</references>
-        <referencedby refid="netconfig_8c_1ae9c5a17913250cf9e849ee49b2398b98" compoundref="netconfig_8c" startline="76" endline="87">network_config_dns</referencedby>
-        <referencedby refid="netconfig_8c_1a07f37413fb1c1cb24c6f3a8a2e542114" compoundref="netconfig_8c" startline="138" endline="149">network_config_dns_domain</referencedby>
-        <referencedby refid="netconfig_8c_1a320c13af10e723f60daea4caa8aa9b50" compoundref="netconfig_8c" startline="89" endline="95">network_config_dns_dyn</referencedby>
-        <referencedby refid="netconfig_8c_1a035e28f34c903ba37365831f1dc546a0" compoundref="netconfig_8c" startline="97" endline="105">network_config_dns_serv</referencedby>
-        <referencedby refid="netconfig_8c_1ab761836f12c4ee80260a57451498d48f" compoundref="netconfig_8c" startline="390" endline="399">network_modem_adv</referencedby>
-        <referencedby refid="netconfig_8c_1a4bab1c305385131091d979ad287b2ea3" compoundref="netconfig_8c" startline="401" endline="444">network_modem_ana</referencedby>
-        <referencedby refid="pbxconfig_8c_1a5db8461977ca01a926afa5090e12dcdf" compoundref="pbxconfig_8c" startline="315" endline="322">pbxconf_autoadd</referencedby>
-        <referencedby refid="pbxconfig_8c_1af79c511cab086f9152e08d0625f78b05" compoundref="pbxconfig_8c" startline="220" endline="266">pbxconf_default</referencedby>
-        <referencedby refid="pbxconfig_8c_1a836477fa7fce0013efd28a4b955f58b5" compoundref="pbxconfig_8c" startline="134" endline="159">pbxconf_e1</referencedby>
-        <referencedby refid="pbxconfig_8c_1a13ef8f931ae62e6036a1ac3e6596a424" compoundref="pbxconfig_8c" startline="195" endline="212">pbxconf_global</referencedby>
-        <referencedby refid="pbxconfig_8c_1a17474314ab394325f10da55d073f03d4" compoundref="pbxconfig_8c" startline="279" endline="299">pbxconf_incoming</referencedby>
-        <referencedby refid="pbxconfig_8c_1a085f542ab4bb26773f2a68e636a681e9" compoundref="pbxconfig_8c" startline="161" endline="193">pbxconf_mfcr2</referencedby>
-        <referencedby refid="pbxconfig_8c_1a2ac17cfecd9b9824f342ba665392a502" compoundref="pbxconfig_8c" startline="121" endline="132">pbxconf_misdn</referencedby>
-        <referencedby refid="pbxconfig_8c_1a0f2cc9199cbbf0c942507ee38bbf04d9" compoundref="pbxconfig_8c" startline="107" endline="119">pbxconf_topts</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga34653c75ebbdc91cadc68180a51b121b" compoundref="wizard_8c" startline="317" endline="324">wizz_acd</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga2385f9d99b5222b879485702af299fd0" compoundref="wizard_8c" startline="233" endline="280">wizz_exten</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gafcf1b2026fe781338918ede3a099a713" compoundref="wizard_8c" startline="282" endline="315">wizz_location</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga4fc4a7cde0492cbde04a4e0804cc81d8" compoundref="wizard_8c" startline="217" endline="231">wizz_network</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga85fecec1da6b92b910c3810a9f0f431c" compoundref="wizard_8c" startline="209" endline="215">wizz_samba</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gaa274a72a578011082041109b5e2d8b22" compoundref="wizard_8c" startline="326" endline="346">wizz_trunk</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga4663a22f17fb8c01f6058f117ed6c201" compoundref="wizard_8c" startline="348" endline="361">wizz_voip</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gae9c5a17913250cf9e849ee49b2398b98" compoundref="netconfig_8c" startline="100" endline="111">network_config_dns</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga07f37413fb1c1cb24c6f3a8a2e542114" compoundref="netconfig_8c" startline="197" endline="208">network_config_dns_domain</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga320c13af10e723f60daea4caa8aa9b50" compoundref="netconfig_8c" startline="118" endline="124">network_config_dns_dyn</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga035e28f34c903ba37365831f1dc546a0" compoundref="netconfig_8c" startline="131" endline="139">network_config_dns_serv</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gab761836f12c4ee80260a57451498d48f" compoundref="netconfig_8c" startline="520" endline="529">network_modem_adv</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga4bab1c305385131091d979ad287b2ea3" compoundref="netconfig_8c" startline="536" endline="579">network_modem_ana</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga5db8461977ca01a926afa5090e12dcdf" compoundref="pbxconfig_8c" startline="360" endline="367">pbxconf_autoadd</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaf79c511cab086f9152e08d0625f78b05" compoundref="pbxconfig_8c" startline="253" endline="299">pbxconf_default</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga836477fa7fce0013efd28a4b955f58b5" compoundref="pbxconfig_8c" startline="155" endline="180">pbxconf_e1</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga13ef8f931ae62e6036a1ac3e6596a424" compoundref="pbxconfig_8c" startline="222" endline="239">pbxconf_global</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga17474314ab394325f10da55d073f03d4" compoundref="pbxconfig_8c" startline="318" endline="338">pbxconf_incoming</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga085f542ab4bb26773f2a68e636a681e9" compoundref="pbxconfig_8c" startline="185" endline="217">pbxconf_mfcr2</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga2ac17cfecd9b9824f342ba665392a502" compoundref="pbxconfig_8c" startline="139" endline="150">pbxconf_misdn</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga0f2cc9199cbbf0c942507ee38bbf04d9" compoundref="pbxconfig_8c" startline="122" endline="134">pbxconf_topts</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga34653c75ebbdc91cadc68180a51b121b" compoundref="wizard_8c" startline="348" endline="355">wizz_acd</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga2385f9d99b5222b879485702af299fd0" compoundref="wizard_8c" startline="260" endline="307">wizz_exten</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gafcf1b2026fe781338918ede3a099a713" compoundref="wizard_8c" startline="311" endline="344">wizz_location</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga4fc4a7cde0492cbde04a4e0804cc81d8" compoundref="wizard_8c" startline="242" endline="256">wizz_network</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga85fecec1da6b92b910c3810a9f0f431c" compoundref="wizard_8c" startline="232" endline="238">wizz_samba</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gaa274a72a578011082041109b5e2d8b22" compoundref="wizard_8c" startline="359" endline="379">wizz_trunk</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga4663a22f17fb8c01f6058f117ed6c201" compoundref="wizard_8c" startline="383" endline="396">wizz_voip</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
@@ -609,21 +609,21 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1403" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1403" bodyend="1406"/>
         <references refid="class_d_t_s_panel_1a03d63a8c380ee62e263d7bc3a3c86396" compoundref="_d_t_s_panel_8cpp" startline="667" endline="682">DTSPanel::XMLListBox</references>
-        <referencedby refid="netconfig_8c_1afbdf0e8165311538e8b408c7ba2fabbf" compoundref="netconfig_8c" startline="446" endline="477">network_adsl_link</referencedby>
-        <referencedby refid="netconfig_8c_1a53ff57cbb1a4442c4428c95746229150" compoundref="netconfig_8c" startline="37" endline="74">network_config</referencedby>
-        <referencedby refid="netconfig_8c_1aaf6857ee640832afc05a9e158faedde3" compoundref="netconfig_8c" startline="372" endline="388">network_modem</referencedby>
-        <referencedby refid="netconfig_8c_1a4bab1c305385131091d979ad287b2ea3" compoundref="netconfig_8c" startline="401" endline="444">network_modem_ana</referencedby>
-        <referencedby refid="netconfig_8c_1a0b2d5249167dfdc0b972bff2091b5745" compoundref="netconfig_8c" startline="524" endline="563">network_tos</referencedby>
-        <referencedby refid="pbxconfig_8c_1af79c511cab086f9152e08d0625f78b05" compoundref="pbxconfig_8c" startline="220" endline="266">pbxconf_default</referencedby>
-        <referencedby refid="pbxconfig_8c_1a836477fa7fce0013efd28a4b955f58b5" compoundref="pbxconfig_8c" startline="134" endline="159">pbxconf_e1</referencedby>
-        <referencedby refid="pbxconfig_8c_1a13ef8f931ae62e6036a1ac3e6596a424" compoundref="pbxconfig_8c" startline="195" endline="212">pbxconf_global</referencedby>
-        <referencedby refid="pbxconfig_8c_1a17474314ab394325f10da55d073f03d4" compoundref="pbxconfig_8c" startline="279" endline="299">pbxconf_incoming</referencedby>
-        <referencedby refid="pbxconfig_8c_1a085f542ab4bb26773f2a68e636a681e9" compoundref="pbxconfig_8c" startline="161" endline="193">pbxconf_mfcr2</referencedby>
-        <referencedby refid="pbxconfig_8c_1a02bdd2b74e929bf843bed40de61f9c97" compoundref="pbxconfig_8c" startline="25" endline="105">pbxconf_trunk</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga2385f9d99b5222b879485702af299fd0" compoundref="wizard_8c" startline="233" endline="280">wizz_exten</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gafcf1b2026fe781338918ede3a099a713" compoundref="wizard_8c" startline="282" endline="315">wizz_location</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gaa274a72a578011082041109b5e2d8b22" compoundref="wizard_8c" startline="326" endline="346">wizz_trunk</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga4663a22f17fb8c01f6058f117ed6c201" compoundref="wizard_8c" startline="348" endline="361">wizz_voip</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gafbdf0e8165311538e8b408c7ba2fabbf" compoundref="netconfig_8c" startline="586" endline="617">network_adsl_link</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga53ff57cbb1a4442c4428c95746229150" compoundref="netconfig_8c" startline="56" endline="93">network_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gaaf6857ee640832afc05a9e158faedde3" compoundref="netconfig_8c" startline="497" endline="513">network_modem</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga4bab1c305385131091d979ad287b2ea3" compoundref="netconfig_8c" startline="536" endline="579">network_modem_ana</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga0b2d5249167dfdc0b972bff2091b5745" compoundref="netconfig_8c" startline="684" endline="723">network_tos</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaf79c511cab086f9152e08d0625f78b05" compoundref="pbxconfig_8c" startline="253" endline="299">pbxconf_default</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga836477fa7fce0013efd28a4b955f58b5" compoundref="pbxconfig_8c" startline="155" endline="180">pbxconf_e1</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga13ef8f931ae62e6036a1ac3e6596a424" compoundref="pbxconfig_8c" startline="222" endline="239">pbxconf_global</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga17474314ab394325f10da55d073f03d4" compoundref="pbxconfig_8c" startline="318" endline="338">pbxconf_incoming</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga085f542ab4bb26773f2a68e636a681e9" compoundref="pbxconfig_8c" startline="185" endline="217">pbxconf_mfcr2</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga02bdd2b74e929bf843bed40de61f9c97" compoundref="pbxconfig_8c" startline="37" endline="117">pbxconf_trunk</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga2385f9d99b5222b879485702af299fd0" compoundref="wizard_8c" startline="260" endline="307">wizz_exten</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gafcf1b2026fe781338918ede3a099a713" compoundref="wizard_8c" startline="311" endline="344">wizz_location</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gaa274a72a578011082041109b5e2d8b22" compoundref="wizard_8c" startline="359" endline="379">wizz_trunk</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga4663a22f17fb8c01f6058f117ed6c201" compoundref="wizard_8c" startline="383" endline="396">wizz_voip</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga9472a3941bf352a063fa5e55a6016fdc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct <ref refid="classform__item" kindref="compound">form_item</ref> *</type>
@@ -729,15 +729,15 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1420" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1420" bodyend="1423"/>
         <references refid="class_d_t_s_panel_1a4d294755a98b6194df04292abe18d1b0" compoundref="_d_t_s_panel_8cpp" startline="707" endline="722">DTSPanel::XMLComboBox</references>
-        <referencedby refid="netconfig_8c_1adceac66b5b38e18e528fc5a2adb2d649" compoundref="netconfig_8c" startline="245" endline="275">network_wifi</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga4fc4a7cde0492cbde04a4e0804cc81d8" compoundref="wizard_8c" startline="217" endline="231">wizz_network</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gadceac66b5b38e18e528fc5a2adb2d649" compoundref="netconfig_8c" startline="340" endline="370">network_wifi</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga4fc4a7cde0492cbde04a4e0804cc81d8" compoundref="wizard_8c" startline="242" endline="256">wizz_network</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Elements derived from a XML node. </para>    </briefdescription>
     <detaileddescription>
 <para><simplesect kind="see"><para><ref refid="class_d_t_s_panel_1aab8f3d3fbeb44163401d558d903f45ad" kindref="member">DTSPanel::GetNode()</ref> </para></simplesect>
-<xrefsect id="todo_1_todo000006"><xreftitle>Todo</xreftitle><xrefdescription><para>Adding functions to work from a search path will be better than the current interface that alloacates a new search for each element. </para></xrefdescription></xrefsect><simplesect kind="remark"><para>XML elements require a xpath to the parent , node name , filter attribute , filter value and attribute name to derive the value from. </para><simplesectsep/><para>If a node name is supplied a XML node will be attempted to be created. </para><simplesectsep/><para>If no XML node is found or can be created the element will be disabled. </para><simplesectsep/><para>the resulting path will be <verbatim>XPATH/Node&lt;[&lt;Filter attribute|.&gt; = &apos;Filter Value&apos;]&gt;</verbatim> </para></simplesect>
+<xrefsect id="todo_1_todo000008"><xreftitle>Todo</xreftitle><xrefdescription><para>Adding functions to work from a search path will be better than the current interface that alloacates a new search for each element. </para></xrefdescription></xrefsect><simplesect kind="remark"><para>XML elements require a xpath to the parent , node name , filter attribute , filter value and attribute name to derive the value from. </para><simplesectsep/><para>If a node name is supplied a XML node will be attempted to be created. </para><simplesectsep/><para>If no XML node is found or can be created the element will be disabled. </para><simplesectsep/><para>the resulting path will be <verbatim>XPATH/Node&lt;[&lt;Filter attribute|.&gt; = &apos;Filter Value&apos;]&gt;</verbatim> </para></simplesect>
 <simplesect kind="note"><para>node, filter attribute, filter value and attribute may be NULL. </para><simplesectsep/><para>If the node name is not supplied a node will not be created. </para><simplesectsep/><para>If the attribute is NULL the value of the node will be used for value. </para><simplesectsep/><para>If no filter value is supplied the filter attribute is ignored </para></simplesect>
 </para>    </detaileddescription>
   </compounddef>

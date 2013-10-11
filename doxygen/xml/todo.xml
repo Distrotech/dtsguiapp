@@ -5,22 +5,26 @@
     <title>Todo List</title>
     <detaileddescription>
 <para><variablelist>
-<varlistentry><term><anchor id="todo_1_todo000001"/>Group <ref refid="group___c-_a_p_i-_menus" kindref="compound">C-API-Menus</ref>  </term></varlistentry>
+<varlistentry><term><anchor id="todo_1_todo000003"/>Group <ref refid="group___c-_a_p_i-_menus" kindref="compound">C-API-Menus</ref>  </term></varlistentry>
 <listitem><para>Define and implement Exit/Quit events  </para></listitem>
-<varlistentry><term><anchor id="todo_1_todo000002"/>Group <ref refid="group___c-_a_p_i-_panel" kindref="compound">C-API-Panel</ref>  </term></varlistentry>
+<varlistentry><term><anchor id="todo_1_todo000004"/>Group <ref refid="group___c-_a_p_i-_panel" kindref="compound">C-API-Panel</ref>  </term></varlistentry>
 <listitem><para>Emit and allow panels to manage a event when a new panel is requested to allow saving the displayed panel.  </para></listitem>
-<varlistentry><term><anchor id="todo_1_todo000005"/>Group <ref refid="group___c-_a_p_i-_panel-_elements" kindref="compound">C-API-Panel-Elements</ref>  </term></varlistentry>
+<varlistentry><term><anchor id="todo_1_todo000007"/>Group <ref refid="group___c-_a_p_i-_panel-_elements" kindref="compound">C-API-Panel-Elements</ref>  </term></varlistentry>
 <listitem><para>Add a JSON API  </para></listitem>
-<varlistentry><term><anchor id="todo_1_todo000006"/>Group <ref refid="group___c-_a_p_i-_panel-_elements-_x_m_l" kindref="compound">C-API-Panel-Elements-XML</ref>  </term></varlistentry>
+<varlistentry><term><anchor id="todo_1_todo000008"/>Group <ref refid="group___c-_a_p_i-_panel-_elements-_x_m_l" kindref="compound">C-API-Panel-Elements-XML</ref>  </term></varlistentry>
 <listitem><para>Adding functions to work from a search path will be better than the current interface that alloacates a new search for each element.  </para></listitem>
-<varlistentry><term><anchor id="todo_1_todo000004"/>Group <ref refid="group___c-_a_p_i-_panel-_tab" kindref="compound">C-API-Panel-Tab</ref>  </term></varlistentry>
+<varlistentry><term><anchor id="todo_1_todo000006"/>Group <ref refid="group___c-_a_p_i-_panel-_tab" kindref="compound">C-API-Panel-Tab</ref>  </term></varlistentry>
 <listitem><para>Implement a right click action to allow for deletion via a confirmation dialog.  </para></listitem>
-<varlistentry><term><anchor id="todo_1_todo000003"/>Group <ref refid="group___c-_a_p_i-_panel-_tree" kindref="compound">C-API-Panel-Tree</ref>  </term></varlistentry>
+<varlistentry><term><anchor id="todo_1_todo000005"/>Group <ref refid="group___c-_a_p_i-_panel-_tree" kindref="compound">C-API-Panel-Tree</ref>  </term></varlistentry>
 <listitem><para>Allow for the deletion of branch/container/folder nodes.  </para></listitem>
-<varlistentry><term><anchor id="todo_1_todo000008"/>Group <ref refid="group___c-_a_p_i-_progress" kindref="compound">C-API-Progress</ref>  </term></varlistentry>
+<varlistentry><term><anchor id="todo_1_todo000010"/>Group <ref refid="group___c-_a_p_i-_progress" kindref="compound">C-API-Progress</ref>  </term></varlistentry>
 <listitem><para>Allow multiple instances of progress dialog not only the single interface at present.  </para></listitem>
-<varlistentry><term><anchor id="todo_1_todo000007"/>Group <ref refid="group___c-_a_p_i-_wizard" kindref="compound">C-API-Wizard</ref>  </term></varlistentry>
-<listitem><para>Add a hashed list to the wizard class storing the panels to no longer need to keep a array of panels. </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000009"/>Group <ref refid="group___c-_a_p_i-_wizard" kindref="compound">C-API-Wizard</ref>  </term></varlistentry>
+<listitem><para>Add a hashed list to the wizard class storing the panels to no longer need to keep a array of panels.  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000001"/>Member <ref refid="group___d_t_s-_a_p_p-_config_1gae1a63d1e8add52ca63e83582891054fa" kindref="member">save_config</ref>  (struct dtsgui *dtsgui, const char *title, void *data)</term></varlistentry>
+<listitem><para>Actually save the config  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000002"/>Member <ref refid="group___d_t_s-_a_p_p-_wizard_1gae99af9389a848fe0d810a538d0b64d53" kindref="member">system_wizard</ref>  (struct dtsgui *dtsgui, void *data, const char *filename, struct xml_doc *xmldoc, int save)</term></varlistentry>
+<listitem><para>Add callback to <ref refid="group___c-_a_p_i-_wizard_1ga3e76b1ea2eebb91e1d0b5a55649d65e6" kindref="member">dtsgui_wizard_addpage()</ref> to be called to configure the panel </para></listitem>
 </variablelist>
 </para>    </detaileddescription>
   </compounddef>

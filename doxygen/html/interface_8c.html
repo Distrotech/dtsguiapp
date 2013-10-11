@@ -107,9 +107,12 @@ $(document).ready(function(){initNavTree('interface_8c.html','');});
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">interface.c File Reference</div>  </div>
+<div class="title">interface.c File Reference<div class="ingroups"><a class="el" href="group___d_t_s-_a_p_p-_iface.html">Interface configuration tab view</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Interface configuration panel.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br/>
 <code>#include &lt;string.h&gt;</code><br/>
 <code>#include &quot;<a class="el" href="dtsgui_8h_source.html">dtsgui.h</a>&quot;</code><br/>
@@ -120,355 +123,53 @@ $(document).ready(function(){initNavTree('interface_8c.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnew__iface__data.html">new_iface_data</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure containing treeview and xmldoc for creating new tab.  <a href="structnew__iface__data.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structiface__cdata.html">iface_cdata</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pretty pointless structure holding interface name.  <a href="structiface__cdata.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af0850a1d3d424533abf6f42eb7603b58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#af0850a1d3d424533abf6f42eb7603b58">free_iface_cdata</a> (void *data)</td></tr>
-<tr class="separator:af0850a1d3d424533abf6f42eb7603b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a6216b44ef12f4343578439ea097c50"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structiface__cdata.html">iface_cdata</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#a3a6216b44ef12f4343578439ea097c50">get_iface_cdata</a> (const char *val)</td></tr>
-<tr class="separator:a3a6216b44ef12f4343578439ea097c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad806ada5b6aa10cb8e8b21af8fe03c33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#ad806ada5b6aa10cb8e8b21af8fe03c33">free_newiface_data</a> (void *data)</td></tr>
-<tr class="separator:ad806ada5b6aa10cb8e8b21af8fe03c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23ef5c5cf103f36dd179c5625f8f8576"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structnew__iface__data.html">new_iface_data</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#a23ef5c5cf103f36dd179c5625f8f8576">get_newiface_data</a> (<a class="el" href="group___c_o_r_e.html#ga29c463cda54f69beb273c77e1aa7ccef">dtsgui_tabview</a> tv, struct xml_doc *xmldoc)</td></tr>
-<tr class="separator:a23ef5c5cf103f36dd179c5625f8f8576"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad174419104751f817b6b094628bd9846"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#ad174419104751f817b6b094628bd9846">handle_newxmltabpane</a> (struct xml_doc *xmldoc, struct xml_node *xn, void *tdata, void **cdata, int *last)</td></tr>
-<tr class="separator:ad174419104751f817b6b094628bd9846"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2079939d5d21847b07c782120206b7ce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#a2079939d5d21847b07c782120206b7ce">handle_updatetabpane</a> (struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>, <a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a> p, int type, int event, void *data)</td></tr>
-<tr class="separator:a2079939d5d21847b07c782120206b7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec69e5698c53680c3551eeb9e05cbaf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#aec69e5698c53680c3551eeb9e05cbaf6">network_iface_pane_cb</a> (<a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a> p, void *data)</td></tr>
-<tr class="separator:aec69e5698c53680c3551eeb9e05cbaf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcfa585026374cce3c2443ea55cebc25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#adcfa585026374cce3c2443ea55cebc25">network_iface_new_pane_cb</a> (<a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a> p, void *data)</td></tr>
-<tr class="separator:adcfa585026374cce3c2443ea55cebc25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf43f59e582eee9f27734b14c8307819"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#abf43f59e582eee9f27734b14c8307819">iface_config</a> (struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>, const char *title, void *data)</td></tr>
-<tr class="separator:abf43f59e582eee9f27734b14c8307819"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0850a1d3d424533abf6f42eb7603b58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_t_s-_a_p_p-_iface.html#gaf0850a1d3d424533abf6f42eb7603b58">free_iface_cdata</a> (void *data)</td></tr>
+<tr class="memdesc:gaf0850a1d3d424533abf6f42eb7603b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relase references held by structure before free.  <a href="group___d_t_s-_a_p_p-_iface.html#gaf0850a1d3d424533abf6f42eb7603b58"></a><br/></td></tr>
+<tr class="separator:gaf0850a1d3d424533abf6f42eb7603b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3a6216b44ef12f4343578439ea097c50"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structiface__cdata.html">iface_cdata</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_t_s-_a_p_p-_iface.html#ga3a6216b44ef12f4343578439ea097c50">get_iface_cdata</a> (const char *val)</td></tr>
+<tr class="memdesc:ga3a6216b44ef12f4343578439ea097c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate new <a class="el" href="structiface__cdata.html" title="Pretty pointless structure holding interface name.">iface_cdata</a> structure.  <a href="group___d_t_s-_a_p_p-_iface.html#ga3a6216b44ef12f4343578439ea097c50"></a><br/></td></tr>
+<tr class="separator:ga3a6216b44ef12f4343578439ea097c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad806ada5b6aa10cb8e8b21af8fe03c33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_t_s-_a_p_p-_iface.html#gad806ada5b6aa10cb8e8b21af8fe03c33">free_newiface_data</a> (void *data)</td></tr>
+<tr class="memdesc:gad806ada5b6aa10cb8e8b21af8fe03c33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release references held by structure before free.  <a href="group___d_t_s-_a_p_p-_iface.html#gad806ada5b6aa10cb8e8b21af8fe03c33"></a><br/></td></tr>
+<tr class="separator:gad806ada5b6aa10cb8e8b21af8fe03c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga23ef5c5cf103f36dd179c5625f8f8576"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structnew__iface__data.html">new_iface_data</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_t_s-_a_p_p-_iface.html#ga23ef5c5cf103f36dd179c5625f8f8576">get_newiface_data</a> (<a class="el" href="group___c_o_r_e.html#ga29c463cda54f69beb273c77e1aa7ccef">dtsgui_tabview</a> tv, struct xml_doc *xmldoc)</td></tr>
+<tr class="memdesc:ga23ef5c5cf103f36dd179c5625f8f8576"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate and return a <a class="el" href="structnew__iface__data.html" title="Structure containing treeview and xmldoc for creating new tab.">new_iface_data</a> structure.  <a href="group___d_t_s-_a_p_p-_iface.html#ga23ef5c5cf103f36dd179c5625f8f8576"></a><br/></td></tr>
+<tr class="separator:ga23ef5c5cf103f36dd179c5625f8f8576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad174419104751f817b6b094628bd9846"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_t_s-_a_p_p-_iface.html#gad174419104751f817b6b094628bd9846">handle_newxmltabpane</a> (struct xml_doc *xmldoc, struct xml_node *xn, void *tdata, void **cdata, int *last)</td></tr>
+<tr class="memdesc:gad174419104751f817b6b094628bd9846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure panel configuration data.  <a href="group___d_t_s-_a_p_p-_iface.html#gad174419104751f817b6b094628bd9846"></a><br/></td></tr>
+<tr class="separator:gad174419104751f817b6b094628bd9846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2079939d5d21847b07c782120206b7ce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_t_s-_a_p_p-_iface.html#ga2079939d5d21847b07c782120206b7ce">handle_updatetabpane</a> (struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>, <a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a> p, int type, int event, void *data)</td></tr>
+<tr class="memdesc:ga2079939d5d21847b07c782120206b7ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event handler callback that will only check the interface name and pass handling to default handler.  <a href="group___d_t_s-_a_p_p-_iface.html#ga2079939d5d21847b07c782120206b7ce"></a><br/></td></tr>
+<tr class="separator:ga2079939d5d21847b07c782120206b7ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec69e5698c53680c3551eeb9e05cbaf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_t_s-_a_p_p-_iface.html#gaec69e5698c53680c3551eeb9e05cbaf6">network_iface_pane_cb</a> (<a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a> p, void *data)</td></tr>
+<tr class="memdesc:gaec69e5698c53680c3551eeb9e05cbaf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback called to configure a interface pane.  <a href="group___d_t_s-_a_p_p-_iface.html#gaec69e5698c53680c3551eeb9e05cbaf6"></a><br/></td></tr>
+<tr class="separator:gaec69e5698c53680c3551eeb9e05cbaf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadcfa585026374cce3c2443ea55cebc25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_t_s-_a_p_p-_iface.html#gadcfa585026374cce3c2443ea55cebc25">network_iface_new_pane_cb</a> (<a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a> p, void *data)</td></tr>
+<tr class="memdesc:gadcfa585026374cce3c2443ea55cebc25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback called for the "New" interface pane.  <a href="group___d_t_s-_a_p_p-_iface.html#gadcfa585026374cce3c2443ea55cebc25"></a><br/></td></tr>
+<tr class="separator:gadcfa585026374cce3c2443ea55cebc25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabf43f59e582eee9f27734b14c8307819"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___d_t_s-_a_p_p-_iface.html#gabf43f59e582eee9f27734b14c8307819">iface_config</a> (struct <a class="el" href="classdtsgui.html">dtsgui</a> *<a class="el" href="classdtsgui.html">dtsgui</a>, const char *title, void *data)</td></tr>
+<tr class="memdesc:gabf43f59e582eee9f27734b14c8307819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback called when the interface configuration link is selected.  <a href="group___d_t_s-_a_p_p-_iface.html#gabf43f59e582eee9f27734b14c8307819"></a><br/></td></tr>
+<tr class="separator:gabf43f59e582eee9f27734b14c8307819"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="af0850a1d3d424533abf6f42eb7603b58"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void free_iface_cdata </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interface configuration panel. </p>
 
-<p>Definition at line <a class="el" href="interface_8c_source.html#l00035">35</a> of file <a class="el" href="interface_8c_source.html">interface.c</a>.</p>
-
-<p>References <a class="el" href="interface_8c_source.html#l00032">iface_cdata::name</a>.</p>
-
-<p>Referenced by <a class="el" href="interface_8c_source.html#l00043">get_iface_cdata()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad806ada5b6aa10cb8e8b21af8fe03c33"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void free_newiface_data </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>data</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="interface_8c_source.html#l00054">54</a> of file <a class="el" href="interface_8c_source.html">interface.c</a>.</p>
-
-<p>References <a class="el" href="interface_8c_source.html#l00028">new_iface_data::xmldoc</a>.</p>
-
-<p>Referenced by <a class="el" href="interface_8c_source.html#l00063">get_newiface_data()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a3a6216b44ef12f4343578439ea097c50"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structiface__cdata.html">iface_cdata</a>* get_iface_cdata </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>val</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="interface_8c_source.html#l00043">43</a> of file <a class="el" href="interface_8c_source.html">interface.c</a>.</p>
-
-<p>References <a class="el" href="interface_8c_source.html#l00035">free_iface_cdata()</a>, and <a class="el" href="interface_8c_source.html#l00032">iface_cdata::name</a>.</p>
-
-<p>Referenced by <a class="el" href="interface_8c_source.html#l00077">handle_newxmltabpane()</a>, and <a class="el" href="interface_8c_source.html#l00145">iface_config()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a23ef5c5cf103f36dd179c5625f8f8576"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structnew__iface__data.html">new_iface_data</a>* get_newiface_data </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#ga29c463cda54f69beb273c77e1aa7ccef">dtsgui_tabview</a>&#160;</td>
-          <td class="paramname"><em>tv</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct xml_doc *&#160;</td>
-          <td class="paramname"><em>xmldoc</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="interface_8c_source.html#l00063">63</a> of file <a class="el" href="interface_8c_source.html">interface.c</a>.</p>
-
-<p>References <a class="el" href="interface_8c_source.html#l00054">free_newiface_data()</a>, <a class="el" href="interface_8c_source.html#l00027">new_iface_data::tv</a>, and <a class="el" href="interface_8c_source.html#l00028">new_iface_data::xmldoc</a>.</p>
-
-<p>Referenced by <a class="el" href="interface_8c_source.html#l00145">iface_config()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad174419104751f817b6b094628bd9846"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void handle_newxmltabpane </td>
-          <td>(</td>
-          <td class="paramtype">struct xml_doc *&#160;</td>
-          <td class="paramname"><em>xmldoc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct xml_node *&#160;</td>
-          <td class="paramname"><em>xn</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>tdata</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void **&#160;</td>
-          <td class="paramname"><em>cdata</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>last</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="interface_8c_source.html#l00077">77</a> of file <a class="el" href="interface_8c_source.html">interface.c</a>.</p>
-
-<p>References <a class="el" href="interface_8c_source.html#l00043">get_iface_cdata()</a>.</p>
-
-<p>Referenced by <a class="el" href="interface_8c_source.html#l00137">network_iface_new_pane_cb()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a2079939d5d21847b07c782120206b7ce"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int handle_updatetabpane </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="classdtsgui.html">dtsgui</a> *&#160;</td>
-          <td class="paramname"><em>dtsgui</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a>&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>type</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>event</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="interface_8c_source.html#l00086">86</a> of file <a class="el" href="interface_8c_source.html">interface.c</a>.</p>
-
-<p>References <a class="el" href="wrapper_8cpp_source.html#l01140">dtsgui_findvalue()</a>, <a class="el" href="wrapper_8cpp_source.html#l00922">dtsgui_setstatus()</a>, <a class="el" href="interface_8c_source.html#l00032">iface_cdata::name</a>, <a class="el" href="dtsgui_8h_source.html#l00216">wx_PANEL_EVENT_BUTTON</a>, <a class="el" href="dtsgui_8h_source.html#l00210">wx_PANEL_EVENT_BUTTON_NO</a>, and <a class="el" href="dtsgui_8h_source.html#l00208">wx_PANEL_EVENT_BUTTON_YES</a>.</p>
-
-<p>Referenced by <a class="el" href="interface_8c_source.html#l00123">network_iface_pane_cb()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="abf43f59e582eee9f27734b14c8307819"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a> iface_config </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="classdtsgui.html">dtsgui</a> *&#160;</td>
-          <td class="paramname"><em>dtsgui</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>title</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="interface_8c_source.html#l00145">145</a> of file <a class="el" href="interface_8c_source.html">interface.c</a>.</p>
-
-<p>References <a class="el" href="wxforms_8c_source.html#l00048">app_getxmldoc()</a>, <a class="el" href="wrapper_8cpp_source.html#l00588">dtsgui_newtabpage()</a>, <a class="el" href="wrapper_8cpp_source.html#l00520">dtsgui_tabwindow()</a>, <a class="el" href="interface_8c_source.html#l00043">get_iface_cdata()</a>, <a class="el" href="interface_8c_source.html#l00063">get_newiface_data()</a>, <a class="el" href="interface_8c_source.html#l00137">network_iface_new_pane_cb()</a>, <a class="el" href="interface_8c_source.html#l00123">network_iface_pane_cb()</a>, and <a class="el" href="dtsgui_8h_source.html#l00271">wx_PANEL_BUTTON_ACTION</a>.</p>
-
-<p>Referenced by <a class="el" href="config_8c_source.html#l00189">config_menu()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="adcfa585026374cce3c2443ea55cebc25"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void network_iface_new_pane_cb </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a>&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="interface_8c_source.html#l00137">137</a> of file <a class="el" href="interface_8c_source.html">interface.c</a>.</p>
-
-<p>References <a class="el" href="wrapper_8cpp_source.html#l00645">dtsgui_newxmltabpane()</a>, <a class="el" href="interface_8c_source.html#l00077">handle_newxmltabpane()</a>, <a class="el" href="netconfig_8c_source.html#l00222">network_iface_new_pane()</a>, <a class="el" href="interface_8c_source.html#l00123">network_iface_pane_cb()</a>, <a class="el" href="interface_8c_source.html#l00027">new_iface_data::tv</a>, and <a class="el" href="interface_8c_source.html#l00028">new_iface_data::xmldoc</a>.</p>
-
-<p>Referenced by <a class="el" href="interface_8c_source.html#l00145">iface_config()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aec69e5698c53680c3551eeb9e05cbaf6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void network_iface_pane_cb </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group___c_o_r_e.html#ga80d0a6abc3c934c0adc3fca6a1e62438">dtsgui_pane</a>&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="interface_8c_source.html#l00123">123</a> of file <a class="el" href="interface_8c_source.html">interface.c</a>.</p>
-
-<p>References <a class="el" href="wrapper_8cpp_source.html#l00853">dtsgui_setevcallback()</a>, <a class="el" href="wrapper_8cpp_source.html#l01336">dtsgui_xmltextbox()</a>, <a class="el" href="interface_8c_source.html#l00086">handle_updatetabpane()</a>, <a class="el" href="interface_8c_source.html#l00032">iface_cdata::name</a>, and <a class="el" href="netconfig_8c_source.html#l00201">network_iface_pane()</a>.</p>
-
-<p>Referenced by <a class="el" href="interface_8c_source.html#l00145">iface_config()</a>, and <a class="el" href="interface_8c_source.html#l00137">network_iface_new_pane_cb()</a>.</p>
-
-</div>
-</div>
-</div><!-- contents -->
+<p>Definition in file <a class="el" href="interface_8c_source.html">interface.c</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d422163b96683743ed3963d4aac17747.html">app</a></li><li class="navelem"><a class="el" href="interface_8c.html">interface.c</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

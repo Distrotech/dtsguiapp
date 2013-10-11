@@ -121,7 +121,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>A tree view is a panel with tabs along the top and display area underneath. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>Implement a right click action to allow for deletion via a confirmation dialog. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">Todo:</a></b></dt><dd>Implement a right click action to allow for deletion via a confirmation dialog. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The tab window allows grouping related panels together via the tab control when the tab is clicked its display area displays the panel associated with this control. </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="gae7cf11b65ccca530aecef7f7daa389e9"></a>
@@ -211,8 +211,12 @@ On win32 all tabs are configured when the view is activated.</dd></dl>
 
 <p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00991">DTSTabWindow::CreateTab()</a>.</p>
 
-<p>Referenced by <a class="el" href="interface_8c_source.html#l00145">iface_config()</a>, and <a class="el" href="pbxconfig_8c_source.html#l00325">pbx_settings()</a>.</p>
-
+<p>Referenced by <a class="el" href="interface_8c_source.html#l00197">iface_config()</a>, and <a class="el" href="pbxconfig_8c_source.html#l00374">pbx_settings()</a>.</p>
+<div class="fragment"><div class="line">                                                                                                                                                                   {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_window.html">DTSTabWindow</a> *tw = (<a class="code" href="class_d_t_s_tab_window.html">DTSTabWindow</a>*)<a class="code" href="classtree__newnode.html#a6d2aeccaa71eac80144dfb2353b51adc">tv</a>;</div>
+<div class="line">    <span class="keywordflow">return</span> tw-&gt;<a class="code" href="class_d_t_s_tab_window.html#aa37d1c10f98b08a6c7b265ecd77e3f1f">CreateTab</a>(name, butmask, userdata, cb, cdata, xmldoc);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gad3333a23e28993072b5ef4feed86778c"></a>
@@ -319,8 +323,12 @@ On win32 all tabs are configured when the view is activated.</dd></dl>
 
 <p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00198">tab_newpane::handle_newtabpane_cb()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00145">tab_newpane::tab_newpane()</a>.</p>
 
-<p>Referenced by <a class="el" href="interface_8c_source.html#l00137">network_iface_new_pane_cb()</a>.</p>
-
+<p>Referenced by <a class="el" href="interface_8c_source.html#l00181">network_iface_new_pane_cb()</a>.</p>
+<div class="fragment"><div class="line">                                                                                      {</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="classtab__newpane.html">tab_newpane</a> *tn = <span class="keyword">new</span> <a class="code" href="classtab__newpane.html#a66f664e9d0212bd0415953c72afbbacd">tab_newpane</a>((<a class="code" href="class_d_t_s_tab_window.html">DTSTabWindow</a>*)<a class="code" href="classtab__newpane.html#ab354d877d932ffb47de092bf1e1a8ab8">tabv</a>, <a class="code" href="classtab__newpane.html#a7a0581f47af3ab66c26fd6ea82b3ee9a">xpath</a>, <a class="code" href="classtab__newpane.html#a6ba77ba36491f4faaa975fe4264e0da5">node</a>, <a class="code" href="classtab__newpane.html#a91aa2bdcdc5a40fc55c922d779ce24e3">vitem</a>, <a class="code" href="classtab__newpane.html#a1fdfec0a57f980f16a83892b0da294b9">tattr</a>, <a class="code" href="classtab__newpane.html#ad411183382cacce488de4bad08fa1e74">data_cb</a>, <a class="code" href="classtab__newpane.html#a8eb7f1e451ea29a942fe94c5e79842bc">cb</a>, <a class="code" href="classtab__newpane.html#ab8134f20a45410b664c3853e4ef5f499">cdata</a>, <a class="code" href="classtab__newpane.html#af58db0bde709efe63fd806ca6753eff4">xmldoc</a>, <a class="code" href="classtab__newpane.html#a70f33dd22d1a121e7d8e84cd52f1efd0">data</a>);</div>
+<div class="line">    <span class="keyword">static_cast&lt;</span><a class="code" href="class_d_t_s_panel.html">DTSPanel</a>*<span class="keyword">&gt;</span>(p)-&gt;SetEventCallback(&amp;<a class="code" href="classtab__newpane.html#a8084796f246b29a21c9077aefa40fc18">tab_newpane::handle_newtabpane_cb</a>, tn, <span class="keyword">true</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga26ee371ec8b1bed0f4a652eb99e04767"></a>
@@ -421,7 +429,11 @@ On win32 all tabs are configured when the view is activated.</dd></dl>
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00617">617</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00991">DTSTabWindow::CreateTab()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                                                                                          {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_window.html">DTSTabWindow</a> *tw = (<a class="code" href="class_d_t_s_tab_window.html">DTSTabWindow</a>*)tv;</div>
+<div class="line">    <span class="keywordflow">return</span> tw-&gt;<a class="code" href="class_d_t_s_tab_window.html#aa37d1c10f98b08a6c7b265ecd77e3f1f">CreateTab</a>(name, butmask, userdata, <a class="code" href="classtab__newpane.html#a8eb7f1e451ea29a942fe94c5e79842bc">cb</a>, <a class="code" href="classtab__newpane.html#ab8134f20a45410b664c3853e4ef5f499">cdata</a>, <a class="code" href="classtab__newpane.html#af58db0bde709efe63fd806ca6753eff4">xmldoc</a>, pos, undo);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -429,7 +441,7 @@ On win32 all tabs are configured when the view is activated.</dd></dl>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

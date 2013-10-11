@@ -3,6 +3,9 @@
 .nh
 .SH NAME
 app/netconfig.c \- 
+.PP
+Advanced configuration panel\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -25,105 +28,139 @@ app/netconfig.c \-
 .ti -1c
 .RI "void \fBnetwork_config_dns_domain_server_new\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (New Hosted Domain Server) \fP"
 .ti -1c
 .RI "void \fBcustomer_info\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (Customer Info) \fP"
 .ti -1c
 .RI "void \fBnetwork_config\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (Network Configuration) \fP"
 .ti -1c
 .RI "void \fBnetwork_config_dns\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (DNS Configuration) \fP"
 .ti -1c
 .RI "void \fBnetwork_config_dns_dyn\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (Dynamic DNS) \fP"
 .ti -1c
 .RI "void \fBnetwork_config_dns_serv\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (DNS Server) \fP"
 .ti -1c
 .RI "void \fBnetwork_config_dns_zone\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (DNS Zone Defaults) \fP"
 .ti -1c
 .RI "void \fBnetwork_config_dns_host\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (DNS Hosts) \fP"
 .ti -1c
 .RI "void \fBnetwork_config_dns_host_new\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (New DNS Host) \fP"
 .ti -1c
 .RI "void \fBnetwork_config_dns_domain_node\fP (\fBdtsgui_treeview\fP tv, \fBdtsgui_treenode\fP tn, struct xml_node *xn, void *data)"
 .br
+.RI "\fIAdd a container for servers to newly added domain\&. \fP"
 .ti -1c
 .RI "void \fBnetwork_config_dns_domain\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (Hosted Domain) \fP"
 .ti -1c
 .RI "void \fBnetwork_config_dns_domain_new\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (New Hosted Domain) \fP"
 .ti -1c
 .RI "void \fBnetwork_config_dns_domain_server\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (Hosted Domain Server) \fP"
 .ti -1c
 .RI "void \fBnetwork_iface_pane\fP (\fBdtsgui_pane\fP p, const char *xpre, const char *iface)"
 .br
+.RI "\fINetwork interface stub shared with interface config\&. \fP"
 .ti -1c
 .RI "void \fBnetwork_iface\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (Network Interface) \fP"
 .ti -1c
-.RI "void \fBnetwork_iface_new_pane\fP (\fBdtsgui_pane\fP p, void *data)"
+.RI "void \fBnetwork_iface_new_pane\fP (\fBdtsgui_pane\fP p)"
 .br
+.RI "\fINetwork interface stub shared with interface config\&. \fP"
 .ti -1c
 .RI "void \fBnetwork_newiface\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (New Network Interface) \fP"
 .ti -1c
 .RI "void \fBnetwork_wifi\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (WiFi Interface) \fP"
 .ti -1c
 .RI "void \fBnetwork_newwifi\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (New WiFi Interface) \fP"
 .ti -1c
 .RI "void \fBnetwork_wan\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (WAN Route) \fP"
 .ti -1c
 .RI "void \fBnetwork_newwan\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (New Wan Route) \fP"
 .ti -1c
 .RI "void \fBnetwork_route\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (Static Route) \fP"
 .ti -1c
 .RI "void \fBnetwork_newroute\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (New Static Route) \fP"
 .ti -1c
 .RI "void \fBnetwork_modem\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (Modem Config) \fP"
 .ti -1c
 .RI "void \fBnetwork_modem_adv\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (Advanced Modem Config) \fP"
 .ti -1c
 .RI "void \fBnetwork_modem_ana\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (Analogue Modem Config) \fP"
 .ti -1c
 .RI "void \fBnetwork_adsl_link\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (DSL Links) \fP"
 .ti -1c
 .RI "void \fBnetwork_adsl_link_new\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (New DSL Link) \fP"
 .ti -1c
 .RI "void \fBnetwork_adsl_user\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (DSL User) \fP"
 .ti -1c
 .RI "void \fBnetwork_adsl_user_new\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (New DSL User) \fP"
 .ti -1c
 .RI "void \fBnetwork_tos\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (TOS Config) \fP"
 .ti -1c
 .RI "void \fBnetwork_tos_new\fP (\fBdtsgui_pane\fP p, \fBdtsgui_treeview\fP self, \fBdtsgui_treenode\fP node, void *data)"
 .br
+.RI "\fITree pane configuration call back (New TOS Config) \fP"
 .ti -1c
 .RI "void \fBnetwork_tree_setup\fP (\fBdtsgui_treeview\fP tree, struct xml_doc *xmldoc)"
 .br
+.RI "\fIConfigure the networking noded on the tree\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBadvanced_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fIAdvanced configuration menu callback\&. \fP"
 .in -1c
 .SS "Variables"
 
@@ -131,289 +168,15 @@ app/netconfig.c \-
 .ti -1c
 .RI "static const char * \fBprotocols\fP [] = {'TCP', 'UDP', 'GRE', 'ESP', 'AH', 'OSPF', 'ALL'}"
 .br
+.RI "\fIArray of network protocols\&. \fP"
 .in -1c
-.SH "Function Documentation"
+.SH "Detailed Description"
 .PP 
-.SS "\fBdtsgui_pane\fP advanced_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+Advanced configuration panel\&. 
+
 
 .PP
-Definition at line 740 of file netconfig\&.c\&.
-.PP
-References app_getxmldoc(), app_data::datadir, dtsgui_alert(), dtsgui_treewindow(), dtsgui_userdata(), and network_tree_setup()\&.
-.PP
-Referenced by config_menu()\&.
-.SS "void customer_info (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 32 of file netconfig\&.c\&.
-.PP
-References wizz_custinfo()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_adsl_link (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 446 of file netconfig\&.c\&.
-.PP
-References dtsgui_listbox_addxml(), dtsgui_panelxml(), dtsgui_treenodegetxml(), dtsgui_xmllistbox(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_adsl_link_new(), and network_tree_setup()\&.
-.SS "void network_adsl_link_new (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 479 of file netconfig\&.c\&.
-.PP
-References DTS_NODE_NETWORK_ADSL_LINK, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_listbox(), dtsgui_listbox_addxml(), dtsgui_newxmltreenode(), dtsgui_panelxml(), dtsgui_textbox(), and network_adsl_link()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_adsl_user (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 504 of file netconfig\&.c\&.
-.PP
-References dtsgui_treenodegetxml(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_adsl_user_new(), and network_tree_setup()\&.
-.SS "void network_adsl_user_new (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 513 of file netconfig\&.c\&.
-.PP
-References DTS_NODE_NETWORK_ADSL_USER, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_newxmltreenode(), dtsgui_textbox(), and network_adsl_user()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_config (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 37 of file netconfig\&.c\&.
-.PP
-References dtsgui_item_value(), dtsgui_listbox_add(), dtsgui_listbox_addxml(), dtsgui_panelxml(), dtsgui_xmllistbox(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_config_dns (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 76 of file netconfig\&.c\&.
-.PP
-References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_config_dns_domain (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 138 of file netconfig\&.c\&.
-.PP
-References dtsgui_treenodegetxml(), dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_config_dns_domain_new(), and network_tree_setup()\&.
-.SS "void network_config_dns_domain_new (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 151 of file netconfig\&.c\&.
-.PP
-References DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN, DTS_TREE_NEW_NODE_CONTAINER, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_checkbox(), dtsgui_newxmltreenode(), dtsgui_textbox(), network_config_dns_domain(), and network_config_dns_domain_node()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_config_dns_domain_node (\fBdtsgui_treeview\fPtv, \fBdtsgui_treenode\fPtn, struct xml_node *xn, void *data)"
-
-.PP
-Definition at line 134 of file netconfig\&.c\&.
-.PP
-References DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER_NEW, dtsgui_treecont(), and network_config_dns_domain_server_new()\&.
-.PP
-Referenced by network_config_dns_domain_new()\&.
-.SS "void network_config_dns_domain_server (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 163 of file netconfig\&.c\&.
-.PP
-References dtsgui_treenodegetdata(), dtsgui_treenodegetxml(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_config_dns_domain_server_new()\&.
-.SS "void network_config_dns_domain_server_new (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 177 of file netconfig\&.c\&.
-.PP
-References DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_SORT, dtsgui_newxmltreenode(), dtsgui_textbox(), dtsgui_treenodeparent(), and network_config_dns_domain_server()\&.
-.PP
-Referenced by network_config_dns_domain_node()\&.
-.SS "void network_config_dns_dyn (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 89 of file netconfig\&.c\&.
-.PP
-References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_config_dns_host (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 115 of file netconfig\&.c\&.
-.PP
-References dtsgui_treenodegetxml(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_config_dns_host_new(), and network_tree_setup()\&.
-.SS "void network_config_dns_host_new (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 125 of file netconfig\&.c\&.
-.PP
-References DTS_NODE_NETWORK_CONFIG_DNS_HOST, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_newxmltreenode(), dtsgui_textbox(), and network_config_dns_host()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_config_dns_serv (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 97 of file netconfig\&.c\&.
-.PP
-References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_config_dns_zone (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 107 of file netconfig\&.c\&.
-.PP
-References dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_iface (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 213 of file netconfig\&.c\&.
-.PP
-References dtsgui_treenodegetxml(), and network_iface_pane()\&.
-.PP
-Referenced by network_newiface(), and network_tree_setup()\&.
-.SS "void network_iface_new_pane (\fBdtsgui_pane\fPp, void *data)"
-
-.PP
-Definition at line 222 of file netconfig\&.c\&.
-.PP
-References dtsgui_textbox()\&.
-.PP
-Referenced by network_iface_new_pane_cb(), and network_newiface()\&.
-.SS "void network_iface_pane (\fBdtsgui_pane\fPp, const char *xpre, const char *iface)"
-
-.PP
-Definition at line 201 of file netconfig\&.c\&.
-.PP
-References dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_iface(), and network_iface_pane_cb()\&.
-.SS "void network_modem (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 372 of file netconfig\&.c\&.
-.PP
-References dtsgui_listbox_add(), dtsgui_xmllistbox(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_modem_adv (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 390 of file netconfig\&.c\&.
-.PP
-References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_modem_ana (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 401 of file netconfig\&.c\&.
-.PP
-References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), dtsgui_xmllistbox(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_newiface (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 235 of file netconfig\&.c\&.
-.PP
-References DTS_NODE_NETWORK_IFACE, DTS_TREE_NEW_NODE_CONTAINER, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_newxmltreenode(), network_iface(), and network_iface_new_pane()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_newroute (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 359 of file netconfig\&.c\&.
-.PP
-References DTS_NODE_NETWORK_ROUTE, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_newxmltreenode(), dtsgui_textbox(), and network_route()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_newwan (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 333 of file netconfig\&.c\&.
-.PP
-References DTS_NODE_NETWORK_WAN, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_newxmltreenode(), dtsgui_textbox(), and network_wan()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_newwifi (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 277 of file netconfig\&.c\&.
-.PP
-References DTS_NODE_NETWORK_WIFI, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_SORT, dtsgui_listbox(), dtsgui_listbox_add(), dtsgui_listbox_addxml(), dtsgui_listbox_set(), dtsgui_newxmltreenode(), dtsgui_panelxml(), dtsgui_textbox(), and network_wifi()\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_route (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 349 of file netconfig\&.c\&.
-.PP
-References dtsgui_treenodegetxml(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_newroute(), and network_tree_setup()\&.
-.SS "void network_tos (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 524 of file netconfig\&.c\&.
-.PP
-References dtsgui_listbox_add(), dtsgui_treenodegetxml(), dtsgui_xmllistbox(), dtsgui_xmltextbox(), form_item::name, and protocols\&.
-.PP
-Referenced by network_tos_new(), and network_tree_setup()\&.
-.SS "void network_tos_new (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 565 of file netconfig\&.c\&.
-.PP
-References DTS_NODE_NETWORK_TOS, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, dtsgui_listbox(), dtsgui_listbox_add(), dtsgui_newxmltreenode(), dtsgui_textbox(), network_tos(), and protocols\&.
-.PP
-Referenced by network_tree_setup()\&.
-.SS "void network_tree_setup (\fBdtsgui_treeview\fPtree, struct xml_doc *xmldoc)"
-
-.PP
-Definition at line 602 of file netconfig\&.c\&.
-.PP
-References customer_info(), DTS_NODE_CUSTOMER, DTS_NODE_NETWORK_ADSL_LINK, DTS_NODE_NETWORK_ADSL_LINK_NEW, DTS_NODE_NETWORK_ADSL_USER, DTS_NODE_NETWORK_ADSL_USER_NEW, DTS_NODE_NETWORK_CONFIG, DTS_NODE_NETWORK_CONFIG_DNS, DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN, DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_NEW, DTS_NODE_NETWORK_CONFIG_DNS_DYN, DTS_NODE_NETWORK_CONFIG_DNS_HOST, DTS_NODE_NETWORK_CONFIG_DNS_HOST_NEW, DTS_NODE_NETWORK_CONFIG_DNS_SERV, DTS_NODE_NETWORK_CONFIG_DNS_ZONE, DTS_NODE_NETWORK_IFACE, DTS_NODE_NETWORK_IFACE_NEW, DTS_NODE_NETWORK_MODEM, DTS_NODE_NETWORK_MODEM_ADV, DTS_NODE_NETWORK_MODEM_ANA, DTS_NODE_NETWORK_ROUTE_NEW, DTS_NODE_NETWORK_TOS, DTS_NODE_NETWORK_TOS_NEW, DTS_NODE_NETWORK_WAN, DTS_NODE_NETWORK_WAN_NEW, DTS_NODE_NETWORK_WIFI, DTS_NODE_NETWORK_WIFI_NEW, dtsgui_treecont(), dtsgui_treeitem(), dtsgui_treenodesetxml(), network_adsl_link(), network_adsl_link_new(), network_adsl_user(), network_adsl_user_new(), network_config(), network_config_dns(), network_config_dns_domain(), network_config_dns_domain_new(), network_config_dns_dyn(), network_config_dns_host(), network_config_dns_host_new(), network_config_dns_serv(), network_config_dns_zone(), network_iface(), network_modem(), network_modem_adv(), network_modem_ana(), network_newiface(), network_newroute(), network_newwan(), network_newwifi(), network_route(), network_tos(), network_tos_new(), network_wan(), and network_wifi()\&.
-.PP
-Referenced by advanced_config()\&.
-.SS "void network_wan (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 320 of file netconfig\&.c\&.
-.PP
-References dtsgui_treenodegetxml(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_newwan(), and network_tree_setup()\&.
-.SS "void network_wifi (\fBdtsgui_pane\fPp, \fBdtsgui_treeview\fPself, \fBdtsgui_treenode\fPnode, void *data)"
-
-.PP
-Definition at line 245 of file netconfig\&.c\&.
-.PP
-References dtsgui_listbox_add(), dtsgui_treenodegetxml(), dtsgui_xmlcombobox(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_newwifi(), and network_tree_setup()\&.
-.SH "Variable Documentation"
-.PP 
-.SS "const char* protocols[] = {'TCP', 'UDP', 'GRE', 'ESP', 'AH', 'OSPF', 'ALL'}\fC [static]\fP"
-
-.PP
-Definition at line 30 of file netconfig\&.c\&.
-.PP
-Referenced by network_tos(), and network_tos_new()\&.
+Definition in file \fBnetconfig\&.c\fP\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

@@ -3,6 +3,9 @@
 .nh
 .SH NAME
 new_iface_data \- 
+.PP
+Structure containing treeview and xmldoc for creating new tab\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -12,25 +15,33 @@ new_iface_data \-
 .ti -1c
 .RI "\fBdtsgui_tabview\fP \fBtv\fP"
 .br
+.RI "\fITabview to add new tab too\&. \fP"
 .ti -1c
 .RI "struct xml_doc * \fBxmldoc\fP"
 .br
+.RI "\fIXML Document to insert new node into\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 26 of file interface\&.c\&.
+Structure containing treeview and xmldoc for creating new tab\&. 
+.PP
+Definition at line 37 of file interface\&.c\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "\fBdtsgui_tabview\fP new_iface_data::tv"
 
 .PP
-Definition at line 27 of file interface\&.c\&.
+Tabview to add new tab too\&. 
+.PP
+Definition at line 39 of file interface\&.c\&.
 .PP
 Referenced by get_newiface_data(), and network_iface_new_pane_cb()\&.
 .SS "struct xml_doc* new_iface_data::xmldoc"
 
 .PP
-Definition at line 28 of file interface\&.c\&.
+XML Document to insert new node into\&. 
+.PP
+Definition at line 41 of file interface\&.c\&.
 .PP
 Referenced by free_newiface_data(), get_newiface_data(), and network_iface_new_pane_cb()\&.
 

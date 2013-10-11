@@ -46,12 +46,31 @@ Definition at line 68 of file DTSApp\&.h\&.
 
 .PP
 Definition at line 247 of file DTSApp\&.cpp\&.
+.PP
+.nf
+                                                                                                                                       {
+    dtsgui = new class dtsgui(title, status, wsize, wpos, confcallback_cb, data);
+}
+.fi
 .SS "DTSApp::~DTSApp ()"
 
 .PP
 Definition at line 251 of file DTSApp\&.cpp\&.
 .PP
 References dtsgui_curl::curl\&.
+.PP
+.nf
+                {
+    if (dtsgui) {
+        objunref((void *)dtsgui);
+    }
+    if (curl) {
+        curl->Close();
+        objunref(curl);
+    }
+
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "bool DTSApp::OnInit ()\fC [private]\fP, \fC [virtual]\fP"
@@ -60,6 +79,16 @@ References dtsgui_curl::curl\&.
 Definition at line 262 of file DTSApp\&.cpp\&.
 .PP
 References dtsgui_curl::curl, and dtsgui::SetupAPPFrame()\&.
+.PP
+.nf
+                    {
+    if (dtsgui && dtsgui->SetupAPPFrame()) {
+        curl = new class dtsgui_curl(dtsgui);
+        return true;
+    }
+    return false;
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "class \fBdtsgui_curl\fP* DTSApp::curl\fC [private]\fP"

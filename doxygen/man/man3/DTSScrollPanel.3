@@ -34,6 +34,19 @@ Definition at line 136 of file DTSPanel\&.h\&.
 Definition at line 899 of file DTSPanel\&.cpp\&.
 .PP
 References DTSObject::dtsevthandler, DTSPanelEvent::OnDialog(), DTSObject::panel, DTSPanel::SetupWin(), DTSObject::type, and wx_DTSPANEL_SCROLLPANEL\&.
+.PP
+.nf
+    :wxScrolledWindow(parent, wxID_ANY),
+     DTSPanel(frame, status, butmask) {
+    DTSPanelEvent *dtsevt = (DTSPanelEvent*)dtsevthandler;
+
+    type = wx_DTSPANEL_SCROLLPANEL;
+    SetScrollRate(10, 10);
+    panel = dynamic_cast<wxPanel *>(this);
+    panel->Bind(wxEVT_TEXT_ENTER, &DTSPanelEvent::OnDialog, dtsevt);
+    SetupWin();
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "bool DTSScrollPanel::Show (boolshow)\fC [virtual]\fP"
@@ -44,6 +57,14 @@ Reimplemented in \fBDTSTabPage\fP\&.
 Definition at line 911 of file DTSPanel\&.cpp\&.
 .PP
 References DTSPanel::ShowPanel()\&.
+.PP
+.nf
+                                   {
+    ShowPanel(show);
+    return wxScrolledWindow::Show(show);
+}
+.fi
+
 
 .SH "Author"
 .PP 

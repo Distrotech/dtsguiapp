@@ -173,7 +173,14 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00046">46</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
 
 <p>References <a class="el" href="pitems_8h_source.html#l00035">attr</a>, <a class="el" href="pitems_8h_source.html#l00034">xpath</a>, and <a class="el" href="pitems_8h_source.html#l00033">xsearch</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                 {</div>
+<div class="line">    <a class="code" href="classxml__element.html#a78560d170e3256faa79d79679552b717">xpath</a> = xp;</div>
+<div class="line">    <a class="code" href="classxml__element.html#a7064cb97bc7806a0d2fb792d9c0891e5">xsearch</a> = xs;</div>
+<div class="line">    <span class="keywordflow">if</span> (xattr) {</div>
+<div class="line">        <a class="code" href="classxml__element.html#a5e1c544e39cc117f13e692f59cf020c1">attr</a> = strdup(xattr);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -211,7 +218,28 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="pitems_8h_source.html#l00035">attr</a>, and <a class="el" href="pitems_8h_source.html#l00033">xsearch</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00628">DTSPanel::XMLCheckBox()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00707">DTSPanel::XMLComboBox()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00667">DTSPanel::XMLListBox()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00585">DTSPanel::XMLTextBox()</a>.</p>
-
+<div class="fragment"><div class="line">                                  {</div>
+<div class="line">    <span class="keyword">struct </span>xml_node *xn;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *ret = NULL;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *tmp;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="classxml__element.html#a7064cb97bc7806a0d2fb792d9c0891e5">xsearch</a>) {</div>
+<div class="line">        <span class="keywordflow">return</span> NULL;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    xn = xml_getfirstnode(<a class="code" href="classxml__element.html#a7064cb97bc7806a0d2fb792d9c0891e5">xsearch</a>, NULL);</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="classxml__element.html#a5e1c544e39cc117f13e692f59cf020c1">attr</a>) {</div>
+<div class="line">        <span class="keywordflow">if</span> (xn-&gt;value) {</div>
+<div class="line">            ret = strdup(xn-&gt;value);</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((tmp = xml_getattr(xn, <a class="code" href="classxml__element.html#a5e1c544e39cc117f13e692f59cf020c1">attr</a>))) {</div>
+<div class="line">        ret = strdup(tmp);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    objunref(xn);</div>
+<div class="line">    <span class="keywordflow">return</span> ret;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a232e850ca67d3d065d1c16bea79cb441"></a>
@@ -243,7 +271,19 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="pitems_8h_source.html#l00035">attr</a>, and <a class="el" href="pitems_8h_source.html#l00033">xsearch</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00746">DTSPanel::Update_XML()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                  {</div>
+<div class="line">    <span class="keyword">struct </span>xml_node *xn;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> ((xn = xml_getfirstnode(<a class="code" href="classxml__element.html#a7064cb97bc7806a0d2fb792d9c0891e5">xsearch</a>, NULL))) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="classxml__element.html#a5e1c544e39cc117f13e692f59cf020c1">attr</a>) {</div>
+<div class="line">            xml_setattr(xmldoc, xn, <a class="code" href="classxml__element.html#a5e1c544e39cc117f13e692f59cf020c1">attr</a>, (value) ? value : <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            xml_modify(xmldoc, xn, (value) ? value : <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line">        }</div>
+<div class="line">        objunref(xn);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -329,7 +369,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classxml__element.html">xml_element</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:37 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

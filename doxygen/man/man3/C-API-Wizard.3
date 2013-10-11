@@ -73,6 +73,12 @@ Definition at line 985 of file wrapper\&.cpp\&.
 References dtsgui::GetFrame()\&.
 .PP
 Referenced by system_wizard()\&.
+.PP
+.nf
+                                                                                        {
+    return new dtsgui_wizard(dtsgui, dtsgui->GetFrame(), title);
+}
+.fi
 .SS "int DTS_C_API::dtsgui_runwizard (struct \fBdtsgui_wizard\fP *dtswiz)"
 
 .PP
@@ -100,6 +106,12 @@ Definition at line 1014 of file wrapper\&.cpp\&.
 References dtsgui_wizard::RunWizard()\&.
 .PP
 Referenced by system_wizard()\&.
+.PP
+.nf
+                                                          {
+    return dtswiz->RunWizard();
+}
+.fi
 .SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_wizard_addpage (struct \fBdtsgui_wizard\fP *dtswiz, const char *title, void *userdata, struct xml_doc *xmldoc)"
 
 .PP
@@ -131,6 +143,12 @@ Definition at line 999 of file wrapper\&.cpp\&.
 References dtsgui_wizard::AddPage()\&.
 .PP
 Referenced by system_wizard()\&.
+.PP
+.nf
+                                                                                                                                  {
+    return dtswiz->AddPage(title, xmldoc, userdata);
+}
+.fi
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

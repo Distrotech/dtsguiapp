@@ -219,7 +219,21 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="pitems_8cpp_source.html#l00089">89</a> of file <a class="el" href="pitems_8cpp_source.html">pitems.cpp</a>.</p>
 
 <p>References <a class="el" href="pitems_8h_source.html#l00066">data</a>, <a class="el" href="pitems_8h_source.html#l00068">dtype</a>, <a class="el" href="pitems_8h_source.html#l00065">idx</a>, <a class="el" href="pitems_8h_source.html#l00063">type</a>, and <a class="el" href="pitems_8h_source.html#l00067">widget</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                                                        {</div>
+<div class="line">    this-&gt;<a class="code" href="classform__item.html#a6720d7a562d897686e128fc2146702e7">widget</a>.<a class="code" href="unionwidgets.html#a5dbc3a005c0d466449a1be8c20db8cfc">p</a> = <a class="code" href="classform__item.html#a6720d7a562d897686e128fc2146702e7">widget</a>;</div>
+<div class="line">    this-&gt;<a class="code" href="classform__item.html#aa7364e00d99d22b9a594767915caa4be">type</a> = <a class="code" href="classform__item.html#aa7364e00d99d22b9a594767915caa4be">type</a>;</div>
+<div class="line">    this-&gt;<a class="code" href="classform__item.html#a601ff328ce4165b07d5ad23bd96967b7">data</a>.<a class="code" href="unionform__data.html#a5906eb68e54829e44467b3d082f9eee4">ptr</a> = <a class="code" href="classform__item.html#a601ff328ce4165b07d5ad23bd96967b7">data</a>;</div>
+<div class="line">    this-&gt;<a class="code" href="classform__item.html#acaa83eeebb557f7e66ae998bc45dc6c9">dtype</a> = <a class="code" href="classform__item.html#acaa83eeebb557f7e66ae998bc45dc6c9">dtype</a>;</div>
+<div class="line">    ALLOC_CONST(this-&gt;<a class="code" href="classform__item.html#a4b647b26beee4bb3f3935645f3eb1a9b">name</a>, <a class="code" href="classform__item.html#a4b647b26beee4bb3f3935645f3eb1a9b">name</a>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classform__item.html#a031f8fb162f54579bc1ba53a751c5414">value</a>) {</div>
+<div class="line">        ALLOC_CONST(this-&gt;<a class="code" href="classform__item.html#a031f8fb162f54579bc1ba53a751c5414">value</a>, <a class="code" href="classform__item.html#a031f8fb162f54579bc1ba53a751c5414">value</a>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classform__item.html#abb8668ad59e583a7a73bc03f2c4503da">value2</a>) {</div>
+<div class="line">        ALLOC_CONST(this-&gt;<a class="code" href="classform__item.html#abb8668ad59e583a7a73bc03f2c4503da">value2</a>, <a class="code" href="classform__item.html#abb8668ad59e583a7a73bc03f2c4503da">value2</a>);</div>
+<div class="line">    }</div>
+<div class="line">    this-&gt;<a class="code" href="classform__item.html#a9c5388b8962be531b51920c7775f8d2d">idx</a> = -1;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -252,7 +266,27 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="dtsgui_8h_source.html#l00261">DTS_WIDGET_COMBOBOX</a>, <a class="el" href="dtsgui_8h_source.html#l00260">DTS_WIDGET_LISTBOX</a>, <a class="el" href="pitems_8h_source.html#l00065">idx</a>, <a class="el" href="pitems_8h_source.html#l00045">widgets::l</a>, <a class="el" href="pitems_8cpp_source.html#l00176">SetSelection()</a>, <a class="el" href="pitems_8h_source.html#l00063">type</a>, <a class="el" href="pitems_8h_source.html#l00069">value</a>, and <a class="el" href="pitems_8h_source.html#l00067">widget</a>.</p>
 
 <p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00225">AppendXML()</a>, and <a class="el" href="wrapper_8cpp_source.html#l01219">DTS_C_API::dtsgui_listbox_add()</a>.</p>
-
+<div class="fragment"><div class="line">                                                        {</div>
+<div class="line">    <span class="keywordtype">int</span> i;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">switch</span>(<a class="code" href="classform__item.html#aa7364e00d99d22b9a594767915caa4be">type</a>) {</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#ggafd296180392ef5681415b9fb0590be84ad091872a88b66595cb453008b03565cc">DTS_WIDGET_COMBOBOX</a>:</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#ggafd296180392ef5681415b9fb0590be84a617d0a94e82cae830c769b66b1751b9a">DTS_WIDGET_LISTBOX</a>:</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">default</span>:</div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    i = <a class="code" href="classform__item.html#a6720d7a562d897686e128fc2146702e7">widget</a>.<a class="code" href="unionwidgets.html#a9e5583bcc42f0273b9c6a1605e0e1b6d">l</a>-&gt;Append(text, (val) ? (<span class="keywordtype">void</span>*)strdup(val) : NULL);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> ((<a class="code" href="classform__item.html#a9c5388b8962be531b51920c7775f8d2d">idx</a> == -1) &amp;&amp; <a class="code" href="classform__item.html#a031f8fb162f54579bc1ba53a751c5414">value</a> &amp;&amp; val &amp;&amp; !strcmp(<a class="code" href="classform__item.html#a031f8fb162f54579bc1ba53a751c5414">value</a>, val)) {</div>
+<div class="line">        <a class="code" href="classform__item.html#a9c5388b8962be531b51920c7775f8d2d">idx</a> = i;</div>
+<div class="line">        <a class="code" href="classform__item.html#a9f108735a3f81f0f419fd828a29b2938">SetSelection</a>(<a class="code" href="classform__item.html#a9c5388b8962be531b51920c7775f8d2d">idx</a>);</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i == 0) {</div>
+<div class="line">        <a class="code" href="classform__item.html#a9f108735a3f81f0f419fd828a29b2938">SetSelection</a>(0);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7bbc5ad6365c6b104f230afb35b0996b"></a>
@@ -296,7 +330,28 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="pitems_8cpp_source.html#l00155">Append()</a>, <a class="el" href="pitems_8h_source.html#l00064">name</a>, and <a class="el" href="pitems_8h_source.html#l00069">value</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l01241">DTS_C_API::dtsgui_listbox_addxml()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                         {</div>
+<div class="line">    <span class="keyword">struct </span>xml_search *xs;</div>
+<div class="line">    <span class="keyword">struct </span>xml_node *xn;</div>
+<div class="line">    <span class="keywordtype">void</span> *iter;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="classform__item.html#a4b647b26beee4bb3f3935645f3eb1a9b">name</a>, *<a class="code" href="classform__item.html#a031f8fb162f54579bc1ba53a751c5414">value</a>;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!(xs = xml_xpath(xmldoc, xpath, nattr))) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">for</span>(xn = xml_getfirstnode(xs, &amp;iter); xn ; xn = xml_getnextnode(iter)) {</div>
+<div class="line">        name = (nattr) ? xml_getattr(xn, nattr) : xn-&gt;value;</div>
+<div class="line">        value = (vattr) ? xml_getattr(xn, vattr) : xn-&gt;value;</div>
+<div class="line">        <a class="code" href="classform__item.html#ad99d224a37a5bc6f99835afb2347fac8">Append</a>(name, value);</div>
+<div class="line">        objunref(xn);</div>
+<div class="line">    }</div>
+<div class="line">    objunref(xs);</div>
+<div class="line">    <span class="keywordflow">if</span> (iter) {</div>
+<div class="line">        objunref(iter);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9f620e55ba53bd5abcf4af612944c838"></a>
@@ -333,7 +388,17 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="pitems_8h_source.html#l00066">data</a>, and <a class="el" href="pitems_8h_source.html#l00039">form_data::ptr</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l01102">DTS_C_API::dtsgui_item_data()</a>.</p>
-
+<div class="fragment"><div class="line">                         {</div>
+<div class="line">    <span class="keywordtype">void</span> *fp = NULL;</div>
+<div class="line"></div>
+<div class="line">    objlock(<span class="keyword">this</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classform__item.html#a601ff328ce4165b07d5ad23bd96967b7">data</a>.<a class="code" href="unionform__data.html#a5906eb68e54829e44467b3d082f9eee4">ptr</a> &amp;&amp; objref(<a class="code" href="classform__item.html#a601ff328ce4165b07d5ad23bd96967b7">data</a>.<a class="code" href="unionform__data.html#a5906eb68e54829e44467b3d082f9eee4">ptr</a>)) {</div>
+<div class="line">        fp = <a class="code" href="classform__item.html#a601ff328ce4165b07d5ad23bd96967b7">data</a>.<a class="code" href="unionform__data.html#a5906eb68e54829e44467b3d082f9eee4">ptr</a>;</div>
+<div class="line">    }</div>
+<div class="line">    objunlock(<span class="keyword">this</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> fp;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4f3558ce5670e789ad51d1f489ec5b14"></a>
@@ -354,7 +419,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="pitems_8h_source.html#l00064">name</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l01124">DTS_C_API::dtsgui_item_name()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00049">DTSPanel::fitems_hash()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00841">DTSPanel::Panel2Post()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00777">DTSPanel::Panel2XML()</a>.</p>
-
+<div class="fragment"><div class="line">                               {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="classform__item.html#a4b647b26beee4bb3f3935645f3eb1a9b">name</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6377c3eeefcf7272d5200cd462c9eba7"></a>
@@ -375,7 +443,35 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="pitems_8h_source.html#l00046">widgets::c</a>, <a class="el" href="dtsgui_8h_source.html#l00259">DTS_WIDGET_CHECKBOX</a>, <a class="el" href="dtsgui_8h_source.html#l00261">DTS_WIDGET_COMBOBOX</a>, <a class="el" href="dtsgui_8h_source.html#l00260">DTS_WIDGET_LISTBOX</a>, <a class="el" href="dtsgui_8h_source.html#l00258">DTS_WIDGET_TEXTBOX</a>, <a class="el" href="pitems_8h_source.html#l00045">widgets::l</a>, <a class="el" href="pitems_8h_source.html#l00044">widgets::t</a>, <a class="el" href="pitems_8h_source.html#l00063">type</a>, <a class="el" href="pitems_8h_source.html#l00069">value</a>, <a class="el" href="pitems_8h_source.html#l00070">value2</a>, and <a class="el" href="pitems_8h_source.html#l00067">widget</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l01113">DTS_C_API::dtsgui_item_value()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00886">DTSPanel::FindValue()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00841">DTSPanel::Panel2Post()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00777">DTSPanel::Panel2XML()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00746">DTSPanel::Update_XML()</a>.</p>
-
+<div class="fragment"><div class="line">                                {</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *val = NULL;</div>
+<div class="line">    <span class="keywordtype">void</span> *tmp;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">switch</span>(<a class="code" href="classform__item.html#aa7364e00d99d22b9a594767915caa4be">type</a>) {</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#ggafd296180392ef5681415b9fb0590be84a30946b987fd9b1a681425eb86c33b836">DTS_WIDGET_TEXTBOX</a>:</div>
+<div class="line">            val = strdup(<a class="code" href="classform__item.html#a6720d7a562d897686e128fc2146702e7">widget</a>.<a class="code" href="unionwidgets.html#ad9dbdf416e8ba75e55b8030549c2d5ac">t</a>-&gt;GetValue().ToUTF8());</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#ggafd296180392ef5681415b9fb0590be84a617d0a94e82cae830c769b66b1751b9a">DTS_WIDGET_LISTBOX</a>:</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#ggafd296180392ef5681415b9fb0590be84ad091872a88b66595cb453008b03565cc">DTS_WIDGET_COMBOBOX</a>:</div>
+<div class="line">            <span class="keywordtype">int</span> pos;</div>
+<div class="line">            pos = <a class="code" href="classform__item.html#a6720d7a562d897686e128fc2146702e7">widget</a>.<a class="code" href="unionwidgets.html#a9e5583bcc42f0273b9c6a1605e0e1b6d">l</a>-&gt;GetSelection();</div>
+<div class="line">            <span class="keywordflow">if</span> ((pos !=  wxNOT_FOUND) &amp;&amp; <a class="code" href="classform__item.html#a6720d7a562d897686e128fc2146702e7">widget</a>.<a class="code" href="unionwidgets.html#a9e5583bcc42f0273b9c6a1605e0e1b6d">l</a>-&gt;HasClientData() &amp;&amp; (tmp = <a class="code" href="classform__item.html#a6720d7a562d897686e128fc2146702e7">widget</a>.<a class="code" href="unionwidgets.html#a9e5583bcc42f0273b9c6a1605e0e1b6d">l</a>-&gt;GetClientData(pos))) {</div>
+<div class="line">                val = strdup((<span class="keywordtype">char</span>*)tmp);</div>
+<div class="line">            } <span class="keywordflow">else</span> {</div>
+<div class="line">                val = strdup(<a class="code" href="classform__item.html#a6720d7a562d897686e128fc2146702e7">widget</a>.<a class="code" href="unionwidgets.html#a9e5583bcc42f0273b9c6a1605e0e1b6d">l</a>-&gt;GetValue().ToUTF8());</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#ggafd296180392ef5681415b9fb0590be84af8b07c907089ef8cf8534af437682a28">DTS_WIDGET_CHECKBOX</a>:</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="classform__item.html#a6720d7a562d897686e128fc2146702e7">widget</a>.<a class="code" href="unionwidgets.html#aa5bb8e792fd60fca871e8782e39993cc">c</a>-&gt;IsChecked()) {</div>
+<div class="line">                val = (<a class="code" href="classform__item.html#a031f8fb162f54579bc1ba53a751c5414">value</a>) ? strdup(<a class="code" href="classform__item.html#a031f8fb162f54579bc1ba53a751c5414">value</a>) : NULL;</div>
+<div class="line">            } <span class="keywordflow">else</span> {</div>
+<div class="line">                val = (<a class="code" href="classform__item.html#abb8668ad59e583a7a73bc03f2c4503da">value2</a>) ? strdup(<a class="code" href="classform__item.html#abb8668ad59e583a7a73bc03f2c4503da">value2</a>) : NULL;</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> val;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9d5508fb933bef9f078f702338e3d166"></a>
@@ -396,7 +492,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="pitems_8h_source.html#l00047">widgets::p</a>, and <a class="el" href="pitems_8h_source.html#l00067">widget</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00163">DTSPanelEvent::OnCombo()</a>.</p>
-
+<div class="fragment"><div class="line">                           {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="classform__item.html#a6720d7a562d897686e128fc2146702e7">widget</a>.<a class="code" href="unionwidgets.html#a5dbc3a005c0d466449a1be8c20db8cfc">p</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1e08369cee96e1b5417c767be9b086ce"></a>
@@ -417,7 +516,16 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="pitems_8h_source.html#l00066">data</a>, <a class="el" href="dtsgui_8h_source.html#l00052">DTSGUI_FORM_DATA_XML</a>, <a class="el" href="pitems_8h_source.html#l00068">dtype</a>, and <a class="el" href="pitems_8h_source.html#l00040">form_data::xml</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00746">DTSPanel::Update_XML()</a>.</p>
-
+<div class="fragment"><div class="line">                                         {</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="classxml__element.html">xml_element</a> *ret = NULL;</div>
+<div class="line">    objlock(<span class="keyword">this</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> ((<a class="code" href="classform__item.html#acaa83eeebb557f7e66ae998bc45dc6c9">dtype</a> == <a class="code" href="group___c_o_r_e.html#ggaa648ae9cc0927fecec3a6f705930f8a9a5c592b75994135a5de470f79e40aafda" title="Reference to XML Node.">DTSGUI_FORM_DATA_XML</a>) &amp;&amp; <a class="code" href="classform__item.html#a601ff328ce4165b07d5ad23bd96967b7">data</a>.<a class="code" href="unionform__data.html#a3dcf61d4a1bf598d238248b6a2fd84c0">xml</a> &amp;&amp; objref(<a class="code" href="classform__item.html#a601ff328ce4165b07d5ad23bd96967b7">data</a>.<a class="code" href="unionform__data.html#a3dcf61d4a1bf598d238248b6a2fd84c0">xml</a>)) {</div>
+<div class="line">        ret = <a class="code" href="classform__item.html#a601ff328ce4165b07d5ad23bd96967b7">data</a>.<a class="code" href="unionform__data.html#a3dcf61d4a1bf598d238248b6a2fd84c0">xml</a>;</div>
+<div class="line">    }</div>
+<div class="line">    objunlock(<span class="keyword">this</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> ret;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9f108735a3f81f0f419fd828a29b2938"></a>
@@ -439,7 +547,18 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="dtsgui_8h_source.html#l00261">DTS_WIDGET_COMBOBOX</a>, <a class="el" href="dtsgui_8h_source.html#l00260">DTS_WIDGET_LISTBOX</a>, <a class="el" href="pitems_8h_source.html#l00045">widgets::l</a>, <a class="el" href="pitems_8h_source.html#l00063">type</a>, and <a class="el" href="pitems_8h_source.html#l00067">widget</a>.</p>
 
 <p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00155">Append()</a>, and <a class="el" href="wrapper_8cpp_source.html#l01227">DTS_C_API::dtsgui_listbox_set()</a>.</p>
-
+<div class="fragment"><div class="line">                                  {</div>
+<div class="line">    <span class="keywordflow">switch</span>(<a class="code" href="classform__item.html#aa7364e00d99d22b9a594767915caa4be">type</a>) {</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#ggafd296180392ef5681415b9fb0590be84ad091872a88b66595cb453008b03565cc">DTS_WIDGET_COMBOBOX</a>:</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#ggafd296180392ef5681415b9fb0590be84a617d0a94e82cae830c769b66b1751b9a">DTS_WIDGET_LISTBOX</a>:</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">default</span>:</div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="classform__item.html#a6720d7a562d897686e128fc2146702e7">widget</a>.<a class="code" href="unionwidgets.html#a9e5583bcc42f0273b9c6a1605e0e1b6d">l</a>-&gt;SetSelection(i);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -535,7 +654,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="pitems_8h_source.html#l00064">64</a> of file <a class="el" href="pitems_8h_source.html">pitems.h</a>.</p>
 
-<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00225">AppendXML()</a>, <a class="el" href="pitems_8cpp_source.html#l00188">GetName()</a>, <a class="el" href="netconfig_8c_source.html#l00524">network_tos()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00841">DTSPanel::Panel2Post()</a>, <a class="el" href="pbxconfig_8c_source.html#l00220">pbxconf_default()</a>, and <a class="el" href="pbxconfig_8c_source.html#l00025">pbxconf_trunk()</a>.</p>
+<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00225">AppendXML()</a>, <a class="el" href="pitems_8cpp_source.html#l00188">GetName()</a>, <a class="el" href="netconfig_8c_source.html#l00684">network_tos()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00841">DTSPanel::Panel2Post()</a>, <a class="el" href="pbxconfig_8c_source.html#l00253">pbxconf_default()</a>, and <a class="el" href="pbxconfig_8c_source.html#l00037">pbxconf_trunk()</a>.</p>
 
 </div>
 </div>
@@ -583,7 +702,7 @@ Private Attributes</h2></td></tr>
 
 <p>Definition at line <a class="el" href="pitems_8h_source.html#l00069">69</a> of file <a class="el" href="pitems_8h_source.html">pitems.h</a>.</p>
 
-<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00155">Append()</a>, <a class="el" href="pitems_8cpp_source.html#l00225">AppendXML()</a>, <a class="el" href="pitems_8cpp_source.html#l00192">GetValue()</a>, <a class="el" href="pbxconfig_8c_source.html#l00220">pbxconf_default()</a>, <a class="el" href="pbxconfig_8c_source.html#l00025">pbxconf_trunk()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00707">DTSPanel::XMLComboBox()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00667">DTSPanel::XMLListBox()</a>.</p>
+<p>Referenced by <a class="el" href="pitems_8cpp_source.html#l00155">Append()</a>, <a class="el" href="pitems_8cpp_source.html#l00225">AppendXML()</a>, <a class="el" href="pitems_8cpp_source.html#l00192">GetValue()</a>, <a class="el" href="pbxconfig_8c_source.html#l00253">pbxconf_default()</a>, <a class="el" href="pbxconfig_8c_source.html#l00037">pbxconf_trunk()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00707">DTSPanel::XMLComboBox()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00667">DTSPanel::XMLListBox()</a>.</p>
 
 </div>
 </div>
@@ -645,7 +764,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classform__item.html">form_item</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:37 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

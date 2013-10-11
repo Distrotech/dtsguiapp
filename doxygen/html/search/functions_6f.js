@@ -9,7 +9,7 @@ var searchData=
   ['ondialog',['OnDialog',['../class_d_t_s_panel_event.html#ae7b3a422bc55f7f9f676b2b640614fd9',1,'DTSPanelEvent']]],
   ['ondtsevent',['OnDTSEvent',['../class_d_t_s_frame.html#a4662602e974661de7c512bbd9dd3115a',1,'DTSFrame::OnDTSEvent()'],['../class_d_t_s_panel_event.html#a878aaab5bddc9167d3d2380ea7de0f31',1,'DTSPanelEvent::OnDTSEvent()']]],
   ['oninit',['OnInit',['../class_d_t_s_app.html#ae21cc8793d06b6b770867ebd3d0d1daa',1,'DTSApp']]],
-  ['open_5fconfig',['open_config',['../config_8c.html#a72af4355dbc5afe93fef750a81a3e572',1,'open_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;config.c'],['../private_8h.html#a72af4355dbc5afe93fef750a81a3e572',1,'open_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;config.c']]],
+  ['open_5fconfig',['open_config',['../group___d_t_s-_a_p_p-_config.html#ga72af4355dbc5afe93fef750a81a3e572',1,'open_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;config.c'],['../group___d_t_s-_a_p_p-_config.html#ga72af4355dbc5afe93fef750a81a3e572',1,'open_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;config.c']]],
   ['operator_3d',['operator=',['../class_d_t_s_tab_page.html#a99f09a166ea777c2dcc572284594b00e',1,'DTSTabPage']]],
   ['operator_3d_3d',['operator==',['../classdynamic__panel.html#ab636fa1300532545f6c6fbf31e5e4971',1,'dynamic_panel']]]
 ];

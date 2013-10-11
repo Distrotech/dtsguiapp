@@ -209,7 +209,23 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00295">295</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00098">data</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00105">dtsgui</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00604">DTSDVMCtrl::GetStore()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00655">DTSTreeWindow::GetTreeCtrl()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00100">parent</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00102">tree</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00099">treecb</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00101">vm</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                       {</div>
+<div class="line">    <span class="keywordflow">if</span> (userdata &amp;&amp; objref(userdata)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tree_window_event.html#a97dc4c3c5cebbaa4c5f7f5dcad70f104">data</a> = userdata;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tree_window_event.html#a97dc4c3c5cebbaa4c5f7f5dcad70f104">data</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window_event.html#a1f06b3a5f60fad712c725e0f4541a281">treecb</a> = tree_cb;</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a> = win;</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window_event.html#ad88ac828c98c880e1976abea11512c76">tree</a> = win-&gt;<a class="code" href="class_d_t_s_tree_window.html#aae9e856659f3701452382e2cdcba8463">GetTreeCtrl</a>();</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a> = <a class="code" href="class_d_t_s_tree_window_event.html#ad88ac828c98c880e1976abea11512c76">tree</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_ctrl.html#a5ccdd2f6d3b2652ddfec7d0dc2ade0b1">GetStore</a>();</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classdtsgui.html">dtsgui</a> &amp;&amp; objref(<a class="code" href="classdtsgui.html">dtsgui</a>)) {</div>
+<div class="line">        this-&gt;<a class="code" href="classdtsgui.html">dtsgui</a> = <a class="code" href="class_d_t_s_tree_window_event.html#a88eb3a82035ee504cc380b094b763e3a">dtsgui</a>;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        this-&gt;<a class="code" href="classdtsgui.html">dtsgui</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a27f73ab3778ec2cf8ccfb6a9d0000a48"></a>
@@ -228,7 +244,15 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00312">312</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00098">data</a>.</p>
-
+<div class="fragment"><div class="line">                                        {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classdtsgui.html">dtsgui</a>) {</div>
+<div class="line">        objunref(<a class="code" href="classdtsgui.html">dtsgui</a>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_tree_window_event.html#a97dc4c3c5cebbaa4c5f7f5dcad70f104">data</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_tree_window_event.html#a97dc4c3c5cebbaa4c5f7f5dcad70f104">data</a>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -251,7 +275,32 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00104">a_cont</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00103">a_item</a>, <a class="el" href="_d_t_s_frame_8cpp_source.html#l00104">DTSFrame::Confirm()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00341">DTSDVMListView::Delete()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00045">DTS_TREEWIN_MENU_DELETE</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00043">DTS_TREEWIN_MENU_MOVEDOWN</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00041">DTS_TREEWIN_MENU_MOVEUP</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00039">DTS_TREEWIN_MENU_SORT</a>, <a class="el" href="dtsgui_8h_source.html#l00042">DTSGUI_TREE_CB_DELETE</a>, <a class="el" href="dtsgui_8h_source.html#l00040">DTSGUI_TREE_CB_SELECT</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00286">DTSObject::GetFrame()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00266">DTSDVMListView::GetParent()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00100">parent</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00396">SortParent()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00102">tree</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00483">TreeCallback()</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00101">vm</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00544">DTSTreeWindow::DTSTreeWindow()</a>.</p>
-
+<div class="fragment"><div class="line">                                                        {</div>
+<div class="line">    <span class="keyword">enum</span> <a class="code" href="group___c_p_p-_panel-_tree.html#ga1ed19fc940f9de92a2ac518ffbc04486" title="Menu id&#39;s for right click popup.">treewinmenu</a> eid;</div>
+<div class="line">    wxDataViewItem p_cont;</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *frame;</div>
+<div class="line"></div>
+<div class="line">    eid=(<a class="code" href="group___c_p_p-_panel-_tree.html#ga1ed19fc940f9de92a2ac518ffbc04486" title="Menu id&#39;s for right click popup.">treewinmenu</a>)event.GetId();</div>
+<div class="line">    <span class="keywordflow">switch</span>(eid) {</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_p_p-_panel-_tree.html#gga1ed19fc940f9de92a2ac518ffbc04486a097ecad73656ee80fb0c9e7ddf464e5d" title="Move the node down.">DTS_TREEWIN_MENU_MOVEDOWN</a>:</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_p_p-_panel-_tree.html#gga1ed19fc940f9de92a2ac518ffbc04486af5bd57193f475f49c63b9b7271586daf" title="Move the node up.">DTS_TREEWIN_MENU_MOVEUP</a>:</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_p_p-_panel-_tree.html#gga1ed19fc940f9de92a2ac518ffbc04486aed80ef06b46ae100a6f5c56da1674ba7" title="Sort the container.">DTS_TREEWIN_MENU_SORT</a>:</div>
+<div class="line">            p_cont = (<a class="code" href="class_d_t_s_tree_window_event.html#a3932c00abcbe147fa18b4d689eb3b376">a_cont</a> == <a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>) ? <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a764737b69417b79b1f57ee862746d7dc">GetParent</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a3932c00abcbe147fa18b4d689eb3b376">a_cont</a>) : <a class="code" href="class_d_t_s_tree_window_event.html#a3932c00abcbe147fa18b4d689eb3b376">a_cont</a>;</div>
+<div class="line">            <a class="code" href="class_d_t_s_tree_window_event.html#aaf5ca29397996f44de6f0e73a1070795">SortParent</a>(p_cont, eid);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_p_p-_panel-_tree.html#gga1ed19fc940f9de92a2ac518ffbc04486a4a0c85437a842221377dac401285454f" title="Delete the node.">DTS_TREEWIN_MENU_DELETE</a>:</div>
+<div class="line">            frame = <a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>-&gt;<a class="code" href="class_d_t_s_object.html#ae5239b912c725a7a5720954767c3537a">GetFrame</a>();</div>
+<div class="line">            <span class="keywordflow">if</span> (frame-&gt;<a class="code" href="class_d_t_s_frame.html#a937f276b15be00e81087ef1a73605478">Confirm</a>(<span class="stringliteral">&quot;Are you sure you want to delete this item&quot;</span>)) {</div>
+<div class="line">                p_cont = <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a764737b69417b79b1f57ee862746d7dc">GetParent</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>);</div>
+<div class="line">                <a class="code" href="class_d_t_s_tree_window_event.html#ad88ac828c98c880e1976abea11512c76">tree</a>-&gt;Select(p_cont);</div>
+<div class="line">                <a class="code" href="class_d_t_s_tree_window_event.html#a98ac8a3612545e1eaeb99fa9b5662048">TreeCallback</a>(p_cont, <a class="code" href="group___c_o_r_e.html#gga465794df2cb30731dfe34d3e7a4ed368adac89e1845cacd5358022cbc20aba1a9" title="Treenods is selected.">DTSGUI_TREE_CB_SELECT</a>);</div>
+<div class="line">                <a class="code" href="class_d_t_s_tree_window_event.html#a98ac8a3612545e1eaeb99fa9b5662048">TreeCallback</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>, <a class="code" href="group___c_o_r_e.html#gga465794df2cb30731dfe34d3e7a4ed368a95978182db76e342ba406456dc935258" title="Treenods is to be deleted.">DTSGUI_TREE_CB_DELETE</a>);</div>
+<div class="line">                <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#aae01dd71efaebb94dfea9e35d552237e">Delete</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>);</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7523413f0f0cbe621c630730b8b1713f"></a>
@@ -273,7 +322,26 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00683">DTSTreeWindow::GetActiveNode()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00810">DTSTreeWindow::GetClientPane()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00100">parent</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00814">DTSTreeWindow::Select()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00746">DTSPanel::Update_XML()</a>, <a class="el" href="dtsgui_8h_source.html#l00210">wx_PANEL_EVENT_BUTTON_NO</a>, and <a class="el" href="dtsgui_8h_source.html#l00208">wx_PANEL_EVENT_BUTTON_YES</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00544">DTSTreeWindow::DTSTreeWindow()</a>.</p>
-
+<div class="fragment"><div class="line">                                                       {</div>
+<div class="line">    <a class="code" href="group___c_o_r_e.html#ga6529df5f03710b4fec84553e1d7febc5" title="Define treenode as void* it is not exported to API.">dtsgui_treenode</a> tn = <a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>-&gt;<a class="code" href="class_d_t_s_tree_window.html#a13f1a1a56891ccba3df14c857e09197e">GetActiveNode</a>();</div>
+<div class="line">    wxDataViewItem item;</div>
+<div class="line">    <span class="keywordtype">int</span> eid = <span class="keyword">event</span>.GetId();</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *pane = <a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>-&gt;<a class="code" href="class_d_t_s_tree_window.html#ad5c187ebc6203b19afae00ea5a42b78d">GetClientPane</a>();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">switch</span>(eid) {</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#gga5082bae7f0b5d2b7d715e40450f302eca6ce91176e6c929e87d7acbd000d07f79" title="A Affirmative button.">wx_PANEL_EVENT_BUTTON_YES</a>:</div>
+<div class="line">            pane-&gt;<a class="code" href="class_d_t_s_panel.html#adc5131960a24dfa65adba935a1be0f79">Update_XML</a>();</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#gga5082bae7f0b5d2b7d715e40450f302ecadb8742f8472eb90558cfbf8e3914553b" title="A Cancel/No/Undo button.">wx_PANEL_EVENT_BUTTON_NO</a>:</div>
+<div class="line">            item = wxDataViewItem(tn);</div>
+<div class="line">            <a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>-&gt;<a class="code" href="class_d_t_s_tree_window.html#a16e8b0b7de01806b70235b4eac89345e">Select</a>(item);</div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line">        <span class="keywordflow">default</span>:</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keyword">event</span>.Skip(<span class="keyword">true</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aaf5ca29397996f44de6f0e73a1070795"></a>
@@ -313,7 +381,55 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00104">a_cont</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00103">a_item</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00098">data</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00043">DTS_TREEWIN_MENU_MOVEDOWN</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00041">DTS_TREEWIN_MENU_MOVEUP</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00039">DTS_TREEWIN_MENU_SORT</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00436">DTSDVMListView::GetContainers()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00180">DTSDVMListStore::IsExpanded()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00475">DTSDVMListView::MoveChildDown()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00455">DTSDVMListView::MoveChildUp()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00150">DTSDVMListStore::SetExpanded()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00422">DTSDVMListView::SetExpanded()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00377">DTSDVMListView::SortChildren()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00102">tree</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00101">vm</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00445">MenuEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                           {</div>
+<div class="line">    wxDataViewItemArray expanded, selected;</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *<a class="code" href="class_d_t_s_tree_window_event.html#a97dc4c3c5cebbaa4c5f7f5dcad70f104">data</a>;</div>
+<div class="line">    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cont_cnt, cnt;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/* Get enabled/selection state of parent*/</span></div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window_event.html#ad88ac828c98c880e1976abea11512c76">tree</a>-&gt;GetSelections(selected);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/*mark expanded containers*/</span></div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a216845800003f23bf035f0eb561d4df3">SetExpanded</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>, <a class="code" href="class_d_t_s_tree_window_event.html#ad88ac828c98c880e1976abea11512c76">tree</a>-&gt;IsExpanded(<a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>));</div>
+<div class="line">    cont_cnt = <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a03a9867dcd09b6c74c33f9d79c2d887d">GetContainers</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>, expanded, <span class="keyword">false</span>);</div>
+<div class="line">    <span class="keywordflow">for</span> (cnt=0; cnt &lt; cont_cnt;cnt++) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a216845800003f23bf035f0eb561d4df3">SetExpanded</a>(expanded[cnt], <a class="code" href="class_d_t_s_tree_window_event.html#ad88ac828c98c880e1976abea11512c76">tree</a>-&gt;IsExpanded(expanded[cnt]));</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">switch</span>(action) {</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_p_p-_panel-_tree.html#gga1ed19fc940f9de92a2ac518ffbc04486a097ecad73656ee80fb0c9e7ddf464e5d" title="Move the node down.">DTS_TREEWIN_MENU_MOVEDOWN</a>:</div>
+<div class="line">            <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a4fd06f54c22ab48fddd25fa77bf90034">MoveChildDown</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_p_p-_panel-_tree.html#gga1ed19fc940f9de92a2ac518ffbc04486af5bd57193f475f49c63b9b7271586daf" title="Move the node up.">DTS_TREEWIN_MENU_MOVEUP</a>:</div>
+<div class="line">            <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a1d0cb108cee3efdf2acbc813ec66e812">MoveChildUp</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_p_p-_panel-_tree.html#gga1ed19fc940f9de92a2ac518ffbc04486aed80ef06b46ae100a6f5c56da1674ba7" title="Sort the container.">DTS_TREEWIN_MENU_SORT</a>:</div>
+<div class="line">            <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a463cffa4280decda9cb36655a200caae">SortChildren</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a3932c00abcbe147fa18b4d689eb3b376">a_cont</a>);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/*re select all selected*/</span></div>
+<div class="line">    <span class="keywordflow">for</span> (cnt=0; cnt &lt; selected.size();cnt++) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tree_window_event.html#ad88ac828c98c880e1976abea11512c76">tree</a>-&gt;Select(wxDataViewItem(selected[cnt]));</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/*expand root if was expanded*/</span></div>
+<div class="line">    data = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)<a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>.GetID();</div>
+<div class="line">    <span class="keywordflow">if</span> (data &amp;&amp; data-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a2582294901d9db1e1e27940539ddbdc1">IsExpanded</a>()) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tree_window_event.html#ad88ac828c98c880e1976abea11512c76">tree</a>-&gt;Expand(<a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>);</div>
+<div class="line">        data-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a069aaa01111b9ae71e09d14134023ef7">SetExpanded</a>(<span class="keyword">false</span>);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/*re expand containers colapsed*/</span></div>
+<div class="line">    <span class="keywordflow">for</span> (cnt=0; cnt &lt; expanded.size();cnt++) {</div>
+<div class="line">        data = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)expanded[cnt].GetID();</div>
+<div class="line">        <span class="keywordflow">if</span> (data &amp;&amp; data-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a2582294901d9db1e1e27940539ddbdc1">IsExpanded</a>()) {</div>
+<div class="line">            <a class="code" href="class_d_t_s_tree_window_event.html#ad88ac828c98c880e1976abea11512c76">tree</a>-&gt;Expand(expanded[cnt]);</div>
+<div class="line">            data-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a069aaa01111b9ae71e09d14134023ef7">SetExpanded</a>(<span class="keyword">false</span>);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a70409a54c0a1a20707105e67c2ebfd81"></a>
@@ -335,7 +451,18 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00100">parent</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00659">DTSTreeWindow::SetTreePaneSize()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00544">DTSTreeWindow::DTSTreeWindow()</a>.</p>
-
+<div class="fragment"><div class="line">                                                             {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a> *tw;</div>
+<div class="line">    <span class="keywordtype">int</span> evid;</div>
+<div class="line"></div>
+<div class="line">    tw = (<a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a>*)<a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>;</div>
+<div class="line">    evid = <span class="keyword">event</span>.GetEventType();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (evid == wxEVT_SPLITTER_SASH_POS_CHANGED) {</div>
+<div class="line">        tw-&gt;<a class="code" href="class_d_t_s_tree_window.html#acef5712c7e881b7fbca765d32530737d">SetTreePaneSize</a>();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a98ac8a3612545e1eaeb99fa9b5662048"></a>
@@ -367,7 +494,47 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00240">DTSDVMListStore::ConfigPanel()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00715">DTSTreeWindow::CreatePane()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00098">data</a>, <a class="el" href="dtsgui_8h_source.html#l00042">DTSGUI_TREE_CB_DELETE</a>, <a class="el" href="dtsgui_8h_source.html#l00044">DTSGUI_TREE_CB_EDIT</a>, <a class="el" href="dtsgui_8h_source.html#l00040">DTSGUI_TREE_CB_SELECT</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00138">DTSDVMListStore::GetTitle()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00100">parent</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00687">DTSTreeWindow::SetWindow()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00099">treecb</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00754">DTSTreeWindow::UpdateNodeXML()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00445">MenuEvent()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">TreeEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                      {</div>
+<div class="line">    <span class="keywordtype">void</span> *tdata = NULL;</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *sp = NULL;</div>
+<div class="line">    <a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *op;</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *ndata = (item.IsOk()) ? (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)item.GetID() : NULL;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!ndata) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (objref(<a class="code" href="class_d_t_s_tree_window_event.html#a97dc4c3c5cebbaa4c5f7f5dcad70f104">data</a>)) {</div>
+<div class="line">        tdata = <a class="code" href="class_d_t_s_tree_window_event.html#a97dc4c3c5cebbaa4c5f7f5dcad70f104">data</a>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_tree_window_event.html#a1f06b3a5f60fad712c725e0f4541a281">treecb</a>) {</div>
+<div class="line">        sp = (<a class="code" href="class_d_t_s_panel.html">DTSPanel</a>*)<a class="code" href="class_d_t_s_tree_window_event.html#a1f06b3a5f60fad712c725e0f4541a281">treecb</a>(<a class="code" href="classdtsgui.html">dtsgui</a>, <a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>, ndata, type, ndata-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a2bea28788838dd5c214e8cf23a5e8a2e">GetTitle</a>().ToUTF8(), tdata);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordflow">switch</span>(type) {</div>
+<div class="line">            <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#gga465794df2cb30731dfe34d3e7a4ed368adac89e1845cacd5358022cbc20aba1a9" title="Treenods is selected.">DTSGUI_TREE_CB_SELECT</a>:</div>
+<div class="line">                sp = <a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>-&gt;<a class="code" href="class_d_t_s_tree_window.html#a7457dc767b9cbc873e0e963644fa1fda">CreatePane</a>(wxDataViewItem(ndata));</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#gga465794df2cb30731dfe34d3e7a4ed368a629392b319c09bfdb44b638c858381e8" title="Treenods is edited.">DTSGUI_TREE_CB_EDIT</a>:</div>
+<div class="line">                <a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>-&gt;<a class="code" href="class_d_t_s_tree_window.html#a3a7d1d1ce34864f71d5ffd154ca18210">UpdateNodeXML</a>(wxDataViewItem(ndata), ndata-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a2bea28788838dd5c214e8cf23a5e8a2e">GetTitle</a>());</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">            <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#gga465794df2cb30731dfe34d3e7a4ed368a95978182db76e342ba406456dc935258" title="Treenods is to be deleted.">DTSGUI_TREE_CB_DELETE</a>:</div>
+<div class="line">                <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (sp) {</div>
+<div class="line">        ndata-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a235c78752ca007f5189806e95abcefe2">ConfigPanel</a>(sp, <a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>);</div>
+<div class="line">        op = <a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>-&gt;<a class="code" href="class_d_t_s_tree_window.html#a491a55218197db09e099be00afe06850">SetWindow</a>(sp, item);</div>
+<div class="line">        <span class="keyword">delete</span> op;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (tdata) {</div>
+<div class="line">        objunref(tdata);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ac0c3b48a9c6227d016dcffe7dc17a250"></a>
@@ -389,7 +556,81 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00104">a_cont</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00103">a_item</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00050">DTSDVMListStore::can_delete</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00048">DTSDVMListStore::can_edit</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00049">DTSDVMListStore::can_sort</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00098">data</a>, <a class="el" href="dtsgui_8h_source.html#l00044">DTSGUI_TREE_CB_EDIT</a>, <a class="el" href="dtsgui_8h_source.html#l00040">DTSGUI_TREE_CB_SELECT</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00391">DTSDVMListView::GetChildCount()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00507">DTSDVMListView::GetNodeID()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00405">DTSDVMListView::GetNthChild()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00266">DTSDVMListView::GetParent()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00138">DTSDVMListStore::GetTitle()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00079">DTSDVMListStore::IsContainer()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00257">DTSDVMListView::IsContainer()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00100">parent</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00673">DTSTreeWindow::SetPaneTitle()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00711">DTSTreeWindow::ShowRMenu()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00102">tree</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00483">TreeCallback()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00668">DTSTreeWindow::TreeResize()</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00101">vm</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00544">DTSTreeWindow::DTSTreeWindow()</a>.</p>
-
+<div class="fragment"><div class="line">                                                         {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a> *tw;</div>
+<div class="line">    wxDataViewItem p_cont, f_item, l_item;</div>
+<div class="line">    <span class="keywordtype">int</span> evid, cnt;</div>
+<div class="line">    <span class="keywordtype">bool</span> cont,first = <span class="keyword">true</span>,last = <span class="keyword">true</span>;</div>
+<div class="line"></div>
+<div class="line">    tw = (<a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a>*)<a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>;</div>
+<div class="line">    evid = <span class="keyword">event</span>.GetEventType();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (evid == wxEVT_DATAVIEW_SELECTION_CHANGED) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a> = <span class="keyword">event</span>.GetItem();</div>
+<div class="line">        <a class="code" href="class_d_t_s_tree_window_event.html#a98ac8a3612545e1eaeb99fa9b5662048">TreeCallback</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>, <a class="code" href="group___c_o_r_e.html#gga465794df2cb30731dfe34d3e7a4ed368adac89e1845cacd5358022cbc20aba1a9" title="Treenods is selected.">DTSGUI_TREE_CB_SELECT</a>);</div>
+<div class="line">        <span class="keywordflow">if</span> ((<a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#ac8cd1cebdb6a6c3d03cbc7697e4ac9ed">GetNodeID</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>) == -1) &amp;&amp; <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a3b8181057f6c202ccb8a096a8550d6d1">IsContainer</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>)) {</div>
+<div class="line">            <a class="code" href="class_d_t_s_tree_window_event.html#ad88ac828c98c880e1976abea11512c76">tree</a>-&gt;Expand(<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>);</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (evid == wxEVT_DATAVIEW_ITEM_EXPANDED) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>-&gt;<a class="code" href="class_d_t_s_tree_window.html#a45a0f5740984258b0d318104e7aef932">TreeResize</a>();</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (evid == wxEVT_DATAVIEW_ITEM_CONTEXT_MENU) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *d_p, *d_i, *d_c;</div>
+<div class="line">        <span class="keywordtype">bool</span> c_sort, del;</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> ((<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a> = event.GetItem())) {</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a3b8181057f6c202ccb8a096a8550d6d1">IsContainer</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>)) {</div>
+<div class="line">                <a class="code" href="class_d_t_s_tree_window_event.html#a3932c00abcbe147fa18b4d689eb3b376">a_cont</a> = <a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>;</div>
+<div class="line">                p_cont = <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a764737b69417b79b1f57ee862746d7dc">GetParent</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>);</div>
+<div class="line">                cont = <span class="keyword">true</span>;</div>
+<div class="line">            } <span class="keywordflow">else</span> {</div>
+<div class="line">                <a class="code" href="class_d_t_s_tree_window_event.html#a3932c00abcbe147fa18b4d689eb3b376">a_cont</a> = <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a764737b69417b79b1f57ee862746d7dc">GetParent</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>);</div>
+<div class="line">                p_cont = <a class="code" href="class_d_t_s_tree_window_event.html#a3932c00abcbe147fa18b4d689eb3b376">a_cont</a>;</div>
+<div class="line">                cont = <span class="keyword">false</span>;</div>
+<div class="line">            }</div>
+<div class="line"></div>
+<div class="line">            d_p = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)p_cont.GetID();</div>
+<div class="line">            d_c = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)<a class="code" href="class_d_t_s_tree_window_event.html#a3932c00abcbe147fa18b4d689eb3b376">a_cont</a>.GetID();</div>
+<div class="line">            cnt=<a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a75b2584818b50c6d05adde7ac20dfd5d">GetChildCount</a>(p_cont);</div>
+<div class="line">            <span class="keywordflow">if</span> (p_cont &amp;&amp; d_p-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a6de730ce6b6115eaa164161529d9bfd2">can_sort</a> &amp;&amp; (cnt &gt; 1)) {</div>
+<div class="line">                f_item = <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#aee18c001df2dc0a5c907b5d17ea3ece6">GetNthChild</a>(p_cont, 0);</div>
+<div class="line">                <span class="keywordflow">if</span> (f_item != <a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>) {</div>
+<div class="line">                    first = <span class="keyword">false</span>;</div>
+<div class="line">                }</div>
+<div class="line">                l_item = <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#aee18c001df2dc0a5c907b5d17ea3ece6">GetNthChild</a>(p_cont, cnt-1);</div>
+<div class="line">                <span class="keywordflow">if</span> (l_item != <a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>) {</div>
+<div class="line">                    last = <span class="keyword">false</span>;</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line"></div>
+<div class="line">            c_sort = (d_p &amp;&amp; d_p-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a6de730ce6b6115eaa164161529d9bfd2">can_sort</a>) || (d_c &amp;&amp; d_c-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a6de730ce6b6115eaa164161529d9bfd2">can_sort</a>);</div>
+<div class="line"></div>
+<div class="line">            d_i = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>.GetID();</div>
+<div class="line">            del = d_i-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a6794906e84f9d97761f95ff7d3b8a452">can_delete</a>;</div>
+<div class="line">            tw-&gt;<a class="code" href="class_d_t_s_tree_window.html#a0df3486cd55349c3e7efe33f0304d76d">ShowRMenu</a>(cont, <a class="code" href="class_d_t_s_tree_window_event.html#a0bd0e58c2359eeb0c46aa332dac696af">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a75b2584818b50c6d05adde7ac20dfd5d">GetChildCount</a>(<a class="code" href="class_d_t_s_tree_window_event.html#a3932c00abcbe147fa18b4d689eb3b376">a_cont</a>), first, last, c_sort, del);</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (evid == wxEVT_DATAVIEW_ITEM_START_EDITING) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a> = <span class="keyword">event</span>.GetItem();</div>
+<div class="line">        <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *<a class="code" href="class_d_t_s_tree_window_event.html#a97dc4c3c5cebbaa4c5f7f5dcad70f104">data</a> = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)event.GetItem().GetID();</div>
+<div class="line">        <span class="keywordflow">if</span> (!data-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a5f2a6fd27284866f4cfd264a91b8fdb3">can_edit</a>) {</div>
+<div class="line">            <span class="keyword">event</span>.Veto();</div>
+<div class="line">            <span class="keywordflow">if</span> (data-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a39054039fd35cb8ac46ba0b27be04821">IsContainer</a>()) {</div>
+<div class="line">                <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_tree_window_event.html#ad88ac828c98c880e1976abea11512c76">tree</a>-&gt;IsExpanded(<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>)) {</div>
+<div class="line">                    <a class="code" href="class_d_t_s_tree_window_event.html#ad88ac828c98c880e1976abea11512c76">tree</a>-&gt;Collapse(<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>);</div>
+<div class="line">                } <span class="keywordflow">else</span> {</div>
+<div class="line">                    <a class="code" href="class_d_t_s_tree_window_event.html#ad88ac828c98c880e1976abea11512c76">tree</a>-&gt;Expand(<a class="code" href="class_d_t_s_tree_window_event.html#a0ddcc163d191bdc198bbb3929656a957">a_item</a>);</div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (evid == wxEVT_DATAVIEW_ITEM_EDITING_DONE) {</div>
+<div class="line"><span class="preprocessor">#ifndef _WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>        <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *data = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)event.GetItem().GetID();</div>
+<div class="line">        <span class="keyword">event</span>.SetValue(data-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a2bea28788838dd5c214e8cf23a5e8a2e">GetTitle</a>());</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="preprocessor"></span>        <a class="code" href="class_d_t_s_tree_window_event.html#a182862c6039a3636a3b2a8fad26f15a9">parent</a>-&gt;<a class="code" href="class_d_t_s_tree_window.html#a2ed14675c69eebc630e82b65ddb2bb4a">SetPaneTitle</a>(event.GetValue());</div>
+<div class="line">        <a class="code" href="class_d_t_s_tree_window_event.html#a98ac8a3612545e1eaeb99fa9b5662048">TreeCallback</a>(event.GetItem(), <a class="code" href="group___c_o_r_e.html#gga465794df2cb30731dfe34d3e7a4ed368a629392b319c09bfdb44b638c858381e8" title="Treenods is edited.">DTSGUI_TREE_CB_EDIT</a>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -595,7 +836,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_tree_window_event.html">DTSTreeWindowEvent</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:37 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

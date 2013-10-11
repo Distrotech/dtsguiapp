@@ -158,7 +158,15 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00255">255</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00045">DTS_TREEWIN_MENU_DELETE</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00043">DTS_TREEWIN_MENU_MOVEDOWN</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00041">DTS_TREEWIN_MENU_MOVEUP</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00039">DTS_TREEWIN_MENU_SORT</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00084">mdelete</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00083">mdown</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00080">menu</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00081">msort</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00082">mup</a>.</p>
-
+<div class="fragment"><div class="line">                   {</div>
+<div class="line">    <a class="code" href="classtreemenu.html#ac4c099bd171f3b9a862c1b117e90d23a">menu</a> = <span class="keyword">new</span> wxMenu();</div>
+<div class="line">    <a class="code" href="classtreemenu.html#ac8ada77439f8096d693791fe5ca9464e">msort</a> = <a class="code" href="classtreemenu.html#ac4c099bd171f3b9a862c1b117e90d23a">menu</a>-&gt;Append(<a class="code" href="group___c_p_p-_panel-_tree.html#gga1ed19fc940f9de92a2ac518ffbc04486aed80ef06b46ae100a6f5c56da1674ba7" title="Sort the container.">DTS_TREEWIN_MENU_SORT</a>, <span class="stringliteral">&quot;Sort&quot;</span>);</div>
+<div class="line">    <a class="code" href="classtreemenu.html#af1f838f6a51672e2d55e59514f77ccfe">mup</a> = <a class="code" href="classtreemenu.html#ac4c099bd171f3b9a862c1b117e90d23a">menu</a>-&gt;Append(<a class="code" href="group___c_p_p-_panel-_tree.html#gga1ed19fc940f9de92a2ac518ffbc04486af5bd57193f475f49c63b9b7271586daf" title="Move the node up.">DTS_TREEWIN_MENU_MOVEUP</a>, <span class="stringliteral">&quot;Move Up&quot;</span>);</div>
+<div class="line">    <a class="code" href="classtreemenu.html#a662ecad63db574b8e5766be9875ddd3a">mdown</a> = <a class="code" href="classtreemenu.html#ac4c099bd171f3b9a862c1b117e90d23a">menu</a>-&gt;Append(<a class="code" href="group___c_p_p-_panel-_tree.html#gga1ed19fc940f9de92a2ac518ffbc04486a097ecad73656ee80fb0c9e7ddf464e5d" title="Move the node down.">DTS_TREEWIN_MENU_MOVEDOWN</a>, <span class="stringliteral">&quot;Move Down&quot;</span>);</div>
+<div class="line">    <a class="code" href="classtreemenu.html#ac4c099bd171f3b9a862c1b117e90d23a">menu</a>-&gt;AppendSeparator();</div>
+<div class="line">    <a class="code" href="classtreemenu.html#a359469982a21e31368621e0cda9c5f5d">mdelete</a> = <a class="code" href="classtreemenu.html#ac4c099bd171f3b9a862c1b117e90d23a">menu</a>-&gt;Append(<a class="code" href="group___c_p_p-_panel-_tree.html#gga1ed19fc940f9de92a2ac518ffbc04486a4a0c85437a842221377dac401285454f" title="Delete the node.">DTS_TREEWIN_MENU_DELETE</a>, <span class="stringliteral">&quot;Delete&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -237,7 +245,33 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00084">mdelete</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00083">mdown</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00080">menu</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00081">msort</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00082">mup</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00711">DTSTreeWindow::ShowRMenu()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                 {</div>
+<div class="line">    <span class="keywordtype">int</span> scnt = 0;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!cont &amp;&amp; del) {</div>
+<div class="line">        scnt++;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="classtreemenu.html#a359469982a21e31368621e0cda9c5f5d">mdelete</a>-&gt;Enable(!cont &amp;&amp; del);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!(cnt &lt; 2) &amp;&amp; c_sort) {</div>
+<div class="line">        scnt++;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="classtreemenu.html#ac8ada77439f8096d693791fe5ca9464e">msort</a>-&gt;Enable(!(cnt &lt; 2) &amp;&amp; c_sort);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!first || !last) {</div>
+<div class="line">        scnt++;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="classtreemenu.html#af1f838f6a51672e2d55e59514f77ccfe">mup</a>-&gt;Enable(!first);</div>
+<div class="line">    <a class="code" href="classtreemenu.html#a662ecad63db574b8e5766be9875ddd3a">mdown</a>-&gt;Enable(!last);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (scnt) {</div>
+<div class="line">        w-&gt;PopupMenu(<a class="code" href="classtreemenu.html#ac4c099bd171f3b9a862c1b117e90d23a">menu</a>);</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -371,7 +405,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classtreemenu.html">treemenu</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:37 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

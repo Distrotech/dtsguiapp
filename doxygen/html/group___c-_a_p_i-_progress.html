@@ -124,7 +124,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Popup dialog containing a progress bar and posible cancel button. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>Allow multiple instances of progress dialog not only the single interface at present. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">Todo:</a></b></dt><dd>Allow multiple instances of progress dialog not only the single interface at present. </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ga528f638b6cb7b0d813e350a0b0c7262c"></a>
 <div class="memitem">
@@ -152,7 +152,11 @@ Functions</h2></td></tr>
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l01063">1063</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_frame_8cpp_source.html#l00181">DTSFrame::EndProgress()</a>, and <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>.</p>
-
+<div class="fragment"><div class="line">                                                {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f = dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line">    f-&gt;<a class="code" href="class_d_t_s_frame.html#aa33b0ba3ce50a7ec4434a78c2be498b7">EndProgress</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga7bd617a3f00cb21ae6df7a37eba0dc7b"></a>
@@ -200,7 +204,11 @@ Functions</h2></td></tr>
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l01054">1054</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00166">DTSFrame::IncProgress()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                    {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f = dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line">    <span class="keywordflow">return</span> f-&gt;<a class="code" href="class_d_t_s_frame.html#a8b1f1c4cf298ef550edec3fa3bf96738">IncProgress</a>(ival, newtext);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gac4185ec71523c1735f1da2cb6dc876d3"></a>
@@ -255,7 +263,11 @@ Functions</h2></td></tr>
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l01027">1027</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00129">DTSFrame::StartProgress()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                         {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f = dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line">    <span class="keywordflow">return</span> f-&gt;<a class="code" href="class_d_t_s_frame.html#a55bbe89f24dc6ad3fbe78589bcbd9686">StartProgress</a>(text, maxval, quit);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gabda6276de46c13fb4e0831bb8c8d1ec1"></a>
@@ -303,7 +315,11 @@ Functions</h2></td></tr>
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l01042">1042</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00151">DTSFrame::UpdateProgress()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                   {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f = dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line">    <span class="keywordflow">return</span> f-&gt;<a class="code" href="class_d_t_s_frame.html#a3b057f8c85958444049063e75b602108">UpdateProgress</a>(newval, newtext);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -311,7 +327,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

@@ -148,7 +148,7 @@ Functions</h2></td></tr>
 <dl class="section remark"><dt>Remarks</dt><dd>The tree can contain branches (folder containers) and leaf nodes each node when clicked will create and place a panel in the display area. </dd>
 <dd>
 The tree window supports sorting and deletion via a menu displayed when right clicking. </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>Allow for the deletion of branch/container/folder nodes. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">Todo:</a></b></dt><dd>Allow for the deletion of branch/container/folder nodes. </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="ga55a99744231b294667ece32a1087042f"></a>
 <div class="memitem">
@@ -261,8 +261,12 @@ The tree window supports sorting and deletion via a menu displayed when right cl
 
 <p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00085">tree_newnode::handle_newtreenode_cb()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00066">tree_newnode::tree_newnode()</a>.</p>
 
-<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00479">network_adsl_link_new()</a>, <a class="el" href="netconfig_8c_source.html#l00513">network_adsl_user_new()</a>, <a class="el" href="netconfig_8c_source.html#l00151">network_config_dns_domain_new()</a>, <a class="el" href="netconfig_8c_source.html#l00177">network_config_dns_domain_server_new()</a>, <a class="el" href="netconfig_8c_source.html#l00125">network_config_dns_host_new()</a>, <a class="el" href="netconfig_8c_source.html#l00235">network_newiface()</a>, <a class="el" href="netconfig_8c_source.html#l00359">network_newroute()</a>, <a class="el" href="netconfig_8c_source.html#l00333">network_newwan()</a>, <a class="el" href="netconfig_8c_source.html#l00277">network_newwifi()</a>, and <a class="el" href="netconfig_8c_source.html#l00565">network_tos_new()</a>.</p>
-
+<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00624">network_adsl_link_new()</a>, <a class="el" href="netconfig_8c_source.html#l00668">network_adsl_user_new()</a>, <a class="el" href="netconfig_8c_source.html#l00215">network_config_dns_domain_new()</a>, <a class="el" href="netconfig_8c_source.html#l00251">network_config_dns_domain_server_new()</a>, <a class="el" href="netconfig_8c_source.html#l00174">network_config_dns_host_new()</a>, <a class="el" href="netconfig_8c_source.html#l00325">network_newiface()</a>, <a class="el" href="netconfig_8c_source.html#l00479">network_newroute()</a>, <a class="el" href="netconfig_8c_source.html#l00443">network_newwan()</a>, <a class="el" href="netconfig_8c_source.html#l00377">network_newwifi()</a>, and <a class="el" href="netconfig_8c_source.html#l00730">network_tos_new()</a>.</p>
+<div class="fragment"><div class="line">                                                                                                                         {</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="classtree__newnode.html">tree_newnode</a> *nn = <span class="keyword">new</span> <a class="code" href="classtree__newnode.html#a79fd1a82bf40d2d922c1d297f1de3f29">tree_newnode</a>(tree, <a class="code" href="classtree__newnode.html#aa910ec0ca8be88d01c6595984213b816">tn</a>, <a class="code" href="classtree__newnode.html#a47004081f2ee1240bf613990048ffeb4">xpath</a>, <a class="code" href="classtree__newnode.html#a50e4845fff0149464cfb8ffe105b061c">node</a>, <a class="code" href="classtree__newnode.html#abeb52a93336763f855d2136268fb13a6">vitem</a>, <a class="code" href="classtree__newnode.html#af024b549dee406efb459720399e3ba46">tattr</a>, nid, <a class="code" href="classtree__newnode.html#a71eae2a3f8fbcb7e2c4245ae0303d171">flags</a>, <a class="code" href="classtree__newnode.html#acd8405c3d6f344a21ecdadcbf3db14a6">node_cb</a>, <a class="code" href="classtree__newnode.html#a0f8198927692046e5763c7e126ea101c">data</a>, <a class="code" href="classtree__newnode.html#ad29bf242b359fc093c474559e6f1be21">p_cb</a>);</div>
+<div class="line">    <span class="keyword">static_cast&lt;</span><a class="code" href="class_d_t_s_panel.html">DTSPanel</a>*<span class="keyword">&gt;</span>(p)-&gt;SetEventCallback(&amp;<a class="code" href="classtree__newnode.html#a307fb2ff9afc18429af055850f3c01a8">tree_newnode::handle_newtreenode_cb</a>, nn, <span class="keyword">true</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gaaaf93911380c2f40eb8adbdc39ac36ac"></a>
@@ -310,7 +314,11 @@ The tree window supports sorting and deletion via a menu displayed when right cl
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00825">825</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00754">DTSTreeWindow::UpdateNodeXML()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                        {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a> *tw = (<a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a>*)tree;</div>
+<div class="line">    tw-&gt;<a class="code" href="class_d_t_s_tree_window.html#a3a7d1d1ce34864f71d5ffd154ca18210">UpdateNodeXML</a>(wxDataViewItem(<a class="code" href="classtree__newnode.html#a50e4845fff0149464cfb8ffe105b061c">node</a>), newname);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga550b7516bbb97dd66bc71033e7d996cb"></a>
@@ -404,8 +412,12 @@ The tree window supports sorting and deletion via a menu displayed when right cl
 
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00612">DTSDVMCtrl::AppendContainer()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00655">DTSTreeWindow::GetTreeCtrl()</a>.</p>
 
-<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00134">network_config_dns_domain_node()</a>, and <a class="el" href="netconfig_8c_source.html#l00602">network_tree_setup()</a>.</p>
-
+<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00188">network_config_dns_domain_node()</a>, and <a class="el" href="netconfig_8c_source.html#l00770">network_tree_setup()</a>.</p>
+<div class="fragment"><div class="line">                                                                      {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a> *tw = (<a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a>*)tree;</div>
+<div class="line">    <span class="keywordflow">return</span> tw-&gt;<a class="code" href="class_d_t_s_tree_window.html#aae9e856659f3701452382e2cdcba8463">GetTreeCtrl</a>()-&gt;<a class="code" href="class_d_t_s_d_v_m_ctrl.html#a853bc63ae2098cf907897dfe896f38b2">AppendContainer</a>(wxDataViewItem(<a class="code" href="classtree__newnode.html#a50e4845fff0149464cfb8ffe105b061c">node</a>), title, can_edit, can_sort, can_del, nodeid, <a class="code" href="classtree__newnode.html#ad29bf242b359fc093c474559e6f1be21">p_cb</a>, <a class="code" href="classtree__newnode.html#a0f8198927692046e5763c7e126ea101c">data</a>).GetID();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga0f7146637609d42057e2cd21bd2bf33e"></a>
@@ -498,8 +510,12 @@ The tree window supports sorting and deletion via a menu displayed when right cl
 
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00608">DTSDVMCtrl::AppendItem()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00655">DTSTreeWindow::GetTreeCtrl()</a>.</p>
 
-<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00602">network_tree_setup()</a>.</p>
-
+<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00770">network_tree_setup()</a>.</p>
+<div class="fragment"><div class="line">                                                          {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a> *tw = (<a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a>*)tree;</div>
+<div class="line">    <span class="keywordflow">return</span> tw-&gt;<a class="code" href="class_d_t_s_tree_window.html#aae9e856659f3701452382e2cdcba8463">GetTreeCtrl</a>()-&gt;<a class="code" href="class_d_t_s_d_v_m_ctrl.html#a60de6e9342a4c140fa2b72acfbfd97dc">AppendItem</a>(wxDataViewItem(<a class="code" href="classtree__newnode.html#a50e4845fff0149464cfb8ffe105b061c">node</a>), title, can_edit, can_sort, can_del, nodeid, <a class="code" href="classtree__newnode.html#ad29bf242b359fc093c474559e6f1be21">p_cb</a>, <a class="code" href="classtree__newnode.html#a0f8198927692046e5763c7e126ea101c">data</a>).GetID();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga00767aae723dce154065e0bb090c0e70"></a>
@@ -531,8 +547,12 @@ The tree window supports sorting and deletion via a menu displayed when right cl
 
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00208">DTSDVMListStore::GetUserData()</a>.</p>
 
-<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00163">network_config_dns_domain_server()</a>.</p>
-
+<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00232">network_config_dns_domain_server()</a>.</p>
+<div class="fragment"><div class="line">                                                 {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *ls = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)<a class="code" href="classtree__newnode.html#aa910ec0ca8be88d01c6595984213b816">tn</a>;</div>
+<div class="line">    <span class="keywordflow">return</span> ls-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a35aa2204af134770c1fab2f5426c50a7">GetUserData</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gaf56a924134315107e80c8b01bfbeee68"></a>
@@ -583,8 +603,12 @@ The tree window supports sorting and deletion via a menu displayed when right cl
 
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00228">DTSDVMListStore::GetXMLData()</a>.</p>
 
-<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00446">network_adsl_link()</a>, <a class="el" href="netconfig_8c_source.html#l00504">network_adsl_user()</a>, <a class="el" href="netconfig_8c_source.html#l00138">network_config_dns_domain()</a>, <a class="el" href="netconfig_8c_source.html#l00163">network_config_dns_domain_server()</a>, <a class="el" href="netconfig_8c_source.html#l00115">network_config_dns_host()</a>, <a class="el" href="netconfig_8c_source.html#l00213">network_iface()</a>, <a class="el" href="netconfig_8c_source.html#l00349">network_route()</a>, <a class="el" href="netconfig_8c_source.html#l00524">network_tos()</a>, <a class="el" href="netconfig_8c_source.html#l00320">network_wan()</a>, and <a class="el" href="netconfig_8c_source.html#l00245">network_wifi()</a>.</p>
-
+<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00586">network_adsl_link()</a>, <a class="el" href="netconfig_8c_source.html#l00654">network_adsl_user()</a>, <a class="el" href="netconfig_8c_source.html#l00197">network_config_dns_domain()</a>, <a class="el" href="netconfig_8c_source.html#l00232">network_config_dns_domain_server()</a>, <a class="el" href="netconfig_8c_source.html#l00159">network_config_dns_host()</a>, <a class="el" href="netconfig_8c_source.html#l00296">network_iface()</a>, <a class="el" href="netconfig_8c_source.html#l00464">network_route()</a>, <a class="el" href="netconfig_8c_source.html#l00684">network_tos()</a>, <a class="el" href="netconfig_8c_source.html#l00425">network_wan()</a>, and <a class="el" href="netconfig_8c_source.html#l00340">network_wifi()</a>.</p>
+<div class="fragment"><div class="line">                                                                       {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *ls = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)<a class="code" href="classtree__newnode.html#aa910ec0ca8be88d01c6595984213b816">tn</a>;</div>
+<div class="line">    <span class="keywordflow">return</span> ls-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a61adea3902f8c4b1c746546b1b9bbff0">GetXMLData</a>(buf);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gadc59452935e169e8e78c178aed0b77c0"></a>
@@ -614,7 +638,11 @@ The tree window supports sorting and deletion via a menu displayed when right cl
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00775">775</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00215">DTSDVMListStore::GetNodeID()</a>.</p>
-
+<div class="fragment"><div class="line">                                          {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *ls = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)<a class="code" href="classtree__newnode.html#aa910ec0ca8be88d01c6595984213b816">tn</a>;</div>
+<div class="line">    <span class="keywordflow">return</span> ls-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a9744dc2bb294481c69a55fcdd667b357">GetNodeID</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gaedca58250011ea48c67fbc4faa14278f"></a>
@@ -645,8 +673,12 @@ The tree window supports sorting and deletion via a menu displayed when right cl
 
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00087">DTSDVMListStore::GetParentTitle()</a>.</p>
 
-<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00177">network_config_dns_domain_server_new()</a>.</p>
-
+<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00251">network_config_dns_domain_server_new()</a>.</p>
+<div class="fragment"><div class="line">                                                      {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *entry = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)<a class="code" href="classtree__newnode.html#aa910ec0ca8be88d01c6595984213b816">tn</a>;</div>
+<div class="line">    <span class="keywordflow">return</span> strdup(entry-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a06805bea00fbdbf5df1f995b87897b5e">GetParentTitle</a>().ToUTF8());</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga3e6618e889e7b58e3bf2ae3d63332178"></a>
@@ -694,8 +726,12 @@ The tree window supports sorting and deletion via a menu displayed when right cl
 
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00219">DTSDVMListStore::SetXMLData()</a>.</p>
 
-<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00602">network_tree_setup()</a>.</p>
-
+<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00770">network_tree_setup()</a>.</p>
+<div class="fragment"><div class="line">                                                                                      {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *ls = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)<a class="code" href="classtree__newnode.html#aa910ec0ca8be88d01c6595984213b816">tn</a>;</div>
+<div class="line">    <span class="keywordflow">return</span> ls-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#aa82d333247a2bf537c3acdeae7635e15">SetXMLData</a>(xn, <a class="code" href="classtree__newnode.html#af024b549dee406efb459720399e3ba46">tattr</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gad71b59e1898bce570cac2acd774f71e3"></a>
@@ -761,7 +797,11 @@ The tree window supports sorting and deletion via a menu displayed when right cl
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00665">665</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00715">DTSTreeWindow::CreatePane()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                              {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a> *tw = (<a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a>*)<a class="code" href="classtree__newnode.html#a6d2aeccaa71eac80144dfb2353b51adc">tv</a>;</div>
+<div class="line">    <span class="keywordflow">return</span> tw-&gt;<a class="code" href="class_d_t_s_tree_window.html#a7457dc767b9cbc873e0e963644fa1fda">CreatePane</a>(name, butmask, userdata, xmldoc);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gab8713feb542a9bb13f8fe7e3bf568bda"></a>
@@ -804,7 +844,11 @@ The tree window supports sorting and deletion via a menu displayed when right cl
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00683">683</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00715">DTSTreeWindow::CreatePane()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                              {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a> *tw = (<a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a>*)<a class="code" href="classtree__newnode.html#a6d2aeccaa71eac80144dfb2353b51adc">tv</a>;</div>
+<div class="line">    <span class="keywordflow">return</span> tw-&gt;<a class="code" href="class_d_t_s_tree_window.html#a7457dc767b9cbc873e0e963644fa1fda">CreatePane</a>(wxDataViewItem(<a class="code" href="classtree__newnode.html#a50e4845fff0149464cfb8ffe105b061c">node</a>));</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -812,7 +856,7 @@ The tree window supports sorting and deletion via a menu displayed when right cl
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

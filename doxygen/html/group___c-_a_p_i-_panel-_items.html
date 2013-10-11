@@ -181,7 +181,11 @@ Information of each element is stored in a hashed bucket to provide a consistant
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l01089">1089</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00882">DTSPanel::FindItem()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                          {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *dp = (<a class="code" href="class_d_t_s_panel.html">DTSPanel</a>*)p;</div>
+<div class="line">    <span class="keywordflow">return</span> dp-&gt;<a class="code" href="class_d_t_s_panel.html#a3c4a20a1c122851ae935dcac34697361">FindItem</a>(name);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga37f578498eb38e545906898e7250e6bb"></a>
@@ -232,8 +236,12 @@ Information of each element is stored in a hashed bucket to provide a consistant
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00886">DTSPanel::FindValue()</a>.</p>
 
-<p>Referenced by <a class="el" href="interface_8c_source.html#l00086">handle_updatetabpane()</a>.</p>
-
+<p>Referenced by <a class="el" href="interface_8c_source.html#l00124">handle_updatetabpane()</a>.</p>
+<div class="fragment"><div class="line">                                                                     {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *dp = (<a class="code" href="class_d_t_s_panel.html">DTSPanel</a>*)p;</div>
+<div class="line">    <span class="keywordflow">return</span> dp-&gt;<a class="code" href="class_d_t_s_panel.html#aaeef18ad561346699ed24e0aa6fa47b3">FindValue</a>(name);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga30bc1422cf3395b150773320ffda00ea"></a>
@@ -264,7 +272,10 @@ Information of each element is stored in a hashed bucket to provide a consistant
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l01102">1102</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="pitems_8cpp_source.html#l00144">form_item::GetData()</a>.</p>
-
+<div class="fragment"><div class="line">                                                    {</div>
+<div class="line">    <span class="keywordflow">return</span> (fi) ? fi-&gt;<a class="code" href="classform__item.html#a45b4a4db5526c1032f15ba20d3f28249">GetData</a>() : NULL;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga2cb1581f47559805b221f9290f9ec83e"></a>
@@ -295,7 +306,10 @@ Information of each element is stored in a hashed bucket to provide a consistant
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l01124">1124</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="pitems_8cpp_source.html#l00188">form_item::GetName()</a>.</p>
-
+<div class="fragment"><div class="line">                                                          {</div>
+<div class="line">    <span class="keywordflow">return</span> fi-&gt;<a class="code" href="classform__item.html#a4f3558ce5670e789ad51d1f489ec5b14">GetName</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gadc168d1ed91fc91be2bb7bf7b060dd62"></a>
@@ -327,8 +341,11 @@ Information of each element is stored in a hashed bucket to provide a consistant
 
 <p>References <a class="el" href="pitems_8cpp_source.html#l00192">form_item::GetValue()</a>.</p>
 
-<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00037">network_config()</a>.</p>
-
+<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00056">network_config()</a>.</p>
+<div class="fragment"><div class="line">                                                            {</div>
+<div class="line">    <span class="keywordflow">return</span> (fi) ? fi-&gt;<a class="code" href="classform__item.html#a6377c3eeefcf7272d5200cd462c9eba7">GetValue</a>() : NULL;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga9a2e87bf30be8644653d11754fcb4e26"></a>
@@ -367,7 +384,11 @@ Information of each element is stored in a hashed bucket to provide a consistant
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l01076">1076</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00316">DTSObject::GetItems()</a>.</p>
-
+<div class="fragment"><div class="line">                                                         {</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html">DTSObject</a> *p = (<a class="code" href="class_d_t_s_object.html">DTSObject</a>*)pane;</div>
+<div class="line">    <span class="keywordflow">return</span> p-&gt;<a class="code" href="class_d_t_s_object.html#a4cadcce0480e7e8f4a9a07a4aedd3c1f">GetItems</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -375,7 +396,7 @@ Information of each element is stored in a hashed bucket to provide a consistant
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

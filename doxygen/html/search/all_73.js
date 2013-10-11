@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['save_5fconfig',['save_config',['../config_8c.html#ae1a63d1e8add52ca63e83582891054fa',1,'save_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;config.c'],['../private_8h.html#ae1a63d1e8add52ca63e83582891054fa',1,'save_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;config.c']]],
+  ['system_20configuration_20wizard',['System configuration wizard',['../group___d_t_s-_a_p_p-_wizard.html',1,'']]],
+  ['save_5fconfig',['save_config',['../group___d_t_s-_a_p_p-_config.html#gae1a63d1e8add52ca63e83582891054fa',1,'save_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;config.c'],['../group___d_t_s-_a_p_p-_config.html#gae1a63d1e8add52ca63e83582891054fa',1,'save_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;config.c']]],
   ['select',['Select',['../class_d_t_s_tree_window.html#a16e8b0b7de01806b70235b4eac89345e',1,'DTSTreeWindow']]],
   ['senddtsevent',['SendDTSEvent',['../class_d_t_s_frame.html#a63488ecbdbe2770ea7d12ce2b06f1b72',1,'DTSFrame']]],
   ['server',['server',['../class_d_t_s_a_p_p_tool_bar.html#a151a662ef084fa456f4a32f6b2977290',1,'DTSAPPToolBar']]],

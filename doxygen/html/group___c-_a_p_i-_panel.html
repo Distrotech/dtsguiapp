@@ -179,7 +179,7 @@ Functions</h2></td></tr>
 <dl class="section remark"><dt>Remarks</dt><dd>The application display area can display one panel at a time these panels may be static or dynamic. static panels are created once and persist during execution. dynamic panels are created and displayed each time the associated menuitem is selected. </dd></dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="group___c_o_r_e.html#ga9275874ac61d3750aa677a36da714373" title="Panel Type.">panel_type</a> </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The displayed dynamic panel will be removed when a new item is selected. </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Emit and allow panels to manage a event when a new panel is requested to allow saving the displayed panel. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>Emit and allow panels to manage a event when a new panel is requested to allow saving the displayed panel. </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="gab2f995a29a5b461ac67c7d9aa7091686"></a>
 <div class="memitem">
@@ -228,7 +228,11 @@ Functions</h2></td></tr>
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00938">938</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00417">DTSPanel::SetConfigCallback()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                            {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *p = (<a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *)pane;</div>
+<div class="line">    p-&gt;<a class="code" href="class_d_t_s_panel.html#acdb57729ace5f3c0fc76cce4d41c36cc">SetConfigCallback</a>(cb, data);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga71826ffc718e3dc219e57befdb6f0d8c"></a>
@@ -255,7 +259,10 @@ Functions</h2></td></tr>
 </dl>
 
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00561">561</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
-
+<div class="fragment"><div class="line">                                      {</div>
+<div class="line">    <span class="keyword">delete</span> (<a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *)pane;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga4d0d6742f61c91fb590b3728a7229150"></a>
@@ -299,8 +306,12 @@ dtsgui_xmlpane_update() </dd>
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00841">DTSPanel::Panel2Post()</a>.</p>
 
-<p>Referenced by <a class="el" href="testing_8c_source.html#l00025">post_items()</a>.</p>
-
+<p>Referenced by <a class="el" href="testing_8c_source.html#l00041">post_items()</a>.</p>
+<div class="fragment"><div class="line">                                                  {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *dp = (<a class="code" href="class_d_t_s_panel.html">DTSPanel</a>*)p;</div>
+<div class="line">    <span class="keywordflow">return</span> dp-&gt;<a class="code" href="class_d_t_s_panel.html#a7ce048cedd00ee1f1d9ea1c1fd504a6f">Panel2Post</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gac763bff39863668014931022b469d836"></a>
@@ -375,8 +386,12 @@ dtsgui_xmlpane_update() </dd>
 
 <p>References <a class="el" href="_d_t_s_frame_8cpp_source.html#l00375">DTSFrame::CreatePane()</a>, and <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>.</p>
 
-<p>Referenced by <a class="el" href="testing_8c_source.html#l00094">test_menu()</a>.</p>
-
+<p>Referenced by <a class="el" href="testing_8c_source.html#l00128">test_menu()</a>.</p>
+<div class="fragment"><div class="line">                                                                                                                                        {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *frame = dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line">    <span class="keywordflow">return</span> frame-&gt;<a class="code" href="class_d_t_s_frame.html#a3b1105fb9c8e3b6909994e7f993eee20">CreatePane</a>(name, title, butmask, type, userdata);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gad91055a12542c30dab4aacbd0761c785"></a>
@@ -417,7 +432,11 @@ dtsgui_xmlpane_update() </dd>
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00534">534</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00290">DTSObject::SetXMLDoc()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                          {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *p = (<a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *)pane;</div>
+<div class="line">    p-&gt;<a class="code" href="class_d_t_s_object.html#a1ae63425d8e5770a8b0717f37fd695b2">SetXMLDoc</a>(<a class="code" href="structapp__data.html#a8b7fe9aa0af51051f077073d12a335e8" title="XML Document been edited.">xmldoc</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga6728901f40e67a95bc46150e1cf3c450"></a>
@@ -449,8 +468,12 @@ dtsgui_xmlpane_update() </dd>
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00338">DTSObject::GetUserData()</a>.</p>
 
-<p>Referenced by <a class="el" href="testing_8c_source.html#l00025">post_items()</a>.</p>
-
+<p>Referenced by <a class="el" href="testing_8c_source.html#l00041">post_items()</a>.</p>
+<div class="fragment"><div class="line">                                                {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *p = (<a class="code" href="class_d_t_s_panel.html">DTSPanel</a>*)pane;</div>
+<div class="line">    <span class="keywordflow">return</span> p-&gt;<a class="code" href="class_d_t_s_object.html#a5d32407be34aa68ea2b038ede768d50e">GetUserData</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga75c6083aa363922fdf1fd19767eceeea"></a>
@@ -491,8 +514,12 @@ dtsgui_xmlpane_update() </dd>
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00305">DTSObject::GetXMLDoc()</a>.</p>
 
-<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00446">network_adsl_link()</a>, <a class="el" href="netconfig_8c_source.html#l00479">network_adsl_link_new()</a>, <a class="el" href="netconfig_8c_source.html#l00037">network_config()</a>, and <a class="el" href="netconfig_8c_source.html#l00277">network_newwifi()</a>.</p>
-
+<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00586">network_adsl_link()</a>, <a class="el" href="netconfig_8c_source.html#l00624">network_adsl_link_new()</a>, <a class="el" href="netconfig_8c_source.html#l00056">network_config()</a>, and <a class="el" href="netconfig_8c_source.html#l00377">network_newwifi()</a>.</p>
+<div class="fragment"><div class="line">                                                  {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *p = (<a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *)pane;</div>
+<div class="line">    <span class="keywordflow">return</span> p-&gt;<a class="code" href="class_d_t_s_object.html#ae177d1cfd85be759810b252b98f2050d">GetXMLDoc</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga9c1222d2fe8fa5066a2c55e4b71c2cac"></a>
@@ -563,7 +590,11 @@ dtsgui_xmlpane_update() </dd>
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00957">957</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00777">DTSPanel::Panel2XML()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                                {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *dp = (<a class="code" href="class_d_t_s_panel.html">DTSPanel</a>*)p;</div>
+<div class="line">    <span class="keywordflow">return</span> dp-&gt;<a class="code" href="class_d_t_s_panel.html#ad28f5ed6bd19e9d685a18df8bf568f92">Panel2XML</a>(xpath, node, nodeval, attrkey);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga3f904089ceb734323477f2b3dbac4a41"></a>
@@ -610,7 +641,11 @@ dtsgui_xmlpane_update() </dd>
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00969">969</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l01077">DTSDialog::RunDialog()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                         {</div>
+<div class="line">    <a class="code" href="class_d_t_s_dialog.html">DTSDialog</a> *p = (<a class="code" href="class_d_t_s_dialog.html">DTSDialog</a> *)pane;</div>
+<div class="line">    p-&gt;<a class="code" href="class_d_t_s_dialog.html#af1e6be7e08913149d128839b7e535cd0">RunDialog</a>(evcb, data);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gaa85445ee6c9a2c24d76824bb67cc2ab2"></a>
@@ -661,8 +696,12 @@ dtsgui_xmlpane_update() </dd>
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00406">DTSPanel::SetEventCallback()</a>.</p>
 
-<p>Referenced by <a class="el" href="interface_8c_source.html#l00123">network_iface_pane_cb()</a>, and <a class="el" href="testing_8c_source.html#l00094">test_menu()</a>.</p>
-
+<p>Referenced by <a class="el" href="interface_8c_source.html#l00164">network_iface_pane_cb()</a>, and <a class="el" href="testing_8c_source.html#l00128">test_menu()</a>.</p>
+<div class="fragment"><div class="line">                                                                            {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *p = (<a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *)pane;</div>
+<div class="line">    <span class="keywordflow">return</span> p-&gt;<a class="code" href="class_d_t_s_panel.html#ac18de08077529d488ea329a72ee14d98">SetEventCallback</a>(evcb, data);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gad561196144c72953e31b83aff17054e5"></a>
@@ -703,8 +742,12 @@ dtsgui_xmlpane_update() </dd>
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00490">DTSPanel::SetStatus()</a>.</p>
 
-<p>Referenced by <a class="el" href="interface_8c_source.html#l00086">handle_updatetabpane()</a>.</p>
-
+<p>Referenced by <a class="el" href="interface_8c_source.html#l00124">handle_updatetabpane()</a>.</p>
+<div class="fragment"><div class="line">                                                            {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *p = (<a class="code" href="class_d_t_s_panel.html">DTSPanel</a>*)pane;</div>
+<div class="line">    <span class="keywordflow">return</span> p-&gt;<a class="code" href="class_d_t_s_panel.html#a03be174c3cb033ba74b6abce543347e3">SetStatus</a>(status);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga3f8f0e22fd2ecdcb915ec06851d12e3d"></a>
@@ -744,7 +787,11 @@ dtsgui_xmlpane_update() </dd>
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00911">911</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00482">DTSPanel::SetTitle()</a>.</p>
-
+<div class="fragment"><div class="line">                                                          {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *p = (<a class="code" href="class_d_t_s_panel.html">DTSPanel</a>*)pane;</div>
+<div class="line">    <span class="keywordflow">return</span> p-&gt;<a class="code" href="class_d_t_s_panel.html#a58daeb533cce1e4bdac57118cce7c7ea">SetTitle</a>(title);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga05cf1592d301351aa838bd23c710f3bb"></a>
@@ -794,8 +841,12 @@ dtsgui_xmlpane_update() </dd>
 
 <p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>.</p>
 
-<p>Referenced by <a class="el" href="interface_8c_source.html#l00145">iface_config()</a>, and <a class="el" href="pbxconfig_8c_source.html#l00325">pbx_settings()</a>.</p>
-
+<p>Referenced by <a class="el" href="interface_8c_source.html#l00197">iface_config()</a>, and <a class="el" href="pbxconfig_8c_source.html#l00374">pbx_settings()</a>.</p>
+<div class="fragment"><div class="line">                                                                                             {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *frame = dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line">    <span class="keywordflow">return</span>  <span class="keyword">new</span> <a class="code" href="_d_t_s_tree_window_8h.html#a97e93e5bc35e2e15b56d1a1dfc055c82">DTSTabWindow</a>(frame, title, data);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gafb8efe017917a372826f7ddedb0e8bba"></a>
@@ -846,8 +897,12 @@ dtsgui_xmlpane_update() </dd>
 
 <p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00421">DTSFrame::TextPanel()</a>.</p>
 
-<p>Referenced by <a class="el" href="wxforms_8c_source.html#l00094">help_menu()</a>, <a class="el" href="config_8c_source.html#l00112">view_config_conf()</a>, and <a class="el" href="config_8c_source.html#l00094">view_config_xml()</a>.</p>
-
+<p>Referenced by <a class="el" href="wxforms_8c_source.html#l00106">help_menu()</a>, <a class="el" href="config_8c_source.html#l00152">view_config_conf()</a>, and <a class="el" href="config_8c_source.html#l00126">view_config_xml()</a>.</p>
+<div class="fragment"><div class="line">                                                                                       {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f = dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line">    <span class="keywordflow">return</span> f-&gt;<a class="code" href="class_d_t_s_frame.html#afc0dae8ce7b26ef38297d520a3144d2a">TextPanel</a>(title, buf);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gaa92cb9c6006aaf320e784f04500c3b25"></a>
@@ -914,8 +969,12 @@ dtsgui_xmlpane_update() </dd>
 
 <p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>.</p>
 
-<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00740">advanced_config()</a>.</p>
-
+<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00912">advanced_config()</a>.</p>
+<div class="fragment"><div class="line">                                                                                                                                                   {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *frame = dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="_d_t_s_tree_window_8h.html#a784aa6f77dc66f229fc77dbab4c1e0f0">DTSTreeWindow</a>(frame, frame, tree_cb, title, 25, NULL, <a class="code" href="structapp__data.html#a8b7fe9aa0af51051f077073d12a335e8" title="XML Document been edited.">xmldoc</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga28e2dbe2171ea35e32fa615aca55b934"></a>
@@ -950,8 +1009,12 @@ dtsgui_xmlpane_update() </dd>
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00746">DTSPanel::Update_XML()</a>.</p>
 
-<p>Referenced by <a class="el" href="wizard_8c_source.html#l00363">system_wizard()</a>.</p>
-
+<p>Referenced by <a class="el" href="wizard_8c_source.html#l00408">system_wizard()</a>.</p>
+<div class="fragment"><div class="line">                                                     {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *p = (<a class="code" href="class_d_t_s_panel.html">DTSPanel</a>*)pane;</div>
+<div class="line">    p-&gt;<a class="code" href="class_d_t_s_panel.html#adc5131960a24dfa65adba935a1be0f79">Update_XML</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -959,7 +1022,7 @@ dtsgui_xmlpane_update() </dd>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

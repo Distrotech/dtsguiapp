@@ -1,0 +1,103 @@
+.TH "Application toolbar" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Application toolbar \- 
+.PP
+Toolbar with protocol and URL box the URL box\&.  
+
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBtoolbar\&.cpp\fP"
+.br
+.RI "\fIApplication toolbar\&. \fP"
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBDTSAPPToolBar\fP"
+.br
+.RI "\fIApplication toolbar class\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fB__DTS_C_API\fP"
+.br
+.RI "\fIAllow access to the C API from C++\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void * \fBapp_toolbar\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, void *pw, long style, int id, const char *name, void *data)"
+.br
+.RI "\fICallback called when the toolbar is to be created\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Toolbar with protocol and URL box the URL box\&. 
+
+The URL box users \fBDTSXMLComboBox\fP and is populated from a URL that returns XML\&. 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define __DTS_C_API"
+
+.PP
+Allow access to the C API from C++\&. 
+.PP
+Definition at line 31 of file toolbar\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "void* app_toolbar (struct \fBdtsgui\fP *dtsgui, void *pw, longstyle, intid, const char *name, void *data)"
+
+.PP
+Callback called when the toolbar is to be created\&. \fBSee Also:\fP
+.RS 4
+\fBdtsgui_toolbar_create\fP 
+.PP
+\fBDTSFrame::SetupToolbar()\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fIpw\fP Parent window (The application frame) 
+.br
+\fIstyle\fP Style required by application\&. 
+.br
+\fIid\fP Window id to be used\&. 
+.br
+\fIname\fP Name to be used\&. 
+.br
+\fIdata\fP Userdata reference supplied when configuring callback\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+wxToolbar\&. 
+.RE
+.PP
+
+.PP
+Definition at line 88 of file toolbar\&.cpp\&.
+.PP
+Referenced by guiconfig_cb()\&.
+.PP
+.nf
+                                                                                                     {
+    DTSAPPToolBar *tb;
+
+    tb = new DTSAPPToolBar(dtsgui, (wxWindow*)pw, style, id, name, data);
+
+    return tb;
+}
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

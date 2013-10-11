@@ -215,7 +215,23 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00034">34</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html">DTSXMLComboBox.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00042">getpost</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00106">HandleEvent()</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00039">minlen</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00038">sflags</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00040">url</a>, and <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00041">xpath</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                                                  {</div>
+<div class="line">    <a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> = 0;</div>
+<div class="line"></div>
+<div class="line">    this-&gt;<a class="code" href="class_d_t_s_x_m_l_combo_box.html#a9ce866cc4f74a2447db49cf23968e351">minlen</a> = <a class="code" href="class_d_t_s_x_m_l_combo_box.html#a9ce866cc4f74a2447db49cf23968e351">minlen</a>;</div>
+<div class="line">    this-&gt;<a class="code" href="class_d_t_s_x_m_l_combo_box.html#a573345fd24fe84285cd88a15387ca1c1">url</a> = <a class="code" href="class_d_t_s_x_m_l_combo_box.html#a573345fd24fe84285cd88a15387ca1c1">url</a>;</div>
+<div class="line">    this-&gt;<a class="code" href="class_d_t_s_x_m_l_combo_box.html#aa1f6979f243bb50a3f690b7a82162773">xpath</a> = <a class="code" href="class_d_t_s_x_m_l_combo_box.html#aa1f6979f243bb50a3f690b7a82162773">xpath</a>;</div>
+<div class="line">    this-&gt;<a class="code" href="class_d_t_s_x_m_l_combo_box.html#afa4ceb66dab1fc8beda14047dfb3d1e6">getpost</a> = <a class="code" href="class_d_t_s_x_m_l_combo_box.html#afa4ceb66dab1fc8beda14047dfb3d1e6">getpost</a>;</div>
+<div class="line"></div>
+<div class="line">    Create(parent, <span class="keywordtype">id</span>, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL, wxTE_PROCESS_ENTER | wxCB_DROPDOWN);</div>
+<div class="line">    Append(wxEmptyString, (<span class="keywordtype">void</span>*)NULL);</div>
+<div class="line"></div>
+<div class="line">    Bind(wxEVT_TEXT_ENTER, &amp;<a class="code" href="class_d_t_s_x_m_l_combo_box.html#aeec14b4880ff9d69bb1b19a4549e082c">DTSXMLComboBox::HandleEvent</a>, <span class="keyword">this</span>);</div>
+<div class="line">    Bind(wxEVT_COMBOBOX, &amp;<a class="code" href="class_d_t_s_x_m_l_combo_box.html#aeec14b4880ff9d69bb1b19a4549e082c">DTSXMLComboBox::HandleEvent</a>, <span class="keyword">this</span>);</div>
+<div class="line">    Bind(wxEVT_COMBOBOX_DROPDOWN, &amp;<a class="code" href="class_d_t_s_x_m_l_combo_box.html#aeec14b4880ff9d69bb1b19a4549e082c">DTSXMLComboBox::HandleEvent</a>, <span class="keyword">this</span>);</div>
+<div class="line">    Bind(wxEVT_COMMAND_TEXT_UPDATED, &amp;<a class="code" href="class_d_t_s_x_m_l_combo_box.html#aeec14b4880ff9d69bb1b19a4549e082c">DTSXMLComboBox::HandleEvent</a>, <span class="keyword">this</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a026821df9109a287aff26b12859fbf7c"></a>
@@ -234,7 +250,10 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00094">94</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html">DTSXMLComboBox.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00162">EmptyServerList()</a>.</p>
-
+<div class="fragment"><div class="line">                                {</div>
+<div class="line">    <a class="code" href="class_d_t_s_x_m_l_combo_box.html#a5294d28f4b31cbc166cd984f0babb6b3">EmptyServerList</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -263,7 +282,28 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00072">72</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html">DTSXMLComboBox.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00106">HandleEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                          {</div>
+<div class="line">    <span class="keyword">struct </span>xml_search *xp;</div>
+<div class="line">    <span class="keyword">struct </span>xml_node *xn;</div>
+<div class="line">    <span class="keywordtype">void</span> *iter;</div>
+<div class="line"></div>
+<div class="line">    xp = xml_xpath(xmldoc, <a class="code" href="class_d_t_s_x_m_l_combo_box.html#aa1f6979f243bb50a3f690b7a82162773">xpath</a>, NULL);</div>
+<div class="line">    <span class="keywordflow">if</span> (!xp || !xml_nodecount(xp)) {</div>
+<div class="line">        <span class="keywordflow">if</span> (xp) {</div>
+<div class="line">            objunref(xp);</div>
+<div class="line">        }</div>
+<div class="line">        objunref(xmldoc);</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">for</span>(xn = xml_getfirstnode(xp, &amp;iter); xn; xn = xml_getnextnode(iter)) {</div>
+<div class="line">        Append(xn-&gt;value, xn);</div>
+<div class="line">    }</div>
+<div class="line">    objunref(iter);</div>
+<div class="line">    objunref(xp);</div>
+<div class="line">    objunref(xmldoc);</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5294d28f4b31cbc166cd984f0babb6b3"></a>
@@ -290,7 +330,20 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00162">162</a> of file <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html">DTSXMLComboBox.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00106">HandleEvent()</a>, and <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00094">~DTSXMLComboBox()</a>.</p>
-
+<div class="fragment"><div class="line">                                     {</div>
+<div class="line">    <span class="keywordtype">void</span> *data;</div>
+<div class="line">    <span class="keywordtype">int</span> i, cnt;</div>
+<div class="line"></div>
+<div class="line">    cnt = GetCount();</div>
+<div class="line">    <span class="keywordflow">for</span>(i=0; i &lt; cnt;i++) {</div>
+<div class="line">        <span class="keywordflow">if</span> ((data = GetClientData(i))) {</div>
+<div class="line">            objunref(data);</div>
+<div class="line">            SetClientData(i, NULL);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    Clear();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aefd4fde2c41d00b0a9d8068265ee42c6"></a>
@@ -354,7 +407,27 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00042">getpost</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00106">HandleEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                  {</div>
+<div class="line">    <span class="keyword">struct </span>xml_doc *xmldoc = NULL;</div>
+<div class="line">    <span class="keyword">struct </span>curl_post *post;</div>
+<div class="line">    <span class="keyword">struct </span>curlbuf *cbuf;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_x_m_l_combo_box.html#afa4ceb66dab1fc8beda14047dfb3d1e6">getpost</a>) {</div>
+<div class="line">        post = <a class="code" href="class_d_t_s_x_m_l_combo_box.html#afa4ceb66dab1fc8beda14047dfb3d1e6">getpost</a>(val);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordflow">return</span> NULL;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!(cbuf = curl_posturl(<a class="code" href="class_d_t_s_x_m_l_combo_box.html#a573345fd24fe84285cd88a15387ca1c1">url</a>, NULL, post, NULL, NULL))) {</div>
+<div class="line">        <span class="keywordflow">return</span> NULL;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    xmldoc = curl_buf2xml(cbuf);</div>
+<div class="line">    objunref(cbuf);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> xmldoc;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aeec14b4880ff9d69bb1b19a4549e082c"></a>
@@ -384,7 +457,62 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00072">AppendXMLNodes()</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00023">DTSAPPTB_SERVER_POP</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00024">DTSAPPTB_SERVER_SET</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00162">EmptyServerList()</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00051">GetXMLDoc()</a>, <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00039">minlen</a>, and <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00038">sflags</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_x_m_l_combo_box_8cpp_source.html#l00034">DTSXMLComboBox()</a>.</p>
-
+<div class="fragment"><div class="line">                                                      {</div>
+<div class="line">    <span class="keyword">struct </span>xml_doc *xmldoc;</div>
+<div class="line">    wxString newval;</div>
+<div class="line">    <span class="keywordtype">int</span> etype = <span class="keyword">event</span>.GetEventType();</div>
+<div class="line">    wxString val;</div>
+<div class="line">    <span class="keyword">struct </span>xml_node *xn = NULL;</div>
+<div class="line"></div>
+<div class="line">    val = GetValue();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> ((<a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> &amp; <a class="code" href="_d_t_s_x_m_l_combo_box_8h.html#a1b5487ca2ccbd717b153b67c8d8f0520ae6478ae16db29ffeaa6fee0389fb2057">DTSAPPTB_SERVER_POP</a>) &amp;&amp; !(<a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> &amp; <a class="code" href="_d_t_s_x_m_l_combo_box_8h.html#a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80">DTSAPPTB_SERVER_SET</a>) &amp;&amp; (etype == wxEVT_COMMAND_TEXT_UPDATED)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> &amp;= ~DTSAPPTB_SERVER_POP;</div>
+<div class="line">        <span class="keyword">event</span>.Skip();</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((<a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> &amp; DTSAPPTB_SERVER_SET) &amp;&amp; (etype == wxEVT_COMMAND_TEXT_UPDATED)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> &amp;= ~DTSAPPTB_SERVER_SET;</div>
+<div class="line">        <span class="keyword">event</span>.Skip();</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!(<a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> &amp; DTSAPPTB_SERVER_POP) &amp;&amp; !(<a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> &amp; DTSAPPTB_SERVER_SET) &amp;&amp; (etype == wxEVT_COMBOBOX_DROPDOWN) &amp;&amp; (val.Len() &lt; <a class="code" href="class_d_t_s_x_m_l_combo_box.html#a9ce866cc4f74a2447db49cf23968e351">minlen</a>)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> &amp;= ~DTSAPPTB_SERVER_SET;</div>
+<div class="line">        <a class="code" href="class_d_t_s_x_m_l_combo_box.html#a5294d28f4b31cbc166cd984f0babb6b3">EmptyServerList</a>();</div>
+<div class="line">        Append(wxEmptyString, (<span class="keywordtype">void</span>*)NULL);</div>
+<div class="line">        Dismiss();</div>
+<div class="line">        <span class="keyword">event</span>.Skip();</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!(<a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> &amp; DTSAPPTB_SERVER_POP) &amp;&amp; (etype == wxEVT_COMBOBOX_DROPDOWN) &amp;&amp; (val.Len() &gt;= <a class="code" href="class_d_t_s_x_m_l_combo_box.html#a9ce866cc4f74a2447db49cf23968e351">minlen</a>)) {</div>
+<div class="line">        Dismiss();</div>
+<div class="line">        <a class="code" href="class_d_t_s_x_m_l_combo_box.html#a5294d28f4b31cbc166cd984f0babb6b3">EmptyServerList</a>();</div>
+<div class="line">        <a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> &amp;= ~(DTSAPPTB_SERVER_SET | <a class="code" href="_d_t_s_x_m_l_combo_box_8h.html#a1b5487ca2ccbd717b153b67c8d8f0520ae6478ae16db29ffeaa6fee0389fb2057">DTSAPPTB_SERVER_POP</a>);</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> ((xmldoc = <a class="code" href="class_d_t_s_x_m_l_combo_box.html#a3f983fc429c2fa50b9b46d7c5fa0538d">GetXMLDoc</a>(val, xn))) {</div>
+<div class="line">            <span class="keywordflow">if</span> (!<a class="code" href="class_d_t_s_x_m_l_combo_box.html#acf258ad2d53caf6b87d48cbb53e32a65">AppendXMLNodes</a>(xmldoc)) {</div>
+<div class="line">                Append(wxEmptyString, (<span class="keywordtype">void</span>*)NULL);</div>
+<div class="line">                <a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> &amp;= ~(DTSAPPTB_SERVER_POP | <a class="code" href="_d_t_s_x_m_l_combo_box_8h.html#a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80">DTSAPPTB_SERVER_SET</a>);</div>
+<div class="line">            } <span class="keywordflow">else</span> {</div>
+<div class="line">                <a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> |= (DTSAPPTB_SERVER_POP | <a class="code" href="_d_t_s_x_m_l_combo_box_8h.html#a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80">DTSAPPTB_SERVER_SET</a>);</div>
+<div class="line">                <span class="keyword">event</span>.Skip();</div>
+<div class="line">                Popup();</div>
+<div class="line">            }</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            Append(wxEmptyString, (<span class="keywordtype">void</span>*)NULL);</div>
+<div class="line">            <a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> &amp;= ~(DTSAPPTB_SERVER_POP | <a class="code" href="_d_t_s_x_m_l_combo_box_8h.html#a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80">DTSAPPTB_SERVER_SET</a>);</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!(<a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> &amp; DTSAPPTB_SERVER_POP) &amp;&amp; (etype == wxEVT_COMBOBOX_DROPDOWN)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_x_m_l_combo_box.html#a5294d28f4b31cbc166cd984f0babb6b3">EmptyServerList</a>();</div>
+<div class="line">        Append(wxEmptyString, (<span class="keywordtype">void</span>*)NULL);</div>
+<div class="line">        Dismiss();</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((<a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> &amp; DTSAPPTB_SERVER_POP) &amp;&amp; etype == wxEVT_COMBOBOX) {</div>
+<div class="line">        <span class="comment">/*Windows Barfs if you change the value*/</span></div>
+<div class="line"><span class="preprocessor">#ifdef __WIN332</span></div>
+<div class="line"><span class="preprocessor"></span>        <a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> |= (DTSAPPTB_SERVER_POP | <a class="code" href="_d_t_s_x_m_l_combo_box_8h.html#a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80">DTSAPPTB_SERVER_SET</a>);</div>
+<div class="line"><span class="preprocessor">#else</span></div>
+<div class="line"><span class="preprocessor"></span>        <a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> |= <a class="code" href="_d_t_s_x_m_l_combo_box_8h.html#a1b5487ca2ccbd717b153b67c8d8f0520a995f08845656d49d3fab02b093d46b80">DTSAPPTB_SERVER_SET</a>;</div>
+<div class="line"><span class="preprocessor">#endif // __WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>        <span class="keyword">event</span>.Skip();</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (etype != wxEVT_COMBOBOX_DROPDOWN) {</div>
+<div class="line">        <span class="keyword">event</span>.Skip();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab73ab96a2dddeb756b984db6e0fa9106"></a>
@@ -404,8 +532,15 @@ Private Attributes</h2></td></tr>
 
 <p>References <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00023">DTSAPPTB_SERVER_POP</a>, and <a class="el" href="_d_t_s_x_m_l_combo_box_8h_source.html#l00038">sflags</a>.</p>
 
-<p>Referenced by <a class="el" href="toolbar_8cpp_source.html#l00095">DTSAPPToolBar::HandleEvent()</a>.</p>
-
+<p>Referenced by <a class="el" href="toolbar_8cpp_source.html#l00149">DTSAPPToolBar::HandleEvent()</a>.</p>
+<div class="fragment"><div class="line">                                {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_x_m_l_combo_box.html#aaa8b7abd7e0b36967b4af91c7d9bfecc">sflags</a> &amp; <a class="code" href="_d_t_s_x_m_l_combo_box_8h.html#a1b5487ca2ccbd717b153b67c8d8f0520ae6478ae16db29ffeaa6fee0389fb2057">DTSAPPTB_SERVER_POP</a>) {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -539,7 +674,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_x_m_l_combo_box.html">DTSXMLComboBox</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:37 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

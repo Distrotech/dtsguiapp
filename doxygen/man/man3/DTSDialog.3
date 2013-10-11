@@ -48,10 +48,38 @@ Definition at line 161 of file DTSPanel\&.h\&.
 Definition at line 1048 of file DTSPanel\&.cpp\&.
 .PP
 References DTSPanel::button_mask, DTSObject::buttons, dialog, DTSObject::dtsevthandler, DTSPanelEvent::OnDialog(), DTSObject::panel, DTSPanel::SetupWin(), sizer, DTSObject::type, and wx_DTSPANEL_DIALOG\&.
+.PP
+.nf
+                                                                {
+    DTSPanelEvent *dtsevt = (DTSPanelEvent*)dtsevthandler;
+    type = wx_DTSPANEL_DIALOG;
+
+    button_mask = butmask;
+    buttons[4] = wxID_OK;
+    buttons[5] = wxID_CANCEL;
+
+    /*this is deleted by app*/
+    dialog = new wxDialog(frame, -1, name);
+    sizer = new wxBoxSizer(wxHORIZONTAL);
+    dialog->SetSizer(sizer);
+    dialog->SetAffirmativeId(buttons[4]);
+
+    panel = dynamic_cast<wxPanel *>(this);
+    panel->Create(dialog, -1);
+    panel->SetName(name);
+    panel->Bind(wxEVT_TEXT_ENTER, &DTSPanelEvent::OnDialog, dtsevt);
+    SetupWin();
+}
+.fi
 .SS "DTSDialog::~DTSDialog ()"
 
 .PP
 Definition at line 1069 of file DTSPanel\&.cpp\&.
+.PP
+.nf
+                      {
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "void DTSDialog::RunDialog (\fBevent_callback\fPevcb, void *data)"
@@ -62,6 +90,22 @@ Definition at line 1077 of file DTSPanel\&.cpp\&.
 References dialog, DTSObject::panel, DTSPanel::SetEventCallback(), Show(), and sizer\&.
 .PP
 Referenced by DTS_C_API::dtsgui_rundialog(), and DTSFrame::Passwd()\&.
+.PP
+.nf
+                                                         {
+    SetEventCallback(evcb, data);
+
+    Show(true);
+
+    sizer->Add(panel, 1, wxALL | wxEXPAND, 15);
+    dialog->Fit();
+    dialog->Center();
+    dialog->Layout();
+    dialog->SetClientSize(sizer->GetSize());
+    dialog->ShowModal();
+    delete this;
+}
+.fi
 .SS "bool DTSDialog::Show (boolshow = \fCtrue\fP)\fC [virtual]\fP"
 
 .PP
@@ -72,6 +116,13 @@ Definition at line 1072 of file DTSPanel\&.cpp\&.
 References DTSPanel::ShowPanel()\&.
 .PP
 Referenced by RunDialog()\&.
+.PP
+.nf
+                              {
+    ShowPanel(show);
+    return wxPanel::Show(show);
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "\fBwxDialog\fP* DTSDialog::dialog\fC [private]\fP"

@@ -10,13 +10,13 @@
         <argsstring></argsstring>
         <name>name</name>
         <briefdescription>
-        </briefdescription>
+<para>Name of the pair. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="70" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="70" bodyend="-1"/>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga2385f9d99b5222b879485702af299fd0" compoundref="wizard_8c" startline="233" endline="280">wizz_exten</referencedby>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="91" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="91" bodyend="-1"/>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga2385f9d99b5222b879485702af299fd0" compoundref="wizard_8c" startline="260" endline="307">wizz_exten</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structlistitem_1a678100a2bc64b5f325a842ac0555d191" prot="public" static="no" mutable="no">
         <type>const char *</type>
@@ -24,20 +24,20 @@
         <argsstring></argsstring>
         <name>value</name>
         <briefdescription>
-        </briefdescription>
+<para>Value of the pair. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="71" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="71" bodyend="-1"/>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga2385f9d99b5222b879485702af299fd0" compoundref="wizard_8c" startline="233" endline="280">wizz_exten</referencedby>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="93" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="93" bodyend="-1"/>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga2385f9d99b5222b879485702af299fd0" compoundref="wizard_8c" startline="260" endline="307">wizz_exten</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Name value pair sturucture. </para>    </briefdescription>
     <detaileddescription>
-    </detaileddescription>
-    <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="69" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="69" bodyend="72"/>
+<para>This is used to create a static array to to populate listbox. </para>    </detaileddescription>
+    <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="89" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="89" bodyend="94"/>
     <listofallmembers>
       <member refid="structlistitem_1af53587242ef469841b5a0c0836b3cb21" prot="public" virt="non-virtual"><scope>listitem</scope><name>name</name></member>
       <member refid="structlistitem_1a678100a2bc64b5f325a842ac0555d191" prot="public" virt="non-virtual"><scope>listitem</scope><name>value</name></member>

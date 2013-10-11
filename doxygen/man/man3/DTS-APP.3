@@ -10,17 +10,73 @@ Multi platform GUI server management application\&.
 
 .in +1c
 .ti -1c
-.RI "\fBDistrotech Application Wizard Interface\fP"
+.RI "\fBSystem configuration wizard\fP"
 .br
 .RI "\fISystem configuration wizard\&. \fP"
+.ti -1c
+.RI "\fBConfiguration menu functions\fP"
+.br
+.RI "\fIConfiguration menu functions\&. \fP"
+.ti -1c
+.RI "\fBInterface configuration tab view\fP"
+.br
+.RI "\fITab view panel allowing configuration and addition of interfaces\&. \fP"
+.ti -1c
+.RI "\fBAdvanced configuration tree\fP"
+.br
+.RI "\fIwAdvanced configuration tree \fP"
+.ti -1c
+.RI "\fBPBX Configuration\fP"
+.br
+.RI "\fIPBX Configuration\&. \fP"
+.ti -1c
+.RI "\fBApplication test panel\fP"
+.br
+.RI "\fIStatic window with standard elements that will post to a URL and pop up the result\&. \fP"
+.ti -1c
+.RI "\fBApplication toolbar\fP"
+.br
+.RI "\fIToolbar with protocol and URL box the URL box\&. \fP"
 .in -1c
 .SS "Files"
 
 .in +1c
 .ti -1c
+.RI "file \fBprivate\&.h\fP"
+.br
+.RI "\fIMain application private includes\&. \fP"
+.ti -1c
 .RI "file \fBwxforms\&.c\fP"
 .br
 .RI "\fIMain application file\&. \fP"
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBapp_data\fP"
+.br
+.RI "\fIApplication data structure\&. \fP"
+.ti -1c
+.RI "struct \fBlistitem\fP"
+.br
+.RI "\fIName value pair sturucture\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDATA_DIR\fP   '/usr/share/dtsguiapp'"
+.br
+.RI "\fIShared application folder\&. \fP"
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBnode_id\fP { \fBDTS_NODE_CUSTOMER\fP, \fBDTS_NODE_NETWORK_CONFIG\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_DYN\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_SERV\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_ZONE\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_HOST_NEW\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_HOST\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_NEW\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER_NEW\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER\fP, \fBDTS_NODE_NETWORK_IFACE_NEW\fP, \fBDTS_NODE_NETWORK_IFACE\fP, \fBDTS_NODE_NETWORK_WIFI_NEW\fP, \fBDTS_NODE_NETWORK_WIFI\fP, \fBDTS_NODE_NETWORK_WAN_NEW\fP, \fBDTS_NODE_NETWORK_WAN\fP, \fBDTS_NODE_NETWORK_ROUTE_NEW\fP, \fBDTS_NODE_NETWORK_ROUTE\fP, \fBDTS_NODE_NETWORK_MODEM\fP, \fBDTS_NODE_NETWORK_MODEM_ADV\fP, \fBDTS_NODE_NETWORK_MODEM_ANA\fP, \fBDTS_NODE_NETWORK_ADSL_LINK_NEW\fP, \fBDTS_NODE_NETWORK_ADSL_LINK\fP, \fBDTS_NODE_NETWORK_ADSL_USER_NEW\fP, \fBDTS_NODE_NETWORK_ADSL_USER\fP, \fBDTS_NODE_NETWORK_TOS_NEW\fP, \fBDTS_NODE_NETWORK_TOS\fP }"
+.br
+.RI "\fINode ID's used in application treeview\&. \fP"
 .in -1c
 .SS "Functions"
 
@@ -28,82 +84,437 @@ Multi platform GUI server management application\&.
 .ti -1c
 .RI "void \fBxml_config\fP (struct xml_doc *xmldoc)"
 .br
+.RI "\fIDisplay formated XML Document on the console\&. \fP"
 .ti -1c
 .RI "struct xml_doc * \fBapp_getxmldoc\fP (struct \fBdtsgui\fP *\fBdtsgui\fP)"
 .br
+.RI "\fIreturn reference to xmldoc stored in userdata\&. \fP"
 .ti -1c
 .RI "void \fBfile_menu\fP (struct \fBdtsgui\fP *\fBdtsgui\fP)"
 .br
+.RI "\fICreate the File menu in the menu bar\&. \fP"
 .ti -1c
 .RI "void \fBhelp_menu\fP (struct \fBdtsgui\fP *\fBdtsgui\fP)"
 .br
+.RI "\fICreate the Help menu in the menu bar\&. \fP"
 .ti -1c
 .RI "int \fBguiconfig_cb\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, void *data)"
 .br
+.RI "\fIGUI application callback\&. \fP"
 .ti -1c
 .RI "void \fBfree_appdata\fP (void *data)"
 .br
+.RI "\fICallback called when reference count becomes 0\&. \fP"
 .ti -1c
 .RI "int \fBmain\fP (int argc, char **argv)"
 .br
+.RI "\fIApplication entry point\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
 Multi platform GUI server management application\&. 
 
 
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DATA_DIR   '/usr/share/dtsguiapp'"
+
+.PP
+Shared application folder\&. This should be set correctly at build time and this value ignored\&. 
+.PP
+Definition at line 32 of file private\&.h\&.
+.PP
+Referenced by main()\&.
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBnode_id\fP"
+
+.PP
+Node ID's used in application treeview\&. 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIDTS_NODE_CUSTOMER \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_DYN \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_SERV \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_ZONE \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_HOST_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_HOST \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_IFACE_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_IFACE \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_WIFI_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_WIFI \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_WAN_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_WAN \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_ROUTE_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_ROUTE \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_MODEM \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_MODEM_ADV \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_MODEM_ANA \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_ADSL_LINK_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_ADSL_LINK \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_ADSL_USER_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_ADSL_USER \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_TOS_NEW \fP\fP
+.TP
+\fB\fIDTS_NODE_NETWORK_TOS \fP\fP
+
+.PP
+Definition at line 36 of file private\&.h\&.
+.PP
+.nf
+             {
+    DTS_NODE_CUSTOMER,
+    DTS_NODE_NETWORK_CONFIG,
+    DTS_NODE_NETWORK_CONFIG_DNS,
+    DTS_NODE_NETWORK_CONFIG_DNS_DYN,
+    DTS_NODE_NETWORK_CONFIG_DNS_SERV,
+    DTS_NODE_NETWORK_CONFIG_DNS_ZONE,
+    DTS_NODE_NETWORK_CONFIG_DNS_HOST_NEW,
+    DTS_NODE_NETWORK_CONFIG_DNS_HOST,
+    DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_NEW,
+    DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN,
+    DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER_NEW,
+    DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER,
+    DTS_NODE_NETWORK_IFACE_NEW,
+    DTS_NODE_NETWORK_IFACE,
+    DTS_NODE_NETWORK_WIFI_NEW,
+    DTS_NODE_NETWORK_WIFI,
+    DTS_NODE_NETWORK_WAN_NEW,
+    DTS_NODE_NETWORK_WAN,
+    DTS_NODE_NETWORK_ROUTE_NEW,
+    DTS_NODE_NETWORK_ROUTE,
+    DTS_NODE_NETWORK_MODEM,
+    DTS_NODE_NETWORK_MODEM_ADV,
+    DTS_NODE_NETWORK_MODEM_ANA,
+    DTS_NODE_NETWORK_ADSL_LINK_NEW,
+    DTS_NODE_NETWORK_ADSL_LINK,
+    DTS_NODE_NETWORK_ADSL_USER_NEW,
+    DTS_NODE_NETWORK_ADSL_USER,
+    DTS_NODE_NETWORK_TOS_NEW,
+    DTS_NODE_NETWORK_TOS
+};
+.fi
 .SH "Function Documentation"
 .PP 
 .SS "struct xml_doc* app_getxmldoc (struct \fBdtsgui\fP *dtsgui)\fC [read]\fP"
 
 .PP
-Definition at line 48 of file wxforms\&.c\&.
+return reference to xmldoc stored in userdata\&. The user data is available from the application data handle the correct referencing und un referencing of the data\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+XML Document\&. 
+.RE
+.PP
+
+.PP
+Definition at line 56 of file wxforms\&.c\&.
 .PP
 References dtsgui_userdata(), and app_data::xmldoc\&.
 .PP
 Referenced by advanced_config(), export_config(), iface_config(), pbx_settings(), reconfig_wizard(), view_config_conf(), and view_config_xml()\&.
+.PP
+.nf
+                                                     {
+    struct app_data *appdata;
+    struct xml_doc *xmldoc;
+
+    if (!(appdata = dtsgui_userdata(dtsgui))) {
+        return NULL;
+    }
+
+    objlock(appdata);
+    if (appdata->xmldoc && objref(appdata->xmldoc)) {
+        xmldoc = appdata->xmldoc;
+    } else {
+        objunlock(appdata);
+        objunref(appdata);
+        return NULL;
+    }
+    objunlock(appdata);
+    objunref(appdata);
+    return xmldoc;
+}
+.fi
 .SS "void file_menu (struct \fBdtsgui\fP *dtsgui)"
 
 .PP
-Definition at line 69 of file wxforms\&.c\&.
+Create the File menu in the menu bar\&. \fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.RE
+.PP
+
+.PP
+Definition at line 79 of file wxforms\&.c\&.
 .PP
 References app_data::c_open, dtsgui_close(), dtsgui_exit(), dtsgui_menusep(), dtsgui_newmenu(), dtsgui_newmenucb(), dtsgui_userdata(), app_data::e_wiz, editsys_wizard(), app_data::n_wiz, newsys_wizard(), and open_config()\&.
 .PP
 Referenced by guiconfig_cb()\&.
+.PP
+.nf
+                                      {
+    dtsgui_menu file;
+    struct app_data *appdata;
+
+    if (!(appdata = dtsgui_userdata(dtsgui))) {
+        return;
+    }
+
+    file = dtsgui_newmenu(dtsgui, '&File');
+
+    objlock(appdata);
+    appdata->n_wiz = dtsgui_newmenucb(file, dtsgui, '&New System (Wizard)', 'New System Configuration Wizard', 1, newsys_wizard, NULL);
+    appdata->e_wiz = dtsgui_newmenucb(file, dtsgui, '&Edit Saved System (Wizard)', 'Reconfigure Saved System File With Wizard ', 1, editsys_wizard, NULL);
+
+    dtsgui_menusep(file);
+    appdata->c_open = dtsgui_newmenucb(file, dtsgui, '&Open Config File', 'Open System Config From A File', 1, open_config, NULL);
+    objunlock(appdata);
+
+    dtsgui_menusep(file);
+    dtsgui_close(file, dtsgui);
+    dtsgui_exit(file, dtsgui);
+
+    objunref(appdata);
+}
+.fi
 .SS "void free_appdata (void *data)"
 
 .PP
-Definition at line 125 of file wxforms\&.c\&.
+Callback called when reference count becomes 0\&. Free datadir and un reference xmldoc as we going away\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP Application user data reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 149 of file wxforms\&.c\&.
 .PP
 References app_data::datadir, and app_data::xmldoc\&.
 .PP
 Referenced by main()\&.
+.PP
+.nf
+                              {
+    struct app_data *appdata = data;
+
+    if (appdata->datadir) {
+        free((void*)appdata->datadir);
+    }
+
+    if (appdata->xmldoc) {
+        objunref(appdata->xmldoc);
+    }
+}
+.fi
 .SS "int guiconfig_cb (struct \fBdtsgui\fP *dtsgui, void *data)"
 
 .PP
-Definition at line 110 of file wxforms\&.c\&.
+GUI application callback\&. This is called on GUI application creation returning 0 will end the GUI returning non zero will pass control to the GUI\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBdtsgui_configcb\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fIdata\fP Application userdata reference\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Non zero value to pass control to the GUI\&. 
+.RE
+.PP
+
+.PP
+Definition at line 130 of file wxforms\&.c\&.
 .PP
 References app_toolbar(), config_menu(), dtsgui_setuptoolbar(), file_menu(), and help_menu()\&.
 .PP
 Referenced by main()\&.
+.PP
+.nf
+                                                    {
+    if (!data) {
+        return 0;
+    }
+
+    dtsgui_setuptoolbar(dtsgui, app_toolbar, NULL);
+
+    /* menus*/
+    file_menu(dtsgui);
+    config_menu(dtsgui);
+    help_menu(dtsgui);
+
+    return 1;
+}
+.fi
 .SS "void help_menu (struct \fBdtsgui\fP *dtsgui)"
 
 .PP
-Definition at line 94 of file wxforms\&.c\&.
+Create the Help menu in the menu bar\&. \fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.RE
+.PP
+
+.PP
+Definition at line 106 of file wxforms\&.c\&.
 .PP
 References dtsgui_about(), dtsgui_menusep(), dtsgui_newmenu(), dtsgui_newmenuitem(), dtsgui_textpane(), and test_menu()\&.
 .PP
 Referenced by guiconfig_cb()\&.
+.PP
+.nf
+                                      {
+    dtsgui_menu help;
+    dtsgui_pane p;
+
+    help = dtsgui_newmenu(dtsgui, '&Help');
+
+    p = dtsgui_textpane(dtsgui, 'TEST', 'Hello This is a text box');
+    dtsgui_newmenuitem(help, dtsgui, '&Hello\&.\&.\&.\tCtrl-H', p);
+
+    dtsgui_menusep(help);
+    test_menu(dtsgui, help, 'https://sip1\&.speakezi\&.co\&.za:666/auth/test\&.php');
+
+    dtsgui_menusep(help);
+    dtsgui_about(help, dtsgui, 'This is a test application!!!!');
+}
+.fi
 .SS "int main (intargc, char **argv)"
 
 .PP
-Definition at line 137 of file wxforms\&.c\&.
+Application entry point\&. The first argument (argv[0]) is the application name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIargc\fP Number of arguments in array argv\&. 
+.br
+\fIargv\fP Array of argumements passed on the commandline\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Exit code\&. 
+.RE
+.PP
+
+.PP
+Definition at line 167 of file wxforms\&.c\&.
 .PP
 References DATA_DIR, app_data::datadir, dtsgui_config(), dtsgui_run(), free_appdata(), and guiconfig_cb()\&.
+.PP
+.nf
+                                {
+    struct point wsize = {800, 600};
+    struct point wpos = {50, 50};
+    struct app_data *appdata;
+    int res;
+    char apppath[PATH_MAX];
+
+    if (!(appdata = objalloc(sizeof(*appdata), free_appdata))) {
+        return -1;
+    }
+
+#ifdef __WIN32
+    getwin32folder(CSIDL_COMMON_APPDATA, apppath);
+    appdata->datadir = malloc(strlen(apppath)+12);
+    snprintf((char*)appdata->datadir, strlen(apppath)+12, '%s\\Distrotech', apppath);
+    chdir(appdata->datadir);
+    _putenv('XML_DEBUG_CATALOG=\'\'');
+    _putenv('XML_CATALOG_FILES=catalog\&.xml');
+#else
+    appdata->datadir = strdup(DATA_DIR);
+    snprintf(apppath, strlen(appdata->datadir)+13, '%s/catalog\&.xml', appdata->datadir);
+    if (is_file(apppath)) {
+        setenv('XML_CATALOG_FILES', apppath, 1);
+    }
+    setenv('XML_DEBUG_CATALOG', '', 0);
+#endif
+
+    startthreads();
+    xml_init();
+    xslt_init();
+
+    dtsgui_config(guiconfig_cb, appdata, wsize, wpos, 'Distrotech System App', 'Welcome to Distrotech App!');
+    res = dtsgui_run(argc, argv);
+    objunref(appdata);
+
+    xslt_close();
+    xml_close();
+    stopthreads();
+
+    return res;
+}
+.fi
 .SS "void xml_config (struct xml_doc *xmldoc)"
 
 .PP
-Definition at line 40 of file wxforms\&.c\&.
+Display formated XML Document on the console\&. \fBParameters:\fP
+.RS 4
+\fIxmldoc\fP XML Document to display 
+.RE
+.PP
+
+.PP
+Definition at line 42 of file wxforms\&.c\&.
+.PP
+.nf
+                                        {
+    void *xmlbuf;
+
+    xmlbuf = xml_doctobuffer(xmldoc);
+    printf('%s\n', xml_getbuffer(xmlbuf));
+    objunref(xmlbuf);
+}
+.fi
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

@@ -32,6 +32,15 @@ Definition at line 172 of file DTSPanel\&.h\&.
 Definition at line 1091 of file DTSPanel\&.cpp\&.
 .PP
 References DTSPanel::button_mask, DTSObject::panel, DTSPanel::SetupWin(), DTSObject::type, and wx_DTSPANEL_WIZARD\&.
+.PP
+.nf
+                                               {
+    type = wx_DTSPANEL_WIZARD;
+    button_mask = 0;
+    panel = dynamic_cast<wxPanel *>(this);
+    SetupWin();
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "bool DTSWizardWindow::Show (boolshow = \fCtrue\fP)\fC [virtual]\fP"
@@ -40,6 +49,19 @@ References DTSPanel::button_mask, DTSObject::panel, DTSPanel::SetupWin(), DTSObj
 Definition at line 1098 of file DTSPanel\&.cpp\&.
 .PP
 References DTSObject::panel, DTSPanel::SetSizerSize(), and DTSPanel::ShowPanel()\&.
+.PP
+.nf
+                                    {
+    ShowPanel(show);
+
+    if (show) {
+        SetSizerSize(panel->GetSize(), NULL);
+    }
+
+    return wxWizardPageSimple::Show(show);
+}
+.fi
+
 
 .SH "Author"
 .PP 

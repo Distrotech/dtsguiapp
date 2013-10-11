@@ -209,7 +209,19 @@ Protected Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00241">241</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00080">beenshown</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00076">dtsevthandler</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00073">frame</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00075">panel</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00072">refobj</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00074">status</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00078">userdata</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00079">xmldoc</a>.</p>
-
+<div class="fragment"><div class="line">                                {</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a> = (<span class="keywordtype">void</span>**)objalloc(<span class="keyword">sizeof</span>(<span class="keywordtype">void</span>*), NULL);</div>
+<div class="line">    *<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a> = <span class="keyword">this</span>;</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#a1292b4804b31450f0ee960fa59fcfc7a">status</a> = st;</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#af8c7a75701ac05261749552eef4bc6ed">panel</a> = NULL;</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#a8ca3e7c6f66685caf07fa93fb5e14337">frame</a> = NULL;</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a> = NULL;</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a> = NULL;</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#a132481851865629352e4aefa7f822e4b">dtsevthandler</a> = NULL;</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#ab4249f538d36789b20bb15e29ab4121f">beenshown</a> = <span class="keyword">false</span>;</div>
+<div class="line">    SetName(<a class="code" href="class_d_t_s_object.html#a1292b4804b31450f0ee960fa59fcfc7a">status</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a47a4a671f875d6fb7681865c26b32546"></a>
@@ -228,7 +240,24 @@ Protected Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00254">254</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00076">dtsevthandler</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00072">refobj</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00078">userdata</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00079">xmldoc</a>.</p>
-
+<div class="fragment"><div class="line">                      {</div>
+<div class="line">    objlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a>);</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>);</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_object.html#a132481851865629352e4aefa7f822e4b">dtsevthandler</a>) {</div>
+<div class="line">        <span class="keyword">delete</span> <a class="code" href="class_d_t_s_object.html#a132481851865629352e4aefa7f822e4b">dtsevthandler</a>;</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a132481851865629352e4aefa7f822e4b">dtsevthandler</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    objunlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">    objunref(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -259,7 +288,9 @@ Protected Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00323">323</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00123">DTSPanelEvent::OnButton()</a>.</p>
-
+<div class="fragment"><div class="line">                                                           {</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae5239b912c725a7a5720954767c3537a"></a>
@@ -281,7 +312,10 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00073">frame</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00715">DTSTreeWindow::CreatePane()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00991">DTSTabWindow::CreateTab()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00445">DTSTreeWindowEvent::MenuEvent()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00096">DTSPanelEvent::RunCallBack()</a>.</p>
-
+<div class="fragment"><div class="line">                              {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_object.html#a8ca3e7c6f66685caf07fa93fb5e14337">frame</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4cadcce0480e7e8f4a9a07a4aedd3c1f"></a>
@@ -311,7 +345,13 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00077">fitems</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l01076">DTS_C_API::dtsgui_panel_items()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00163">DTSPanelEvent::OnCombo()</a>.</p>
-
+<div class="fragment"><div class="line">                                            {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_object.html#a53fa1242a31d95bc3fec2824ff055cae">fitems</a> &amp;&amp; objref(<a class="code" href="class_d_t_s_object.html#a53fa1242a31d95bc3fec2824ff055cae">fitems</a>)) {</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_object.html#a53fa1242a31d95bc3fec2824ff055cae">fitems</a>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> NULL;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aa800a3664b895617df9884469dbdf1f8"></a>
@@ -332,7 +372,16 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00072">refobj</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00074">status</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l01014">DTSTabWindow::InsertTab()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00435">DTSFrame::NewMenuItem()</a>.</p>
-
+<div class="fragment"><div class="line">                            {</div>
+<div class="line">    wxString st;</div>
+<div class="line"></div>
+<div class="line">    objlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">    st = <a class="code" href="class_d_t_s_object.html#a1292b4804b31450f0ee960fa59fcfc7a">status</a>;</div>
+<div class="line">    objunlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> st;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae88ef1ea6f28346b6cd6d2d898d7acde"></a>
@@ -353,7 +402,10 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00075">panel</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00715">DTSTreeWindow::CreatePane()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00991">DTSTabWindow::CreateTab()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00544">DTSTreeWindow::DTSTreeWindow()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l01014">DTSTabWindow::InsertTab()</a>, <a class="el" href="_d_t_s_frame_8cpp_source.html#l00435">DTSFrame::NewMenuItem()</a>, <a class="el" href="evdata_8cpp_source.html#l00068">dynamic_panel::RunCallback()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00687">DTSTreeWindow::SetWindow()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00421">DTSFrame::TextPanel()</a>.</p>
-
+<div class="fragment"><div class="line">                              {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_object.html#af8c7a75701ac05261749552eef4bc6ed">panel</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5d32407be34aa68ea2b038ede768d50e"></a>
@@ -375,7 +427,16 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00072">refobj</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00078">userdata</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00901">DTS_C_API::dtsgui_paneldata()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00470">DTSFrame::pwevent()</a>.</p>
-
+<div class="fragment"><div class="line">                                 {</div>
+<div class="line">    <span class="keywordtype">void</span> *ud = NULL;</div>
+<div class="line">    objlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a> &amp;&amp; objref(<a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a>)) {</div>
+<div class="line">        ud = <a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a>;</div>
+<div class="line">    }</div>
+<div class="line">    objunlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">    <span class="keywordflow">return</span> ud;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae177d1cfd85be759810b252b98f2050d"></a>
@@ -405,7 +466,17 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00072">refobj</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00079">xmldoc</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00550">DTS_C_API::dtsgui_panelxml()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00496">DTSPanel::GetNode()</a>.</p>
-
+<div class="fragment"><div class="line">                                         {</div>
+<div class="line">    <span class="keyword">struct </span>xml_doc *xd = NULL;</div>
+<div class="line"></div>
+<div class="line">    objlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a> &amp;&amp; objref(<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>)) {</div>
+<div class="line">        xd = <a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>;</div>
+<div class="line">    }</div>
+<div class="line">    objunlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">    <span class="keywordflow">return</span> xd;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a3e39ba76f7cb701fc9b99f6f059fb49e"></a>
@@ -427,7 +498,18 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00072">refobj</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00078">userdata</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_frame_8cpp_source.html#l00375">DTSFrame::CreatePane()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00991">DTSTabWindow::CreateTab()</a>.</p>
-
+<div class="fragment"><div class="line">                                      {</div>
+<div class="line">    objlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a>);</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (data &amp;&amp; objref(data)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a> = data;</div>
+<div class="line">    }</div>
+<div class="line">    objunlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1ae63425d8e5770a8b0717f37fd695b2"></a>
@@ -449,7 +531,21 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00072">refobj</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00079">xmldoc</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_wizard_8cpp_source.html#l00056">dtsgui_wizard::AddPage()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00715">DTSTreeWindow::CreatePane()</a>, <a class="el" href="wrapper_8cpp_source.html#l00534">DTS_C_API::dtsgui_panel_setxml()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00916">DTSTabPage::DTSTabPage()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00544">DTSTreeWindow::DTSTreeWindow()</a>.</p>
-
+<div class="fragment"><div class="line">                                            {</div>
+<div class="line">    objlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>);</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (xd &amp;&amp; objref(xd)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a> = xd;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    objunlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -711,7 +807,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_object.html">DTSObject</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

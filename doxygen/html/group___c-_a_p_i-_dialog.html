@@ -169,8 +169,12 @@ All implementations of the wxFileDialog provide a wildcard filter. Typing a file
 
 <p>References <a class="el" href="_d_t_s_frame_8cpp_source.html#l00120">DTSFrame::Alert()</a>, and <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>.</p>
 
-<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00740">advanced_config()</a>, <a class="el" href="wizard_8c_source.html#l00461">editsys_wizard()</a>, <a class="el" href="config_8c_source.html#l00150">export_config()</a>, <a class="el" href="testing_8c_source.html#l00044">handle_test()</a>, <a class="el" href="toolbar_8cpp_source.html#l00095">DTSAPPToolBar::HandleEvent()</a>, <a class="el" href="wizard_8c_source.html#l00436">newsys_wizard()</a>, <a class="el" href="config_8c_source.html#l00027">open_config()</a>, <a class="el" href="testing_8c_source.html#l00025">post_items()</a>, and <a class="el" href="config_8c_source.html#l00112">view_config_conf()</a>.</p>
-
+<p>Referenced by <a class="el" href="wizard_8c_source.html#l00523">editsys_wizard()</a>, <a class="el" href="config_8c_source.html#l00198">export_config()</a>, <a class="el" href="testing_8c_source.html#l00070">handle_test()</a>, <a class="el" href="toolbar_8cpp_source.html#l00149">DTSAPPToolBar::HandleEvent()</a>, <a class="el" href="wizard_8c_source.html#l00491">newsys_wizard()</a>, <a class="el" href="config_8c_source.html#l00044">open_config()</a>, <a class="el" href="testing_8c_source.html#l00041">post_items()</a>, and <a class="el" href="config_8c_source.html#l00152">view_config_conf()</a>.</p>
+<div class="fragment"><div class="line">                                                           {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f = dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line">    f-&gt;<a class="code" href="class_d_t_s_frame.html#a890f88e157626205916bdb961cc6fb6f">Alert</a>(text);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga5761cfa6ab849723e50760a9642efc9f"></a>
@@ -212,8 +216,12 @@ All implementations of the wxFileDialog provide a wildcard filter. Typing a file
 
 <p>References <a class="el" href="_d_t_s_frame_8cpp_source.html#l00104">DTSFrame::Confirm()</a>, and <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>.</p>
 
-<p>Referenced by <a class="el" href="wizard_8c_source.html#l00363">system_wizard()</a>.</p>
-
+<p>Referenced by <a class="el" href="wizard_8c_source.html#l00408">system_wizard()</a>.</p>
+<div class="fragment"><div class="line">                                                            {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f = dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line">    <span class="keywordflow">return</span> f-&gt;<a class="code" href="class_d_t_s_frame.html#a937f276b15be00e81087ef1a73605478">Confirm</a>(text);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gad458f5d64710487c7213a4921a5ebc99"></a>
@@ -278,8 +286,12 @@ All implementations of the wxFileDialog provide a wildcard filter. Typing a file
 
 <p>References <a class="el" href="_d_t_s_frame_8cpp_source.html#l00408">DTSFrame::FileDialog()</a>, and <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>.</p>
 
-<p>Referenced by <a class="el" href="wizard_8c_source.html#l00461">editsys_wizard()</a>, and <a class="el" href="config_8c_source.html#l00027">open_config()</a>.</p>
-
+<p>Referenced by <a class="el" href="wizard_8c_source.html#l00523">editsys_wizard()</a>, and <a class="el" href="config_8c_source.html#l00044">open_config()</a>.</p>
+<div class="fragment"><div class="line">                                                                                                                                     {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f = dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line">    <span class="keywordflow">return</span> f-&gt;<a class="code" href="class_d_t_s_frame.html#af996b558ba17ecc23cf6ed1a3d1873fb">FileDialog</a>(title, path, name, filter, wxFD_OPEN | wxFD_FILE_MUST_EXIST);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gad2b11bd5e9e51dcba9f53f4969f1f25c"></a>
@@ -342,8 +354,12 @@ All implementations of the wxFileDialog provide a wildcard filter. Typing a file
 
 <p>References <a class="el" href="_d_t_s_frame_8cpp_source.html#l00408">DTSFrame::FileDialog()</a>, and <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>.</p>
 
-<p>Referenced by <a class="el" href="config_8c_source.html#l00150">export_config()</a>, and <a class="el" href="wizard_8c_source.html#l00363">system_wizard()</a>.</p>
-
+<p>Referenced by <a class="el" href="config_8c_source.html#l00198">export_config()</a>, and <a class="el" href="wizard_8c_source.html#l00408">system_wizard()</a>.</p>
+<div class="fragment"><div class="line">                                                                                                                                     {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f = dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line">    <span class="keywordflow">return</span> f-&gt;<a class="code" href="class_d_t_s_frame.html#af996b558ba17ecc23cf6ed1a3d1873fb">FileDialog</a>(title, path, name, filter, wxFD_SAVE | wxFD_OVERWRITE_PROMPT);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gab2431470ff495d71aae8e41368a214cb"></a>
@@ -401,7 +417,11 @@ All implementations of the wxFileDialog provide a wildcard filter. Typing a file
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l01208">1208</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_frame_8cpp_source.html#l00495">DTSFrame::Passwd()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                     {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f = <span class="keyword">static_cast&lt;</span>class <a class="code" href="classdtsgui.html">dtsgui</a>*<span class="keyword">&gt;</span>(<a class="code" href="classtab__newpane.html#a70f33dd22d1a121e7d8e84cd52f1efd0">data</a>)-&gt;GetFrame();</div>
+<div class="line">    <span class="keywordflow">return</span> f-&gt;<a class="code" href="class_d_t_s_frame.html#a5a7ad78662b511e7ef6ac513f8d1a28b">Passwd</a>(user, passwd);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -409,7 +429,7 @@ All implementations of the wxFileDialog provide a wildcard filter. Typing a file
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

@@ -305,7 +305,22 @@ Additional Inherited Members</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00916">916</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00150">cb</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00151">cdata</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00152">hasconfig</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00482">DTSPanel::SetTitle()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00290">DTSObject::SetXMLDoc()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00069">DTSObject::type</a>, and <a class="el" href="dtsgui_8h_source.html#l00251">wx_DTSPANEL_TAB</a>.</p>
-
+<div class="fragment"><div class="line">    :wxScrolledWindow(parent, wxID_ANY),</div>
+<div class="line">    <a class="code" href="class_d_t_s_scroll_panel.html#a3ded23df3221978b4f78e2ff6cc53366">DTSScrollPanel</a>(parent,frame, <a class="code" href="class_d_t_s_object.html#a1292b4804b31450f0ee960fa59fcfc7a">status</a>, butmask) {</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#ad191e42b5daa056f9ea8247d752df3b0">type</a> = <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373a94b4b5412dbd78fdf58517c74afa9dad" title="DTSTabWindow (wx_DTSPANEL_TAB) see Tab view panel interface..">wx_DTSPANEL_TAB</a>;</div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_page.html#a89d1be9e8530a03ed51872a07c14a8b7">cb</a> = c_cb;</div>
+<div class="line">    <span class="keywordflow">if</span> (c_data &amp;&amp; objref(c_data)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tab_page.html#a99f6c8da250c0cbb5f75cf5395658d77">cdata</a> = c_data;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tab_page.html#a99f6c8da250c0cbb5f75cf5395658d77">cdata</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a1ae63425d8e5770a8b0717f37fd695b2">SetXMLDoc</a>(<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>);</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_page.html#a26fb9793db8290bf72d411475224a97d">hasconfig</a> = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html#a58daeb533cce1e4bdac57118cce7c7ea">SetTitle</a>(<a class="code" href="class_d_t_s_object.html#a1292b4804b31450f0ee960fa59fcfc7a">status</a>, 1);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9dc8aa3cd79b00e80747a9bd0cf9b379"></a>
@@ -324,7 +339,14 @@ Additional Inherited Members</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00933">933</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00151">cdata</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00072">DTSObject::refobj</a>.</p>
-
+<div class="fragment"><div class="line">                        {</div>
+<div class="line">    objlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_tab_page.html#a99f6c8da250c0cbb5f75cf5395658d77">cdata</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_tab_page.html#a99f6c8da250c0cbb5f75cf5395658d77">cdata</a>);</div>
+<div class="line">    }</div>
+<div class="line">    objunlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -346,7 +368,23 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00150">cb</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00151">cdata</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00152">hasconfig</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00432">DTSPanel::ShowPanel()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00864">DTSTabWindowEvent::PageChange()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00941">DTSTabWindow::Show()</a>.</p>
-
+<div class="fragment"><div class="line">                            {</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="class_d_t_s_tab_page.html#a26fb9793db8290bf72d411475224a97d">hasconfig</a>) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_tab_page.html#a89d1be9e8530a03ed51872a07c14a8b7">cb</a>) {</div>
+<div class="line">            <span class="keywordtype">void</span> *dat = NULL;</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_tab_page.html#a99f6c8da250c0cbb5f75cf5395658d77">cdata</a> &amp;&amp; objref(<a class="code" href="class_d_t_s_tab_page.html#a99f6c8da250c0cbb5f75cf5395658d77">cdata</a>)) {</div>
+<div class="line">                dat = <a class="code" href="class_d_t_s_tab_page.html#a99f6c8da250c0cbb5f75cf5395658d77">cdata</a>;</div>
+<div class="line">            }</div>
+<div class="line">            <a class="code" href="class_d_t_s_tab_page.html#a89d1be9e8530a03ed51872a07c14a8b7">cb</a>(<span class="keyword">this</span>, dat);</div>
+<div class="line">            <span class="keywordflow">if</span> (dat) {</div>
+<div class="line">                objunref(dat);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">        <a class="code" href="class_d_t_s_tab_page.html#a26fb9793db8290bf72d411475224a97d">hasconfig</a> = <span class="keyword">true</span>;</div>
+<div class="line">        <a class="code" href="class_d_t_s_panel.html#a0c1a3aa81559298e059473bde57ab23e">ShowPanel</a>();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a99f09a166ea777c2dcc572284594b00e"></a>
@@ -366,7 +404,56 @@ Additional Inherited Members</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00962">962</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00228">DTSPanelEvent::BindDTSEvent()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00114">DTSPanel::button_mask</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00150">cb</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00151">cdata</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00076">DTSObject::dtsevthandler</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00073">DTSObject::frame</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00075">DTSObject::panel</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00072">DTSObject::refobj</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00482">DTSPanel::SetTitle()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00074">DTSObject::status</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00079">DTSObject::xmldoc</a>.</p>
-
+<div class="fragment"><div class="line">                                                        {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel_event.html">DTSPanelEvent</a> *dtsevt = (<a class="code" href="class_d_t_s_panel_event.html">DTSPanelEvent</a>*)<a class="code" href="class_d_t_s_object.html#a132481851865629352e4aefa7f822e4b">dtsevthandler</a>;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<span class="keyword">this</span> == &amp;orig) {</div>
+<div class="line">        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/*deadlock avoidance*/</span></div>
+<div class="line">    objlock(orig.<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">    <span class="keywordflow">while</span>(!objtrylock(this-&gt;<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>)) {</div>
+<div class="line">        objunlock(orig.<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line"><span class="preprocessor">#ifdef __WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>        Sleep(1);</div>
+<div class="line"><span class="preprocessor">#else</span></div>
+<div class="line"><span class="preprocessor"></span>        usleep(1000);</div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="preprocessor"></span>        objlock(orig.<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html#af25bdb7e04f715c228774c2be0dd8251">button_mask</a> = orig.<a class="code" href="class_d_t_s_panel.html#af25bdb7e04f715c228774c2be0dd8251">button_mask</a>;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_tab_page.html#a99f6c8da250c0cbb5f75cf5395658d77">cdata</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_tab_page.html#a99f6c8da250c0cbb5f75cf5395658d77">cdata</a>);</div>
+<div class="line">        <a class="code" href="class_d_t_s_tab_page.html#a99f6c8da250c0cbb5f75cf5395658d77">cdata</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (orig.<a class="code" href="class_d_t_s_tab_page.html#a99f6c8da250c0cbb5f75cf5395658d77">cdata</a> &amp;&amp; objref(orig.<a class="code" href="class_d_t_s_tab_page.html#a99f6c8da250c0cbb5f75cf5395658d77">cdata</a>)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tab_page.html#a99f6c8da250c0cbb5f75cf5395658d77">cdata</a> = orig.<a class="code" href="class_d_t_s_tab_page.html#a99f6c8da250c0cbb5f75cf5395658d77">cdata</a>;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_page.html#a89d1be9e8530a03ed51872a07c14a8b7">cb</a> = orig.<a class="code" href="class_d_t_s_tab_page.html#a89d1be9e8530a03ed51872a07c14a8b7">cb</a>;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>);</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (orig.<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a> &amp;&amp; objref(orig.<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a> = orig.<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#a1292b4804b31450f0ee960fa59fcfc7a">status</a> = orig.<a class="code" href="class_d_t_s_object.html#a1292b4804b31450f0ee960fa59fcfc7a">status</a>;</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html#a58daeb533cce1e4bdac57118cce7c7ea">SetTitle</a>(<a class="code" href="class_d_t_s_object.html#a1292b4804b31450f0ee960fa59fcfc7a">status</a>);</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#af8c7a75701ac05261749552eef4bc6ed">panel</a>-&gt;SetName(<a class="code" href="class_d_t_s_object.html#a1292b4804b31450f0ee960fa59fcfc7a">status</a>);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#a8ca3e7c6f66685caf07fa93fb5e14337">frame</a> = orig.<a class="code" href="class_d_t_s_object.html#a8ca3e7c6f66685caf07fa93fb5e14337">frame</a>;</div>
+<div class="line">    <span class="keywordflow">if</span> (dtsevt &amp;&amp; <a class="code" href="class_d_t_s_object.html#a8ca3e7c6f66685caf07fa93fb5e14337">frame</a>) {</div>
+<div class="line">        dtsevt-&gt;<a class="code" href="class_d_t_s_panel_event.html#af2333021915425cd85ab9544170e7152">BindDTSEvent</a>(<a class="code" href="class_d_t_s_object.html#a8ca3e7c6f66685caf07fa93fb5e14337">frame</a>);</div>
+<div class="line">    }</div>
+<div class="line">    objunlock(this-&gt;<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">    objunlock(orig.<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2270518c402eb3b38bc9b7e1a7e89a97"></a>
@@ -394,7 +481,10 @@ Additional Inherited Members</h2></td></tr>
 <p>Reimplemented from <a class="el" href="class_d_t_s_scroll_panel.html#a4aea715d4e6ac3257c482813c8ab2bbc">DTSScrollPanel</a>.</p>
 
 <p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00941">941</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
-
+<div class="fragment"><div class="line">                               {</div>
+<div class="line">    <span class="keywordflow">return</span> wxScrolledWindow::Show(show);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -480,7 +570,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_tab_page.html">DTSTabPage</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

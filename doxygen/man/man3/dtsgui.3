@@ -72,6 +72,22 @@ Definition at line 22 of file DTSApp\&.h\&.
 Definition at line 35 of file DTSApp\&.cpp\&.
 .PP
 References cb, status, userdata, wpos, and wsize\&.
+.PP
+.nf
+                                                                                                                                         {
+    wsize = w_size;
+    wpos = w_pos;
+
+    cb = confcallback_cb;
+    if (data && objref(data)) {
+        userdata = data;
+    } else {
+        userdata = NULL;
+    }
+    ALLOC_CONST(this->status, stat);
+    ALLOC_CONST(this->title, title);
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "void dtsgui::AppendTitle (const char *text)"
@@ -82,6 +98,32 @@ Definition at line 105 of file DTSApp\&.cpp\&.
 References appframe, and title\&.
 .PP
 Referenced by DTS_C_API::dtsgui_titleappend()\&.
+.PP
+.nf
+                                         {
+    char *newtitle;
+    int len;
+
+    objlock(this);
+    if (text) {
+        len = strlen(title)+strlen(text)+4;
+        if ((newtitle=(char*)malloc(len))) {
+            snprintf(newtitle, len, '%s [%s]', title, text);
+        } else {
+            newtitle = (char*)title;
+        }
+    } else {
+        newtitle = (char*)title;
+    }
+    objunlock(this);
+
+    appframe->SetTitle(newtitle);
+
+    if (text && newtitle) {
+        free(newtitle);
+    }
+}
+.fi
 .SS "dtsgui::DTS_OJBREF_CLASS (\fBdtsgui\fP)"
 
 .SS "class \fBDTSFrame\fP * dtsgui::GetFrame (void)"
@@ -92,6 +134,12 @@ Definition at line 137 of file DTSApp\&.cpp\&.
 References appframe\&.
 .PP
 Referenced by dtsgui_wizard::AddPage(), DTS_C_API::dtsgui_about(), DTS_C_API::dtsgui_alert(), DTS_C_API::dtsgui_close(), DTS_C_API::dtsgui_confirm(), dtsgui_curl::dtsgui_curl(), DTS_C_API::dtsgui_exit(), DTS_C_API::dtsgui_fileopen(), DTS_C_API::dtsgui_filesave(), DTS_C_API::dtsgui_newmenu(), DTS_C_API::dtsgui_newmenucb(), DTS_C_API::dtsgui_newmenuitem(), DTS_C_API::dtsgui_newwizard(), DTS_C_API::dtsgui_panel(), DTS_C_API::dtsgui_progress_end(), DTS_C_API::dtsgui_progress_increment(), DTS_C_API::dtsgui_progress_start(), DTS_C_API::dtsgui_progress_update(), DTS_C_API::dtsgui_sendevent(), DTS_C_API::dtsgui_setuptoolbar(), DTS_C_API::dtsgui_setwindow(), DTS_C_API::dtsgui_tabwindow(), DTS_C_API::dtsgui_textpane(), and DTS_C_API::dtsgui_treewindow()\&.
+.PP
+.nf
+                                     {
+    return appframe;
+}
+.fi
 .SS "void * dtsgui::GetUserData (void)"
 
 .PP
@@ -100,6 +148,20 @@ Definition at line 85 of file DTSApp\&.cpp\&.
 References userdata\&.
 .PP
 Referenced by DTS_C_API::dtsgui_userdata()\&.
+.PP
+.nf
+                          {
+    void *ud = NULL;
+
+    objlock(this);
+    if (userdata && objref(userdata)) {
+        ud = userdata;
+    }
+    objunlock(this);
+
+    return ud;
+}
+.fi
 .SS "void dtsgui::SetStatusText (void)"
 
 .PP
@@ -108,6 +170,16 @@ Definition at line 97 of file DTSApp\&.cpp\&.
 References appframe, and status\&.
 .PP
 Referenced by SetupAPPFrame(), and DTSFrame::SetWindow()\&.
+.PP
+.nf
+                               {
+    objlock(this);
+    if (appframe && status) {
+        appframe->SetStatusText(status);
+    }
+    objunlock(this);
+}
+.fi
 .SS "int dtsgui::SetupAPPFrame (void)"
 
 .PP
@@ -116,6 +188,29 @@ Definition at line 64 of file DTSApp\&.cpp\&.
 References appframe, cb, SetStatusText(), title, userdata, wpos, wsize, point::x, and point::y\&.
 .PP
 Referenced by DTSApp::OnInit()\&.
+.PP
+.nf
+                          {
+    void *data = NULL;
+    int res;
+
+    appframe = new DTSFrame(title, wxPoint(wpos\&.x, wpos\&.y), wxSize(wsize\&.x, wsize\&.y), this);
+    SetStatusText();
+
+    objlock(this);
+    if (userdata && objref(userdata)) {
+        data = userdata;
+    }
+    objunlock(this);
+
+    res = cb(this, data);
+
+    if (data) {
+        objunref(data);
+    }
+    return res;
+}
+.fi
 .SS "void dtsgui::ShowToolbar (boolshow = \fCtrue\fP)"
 
 .PP
@@ -124,6 +219,16 @@ Definition at line 129 of file DTSApp\&.cpp\&.
 References appframe\&.
 .PP
 Referenced by DTS_C_API::dtsgui_set_toolbar()\&.
+.PP
+.nf
+                                  {
+    wxToolBar *tb;
+
+    tb = appframe->GetToolBar();
+    tb->Show(show);
+    appframe->Layout();
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "class \fBDTSFrame\fP* dtsgui::appframe\fC [private]\fP"

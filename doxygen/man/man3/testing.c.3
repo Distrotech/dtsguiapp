@@ -3,6 +3,9 @@
 .nh
 .SH NAME
 app/testing.c \- 
+.PP
+Test panel\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -19,50 +22,27 @@ app/testing.c \-
 .ti -1c
 .RI "void \fBpost_items\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, \fBdtsgui_pane\fP p)"
 .br
+.RI "\fICreate a curl post object and submit to url\&. \fP"
 .ti -1c
 .RI "int \fBhandle_test\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, \fBdtsgui_pane\fP p, int type, int event, void *data)"
 .br
+.RI "\fIpanel event handler\&. \fP"
 .ti -1c
 .RI "void \fBtestpanel\fP (\fBdtsgui_pane\fP p)"
 .br
+.RI "\fIConfigure a panel with test elements\&. \fP"
 .ti -1c
 .RI "void \fBtest_menu\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, \fBdtsgui_menu\fP menu, const char *url)"
 .br
+.RI "\fIAdd test option to menu\&. \fP"
 .in -1c
-.SH "Function Documentation"
+.SH "Detailed Description"
 .PP 
-.SS "int handle_test (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_pane\fPp, inttype, intevent, void *data)"
+Test panel\&. 
+
 
 .PP
-Definition at line 44 of file testing\&.c\&.
-.PP
-References dtsgui_alert(), post_items(), wx_PANEL_EVENT_BUTTON, wx_PANEL_EVENT_BUTTON_BACK, wx_PANEL_EVENT_BUTTON_FIRST, wx_PANEL_EVENT_BUTTON_FWD, wx_PANEL_EVENT_BUTTON_LAST, wx_PANEL_EVENT_BUTTON_NO, and wx_PANEL_EVENT_BUTTON_YES\&.
-.PP
-Referenced by test_menu()\&.
-.SS "void post_items (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_pane\fPp)"
-
-.PP
-Definition at line 25 of file testing\&.c\&.
-.PP
-References dtsgui_alert(), dtsgui_pane2post(), and dtsgui_paneldata()\&.
-.PP
-Referenced by handle_test()\&.
-.SS "void test_menu (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_menu\fPmenu, const char *url)"
-
-.PP
-Definition at line 94 of file testing\&.c\&.
-.PP
-References dtsgui_newmenuitem(), dtsgui_panel(), dtsgui_setevcallback(), handle_test(), testpanel(), and wx_PANEL_BUTTON_ALL\&.
-.PP
-Referenced by help_menu()\&.
-.SS "void testpanel (\fBdtsgui_pane\fPp)"
-
-.PP
-Definition at line 72 of file testing\&.c\&.
-.PP
-References dtsgui_checkbox(), dtsgui_combobox(), dtsgui_listbox(), dtsgui_listbox_add(), dtsgui_textbox(), and dtsgui_textbox_multi()\&.
-.PP
-Referenced by test_menu()\&.
+Definition in file \fBtesting\&.c\fP\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

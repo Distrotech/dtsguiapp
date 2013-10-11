@@ -1,10 +1,8 @@
 var annotated =
 [
     [ "DTS_C_API", "namespace_d_t_s___c___a_p_i.html", null ],
-    [ "app_data", "structapp__data.html", "structapp__data" ],
     [ "curl_progress", "classcurl__progress.html", "classcurl__progress" ],
     [ "DTSApp", "class_d_t_s_app.html", "class_d_t_s_app" ],
-    [ "DTSAPPToolBar", "class_d_t_s_a_p_p_tool_bar.html", "class_d_t_s_a_p_p_tool_bar" ],
     [ "DTSDialog", "class_d_t_s_dialog.html", "class_d_t_s_dialog" ],
     [ "DTSDVMCtrl", "class_d_t_s_d_v_m_ctrl.html", "class_d_t_s_d_v_m_ctrl" ],
     [ "DTSDVMListStore", "class_d_t_s_d_v_m_list_store.html", "class_d_t_s_d_v_m_list_store" ],
@@ -31,9 +29,6 @@ var annotated =
     [ "evdata", "classevdata.html", "classevdata" ],
     [ "form_data", "unionform__data.html", "unionform__data" ],
     [ "form_item", "classform__item.html", "classform__item" ],
-    [ "iface_cdata", "structiface__cdata.html", "structiface__cdata" ],
-    [ "listitem", "structlistitem.html", "structlistitem" ],
-    [ "new_iface_data", "structnew__iface__data.html", "structnew__iface__data" ],
     [ "tab_newpane", "classtab__newpane.html", "classtab__newpane" ],
     [ "tree_newnode", "classtree__newnode.html", "classtree__newnode" ],
     [ "treemenu", "classtreemenu.html", "classtreemenu" ],

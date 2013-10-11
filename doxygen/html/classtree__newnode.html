@@ -247,7 +247,24 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00041">data</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00051">flags</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00044">node_cb</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00045">p_cb</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00043">tn</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00042">tv</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00050">type</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00762">DTS_C_API::dtsgui_newxmltreenode()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                         {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classtree__newnode.html#a0f8198927692046e5763c7e126ea101c">data</a> &amp;&amp; objref(<a class="code" href="classtree__newnode.html#a0f8198927692046e5763c7e126ea101c">data</a>)) {</div>
+<div class="line">        this-&gt;<a class="code" href="classtree__newnode.html#a0f8198927692046e5763c7e126ea101c">data</a> = <a class="code" href="classtree__newnode.html#a0f8198927692046e5763c7e126ea101c">data</a>;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        this-&gt;<a class="code" href="classtree__newnode.html#a0f8198927692046e5763c7e126ea101c">data</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    this-&gt;<a class="code" href="classtree__newnode.html#a6d2aeccaa71eac80144dfb2353b51adc">tv</a> = tree;</div>
+<div class="line">    this-&gt;<a class="code" href="classtree__newnode.html#aa910ec0ca8be88d01c6595984213b816">tn</a> = <a class="code" href="classtree__newnode.html#aa910ec0ca8be88d01c6595984213b816">tn</a>;</div>
+<div class="line">    ALLOC_CONST(this-&gt;<a class="code" href="classtree__newnode.html#a47004081f2ee1240bf613990048ffeb4">xpath</a>, <a class="code" href="classtree__newnode.html#a47004081f2ee1240bf613990048ffeb4">xpath</a>);</div>
+<div class="line">    ALLOC_CONST(this-&gt;<a class="code" href="classtree__newnode.html#a50e4845fff0149464cfb8ffe105b061c">node</a>, <a class="code" href="classtree__newnode.html#a50e4845fff0149464cfb8ffe105b061c">node</a>);</div>
+<div class="line">    ALLOC_CONST(this-&gt;<a class="code" href="classtree__newnode.html#abeb52a93336763f855d2136268fb13a6">vitem</a>, <a class="code" href="classtree__newnode.html#abeb52a93336763f855d2136268fb13a6">vitem</a>);</div>
+<div class="line">    ALLOC_CONST(this-&gt;<a class="code" href="classtree__newnode.html#af024b549dee406efb459720399e3ba46">tattr</a>, <a class="code" href="classtree__newnode.html#af024b549dee406efb459720399e3ba46">tattr</a>);</div>
+<div class="line">    this-&gt;<a class="code" href="classtree__newnode.html#a71eae2a3f8fbcb7e2c4245ae0303d171">flags</a> = <a class="code" href="classtree__newnode.html#a71eae2a3f8fbcb7e2c4245ae0303d171">flags</a>;</div>
+<div class="line">    this-&gt;<a class="code" href="classtree__newnode.html#a0fae844863614c2f9e26a2534373a9b7">type</a> = nid;</div>
+<div class="line">    this-&gt;<a class="code" href="classtree__newnode.html#acd8405c3d6f344a21ecdadcbf3db14a6">node_cb</a> = <a class="code" href="classtree__newnode.html#acd8405c3d6f344a21ecdadcbf3db14a6">node_cb</a>;</div>
+<div class="line">    this-&gt;<a class="code" href="classtree__newnode.html#ad29bf242b359fc093c474559e6f1be21">p_cb</a> = <a class="code" href="classtree__newnode.html#ad29bf242b359fc093c474559e6f1be21">p_cb</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -304,7 +321,48 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00612">DTSDVMCtrl::AppendContainer()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00608">DTSDVMCtrl::AppendItem()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00041">data</a>, <a class="el" href="dtsgui_8h_source.html#l00233">DTS_TREE_NEW_NODE_CONTAINER</a>, <a class="el" href="dtsgui_8h_source.html#l00231">DTS_TREE_NEW_NODE_DELETE</a>, <a class="el" href="dtsgui_8h_source.html#l00229">DTS_TREE_NEW_NODE_EDIT</a>, <a class="el" href="dtsgui_8h_source.html#l00235">DTS_TREE_NEW_NODE_SORT</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00051">flags</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00655">DTSTreeWindow::GetTreeCtrl()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00047">node</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00044">node_cb</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00045">p_cb</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00777">DTSPanel::Panel2XML()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00814">DTSTreeWindow::Select()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00219">DTSDVMListStore::SetXMLData()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00049">tattr</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00043">tn</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00042">tv</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00050">type</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00048">vitem</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00046">xpath</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00085">handle_newtreenode_cb()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                       {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a> *tw = (<a class="code" href="class_d_t_s_tree_window.html">DTSTreeWindow</a>*)<a class="code" href="classtree__newnode.html#a6d2aeccaa71eac80144dfb2353b51adc">tv</a>;</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_ctrl.html">DTSDVMCtrl</a> *tree = tw-&gt;<a class="code" href="class_d_t_s_tree_window.html#aae9e856659f3701452382e2cdcba8463">GetTreeCtrl</a>();</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *ls;</div>
+<div class="line">    wxDataViewItem item, root;</div>
+<div class="line">    <span class="keyword">struct </span>xml_node *xn;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *name;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!(xn = dp-&gt;<a class="code" href="class_d_t_s_panel.html#ad28f5ed6bd19e9d685a18df8bf568f92">Panel2XML</a>(<a class="code" href="classtree__newnode.html#a47004081f2ee1240bf613990048ffeb4">xpath</a>, <a class="code" href="classtree__newnode.html#a50e4845fff0149464cfb8ffe105b061c">node</a>, <a class="code" href="classtree__newnode.html#abeb52a93336763f855d2136268fb13a6">vitem</a>, <a class="code" href="classtree__newnode.html#af024b549dee406efb459720399e3ba46">tattr</a>))) {</div>
+<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classtree__newnode.html#af024b549dee406efb459720399e3ba46">tattr</a>) {</div>
+<div class="line">        name = xml_getattr(xn, <a class="code" href="classtree__newnode.html#af024b549dee406efb459720399e3ba46">tattr</a>);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        name = xn-&gt;value;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    root = wxDataViewItem(this-&gt;<a class="code" href="classtree__newnode.html#aa910ec0ca8be88d01c6595984213b816">tn</a>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classtree__newnode.html#a71eae2a3f8fbcb7e2c4245ae0303d171">flags</a> &amp; <a class="code" href="group___c_o_r_e.html#gga7ecd2a00f2306c0b94734a72a7899898a67752f3ce4c088a226eb85e1f2369532" title="Node is a Container.">DTS_TREE_NEW_NODE_CONTAINER</a>) {</div>
+<div class="line">        ls = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)tree-&gt;<a class="code" href="class_d_t_s_d_v_m_ctrl.html#a853bc63ae2098cf907897dfe896f38b2">AppendContainer</a>(root, name, <a class="code" href="classtree__newnode.html#a71eae2a3f8fbcb7e2c4245ae0303d171">flags</a> &amp; <a class="code" href="group___c_o_r_e.html#gga7ecd2a00f2306c0b94734a72a7899898a92d0796e80ba757f7f74979253423b98" title="Allow editing of the node.">DTS_TREE_NEW_NODE_EDIT</a>, <a class="code" href="classtree__newnode.html#a71eae2a3f8fbcb7e2c4245ae0303d171">flags</a> &amp; <a class="code" href="group___c_o_r_e.html#gga7ecd2a00f2306c0b94734a72a7899898ab4026cda71b1fb600c8af942c1194e99" title="Container node allows sorting.">DTS_TREE_NEW_NODE_SORT</a>, <a class="code" href="classtree__newnode.html#a71eae2a3f8fbcb7e2c4245ae0303d171">flags</a> &amp; <a class="code" href="group___c_o_r_e.html#gga7ecd2a00f2306c0b94734a72a7899898a09bf4479510d6996e8c2d0e3cd27c714" title="Allow deleteing the node from right click menu.">DTS_TREE_NEW_NODE_DELETE</a>, <a class="code" href="classtree__newnode.html#a0fae844863614c2f9e26a2534373a9b7">type</a>, <a class="code" href="classtree__newnode.html#ad29bf242b359fc093c474559e6f1be21">p_cb</a>, <a class="code" href="classtree__newnode.html#a0f8198927692046e5763c7e126ea101c">data</a>).GetID();</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        ls = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)tree-&gt;<a class="code" href="class_d_t_s_d_v_m_ctrl.html#a60de6e9342a4c140fa2b72acfbfd97dc">AppendItem</a>(root, name, <a class="code" href="classtree__newnode.html#a71eae2a3f8fbcb7e2c4245ae0303d171">flags</a> &amp; DTS_TREE_NEW_NODE_EDIT, <a class="code" href="classtree__newnode.html#a71eae2a3f8fbcb7e2c4245ae0303d171">flags</a> &amp; DTS_TREE_NEW_NODE_SORT, <a class="code" href="classtree__newnode.html#a71eae2a3f8fbcb7e2c4245ae0303d171">flags</a> &amp; DTS_TREE_NEW_NODE_DELETE, <a class="code" href="classtree__newnode.html#a0fae844863614c2f9e26a2534373a9b7">type</a>, <a class="code" href="classtree__newnode.html#ad29bf242b359fc093c474559e6f1be21">p_cb</a>, <a class="code" href="classtree__newnode.html#a0f8198927692046e5763c7e126ea101c">data</a>).GetID();</div>
+<div class="line">    }</div>
+<div class="line">    ls-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#aa82d333247a2bf537c3acdeae7635e15">SetXMLData</a>(xn, <a class="code" href="classtree__newnode.html#af024b549dee406efb459720399e3ba46">tattr</a>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!tree-&gt;IsExpanded(root)) {</div>
+<div class="line">        tree-&gt;Expand(root);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/*the panel event manager holds a ref for nn*/</span></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classtree__newnode.html#acd8405c3d6f344a21ecdadcbf3db14a6">node_cb</a>) {</div>
+<div class="line">        <a class="code" href="classtree__newnode.html#acd8405c3d6f344a21ecdadcbf3db14a6">node_cb</a>(<a class="code" href="classtree__newnode.html#a6d2aeccaa71eac80144dfb2353b51adc">tv</a>, ls, xn, <a class="code" href="classtree__newnode.html#a0f8198927692046e5763c7e126ea101c">data</a>);</div>
+<div class="line">    }</div>
+<div class="line">    objunref(xn);</div>
+<div class="line"></div>
+<div class="line">    item = wxDataViewItem(ls);</div>
+<div class="line">    tw-&gt;<a class="code" href="class_d_t_s_tree_window.html#a16e8b0b7de01806b70235b4eac89345e">Select</a>(item);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a307fb2ff9afc18429af055850f3c01a8"></a>
@@ -362,7 +420,24 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00103">handle_newtreenode()</a>, <a class="el" href="dtsgui_8h_source.html#l00216">wx_PANEL_EVENT_BUTTON</a>, and <a class="el" href="dtsgui_8h_source.html#l00208">wx_PANEL_EVENT_BUTTON_YES</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00762">DTS_C_API::dtsgui_newxmltreenode()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                            {</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="classtree__newnode.html">tree_newnode</a> *nn = (<span class="keyword">class </span><a class="code" href="classtree__newnode.html">tree_newnode</a>*)<a class="code" href="classtree__newnode.html#a0f8198927692046e5763c7e126ea101c">data</a>;</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *dp = (<a class="code" href="class_d_t_s_panel.html">DTSPanel</a>*)p;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classtree__newnode.html#a0fae844863614c2f9e26a2534373a9b7">type</a> != <a class="code" href="group___c_o_r_e.html#gga54d7edaba9c015c3b5310ed3080b82e6a331937b86eb259d1d84728d28fbed79d" title="Button press event.">wx_PANEL_EVENT_BUTTON</a>) {</div>
+<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">switch</span>(event) {</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#gga5082bae7f0b5d2b7d715e40450f302eca6ce91176e6c929e87d7acbd000d07f79" title="A Affirmative button.">wx_PANEL_EVENT_BUTTON_YES</a>:</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">default</span>:</div>
+<div class="line">            <span class="keywordflow">return</span> 1;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> nn-&gt;<a class="code" href="classtree__newnode.html#a64abbefc5f204cfbf9b7ad0bd7e035cf">handle_newtreenode</a>(<a class="code" href="classdtsgui.html">dtsgui</a>, dp);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -640,7 +715,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classtree__newnode.html">tree_newnode</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:37 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

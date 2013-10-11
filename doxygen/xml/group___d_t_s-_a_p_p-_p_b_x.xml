@@ -1,0 +1,557 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="group___d_t_s-_a_p_p-_p_b_x" kind="group">
+    <compoundname>DTS-APP-PBX</compoundname>
+    <title>PBX Configuration</title>
+    <innerfile refid="pbxconfig_8c">pbxconfig.c</innerfile>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_p_b_x_1ga02bdd2b74e929bf843bed40de61f9c97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pbxconf_trunk</definition>
+        <argsstring>(dtsgui_pane pg, void *data)</argsstring>
+        <name>pbxconf_trunk</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pg</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Configuration callback for tunk panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data Reference to data held by callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" line="37" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" bodystart="37" bodyend="117"/>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" compoundref="wrapper_8cpp" startline="1219" endline="1221">dtsgui_listbox_add</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" compoundref="wrapper_8cpp" startline="1403" endline="1406">dtsgui_xmllistbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <references refid="classform__item_1a4b647b26beee4bb3f3935645f3eb1a9b" compoundref="pitems_8h" startline="64">form_item::name</references>
+        <references refid="classform__item_1a031f8fb162f54579bc1ba53a751c5414" compoundref="pitems_8h" startline="69">form_item::value</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_p_b_x_1ga0f2cc9199cbbf0c942507ee38bbf04d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pbxconf_topts</definition>
+        <argsstring>(dtsgui_pane pg, void *data)</argsstring>
+        <name>pbxconf_topts</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pg</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Configuration callback for trunk options panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data Reference to data held by callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" line="122" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" bodystart="122" bodyend="134"/>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" compoundref="wrapper_8cpp" startline="1386" endline="1389">dtsgui_xmlcheckbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_p_b_x_1ga2ac17cfecd9b9824f342ba665392a502" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pbxconf_misdn</definition>
+        <argsstring>(dtsgui_pane pg, void *data)</argsstring>
+        <name>pbxconf_misdn</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pg</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Configuration callback for mISDN panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data Reference to data held by callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" line="139" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" bodystart="139" bodyend="150"/>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" compoundref="wrapper_8cpp" startline="1386" endline="1389">dtsgui_xmlcheckbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_p_b_x_1ga836477fa7fce0013efd28a4b955f58b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pbxconf_e1</definition>
+        <argsstring>(dtsgui_pane pg, void *data)</argsstring>
+        <name>pbxconf_e1</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pg</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Configuration callback for E1/T1 panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data Reference to data held by callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" line="155" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" bodystart="155" bodyend="180"/>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" compoundref="wrapper_8cpp" startline="1219" endline="1221">dtsgui_listbox_add</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" compoundref="wrapper_8cpp" startline="1386" endline="1389">dtsgui_xmlcheckbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" compoundref="wrapper_8cpp" startline="1403" endline="1406">dtsgui_xmllistbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_p_b_x_1ga085f542ab4bb26773f2a68e636a681e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pbxconf_mfcr2</definition>
+        <argsstring>(dtsgui_pane pg, void *data)</argsstring>
+        <name>pbxconf_mfcr2</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pg</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Configuration callback for MFC/R2 panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data Reference to data held by callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" line="185" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" bodystart="185" bodyend="217"/>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" compoundref="wrapper_8cpp" startline="1219" endline="1221">dtsgui_listbox_add</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" compoundref="wrapper_8cpp" startline="1386" endline="1389">dtsgui_xmlcheckbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" compoundref="wrapper_8cpp" startline="1403" endline="1406">dtsgui_xmllistbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_p_b_x_1ga13ef8f931ae62e6036a1ac3e6596a424" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pbxconf_global</definition>
+        <argsstring>(dtsgui_pane pg, void *data)</argsstring>
+        <name>pbxconf_global</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pg</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Configuration callback for global settings panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data Reference to data held by callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" line="222" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" bodystart="222" bodyend="239"/>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" compoundref="wrapper_8cpp" startline="1219" endline="1221">dtsgui_listbox_add</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" compoundref="wrapper_8cpp" startline="1386" endline="1389">dtsgui_xmlcheckbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" compoundref="wrapper_8cpp" startline="1403" endline="1406">dtsgui_xmllistbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1gab8e603da01cb2c17d0ecfbbe216ac750" compoundref="wrapper_8cpp" startline="1368" endline="1371">dtsgui_xmlpasswdbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_p_b_x_1gaea392efee7b48a143a527ffe383e6d81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pbxconf_acd</definition>
+        <argsstring>(dtsgui_pane pg, void *data)</argsstring>
+        <name>pbxconf_acd</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pg</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Configuration callback for ACD options panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data Reference to data held by callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" line="244" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" bodystart="244" bodyend="248"/>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_p_b_x_1gaf79c511cab086f9152e08d0625f78b05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pbxconf_default</definition>
+        <argsstring>(dtsgui_pane pg, void *data)</argsstring>
+        <name>pbxconf_default</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pg</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Configuration callback for extension default panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data Reference to data held by callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" line="253" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" bodystart="253" bodyend="299"/>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" compoundref="wrapper_8cpp" startline="1219" endline="1221">dtsgui_listbox_add</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" compoundref="wrapper_8cpp" startline="1386" endline="1389">dtsgui_xmlcheckbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" compoundref="wrapper_8cpp" startline="1403" endline="1406">dtsgui_xmllistbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <references refid="classform__item_1a4b647b26beee4bb3f3935645f3eb1a9b" compoundref="pitems_8h" startline="64">form_item::name</references>
+        <references refid="classform__item_1a031f8fb162f54579bc1ba53a751c5414" compoundref="pitems_8h" startline="69">form_item::value</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_p_b_x_1ga8b33d2f08d418e2e390c0d22555cfba0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pbxconf_location</definition>
+        <argsstring>(dtsgui_pane pg, void *data)</argsstring>
+        <name>pbxconf_location</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pg</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Configuration callback for location panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data Reference to data held by callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" line="304" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" bodystart="304" bodyend="313"/>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_p_b_x_1ga17474314ab394325f10da55d073f03d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pbxconf_incoming</definition>
+        <argsstring>(dtsgui_pane pg, void *data)</argsstring>
+        <name>pbxconf_incoming</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pg</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Configuration callback for incoming panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data Reference to data held by callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" line="318" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" bodystart="318" bodyend="338"/>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" compoundref="wrapper_8cpp" startline="1219" endline="1221">dtsgui_listbox_add</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" compoundref="wrapper_8cpp" startline="1386" endline="1389">dtsgui_xmlcheckbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" compoundref="wrapper_8cpp" startline="1403" endline="1406">dtsgui_xmllistbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_p_b_x_1gae6adb6e74265f4c49f5878c8c6bacec5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pbxconf_numplan</definition>
+        <argsstring>(dtsgui_pane pg, void *data)</argsstring>
+        <name>pbxconf_numplan</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pg</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Configuration callback for number plan panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data Reference to data held by callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" line="343" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" bodystart="343" bodyend="355"/>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_p_b_x_1ga5db8461977ca01a926afa5090e12dcdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pbxconf_autoadd</definition>
+        <argsstring>(dtsgui_pane pg, void *data)</argsstring>
+        <name>pbxconf_autoadd</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>pg</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Configuration callback for auto add panel. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data Reference to data held by callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" line="360" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" bodystart="360" bodyend="367"/>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" compoundref="wrapper_8cpp" startline="1386" endline="1389">dtsgui_xmlcheckbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane pbx_settings</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>pbx_settings</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Configure and return the PBX configuration tab view. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Title of menuitem. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference of data associated with menu item. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" line="374" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/pbxconfig.c" bodystart="374" bodyend="399"/>
+        <references refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" compoundref="wxforms_8c" startline="56" endline="75">app_getxmldoc</references>
+        <references refid="group___c-_a_p_i-_panel-_tab_1gae7cf11b65ccca530aecef7f7daa389e9" compoundref="wrapper_8cpp" startline="588" endline="591">dtsgui_newtabpage</references>
+        <references refid="group___c-_a_p_i-_panel_1ga05cf1592d301351aa838bd23c710f3bb" compoundref="wrapper_8cpp" startline="520" endline="523">dtsgui_tabwindow</references>
+        <references refid="group___d_t_s-_a_p_p-_p_b_x_1gaea392efee7b48a143a527ffe383e6d81" compoundref="pbxconfig_8c" startline="244" endline="248">pbxconf_acd</references>
+        <references refid="group___d_t_s-_a_p_p-_p_b_x_1ga5db8461977ca01a926afa5090e12dcdf" compoundref="pbxconfig_8c" startline="360" endline="367">pbxconf_autoadd</references>
+        <references refid="group___d_t_s-_a_p_p-_p_b_x_1gaf79c511cab086f9152e08d0625f78b05" compoundref="pbxconfig_8c" startline="253" endline="299">pbxconf_default</references>
+        <references refid="group___d_t_s-_a_p_p-_p_b_x_1ga836477fa7fce0013efd28a4b955f58b5" compoundref="pbxconfig_8c" startline="155" endline="180">pbxconf_e1</references>
+        <references refid="group___d_t_s-_a_p_p-_p_b_x_1ga13ef8f931ae62e6036a1ac3e6596a424" compoundref="pbxconfig_8c" startline="222" endline="239">pbxconf_global</references>
+        <references refid="group___d_t_s-_a_p_p-_p_b_x_1ga17474314ab394325f10da55d073f03d4" compoundref="pbxconfig_8c" startline="318" endline="338">pbxconf_incoming</references>
+        <references refid="group___d_t_s-_a_p_p-_p_b_x_1ga8b33d2f08d418e2e390c0d22555cfba0" compoundref="pbxconfig_8c" startline="304" endline="313">pbxconf_location</references>
+        <references refid="group___d_t_s-_a_p_p-_p_b_x_1ga085f542ab4bb26773f2a68e636a681e9" compoundref="pbxconfig_8c" startline="185" endline="217">pbxconf_mfcr2</references>
+        <references refid="group___d_t_s-_a_p_p-_p_b_x_1ga2ac17cfecd9b9824f342ba665392a502" compoundref="pbxconfig_8c" startline="139" endline="150">pbxconf_misdn</references>
+        <references refid="group___d_t_s-_a_p_p-_p_b_x_1gae6adb6e74265f4c49f5878c8c6bacec5" compoundref="pbxconfig_8c" startline="343" endline="355">pbxconf_numplan</references>
+        <references refid="group___d_t_s-_a_p_p-_p_b_x_1ga0f2cc9199cbbf0c942507ee38bbf04d9" compoundref="pbxconfig_8c" startline="122" endline="134">pbxconf_topts</references>
+        <references refid="group___d_t_s-_a_p_p-_p_b_x_1ga02bdd2b74e929bf843bed40de61f9c97" compoundref="pbxconfig_8c" startline="37" endline="117">pbxconf_trunk</references>
+        <references refid="group___c_o_r_e_1ga4ef37ee1286eb68a9f5663813f134be2" compoundref="dtsgui_8h" startline="271">wx_PANEL_BUTTON_ACTION</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="240" endline="268">config_menu</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>PBX Configuration. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

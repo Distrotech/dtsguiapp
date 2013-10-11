@@ -3,6 +3,9 @@
 .nh
 .SH NAME
 app/toolbar.cpp \- 
+.PP
+Application toolbar\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -25,6 +28,7 @@ app/toolbar.cpp \-
 .ti -1c
 .RI "class \fBDTSAPPToolBar\fP"
 .br
+.RI "\fIApplication toolbar class\&. \fP"
 .in -1c
 .SS "Macros"
 
@@ -32,6 +36,7 @@ app/toolbar.cpp \-
 .ti -1c
 .RI "#define \fB__DTS_C_API\fP"
 .br
+.RI "\fIAllow access to the C API from C++\&. \fP"
 .in -1c
 .SS "Functions"
 
@@ -39,21 +44,15 @@ app/toolbar.cpp \-
 .ti -1c
 .RI "void * \fBapp_toolbar\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, void *pw, long style, int id, const char *name, void *data)"
 .br
+.RI "\fICallback called when the toolbar is to be created\&. \fP"
 .in -1c
-.SH "Macro Definition Documentation"
+.SH "Detailed Description"
 .PP 
-.SS "#define __DTS_C_API"
+Application toolbar\&. 
+
 
 .PP
-Definition at line 19 of file toolbar\&.cpp\&.
-.SH "Function Documentation"
-.PP 
-.SS "void* app_toolbar (struct \fBdtsgui\fP *dtsgui, void *pw, longstyle, intid, const char *name, void *data)"
-
-.PP
-Definition at line 111 of file toolbar\&.cpp\&.
-.PP
-Referenced by guiconfig_cb()\&.
+Definition in file \fBtoolbar\&.cpp\fP\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

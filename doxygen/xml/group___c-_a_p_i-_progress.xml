@@ -200,6 +200,6 @@
     <briefdescription>
 <para>Popup dialog containing a progress bar and posible cancel button. </para>    </briefdescription>
     <detaileddescription>
-<para><xrefsect id="todo_1_todo000008"><xreftitle>Todo</xreftitle><xrefdescription><para>Allow multiple instances of progress dialog not only the single interface at present. </para></xrefdescription></xrefsect></para>    </detaileddescription>
+<para><xrefsect id="todo_1_todo000010"><xreftitle>Todo</xreftitle><xrefdescription><para>Allow multiple instances of progress dialog not only the single interface at present. </para></xrefdescription></xrefsect></para>    </detaileddescription>
   </compounddef>
 </doxygen>

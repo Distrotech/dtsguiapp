@@ -150,6 +150,13 @@ Not yet implemted who knows maybe it will maybe it wont\&.
 Definition at line 938 of file wrapper\&.cpp\&.
 .PP
 References DTSPanel::SetConfigCallback()\&.
+.PP
+.nf
+                                                                            {
+    DTSPanel *p = (DTSPanel *)pane;
+    p->SetConfigCallback(cb, data);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_delpane (\fBdtsgui_pane\fPpane)"
 
 .PP
@@ -166,6 +173,12 @@ This is unlikly too be needed as the GUI manages panels\&.
 
 .PP
 Definition at line 561 of file wrapper\&.cpp\&.
+.PP
+.nf
+                                      {
+    delete (DTSPanel *)pane;
+}
+.fi
 .SS "struct curl_post* DTS_C_API::dtsgui_pane2post (\fBdtsgui_pane\fPp)\fC [read]\fP"
 
 .PP
@@ -197,6 +210,13 @@ Definition at line 887 of file wrapper\&.cpp\&.
 References DTSPanel::Panel2Post()\&.
 .PP
 Referenced by post_items()\&.
+.PP
+.nf
+                                                  {
+    DTSPanel *dp = (DTSPanel*)p;
+    return dp->Panel2Post();
+}
+.fi
 .SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_panel (struct \fBdtsgui\fP *dtsgui, const char *name, const char *title, intbutmask, enum \fBpanel_type\fPtype, void *userdata)"
 
 .PP
@@ -238,6 +258,13 @@ Definition at line 464 of file wrapper\&.cpp\&.
 References DTSFrame::CreatePane(), and dtsgui::GetFrame()\&.
 .PP
 Referenced by test_menu()\&.
+.PP
+.nf
+                                                                                                                                        {
+    DTSFrame *frame = dtsgui->GetFrame();
+    return frame->CreatePane(name, title, butmask, type, userdata);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_panel_setxml (\fBdtsgui_pane\fPpane, struct xml_doc *xmldoc)"
 
 .PP
@@ -260,6 +287,13 @@ Pass a reference to a XML Doc Structure to the panel\&. Assign a reference to a 
 Definition at line 534 of file wrapper\&.cpp\&.
 .PP
 References DTSObject::SetXMLDoc()\&.
+.PP
+.nf
+                                                                          {
+    DTSPanel *p = (DTSPanel *)pane;
+    p->SetXMLDoc(xmldoc);
+}
+.fi
 .SS "void* DTS_C_API::dtsgui_paneldata (\fBdtsgui_pane\fPpane)"
 
 .PP
@@ -290,6 +324,13 @@ Definition at line 901 of file wrapper\&.cpp\&.
 References DTSObject::GetUserData()\&.
 .PP
 Referenced by post_items()\&.
+.PP
+.nf
+                                                {
+    DTSPanel *p = (DTSPanel*)pane;
+    return p->GetUserData();
+}
+.fi
 .SS "struct xml_doc* DTS_C_API::dtsgui_panelxml (\fBdtsgui_pane\fPpane)\fC [read]\fP"
 
 .PP
@@ -322,6 +363,13 @@ Definition at line 550 of file wrapper\&.cpp\&.
 References DTSObject::GetXMLDoc()\&.
 .PP
 Referenced by network_adsl_link(), network_adsl_link_new(), network_config(), and network_newwifi()\&.
+.PP
+.nf
+                                                  {
+    DTSPanel *p = (DTSPanel *)pane;
+    return p->GetXMLDoc();
+}
+.fi
 .SS "struct xml_node* DTS_C_API::dtsgui_panetoxml (\fBdtsgui_pane\fPp, const char *xpath, const char *node, const char *nodeval, const char *attrkey)\fC [read]\fP"
 
 .PP
@@ -355,6 +403,13 @@ New XML Node\&.
 Definition at line 957 of file wrapper\&.cpp\&.
 .PP
 References DTSPanel::Panel2XML()\&.
+.PP
+.nf
+                                                                                                                                {
+    DTSPanel *dp = (DTSPanel*)p;
+    return dp->Panel2XML(xpath, node, nodeval, attrkey);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_rundialog (\fBdtsgui_pane\fPpane, \fBevent_callback\fPevcb, void *data)"
 
 .PP
@@ -377,6 +432,13 @@ Execute a dialog panel\&. Pop up and run a dialog pane the result will be obtain
 Definition at line 969 of file wrapper\&.cpp\&.
 .PP
 References DTSDialog::RunDialog()\&.
+.PP
+.nf
+                                                                         {
+    DTSDialog *p = (DTSDialog *)pane;
+    p->RunDialog(evcb, data);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_setevcallback (\fBdtsgui_pane\fPpane, \fBevent_callback\fPevcb, void *data)"
 
 .PP
@@ -405,6 +467,13 @@ Definition at line 853 of file wrapper\&.cpp\&.
 References DTSPanel::SetEventCallback()\&.
 .PP
 Referenced by network_iface_pane_cb(), and test_menu()\&.
+.PP
+.nf
+                                                                            {
+    DTSPanel *p = (DTSPanel *)pane;
+    return p->SetEventCallback(evcb, data);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_setstatus (\fBdtsgui_pane\fPpane, const char *status)"
 
 .PP
@@ -427,6 +496,13 @@ Definition at line 922 of file wrapper\&.cpp\&.
 References DTSPanel::SetStatus()\&.
 .PP
 Referenced by handle_updatetabpane()\&.
+.PP
+.nf
+                                                            {
+    DTSPanel *p = (DTSPanel*)pane;
+    return p->SetStatus(status);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_settitle (\fBdtsgui_pane\fPpane, const char *title)"
 
 .PP
@@ -447,6 +523,13 @@ Update the title on the panel if it exists\&. \fBSee Also:\fP
 Definition at line 911 of file wrapper\&.cpp\&.
 .PP
 References DTSPanel::SetTitle()\&.
+.PP
+.nf
+                                                          {
+    DTSPanel *p = (DTSPanel*)pane;
+    return p->SetTitle(title);
+}
+.fi
 .SS "\fBdtsgui_tabview\fP DTS_C_API::dtsgui_tabwindow (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
 
 .PP
@@ -478,6 +561,13 @@ Definition at line 520 of file wrapper\&.cpp\&.
 References dtsgui::GetFrame()\&.
 .PP
 Referenced by iface_config(), and pbx_settings()\&.
+.PP
+.nf
+                                                                                             {
+    DTSFrame *frame = dtsgui->GetFrame();
+    return  new DTSTabWindow(frame, title, data);
+}
+.fi
 .SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_textpane (struct \fBdtsgui\fP *dtsgui, const char *title, const char *buf)"
 
 .PP
@@ -511,6 +601,13 @@ Definition at line 483 of file wrapper\&.cpp\&.
 References dtsgui::GetFrame(), and DTSFrame::TextPanel()\&.
 .PP
 Referenced by help_menu(), view_config_conf(), and view_config_xml()\&.
+.PP
+.nf
+                                                                                       {
+    DTSFrame *f = dtsgui->GetFrame();
+    return f->TextPanel(title, buf);
+}
+.fi
 .SS "\fBdtsgui_treeview\fP DTS_C_API::dtsgui_treewindow (struct \fBdtsgui\fP *dtsgui, const char *title, \fBdtsgui_tree_cb\fPtree_cb, void *userdata, struct xml_doc *xmldoc)"
 
 .PP
@@ -545,6 +642,13 @@ Definition at line 503 of file wrapper\&.cpp\&.
 References dtsgui::GetFrame()\&.
 .PP
 Referenced by advanced_config()\&.
+.PP
+.nf
+                                                                                                                                                   {
+    DTSFrame *frame = dtsgui->GetFrame();
+    return new DTSTreeWindow(frame, frame, tree_cb, title, 25, NULL, xmldoc);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_xmlpanel_update (\fBdtsgui_pane\fPpane)"
 
 .PP
@@ -571,6 +675,13 @@ Definition at line 869 of file wrapper\&.cpp\&.
 References DTSPanel::Update_XML()\&.
 .PP
 Referenced by system_wizard()\&.
+.PP
+.nf
+                                                     {
+    DTSPanel *p = (DTSPanel*)pane;
+    p->Update_XML();
+}
+.fi
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

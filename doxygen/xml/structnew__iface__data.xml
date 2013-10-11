@@ -9,14 +9,14 @@
         <argsstring></argsstring>
         <name>tv</name>
         <briefdescription>
-        </briefdescription>
+<para>Tabview to add new tab too. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="27" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="27" bodyend="-1"/>
-        <referencedby refid="interface_8c_1a23ef5c5cf103f36dd179c5625f8f8576" compoundref="interface_8c" startline="63" endline="75">get_newiface_data</referencedby>
-        <referencedby refid="interface_8c_1adcfa585026374cce3c2443ea55cebc25" compoundref="interface_8c" startline="137" endline="142">network_iface_new_pane_cb</referencedby>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="39" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="39" bodyend="-1"/>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1ga23ef5c5cf103f36dd179c5625f8f8576" compoundref="interface_8c" startline="90" endline="102">get_newiface_data</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gadcfa585026374cce3c2443ea55cebc25" compoundref="interface_8c" startline="181" endline="189">network_iface_new_pane_cb</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" prot="public" static="no" mutable="no">
         <type>struct xml_doc *</type>
@@ -24,22 +24,22 @@
         <argsstring></argsstring>
         <name>xmldoc</name>
         <briefdescription>
-        </briefdescription>
+<para>XML Document to insert new node into. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="28" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="28" bodyend="-1"/>
-        <referencedby refid="interface_8c_1ad806ada5b6aa10cb8e8b21af8fe03c33" compoundref="interface_8c" startline="54" endline="61">free_newiface_data</referencedby>
-        <referencedby refid="interface_8c_1a23ef5c5cf103f36dd179c5625f8f8576" compoundref="interface_8c" startline="63" endline="75">get_newiface_data</referencedby>
-        <referencedby refid="interface_8c_1adcfa585026374cce3c2443ea55cebc25" compoundref="interface_8c" startline="137" endline="142">network_iface_new_pane_cb</referencedby>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="41" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="41" bodyend="-1"/>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gad806ada5b6aa10cb8e8b21af8fe03c33" compoundref="interface_8c" startline="75" endline="82">free_newiface_data</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1ga23ef5c5cf103f36dd179c5625f8f8576" compoundref="interface_8c" startline="90" endline="102">get_newiface_data</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gadcfa585026374cce3c2443ea55cebc25" compoundref="interface_8c" startline="181" endline="189">network_iface_new_pane_cb</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Structure containing treeview and xmldoc for creating new tab. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="26" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="26" bodyend="29"/>
+    <location file="/usr/src/dtsapplib/dtsguiapp/app/interface.c" line="37" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/interface.c" bodystart="37" bodyend="42"/>
     <listofallmembers>
       <member refid="structnew__iface__data_1a9d79a7426a503e08072ca03cd2e03bd2" prot="public" virt="non-virtual"><scope>new_iface_data</scope><name>tv</name></member>
       <member refid="structnew__iface__data_1a1e4c0298e74a4fe178240c7335ca7acf" prot="public" virt="non-virtual"><scope>new_iface_data</scope><name>xmldoc</name></member>
