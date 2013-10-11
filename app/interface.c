@@ -16,6 +16,16 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @defgroup DTS-APP-Iface Interface configuration tab view
+  * @ingroup DTS-APP
+  * @brief Tab view panel allowing configuration and addition of interfaces.
+  *
+  * @addtogroup DTS-APP-Iface
+  * @{
+  * @file
+  * @brief Interface configuration panel.*/
+
+
 #include <stdlib.h>
 #include <string.h>
 
@@ -23,15 +33,22 @@
 
 #include "private.h"
 
+/** @brief Structure containing treeview and xmldoc for creating new tab.*/
 struct new_iface_data {
+	/** @brief Tabview to add new tab too.*/
 	dtsgui_tabview tv;
+	/** @brief XML Document to insert new node into.*/
 	struct xml_doc *xmldoc;
 };
 
+/** @brief Pretty pointless structure holding interface name*/
 struct iface_cdata {
+	/** @brief Name of new interface.*/
 	const char *name;
 };
 
+/** @brief Relase references held by structure before free.
+  * @param data Reference to iface_cdata that is about to be freed*/
 void free_iface_cdata(void *data) {
 	struct iface_cdata *cdata = data;
 
@@ -40,6 +57,8 @@ void free_iface_cdata(void *data) {
 	}
 }
 
+/** @brief Allocate new iface_cdata structure
+  * @param val Name of interface.*/
 struct iface_cdata *get_iface_cdata(const char *val) {
 	struct iface_cdata *cd;
 
@@ -51,6 +70,8 @@ struct iface_cdata *get_iface_cdata(const char *val) {
 	return cd;
 }
 
+/** @brief Release references held by structure before free.
+  * @param data Reference to new_iface_data that is about to be freed*/
 void free_newiface_data(void *data) {
 	struct new_iface_data *nd = data;
 
@@ -60,6 +81,12 @@ void free_newiface_data(void *data) {
 
 }
 
+/** @brief Allocate and return a new_iface_data structure.
+  *
+  * This structure is used to create and insert a new tab in the treeview.
+  * @param tv Tabview to allocate new tab too.
+  * @param xmldoc XML Document to create new node in.
+  * @return Reference to new new_iface_data structure*/
 struct new_iface_data *get_newiface_data(dtsgui_tabview tv, struct xml_doc *xmldoc) {
 	struct new_iface_data *nd;
 
@@ -74,6 +101,11 @@ struct new_iface_data *get_newiface_data(dtsgui_tabview tv, struct xml_doc *xmld
 	return nd;
 }
 
+
+/** @brief Configure panel configuration data
+  *
+  * As the new interface name is not known till creation time the configuration data needs to be configured.
+  * @see dtsgui_tabpane_newdata_cb*/
 extern void handle_newxmltabpane(struct xml_doc *xmldoc, struct xml_node *xn, void *tdata, void **cdata, int *last) {
 	struct iface_cdata *ndat = NULL;
 
@@ -82,7 +114,13 @@ extern void handle_newxmltabpane(struct xml_doc *xmldoc, struct xml_node *xn, vo
 	}
 }
 
-/*update data and let system continue by "skiping*/
+/** @brief Event handler callback that will only check the interface name and pass handling to default handler
+  * @param dtsgui Application data ptr.
+  * @param p Panel generating the event.
+  * @param type Event type.
+  * @param event Event id.
+  * @param data Reference to data passed to event handler.
+  * @return 0 on error 1 will allow the event to be handled by default handler.*/
 extern int handle_updatetabpane(struct dtsgui *dtsgui, dtsgui_pane p, int type, int event, void *data) {
 	struct iface_cdata *cdata = data;
 	const char *name;
@@ -120,6 +158,9 @@ extern int handle_updatetabpane(struct dtsgui *dtsgui, dtsgui_pane p, int type, 
 	return 1;
 }
 
+/** @brief Callback called to configure a interface pane.
+  * @param p Panel to configure.
+  * @param data Reference to configuration data iface_cdata.*/
 void network_iface_pane_cb(dtsgui_pane p, void *data) {
 	struct iface_cdata *cdata = data;
 	const char *iface;
@@ -134,14 +175,25 @@ void network_iface_pane_cb(dtsgui_pane p, void *data) {
 	dtsgui_setevcallback(p, handle_updatetabpane, cdata);
 }
 
+/** @brief Callback called for the "New" interface pane.
+  * @param p Panel to configure.
+  * @param data Reference to configuration data new_iface_data.*/
 void network_iface_new_pane_cb(dtsgui_pane p, void *data) {
 	struct new_iface_data *nd = data;
 
-	network_iface_new_pane(p, data);
+	network_iface_new_pane(p);
+	/** @remark use dtsgui_newxmltabpane() helper to atach a callback that will create a new panel
+	  * @see handle_newxmltabpane()
+	  * @see network_iface_pane_cb()*/
 	dtsgui_newxmltabpane(nd->tv, p, "/config/IP/Interfaces", "Interface", "iface", "name", handle_newxmltabpane, network_iface_pane_cb, NULL, nd->xmldoc, nd);
 }
 
 
+/** @brief Callback called when the interface configuration link is selected.
+  * @param dtsgui Application data ptr.
+  * @param title Name assigned to the menu item (not name in menubar).
+  * @param data Userdata referenced in menuitem.
+  * @return Tabview panel to display to configure interface cards.*/
 dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_tabview tabv;
 	struct new_iface_data *nd;
@@ -182,3 +234,5 @@ dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data) {
 	objunref(xmldoc);
 	return tabv;
 }
+
+/** @}*/

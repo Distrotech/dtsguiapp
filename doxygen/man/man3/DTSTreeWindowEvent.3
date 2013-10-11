@@ -81,12 +81,42 @@ Definition at line 87 of file DTSTreeWindow\&.h\&.
 Definition at line 295 of file DTSTreeWindow\&.cpp\&.
 .PP
 References data, dtsgui, DTSDVMCtrl::GetStore(), DTSTreeWindow::GetTreeCtrl(), parent, tree, treecb, and vm\&.
+.PP
+.nf
+                                                                                                                       {
+    if (userdata && objref(userdata)) {
+        data = userdata;
+    } else {
+        data = NULL;
+    }
+    treecb = tree_cb;
+    parent = win;
+    tree = win->GetTreeCtrl();
+    vm = tree->GetStore();
+    if (dtsgui && objref(dtsgui)) {
+        this->dtsgui = dtsgui;
+    } else {
+        this->dtsgui = NULL;
+    }
+}
+.fi
 .SS "DTSTreeWindowEvent::~DTSTreeWindowEvent ()"
 
 .PP
 Definition at line 312 of file DTSTreeWindow\&.cpp\&.
 .PP
 References data\&.
+.PP
+.nf
+                                        {
+    if (dtsgui) {
+        objunref(dtsgui);
+    }
+    if (data) {
+        objunref(data);
+    }
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "void DTSTreeWindowEvent::MenuEvent (wxCommandEvent &event)"
@@ -97,6 +127,34 @@ Definition at line 445 of file DTSTreeWindow\&.cpp\&.
 References a_cont, a_item, DTSFrame::Confirm(), DTSDVMListView::Delete(), DTS_TREEWIN_MENU_DELETE, DTS_TREEWIN_MENU_MOVEDOWN, DTS_TREEWIN_MENU_MOVEUP, DTS_TREEWIN_MENU_SORT, DTSGUI_TREE_CB_DELETE, DTSGUI_TREE_CB_SELECT, DTSObject::GetFrame(), DTSDVMListView::GetParent(), parent, SortParent(), tree, TreeCallback(), and vm\&.
 .PP
 Referenced by DTSTreeWindow::DTSTreeWindow()\&.
+.PP
+.nf
+                                                        {
+    enum treewinmenu eid;
+    wxDataViewItem p_cont;
+    DTSFrame *frame;
+
+    eid=(treewinmenu)event\&.GetId();
+    switch(eid) {
+        case DTS_TREEWIN_MENU_MOVEDOWN:
+        case DTS_TREEWIN_MENU_MOVEUP:
+        case DTS_TREEWIN_MENU_SORT:
+            p_cont = (a_cont == a_item) ? vm->GetParent(a_cont) : a_cont;
+            SortParent(p_cont, eid);
+            break;
+        case DTS_TREEWIN_MENU_DELETE:
+            frame = parent->GetFrame();
+            if (frame->Confirm('Are you sure you want to delete this item')) {
+                p_cont = vm->GetParent(a_item);
+                tree->Select(p_cont);
+                TreeCallback(p_cont, DTSGUI_TREE_CB_SELECT);
+                TreeCallback(a_item, DTSGUI_TREE_CB_DELETE);
+                vm->Delete(a_item);
+            }
+            break;
+    }
+}
+.fi
 .SS "void DTSTreeWindowEvent::OnButton (wxCommandEvent &event)"
 
 .PP
@@ -105,6 +163,28 @@ Definition at line 524 of file DTSTreeWindow\&.cpp\&.
 References DTSTreeWindow::GetActiveNode(), DTSTreeWindow::GetClientPane(), parent, DTSTreeWindow::Select(), DTSPanel::Update_XML(), wx_PANEL_EVENT_BUTTON_NO, and wx_PANEL_EVENT_BUTTON_YES\&.
 .PP
 Referenced by DTSTreeWindow::DTSTreeWindow()\&.
+.PP
+.nf
+                                                       {
+    dtsgui_treenode tn = parent->GetActiveNode();
+    wxDataViewItem item;
+    int eid = event\&.GetId();
+    DTSPanel *pane = parent->GetClientPane();
+
+    switch(eid) {
+        case wx_PANEL_EVENT_BUTTON_YES:
+            pane->Update_XML();
+            break;
+        case wx_PANEL_EVENT_BUTTON_NO:
+            item = wxDataViewItem(tn);
+            parent->Select(item);
+            return;
+        default:
+            break;
+    }
+    event\&.Skip(true);
+}
+.fi
 .SS "void DTSTreeWindowEvent::SortParent (const wxDataViewItemparent, intaction)\fC [private]\fP"
 
 .PP
@@ -113,6 +193,57 @@ Definition at line 396 of file DTSTreeWindow\&.cpp\&.
 References a_cont, a_item, data, DTS_TREEWIN_MENU_MOVEDOWN, DTS_TREEWIN_MENU_MOVEUP, DTS_TREEWIN_MENU_SORT, DTSDVMListView::GetContainers(), DTSDVMListStore::IsExpanded(), DTSDVMListView::MoveChildDown(), DTSDVMListView::MoveChildUp(), DTSDVMListStore::SetExpanded(), DTSDVMListView::SetExpanded(), DTSDVMListView::SortChildren(), tree, and vm\&.
 .PP
 Referenced by MenuEvent()\&.
+.PP
+.nf
+                                                                           {
+    wxDataViewItemArray expanded, selected;
+    DTSDVMListStore *data;
+    unsigned int cont_cnt, cnt;
+
+    /* Get enabled/selection state of parent*/
+    tree->GetSelections(selected);
+
+    /*mark expanded containers*/
+    vm->SetExpanded(parent, tree->IsExpanded(parent));
+    cont_cnt = vm->GetContainers(parent, expanded, false);
+    for (cnt=0; cnt < cont_cnt;cnt++) {
+        vm->SetExpanded(expanded[cnt], tree->IsExpanded(expanded[cnt]));
+    }
+
+    switch(action) {
+        case DTS_TREEWIN_MENU_MOVEDOWN:
+            vm->MoveChildDown(a_item);
+            break;
+        case DTS_TREEWIN_MENU_MOVEUP:
+            vm->MoveChildUp(a_item);
+            break;
+        case DTS_TREEWIN_MENU_SORT:
+            vm->SortChildren(a_cont);
+            break;
+    }
+
+    /*re select all selected*/
+    for (cnt=0; cnt < selected\&.size();cnt++) {
+        tree->Select(wxDataViewItem(selected[cnt]));
+    }
+
+    /*expand root if was expanded*/
+    data = (DTSDVMListStore*)parent\&.GetID();
+    if (data && data->IsExpanded()) {
+        tree->Expand(parent);
+        data->SetExpanded(false);
+    }
+
+    /*re expand containers colapsed*/
+    for (cnt=0; cnt < expanded\&.size();cnt++) {
+        data = (DTSDVMListStore*)expanded[cnt]\&.GetID();
+        if (data && data->IsExpanded()) {
+            tree->Expand(expanded[cnt]);
+            data->SetExpanded(false);
+        }
+    }
+}
+.fi
 .SS "void DTSTreeWindowEvent::SplitterEvent (wxSplitterEvent &event)"
 
 .PP
@@ -121,6 +252,20 @@ Definition at line 471 of file DTSTreeWindow\&.cpp\&.
 References parent, and DTSTreeWindow::SetTreePaneSize()\&.
 .PP
 Referenced by DTSTreeWindow::DTSTreeWindow()\&.
+.PP
+.nf
+                                                             {
+    DTSTreeWindow *tw;
+    int evid;
+
+    tw = (DTSTreeWindow*)parent;
+    evid = event\&.GetEventType();
+
+    if (evid == wxEVT_SPLITTER_SASH_POS_CHANGED) {
+        tw->SetTreePaneSize();
+    }
+}
+.fi
 .SS "void DTSTreeWindowEvent::TreeCallback (const wxDataViewItemitem, enum \fBtree_cbtype\fPcbtype)"
 
 .PP
@@ -129,6 +274,49 @@ Definition at line 483 of file DTSTreeWindow\&.cpp\&.
 References DTSDVMListStore::ConfigPanel(), DTSTreeWindow::CreatePane(), data, DTSGUI_TREE_CB_DELETE, DTSGUI_TREE_CB_EDIT, DTSGUI_TREE_CB_SELECT, DTSDVMListStore::GetTitle(), parent, DTSTreeWindow::SetWindow(), treecb, and DTSTreeWindow::UpdateNodeXML()\&.
 .PP
 Referenced by MenuEvent(), and TreeEvent()\&.
+.PP
+.nf
+                                                                                      {
+    void *tdata = NULL;
+    DTSPanel *sp = NULL;
+    wxWindow *op;
+    DTSDVMListStore *ndata = (item\&.IsOk()) ? (DTSDVMListStore*)item\&.GetID() : NULL;
+
+    if (!ndata) {
+        return;
+    }
+
+    if (objref(data)) {
+        tdata = data;
+    }
+
+    if (treecb) {
+        sp = (DTSPanel*)treecb(dtsgui, parent, ndata, type, ndata->GetTitle()\&.ToUTF8(), tdata);
+    } else {
+        switch(type) {
+            case DTSGUI_TREE_CB_SELECT:
+                sp = parent->CreatePane(wxDataViewItem(ndata));
+                break;
+            case DTSGUI_TREE_CB_EDIT:
+                parent->UpdateNodeXML(wxDataViewItem(ndata), ndata->GetTitle());
+                break;
+            case DTSGUI_TREE_CB_DELETE:
+                break;
+        }
+    }
+
+    if (sp) {
+        ndata->ConfigPanel(sp, parent);
+        op = parent->SetWindow(sp, item);
+        delete op;
+    }
+
+    if (tdata) {
+        objunref(tdata);
+    }
+
+}
+.fi
 .SS "void DTSTreeWindowEvent::TreeEvent (wxDataViewEvent &event)"
 
 .PP
@@ -137,6 +325,83 @@ Definition at line 321 of file DTSTreeWindow\&.cpp\&.
 References a_cont, a_item, DTSDVMListStore::can_delete, DTSDVMListStore::can_edit, DTSDVMListStore::can_sort, data, DTSGUI_TREE_CB_EDIT, DTSGUI_TREE_CB_SELECT, DTSDVMListView::GetChildCount(), DTSDVMListView::GetNodeID(), DTSDVMListView::GetNthChild(), DTSDVMListView::GetParent(), DTSDVMListStore::GetTitle(), DTSDVMListStore::IsContainer(), DTSDVMListView::IsContainer(), parent, DTSTreeWindow::SetPaneTitle(), DTSTreeWindow::ShowRMenu(), tree, TreeCallback(), DTSTreeWindow::TreeResize(), and vm\&.
 .PP
 Referenced by DTSTreeWindow::DTSTreeWindow()\&.
+.PP
+.nf
+                                                         {
+    DTSTreeWindow *tw;
+    wxDataViewItem p_cont, f_item, l_item;
+    int evid, cnt;
+    bool cont,first = true,last = true;
+
+    tw = (DTSTreeWindow*)parent;
+    evid = event\&.GetEventType();
+
+    if (evid == wxEVT_DATAVIEW_SELECTION_CHANGED) {
+        a_item = event\&.GetItem();
+        TreeCallback(a_item, DTSGUI_TREE_CB_SELECT);
+        if ((vm->GetNodeID(a_item) == -1) && vm->IsContainer(a_item)) {
+            tree->Expand(a_item);
+        }
+    } else if (evid == wxEVT_DATAVIEW_ITEM_EXPANDED) {
+        parent->TreeResize();
+    } else if (evid == wxEVT_DATAVIEW_ITEM_CONTEXT_MENU) {
+        DTSDVMListStore *d_p, *d_i, *d_c;
+        bool c_sort, del;
+
+        if ((a_item = event\&.GetItem())) {
+            if (vm->IsContainer(a_item)) {
+                a_cont = a_item;
+                p_cont = vm->GetParent(a_item);
+                cont = true;
+            } else {
+                a_cont = vm->GetParent(a_item);
+                p_cont = a_cont;
+                cont = false;
+            }
+
+            d_p = (DTSDVMListStore*)p_cont\&.GetID();
+            d_c = (DTSDVMListStore*)a_cont\&.GetID();
+            cnt=vm->GetChildCount(p_cont);
+            if (p_cont && d_p->can_sort && (cnt > 1)) {
+                f_item = vm->GetNthChild(p_cont, 0);
+                if (f_item != a_item) {
+                    first = false;
+                }
+                l_item = vm->GetNthChild(p_cont, cnt-1);
+                if (l_item != a_item) {
+                    last = false;
+                }
+            }
+
+            c_sort = (d_p && d_p->can_sort) || (d_c && d_c->can_sort);
+
+            d_i = (DTSDVMListStore*)a_item\&.GetID();
+            del = d_i->can_delete;
+            tw->ShowRMenu(cont, vm->GetChildCount(a_cont), first, last, c_sort, del);
+        }
+    } else if (evid == wxEVT_DATAVIEW_ITEM_START_EDITING) {
+        a_item = event\&.GetItem();
+        DTSDVMListStore *data = (DTSDVMListStore*)event\&.GetItem()\&.GetID();
+        if (!data->can_edit) {
+            event\&.Veto();
+            if (data->IsContainer()) {
+                if (tree->IsExpanded(a_item)) {
+                    tree->Collapse(a_item);
+                } else {
+                    tree->Expand(a_item);
+                }
+            }
+        }
+    } else if (evid == wxEVT_DATAVIEW_ITEM_EDITING_DONE) {
+#ifndef _WIN32
+        DTSDVMListStore *data = (DTSDVMListStore*)event\&.GetItem()\&.GetID();
+        event\&.SetValue(data->GetTitle());
+#endif
+        parent->SetPaneTitle(event\&.GetValue());
+        TreeCallback(event\&.GetItem(), DTSGUI_TREE_CB_EDIT);
+    }
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "wxDataViewItem DTSTreeWindowEvent::a_cont\fC [private]\fP"

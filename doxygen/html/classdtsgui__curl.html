@@ -167,7 +167,14 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_app_8cpp_source.html#l00141">141</a> of file <a class="el" href="_d_t_s_app_8cpp_source.html">DTSApp.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_app_8h_source.html#l00054">curl</a>, <a class="el" href="_d_t_s_app_8cpp_source.html#l00194">curl_progress_ctrl()</a>, <a class="el" href="_d_t_s_app_8cpp_source.html#l00168">curl_progress_function()</a>, <a class="el" href="_d_t_s_app_8cpp_source.html#l00162">curl_startprogress()</a>, <a class="el" href="_d_t_s_app_8cpp_source.html#l00216">CurlPasswd()</a>, <a class="el" href="_d_t_s_app_8h_source.html#l00053">frame</a>, and <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>.</p>
-
+<div class="fragment"><div class="line">                                             {</div>
+<div class="line">    <a class="code" href="classdtsgui__curl.html#adbc2a0aefd2a3412b739c88c82484e9e">frame</a> = <a class="code" href="classdtsgui.html">dtsgui</a>-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="classdtsgui__curl.html#aba670f1e03229a05d40fd5dc5881a241">curl</a> = curlinit();</div>
+<div class="line">    curl_setprogress(<a class="code" href="classdtsgui__curl.html#a2fecec8a1192e94da4125de619ce13e7">curl_progress_function</a>, <a class="code" href="classdtsgui__curl.html#ab1654abd596655f85087851d8d459ee9">curl_progress_ctrl</a>, <a class="code" href="classdtsgui__curl.html#a0794340b11b85da4309931132721b4e2">curl_startprogress</a>, <a class="code" href="classdtsgui.html">dtsgui</a>);</div>
+<div class="line">    curl_setauth_cb(<a class="code" href="classdtsgui__curl.html#a6185280c5a0b3071a7b34a38131754f3">CurlPasswd</a>, <span class="keyword">this</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -187,7 +194,13 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_app_8cpp_source.html#l00154">154</a> of file <a class="el" href="_d_t_s_app_8cpp_source.html">DTSApp.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_app_8h_source.html#l00054">curl</a>.</p>
-
+<div class="fragment"><div class="line">                        {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classdtsgui__curl.html#aba670f1e03229a05d40fd5dc5881a241">curl</a>) {</div>
+<div class="line">        curlclose();</div>
+<div class="line">        <a class="code" href="classdtsgui__curl.html#aba670f1e03229a05d40fd5dc5881a241">curl</a> = 0;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab1654abd596655f85087851d8d459ee9"></a>
@@ -227,7 +240,28 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8cpp_source.html#l00181">DTSFrame::EndProgress()</a>, <a class="el" href="_d_t_s_app_8cpp_source.html#l00243">curl_progress::GetFrame()</a>, <a class="el" href="_d_t_s_app_8h_source.html#l00063">curl_progress::pause</a>, and <a class="el" href="_d_t_s_app_8h_source.html#l00062">curl_progress::pd</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_app_8cpp_source.html#l00141">dtsgui_curl()</a>.</p>
-
+<div class="fragment"><div class="line">                                                          {</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="classcurl__progress.html">curl_progress</a> *cp = (<span class="keyword">class </span><a class="code" href="classcurl__progress.html">curl_progress</a>*)data;</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f = cp-&gt;<a class="code" href="classcurl__progress.html#a8ac357b0cb0498c02528ef12d1c9c1cb">GetFrame</a>();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">switch</span>(<a class="code" href="classcurl__progress.html#a966b43ffd5e1e8e0447f5fa934f327c0">pause</a>) {</div>
+<div class="line">        <span class="keywordflow">case</span> 0:</div>
+<div class="line">            cp-&gt;<a class="code" href="classcurl__progress.html#a966b43ffd5e1e8e0447f5fa934f327c0">pause</a> = <a class="code" href="classcurl__progress.html#a966b43ffd5e1e8e0447f5fa934f327c0">pause</a>;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> 1:</div>
+<div class="line">            f-&gt;<a class="code" href="class_d_t_s_frame.html#aa33b0ba3ce50a7ec4434a78c2be498b7">EndProgress</a>();</div>
+<div class="line">            cp-&gt;<a class="code" href="classcurl__progress.html#a966b43ffd5e1e8e0447f5fa934f327c0">pause</a> = <a class="code" href="classcurl__progress.html#a966b43ffd5e1e8e0447f5fa934f327c0">pause</a>;</div>
+<div class="line">            cp-&gt;<a class="code" href="classcurl__progress.html#ac7738d2384035a652657db4f450222c6">pd</a> = 0;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> -1:</div>
+<div class="line">            <span class="keywordflow">if</span> (cp-&gt;<a class="code" href="classcurl__progress.html#ac7738d2384035a652657db4f450222c6">pd</a>) {</div>
+<div class="line">                f-&gt;<a class="code" href="class_d_t_s_frame.html#aa33b0ba3ce50a7ec4434a78c2be498b7">EndProgress</a>();</div>
+<div class="line">            }</div>
+<div class="line">            objunref(cp);</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2fecec8a1192e94da4125de619ce13e7"></a>
@@ -285,7 +319,32 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00243">curl_progress::GetFrame()</a>, <a class="el" href="_d_t_s_app_8h_source.html#l00063">curl_progress::pause</a>, <a class="el" href="_d_t_s_app_8h_source.html#l00062">curl_progress::pd</a>, <a class="el" href="_d_t_s_frame_8cpp_source.html#l00129">DTSFrame::StartProgress()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00151">DTSFrame::UpdateProgress()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_app_8cpp_source.html#l00141">dtsgui_curl()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                              {</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="classcurl__progress.html">curl_progress</a> *cp = (<span class="keyword">class </span><a class="code" href="classcurl__progress.html">curl_progress</a>*)data;</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f;</div>
+<div class="line">    <span class="keywordtype">int</span> val, tot, cur;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!cp || cp-&gt;<a class="code" href="classcurl__progress.html#a966b43ffd5e1e8e0447f5fa934f327c0">pause</a> || !(f = cp-&gt;<a class="code" href="classcurl__progress.html#a8ac357b0cb0498c02528ef12d1c9c1cb">GetFrame</a>())) {</div>
+<div class="line">        <span class="keywordflow">return</span> 0;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    tot = dltotal+ultotal;</div>
+<div class="line">    cur = ulnow+dlnow;</div>
+<div class="line"></div>
+<div class="line">    val = (tot &amp;&amp; cur) ? (1000/tot) * cur : 0;</div>
+<div class="line">    val = ceil(val);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!cp-&gt;<a class="code" href="classcurl__progress.html#ac7738d2384035a652657db4f450222c6">pd</a>) {</div>
+<div class="line">        cp-&gt;<a class="code" href="classcurl__progress.html#ac7738d2384035a652657db4f450222c6">pd</a> = f-&gt;<a class="code" href="class_d_t_s_frame.html#a55bbe89f24dc6ad3fbe78589bcbd9686">StartProgress</a>(<span class="stringliteral">&quot;Web Transfer Progress&quot;</span>, 1000, 1);</div>
+<div class="line">    };</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (cp-&gt;<a class="code" href="classcurl__progress.html#ac7738d2384035a652657db4f450222c6">pd</a> &amp;&amp; val &amp;&amp; !f-&gt;<a class="code" href="class_d_t_s_frame.html#a3b057f8c85958444049063e75b602108">UpdateProgress</a>(val, wxEmptyString)) {</div>
+<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0794340b11b85da4309931132721b4e2"></a>
@@ -313,7 +372,12 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_app_8cpp_source.html#l00162">162</a> of file <a class="el" href="_d_t_s_app_8cpp_source.html">DTSApp.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_app_8cpp_source.html#l00141">dtsgui_curl()</a>.</p>
-
+<div class="fragment"><div class="line">                                                {</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="classdtsgui__curl.html">dtsgui_curl</a> *dc = (<span class="keyword">class </span><a class="code" href="classdtsgui__curl.html">dtsgui_curl</a>*)data;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keyword">class </span>curl_progress(dc);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6185280c5a0b3071a7b34a38131754f3"></a>
@@ -359,7 +423,13 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_app_8h_source.html#l00053">frame</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00495">DTSFrame::Passwd()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_app_8cpp_source.html#l00141">dtsgui_curl()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                           {</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="classdtsgui__curl.html">dtsgui_curl</a> *dc = (<span class="keyword">class </span><a class="code" href="classdtsgui__curl.html">dtsgui_curl</a>*)data;</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f = dc-&gt;<a class="code" href="classdtsgui__curl.html#adbc2a0aefd2a3412b739c88c82484e9e">frame</a>;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> f-&gt;<a class="code" href="class_d_t_s_frame.html#a5a7ad78662b511e7ef6ac513f8d1a28b">Passwd</a>(user, passwd);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0c8d459eebe5b0738da3dbf398374b98"></a>
@@ -395,7 +465,10 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_app_8cpp_source.html#l00223">223</a> of file <a class="el" href="_d_t_s_app_8cpp_source.html">DTSApp.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_app_8h_source.html#l00053">frame</a>.</p>
-
+<div class="fragment"><div class="line">                                {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="classdtsgui__curl.html#adbc2a0aefd2a3412b739c88c82484e9e">frame</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -457,7 +530,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classdtsgui__curl.html">dtsgui_curl</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

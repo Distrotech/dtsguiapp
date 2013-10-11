@@ -11,5 +11,5 @@ var searchData=
   ['event_5fcallback',['event_callback',['../group___c_o_r_e.html#ga06d1a959e1581116961bca636a919043',1,'dtsgui.h']]],
   ['eventhandler',['EventHandler',['../class_d_t_s_object.html#a392c5ee37a2ca5e82e39cf11bc781eda',1,'DTSObject']]],
   ['expanded',['expanded',['../class_d_t_s_d_v_m_list_store.html#ae7dc669c541e00c95ec04713bf88abac',1,'DTSDVMListStore']]],
-  ['export_5fconfig',['export_config',['../config_8c.html#a01bdf27a0760d9da4bb77918735171c1',1,'export_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;config.c'],['../private_8h.html#a01bdf27a0760d9da4bb77918735171c1',1,'export_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;config.c']]]
+  ['export_5fconfig',['export_config',['../group___d_t_s-_a_p_p-_config.html#ga01bdf27a0760d9da4bb77918735171c1',1,'export_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;config.c'],['../group___d_t_s-_a_p_p-_config.html#ga01bdf27a0760d9da4bb77918735171c1',1,'export_config(struct dtsgui *dtsgui, const char *title, void *data):&#160;config.c']]]
 ];

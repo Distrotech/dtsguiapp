@@ -207,7 +207,20 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_app_8cpp_source.html#l00035">35</a> of file <a class="el" href="_d_t_s_app_8cpp_source.html">DTSApp.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_app_8h_source.html#l00037">cb</a>, <a class="el" href="_d_t_s_app_8h_source.html#l00036">status</a>, <a class="el" href="_d_t_s_app_8h_source.html#l00033">userdata</a>, <a class="el" href="_d_t_s_app_8h_source.html#l00039">wpos</a>, and <a class="el" href="_d_t_s_app_8h_source.html#l00038">wsize</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                                         {</div>
+<div class="line">    <a class="code" href="classdtsgui.html#a04955c97163ded998019001b749a1883">wsize</a> = w_size;</div>
+<div class="line">    <a class="code" href="classdtsgui.html#a7a64aff083bfba24859a4c47e9d89c53">wpos</a> = w_pos;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="classdtsgui.html#aa47c583745cf2afd984cd09088d8fa00">cb</a> = confcallback_cb;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classevdata.html#ab8569cae7cd7a33fde4e51872ef29090">data</a> &amp;&amp; objref(<a class="code" href="classevdata.html#ab8569cae7cd7a33fde4e51872ef29090">data</a>)) {</div>
+<div class="line">        <a class="code" href="classdtsgui.html#a9c7541fac0311f9b2ffcb5c2699719ca">userdata</a> = <a class="code" href="classevdata.html#ab8569cae7cd7a33fde4e51872ef29090">data</a>;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <a class="code" href="classdtsgui.html#a9c7541fac0311f9b2ffcb5c2699719ca">userdata</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    ALLOC_CONST(this-&gt;<a class="code" href="classdtsgui.html#a8ae0201b6a08daf9d9804c1f7550da4e">status</a>, stat);</div>
+<div class="line">    ALLOC_CONST(this-&gt;<a class="code" href="classdtsgui.html#a949562ecff03159461686f2ddc36b936">title</a>, <a class="code" href="classdtsgui.html#a949562ecff03159461686f2ddc36b936">title</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -230,7 +243,30 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_app_8h_source.html#l00034">appframe</a>, and <a class="el" href="_d_t_s_app_8h_source.html#l00035">title</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00300">DTS_C_API::dtsgui_titleappend()</a>.</p>
-
+<div class="fragment"><div class="line">                                         {</div>
+<div class="line">    <span class="keywordtype">char</span> *newtitle;</div>
+<div class="line">    <span class="keywordtype">int</span> len;</div>
+<div class="line"></div>
+<div class="line">    objlock(<span class="keyword">this</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (text) {</div>
+<div class="line">        len = strlen(<a class="code" href="classdtsgui.html#a949562ecff03159461686f2ddc36b936">title</a>)+strlen(text)+4;</div>
+<div class="line">        <span class="keywordflow">if</span> ((newtitle=(<span class="keywordtype">char</span>*)malloc(len))) {</div>
+<div class="line">            snprintf(newtitle, len, <span class="stringliteral">&quot;%s [%s]&quot;</span>, <a class="code" href="classdtsgui.html#a949562ecff03159461686f2ddc36b936">title</a>, text);</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            newtitle = (<span class="keywordtype">char</span>*)<a class="code" href="classdtsgui.html#a949562ecff03159461686f2ddc36b936">title</a>;</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        newtitle = (<span class="keywordtype">char</span>*)<a class="code" href="classdtsgui.html#a949562ecff03159461686f2ddc36b936">title</a>;</div>
+<div class="line">    }</div>
+<div class="line">    objunlock(<span class="keyword">this</span>);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="classdtsgui.html#a23186f0e51311156f54f9f9882806414">appframe</a>-&gt;SetTitle(newtitle);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (text &amp;&amp; newtitle) {</div>
+<div class="line">        free(newtitle);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a04bd33691e2479644d61cf3cf51f377f"></a>
@@ -268,7 +304,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_app_8h_source.html#l00034">appframe</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_wizard_8cpp_source.html#l00056">dtsgui_wizard::AddPage()</a>, <a class="el" href="wrapper_8cpp_source.html#l00418">DTS_C_API::dtsgui_about()</a>, <a class="el" href="wrapper_8cpp_source.html#l01151">DTS_C_API::dtsgui_alert()</a>, <a class="el" href="wrapper_8cpp_source.html#l00401">DTS_C_API::dtsgui_close()</a>, <a class="el" href="wrapper_8cpp_source.html#l01162">DTS_C_API::dtsgui_confirm()</a>, <a class="el" href="_d_t_s_app_8cpp_source.html#l00141">dtsgui_curl::dtsgui_curl()</a>, <a class="el" href="wrapper_8cpp_source.html#l00383">DTS_C_API::dtsgui_exit()</a>, <a class="el" href="wrapper_8cpp_source.html#l01192">DTS_C_API::dtsgui_fileopen()</a>, <a class="el" href="wrapper_8cpp_source.html#l01176">DTS_C_API::dtsgui_filesave()</a>, <a class="el" href="wrapper_8cpp_source.html#l00316">DTS_C_API::dtsgui_newmenu()</a>, <a class="el" href="wrapper_8cpp_source.html#l00365">DTS_C_API::dtsgui_newmenucb()</a>, <a class="el" href="wrapper_8cpp_source.html#l00338">DTS_C_API::dtsgui_newmenuitem()</a>, <a class="el" href="wrapper_8cpp_source.html#l00985">DTS_C_API::dtsgui_newwizard()</a>, <a class="el" href="wrapper_8cpp_source.html#l00464">DTS_C_API::dtsgui_panel()</a>, <a class="el" href="wrapper_8cpp_source.html#l01063">DTS_C_API::dtsgui_progress_end()</a>, <a class="el" href="wrapper_8cpp_source.html#l01054">DTS_C_API::dtsgui_progress_increment()</a>, <a class="el" href="wrapper_8cpp_source.html#l01027">DTS_C_API::dtsgui_progress_start()</a>, <a class="el" href="wrapper_8cpp_source.html#l01042">DTS_C_API::dtsgui_progress_update()</a>, <a class="el" href="wrapper_8cpp_source.html#l00262">DTS_C_API::dtsgui_sendevent()</a>, <a class="el" href="wrapper_8cpp_source.html#l00278">DTS_C_API::dtsgui_setuptoolbar()</a>, <a class="el" href="wrapper_8cpp_source.html#l00249">DTS_C_API::dtsgui_setwindow()</a>, <a class="el" href="wrapper_8cpp_source.html#l00520">DTS_C_API::dtsgui_tabwindow()</a>, <a class="el" href="wrapper_8cpp_source.html#l00483">DTS_C_API::dtsgui_textpane()</a>, and <a class="el" href="wrapper_8cpp_source.html#l00503">DTS_C_API::dtsgui_treewindow()</a>.</p>
-
+<div class="fragment"><div class="line">                                     {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="classdtsgui.html#a23186f0e51311156f54f9f9882806414">appframe</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4d5bf22a505defc4ab13178ff95f2b32"></a>
@@ -290,7 +329,18 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_app_8h_source.html#l00033">userdata</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00235">DTS_C_API::dtsgui_userdata()</a>.</p>
-
+<div class="fragment"><div class="line">                          {</div>
+<div class="line">    <span class="keywordtype">void</span> *ud = NULL;</div>
+<div class="line"></div>
+<div class="line">    objlock(<span class="keyword">this</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classdtsgui.html#a9c7541fac0311f9b2ffcb5c2699719ca">userdata</a> &amp;&amp; objref(<a class="code" href="classdtsgui.html#a9c7541fac0311f9b2ffcb5c2699719ca">userdata</a>)) {</div>
+<div class="line">        ud = <a class="code" href="classdtsgui.html#a9c7541fac0311f9b2ffcb5c2699719ca">userdata</a>;</div>
+<div class="line">    }</div>
+<div class="line">    objunlock(<span class="keyword">this</span>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> ud;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a67a85f336d93a287e5ec3434a79620ed"></a>
@@ -312,7 +362,14 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_app_8h_source.html#l00034">appframe</a>, and <a class="el" href="_d_t_s_app_8h_source.html#l00036">status</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_app_8cpp_source.html#l00064">SetupAPPFrame()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00235">DTSFrame::SetWindow()</a>.</p>
-
+<div class="fragment"><div class="line">                               {</div>
+<div class="line">    objlock(<span class="keyword">this</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classdtsgui.html#a23186f0e51311156f54f9f9882806414">appframe</a> &amp;&amp; <a class="code" href="classdtsgui.html#a8ae0201b6a08daf9d9804c1f7550da4e">status</a>) {</div>
+<div class="line">        <a class="code" href="classdtsgui.html#a23186f0e51311156f54f9f9882806414">appframe</a>-&gt;SetStatusText(<a class="code" href="classdtsgui.html#a8ae0201b6a08daf9d9804c1f7550da4e">status</a>);</div>
+<div class="line">    }</div>
+<div class="line">    objunlock(<span class="keyword">this</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8dd69405dd8fe95341e0a99c14a6f431"></a>
@@ -334,7 +391,27 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_app_8h_source.html#l00034">appframe</a>, <a class="el" href="_d_t_s_app_8h_source.html#l00037">cb</a>, <a class="el" href="_d_t_s_app_8cpp_source.html#l00097">SetStatusText()</a>, <a class="el" href="_d_t_s_app_8h_source.html#l00035">title</a>, <a class="el" href="_d_t_s_app_8h_source.html#l00033">userdata</a>, <a class="el" href="_d_t_s_app_8h_source.html#l00039">wpos</a>, <a class="el" href="_d_t_s_app_8h_source.html#l00038">wsize</a>, <a class="el" href="dtsgui_8h_source.html#l00190">point::x</a>, and <a class="el" href="dtsgui_8h_source.html#l00192">point::y</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_app_8cpp_source.html#l00262">DTSApp::OnInit()</a>.</p>
-
+<div class="fragment"><div class="line">                          {</div>
+<div class="line">    <span class="keywordtype">void</span> *<a class="code" href="classevdata.html#ab8569cae7cd7a33fde4e51872ef29090">data</a> = NULL;</div>
+<div class="line">    <span class="keywordtype">int</span> res;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="classdtsgui.html#a23186f0e51311156f54f9f9882806414">appframe</a> = <span class="keyword">new</span> <a class="code" href="_d_t_s_panel_8h.html#ac041b748b16da7ef8c4a1ff9d1a357af">DTSFrame</a>(<a class="code" href="classdtsgui.html#a949562ecff03159461686f2ddc36b936">title</a>, wxPoint(<a class="code" href="classdtsgui.html#a7a64aff083bfba24859a4c47e9d89c53">wpos</a>.<a class="code" href="structpoint.html#ad679b07fb69d55f5ad454d0f1f2891d5" title="X axis.">x</a>, <a class="code" href="classdtsgui.html#a7a64aff083bfba24859a4c47e9d89c53">wpos</a>.<a class="code" href="structpoint.html#a9a82ca9504acabb1e30569f89c805471" title="Y axis.">y</a>), wxSize(<a class="code" href="classdtsgui.html#a04955c97163ded998019001b749a1883">wsize</a>.<a class="code" href="structpoint.html#ad679b07fb69d55f5ad454d0f1f2891d5" title="X axis.">x</a>, <a class="code" href="classdtsgui.html#a04955c97163ded998019001b749a1883">wsize</a>.<a class="code" href="structpoint.html#a9a82ca9504acabb1e30569f89c805471" title="Y axis.">y</a>), <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="classdtsgui.html#a67a85f336d93a287e5ec3434a79620ed">SetStatusText</a>();</div>
+<div class="line"></div>
+<div class="line">    objlock(<span class="keyword">this</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classdtsgui.html#a9c7541fac0311f9b2ffcb5c2699719ca">userdata</a> &amp;&amp; objref(<a class="code" href="classdtsgui.html#a9c7541fac0311f9b2ffcb5c2699719ca">userdata</a>)) {</div>
+<div class="line">        data = <a class="code" href="classdtsgui.html#a9c7541fac0311f9b2ffcb5c2699719ca">userdata</a>;</div>
+<div class="line">    }</div>
+<div class="line">    objunlock(<span class="keyword">this</span>);</div>
+<div class="line"></div>
+<div class="line">    res = <a class="code" href="classdtsgui.html#aa47c583745cf2afd984cd09088d8fa00">cb</a>(<span class="keyword">this</span>, data);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (data) {</div>
+<div class="line">        objunref(data);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> res;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="adbf932006dfc6df2266b5fbf34af67ac"></a>
@@ -356,7 +433,14 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_app_8h_source.html#l00034">appframe</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00289">DTS_C_API::dtsgui_set_toolbar()</a>.</p>
-
+<div class="fragment"><div class="line">                                  {</div>
+<div class="line">    wxToolBar *tb;</div>
+<div class="line"></div>
+<div class="line">    tb = <a class="code" href="classdtsgui.html#a23186f0e51311156f54f9f9882806414">appframe</a>-&gt;GetToolBar();</div>
+<div class="line">    tb-&gt;Show(show);</div>
+<div class="line">    <a class="code" href="classdtsgui.html#a23186f0e51311156f54f9f9882806414">appframe</a>-&gt;Layout();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -538,7 +622,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classdtsgui.html">dtsgui</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

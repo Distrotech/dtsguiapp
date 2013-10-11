@@ -51,7 +51,7 @@
       </node>
     </incdepgraph>
       <sectiondef kind="func">
-      <memberdef kind="function" id="config_8c_1a72af4355dbc5afe93fef750a81a3e572" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_config_1ga72af4355dbc5afe93fef750a81a3e572" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
         <definition>dtsgui_pane open_config</definition>
         <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
@@ -69,14 +69,37 @@
           <declname>data</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Open XML configuration file callback. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Present a file open dialog to the user let them select a configuration file on success enable config menu options and disable file menu options. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name supplied to menuitem. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to data held by menu callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>NULL as no pane is displayed. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="27" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="27" bodyend="67"/>
-        <references refid="structapp__data_1a68690abb28e424749f67339ea3736a41" compoundref="private_8h" startline="65">app_data::c_open</references>
-        <references refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" compoundref="private_8h" startline="66">app_data::cfg_menu</references>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="44" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="44" bodyend="84"/>
+        <references refid="structapp__data_1a68690abb28e424749f67339ea3736a41" compoundref="private_8h" startline="81">app_data::c_open</references>
+        <references refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" compoundref="private_8h" startline="83">app_data::cfg_menu</references>
         <references refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" compoundref="wrapper_8cpp" startline="1151" endline="1154">dtsgui_alert</references>
         <references refid="group___c-_a_p_i-_dialog_1gad458f5d64710487c7213a4921a5ebc99" compoundref="wrapper_8cpp" startline="1192" endline="1195">dtsgui_fileopen</references>
         <references refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" compoundref="cxxapi_8cpp" startline="51" endline="66">dtsgui_menuenable</references>
@@ -85,12 +108,12 @@
         <references refid="group___c-_a_p_i_1ga164aa159bc57a744f012b49268796bbe" compoundref="wrapper_8cpp" startline="289" endline="291">dtsgui_set_toolbar</references>
         <references refid="group___c-_a_p_i_1gafc00c020f324c119956fcc38e7fd55db" compoundref="wrapper_8cpp" startline="300" endline="302">dtsgui_titleappend</references>
         <references refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" compoundref="wrapper_8cpp" startline="235" endline="237">dtsgui_userdata</references>
-        <references refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" compoundref="private_8h" startline="64">app_data::e_wiz</references>
-        <references refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" compoundref="private_8h" startline="63">app_data::n_wiz</references>
-        <references refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" compoundref="private_8h" startline="60">app_data::xmldoc</references>
-        <referencedby refid="group___d_t_s-_a_p_p_1ga011cd0b131174029fed8babdf1c7a101" compoundref="wxforms_8c" startline="69" endline="92">file_menu</referencedby>
+        <references refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" compoundref="private_8h" startline="79">app_data::e_wiz</references>
+        <references refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" compoundref="private_8h" startline="77">app_data::n_wiz</references>
+        <references refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" compoundref="private_8h" startline="71">app_data::xmldoc</references>
+        <referencedby refid="group___d_t_s-_a_p_p_1ga011cd0b131174029fed8babdf1c7a101" compoundref="wxforms_8c" startline="79" endline="102">file_menu</referencedby>
       </memberdef>
-      <memberdef kind="function" id="config_8c_1ae1a63d1e8add52ca63e83582891054fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_config_1gae1a63d1e8add52ca63e83582891054fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
         <definition>dtsgui_pane save_config</definition>
         <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
@@ -108,25 +131,48 @@
           <declname>data</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Close/Save menu option call back. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This function re enables the file menu items And disables the config menu. <xrefsect id="todo_1_todo000001"><xreftitle>Todo</xreftitle><xrefdescription><para>Actually save the config </para></xrefdescription></xrefsect><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name supplied to menuitem. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to data held by menu callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>NULL as no pane is displayed. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="69" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="69" bodyend="92"/>
-        <references refid="structapp__data_1a68690abb28e424749f67339ea3736a41" compoundref="private_8h" startline="65">app_data::c_open</references>
-        <references refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" compoundref="private_8h" startline="66">app_data::cfg_menu</references>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="95" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="95" bodyend="118"/>
+        <references refid="structapp__data_1a68690abb28e424749f67339ea3736a41" compoundref="private_8h" startline="81">app_data::c_open</references>
+        <references refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" compoundref="private_8h" startline="83">app_data::cfg_menu</references>
         <references refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" compoundref="cxxapi_8cpp" startline="51" endline="66">dtsgui_menuenable</references>
         <references refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" compoundref="wrapper_8cpp" startline="443" endline="446">dtsgui_menuitemenable</references>
         <references refid="group___c-_a_p_i_1ga164aa159bc57a744f012b49268796bbe" compoundref="wrapper_8cpp" startline="289" endline="291">dtsgui_set_toolbar</references>
         <references refid="group___c-_a_p_i_1gafc00c020f324c119956fcc38e7fd55db" compoundref="wrapper_8cpp" startline="300" endline="302">dtsgui_titleappend</references>
         <references refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" compoundref="wrapper_8cpp" startline="235" endline="237">dtsgui_userdata</references>
-        <references refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" compoundref="private_8h" startline="64">app_data::e_wiz</references>
-        <references refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" compoundref="private_8h" startline="63">app_data::n_wiz</references>
-        <references refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" compoundref="private_8h" startline="60">app_data::xmldoc</references>
-        <referencedby refid="private_8h_1a2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="189" endline="217">config_menu</referencedby>
+        <references refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" compoundref="private_8h" startline="79">app_data::e_wiz</references>
+        <references refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" compoundref="private_8h" startline="77">app_data::n_wiz</references>
+        <references refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" compoundref="private_8h" startline="71">app_data::xmldoc</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="240" endline="268">config_menu</referencedby>
       </memberdef>
-      <memberdef kind="function" id="config_8c_1abe0b9ce2252ec72774af23a0ec71424f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_config_1gabe0b9ce2252ec72774af23a0ec71424f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
         <definition>dtsgui_pane view_config_xml</definition>
         <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
@@ -144,17 +190,40 @@
           <declname>data</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Display XML document formated in text display. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name supplied to menuitem. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to data held by menu callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Text Panel. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="94" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="94" bodyend="110"/>
-        <references refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" compoundref="wxforms_8c" startline="48" endline="67">app_getxmldoc</references>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="126" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="126" bodyend="142"/>
+        <references refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" compoundref="wxforms_8c" startline="56" endline="75">app_getxmldoc</references>
         <references refid="group___c-_a_p_i-_panel_1gafb8efe017917a372826f7ddedb0e8bba" compoundref="wrapper_8cpp" startline="483" endline="486">dtsgui_textpane</references>
-        <referencedby refid="private_8h_1a2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="189" endline="217">config_menu</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="240" endline="268">config_menu</referencedby>
       </memberdef>
-      <memberdef kind="function" id="config_8c_1abc9a4e54439d7a701992752ec7b3f6b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_config_1gabc9a4e54439d7a701992752ec7b3f6b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
         <definition>dtsgui_pane view_config_conf</definition>
         <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
@@ -172,20 +241,43 @@
           <declname>data</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Display XML document formated in text display as a dot conf. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Open the XSLT file to transform to .conf and apply it to the XML document placing the output in a text panel. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name supplied to menuitem. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to data held by menu callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Text Panel. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="112" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="112" bodyend="148"/>
-        <references refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" compoundref="wxforms_8c" startline="48" endline="67">app_getxmldoc</references>
-        <references refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" compoundref="private_8h" startline="61">app_data::datadir</references>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="152" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="152" bodyend="188"/>
+        <references refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" compoundref="wxforms_8c" startline="56" endline="75">app_getxmldoc</references>
+        <references refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" compoundref="private_8h" startline="73">app_data::datadir</references>
         <references refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" compoundref="wrapper_8cpp" startline="1151" endline="1154">dtsgui_alert</references>
         <references refid="group___c-_a_p_i-_panel_1gafb8efe017917a372826f7ddedb0e8bba" compoundref="wrapper_8cpp" startline="483" endline="486">dtsgui_textpane</references>
         <references refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" compoundref="wrapper_8cpp" startline="235" endline="237">dtsgui_userdata</references>
-        <referencedby refid="private_8h_1a2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="189" endline="217">config_menu</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="240" endline="268">config_menu</referencedby>
       </memberdef>
-      <memberdef kind="function" id="config_8c_1a01bdf27a0760d9da4bb77918735171c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_config_1ga01bdf27a0760d9da4bb77918735171c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
         <definition>dtsgui_pane export_config</definition>
         <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
@@ -203,20 +295,43 @@
           <declname>data</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Export XML document as a .conf file. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Openand apply the XSLT xml2conf.xsl and save the result to a file selected in a file dialog. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name supplied to menuitem. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to data held by menu callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>NULL as no panel is displayed. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="150" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="150" bodyend="187"/>
-        <references refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" compoundref="wxforms_8c" startline="48" endline="67">app_getxmldoc</references>
-        <references refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" compoundref="private_8h" startline="61">app_data::datadir</references>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="198" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="198" bodyend="235"/>
+        <references refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" compoundref="wxforms_8c" startline="56" endline="75">app_getxmldoc</references>
+        <references refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" compoundref="private_8h" startline="73">app_data::datadir</references>
         <references refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" compoundref="wrapper_8cpp" startline="1151" endline="1154">dtsgui_alert</references>
         <references refid="group___c-_a_p_i-_dialog_1gad2b11bd5e9e51dcba9f53f4969f1f25c" compoundref="wrapper_8cpp" startline="1176" endline="1179">dtsgui_filesave</references>
         <references refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" compoundref="wrapper_8cpp" startline="235" endline="237">dtsgui_userdata</references>
-        <referencedby refid="private_8h_1a2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="189" endline="217">config_menu</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="240" endline="268">config_menu</referencedby>
       </memberdef>
-      <memberdef kind="function" id="config_8c_1a2bcdb1dc60a2dc5383e027578faeb44e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void config_menu</definition>
         <argsstring>(struct dtsgui *dtsgui)</argsstring>
@@ -226,31 +341,39 @@
           <declname>dtsgui</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Add the configure menu to the menu bar and add options. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="189" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="189" bodyend="217"/>
-        <references refid="netconfig_8c_1a6d9d2b0105df87000cb2bdecbff91239" compoundref="netconfig_8c" startline="740" endline="769">advanced_config</references>
-        <references refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" compoundref="private_8h" startline="66">app_data::cfg_menu</references>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="240" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="240" bodyend="268"/>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga6d9d2b0105df87000cb2bdecbff91239" compoundref="netconfig_8c" startline="912" endline="926">advanced_config</references>
+        <references refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" compoundref="private_8h" startline="83">app_data::cfg_menu</references>
         <references refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" compoundref="cxxapi_8cpp" startline="51" endline="66">dtsgui_menuenable</references>
         <references refid="group___c-_a_p_i-_menus_1gaf655828d94de128cfd8269d03d649092" compoundref="wrapper_8cpp" startline="433" endline="436">dtsgui_menusep</references>
         <references refid="group___c-_a_p_i-_menus_1gadd0f3eab51bf576378a6438c3982fd48" compoundref="wrapper_8cpp" startline="316" endline="319">dtsgui_newmenu</references>
         <references refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" compoundref="wrapper_8cpp" startline="365" endline="368">dtsgui_newmenucb</references>
         <references refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" compoundref="wrapper_8cpp" startline="235" endline="237">dtsgui_userdata</references>
-        <references refid="config_8c_1a01bdf27a0760d9da4bb77918735171c1" compoundref="config_8c" startline="150" endline="187">export_config</references>
-        <references refid="interface_8c_1abf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="145" endline="184">iface_config</references>
-        <references refid="pbxconfig_8c_1aa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="325" endline="350">pbx_settings</references>
-        <references refid="group___d_t_s-_a_p_p-_wizard_1ga0be336c09b5cd473a616326c4cb227d2" compoundref="wizard_8c" startline="481" endline="490">reconfig_wizard</references>
-        <references refid="config_8c_1ae1a63d1e8add52ca63e83582891054fa" compoundref="config_8c" startline="69" endline="92">save_config</references>
-        <references refid="config_8c_1abc9a4e54439d7a701992752ec7b3f6b9" compoundref="config_8c" startline="112" endline="148">view_config_conf</references>
-        <references refid="config_8c_1abe0b9ce2252ec72774af23a0ec71424f" compoundref="config_8c" startline="94" endline="110">view_config_xml</references>
-        <referencedby refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" compoundref="wxforms_8c" startline="110" endline="123">guiconfig_cb</referencedby>
+        <references refid="group___d_t_s-_a_p_p-_config_1ga01bdf27a0760d9da4bb77918735171c1" compoundref="config_8c" startline="198" endline="235">export_config</references>
+        <references refid="group___d_t_s-_a_p_p-_iface_1gabf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="197" endline="236">iface_config</references>
+        <references refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</references>
+        <references refid="group___d_t_s-_a_p_p-_wizard_1ga0be336c09b5cd473a616326c4cb227d2" compoundref="wizard_8c" startline="550" endline="559">reconfig_wizard</references>
+        <references refid="group___d_t_s-_a_p_p-_config_1gae1a63d1e8add52ca63e83582891054fa" compoundref="config_8c" startline="95" endline="118">save_config</references>
+        <references refid="group___d_t_s-_a_p_p-_config_1gabc9a4e54439d7a701992752ec7b3f6b9" compoundref="config_8c" startline="152" endline="188">view_config_conf</references>
+        <references refid="group___d_t_s-_a_p_p-_config_1gabe0b9ce2252ec72774af23a0ec71424f" compoundref="config_8c" startline="126" endline="142">view_config_xml</references>
+        <referencedby refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" compoundref="wxforms_8c" startline="130" endline="143">guiconfig_cb</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Configuration menu functions. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <programlisting>
@@ -272,205 +395,207 @@
 <codeline lineno="16"><highlight class="comment"><sp/><sp/><sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
 <codeline lineno="17"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dtsgui_8h" kindref="compound" tooltip="Main include file for the GUI Library.">dtsgui.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="private_8h" kindref="compound">private.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27" refid="private_8h_1a72af4355dbc5afe93fef750a81a3e572" refkind="member"><highlight class="normal"><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/><ref refid="config_8c_1a72af4355dbc5afe93fef750a81a3e572" kindref="member">open_config</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="classform__item_1a601ff328ce4165b07d5ad23bd96967b7" kindref="member">data</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structapp__data" kindref="compound">app_data</ref><sp/>*appdata;</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename;</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(filename<sp/>=<sp/><ref refid="group___c-_a_p_i-_dialog_1gad458f5d64710487c7213a4921a5ebc99" kindref="member" tooltip="Open file open dialog box.">dtsgui_fileopen</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;Select<sp/>Customer<sp/>Configuration<sp/>To<sp/>Open&quot;</highlight><highlight class="normal">,<sp/>NULL,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;XML<sp/>Configuration|*.xml&quot;</highlight><highlight class="normal">)))<sp/>{</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(appdata<sp/>=<sp/><ref refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" kindref="member" tooltip="Obtain a reference for the application userdata.">dtsgui_userdata</ref>(dtsgui)))<sp/>{</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)filename);</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><sp/>NULL;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>objlock(appdata);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(appdata-&gt;<ref refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" kindref="member">xmldoc</ref><sp/>=<sp/>xml_loaddoc(filename,<sp/>1<sp/>)))<sp/>{</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunlock(appdata);</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(appdata);</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)filename);</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">dtsgui_alert</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;Configuration<sp/>failed<sp/>to<sp/>load.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>objunlock(appdata);</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i_1ga4e766a49c1e9eba3f2c2fda47b8166aa" kindref="member" tooltip="Emit a event handled by event callback&amp;#39;s.">dtsgui_sendevent</ref>(dtsgui,<sp/>1);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dtsgui_8h" kindref="compound" tooltip="Main include file for the GUI Library.">dtsgui.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="private_8h" kindref="compound" tooltip="Main application private includes.">private.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="group___d_t_s-_a_p_p-_config_1ga72af4355dbc5afe93fef750a81a3e572" refkind="member"><highlight class="normal"><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/><ref refid="group___d_t_s-_a_p_p-_config_1ga72af4355dbc5afe93fef750a81a3e572" kindref="member" tooltip="Open XML configuration file callback.">open_config</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structapp__data" kindref="compound" tooltip="Application data structure.">app_data</ref><sp/>*appdata;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(filename<sp/>=<sp/><ref refid="group___c-_a_p_i-_dialog_1gad458f5d64710487c7213a4921a5ebc99" kindref="member" tooltip="Open file open dialog box.">dtsgui_fileopen</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;Select<sp/>Customer<sp/>Configuration<sp/>To<sp/>Open&quot;</highlight><highlight class="normal">,<sp/>NULL,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;XML<sp/>Configuration|*.xml&quot;</highlight><highlight class="normal">)))<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>objlock(appdata);</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" kindref="member" tooltip="Enable/Disable an menu item.">dtsgui_menuitemenable</ref>(appdata-&gt;<ref refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" kindref="member">e_wiz</ref>,<sp/>0);</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" kindref="member" tooltip="Enable/Disable an menu item.">dtsgui_menuitemenable</ref>(appdata-&gt;<ref refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" kindref="member">n_wiz</ref>,<sp/>0);</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" kindref="member" tooltip="Enable/Disable an menu item.">dtsgui_menuitemenable</ref>(appdata-&gt;<ref refid="structapp__data_1a68690abb28e424749f67339ea3736a41" kindref="member">c_open</ref>,<sp/>0);</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" kindref="member" tooltip="Enable or disable all items in menu.">dtsgui_menuenable</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member">cfg_menu</ref>,<sp/>1);</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>objunlock(appdata);</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i_1gafc00c020f324c119956fcc38e7fd55db" kindref="member" tooltip="Append text to the application frame title enclosed in square brackets.">dtsgui_titleappend</ref>(dtsgui,<sp/>filename);</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)filename);</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i_1ga164aa159bc57a744f012b49268796bbe" kindref="member" tooltip="Disable or enable the toolbar.">dtsgui_set_toolbar</ref>(dtsgui,<sp/>0);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(appdata);</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69" refid="private_8h_1ae1a63d1e8add52ca63e83582891054fa" refkind="member"><highlight class="normal"><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/><ref refid="config_8c_1ae1a63d1e8add52ca63e83582891054fa" kindref="member">save_config</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structapp__data" kindref="compound">app_data</ref><sp/>*appdata;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(appdata<sp/>=<sp/><ref refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" kindref="member" tooltip="Obtain a reference for the application userdata.">dtsgui_userdata</ref>(dtsgui)))<sp/>{</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/>dtsgui_sendevent(dtsgui);*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i_1gafc00c020f324c119956fcc38e7fd55db" kindref="member" tooltip="Append text to the application frame title enclosed in square brackets.">dtsgui_titleappend</ref>(dtsgui,<sp/>NULL);</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>objlock(appdata);</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" kindref="member" tooltip="Enable or disable all items in menu.">dtsgui_menuenable</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member">cfg_menu</ref>,<sp/>0);</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" kindref="member" tooltip="Enable/Disable an menu item.">dtsgui_menuitemenable</ref>(appdata-&gt;<ref refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" kindref="member">e_wiz</ref>,<sp/>1);</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" kindref="member" tooltip="Enable/Disable an menu item.">dtsgui_menuitemenable</ref>(appdata-&gt;<ref refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" kindref="member">n_wiz</ref>,<sp/>1);</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" kindref="member" tooltip="Enable/Disable an menu item.">dtsgui_menuitemenable</ref>(appdata-&gt;<ref refid="structapp__data_1a68690abb28e424749f67339ea3736a41" kindref="member">c_open</ref>,<sp/>1);</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(appdata-&gt;<ref refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" kindref="member">xmldoc</ref>);</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>appdata-&gt;<ref refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" kindref="member">xmldoc</ref><sp/>=<sp/>NULL;</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>objunlock(appdata);</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(appdata);</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i_1ga164aa159bc57a744f012b49268796bbe" kindref="member" tooltip="Disable or enable the toolbar.">dtsgui_set_toolbar</ref>(dtsgui,<sp/>1);</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94" refid="private_8h_1abe0b9ce2252ec72774af23a0ec71424f" refkind="member"><highlight class="normal"><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/><ref refid="config_8c_1abe0b9ce2252ec72774af23a0ec71424f" kindref="member">view_config_xml</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*xmldoc<sp/>=<sp/>NULL;</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/>p;</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*xmlbuf;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(xmldoc<sp/>=<sp/><ref refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" kindref="member">app_getxmldoc</ref>(dtsgui)))<sp/>{</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlbuf<sp/>=<sp/>xml_doctobuffer(xmldoc);</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/><ref refid="group___c-_a_p_i-_panel_1gafb8efe017917a372826f7ddedb0e8bba" kindref="member" tooltip="Create a text display box with the text in the buffer been displayed.">dtsgui_textpane</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;XML<sp/>Configuration&quot;</highlight><highlight class="normal">,<sp/>xml_getbuffer(xmlbuf));</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xmlbuf);</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"></highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p;</highlight></codeline>
-<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"></highlight></codeline>
-<codeline lineno="112" refid="private_8h_1abc9a4e54439d7a701992752ec7b3f6b9" refkind="member"><highlight class="normal"><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/><ref refid="config_8c_1abc9a4e54439d7a701992752ec7b3f6b9" kindref="member">view_config_conf</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structapp__data" kindref="compound">app_data</ref><sp/>*appdata;</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*xmldoc;</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xslt_doc<sp/>*xsltdoc;</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/>p<sp/>=<sp/>NULL;</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>xsltfile[PATH_MAX];</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*xmlbuf;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(appdata<sp/>=<sp/><ref refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" kindref="member" tooltip="Obtain a reference for the application userdata.">dtsgui_userdata</ref>(dtsgui)))<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)filename);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><sp/>NULL;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>objlock(appdata);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(appdata-&gt;<ref refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" kindref="member" tooltip="XML Document been edited.">xmldoc</ref><sp/>=<sp/>xml_loaddoc(filename,<sp/>1<sp/>)))<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunlock(appdata);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(appdata);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)filename);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">dtsgui_alert</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;Configuration<sp/>failed<sp/>to<sp/>load.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>objunlock(appdata);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i_1ga4e766a49c1e9eba3f2c2fda47b8166aa" kindref="member" tooltip="Emit a event handled by event callback&amp;#39;s.">dtsgui_sendevent</ref>(dtsgui,<sp/>1);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>objlock(appdata);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" kindref="member" tooltip="Enable/Disable an menu item.">dtsgui_menuitemenable</ref>(appdata-&gt;<ref refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" kindref="member" tooltip="Existing system configuration menu item.">e_wiz</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" kindref="member" tooltip="Enable/Disable an menu item.">dtsgui_menuitemenable</ref>(appdata-&gt;<ref refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" kindref="member" tooltip="New system configuration menu item.">n_wiz</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" kindref="member" tooltip="Enable/Disable an menu item.">dtsgui_menuitemenable</ref>(appdata-&gt;<ref refid="structapp__data_1a68690abb28e424749f67339ea3736a41" kindref="member" tooltip="Open configuration menu item.">c_open</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" kindref="member" tooltip="Enable or disable all items in menu.">dtsgui_menuenable</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member" tooltip="Configuration menu.">cfg_menu</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>objunlock(appdata);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i_1gafc00c020f324c119956fcc38e7fd55db" kindref="member" tooltip="Append text to the application frame title enclosed in square brackets.">dtsgui_titleappend</ref>(dtsgui,<sp/>filename);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)filename);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i_1ga164aa159bc57a744f012b49268796bbe" kindref="member" tooltip="Disable or enable the toolbar.">dtsgui_set_toolbar</ref>(dtsgui,<sp/>0);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(appdata);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="group___d_t_s-_a_p_p-_config_1gae1a63d1e8add52ca63e83582891054fa" refkind="member"><highlight class="normal"><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/><ref refid="group___d_t_s-_a_p_p-_config_1gae1a63d1e8add52ca63e83582891054fa" kindref="member" tooltip="Close/Save menu option call back.">save_config</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structapp__data" kindref="compound" tooltip="Application data structure.">app_data</ref><sp/>*appdata;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(appdata<sp/>=<sp/><ref refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" kindref="member" tooltip="Obtain a reference for the application userdata.">dtsgui_userdata</ref>(dtsgui)))<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/>dtsgui_sendevent(dtsgui);*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i_1gafc00c020f324c119956fcc38e7fd55db" kindref="member" tooltip="Append text to the application frame title enclosed in square brackets.">dtsgui_titleappend</ref>(dtsgui,<sp/>NULL);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>objlock(appdata);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" kindref="member" tooltip="Enable or disable all items in menu.">dtsgui_menuenable</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member" tooltip="Configuration menu.">cfg_menu</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" kindref="member" tooltip="Enable/Disable an menu item.">dtsgui_menuitemenable</ref>(appdata-&gt;<ref refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" kindref="member" tooltip="Existing system configuration menu item.">e_wiz</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" kindref="member" tooltip="Enable/Disable an menu item.">dtsgui_menuitemenable</ref>(appdata-&gt;<ref refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" kindref="member" tooltip="New system configuration menu item.">n_wiz</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" kindref="member" tooltip="Enable/Disable an menu item.">dtsgui_menuitemenable</ref>(appdata-&gt;<ref refid="structapp__data_1a68690abb28e424749f67339ea3736a41" kindref="member" tooltip="Open configuration menu item.">c_open</ref>,<sp/>1);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(appdata-&gt;<ref refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" kindref="member" tooltip="XML Document been edited.">xmldoc</ref>);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>appdata-&gt;<ref refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" kindref="member" tooltip="XML Document been edited.">xmldoc</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>objunlock(appdata);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(appdata);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i_1ga164aa159bc57a744f012b49268796bbe" kindref="member" tooltip="Disable or enable the toolbar.">dtsgui_set_toolbar</ref>(dtsgui,<sp/>1);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(appdata<sp/>=<sp/><ref refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" kindref="member" tooltip="Obtain a reference for the application userdata.">dtsgui_userdata</ref>(dtsgui)))<sp/>{</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>snprintf(xsltfile,<sp/>PATH_MAX-1,<sp/></highlight><highlight class="stringliteral">&quot;%s/xml2conf.xsl&quot;</highlight><highlight class="normal">,<sp/>appdata-&gt;<ref refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" kindref="member">datadir</ref>);</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(appdata);</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!is_file(xsltfile))<sp/>{</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">dtsgui_alert</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;XSLT<sp/>Transform<sp/>Not<sp/>Found&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126" refid="group___d_t_s-_a_p_p-_config_1gabe0b9ce2252ec72774af23a0ec71424f" refkind="member"><highlight class="normal"><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/><ref refid="group___d_t_s-_a_p_p-_config_1gabe0b9ce2252ec72774af23a0ec71424f" kindref="member" tooltip="Display XML document formated in text display.">view_config_xml</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*xmldoc<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/>p;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*xmlbuf;</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(xmldoc<sp/>=<sp/><ref refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" kindref="member">app_getxmldoc</ref>(dtsgui)))<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(xmldoc<sp/>=<sp/><ref refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" kindref="member" tooltip="return reference to xmldoc stored in userdata.">app_getxmldoc</ref>(dtsgui)))<sp/>{</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
 <codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="134"><highlight class="normal"></highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(xsltdoc<sp/>=<sp/>xslt_open(xsltfile)))<sp/>{</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">dtsgui_alert</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;XSLT<sp/>Open<sp/>Failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlbuf<sp/>=<sp/>xml_doctobuffer(xmldoc);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/><ref refid="group___c-_a_p_i-_panel_1gafb8efe017917a372826f7ddedb0e8bba" kindref="member" tooltip="Create a text display box with the text in the buffer been displayed.">dtsgui_textpane</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;XML<sp/>Configuration&quot;</highlight><highlight class="normal">,<sp/>xml_getbuffer(xmlbuf));</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xmlbuf);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
 <codeline lineno="140"><highlight class="normal"></highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlbuf<sp/>=<sp/>xslt_apply_buffer(xmldoc,<sp/>xsltdoc);</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/><ref refid="group___c-_a_p_i-_panel_1gafb8efe017917a372826f7ddedb0e8bba" kindref="member" tooltip="Create a text display box with the text in the buffer been displayed.">dtsgui_textpane</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;Configuration<sp/>in<sp/>.conf<sp/>format&quot;</highlight><highlight class="normal">,<sp/>xml_getbuffer(xmlbuf));</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"></highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xsltdoc);</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xmlbuf);</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p;</highlight></codeline>
-<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"></highlight></codeline>
-<codeline lineno="150" refid="private_8h_1a01bdf27a0760d9da4bb77918735171c1" refkind="member"><highlight class="normal"><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/><ref refid="config_8c_1a01bdf27a0760d9da4bb77918735171c1" kindref="member">export_config</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structapp__data" kindref="compound">app_data</ref><sp/>*appdata;</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*xmldoc;</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xslt_doc<sp/>*xsltdoc;</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>xsltfile[PATH_MAX];</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*newfile;</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"></highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(appdata<sp/>=<sp/><ref refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" kindref="member" tooltip="Obtain a reference for the application userdata.">dtsgui_userdata</ref>(dtsgui)))<sp/>{</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>snprintf(xsltfile,<sp/>PATH_MAX-1,<sp/></highlight><highlight class="stringliteral">&quot;%s/xml2conf.xsl&quot;</highlight><highlight class="normal">,<sp/>appdata-&gt;<ref refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" kindref="member">datadir</ref>);</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(appdata);</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"></highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!is_file(xsltfile))<sp/>{</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">dtsgui_alert</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;XSLT<sp/>Transform<sp/>Not<sp/>Found&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"></highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(xsltdoc<sp/>=<sp/>xslt_open(xsltfile)))<sp/>{</highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">dtsgui_alert</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;XSLT<sp/>Open<sp/>Failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"></highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(xmldoc<sp/>=<sp/><ref refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" kindref="member">app_getxmldoc</ref>(dtsgui)))<sp/>{</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(xsltdoc);</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"></highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>newfile<sp/>=<sp/><ref refid="group___c-_a_p_i-_dialog_1gad2b11bd5e9e51dcba9f53f4969f1f25c" kindref="member" tooltip="Open file save dialog box.">dtsgui_filesave</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;Export<sp/>Config<sp/>To<sp/>File&quot;</highlight><highlight class="normal">,<sp/>NULL,<sp/></highlight><highlight class="stringliteral">&quot;firewall.conf&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;System<sp/>Configuration<sp/>(.conf)|*.conf&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newfile)<sp/>{</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xslt_apply(xmldoc,<sp/>xsltdoc,<sp/>newfile,<sp/>0);</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)newfile);</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152" refid="group___d_t_s-_a_p_p-_config_1gabc9a4e54439d7a701992752ec7b3f6b9" refkind="member"><highlight class="normal"><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/><ref refid="group___d_t_s-_a_p_p-_config_1gabc9a4e54439d7a701992752ec7b3f6b9" kindref="member" tooltip="Display XML document formated in text display as a dot conf.">view_config_conf</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structapp__data" kindref="compound" tooltip="Application data structure.">app_data</ref><sp/>*appdata;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*xmldoc;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xslt_doc<sp/>*xsltdoc;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/>p<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>xsltfile[PATH_MAX];</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*xmlbuf;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(appdata<sp/>=<sp/><ref refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" kindref="member" tooltip="Obtain a reference for the application userdata.">dtsgui_userdata</ref>(dtsgui)))<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>snprintf(xsltfile,<sp/>PATH_MAX-1,<sp/></highlight><highlight class="stringliteral">&quot;%s/xml2conf.xsl&quot;</highlight><highlight class="normal">,<sp/>appdata-&gt;<ref refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" kindref="member" tooltip="Shared datadir.">datadir</ref>);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(appdata);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!is_file(xsltfile))<sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">dtsgui_alert</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;XSLT<sp/>Transform<sp/>Not<sp/>Found&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(xmldoc<sp/>=<sp/><ref refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" kindref="member" tooltip="return reference to xmldoc stored in userdata.">app_getxmldoc</ref>(dtsgui)))<sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(xsltdoc<sp/>=<sp/>xslt_open(xsltfile)))<sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">dtsgui_alert</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;XSLT<sp/>Open<sp/>Failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>xmlbuf<sp/>=<sp/>xslt_apply_buffer(xmldoc,<sp/>xsltdoc);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>p<sp/>=<sp/><ref refid="group___c-_a_p_i-_panel_1gafb8efe017917a372826f7ddedb0e8bba" kindref="member" tooltip="Create a text display box with the text in the buffer been displayed.">dtsgui_textpane</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;Configuration<sp/>in<sp/>.conf<sp/>format&quot;</highlight><highlight class="normal">,<sp/>xml_getbuffer(xmlbuf));</highlight></codeline>
 <codeline lineno="183"><highlight class="normal"></highlight></codeline>
 <codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xsltdoc);</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
-<codeline lineno="187"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"></highlight></codeline>
-<codeline lineno="189" refid="private_8h_1a2bcdb1dc60a2dc5383e027578faeb44e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="config_8c_1a2bcdb1dc60a2dc5383e027578faeb44e" kindref="member">config_menu</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>)<sp/>{</highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structapp__data" kindref="compound">app_data</ref><sp/>*appdata;</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"></highlight></codeline>
-<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(appdata<sp/>=<sp/><ref refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" kindref="member" tooltip="Obtain a reference for the application userdata.">dtsgui_userdata</ref>(dtsgui)))<sp/>{</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"></highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>objlock(appdata);</highlight></codeline>
-<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member">cfg_menu</ref><sp/>=<sp/><ref refid="group___c-_a_p_i-_menus_1gadd0f3eab51bf576378a6438c3982fd48" kindref="member" tooltip="Create a new menu and append it to the menu bar.">dtsgui_newmenu</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;&amp;Config&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="198"><highlight class="normal"></highlight></codeline>
-<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;Reconfigure<sp/>&amp;Wizard&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Run<sp/>System<sp/>Reconfigure<sp/>Wizard.&quot;</highlight><highlight class="normal">,<sp/>1,<sp/><ref refid="group___d_t_s-_a_p_p-_wizard_1ga0be336c09b5cd473a616326c4cb227d2" kindref="member">reconfig_wizard</ref>,<sp/>NULL);</highlight></codeline>
-<codeline lineno="200"><highlight class="normal"></highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;P&amp;BX<sp/>Configuration&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;PBX<sp/>Setup&quot;</highlight><highlight class="normal">,<sp/>0,<sp/><ref refid="pbxconfig_8c_1aa1aa69985689f9714422c273fe968fdf" kindref="member">pbx_settings</ref>,<sp/>NULL);</highlight></codeline>
-<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;&amp;Interface<sp/>Configuration&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Inteface<sp/>Configuration&quot;</highlight><highlight class="normal">,<sp/>0,<sp/><ref refid="interface_8c_1abf43f59e582eee9f27734b14c8307819" kindref="member">iface_config</ref>,<sp/>NULL);</highlight></codeline>
-<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;&amp;Advanced<sp/>Configuration&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Advanced<sp/>Config&quot;</highlight><highlight class="normal">,<sp/>0,<sp/><ref refid="netconfig_8c_1a6d9d2b0105df87000cb2bdecbff91239" kindref="member">advanced_config</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xmlbuf);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>p;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198" refid="group___d_t_s-_a_p_p-_config_1ga01bdf27a0760d9da4bb77918735171c1" refkind="member"><highlight class="normal"><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member" tooltip="Define panel as void* it is not exported to API.">dtsgui_pane</ref><sp/><ref refid="group___d_t_s-_a_p_p-_config_1ga01bdf27a0760d9da4bb77918735171c1" kindref="member" tooltip="Export XML document as a .conf file.">export_config</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*title,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data)<sp/>{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structapp__data" kindref="compound" tooltip="Application data structure.">app_data</ref><sp/>*appdata;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xml_doc<sp/>*xmldoc;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">xslt_doc<sp/>*xsltdoc;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>xsltfile[PATH_MAX];</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*newfile;</highlight></codeline>
 <codeline lineno="204"><highlight class="normal"></highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1gaf655828d94de128cfd8269d03d649092" kindref="member" tooltip="Add Menu seperator to the menu.">dtsgui_menusep</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member">cfg_menu</ref>);</highlight></codeline>
-<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;&amp;Save<sp/>And<sp/>Close<sp/>Config&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Save/Close<sp/>System<sp/>Config<sp/>(File/URL)&quot;</highlight><highlight class="normal">,<sp/>1,<sp/><ref refid="config_8c_1ae1a63d1e8add52ca63e83582891054fa" kindref="member">save_config</ref>,<sp/>NULL);</highlight></codeline>
-<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;E&amp;xport<sp/>Config&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Export<sp/>Configuration<sp/>as<sp/>a<sp/>.conf<sp/>file&quot;</highlight><highlight class="normal">,<sp/>0,<sp/><ref refid="config_8c_1a01bdf27a0760d9da4bb77918735171c1" kindref="member">export_config</ref>,<sp/>NULL);</highlight></codeline>
-<codeline lineno="208"><highlight class="normal"></highlight></codeline>
-<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1gaf655828d94de128cfd8269d03d649092" kindref="member" tooltip="Add Menu seperator to the menu.">dtsgui_menusep</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member">cfg_menu</ref>);</highlight></codeline>
-<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;&amp;View<sp/>Config<sp/>(XML)&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;View<sp/>Current<sp/>Config<sp/>File<sp/>In<sp/>XML<sp/>Format.&quot;</highlight><highlight class="normal">,<sp/>0,<sp/><ref refid="config_8c_1abe0b9ce2252ec72774af23a0ec71424f" kindref="member">view_config_xml</ref>,<sp/>NULL);</highlight></codeline>
-<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;View<sp/>&amp;Config<sp/>(CONF)&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;View<sp/>Current<sp/>Config<sp/>File<sp/>Converted<sp/>to<sp/>.conf<sp/>Format.&quot;</highlight><highlight class="normal">,<sp/>0,<sp/><ref refid="config_8c_1abc9a4e54439d7a701992752ec7b3f6b9" kindref="member">view_config_conf</ref>,<sp/>NULL);</highlight></codeline>
-<codeline lineno="212"><highlight class="normal"></highlight></codeline>
-<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*initially<sp/>greyed<sp/>out*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" kindref="member" tooltip="Enable or disable all items in menu.">dtsgui_menuenable</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member">cfg_menu</ref>,<sp/>0);</highlight></codeline>
-<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>objunlock(appdata);</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(appdata);</highlight></codeline>
-<codeline lineno="217"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(appdata<sp/>=<sp/><ref refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" kindref="member" tooltip="Obtain a reference for the application userdata.">dtsgui_userdata</ref>(dtsgui)))<sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>snprintf(xsltfile,<sp/>PATH_MAX-1,<sp/></highlight><highlight class="stringliteral">&quot;%s/xml2conf.xsl&quot;</highlight><highlight class="normal">,<sp/>appdata-&gt;<ref refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" kindref="member" tooltip="Shared datadir.">datadir</ref>);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(appdata);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!is_file(xsltfile))<sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">dtsgui_alert</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;XSLT<sp/>Transform<sp/>Not<sp/>Found&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(xsltdoc<sp/>=<sp/>xslt_open(xsltfile)))<sp/>{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" kindref="member" tooltip="Alert the user and expect a confirmation.">dtsgui_alert</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;XSLT<sp/>Open<sp/>Failed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(xmldoc<sp/>=<sp/><ref refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" kindref="member" tooltip="return reference to xmldoc stored in userdata.">app_getxmldoc</ref>(dtsgui)))<sp/>{</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref(xsltdoc);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>newfile<sp/>=<sp/><ref refid="group___c-_a_p_i-_dialog_1gad2b11bd5e9e51dcba9f53f4969f1f25c" kindref="member" tooltip="Open file save dialog box.">dtsgui_filesave</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;Export<sp/>Config<sp/>To<sp/>File&quot;</highlight><highlight class="normal">,<sp/>NULL,<sp/></highlight><highlight class="stringliteral">&quot;firewall.conf&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;System<sp/>Configuration<sp/>(.conf)|*.conf&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newfile)<sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xslt_apply(xmldoc,<sp/>xsltdoc,<sp/>newfile,<sp/>0);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objunref((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)newfile);</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xsltdoc);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(xmldoc);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>NULL;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240" refid="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" kindref="member" tooltip="Add the configure menu to the menu bar and add options.">config_menu</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="classdtsgui" kindref="compound">dtsgui</ref><sp/>*<ref refid="classdtsgui" kindref="compound">dtsgui</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structapp__data" kindref="compound" tooltip="Application data structure.">app_data</ref><sp/>*appdata;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(appdata<sp/>=<sp/><ref refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" kindref="member" tooltip="Obtain a reference for the application userdata.">dtsgui_userdata</ref>(dtsgui)))<sp/>{</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>objlock(appdata);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member" tooltip="Configuration menu.">cfg_menu</ref><sp/>=<sp/><ref refid="group___c-_a_p_i-_menus_1gadd0f3eab51bf576378a6438c3982fd48" kindref="member" tooltip="Create a new menu and append it to the menu bar.">dtsgui_newmenu</ref>(dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;&amp;Config&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member" tooltip="Configuration menu.">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;Reconfigure<sp/>&amp;Wizard&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Run<sp/>System<sp/>Reconfigure<sp/>Wizard.&quot;</highlight><highlight class="normal">,<sp/>1,<sp/><ref refid="group___d_t_s-_a_p_p-_wizard_1ga0be336c09b5cd473a616326c4cb227d2" kindref="member" tooltip="Callback from configuration menu.">reconfig_wizard</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member" tooltip="Configuration menu.">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;P&amp;BX<sp/>Configuration&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;PBX<sp/>Setup&quot;</highlight><highlight class="normal">,<sp/>0,<sp/><ref refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" kindref="member" tooltip="Configure and return the PBX configuration tab view.">pbx_settings</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member" tooltip="Configuration menu.">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;&amp;Interface<sp/>Configuration&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Inteface<sp/>Configuration&quot;</highlight><highlight class="normal">,<sp/>0,<sp/><ref refid="group___d_t_s-_a_p_p-_iface_1gabf43f59e582eee9f27734b14c8307819" kindref="member" tooltip="Callback called when the interface configuration link is selected.">iface_config</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member" tooltip="Configuration menu.">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;&amp;Advanced<sp/>Configuration&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Advanced<sp/>Config&quot;</highlight><highlight class="normal">,<sp/>0,<sp/><ref refid="group___d_t_s-_a_p_p-_tree_1ga6d9d2b0105df87000cb2bdecbff91239" kindref="member" tooltip="Advanced configuration menu callback.">advanced_config</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1gaf655828d94de128cfd8269d03d649092" kindref="member" tooltip="Add Menu seperator to the menu.">dtsgui_menusep</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member" tooltip="Configuration menu.">cfg_menu</ref>);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member" tooltip="Configuration menu.">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;&amp;Save<sp/>And<sp/>Close<sp/>Config&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Save/Close<sp/>System<sp/>Config<sp/>(File/URL)&quot;</highlight><highlight class="normal">,<sp/>1,<sp/><ref refid="group___d_t_s-_a_p_p-_config_1gae1a63d1e8add52ca63e83582891054fa" kindref="member" tooltip="Close/Save menu option call back.">save_config</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member" tooltip="Configuration menu.">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;E&amp;xport<sp/>Config&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Export<sp/>Configuration<sp/>as<sp/>a<sp/>.conf<sp/>file&quot;</highlight><highlight class="normal">,<sp/>0,<sp/><ref refid="group___d_t_s-_a_p_p-_config_1ga01bdf27a0760d9da4bb77918735171c1" kindref="member" tooltip="Export XML document as a .conf file.">export_config</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1gaf655828d94de128cfd8269d03d649092" kindref="member" tooltip="Add Menu seperator to the menu.">dtsgui_menusep</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member" tooltip="Configuration menu.">cfg_menu</ref>);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member" tooltip="Configuration menu.">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;&amp;View<sp/>Config<sp/>(XML)&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;View<sp/>Current<sp/>Config<sp/>File<sp/>In<sp/>XML<sp/>Format.&quot;</highlight><highlight class="normal">,<sp/>0,<sp/><ref refid="group___d_t_s-_a_p_p-_config_1gabe0b9ce2252ec72774af23a0ec71424f" kindref="member" tooltip="Display XML document formated in text display.">view_config_xml</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" kindref="member" tooltip="Create a menu item that will call a function with supplied data to execute when selected.">dtsgui_newmenucb</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member" tooltip="Configuration menu.">cfg_menu</ref>,<sp/>dtsgui,<sp/></highlight><highlight class="stringliteral">&quot;View<sp/>&amp;Config<sp/>(CONF)&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;View<sp/>Current<sp/>Config<sp/>File<sp/>Converted<sp/>to<sp/>.conf<sp/>Format.&quot;</highlight><highlight class="normal">,<sp/>0,<sp/><ref refid="group___d_t_s-_a_p_p-_config_1gabc9a4e54439d7a701992752ec7b3f6b9" kindref="member" tooltip="Display XML document formated in text display as a dot conf.">view_config_conf</ref>,<sp/>NULL);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*initially<sp/>greyed<sp/>out*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" kindref="member" tooltip="Enable or disable all items in menu.">dtsgui_menuenable</ref>(appdata-&gt;<ref refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" kindref="member" tooltip="Configuration menu.">cfg_menu</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>objunlock(appdata);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>objunref(appdata);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c"/>
   </compounddef>

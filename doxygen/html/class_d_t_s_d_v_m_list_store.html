@@ -263,7 +263,21 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00047">47</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00065">data</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00062">is_container</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00066">nodeid</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00058">p_cb</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00059">parent</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00061">tattr</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00063">title</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00060">xml</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                                                            {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html#a92118dc06f2c70dea29103fd004228da">xml</a> = NULL;</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html#a98d60f46ee8ad5e7263dc8d3f12d7e3e">tattr</a> = NULL;</div>
+<div class="line">    this-&gt;parent = <a class="code" href="class_d_t_s_d_v_m_list_store.html#af24276723ed08f86c1f95c9f3117ced7">parent</a>;</div>
+<div class="line">    this-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a9a6df6dbd6c84fd0cfbb987266203c20">title</a> = <a class="code" href="class_d_t_s_d_v_m_list_store.html#a9a6df6dbd6c84fd0cfbb987266203c20">title</a>;</div>
+<div class="line">    this-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a9508b0ac56ebb67c21c46977a4a4f228">is_container</a> = <a class="code" href="class_d_t_s_d_v_m_list_store.html#a9508b0ac56ebb67c21c46977a4a4f228">is_container</a>;</div>
+<div class="line">    this-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a7b6738784e2ddbafe71da24babd29e68">nodeid</a> = <a class="code" href="class_d_t_s_d_v_m_list_store.html#a7b6738784e2ddbafe71da24babd29e68">nodeid</a>;</div>
+<div class="line">    this-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a71c0dfe1d46cbf2b92ab0d3d39b2a010">p_cb</a> = <a class="code" href="class_d_t_s_d_v_m_list_store.html#a71c0dfe1d46cbf2b92ab0d3d39b2a010">p_cb</a>;</div>
+<div class="line">    <span class="keywordflow">if</span> (userdata &amp;&amp; objref(userdata)) {</div>
+<div class="line">        this-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a9d9977d520e8871cfdc9abae581801d5">data</a> = userdata;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        this-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a9d9977d520e8871cfdc9abae581801d5">data</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1dd7792a2c6fd86cc2cc55033c7f5595"></a>
@@ -282,7 +296,23 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00062">62</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00057">children</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00065">data</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00061">tattr</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00060">xml</a>.</p>
-
+<div class="fragment"><div class="line">                                  {</div>
+<div class="line">    <span class="keywordflow">while</span> (!<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.empty()) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>* f_child = <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.back();</div>
+<div class="line">        <span class="keyword">delete</span> f_child;</div>
+<div class="line">        <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.pop_back();</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_d_v_m_list_store.html#a9d9977d520e8871cfdc9abae581801d5">data</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_d_v_m_list_store.html#a9d9977d520e8871cfdc9abae581801d5">data</a>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_d_v_m_list_store.html#a92118dc06f2c70dea29103fd004228da">xml</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_d_v_m_list_store.html#a92118dc06f2c70dea29103fd004228da">xml</a>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_d_v_m_list_store.html#a98d60f46ee8ad5e7263dc8d3f12d7e3e">tattr</a>) {</div>
+<div class="line">        free((<span class="keywordtype">void</span>*)<a class="code" href="class_d_t_s_d_v_m_list_store.html#a98d60f46ee8ad5e7263dc8d3f12d7e3e">tattr</a>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -305,7 +335,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00057">children</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00616">DTSDVMCtrl::AppendNode()</a>.</p>
-
+<div class="fragment"><div class="line">                                                   {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.push_back(child);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a6a0982ded59dc351c68607d892edac01"></a>
@@ -345,7 +378,15 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00138">GetTitle()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00146">SortChildren()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                       {</div>
+<div class="line">    wxString s1, s2;</div>
+<div class="line"></div>
+<div class="line">    s1 = c1-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a2bea28788838dd5c214e8cf23a5e8a2e">GetTitle</a>();</div>
+<div class="line">    s2 = c2-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a2bea28788838dd5c214e8cf23a5e8a2e">GetTitle</a>();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> (s1 &lt; s2);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a235c78752ca007f5189806e95abcefe2"></a>
@@ -377,7 +418,13 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00065">data</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00058">p_cb</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00483">DTSTreeWindowEvent::TreeCallback()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                   {</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="class_d_t_s_d_v_m_list_store.html#a71c0dfe1d46cbf2b92ab0d3d39b2a010">p_cb</a>) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html#a71c0dfe1d46cbf2b92ab0d3d39b2a010">p_cb</a>(p, tw, <span class="keyword">this</span>, <a class="code" href="class_d_t_s_d_v_m_list_store.html#a9d9977d520e8871cfdc9abae581801d5">data</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a273068c9c62e05ef41609ee3b784d797"></a>
@@ -398,7 +445,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00057">children</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00391">DTSDVMListView::GetChildCount()</a>.</p>
-
+<div class="fragment"><div class="line">                                      {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.size();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ac3114326313888981ecff0f93eb7bff5"></a>
@@ -420,7 +470,17 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00057">children</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00475">DTSDVMListView::MoveChildDown()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00455">DTSDVMListView::MoveChildUp()</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00129">RemoveChildReference()</a>.</p>
-
+<div class="fragment"><div class="line">                                                            {</div>
+<div class="line">    <span class="keywordtype">size_t</span> idx = 0, c_cnt;</div>
+<div class="line"></div>
+<div class="line">    c_cnt = <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.size();</div>
+<div class="line">    <span class="keywordflow">while</span> ((idx &lt; c_cnt) &amp;&amp; (<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>[idx] != child)) {</div>
+<div class="line">        idx++;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> (<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>[idx] = child) ? idx : -1;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0b9344c83e4b5255c9dda28398c60b62"></a>
@@ -442,7 +502,17 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00057">children</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00281">DTSDVMListView::GetChildren()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                    {</div>
+<div class="line">    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cnt;</div>
+<div class="line">    <span class="keywordtype">size_t</span> acnt;</div>
+<div class="line"></div>
+<div class="line">    acnt = <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.size();</div>
+<div class="line">    <span class="keywordflow">for</span>(cnt=0; cnt &lt; acnt;cnt++) {</div>
+<div class="line">        items.Add(wxDataViewItem((<span class="keywordtype">void</span>*)<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>[cnt]));</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> cnt;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aa74ad713c4fad25945a08a9643cf7989"></a>
@@ -474,7 +544,21 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00057">children</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00064">expanded</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00062">is_container</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00436">DTSDVMListView::GetContainers()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                   {</div>
+<div class="line">    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cnt;</div>
+<div class="line">    <span class="keywordtype">size_t</span> acnt, ccnt = 0;</div>
+<div class="line">    wxString s;</div>
+<div class="line"></div>
+<div class="line">    acnt = <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.size();</div>
+<div class="line">    <span class="keywordflow">for</span>(cnt=0; cnt &lt; acnt;cnt++) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>[cnt]-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a9508b0ac56ebb67c21c46977a4a4f228">is_container</a> &amp;&amp; (!exonly || (exonly &amp;&amp; <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>[cnt]-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#ae7dc669c541e00c95ec04713bf88abac">expanded</a>))) {</div>
+<div class="line">            items.Add(wxDataViewItem((<span class="keywordtype">void</span>*)<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>[cnt]));</div>
+<div class="line">            ccnt++;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> ccnt;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9744dc2bb294481c69a55fcdd667b357"></a>
@@ -495,7 +579,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00066">nodeid</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00775">DTS_C_API::dtsgui_treenodeid()</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00507">DTSDVMListView::GetNodeID()</a>.</p>
-
+<div class="fragment"><div class="line">                               {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_store.html#a7b6738784e2ddbafe71da24babd29e68">nodeid</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="afd9dc74d1cfb86a19e385c5adfd29e70"></a>
@@ -517,7 +604,14 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00057">children</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00405">DTSDVMListView::GetNthChild()</a>.</p>
-
+<div class="fragment"><div class="line">                                                        {</div>
+<div class="line">    <span class="keywordflow">if</span> (idx &gt;= <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.size()) {</div>
+<div class="line">        <span class="keywordflow">return</span> NULL;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>[idx];</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0d389a6d98f49cabd9b8526849682f5f"></a>
@@ -538,7 +632,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00059">parent</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00341">DTSDVMListView::Delete()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00266">DTSDVMListView::GetParent()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00087">GetParentTitle()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00475">DTSDVMListView::MoveChildDown()</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00455">DTSDVMListView::MoveChildUp()</a>.</p>
-
+<div class="fragment"><div class="line">                                            {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_store.html#af24276723ed08f86c1f95c9f3117ced7">parent</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a06805bea00fbdbf5df1f995b87897b5e"></a>
@@ -559,7 +656,11 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00083">GetParent()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00138">GetTitle()</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00059">parent</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00785">DTS_C_API::dtsgui_treenodeparent()</a>.</p>
-
+<div class="fragment"><div class="line">                                               {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *<a class="code" href="class_d_t_s_d_v_m_list_store.html#af24276723ed08f86c1f95c9f3117ced7">parent</a> = this-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0d389a6d98f49cabd9b8526849682f5f">GetParent</a>();</div>
+<div class="line">    <span class="keywordflow">return</span> (parent) ? parent-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a2bea28788838dd5c214e8cf23a5e8a2e">GetTitle</a>() : <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2bea28788838dd5c214e8cf23a5e8a2e"></a>
@@ -580,7 +681,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00063">title</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00038">cmp_title()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00087">GetParentTitle()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00540">DTSDVMListView::GetTitle()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00312">DTSDVMListView::GetValue()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00483">DTSTreeWindowEvent::TreeCallback()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">DTSTreeWindowEvent::TreeEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                         {</div>
+<div class="line">    <span class="keywordflow">return</span> (<span class="keyword">const</span> wxString)<a class="code" href="class_d_t_s_d_v_m_list_store.html#a9a6df6dbd6c84fd0cfbb987266203c20">title</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a35aa2204af134770c1fab2f5426c50a7"></a>
@@ -602,7 +706,13 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00065">data</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00836">DTS_C_API::dtsgui_treenodegetdata()</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00495">DTSDVMListView::GetUserData()</a>.</p>
-
+<div class="fragment"><div class="line">                                   {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_d_v_m_list_store.html#a9d9977d520e8871cfdc9abae581801d5">data</a> &amp;&amp; objref(<a class="code" href="class_d_t_s_d_v_m_list_store.html#a9d9977d520e8871cfdc9abae581801d5">data</a>)) {</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_store.html#a9d9977d520e8871cfdc9abae581801d5">data</a>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> NULL;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a61adea3902f8c4b1c746546b1b9bbff0"></a>
@@ -632,7 +742,18 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00061">tattr</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00060">xml</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00341">DTSDVMListView::Delete()</a>, <a class="el" href="wrapper_8cpp_source.html#l00810">DTS_C_API::dtsgui_treenodegetxml()</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00529">DTSDVMListView::GetXMLData()</a>.</p>
-
+<div class="fragment"><div class="line">                                                        {</div>
+<div class="line">    <span class="keyword">struct </span>xml_node *xn = NULL;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_d_v_m_list_store.html#a92118dc06f2c70dea29103fd004228da">xml</a> &amp;&amp; objref(<a class="code" href="class_d_t_s_d_v_m_list_store.html#a92118dc06f2c70dea29103fd004228da">xml</a>)) {</div>
+<div class="line">        xn = <a class="code" href="class_d_t_s_d_v_m_list_store.html#a92118dc06f2c70dea29103fd004228da">xml</a>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (buff &amp;&amp; <a class="code" href="class_d_t_s_d_v_m_list_store.html#a98d60f46ee8ad5e7263dc8d3f12d7e3e">tattr</a>) {</div>
+<div class="line">        *buff = (<span class="keywordtype">char</span>*)objchar(<a class="code" href="class_d_t_s_d_v_m_list_store.html#a98d60f46ee8ad5e7263dc8d3f12d7e3e">tattr</a>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> xn;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ad4898a4b6987bc5b28695a96c16ca2c1"></a>
@@ -662,7 +783,16 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00100">100</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00057">children</a>.</p>
-
+<div class="fragment"><div class="line">                                                               {</div>
+<div class="line">    std::vector&lt;DTSDVMListStore*&gt;::iterator iter = <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.begin();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (idx &gt;= <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.size()) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.insert(iter+idx, child);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a39054039fd35cb8ac46ba0b27be04821"></a>
@@ -683,7 +813,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00062">is_container</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00257">DTSDVMListView::IsContainer()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">DTSTreeWindowEvent::TreeEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                        {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_store.html#a9508b0ac56ebb67c21c46977a4a4f228">is_container</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2582294901d9db1e1e27940539ddbdc1"></a>
@@ -704,7 +837,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00064">expanded</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00396">DTSTreeWindowEvent::SortParent()</a>.</p>
-
+<div class="fragment"><div class="line">                                 {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_store.html#ae7dc669c541e00c95ec04713bf88abac">expanded</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab4e8b7c639095f8e79ee5a14b140a97e"></a>
@@ -726,7 +862,18 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00057">children</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00475">DTSDVMListView::MoveChildDown()</a>.</p>
-
+<div class="fragment"><div class="line">                                              {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *tmp;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> ((idx &lt; 0) || (idx &gt; <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.size()-1)) {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    tmp = <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>[idx];</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>[idx]=<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>[idx+1];</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>[idx+1]=tmp;</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a65b937ebdaa75661e2ff974c23e1e35a"></a>
@@ -748,7 +895,18 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00057">children</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00455">DTSDVMListView::MoveChildUp()</a>.</p>
-
+<div class="fragment"><div class="line">                                            {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *tmp;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> ((idx &lt;= 0) || (idx &gt; <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.size())) {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    tmp = <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>[idx-1];</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>[idx-1]=<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>[idx];</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>[idx]=tmp;</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5b514355fd683cc7917a50403ac8a6de"></a>
@@ -770,7 +928,15 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00057">children</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00118">GetChildIndex()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00341">DTSDVMListView::Delete()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                 {</div>
+<div class="line">    std::vector&lt;DTSDVMListStore*&gt;::iterator iter = <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.begin();</div>
+<div class="line">    <span class="keywordtype">size_t</span> idx;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> ((idx = <a class="code" href="class_d_t_s_d_v_m_list_store.html#ac3114326313888981ecff0f93eb7bff5">GetChildIndex</a>(child)) &gt;= 0) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.erase(iter+idx);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a069aaa01111b9ae71e09d14134023ef7"></a>
@@ -792,7 +958,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00064">expanded</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00422">DTSDVMListView::SetExpanded()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00396">DTSTreeWindowEvent::SortParent()</a>.</p>
-
+<div class="fragment"><div class="line">                                               {</div>
+<div class="line">    this-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#ae7dc669c541e00c95ec04713bf88abac">expanded</a> = <a class="code" href="class_d_t_s_d_v_m_list_store.html#ae7dc669c541e00c95ec04713bf88abac">expanded</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9464b7e487e9c4dccec977a6b6894b98"></a>
@@ -814,7 +983,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00063">title</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00320">DTSDVMListView::SetValue()</a>.</p>
-
+<div class="fragment"><div class="line">                                                    {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html#a9a6df6dbd6c84fd0cfbb987266203c20">title</a> = value;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aa82d333247a2bf537c3acdeae7635e15"></a>
@@ -846,7 +1018,15 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00060">xml</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00796">DTS_C_API::dtsgui_treenodesetxml()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00103">tree_newnode::handle_newtreenode()</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00519">DTSDVMListView::SetXMLData()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                          {</div>
+<div class="line">    <span class="keywordflow">if</span> (xnode &amp;&amp; objref(xnode)) {</div>
+<div class="line">        this-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a92118dc06f2c70dea29103fd004228da">xml</a> = xnode;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_d_v_m_list_store.html#a98d60f46ee8ad5e7263dc8d3f12d7e3e">tattr</a>) {</div>
+<div class="line">        this-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a98d60f46ee8ad5e7263dc8d3f12d7e3e">tattr</a> = strdup(<a class="code" href="class_d_t_s_d_v_m_list_store.html#a98d60f46ee8ad5e7263dc8d3f12d7e3e">tattr</a>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af15ec04eead9616fea2b06e750c6b81c"></a>
@@ -867,7 +1047,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00057">children</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00038">cmp_title()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00377">DTSDVMListView::SortChildren()</a>.</p>
-
+<div class="fragment"><div class="line">                                   {</div>
+<div class="line">    std::sort(<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.begin(), <a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b6a3da4ad7be5d55855e90632ced851">children</a>.end(), <a class="code" href="class_d_t_s_d_v_m_list_store.html#a6a0982ded59dc351c68607d892edac01">cmp_title</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -1169,7 +1352,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

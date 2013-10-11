@@ -3,8 +3,232 @@
   <compounddef id="group___d_t_s-_a_p_p" kind="group">
     <compoundname>DTS-APP</compoundname>
     <title>Distrotech Server Configuration Application</title>
+    <innerfile refid="private_8h">private.h</innerfile>
     <innerfile refid="wxforms_8c">wxforms.c</innerfile>
-    <innergroup refid="group___d_t_s-_a_p_p-_wizard">Distrotech Application Wizard Interface</innergroup>
+    <innerclass refid="structapp__data" prot="public">app_data</innerclass>
+    <innerclass refid="structlistitem" prot="public">listitem</innerclass>
+    <innergroup refid="group___d_t_s-_a_p_p-_wizard">System configuration wizard</innergroup>
+    <innergroup refid="group___d_t_s-_a_p_p-_config">Configuration menu functions</innergroup>
+    <innergroup refid="group___d_t_s-_a_p_p-_iface">Interface configuration tab view</innergroup>
+    <innergroup refid="group___d_t_s-_a_p_p-_tree">Advanced configuration tree</innergroup>
+    <innergroup refid="group___d_t_s-_a_p_p-_p_b_x">PBX Configuration</innergroup>
+    <innergroup refid="group___d_t_s-_a_p_p-_test">Application test panel</innergroup>
+    <innergroup refid="group___d_t_s-_a_p_p-_toolbar">Application toolbar</innergroup>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group___d_t_s-_a_p_p_1ga018cb6fe637d3a25a67e794d620808ec" prot="public" static="no">
+        <name>node_id</name>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca05bdc159f9d09f11da201a71742409ab" prot="public">
+          <name>DTS_NODE_CUSTOMER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca5d9219d48e330379299d2ed15ff4ea15" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca18ebf5363d2b4ceb3a8743a4e7647bcf" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecaca8f7e08a6f51e6081b99238a63cbafe" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_DYN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca6fc67e5941f734e9de7b2637da5c9d2e" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_SERV</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca72083493da720ce59de27e706129d826" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_ZONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecadc2abb3aae3102620d94987b8bf84f62" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_HOST_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca1bd61a04594205156cf8c1bdbee06c25" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_HOST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecac0f1f71b049c8b3cb01da6496f13806e" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca25d60169e86212cf235d0c4667064603" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca67d5c38ab27222a53751515b85b184f3" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca5b916eea0e8627cd48cad8e0ea0d39ca" prot="public">
+          <name>DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecaadaa5062456242e248fd995b69227644" prot="public">
+          <name>DTS_NODE_NETWORK_IFACE_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca08159fce51c8b85d49c5f4966bf35d8b" prot="public">
+          <name>DTS_NODE_NETWORK_IFACE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecae56467f65a231afd6634cae3269e663c" prot="public">
+          <name>DTS_NODE_NETWORK_WIFI_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca692abd6a99c569736b4bf162a07c298e" prot="public">
+          <name>DTS_NODE_NETWORK_WIFI</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca19640654abb2114b8ee8098dc52e250a" prot="public">
+          <name>DTS_NODE_NETWORK_WAN_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca701fcc5c32156589c8d427dca26ad3c7" prot="public">
+          <name>DTS_NODE_NETWORK_WAN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecaffda66a81ab84d7dfb2dac1c5ce352f0" prot="public">
+          <name>DTS_NODE_NETWORK_ROUTE_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecaa6a75ad98f4e80d9ef8fa806e966bfdb" prot="public">
+          <name>DTS_NODE_NETWORK_ROUTE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecab0e808e1aa3a128b563041ad11d63892" prot="public">
+          <name>DTS_NODE_NETWORK_MODEM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecae55296fcae8a1a6d9b68b3488ce510ca" prot="public">
+          <name>DTS_NODE_NETWORK_MODEM_ADV</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecad3a141f5a4b83f7396624ec46408781b" prot="public">
+          <name>DTS_NODE_NETWORK_MODEM_ANA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecada7817a2ab63af146792c6e8421b0124" prot="public">
+          <name>DTS_NODE_NETWORK_ADSL_LINK_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca227b415be9d0831d430de77ec5bf8c52" prot="public">
+          <name>DTS_NODE_NETWORK_ADSL_LINK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca767fd577d500a56d72c11ffea034e08c" prot="public">
+          <name>DTS_NODE_NETWORK_ADSL_USER_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecaeb4d90752cc1ae6b1189057456d4080d" prot="public">
+          <name>DTS_NODE_NETWORK_ADSL_USER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca15c8b3347c4ae06b4206e5960f7bd41c" prot="public">
+          <name>DTS_NODE_NETWORK_TOS_NEW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecae4d8c8164988e426b306b81ba7a54551" prot="public">
+          <name>DTS_NODE_NETWORK_TOS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Node ID&apos;s used in application treeview. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="36" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="36" bodyend="66"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="func">
       <memberdef kind="function" id="group___d_t_s-_a_p_p_1ga063bbba7cc37af45b7989f2838fae1e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -16,12 +240,20 @@
           <declname>xmldoc</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Display formated XML Document on the console. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xmldoc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>XML Document to display </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="40" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="40" bodyend="46"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="42" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="42" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct xml_doc *</type>
@@ -33,21 +265,30 @@
           <declname>dtsgui</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>return reference to xmldoc stored in userdata. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>The user data is available from the application data handle the correct referencing und un referencing of the data. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>XML Document. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="48" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="48" bodyend="67"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="56" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="56" bodyend="75"/>
         <references refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" compoundref="wrapper_8cpp" startline="235" endline="237">dtsgui_userdata</references>
-        <references refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" compoundref="private_8h" startline="60">app_data::xmldoc</references>
-        <referencedby refid="private_8h_1a6d9d2b0105df87000cb2bdecbff91239" compoundref="netconfig_8c" startline="740" endline="769">advanced_config</referencedby>
-        <referencedby refid="private_8h_1a01bdf27a0760d9da4bb77918735171c1" compoundref="config_8c" startline="150" endline="187">export_config</referencedby>
-        <referencedby refid="private_8h_1abf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="145" endline="184">iface_config</referencedby>
-        <referencedby refid="private_8h_1aa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="325" endline="350">pbx_settings</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga0be336c09b5cd473a616326c4cb227d2" compoundref="wizard_8c" startline="481" endline="490">reconfig_wizard</referencedby>
-        <referencedby refid="private_8h_1abc9a4e54439d7a701992752ec7b3f6b9" compoundref="config_8c" startline="112" endline="148">view_config_conf</referencedby>
-        <referencedby refid="private_8h_1abe0b9ce2252ec72774af23a0ec71424f" compoundref="config_8c" startline="94" endline="110">view_config_xml</referencedby>
+        <references refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" compoundref="private_8h" startline="71">app_data::xmldoc</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga6d9d2b0105df87000cb2bdecbff91239" compoundref="netconfig_8c" startline="912" endline="926">advanced_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga01bdf27a0760d9da4bb77918735171c1" compoundref="config_8c" startline="198" endline="235">export_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gabf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="197" endline="236">iface_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga0be336c09b5cd473a616326c4cb227d2" compoundref="wizard_8c" startline="550" endline="559">reconfig_wizard</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1gabc9a4e54439d7a701992752ec7b3f6b9" compoundref="config_8c" startline="152" endline="188">view_config_conf</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1gabe0b9ce2252ec72774af23a0ec71424f" compoundref="config_8c" startline="126" endline="142">view_config_xml</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___d_t_s-_a_p_p_1ga011cd0b131174029fed8babdf1c7a101" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -59,25 +300,33 @@
           <declname>dtsgui</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Create the File menu in the menu bar. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="69" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="69" bodyend="92"/>
-        <references refid="structapp__data_1a68690abb28e424749f67339ea3736a41" compoundref="private_8h" startline="65">app_data::c_open</references>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="79" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="79" bodyend="102"/>
+        <references refid="structapp__data_1a68690abb28e424749f67339ea3736a41" compoundref="private_8h" startline="81">app_data::c_open</references>
         <references refid="group___c-_a_p_i-_menus_1ga58e38f8ef567c8f50e15a53507ee4a72" compoundref="wrapper_8cpp" startline="401" endline="404">dtsgui_close</references>
         <references refid="group___c-_a_p_i-_menus_1gabf67f1b041be315b58ccacc7d193b273" compoundref="wrapper_8cpp" startline="383" endline="386">dtsgui_exit</references>
         <references refid="group___c-_a_p_i-_menus_1gaf655828d94de128cfd8269d03d649092" compoundref="wrapper_8cpp" startline="433" endline="436">dtsgui_menusep</references>
         <references refid="group___c-_a_p_i-_menus_1gadd0f3eab51bf576378a6438c3982fd48" compoundref="wrapper_8cpp" startline="316" endline="319">dtsgui_newmenu</references>
         <references refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" compoundref="wrapper_8cpp" startline="365" endline="368">dtsgui_newmenucb</references>
         <references refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" compoundref="wrapper_8cpp" startline="235" endline="237">dtsgui_userdata</references>
-        <references refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" compoundref="private_8h" startline="64">app_data::e_wiz</references>
-        <references refid="group___d_t_s-_a_p_p-_wizard_1ga126b309803052977061662f97fb9012a" compoundref="wizard_8c" startline="461" endline="479">editsys_wizard</references>
-        <references refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" compoundref="private_8h" startline="63">app_data::n_wiz</references>
-        <references refid="group___d_t_s-_a_p_p-_wizard_1ga56c78e0d32a18452dcea4f026de2c889" compoundref="wizard_8c" startline="436" endline="459">newsys_wizard</references>
-        <references refid="config_8c_1a72af4355dbc5afe93fef750a81a3e572" compoundref="config_8c" startline="27" endline="67">open_config</references>
-        <referencedby refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" compoundref="wxforms_8c" startline="110" endline="123">guiconfig_cb</referencedby>
+        <references refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" compoundref="private_8h" startline="79">app_data::e_wiz</references>
+        <references refid="group___d_t_s-_a_p_p-_wizard_1ga126b309803052977061662f97fb9012a" compoundref="wizard_8c" startline="523" endline="541">editsys_wizard</references>
+        <references refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" compoundref="private_8h" startline="77">app_data::n_wiz</references>
+        <references refid="group___d_t_s-_a_p_p-_wizard_1ga56c78e0d32a18452dcea4f026de2c889" compoundref="wizard_8c" startline="491" endline="514">newsys_wizard</references>
+        <references refid="group___d_t_s-_a_p_p-_config_1ga72af4355dbc5afe93fef750a81a3e572" compoundref="config_8c" startline="44" endline="84">open_config</references>
+        <referencedby refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" compoundref="wxforms_8c" startline="130" endline="143">guiconfig_cb</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___d_t_s-_a_p_p_1gae1b0e521306d90ee09f460064c015b2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -89,19 +338,27 @@
           <declname>dtsgui</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Create the Help menu in the menu bar. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="94" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="94" bodyend="108"/>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="106" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="106" bodyend="120"/>
         <references refid="group___c-_a_p_i-_menus_1gaf06c34986c04d800883694733554033e" compoundref="wrapper_8cpp" startline="418" endline="421">dtsgui_about</references>
         <references refid="group___c-_a_p_i-_menus_1gaf655828d94de128cfd8269d03d649092" compoundref="wrapper_8cpp" startline="433" endline="436">dtsgui_menusep</references>
         <references refid="group___c-_a_p_i-_menus_1gadd0f3eab51bf576378a6438c3982fd48" compoundref="wrapper_8cpp" startline="316" endline="319">dtsgui_newmenu</references>
         <references refid="group___c-_a_p_i-_menus_1gabb8b44357ce2ce4a3fd028939cf8c700" compoundref="wrapper_8cpp" startline="338" endline="341">dtsgui_newmenuitem</references>
         <references refid="group___c-_a_p_i-_panel_1gafb8efe017917a372826f7ddedb0e8bba" compoundref="wrapper_8cpp" startline="483" endline="486">dtsgui_textpane</references>
-        <references refid="private_8h_1a77cb81a619f8c9ccd83cdf1e7c97aae9" compoundref="testing_8c" startline="94" endline="105">test_menu</references>
-        <referencedby refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" compoundref="wxforms_8c" startline="110" endline="123">guiconfig_cb</referencedby>
+        <references refid="group___d_t_s-_a_p_p-_test_1ga77cb81a619f8c9ccd83cdf1e7c97aae9" compoundref="testing_8c" startline="128" endline="139">test_menu</references>
+        <referencedby refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" compoundref="wxforms_8c" startline="130" endline="143">guiconfig_cb</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -117,18 +374,35 @@
           <declname>data</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>GUI application callback. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>This is called on GUI application creation returning 0 will end the GUI returning non zero will pass control to the GUI. <simplesect kind="see"><para><ref refid="group___c_o_r_e_1gad3b80490c86b8275c47382588f2ecfd4" kindref="member">dtsgui_configcb</ref> </para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application userdata reference. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Non zero value to pass control to the GUI. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="110" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="110" bodyend="123"/>
-        <references refid="private_8h_1ab33c9c3228455b45318900a842c7a693" compoundref="toolbar_8cpp" startline="111" endline="117">app_toolbar</references>
-        <references refid="config_8c_1a2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="189" endline="217">config_menu</references>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="130" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="130" bodyend="143"/>
+        <references refid="group___d_t_s-_a_p_p-_toolbar_1gab33c9c3228455b45318900a842c7a693" compoundref="toolbar_8cpp" startline="88" endline="94">app_toolbar</references>
+        <references refid="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="240" endline="268">config_menu</references>
         <references refid="group___c-_a_p_i_1ga1734b840fc0696b13d5b616df0ec3bbb" compoundref="wrapper_8cpp" startline="278" endline="281">dtsgui_setuptoolbar</references>
-        <references refid="group___d_t_s-_a_p_p_1ga011cd0b131174029fed8babdf1c7a101" compoundref="wxforms_8c" startline="69" endline="92">file_menu</references>
-        <references refid="group___d_t_s-_a_p_p_1gae1b0e521306d90ee09f460064c015b2b" compoundref="wxforms_8c" startline="94" endline="108">help_menu</references>
-        <referencedby refid="group___d_t_s-_a_p_p_1ga3c04138a5bfe5d72780bb7e82a18e627" compoundref="wxforms_8c" startline="137" endline="177">main</referencedby>
+        <references refid="group___d_t_s-_a_p_p_1ga011cd0b131174029fed8babdf1c7a101" compoundref="wxforms_8c" startline="79" endline="102">file_menu</references>
+        <references refid="group___d_t_s-_a_p_p_1gae1b0e521306d90ee09f460064c015b2b" compoundref="wxforms_8c" startline="106" endline="120">help_menu</references>
+        <referencedby refid="group___d_t_s-_a_p_p_1ga3c04138a5bfe5d72780bb7e82a18e627" compoundref="wxforms_8c" startline="167" endline="207">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___d_t_s-_a_p_p_1ga5fe0b449ba347b98cc9acad0f5608ca1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -140,15 +414,23 @@
           <declname>data</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Callback called when reference count becomes 0. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Free datadir and un reference xmldoc as we going away. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application user data reference. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="125" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="125" bodyend="135"/>
-        <references refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" compoundref="private_8h" startline="61">app_data::datadir</references>
-        <references refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" compoundref="private_8h" startline="60">app_data::xmldoc</references>
-        <referencedby refid="group___d_t_s-_a_p_p_1ga3c04138a5bfe5d72780bb7e82a18e627" compoundref="wxforms_8c" startline="137" endline="177">main</referencedby>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="149" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="149" bodyend="159"/>
+        <references refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" compoundref="private_8h" startline="73">app_data::datadir</references>
+        <references refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" compoundref="private_8h" startline="71">app_data::xmldoc</references>
+        <referencedby refid="group___d_t_s-_a_p_p_1ga3c04138a5bfe5d72780bb7e82a18e627" compoundref="wxforms_8c" startline="167" endline="207">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___d_t_s-_a_p_p_1ga3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -164,18 +446,48 @@
           <declname>argv</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Application entry point. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>The first argument (argv[0]) is the application name. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of arguments in array argv. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of argumements passed on the commandline. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Exit code. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="137" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="137" bodyend="177"/>
-        <references refid="private_8h_1a48cc0a91e8f54c62f3341c21c8cc74e8" compoundref="private_8h" startline="24">DATA_DIR</references>
-        <references refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" compoundref="private_8h" startline="61">app_data::datadir</references>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" line="167" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/wxforms.c" bodystart="167" bodyend="207"/>
+        <references refid="group___d_t_s-_a_p_p_1ga48cc0a91e8f54c62f3341c21c8cc74e8" compoundref="private_8h" startline="32">DATA_DIR</references>
+        <references refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" compoundref="private_8h" startline="73">app_data::datadir</references>
         <references refid="group___c-_a_p_i_1gacecdb36b65ac3d5522a419a6b69c9f7f" compoundref="wrapper_8cpp" startline="207" endline="209">dtsgui_config</references>
         <references refid="group___c-_a_p_i_1ga3ac9d5ef153d17266a704a373d591962" compoundref="wrapper_8cpp" startline="222" endline="224">dtsgui_run</references>
-        <references refid="group___d_t_s-_a_p_p_1ga5fe0b449ba347b98cc9acad0f5608ca1" compoundref="wxforms_8c" startline="125" endline="135">free_appdata</references>
-        <references refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" compoundref="wxforms_8c" startline="110" endline="123">guiconfig_cb</references>
+        <references refid="group___d_t_s-_a_p_p_1ga5fe0b449ba347b98cc9acad0f5608ca1" compoundref="wxforms_8c" startline="149" endline="159">free_appdata</references>
+        <references refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" compoundref="wxforms_8c" startline="130" endline="143">guiconfig_cb</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___d_t_s-_a_p_p_1ga48cc0a91e8f54c62f3341c21c8cc74e8" prot="public" static="no">
+        <name>DATA_DIR</name>
+        <initializer>&quot;/usr/share/dtsguiapp&quot;</initializer>
+        <briefdescription>
+<para>Shared application folder. </para>        </briefdescription>
+        <detaileddescription>
+<para>This should be set correctly at build time and this value ignored. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/private.h" line="32" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/private.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="group___d_t_s-_a_p_p_1ga3c04138a5bfe5d72780bb7e82a18e627" compoundref="wxforms_8c" startline="167" endline="207">main</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

@@ -54,25 +54,25 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1219" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1219" bodyend="1221"/>
         <references refid="classform__item_1ad99d224a37a5bc6f99835afb2347fac8" compoundref="pitems_8cpp" startline="155" endline="174">form_item::Append</references>
-        <referencedby refid="netconfig_8c_1a53ff57cbb1a4442c4428c95746229150" compoundref="netconfig_8c" startline="37" endline="74">network_config</referencedby>
-        <referencedby refid="netconfig_8c_1aaf6857ee640832afc05a9e158faedde3" compoundref="netconfig_8c" startline="372" endline="388">network_modem</referencedby>
-        <referencedby refid="netconfig_8c_1a4bab1c305385131091d979ad287b2ea3" compoundref="netconfig_8c" startline="401" endline="444">network_modem_ana</referencedby>
-        <referencedby refid="netconfig_8c_1a3a749e8b1e9561bb168ba3aed04444a8" compoundref="netconfig_8c" startline="277" endline="318">network_newwifi</referencedby>
-        <referencedby refid="netconfig_8c_1a0b2d5249167dfdc0b972bff2091b5745" compoundref="netconfig_8c" startline="524" endline="563">network_tos</referencedby>
-        <referencedby refid="netconfig_8c_1a3a92d505fabcecdf55524fe8b77f08bc" compoundref="netconfig_8c" startline="565" endline="600">network_tos_new</referencedby>
-        <referencedby refid="netconfig_8c_1adceac66b5b38e18e528fc5a2adb2d649" compoundref="netconfig_8c" startline="245" endline="275">network_wifi</referencedby>
-        <referencedby refid="pbxconfig_8c_1af79c511cab086f9152e08d0625f78b05" compoundref="pbxconfig_8c" startline="220" endline="266">pbxconf_default</referencedby>
-        <referencedby refid="pbxconfig_8c_1a836477fa7fce0013efd28a4b955f58b5" compoundref="pbxconfig_8c" startline="134" endline="159">pbxconf_e1</referencedby>
-        <referencedby refid="pbxconfig_8c_1a13ef8f931ae62e6036a1ac3e6596a424" compoundref="pbxconfig_8c" startline="195" endline="212">pbxconf_global</referencedby>
-        <referencedby refid="pbxconfig_8c_1a17474314ab394325f10da55d073f03d4" compoundref="pbxconfig_8c" startline="279" endline="299">pbxconf_incoming</referencedby>
-        <referencedby refid="pbxconfig_8c_1a085f542ab4bb26773f2a68e636a681e9" compoundref="pbxconfig_8c" startline="161" endline="193">pbxconf_mfcr2</referencedby>
-        <referencedby refid="pbxconfig_8c_1a02bdd2b74e929bf843bed40de61f9c97" compoundref="pbxconfig_8c" startline="25" endline="105">pbxconf_trunk</referencedby>
-        <referencedby refid="testing_8c_1a7436ba5c38bedec1d9ddda07ea99815d" compoundref="testing_8c" startline="72" endline="92">testpanel</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga2385f9d99b5222b879485702af299fd0" compoundref="wizard_8c" startline="233" endline="280">wizz_exten</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gafcf1b2026fe781338918ede3a099a713" compoundref="wizard_8c" startline="282" endline="315">wizz_location</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga4fc4a7cde0492cbde04a4e0804cc81d8" compoundref="wizard_8c" startline="217" endline="231">wizz_network</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gaa274a72a578011082041109b5e2d8b22" compoundref="wizard_8c" startline="326" endline="346">wizz_trunk</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga4663a22f17fb8c01f6058f117ed6c201" compoundref="wizard_8c" startline="348" endline="361">wizz_voip</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga53ff57cbb1a4442c4428c95746229150" compoundref="netconfig_8c" startline="56" endline="93">network_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gaaf6857ee640832afc05a9e158faedde3" compoundref="netconfig_8c" startline="497" endline="513">network_modem</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga4bab1c305385131091d979ad287b2ea3" compoundref="netconfig_8c" startline="536" endline="579">network_modem_ana</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga3a749e8b1e9561bb168ba3aed04444a8" compoundref="netconfig_8c" startline="377" endline="418">network_newwifi</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga0b2d5249167dfdc0b972bff2091b5745" compoundref="netconfig_8c" startline="684" endline="723">network_tos</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga3a92d505fabcecdf55524fe8b77f08bc" compoundref="netconfig_8c" startline="730" endline="765">network_tos_new</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gadceac66b5b38e18e528fc5a2adb2d649" compoundref="netconfig_8c" startline="340" endline="370">network_wifi</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaf79c511cab086f9152e08d0625f78b05" compoundref="pbxconfig_8c" startline="253" endline="299">pbxconf_default</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga836477fa7fce0013efd28a4b955f58b5" compoundref="pbxconfig_8c" startline="155" endline="180">pbxconf_e1</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga13ef8f931ae62e6036a1ac3e6596a424" compoundref="pbxconfig_8c" startline="222" endline="239">pbxconf_global</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga17474314ab394325f10da55d073f03d4" compoundref="pbxconfig_8c" startline="318" endline="338">pbxconf_incoming</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga085f542ab4bb26773f2a68e636a681e9" compoundref="pbxconfig_8c" startline="185" endline="217">pbxconf_mfcr2</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1ga02bdd2b74e929bf843bed40de61f9c97" compoundref="pbxconfig_8c" startline="37" endline="117">pbxconf_trunk</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_test_1ga7436ba5c38bedec1d9ddda07ea99815d" compoundref="testing_8c" startline="100" endline="120">testpanel</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga2385f9d99b5222b879485702af299fd0" compoundref="wizard_8c" startline="260" endline="307">wizz_exten</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gafcf1b2026fe781338918ede3a099a713" compoundref="wizard_8c" startline="311" endline="344">wizz_location</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga4fc4a7cde0492cbde04a4e0804cc81d8" compoundref="wizard_8c" startline="242" endline="256">wizz_network</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gaa274a72a578011082041109b5e2d8b22" compoundref="wizard_8c" startline="359" endline="379">wizz_trunk</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga4663a22f17fb8c01f6058f117ed6c201" compoundref="wizard_8c" startline="383" endline="396">wizz_voip</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel-_elements_1gaaa4e4de11048d7e32151628f4428cf3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -110,7 +110,7 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1227" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1227" bodyend="1229"/>
         <references refid="classform__item_1a9f108735a3f81f0f419fd828a29b2938" compoundref="pitems_8cpp" startline="176" endline="186">form_item::SetSelection</references>
-        <referencedby refid="netconfig_8c_1a3a749e8b1e9561bb168ba3aed04444a8" compoundref="netconfig_8c" startline="277" endline="318">network_newwifi</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga3a749e8b1e9561bb168ba3aed04444a8" compoundref="netconfig_8c" startline="377" endline="418">network_newwifi</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel-_elements_1ga6585281832905a2e769f8b0f813a67e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -182,16 +182,16 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1241" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1241" bodyend="1243"/>
         <references refid="classform__item_1a7bbc5ad6365c6b104f230afb35b0996b" compoundref="pitems_8cpp" startline="225" endline="245">form_item::AppendXML</references>
-        <referencedby refid="netconfig_8c_1afbdf0e8165311538e8b408c7ba2fabbf" compoundref="netconfig_8c" startline="446" endline="477">network_adsl_link</referencedby>
-        <referencedby refid="netconfig_8c_1aa4d1bbd43067e6a75b7a441658a28646" compoundref="netconfig_8c" startline="479" endline="502">network_adsl_link_new</referencedby>
-        <referencedby refid="netconfig_8c_1a53ff57cbb1a4442c4428c95746229150" compoundref="netconfig_8c" startline="37" endline="74">network_config</referencedby>
-        <referencedby refid="netconfig_8c_1a3a749e8b1e9561bb168ba3aed04444a8" compoundref="netconfig_8c" startline="277" endline="318">network_newwifi</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gafbdf0e8165311538e8b408c7ba2fabbf" compoundref="netconfig_8c" startline="586" endline="617">network_adsl_link</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gaa4d1bbd43067e6a75b7a441658a28646" compoundref="netconfig_8c" startline="624" endline="647">network_adsl_link_new</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga53ff57cbb1a4442c4428c95746229150" compoundref="netconfig_8c" startline="56" endline="93">network_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga3a749e8b1e9561bb168ba3aed04444a8" compoundref="netconfig_8c" startline="377" endline="418">network_newwifi</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Interface for creating and placing elements on the panel. </para>    </briefdescription>
     <detaileddescription>
-<para><xrefsect id="todo_1_todo000005"><xreftitle>Todo</xreftitle><xrefdescription><para>Add a JSON API </para></xrefdescription></xrefsect><simplesect kind="see"><para><ref refid="group___c-_a_p_i-_panel-_items" kindref="compound">Panel item interface.</ref> </para></simplesect>
+<para><xrefsect id="todo_1_todo000007"><xreftitle>Todo</xreftitle><xrefdescription><para>Add a JSON API </para></xrefdescription></xrefsect><simplesect kind="see"><para><ref refid="group___c-_a_p_i-_panel-_items" kindref="compound">Panel item interface.</ref> </para></simplesect>
 <simplesect kind="remark"><para>Element items include Text / Password / Check / List / Combo boxes. </para><simplesectsep/><para>They are placed with the title on the left and element on the right. </para><simplesectsep/><para>Elements are accessed via the item interface. </para><simplesectsep/><para>There multiple API&apos;s for managing elements but a common interface for controling list and combo boxes. </para></simplesect>
 </para>    </detaileddescription>
   </compounddef>

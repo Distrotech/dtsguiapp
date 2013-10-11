@@ -3,6 +3,9 @@
 .nh
 .SH NAME
 app/config.c \- 
+.PP
+Configuration menu functions\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -23,72 +26,35 @@ app/config.c \-
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBopen_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fIOpen XML configuration file callback\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBsave_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fIClose/Save menu option call back\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBview_config_xml\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fIDisplay XML document formated in text display\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBview_config_conf\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fIDisplay XML document formated in text display as a dot conf\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBexport_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fIExport XML document as a \&.conf file\&. \fP"
 .ti -1c
 .RI "void \fBconfig_menu\fP (struct \fBdtsgui\fP *\fBdtsgui\fP)"
 .br
+.RI "\fIAdd the configure menu to the menu bar and add options\&. \fP"
 .in -1c
-.SH "Function Documentation"
+.SH "Detailed Description"
 .PP 
-.SS "void config_menu (struct \fBdtsgui\fP *dtsgui)"
+Configuration menu functions\&. 
+
 
 .PP
-Definition at line 189 of file config\&.c\&.
-.PP
-References advanced_config(), app_data::cfg_menu, dtsgui_menuenable(), dtsgui_menusep(), dtsgui_newmenu(), dtsgui_newmenucb(), dtsgui_userdata(), export_config(), iface_config(), pbx_settings(), reconfig_wizard(), save_config(), view_config_conf(), and view_config_xml()\&.
-.PP
-Referenced by guiconfig_cb()\&.
-.SS "\fBdtsgui_pane\fP export_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
-.PP
-Definition at line 150 of file config\&.c\&.
-.PP
-References app_getxmldoc(), app_data::datadir, dtsgui_alert(), dtsgui_filesave(), and dtsgui_userdata()\&.
-.PP
-Referenced by config_menu()\&.
-.SS "\fBdtsgui_pane\fP open_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
-.PP
-Definition at line 27 of file config\&.c\&.
-.PP
-References app_data::c_open, app_data::cfg_menu, dtsgui_alert(), dtsgui_fileopen(), dtsgui_menuenable(), dtsgui_menuitemenable(), dtsgui_sendevent(), dtsgui_set_toolbar(), dtsgui_titleappend(), dtsgui_userdata(), app_data::e_wiz, app_data::n_wiz, and app_data::xmldoc\&.
-.PP
-Referenced by file_menu()\&.
-.SS "\fBdtsgui_pane\fP save_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
-.PP
-Definition at line 69 of file config\&.c\&.
-.PP
-References app_data::c_open, app_data::cfg_menu, dtsgui_menuenable(), dtsgui_menuitemenable(), dtsgui_set_toolbar(), dtsgui_titleappend(), dtsgui_userdata(), app_data::e_wiz, app_data::n_wiz, and app_data::xmldoc\&.
-.PP
-Referenced by config_menu()\&.
-.SS "\fBdtsgui_pane\fP view_config_conf (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
-.PP
-Definition at line 112 of file config\&.c\&.
-.PP
-References app_getxmldoc(), app_data::datadir, dtsgui_alert(), dtsgui_textpane(), and dtsgui_userdata()\&.
-.PP
-Referenced by config_menu()\&.
-.SS "\fBdtsgui_pane\fP view_config_xml (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
-.PP
-Definition at line 94 of file config\&.c\&.
-.PP
-References app_getxmldoc(), and dtsgui_textpane()\&.
-.PP
-Referenced by config_menu()\&.
+Definition in file \fBconfig\&.c\fP\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

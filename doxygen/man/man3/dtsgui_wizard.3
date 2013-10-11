@@ -48,6 +48,17 @@ Definition at line 26 of file DTSWizard\&.h\&.
 Definition at line 38 of file DTSWizard\&.cpp\&.
 .PP
 References start, and wiz\&.
+.PP
+.nf
+                                                                                   {
+    if (dgui && objref(dgui)) {
+        dtsgui = dgui;
+        wiz = new wxWizard(f, wxID_ANY, title, wxNullBitmap, wxDefaultPosition, wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER);
+    }
+
+    start = NULL;
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "\fBDTSWizardWindow\fP * dtsgui_wizard::AddPage (const char *title, struct xml_doc *xmldoc, void *userdata)"
@@ -58,6 +69,41 @@ Definition at line 56 of file DTSWizard\&.cpp\&.
 References DTSFrame::CreatePane(), dtsgui::GetFrame(), DTSPanel::SetTitle(), DTSObject::SetXMLDoc(), start, wiz, and wx_DTSPANEL_WIZARD\&.
 .PP
 Referenced by DTS_C_API::dtsgui_wizard_addpage()\&.
+.PP
+.nf
+                                                                                                 {
+    DTSWizardWindow *dww;
+    wxWizardPageSimple *wp, *tmp;
+    wxWizardPage *last;
+    DTSFrame *f = dtsgui->GetFrame();
+
+    dww = (DTSWizardWindow*)f->CreatePane(title, wxEmptyString, 0, wx_DTSPANEL_WIZARD, userdata);
+
+    wp = dynamic_cast<wxWizardPageSimple *>(dww);
+    wp->Create(wiz);
+
+    if (title) {
+        dww->SetTitle(title, true);
+    }
+
+    if (xmldoc) {
+        dww->SetXMLDoc(xmldoc);
+    }
+
+    objlock(this);
+    if (!start) {
+        start = wp;
+    } else {
+        for(last = start; last->GetNext(); last=last->GetNext());
+
+        tmp = dynamic_cast<wxWizardPageSimple*>(last);
+        tmp->SetNext(wp);
+        wp->SetPrev(tmp);
+    }
+    objunlock(this);
+    return dww;
+}
+.fi
 .SS "dtsgui_wizard::DTS_OJBREF_CLASS (\fBdtsgui_wizard\fP)"
 
 .SS "int dtsgui_wizard::RunWizard ()"
@@ -68,6 +114,15 @@ Definition at line 89 of file DTSWizard\&.cpp\&.
 References start, and wiz\&.
 .PP
 Referenced by DTS_C_API::dtsgui_runwizard()\&.
+.PP
+.nf
+                             {
+    wiz->GetPageAreaSizer()->Add(start);
+    wiz->Center();
+
+    return wiz->RunWizard(start);
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "class \fBdtsgui\fP* dtsgui_wizard::dtsgui\fC [private]\fP"

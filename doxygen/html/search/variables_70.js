@@ -9,6 +9,6 @@ var searchData=
   ['pd',['pd',['../classcurl__progress.html#ac7738d2384035a652657db4f450222c6',1,'curl_progress']]],
   ['pdia',['pdia',['../class_d_t_s_frame.html#a7178b3e879eb8fefe5e7361f349cd275',1,'DTSFrame']]],
   ['proto',['proto',['../class_d_t_s_a_p_p_tool_bar.html#a4c170f1c054a010208fc13afca94274e',1,'DTSAPPToolBar']]],
-  ['protocols',['protocols',['../netconfig_8c.html#adbe54f6a0a7e02ca7aa64f300dc162b0',1,'netconfig.c']]],
+  ['protocols',['protocols',['../group___d_t_s-_a_p_p-_tree.html#gadbe54f6a0a7e02ca7aa64f300dc162b0',1,'netconfig.c']]],
   ['ptr',['ptr',['../unionform__data.html#a5906eb68e54829e44467b3d082f9eee4',1,'form_data']]]
 ];

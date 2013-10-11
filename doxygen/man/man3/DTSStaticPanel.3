@@ -37,12 +37,29 @@ Definition at line 124 of file DTSPanel\&.h\&.
 Definition at line 1012 of file DTSPanel\&.cpp\&.
 .PP
 References DTSObject::dtsevthandler, DTSPanelEvent::OnDialog(), DTSObject::panel, DTSPanel::SetupWin(), DTSObject::type, and wx_DTSPANEL_PANEL\&.
+.PP
+.nf
+    :wxPanel(parent, wxID_ANY),
+     DTSPanel(frame, status, butmask) {
+    DTSPanelEvent *dtsevt = (DTSPanelEvent*)dtsevthandler;
+    type = wx_DTSPANEL_PANEL;
+    panel = dynamic_cast<wxPanel *>(this);
+    panel->Bind(wxEVT_TEXT_ENTER, &DTSPanelEvent::OnDialog, dtsevt);
+    SetupWin();
+}
+.fi
 .SS "DTSStaticPanel::DTSStaticPanel ()"
 
 .PP
 Definition at line 1022 of file DTSPanel\&.cpp\&.
 .PP
 References DTSObject::type, and wx_DTSPANEL_PANEL\&.
+.PP
+.nf
+                               {
+    type = wx_DTSPANEL_PANEL;
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "bool DTSStaticPanel::Show (boolshow = \fCtrue\fP)\fC [virtual]\fP"
@@ -53,6 +70,14 @@ Reimplemented in \fBDTSDialog\fP\&.
 Definition at line 1026 of file DTSPanel\&.cpp\&.
 .PP
 References DTSPanel::ShowPanel()\&.
+.PP
+.nf
+                                   {
+    ShowPanel(show);
+    return wxPanel::Show(show);
+}
+.fi
+
 
 .SH "Author"
 .PP 

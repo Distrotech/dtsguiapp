@@ -82,6 +82,26 @@ Definition at line 66 of file DTSTreeWindow\&.cpp\&.
 References data, flags, node_cb, p_cb, tn, tv, and type\&.
 .PP
 Referenced by DTS_C_API::dtsgui_newxmltreenode()\&.
+.PP
+.nf
+                                                                                                                         {
+    if (data && objref(data)) {
+        this->data = data;
+    } else {
+        this->data = NULL;
+    }
+    this->tv = tree;
+    this->tn = tn;
+    ALLOC_CONST(this->xpath, xpath);
+    ALLOC_CONST(this->node, node);
+    ALLOC_CONST(this->vitem, vitem);
+    ALLOC_CONST(this->tattr, tattr);
+    this->flags = flags;
+    this->type = nid;
+    this->node_cb = node_cb;
+    this->p_cb = p_cb;
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "tree_newnode::DTS_OJBREF_CLASS (\fBtree_newnode\fP)"
@@ -94,6 +114,50 @@ Definition at line 103 of file DTSTreeWindow\&.cpp\&.
 References DTSDVMCtrl::AppendContainer(), DTSDVMCtrl::AppendItem(), data, DTS_TREE_NEW_NODE_CONTAINER, DTS_TREE_NEW_NODE_DELETE, DTS_TREE_NEW_NODE_EDIT, DTS_TREE_NEW_NODE_SORT, flags, DTSTreeWindow::GetTreeCtrl(), node, node_cb, p_cb, DTSPanel::Panel2XML(), DTSTreeWindow::Select(), DTSDVMListStore::SetXMLData(), tattr, tn, tv, type, vitem, and xpath\&.
 .PP
 Referenced by handle_newtreenode_cb()\&.
+.PP
+.nf
+                                                                       {
+    DTSTreeWindow *tw = (DTSTreeWindow*)tv;
+    DTSDVMCtrl *tree = tw->GetTreeCtrl();
+    DTSDVMListStore *ls;
+    wxDataViewItem item, root;
+    struct xml_node *xn;
+    const char *name;
+
+    if (!(xn = dp->Panel2XML(xpath, node, vitem, tattr))) {
+        return 1;
+    }
+
+    if (tattr) {
+        name = xml_getattr(xn, tattr);
+    } else {
+        name = xn->value;
+    }
+
+    root = wxDataViewItem(this->tn);
+    if (flags & DTS_TREE_NEW_NODE_CONTAINER) {
+        ls = (DTSDVMListStore*)tree->AppendContainer(root, name, flags & DTS_TREE_NEW_NODE_EDIT, flags & DTS_TREE_NEW_NODE_SORT, flags & DTS_TREE_NEW_NODE_DELETE, type, p_cb, data)\&.GetID();
+    } else {
+        ls = (DTSDVMListStore*)tree->AppendItem(root, name, flags & DTS_TREE_NEW_NODE_EDIT, flags & DTS_TREE_NEW_NODE_SORT, flags & DTS_TREE_NEW_NODE_DELETE, type, p_cb, data)\&.GetID();
+    }
+    ls->SetXMLData(xn, tattr);
+
+    if (!tree->IsExpanded(root)) {
+        tree->Expand(root);
+    }
+
+    /*the panel event manager holds a ref for nn*/
+    if (node_cb) {
+        node_cb(tv, ls, xn, data);
+    }
+    objunref(xn);
+
+    item = wxDataViewItem(ls);
+    tw->Select(item);
+
+    return 0;
+}
+.fi
 .SS "int tree_newnode::handle_newtreenode_cb (class \fBdtsgui\fP *dtsgui, \fBdtsgui_pane\fPp, inttype, intevent, void *data)\fC [static]\fP"
 
 .PP
@@ -102,6 +166,26 @@ Definition at line 85 of file DTSTreeWindow\&.cpp\&.
 References handle_newtreenode(), wx_PANEL_EVENT_BUTTON, and wx_PANEL_EVENT_BUTTON_YES\&.
 .PP
 Referenced by DTS_C_API::dtsgui_newxmltreenode()\&.
+.PP
+.nf
+                                                                                                            {
+    class tree_newnode *nn = (class tree_newnode*)data;
+    DTSPanel *dp = (DTSPanel*)p;
+
+    if (type != wx_PANEL_EVENT_BUTTON) {
+        return 1;
+    }
+
+    switch(event) {
+        case wx_PANEL_EVENT_BUTTON_YES:
+            break;
+        default:
+            return 1;
+    }
+
+    return nn->handle_newtreenode(dtsgui, dp);
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "void* tree_newnode::data\fC [private]\fP"

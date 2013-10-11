@@ -174,7 +174,10 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00551">551</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00118">model</a>.</p>
-
+<div class="fragment"><div class="line">                       {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_ctrl.html#abc8f34f1960b033d7f7aaa44ecbec272">model</a> = NULL;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a3759d070daa1fe0fca15d894e57d9ae8"></a>
@@ -234,7 +237,33 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00555">555</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00586">AssociateModel()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                                                               {</div>
+<div class="line">    wxDataViewTextRenderer *col0_r;</div>
+<div class="line">    wxDataViewColumn *col0;</div>
+<div class="line"></div>
+<div class="line">    this-&gt;model = NULL;</div>
+<div class="line">    Create(parent, <span class="keywordtype">id</span>, pos, size, style, validator);</div>
+<div class="line">    <span class="keywordflow">if</span> (model) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_d_v_m_ctrl.html#ad844ee2c061ae2233ac8cca01c0a6a92">AssociateModel</a>(model);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    col0_r = <span class="keyword">new</span> wxDataViewTextRenderer(<span class="stringliteral">&quot;string&quot;</span>, wxDATAVIEW_CELL_EDITABLE);</div>
+<div class="line"><span class="preprocessor">#ifndef _WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>    col0_r-&gt;DisableEllipsize();</div>
+<div class="line"><span class="preprocessor">#endif //_WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>    col0 = <span class="keyword">new</span> wxDataViewColumn(<span class="stringliteral">&quot;Title&quot;</span>, col0_r, 0);</div>
+<div class="line"><span class="preprocessor">#ifndef _WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>    col0-&gt;SetWidth(wxCOL_WIDTH_AUTOSIZE);</div>
+<div class="line"><span class="preprocessor">#endif // _WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>    col0-&gt;SetFlags(wxCOL_RESIZABLE | wxCOL_REORDERABLE);</div>
+<div class="line">    col0-&gt;SetReorderable(<span class="keyword">true</span>);</div>
+<div class="line">    col0-&gt;SetAlignment(wxALIGN_LEFT);</div>
+<div class="line">    AppendColumn(col0);</div>
+<div class="line"><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>    SetRowHeight(17);</div>
+<div class="line"><span class="preprocessor">#endif // _WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aae0b56e080e40b35346ce6cb118dbc4f"></a>
@@ -253,7 +282,10 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00582">582</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00367">DTSDVMListView::DeleteAll()</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00118">model</a>.</p>
-
+<div class="fragment"><div class="line">                        {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_ctrl.html#abc8f34f1960b033d7f7aaa44ecbec272">model</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a7d0ec062e50e1d05cf4a2e8852104580">DeleteAll</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -322,7 +354,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00616">AppendNode()</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00708">DTS_C_API::dtsgui_treecont()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00103">tree_newnode::handle_newtreenode()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                                                                                             {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_ctrl.html#aff491c87f47b924fd0d6d26fb319b82c">AppendNode</a>(parent, title, <span class="keyword">true</span>, can_edit, can_sort, can_del, nodeid, p_cb, userdata);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a60de6e9342a4c140fa2b72acfbfd97dc"></a>
@@ -390,7 +425,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00616">AppendNode()</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00732">DTS_C_API::dtsgui_treeitem()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00103">tree_newnode::handle_newtreenode()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                                                                                        {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_ctrl.html#aff491c87f47b924fd0d6d26fb319b82c">AppendNode</a>(parent, title, <span class="keyword">false</span>, can_edit, can_sort, can_del, nodeid, p_cb, userdata);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aff491c87f47b924fd0d6d26fb319b82c"></a>
@@ -472,7 +510,28 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00096">DTSDVMListStore::Append()</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00050">DTSDVMListStore::can_delete</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00048">DTSDVMListStore::can_edit</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00049">DTSDVMListStore::can_sort</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00332">DTSDVMListView::GetRoot()</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00118">model</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00336">DTSDVMListView::SetRoot()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00612">AppendContainer()</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00608">AppendItem()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                                                                                                     {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *li, *node;</div>
+<div class="line">    wxDataViewItem dvi;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!parent.IsOk() &amp;&amp; !<a class="code" href="class_d_t_s_d_v_m_ctrl.html#abc8f34f1960b033d7f7aaa44ecbec272">model</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#adc923eb492e77cb825121688fc73764c">GetRoot</a>()) {</div>
+<div class="line">        li = <a class="code" href="class_d_t_s_d_v_m_ctrl.html#abc8f34f1960b033d7f7aaa44ecbec272">model</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a3dd3b975a0207831ad000447340482a0">SetRoot</a>(title, nodeid, p_cb, userdata);</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!(node = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)parent.GetID())) {</div>
+<div class="line">        <span class="keywordflow">return</span> wxDataViewItem(NULL);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        li= <span class="keyword">new</span> <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>(node, iscont, title, nodeid, p_cb, userdata);</div>
+<div class="line">        node-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#aa12273287bfd185a52224543fcae3b23">Append</a>(li);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    li-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a6794906e84f9d97761f95ff7d3b8a452">can_delete</a> = can_del;</div>
+<div class="line">    li-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a5f2a6fd27284866f4cfd264a91b8fdb3">can_edit</a> = can_edit;</div>
+<div class="line">    li-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a6de730ce6b6115eaa164161529d9bfd2">can_sort</a> = can_sort;</div>
+<div class="line"></div>
+<div class="line">    dvi = wxDataViewItem(li);</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_ctrl.html#abc8f34f1960b033d7f7aaa44ecbec272">model</a>-&gt;ItemAdded(parent, dvi);</div>
+<div class="line">    <span class="keywordflow">return</span> dvi;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ad844ee2c061ae2233ac8cca01c0a6a92"></a>
@@ -502,7 +561,20 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00367">DTSDVMListView::DeleteAll()</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00118">model</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00555">DTSDVMCtrl()</a>.</p>
-
+<div class="fragment"><div class="line">                                                     {</div>
+<div class="line">    <span class="keywordtype">bool</span> res;</div>
+<div class="line"></div>
+<div class="line">    res = wxDataViewCtrl::AssociateModel(model);</div>
+<div class="line">    <span class="keywordflow">if</span> (res) {</div>
+<div class="line">        <span class="keywordflow">if</span> (this-&gt;model) {</div>
+<div class="line">            model-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a7d0ec062e50e1d05cf4a2e8852104580">DeleteAll</a>();</div>
+<div class="line">        }</div>
+<div class="line">        this-&gt;model = <a class="code" href="class_d_t_s_d_v_m_ctrl.html#abc8f34f1960b033d7f7aaa44ecbec272">model</a>;</div>
+<div class="line">        model-&gt;DecRef();</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> res;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5ccdd2f6d3b2652ddfec7d0dc2ade0b1"></a>
@@ -523,7 +595,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00118">model</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00295">DTSTreeWindowEvent::DTSTreeWindowEvent()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00787">DTSTreeWindow::Show()</a>.</p>
-
+<div class="fragment"><div class="line">                                     {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_ctrl.html#abc8f34f1960b033d7f7aaa44ecbec272">model</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1bf8dde8f655b23a36c41c0f210fa846"></a>
@@ -543,7 +618,10 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00600">600</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00118">model</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00377">DTSDVMListView::SortChildren()</a>.</p>
-
+<div class="fragment"><div class="line">                                                  {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_ctrl.html#abc8f34f1960b033d7f7aaa44ecbec272">model</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a463cffa4280decda9cb36655a200caae">SortChildren</a>(parent);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -581,7 +659,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_d_v_m_ctrl.html">DTSDVMCtrl</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

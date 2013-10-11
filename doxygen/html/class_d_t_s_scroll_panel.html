@@ -268,7 +268,17 @@ Additional Inherited Members</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00899">899</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00076">DTSObject::dtsevthandler</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00156">DTSPanelEvent::OnDialog()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00075">DTSObject::panel</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00390">DTSPanel::SetupWin()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00069">DTSObject::type</a>, and <a class="el" href="dtsgui_8h_source.html#l00245">wx_DTSPANEL_SCROLLPANEL</a>.</p>
-
+<div class="fragment"><div class="line">    :wxScrolledWindow(parent, wxID_ANY),</div>
+<div class="line">     <a class="code" href="class_d_t_s_panel.html#abfe32d536cdcb2eee87a5c0ef1df826f">DTSPanel</a>(frame, <a class="code" href="class_d_t_s_object.html#a1292b4804b31450f0ee960fa59fcfc7a">status</a>, butmask) {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel_event.html">DTSPanelEvent</a> *dtsevt = (<a class="code" href="class_d_t_s_panel_event.html">DTSPanelEvent</a>*)<a class="code" href="class_d_t_s_object.html#a132481851865629352e4aefa7f822e4b">dtsevthandler</a>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#ad191e42b5daa056f9ea8247d752df3b0">type</a> = <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373a51268d1576c4e816f1416435cfe61500" title="DTSScrollPanel (wx_DTSPANEL_SCROLLPANEL) adds scrollbar support.">wx_DTSPANEL_SCROLLPANEL</a>;</div>
+<div class="line">    SetScrollRate(10, 10);</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#af8c7a75701ac05261749552eef4bc6ed">panel</a> = <span class="keyword">dynamic_cast&lt;</span>wxPanel *<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#af8c7a75701ac05261749552eef4bc6ed">panel</a>-&gt;Bind(wxEVT_TEXT_ENTER, &amp;<a class="code" href="class_d_t_s_panel_event.html#ae7b3a422bc55f7f9f676b2b640614fd9">DTSPanelEvent::OnDialog</a>, dtsevt);</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html#a9e90d0d7b1466eb3e8005343ce787974">SetupWin</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -299,7 +309,11 @@ Additional Inherited Members</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00911">911</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00432">DTSPanel::ShowPanel()</a>.</p>
-
+<div class="fragment"><div class="line">                                   {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html#a0c1a3aa81559298e059473bde57ab23e">ShowPanel</a>(show);</div>
+<div class="line">    <span class="keywordflow">return</span> wxScrolledWindow::Show(show);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -312,7 +326,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_scroll_panel.html">DTSScrollPanel</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

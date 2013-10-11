@@ -78,6 +78,13 @@ Form item if found matching the name\&.
 Definition at line 1089 of file wrapper\&.cpp\&.
 .PP
 References DTSPanel::FindItem()\&.
+.PP
+.nf
+                                                                          {
+    DTSPanel *dp = (DTSPanel*)p;
+    return dp->FindItem(name);
+}
+.fi
 .SS "const char* DTS_C_API::dtsgui_findvalue (\fBdtsgui_pane\fPp, const char *name)"
 
 .PP
@@ -118,6 +125,13 @@ Definition at line 1140 of file wrapper\&.cpp\&.
 References DTSPanel::FindValue()\&.
 .PP
 Referenced by handle_updatetabpane()\&.
+.PP
+.nf
+                                                                     {
+    DTSPanel *dp = (DTSPanel*)p;
+    return dp->FindValue(name);
+}
+.fi
 .SS "void* DTS_C_API::dtsgui_item_data (struct \fBform_item\fP *fi)"
 
 .PP
@@ -143,6 +157,12 @@ Reference to data stored in item\&.
 Definition at line 1102 of file wrapper\&.cpp\&.
 .PP
 References form_item::GetData()\&.
+.PP
+.nf
+                                                    {
+    return (fi) ? fi->GetData() : NULL;
+}
+.fi
 .SS "const char* DTS_C_API::dtsgui_item_name (struct \fBform_item\fP *fi)"
 
 .PP
@@ -171,6 +191,12 @@ Name of item\&.
 Definition at line 1124 of file wrapper\&.cpp\&.
 .PP
 References form_item::GetName()\&.
+.PP
+.nf
+                                                          {
+    return fi->GetName();
+}
+.fi
 .SS "const char* DTS_C_API::dtsgui_item_value (struct \fBform_item\fP *fi)"
 
 .PP
@@ -201,6 +227,12 @@ Definition at line 1113 of file wrapper\&.cpp\&.
 References form_item::GetValue()\&.
 .PP
 Referenced by network_config()\&.
+.PP
+.nf
+                                                            {
+    return (fi) ? fi->GetValue() : NULL;
+}
+.fi
 .SS "struct bucket_list* DTS_C_API::dtsgui_panel_items (\fBdtsgui_pane\fPpane)\fC [read]\fP"
 
 .PP
@@ -226,6 +258,13 @@ Reference to hashed bucket list\&.
 Definition at line 1076 of file wrapper\&.cpp\&.
 .PP
 References DTSObject::GetItems()\&.
+.PP
+.nf
+                                                         {
+    DTSObject *p = (DTSObject*)pane;
+    return p->GetItems();
+}
+.fi
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

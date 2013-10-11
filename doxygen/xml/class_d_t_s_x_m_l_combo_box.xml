@@ -152,7 +152,7 @@
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/DTSXMLComboBox.h" line="31" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/DTSXMLComboBox.cpp" bodystart="98" bodyend="104"/>
         <references refid="_d_t_s_x_m_l_combo_box_8h_1a1b5487ca2ccbd717b153b67c8d8f0520ae6478ae16db29ffeaa6fee0389fb2057" compoundref="_d_t_s_x_m_l_combo_box_8h" startline="23">DTSAPPTB_SERVER_POP</references>
         <references refid="class_d_t_s_x_m_l_combo_box_1aaa8b7abd7e0b36967b4af91c7d9bfecc" compoundref="_d_t_s_x_m_l_combo_box_8h" startline="38">sflags</references>
-        <referencedby refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" compoundref="toolbar_8cpp" startline="95" endline="109">DTSAPPToolBar::HandleEvent</referencedby>
+        <referencedby refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" compoundref="toolbar_8cpp" startline="149" endline="163">DTSAPPToolBar::HandleEvent</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">

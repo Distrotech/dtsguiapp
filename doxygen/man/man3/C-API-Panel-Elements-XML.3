@@ -117,6 +117,13 @@ Definition at line 1386 of file wrapper\&.cpp\&.
 References DTSPanel::XMLCheckBox()\&.
 .PP
 Referenced by network_config_dns(), network_config_dns_domain(), network_config_dns_dyn(), network_config_dns_serv(), network_modem_adv(), network_modem_ana(), pbxconf_autoadd(), pbxconf_default(), pbxconf_e1(), pbxconf_global(), pbxconf_incoming(), pbxconf_mfcr2(), pbxconf_misdn(), pbxconf_topts(), wizz_acd(), wizz_exten(), wizz_location(), wizz_network(), wizz_samba(), wizz_trunk(), and wizz_voip()\&.
+.PP
+.nf
+                                                                                                                                                                                                                                {
+    DTSPanel *p = (DTSPanel *)pane;
+    p->XMLCheckBox(title, name, checkval, uncheckval, xpath, node, fattr, fval, attr);
+}
+.fi
 .SS "struct \fBform_item\fP* DTS_C_API::dtsgui_xmlcombobox (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)\fC [read]\fP"
 
 .PP
@@ -156,6 +163,13 @@ Definition at line 1420 of file wrapper\&.cpp\&.
 References DTSPanel::XMLComboBox()\&.
 .PP
 Referenced by network_wifi(), and wizz_network()\&.
+.PP
+.nf
+                                                                                                                                                                                        {
+    DTSPanel *p = (DTSPanel *)pane;
+    return p->XMLComboBox(title, name, xpath, node, fattr, fval, attr);
+}
+.fi
 .SS "struct \fBform_item\fP* DTS_C_API::dtsgui_xmllistbox (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)\fC [read]\fP"
 
 .PP
@@ -195,6 +209,13 @@ Definition at line 1403 of file wrapper\&.cpp\&.
 References DTSPanel::XMLListBox()\&.
 .PP
 Referenced by network_adsl_link(), network_config(), network_modem(), network_modem_ana(), network_tos(), pbxconf_default(), pbxconf_e1(), pbxconf_global(), pbxconf_incoming(), pbxconf_mfcr2(), pbxconf_trunk(), wizz_exten(), wizz_location(), wizz_trunk(), and wizz_voip()\&.
+.PP
+.nf
+                                                                                                                                                                                       {
+    DTSPanel *p = (DTSPanel *)pane;
+    return p->XMLListBox(title, name, xpath, node, fattr, fval, attr);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_xmlpasswdbox (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
 
 .PP
@@ -229,6 +250,13 @@ Definition at line 1368 of file wrapper\&.cpp\&.
 References DTSPanel::XMLPasswdBox()\&.
 .PP
 Referenced by pbxconf_global()\&.
+.PP
+.nf
+                                                                                                                                                                                   {
+    DTSPanel *p = (DTSPanel *)pane;
+    p->XMLPasswdBox(title, name, xpath, node, fattr, fval, attr, wxTE_LEFT | wxTE_PROCESS_ENTER);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_xmltextbox (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
 
 .PP
@@ -263,6 +291,13 @@ Definition at line 1336 of file wrapper\&.cpp\&.
 References DTSPanel::XMLTextBox()\&.
 .PP
 Referenced by network_adsl_link(), network_adsl_user(), network_config(), network_config_dns(), network_config_dns_domain(), network_config_dns_domain_server(), network_config_dns_dyn(), network_config_dns_host(), network_config_dns_serv(), network_config_dns_zone(), network_iface_pane(), network_iface_pane_cb(), network_modem(), network_modem_adv(), network_modem_ana(), network_route(), network_tos(), network_wan(), network_wifi(), pbxconf_acd(), pbxconf_autoadd(), pbxconf_default(), pbxconf_global(), pbxconf_location(), pbxconf_mfcr2(), pbxconf_misdn(), pbxconf_numplan(), pbxconf_topts(), pbxconf_trunk(), wizz_acd(), wizz_custinfo(), wizz_dnsinfo(), wizz_dyndns(), wizz_exten(), wizz_location(), wizz_netinfo(), wizz_network(), wizz_samba(), wizz_trunk(), and wizz_x509()\&.
+.PP
+.nf
+                                                                                                                                                                                 {
+    DTSPanel *p = (DTSPanel *)pane;
+    p->XMLTextBox(title, name, xpath, node, fattr, fval, attr, wxTE_LEFT | wxTE_PROCESS_ENTER, 1);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_xmltextbox_multi (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *xpath, const char *node, const char *fattr, const char *fval, const char *attr)"
 
 .PP
@@ -297,6 +332,13 @@ Definition at line 1352 of file wrapper\&.cpp\&.
 References DTSPanel::XMLTextBox()\&.
 .PP
 Referenced by wizz_custinfo()\&.
+.PP
+.nf
+                                                                                                                                                                                       {
+    DTSPanel *p = (DTSPanel *)pane;
+    p->XMLTextBox(title, name, xpath, node, fattr, fval, attr, wxTE_MULTILINE, 5);
+}
+.fi
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

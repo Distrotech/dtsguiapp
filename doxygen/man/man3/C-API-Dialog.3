@@ -71,7 +71,14 @@ Definition at line 1151 of file wrapper\&.cpp\&.
 .PP
 References DTSFrame::Alert(), and dtsgui::GetFrame()\&.
 .PP
-Referenced by advanced_config(), editsys_wizard(), export_config(), handle_test(), DTSAPPToolBar::HandleEvent(), newsys_wizard(), open_config(), post_items(), and view_config_conf()\&.
+Referenced by editsys_wizard(), export_config(), handle_test(), DTSAPPToolBar::HandleEvent(), newsys_wizard(), open_config(), post_items(), and view_config_conf()\&.
+.PP
+.nf
+                                                           {
+    DTSFrame *f = dtsgui->GetFrame();
+    f->Alert(text);
+}
+.fi
 .SS "int DTS_C_API::dtsgui_confirm (struct \fBdtsgui\fP *dtsgui, const char *text)"
 
 .PP
@@ -99,6 +106,13 @@ Definition at line 1162 of file wrapper\&.cpp\&.
 References DTSFrame::Confirm(), and dtsgui::GetFrame()\&.
 .PP
 Referenced by system_wizard()\&.
+.PP
+.nf
+                                                            {
+    DTSFrame *f = dtsgui->GetFrame();
+    return f->Confirm(text);
+}
+.fi
 .SS "const char* DTS_C_API::dtsgui_fileopen (struct \fBdtsgui\fP *dtsgui, const char *title, const char *path, const char *name, const char *filter)"
 
 .PP
@@ -134,6 +148,13 @@ Definition at line 1192 of file wrapper\&.cpp\&.
 References DTSFrame::FileDialog(), and dtsgui::GetFrame()\&.
 .PP
 Referenced by editsys_wizard(), and open_config()\&.
+.PP
+.nf
+                                                                                                                                     {
+    DTSFrame *f = dtsgui->GetFrame();
+    return f->FileDialog(title, path, name, filter, wxFD_OPEN | wxFD_FILE_MUST_EXIST);
+}
+.fi
 .SS "const char* DTS_C_API::dtsgui_filesave (struct \fBdtsgui\fP *dtsgui, const char *title, const char *path, const char *name, const char *filter)"
 
 .PP
@@ -167,6 +188,13 @@ Definition at line 1176 of file wrapper\&.cpp\&.
 References DTSFrame::FileDialog(), and dtsgui::GetFrame()\&.
 .PP
 Referenced by export_config(), and system_wizard()\&.
+.PP
+.nf
+                                                                                                                                     {
+    DTSFrame *f = dtsgui->GetFrame();
+    return f->FileDialog(title, path, name, filter, wxFD_SAVE | wxFD_OVERWRITE_PROMPT);
+}
+.fi
 .SS "struct basic_auth* DTS_C_API::dtsgui_pwdialog (const char *user, const char *passwd, void *data)\fC [read]\fP"
 
 .PP
@@ -201,6 +229,13 @@ Basic auth reference\&.
 Definition at line 1208 of file wrapper\&.cpp\&.
 .PP
 References DTSFrame::Passwd()\&.
+.PP
+.nf
+                                                                                     {
+    DTSFrame *f = static_cast<class dtsgui*>(data)->GetFrame();
+    return f->Passwd(user, passwd);
+}
+.fi
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

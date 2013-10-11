@@ -3,6 +3,9 @@
 .nh
 .SH NAME
 app/pbxconfig.c \- 
+.PP
+PBX Configuration panel\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -19,149 +22,63 @@ app/pbxconfig.c \-
 .ti -1c
 .RI "void \fBpbxconf_trunk\fP (\fBdtsgui_pane\fP pg, void *data)"
 .br
+.RI "\fIConfiguration callback for tunk panel\&. \fP"
 .ti -1c
 .RI "void \fBpbxconf_topts\fP (\fBdtsgui_pane\fP pg, void *data)"
 .br
+.RI "\fIConfiguration callback for trunk options panel\&. \fP"
 .ti -1c
 .RI "void \fBpbxconf_misdn\fP (\fBdtsgui_pane\fP pg, void *data)"
 .br
+.RI "\fIConfiguration callback for mISDN panel\&. \fP"
 .ti -1c
 .RI "void \fBpbxconf_e1\fP (\fBdtsgui_pane\fP pg, void *data)"
 .br
+.RI "\fIConfiguration callback for E1/T1 panel\&. \fP"
 .ti -1c
 .RI "void \fBpbxconf_mfcr2\fP (\fBdtsgui_pane\fP pg, void *data)"
 .br
+.RI "\fIConfiguration callback for MFC/R2 panel\&. \fP"
 .ti -1c
 .RI "void \fBpbxconf_global\fP (\fBdtsgui_pane\fP pg, void *data)"
 .br
+.RI "\fIConfiguration callback for global settings panel\&. \fP"
 .ti -1c
 .RI "void \fBpbxconf_acd\fP (\fBdtsgui_pane\fP pg, void *data)"
 .br
+.RI "\fIConfiguration callback for ACD options panel\&. \fP"
 .ti -1c
 .RI "void \fBpbxconf_default\fP (\fBdtsgui_pane\fP pg, void *data)"
 .br
+.RI "\fIConfiguration callback for extension default panel\&. \fP"
 .ti -1c
 .RI "void \fBpbxconf_location\fP (\fBdtsgui_pane\fP pg, void *data)"
 .br
+.RI "\fIConfiguration callback for location panel\&. \fP"
 .ti -1c
 .RI "void \fBpbxconf_incoming\fP (\fBdtsgui_pane\fP pg, void *data)"
 .br
+.RI "\fIConfiguration callback for incoming panel\&. \fP"
 .ti -1c
 .RI "void \fBpbxconf_numplan\fP (\fBdtsgui_pane\fP pg, void *data)"
 .br
+.RI "\fIConfiguration callback for number plan panel\&. \fP"
 .ti -1c
 .RI "void \fBpbxconf_autoadd\fP (\fBdtsgui_pane\fP pg, void *data)"
 .br
+.RI "\fIConfiguration callback for auto add panel\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBpbx_settings\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fIConfigure and return the PBX configuration tab view\&. \fP"
 .in -1c
-.SH "Function Documentation"
+.SH "Detailed Description"
 .PP 
-.SS "\fBdtsgui_pane\fP pbx_settings (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+PBX Configuration panel\&. 
+
 
 .PP
-Definition at line 325 of file pbxconfig\&.c\&.
-.PP
-References app_getxmldoc(), dtsgui_newtabpage(), dtsgui_tabwindow(), pbxconf_acd(), pbxconf_autoadd(), pbxconf_default(), pbxconf_e1(), pbxconf_global(), pbxconf_incoming(), pbxconf_location(), pbxconf_mfcr2(), pbxconf_misdn(), pbxconf_numplan(), pbxconf_topts(), pbxconf_trunk(), and wx_PANEL_BUTTON_ACTION\&.
-.PP
-Referenced by config_menu()\&.
-.SS "void pbxconf_acd (\fBdtsgui_pane\fPpg, void *data)"
-
-.PP
-Definition at line 214 of file pbxconfig\&.c\&.
-.PP
-References dtsgui_xmltextbox()\&.
-.PP
-Referenced by pbx_settings()\&.
-.SS "void pbxconf_autoadd (\fBdtsgui_pane\fPpg, void *data)"
-
-.PP
-Definition at line 315 of file pbxconfig\&.c\&.
-.PP
-References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by pbx_settings()\&.
-.SS "void pbxconf_default (\fBdtsgui_pane\fPpg, void *data)"
-
-.PP
-Definition at line 220 of file pbxconfig\&.c\&.
-.PP
-References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), dtsgui_xmllistbox(), dtsgui_xmltextbox(), form_item::name, and form_item::value\&.
-.PP
-Referenced by pbx_settings()\&.
-.SS "void pbxconf_e1 (\fBdtsgui_pane\fPpg, void *data)"
-
-.PP
-Definition at line 134 of file pbxconfig\&.c\&.
-.PP
-References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), and dtsgui_xmllistbox()\&.
-.PP
-Referenced by pbx_settings()\&.
-.SS "void pbxconf_global (\fBdtsgui_pane\fPpg, void *data)"
-
-.PP
-Definition at line 195 of file pbxconfig\&.c\&.
-.PP
-References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), dtsgui_xmllistbox(), dtsgui_xmlpasswdbox(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by pbx_settings()\&.
-.SS "void pbxconf_incoming (\fBdtsgui_pane\fPpg, void *data)"
-
-.PP
-Definition at line 279 of file pbxconfig\&.c\&.
-.PP
-References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), and dtsgui_xmllistbox()\&.
-.PP
-Referenced by pbx_settings()\&.
-.SS "void pbxconf_location (\fBdtsgui_pane\fPpg, void *data)"
-
-.PP
-Definition at line 268 of file pbxconfig\&.c\&.
-.PP
-References dtsgui_xmltextbox()\&.
-.PP
-Referenced by pbx_settings()\&.
-.SS "void pbxconf_mfcr2 (\fBdtsgui_pane\fPpg, void *data)"
-
-.PP
-Definition at line 161 of file pbxconfig\&.c\&.
-.PP
-References dtsgui_listbox_add(), dtsgui_xmlcheckbox(), dtsgui_xmllistbox(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by pbx_settings()\&.
-.SS "void pbxconf_misdn (\fBdtsgui_pane\fPpg, void *data)"
-
-.PP
-Definition at line 121 of file pbxconfig\&.c\&.
-.PP
-References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by pbx_settings()\&.
-.SS "void pbxconf_numplan (\fBdtsgui_pane\fPpg, void *data)"
-
-.PP
-Definition at line 301 of file pbxconfig\&.c\&.
-.PP
-References dtsgui_xmltextbox()\&.
-.PP
-Referenced by pbx_settings()\&.
-.SS "void pbxconf_topts (\fBdtsgui_pane\fPpg, void *data)"
-
-.PP
-Definition at line 107 of file pbxconfig\&.c\&.
-.PP
-References dtsgui_xmlcheckbox(), and dtsgui_xmltextbox()\&.
-.PP
-Referenced by pbx_settings()\&.
-.SS "void pbxconf_trunk (\fBdtsgui_pane\fPpg, void *data)"
-
-.PP
-Definition at line 25 of file pbxconfig\&.c\&.
-.PP
-References dtsgui_listbox_add(), dtsgui_xmllistbox(), dtsgui_xmltextbox(), form_item::name, and form_item::value\&.
-.PP
-Referenced by pbx_settings()\&.
+Definition in file \fBpbxconfig\&.c\fP\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

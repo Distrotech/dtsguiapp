@@ -78,6 +78,13 @@ Definition at line 1294 of file wrapper\&.cpp\&.
 References DTSPanel::CheckBox(), and DTSGUI_FORM_DATA_PTR\&.
 .PP
 Referenced by network_config_dns_domain_new(), and testpanel()\&.
+.PP
+.nf
+                                                                                                                                                         {
+    DTSPanel *p = (DTSPanel *)pane;
+    p->CheckBox(title, name, ischecked, checkval, uncheck, data,  DTSGUI_FORM_DATA_PTR);
+}
+.fi
 .SS "struct \fBform_item\fP* DTS_C_API::dtsgui_combobox (\fBdtsgui_pane\fPpane, const char *title, const char *name, void *data)\fC [read]\fP"
 
 .PP
@@ -109,6 +116,13 @@ Definition at line 1320 of file wrapper\&.cpp\&.
 References DTSPanel::ComboBox(), and DTSGUI_FORM_DATA_PTR\&.
 .PP
 Referenced by testpanel()\&.
+.PP
+.nf
+                                                                                                            {
+    DTSPanel *p = (DTSPanel *)pane;
+    return p->ComboBox(title, name, NULL, data, DTSGUI_FORM_DATA_PTR);
+}
+.fi
 .SS "struct \fBform_item\fP* DTS_C_API::dtsgui_listbox (\fBdtsgui_pane\fPpane, const char *title, const char *name, void *data)\fC [read]\fP"
 
 .PP
@@ -140,6 +154,13 @@ Definition at line 1307 of file wrapper\&.cpp\&.
 References DTSGUI_FORM_DATA_PTR, and DTSPanel::ListBox()\&.
 .PP
 Referenced by network_adsl_link_new(), network_newwifi(), network_tos_new(), and testpanel()\&.
+.PP
+.nf
+                                                                                                           {
+    DTSPanel *p = (DTSPanel *)pane;
+    return p->ListBox(title, name, NULL, data,  DTSGUI_FORM_DATA_PTR);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_passwdbox (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *value, void *data)"
 
 .PP
@@ -166,6 +187,13 @@ Place a password element on the panel\&. \fBSee Also:\fP
 Definition at line 1279 of file wrapper\&.cpp\&.
 .PP
 References DTSGUI_FORM_DATA_PTR, and DTSPanel::TextBox()\&.
+.PP
+.nf
+                                                                                                                   {
+    DTSPanel *p = (DTSPanel *)pane;
+    p->TextBox(title, name, value, wxTE_PASSWORD | wxTE_PROCESS_ENTER, 1, data,  DTSGUI_FORM_DATA_PTR);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_textbox (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *value, void *data)"
 
 .PP
@@ -194,6 +222,13 @@ Definition at line 1253 of file wrapper\&.cpp\&.
 References DTSGUI_FORM_DATA_PTR, and DTSPanel::TextBox()\&.
 .PP
 Referenced by network_adsl_link_new(), network_adsl_user_new(), network_config_dns_domain_new(), network_config_dns_domain_server_new(), network_config_dns_host_new(), network_iface_new_pane(), network_newroute(), network_newwan(), network_newwifi(), network_tos_new(), and testpanel()\&.
+.PP
+.nf
+                                                                                                                 {
+    DTSPanel *p = (DTSPanel *)pane;
+    p->TextBox(title, name, value, wxTE_LEFT | wxTE_PROCESS_ENTER, 1, data, DTSGUI_FORM_DATA_PTR);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_textbox_multi (\fBdtsgui_pane\fPpane, const char *title, const char *name, const char *value, void *data)"
 
 .PP
@@ -222,6 +257,13 @@ Definition at line 1266 of file wrapper\&.cpp\&.
 References DTSGUI_FORM_DATA_PTR, and DTSPanel::TextBox()\&.
 .PP
 Referenced by testpanel()\&.
+.PP
+.nf
+                                                                                                                       {
+    DTSPanel *p = (DTSPanel *)pane;
+    p->TextBox(title, name, value, wxTE_MULTILINE, 5, data,  DTSGUI_FORM_DATA_PTR);
+}
+.fi
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

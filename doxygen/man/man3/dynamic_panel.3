@@ -60,6 +60,19 @@ Definition at line 24 of file evdata\&.h\&.
 Definition at line 36 of file evdata\&.cpp\&.
 .PP
 References blank, cb, and data\&.
+.PP
+.nf
+                                                                                         {
+    if (udata && objref(udata)) {
+        data = udata;
+    } else {
+        data = NULL;
+    }
+    ALLOC_CONST(this->name, name);
+    this->cb = cb;
+    this->blank = blank;
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "dynamic_panel::DTS_OJBREF_CLASS (\fBdynamic_panel\fP)"
@@ -72,6 +85,12 @@ Definition at line 56 of file evdata\&.cpp\&.
 References cb\&.
 .PP
 Referenced by DTSFrame::DynamicPanelEvent()\&.
+.PP
+.nf
+                                {
+    return (cb);
+}
+.fi
 .SS "bool dynamic_panel::IsBlank ()"
 
 .PP
@@ -80,12 +99,24 @@ Definition at line 60 of file evdata\&.cpp\&.
 References blank\&.
 .PP
 Referenced by DTSFrame::DynamicPanelEvent()\&.
+.PP
+.nf
+                            {
+    return (blank);
+}
+.fi
 .SS "bool dynamic_panel::operator== (\fBwxWindow\fP &rhs)"
 
 .PP
 Definition at line 64 of file evdata\&.cpp\&.
 .PP
 References w\&.
+.PP
+.nf
+                                            {
+    return (this->w == &rhs);
+}
+.fi
 .SS "\fBwxWindow\fP * dynamic_panel::RunCallback (class \fBdtsgui\fP *dtsgui)"
 
 .PP
@@ -94,6 +125,25 @@ Definition at line 68 of file evdata\&.cpp\&.
 References cb, data, DTSObject::GetPanel(), name, and w\&.
 .PP
 Referenced by DTSFrame::DynamicPanelEvent()\&.
+.PP
+.nf
+                                                         {
+    DTSObject *p;
+
+    if (w) {
+        delete w;
+        w = NULL;
+    }
+
+    if (dtsgui && objref(dtsgui)) {
+        if ((p = (DTSObject*)cb(dtsgui, name, data))) {
+            w = p->GetPanel();
+        }
+        objunref(dtsgui);
+    }
+    return w;
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "int dynamic_panel::blank\fC [private]\fP"

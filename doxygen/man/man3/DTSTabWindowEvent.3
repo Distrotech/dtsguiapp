@@ -53,12 +53,31 @@ Definition at line 136 of file DTSTreeWindow\&.h\&.
 Definition at line 825 of file DTSTreeWindow\&.cpp\&.
 .PP
 References data, and tw\&.
+.PP
+.nf
+                                                                      {
+    if (userdata && objref(userdata)) {
+        data = userdata;
+    } else {
+        data = NULL;
+    }
+    tw = win;
+}
+.fi
 .SS "DTSTabWindowEvent::~DTSTabWindowEvent ()"
 
 .PP
 Definition at line 834 of file DTSTreeWindow\&.cpp\&.
 .PP
 References data\&.
+.PP
+.nf
+                                      {
+    if (data) {
+        objunref(data);
+    }
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "void DTSTabWindowEvent::OnButton (wxCommandEvent &event)"
@@ -69,6 +88,27 @@ Definition at line 840 of file DTSTreeWindow\&.cpp\&.
 References tw, DTSTabWindow::Undo(), DTSPanel::Update_XML(), wx_PANEL_EVENT_BUTTON_NO, and wx_PANEL_EVENT_BUTTON_YES\&.
 .PP
 Referenced by DTSTabWindow::Show()\&.
+.PP
+.nf
+                                                      {
+    DTSTabPage *pane = dynamic_cast<DTSTabPage*>(tw->GetCurrentPage());
+    int eid = event\&.GetId();
+    int pg = tw->GetSelection();
+
+    switch(eid) {
+        case wx_PANEL_EVENT_BUTTON_YES:
+            pane->Update_XML();
+        /*no break here will reload tab*/
+        case wx_PANEL_EVENT_BUTTON_NO:
+            pg++;
+            tw->Undo(pg);
+            return;
+        default:
+            break;
+    }
+    event\&.Skip(true);
+}
+.fi
 .SS "void DTSTabWindowEvent::PageChange (wxBookCtrlEvent &event)"
 
 .PP
@@ -77,6 +117,20 @@ Definition at line 864 of file DTSTreeWindow\&.cpp\&.
 References DTSTabPage::ConfigPane(), and tw\&.
 .PP
 Referenced by DTSTabWindow::Show()\&.
+.PP
+.nf
+                                                         {
+    wxWindow *w;
+    DTSTabPage *tp;
+    int p = event\&.GetSelection();
+
+    if (p != wxNOT_FOUND) {
+        w = tw->GetPage(p);
+        tp = dynamic_cast<DTSTabPage*>(w);
+        tp->ConfigPane();
+    }
+}
+.fi
 .SS "void DTSTabWindowEvent::PageChanged (wxBookCtrlEvent &event)"
 
 .PP
@@ -85,12 +139,32 @@ Definition at line 876 of file DTSTreeWindow\&.cpp\&.
 References tw\&.
 .PP
 Referenced by DTSTabWindow::Show()\&.
+.PP
+.nf
+                                                          {
+    wxWindow *w;
+    int p = event\&.GetSelection();
+
+    if (p != wxNOT_FOUND) {
+        w = tw->GetPage(p);
+        w->FitInside();
+        w->Layout();
+        w->Refresh();
+    }
+}
+.fi
 .SS "void DTSTabWindowEvent::RightMenu (wxCommandEvent &event)"
 
 .PP
 Definition at line 860 of file DTSTreeWindow\&.cpp\&.
 .PP
 Referenced by DTSTabWindow::DTSTabWindow()\&.
+.PP
+.nf
+                                                       {
+    printf('MENU\n');
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "void* DTSTabWindowEvent::data\fC [private]\fP"

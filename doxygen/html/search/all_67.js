@@ -1,8 +1,8 @@
 var searchData=
 [
   ['g_5frow',['g_row',['../class_d_t_s_panel.html#a40a4abd45ab1af5aff6eb893aeb0eede',1,'DTSPanel']]],
-  ['get_5fiface_5fcdata',['get_iface_cdata',['../interface_8c.html#a3a6216b44ef12f4343578439ea097c50',1,'interface.c']]],
-  ['get_5fnewiface_5fdata',['get_newiface_data',['../interface_8c.html#a23ef5c5cf103f36dd179c5625f8f8576',1,'interface.c']]],
+  ['get_5fiface_5fcdata',['get_iface_cdata',['../group___d_t_s-_a_p_p-_iface.html#ga3a6216b44ef12f4343578439ea097c50',1,'interface.c']]],
+  ['get_5fnewiface_5fdata',['get_newiface_data',['../group___d_t_s-_a_p_p-_iface.html#ga23ef5c5cf103f36dd179c5625f8f8576',1,'interface.c']]],
   ['getactivenode',['GetActiveNode',['../class_d_t_s_tree_window.html#a13f1a1a56891ccba3df14c857e09197e',1,'DTSTreeWindow']]],
   ['getchildcount',['GetChildCount',['../class_d_t_s_d_v_m_list_store.html#a273068c9c62e05ef41609ee3b784d797',1,'DTSDVMListStore::GetChildCount()'],['../class_d_t_s_d_v_m_list_view.html#a75b2584818b50c6d05adde7ac20dfd5d',1,'DTSDVMListView::GetChildCount()']]],
   ['getchildindex',['GetChildIndex',['../class_d_t_s_d_v_m_list_store.html#ac3114326313888981ecff0f93eb7bff5',1,'DTSDVMListStore']]],

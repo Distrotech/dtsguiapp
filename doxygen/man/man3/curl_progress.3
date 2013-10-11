@@ -47,6 +47,18 @@ Definition at line 57 of file DTSApp\&.h\&.
 
 .PP
 Definition at line 227 of file DTSApp\&.cpp\&.
+.PP
+.nf
+                                                  {
+    if (dc && objref(dc)) {
+        owner = dc;
+    } else {
+        owner = NULL;
+    }
+    pd = 0;
+    pause = 0;
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "curl_progress::DTS_OJBREF_CLASS (\fBcurl_progress\fP)"
@@ -57,6 +69,12 @@ Definition at line 227 of file DTSApp\&.cpp\&.
 Definition at line 243 of file DTSApp\&.cpp\&.
 .PP
 Referenced by dtsgui_curl::curl_progress_ctrl(), and dtsgui_curl::curl_progress_function()\&.
+.PP
+.nf
+                                  {
+    return owner->GetFrame();
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "class \fBdtsgui_curl\fP* curl_progress::owner\fC [private]\fP"

@@ -16,14 +16,23 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @addtogroup DTS-APP
+  * @{
+  * @file
+  * @brief Main application private includes.*/
+
 #ifndef PRIVATE_H_INCLUDED
 #define PRIVATE_H_INCLUDED
 
 
+/** @brief Shared application folder.
+  *
+  * This should be set correctly at build time and this value ignored.*/
 #ifndef DATA_DIR
 #define DATA_DIR	"/usr/share/dtsguiapp"
 #endif
 
+/** @brief Node ID's used in application treeview*/
 enum node_id {
 	DTS_NODE_CUSTOMER,
 	DTS_NODE_NETWORK_CONFIG,
@@ -56,20 +65,35 @@ enum node_id {
 	DTS_NODE_NETWORK_TOS
 };
 
+/** @brief Application data structure*/
 struct app_data {
+	/** @brief XML Document been edited.*/
 	struct xml_doc *xmldoc;
+	/** @brief Shared datadir.*/
 	const char *datadir;
+	/** @brief Active configuration.*/
 	const char *openconf;
+	/** @brief New system configuration menu item.*/
 	dtsgui_menuitem n_wiz;
+	/** @brief Existing system configuration menu item.*/
 	dtsgui_menuitem e_wiz;
+	/** @brief Open configuration menu item.*/
 	dtsgui_menuitem c_open;
+	/** @brief Configuration menu.*/
 	dtsgui_menu cfg_menu;
 };
 
+/** @brief Name value pair sturucture.
+  *
+  * This is used to create a static array to to populate listbox.*/
 struct listitem {
+	/** @brief Name of the pair.*/
 	const char *name;
+	/** @brief Value of the pair.*/
 	const char *value;
 };
+
+/** @}*/
 
 #ifdef __cplusplus
 extern "C" {
@@ -94,7 +118,7 @@ void test_menu(struct dtsgui *dtsgui, dtsgui_menu menu, const char *url);
 /*netconfig.c*/
 dtsgui_pane advanced_config(struct dtsgui *dtsgui, const char *title, void *data);
 void network_iface_pane(dtsgui_pane p, const char *xpre, const char *iface);
-void network_iface_new_pane(dtsgui_pane p, void *data);
+void network_iface_new_pane(dtsgui_pane p);
 
 /*iface*/
 dtsgui_pane iface_config(struct dtsgui *dtsgui, const char *title, void *data);

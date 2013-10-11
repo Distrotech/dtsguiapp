@@ -99,12 +99,135 @@ Definition at line 108 of file DTSTreeWindow\&.h\&.
 Definition at line 544 of file DTSTreeWindow\&.cpp\&.
 .PP
 References a_window, DTSObject::dtsevthandler, DTSObject::frame, DTSFrame::GetDTSData(), DTSObject::GetPanel(), DTSTreeWindowEvent::MenuEvent(), DTSTreeWindowEvent::OnButton(), DTSObject::panel, rmenu, DTSObject::SetXMLDoc(), Show(), DTSTreeWindowEvent::SplitterEvent(), t_pane, tree, DTSTreeWindowEvent::TreeEvent(), treesizer, DTSObject::type, DTSObject::userdata, vm, and wx_DTSPANEL_TREE\&.
+.PP
+.nf
+    :wxSplitterWindow(parent, -1, wxDefaultPosition, wxDefaultSize),
+     DTSObject(stat_msg) {
+
+    int w, h, p, psize;
+    class dtsgui *udata;
+    a_window = NULL;
+    DTSTreeWindowEvent *dtsevt;
+    wxSplitterWindow *sw = static_cast<wxSplitterWindow*>(this);
+    wxBoxSizer *p_sizer = new wxBoxSizer(wxHORIZONTAL);
+    treesizer = new wxBoxSizer(wxVERTICAL);
+    wxDataViewItem root, root4;
+    wxWindow *aw;
+
+    rmenu = new treemenu();
+
+    if (u_data && objref(u_data)) {
+        userdata = u_data;
+    } else {
+        userdata = NULL;
+    }
+    this->frame = frame;
+
+    if (xd) {
+        SetXMLDoc(xd);
+    }
+
+    p_sizer->Add(sw, 1,wxEXPAND,0);
+#ifdef __WIN32
+    t_pane = new wxScrolledWindow(sw, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxVSCROLL);
+#else
+    t_pane = new wxScrolledWindow(sw, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxHSCROLL|wxVSCROLL);
+#endif // _WIN32
+    panel = static_cast<wxWindow *>(sw);
+
+    a_window = new DTSWindow(panel, frame);
+    a_window->type = wx_DTSPANEL_TREE;
+    aw = a_window->GetPanel();
+
+    SplitVertically(t_pane, aw);
+    SetSashGravity(0\&.5);
+    SetMinimumPaneSize(20);
+
+    t_pane->SetSizer(treesizer);
+#ifdef __WIN32
+    t_pane->SetScrollRate(0, 10);
+#else
+    t_pane->SetScrollRate(10, 10);
+#endif // _WIN32
+
+    vm = new DTSDVMListView(1, true);
+    tree = new DTSDVMCtrl(t_pane, wxID_ANY, vm, wxDefaultPosition, wxDefaultSize, wxDV_ROW_LINES|wxDV_NO_HEADER);
+
+    udata = (frame) ? frame->GetDTSData() : NULL;
+    dtsevt = new DTSTreeWindowEvent(userdata, tree_cb, udata, this);
+    if (udata) {
+        objunref(udata);
+    }
+    dtsevthandler = dtsevt;
+    treesizer->Add(tree, 1,wxEXPAND,0);
+
+    p_sizer->FitInside(parent);
+    p_sizer->Layout();
+    p_sizer->SetSizeHints(sw);
+
+    parent->GetSize(&w, &h);
+    p = (w * pos) / 100;
+    SetSashPosition(p, true);
+
+    treesizer->SetSizeHints(t_pane);
+    treesizer->FitInside(t_pane);
+    treesizer->Layout();
+
+    tree->Bind(wxEVT_DATAVIEW_SELECTION_CHANGED, &DTSTreeWindowEvent::TreeEvent, dtsevt);
+    tree->Bind(wxEVT_DATAVIEW_ITEM_EXPANDED, &DTSTreeWindowEvent::TreeEvent, dtsevt);
+    tree->Bind(wxEVT_DATAVIEW_ITEM_CONTEXT_MENU, &DTSTreeWindowEvent::TreeEvent, dtsevt);
+    tree->Bind(wxEVT_DATAVIEW_ITEM_EDITING_DONE, &DTSTreeWindowEvent::TreeEvent, dtsevt);
+    tree->Bind(wxEVT_DATAVIEW_ITEM_START_EDITING, &DTSTreeWindowEvent::TreeEvent, dtsevt);
+    frame->Bind(wxEVT_DATAVIEW_ITEM_BEGIN_DRAG, &DTSTreeWindowEvent::TreeEvent, dtsevt);
+    tree->Bind(wxEVT_COMMAND_MENU_SELECTED, &DTSTreeWindowEvent::MenuEvent, dtsevt);
+    sw->Bind(wxEVT_SPLITTER_SASH_POS_CHANGED, &DTSTreeWindowEvent::SplitterEvent, dtsevt);
+    sw->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &DTSTreeWindowEvent::OnButton, dtsevt);
+    tree->EnableDragSource(wxDF_UNICODETEXT);
+    tree->EnableDropTarget(wxDF_UNICODETEXT);
+
+    Show(false);
+
+/*  root = tree->AppendContainer(wxDataViewItem(NULL), 'The Root');
+    tree->AppendItem(root, 'Child E');
+    tree->AppendContainer(root, 'Root2');
+    tree->AppendItem(root, 'Child D');
+    tree->AppendContainer(root, 'Root3');
+    tree->AppendItem(root, 'Child C');
+    root4 = tree->AppendContainer(root, 'Root4');
+    tree->AppendItem(root, 'Child B');
+    tree->AppendItem(root, 'Child A');
+
+    tree->AppendItem(root4, 'Child E', true, true, true);
+    tree->AppendItem(root4, 'Child D', true, true, true);
+    tree->AppendItem(root4, 'Child C', true, true, true);
+    tree->AppendItem(root4, 'Child B', true, true, true);
+    tree->AppendItem(root4, 'Child A', true, true, true);*/
+
+    psize = p - GetSashSize();
+#ifdef _WIN32
+    tree->GetColumn(0)->SetWidth(psize - wxSYS_VSCROLL_X);
+#else
+    tree->GetColumn(0)->SetMinWidth(psize);
+#endif // _WIN32
+}
+.fi
 .SS "DTSTreeWindow::~DTSTreeWindow ()"
 
 .PP
 Definition at line 778 of file DTSTreeWindow\&.cpp\&.
 .PP
 References a_window, rmenu, t_pane, and DTSObject::userdata\&.
+.PP
+.nf
+                              {
+    delete t_pane;
+    delete a_window;
+    objunref(rmenu);
+    if (userdata) {
+        objunref(userdata);
+    }
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "\fBDTSScrollPanel\fP * DTSTreeWindow::CreatePane (const wxString &name = \fCwxEmptyString\fP, intbutmask = \fC0\fP, void *userdata = \fCNULL\fP, struct xml_doc *xmldoc = \fCNULL\fP)"
@@ -115,12 +238,55 @@ Definition at line 715 of file DTSTreeWindow\&.cpp\&.
 References DTSObject::GetFrame(), DTSObject::GetPanel(), DTSPanel::SetTitle(), DTSObject::SetXMLDoc(), DTSObject::type, and wx_DTSPANEL_TREE\&.
 .PP
 Referenced by CreatePane(), DTS_C_API::dtsgui_treepane(), DTS_C_API::dtsgui_treepane_default(), and DTSTreeWindowEvent::TreeCallback()\&.
+.PP
+.nf
+                                                                                                                   {
+    DTSScrollPanel *dp;
+    wxWindow *parent;
+    DTSFrame *f;
+
+    parent = GetPanel();
+    f = GetFrame();
+
+    dp = new DTSScrollPanel(parent, f, name, butmask);
+    dp->type = wx_DTSPANEL_TREE;
+
+    if (name\&.Len() > 0) {
+        dp->SetTitle(name, true);
+    }
+
+    if (xmldoc) {
+        dp->SetXMLDoc(xmldoc);
+    }
+    return dp;
+}
+.fi
 .SS "\fBDTSScrollPanel\fP * DTSTreeWindow::CreatePane (const wxDataViewItem &node)"
 
 .PP
 Definition at line 736 of file DTSTreeWindow\&.cpp\&.
 .PP
 References CreatePane(), DTSDVMListView::GetNodeID(), DTSDVMListView::GetTitle(), vm, wx_PANEL_BUTTON_ACTION, and DTSObject::xmldoc\&.
+.PP
+.nf
+                                                                    {
+    DTSScrollPanel *p;
+    int nodeid;
+    wxString name;
+
+    nodeid = vm->GetNodeID(node);
+
+    if (nodeid == -1) {
+        p = CreatePane();
+    } else {
+        name = vm->GetTitle(node);
+        p = CreatePane(name, wx_PANEL_BUTTON_ACTION, NULL, xmldoc);
+    }
+
+    return p;
+
+}
+.fi
 .SS "\fBdtsgui_treenode\fP DTSTreeWindow::GetActiveNode ()"
 
 .PP
@@ -129,6 +295,12 @@ Definition at line 683 of file DTSTreeWindow\&.cpp\&.
 References a_node\&.
 .PP
 Referenced by DTSTreeWindowEvent::OnButton()\&.
+.PP
+.nf
+                                             {
+    return a_node;
+}
+.fi
 .SS "\fBDTSPanel\fP * DTSTreeWindow::GetClientPane ()"
 
 .PP
@@ -137,6 +309,12 @@ Definition at line 810 of file DTSTreeWindow\&.cpp\&.
 References a_window\&.
 .PP
 Referenced by DTSTreeWindowEvent::OnButton()\&.
+.PP
+.nf
+                                       {
+    return a_window;
+}
+.fi
 .SS "\fBDTSDVMCtrl\fP * DTSTreeWindow::GetTreeCtrl ()"
 
 .PP
@@ -145,6 +323,12 @@ Definition at line 655 of file DTSTreeWindow\&.cpp\&.
 References tree\&.
 .PP
 Referenced by DTS_C_API::dtsgui_treecont(), DTS_C_API::dtsgui_treeitem(), DTSTreeWindowEvent::DTSTreeWindowEvent(), and tree_newnode::handle_newtreenode()\&.
+.PP
+.nf
+                                       {
+    return tree;
+}
+.fi
 .SS "void DTSTreeWindow::Select (const wxDataViewItem &item)"
 
 .PP
@@ -153,6 +337,19 @@ Definition at line 814 of file DTSTreeWindow\&.cpp\&.
 References DTSDVMListView::IsContainer(), tree, and vm\&.
 .PP
 Referenced by tree_newnode::handle_newtreenode(), DTSTreeWindowEvent::OnButton(), and Show()\&.
+.PP
+.nf
+                                                     {
+    if (vm->IsContainer(item)) {
+        tree->Expand(item);
+    }
+    tree->Select(item);
+
+    wxDataViewEvent event(wxEVT_DATAVIEW_SELECTION_CHANGED, -1);
+    event\&.SetItem(item);
+    tree->ProcessWindowEvent(event);
+}
+.fi
 .SS "void DTSTreeWindow::SetPaneTitle (const wxStringvalue)"
 
 .PP
@@ -161,6 +358,18 @@ Definition at line 673 of file DTSTreeWindow\&.cpp\&.
 References a_window, DTSPanel::SetTitle(), and TreeResize()\&.
 .PP
 Referenced by DTSTreeWindowEvent::TreeEvent()\&.
+.PP
+.nf
+                                                     {
+    DTSPanel *p;
+
+    if ((p = dynamic_cast<DTSPanel*>(a_window))) {
+        p->SetTitle(value);
+    }
+
+    TreeResize();
+}
+.fi
 .SS "void DTSTreeWindow::SetTreePaneSize ()"
 
 .PP
@@ -169,6 +378,17 @@ Definition at line 659 of file DTSTreeWindow\&.cpp\&.
 References tree\&.
 .PP
 Referenced by DTSTreeWindowEvent::SplitterEvent()\&.
+.PP
+.nf
+                                    {
+    int psize = GetSashPosition() - GetSashSize();
+#ifdef _WIN32
+        tree->GetColumn(0)->SetWidth(psize - wxSYS_VSCROLL_X);
+#else
+        tree->GetColumn(0)->SetMinWidth(psize);
+#endif // _WIN32
+}
+.fi
 .SS "\fBwxWindow\fP * DTSTreeWindow::SetWindow (\fBDTSPanel\fP *window, const wxDataViewItem &item)"
 
 .PP
@@ -177,6 +397,32 @@ Definition at line 687 of file DTSTreeWindow\&.cpp\&.
 References a_node, a_window, and DTSObject::GetPanel()\&.
 .PP
 Referenced by DTSTreeWindowEvent::TreeCallback()\&.
+.PP
+.nf
+                                                                               {
+    DTSPanel *oldwin;
+    wxWindow *nw, *cw;
+
+    if (!window || (window == a_window)) {
+        return NULL;
+    }
+
+    if ((oldwin = a_window)) {
+        a_window->Show(false);
+    }
+
+    nw = window->GetPanel();
+    cw = a_window->GetPanel();
+
+    ReplaceWindow(cw, nw);
+    a_window = window;
+    a_node = item\&.GetID();
+    nw->Show(true);
+    nw->Layout();
+    nw->FitInside();
+    return oldwin;
+}
+.fi
 .SS "bool DTSTreeWindow::Show (boolshow = \fCtrue\fP)"
 
 .PP
@@ -185,6 +431,31 @@ Definition at line 787 of file DTSTreeWindow\&.cpp\&.
 References DTSObject::beenshown, DTSObject::frame, DTSDVMListView::GetRoot(), DTSDVMCtrl::GetStore(), Select(), DTSObject::status, tree, and TreeResize()\&.
 .PP
 Referenced by DTSTreeWindow()\&.
+.PP
+.nf
+                                  {
+    if (show) {
+        TreeResize();
+
+        if (!beenshown) {
+            wxDataViewItem root;
+            DTSDVMListStore *ds;
+            DTSDVMListView *model;
+
+            model = tree->GetStore();
+            ds = model->GetRoot();
+            root = wxDataViewItem(ds);
+            Select(root);
+            beenshown = true;
+        }
+
+        if (frame) {
+            frame->SetStatusText(status);
+        }
+    }
+    return wxSplitterWindow::Show(show);
+}
+.fi
 .SS "void DTSTreeWindow::ShowRMenu (boolcont, intcnt, boolfirst, boollast, boolc_sort, booldel)"
 
 .PP
@@ -193,6 +464,12 @@ Definition at line 711 of file DTSTreeWindow\&.cpp\&.
 References rmenu, treemenu::Show(), and tree\&.
 .PP
 Referenced by DTSTreeWindowEvent::TreeEvent()\&.
+.PP
+.nf
+                                                                                              {
+    rmenu->Show(tree, cont, cnt, first, last, c_sort, del);
+}
+.fi
 .SS "void DTSTreeWindow::TreeResize ()"
 
 .PP
@@ -201,6 +478,13 @@ Definition at line 668 of file DTSTreeWindow\&.cpp\&.
 References tree\&.
 .PP
 Referenced by SetPaneTitle(), Show(), and DTSTreeWindowEvent::TreeEvent()\&.
+.PP
+.nf
+                               {
+    tree->GetColumn(0)->SetHidden(true);
+    tree->GetColumn(0)->SetHidden(false);
+}
+.fi
 .SS "void DTSTreeWindow::UpdateNodeXML (const wxDataViewItem &node, const char *newname)"
 
 .PP
@@ -209,6 +493,32 @@ Definition at line 754 of file DTSTreeWindow\&.cpp\&.
 References DTSDVMListView::GetXMLData(), vm, and DTSObject::xmldoc\&.
 .PP
 Referenced by DTS_C_API::dtsgui_nodesetxml(), and DTSTreeWindowEvent::TreeCallback()\&.
+.PP
+.nf
+                                                                                 {
+    struct xml_node *xn;
+    struct xml_doc *xd;
+    char *buf;
+
+    if (!xmldoc || !objref(xmldoc)) {
+        return;
+    }
+    xd = xmldoc;
+
+    if (!(xn = vm->GetXMLData(node, &buf))) {
+        return;
+    }
+
+    if (buf) {
+        xml_setattr(xd, xn, buf, newname);
+        objunref(buf);
+    } else {
+        xml_modify(xd, xn, newname);
+    }
+    objunref(xn);
+    objunref(xd);
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "\fBdtsgui_treenode\fP DTSTreeWindow::a_node\fC [private]\fP"

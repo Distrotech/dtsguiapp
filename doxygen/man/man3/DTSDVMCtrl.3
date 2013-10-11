@@ -63,18 +63,59 @@ Definition at line 105 of file DTSListView\&.h\&.
 Definition at line 551 of file DTSListView\&.cpp\&.
 .PP
 References model\&.
+.PP
+.nf
+                       {
+    model = NULL;
+}
+.fi
 .SS "DTSDVMCtrl::DTSDVMCtrl (\fBwxWindow\fP *parent, wxWindowIDid = \fCwxID_ANY\fP, \fBDTSDVMListView\fP *model = \fCNULL\fP, const wxPoint &pos = \fCwxDefaultPosition\fP, const wxSize &size = \fCwxDefaultSize\fP, longstyle = \fCwxDV_ROW_LINES\fP, const wxValidator &validator = \fCwxDefaultValidator\fP)"
 
 .PP
 Definition at line 555 of file DTSListView\&.cpp\&.
 .PP
 References AssociateModel()\&.
+.PP
+.nf
+                                                                                                                                                               {
+    wxDataViewTextRenderer *col0_r;
+    wxDataViewColumn *col0;
+
+    this->model = NULL;
+    Create(parent, id, pos, size, style, validator);
+    if (model) {
+        AssociateModel(model);
+    }
+
+    col0_r = new wxDataViewTextRenderer('string', wxDATAVIEW_CELL_EDITABLE);
+#ifndef _WIN32
+    col0_r->DisableEllipsize();
+#endif //_WIN32
+    col0 = new wxDataViewColumn('Title', col0_r, 0);
+#ifndef _WIN32
+    col0->SetWidth(wxCOL_WIDTH_AUTOSIZE);
+#endif // _WIN32
+    col0->SetFlags(wxCOL_RESIZABLE | wxCOL_REORDERABLE);
+    col0->SetReorderable(true);
+    col0->SetAlignment(wxALIGN_LEFT);
+    AppendColumn(col0);
+#ifdef _WIN32
+    SetRowHeight(17);
+#endif // _WIN32
+}
+.fi
 .SS "DTSDVMCtrl::~DTSDVMCtrl ()"
 
 .PP
 Definition at line 582 of file DTSListView\&.cpp\&.
 .PP
 References DTSDVMListView::DeleteAll(), and model\&.
+.PP
+.nf
+                        {
+    model->DeleteAll();
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "wxDataViewItem DTSDVMCtrl::AppendContainer (wxDataViewItemparent, const wxString &title, boolcan_edit = \fCtrue\fP, boolcan_sort = \fCtrue\fP, boolcan_del = \fCfalse\fP, intnodeid = \fC-1\fP, \fBdtsgui_treeviewpanel_cb\fPp_cb = \fCNULL\fP, void *userdata = \fCNULL\fP)"
@@ -85,6 +126,12 @@ Definition at line 612 of file DTSListView\&.cpp\&.
 References AppendNode()\&.
 .PP
 Referenced by DTS_C_API::dtsgui_treecont(), and tree_newnode::handle_newtreenode()\&.
+.PP
+.nf
+                                                                                                                                                                                             {
+    return AppendNode(parent, title, true, can_edit, can_sort, can_del, nodeid, p_cb, userdata);
+}
+.fi
 .SS "wxDataViewItem DTSDVMCtrl::AppendItem (wxDataViewItemparent, const wxString &title, boolcan_edit = \fCtrue\fP, boolcan_sort = \fCtrue\fP, boolcan_del = \fCfalse\fP, intnodeid = \fC-1\fP, \fBdtsgui_treeviewpanel_cb\fPp_cb = \fCNULL\fP, void *userdata = \fCNULL\fP)"
 
 .PP
@@ -93,6 +140,12 @@ Definition at line 608 of file DTSListView\&.cpp\&.
 References AppendNode()\&.
 .PP
 Referenced by DTS_C_API::dtsgui_treeitem(), and tree_newnode::handle_newtreenode()\&.
+.PP
+.nf
+                                                                                                                                                                                        {
+    return AppendNode(parent, title, false, can_edit, can_sort, can_del, nodeid, p_cb, userdata);
+}
+.fi
 .SS "wxDataViewItem DTSDVMCtrl::AppendNode (wxDataViewItemparent, const wxString &title, booliscont, boolcan_edit = \fCtrue\fP, boolcan_sort = \fCtrue\fP, boolcan_del = \fCfalse\fP, intnodeid = \fC-1\fP, \fBdtsgui_treeviewpanel_cb\fPp_cb = \fCNULL\fP, void *userdata = \fCNULL\fP)\fC [private]\fP"
 
 .PP
@@ -101,6 +154,30 @@ Definition at line 616 of file DTSListView\&.cpp\&.
 References DTSDVMListStore::Append(), DTSDVMListStore::can_delete, DTSDVMListStore::can_edit, DTSDVMListStore::can_sort, DTSDVMListView::GetRoot(), model, and DTSDVMListView::SetRoot()\&.
 .PP
 Referenced by AppendContainer(), and AppendItem()\&.
+.PP
+.nf
+                                                                                                                                                                                                     {
+    DTSDVMListStore *li, *node;
+    wxDataViewItem dvi;
+
+    if (!parent\&.IsOk() && !model->GetRoot()) {
+        li = model->SetRoot(title, nodeid, p_cb, userdata);
+    } else if (!(node = (DTSDVMListStore*)parent\&.GetID())) {
+        return wxDataViewItem(NULL);
+    } else {
+        li= new DTSDVMListStore(node, iscont, title, nodeid, p_cb, userdata);
+        node->Append(li);
+    }
+
+    li->can_delete = can_del;
+    li->can_edit = can_edit;
+    li->can_sort = can_sort;
+
+    dvi = wxDataViewItem(li);
+    model->ItemAdded(parent, dvi);
+    return dvi;
+}
+.fi
 .SS "bool DTSDVMCtrl::AssociateModel (\fBDTSDVMListView\fP *model)\fC [virtual]\fP"
 
 .PP
@@ -109,6 +186,22 @@ Definition at line 586 of file DTSListView\&.cpp\&.
 References DTSDVMListView::DeleteAll(), and model\&.
 .PP
 Referenced by DTSDVMCtrl()\&.
+.PP
+.nf
+                                                     {
+    bool res;
+
+    res = wxDataViewCtrl::AssociateModel(model);
+    if (res) {
+        if (this->model) {
+            model->DeleteAll();
+        }
+        this->model = model;
+        model->DecRef();
+    }
+    return res;
+}
+.fi
 .SS "\fBDTSDVMListView\fP * DTSDVMCtrl::GetStore ()"
 
 .PP
@@ -117,12 +210,24 @@ Definition at line 604 of file DTSListView\&.cpp\&.
 References model\&.
 .PP
 Referenced by DTSTreeWindowEvent::DTSTreeWindowEvent(), and DTSTreeWindow::Show()\&.
+.PP
+.nf
+                                     {
+    return model;
+}
+.fi
 .SS "void DTSDVMCtrl::Sort (const wxDataViewItem &parent)"
 
 .PP
 Definition at line 600 of file DTSListView\&.cpp\&.
 .PP
 References model, and DTSDVMListView::SortChildren()\&.
+.PP
+.nf
+                                                  {
+    model->SortChildren(parent);
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "\fBDTSDVMListView\fP* DTSDVMCtrl::model\fC [private]\fP"

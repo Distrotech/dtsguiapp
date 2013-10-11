@@ -90,6 +90,13 @@ Definition at line 588 of file wrapper\&.cpp\&.
 References DTSTabWindow::CreateTab()\&.
 .PP
 Referenced by iface_config(), and pbx_settings()\&.
+.PP
+.nf
+                                                                                                                                                                   {
+    DTSTabWindow *tw = (DTSTabWindow*)tv;
+    return tw->CreateTab(name, butmask, userdata, cb, cdata, xmldoc);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_newxmltabpane (\fBdtsgui_tabview\fPtabv, \fBdtsgui_pane\fPp, const char *xpath, const char *node, const char *vitem, const char *tattr, \fBdtsgui_tabpane_newdata_cb\fPdata_cb, \fBdtsgui_tabpanel_cb\fPcb, void *cdata, struct xml_doc *xmldoc, void *data)"
 
 .PP
@@ -142,6 +149,13 @@ Definition at line 645 of file wrapper\&.cpp\&.
 References tab_newpane::handle_newtabpane_cb(), and tab_newpane::tab_newpane()\&.
 .PP
 Referenced by network_iface_new_pane_cb()\&.
+.PP
+.nf
+                                                                                      {
+    class tab_newpane *tn = new tab_newpane((DTSTabWindow*)tabv, xpath, node, vitem, tattr, data_cb, cb, cdata, xmldoc, data);
+    static_cast<DTSPanel*>(p)->SetEventCallback(&tab_newpane::handle_newtabpane_cb, tn, true);
+}
+.fi
 .SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_tabpage_insert (\fBdtsgui_tabview\fPtv, const char *name, intbutmask, void *userdata, struct xml_doc *xmldoc, \fBdtsgui_tabpanel_cb\fPcb, void *cdata, intpos, intundo)"
 
 .PP
@@ -193,6 +207,13 @@ New Tab Pane
 Definition at line 617 of file wrapper\&.cpp\&.
 .PP
 References DTSTabWindow::CreateTab()\&.
+.PP
+.nf
+                                                                                                                                                                                          {
+    DTSTabWindow *tw = (DTSTabWindow*)tv;
+    return tw->CreateTab(name, butmask, userdata, cb, cdata, xmldoc, pos, undo);
+}
+.fi
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

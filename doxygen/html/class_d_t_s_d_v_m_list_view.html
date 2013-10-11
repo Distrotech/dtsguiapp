@@ -219,7 +219,12 @@ Protected Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00247">247</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00102">colcnt</a>, <a class="el" href="_d_t_s_list_view_8h_source.html#l00101">hascontcol</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00100">root</a>.</p>
-
+<div class="fragment"><div class="line">                                                       {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_view.html#a2ebf1a7559aef2ca8dc1c0f8b333b244">hascontcol</a> = cont_cols;</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a> = NULL;</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_view.html#ae2a9d162d28fbbc8fb50d1dce1e46388">colcnt</a> = cols;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab9f4c979acf017bd4bd18d5f2017e302"></a>
@@ -238,7 +243,10 @@ Protected Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00253">253</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00367">DeleteAll()</a>.</p>
-
+<div class="fragment"><div class="line">                                {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_view.html#a7d0ec062e50e1d05cf4a2e8852104580">DeleteAll</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -261,7 +269,32 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00367">DeleteAll()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00083">DTSDVMListStore::GetParent()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00228">DTSDVMListStore::GetXMLData()</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00129">DTSDVMListStore::RemoveChildReference()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00445">DTSTreeWindowEvent::MenuEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                      {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *node;</div>
+<div class="line">    wxDataViewItem parent;</div>
+<div class="line">    <span class="keyword">struct </span>xml_node *xn;</div>
+<div class="line"></div>
+<div class="line">    node = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)item.GetID();</div>
+<div class="line">    <span class="keywordflow">if</span> (!node) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    parent = wxDataViewItem(node-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0d389a6d98f49cabd9b8526849682f5f">GetParent</a>());</div>
+<div class="line">    <span class="keywordflow">if</span> (!parent.IsOk()) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_d_v_m_list_view.html#a7d0ec062e50e1d05cf4a2e8852104580">DeleteAll</a>();</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> ((xn = node-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a61adea3902f8c4b1c746546b1b9bbff0">GetXMLData</a>(NULL))) {</div>
+<div class="line">        xml_delete(xn);</div>
+<div class="line">        objunref(xn);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    node-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0d389a6d98f49cabd9b8526849682f5f">GetParent</a>()-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a5b514355fd683cc7917a50403ac8a6de">RemoveChildReference</a>(node);</div>
+<div class="line">    <span class="keyword">delete</span> node;</div>
+<div class="line">    ItemDeleted(parent, item);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7d0ec062e50e1d05cf4a2e8852104580"></a>
@@ -283,7 +316,16 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00100">root</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00586">DTSDVMCtrl::AssociateModel()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00341">Delete()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00582">DTSDVMCtrl::~DTSDVMCtrl()</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00253">~DTSDVMListView()</a>.</p>
-
+<div class="fragment"><div class="line">                                   {</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">delete</span> <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>;</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a> = NULL;</div>
+<div class="line">    Cleared();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a75b2584818b50c6d05adde7ac20dfd5d"></a>
@@ -305,7 +347,20 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00092">DTSDVMListStore::GetChildCount()</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00100">root</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">DTSTreeWindowEvent::TreeEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                        {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *entry;</div>
+<div class="line">    <span class="keywordtype">bool</span> nok;</div>
+<div class="line"></div>
+<div class="line">    nok = parent.IsOk();</div>
+<div class="line">    <span class="keywordflow">if</span> (nok &amp;&amp; (entry = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)parent.GetID())) {</div>
+<div class="line">        <span class="keywordflow">return</span> entry-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a273068c9c62e05ef41609ee3b784d797">GetChildCount</a>();</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a> &amp;&amp; !nok) {</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a273068c9c62e05ef41609ee3b784d797">GetChildCount</a>();</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordflow">return</span> 0;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ade8f140548e87dce4f43782b82928be3"></a>
@@ -345,7 +400,25 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00154">DTSDVMListStore::GetChildren()</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00100">root</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00475">MoveChildDown()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00455">MoveChildUp()</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00377">SortChildren()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                       {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *node;</div>
+<div class="line">    <span class="keywordtype">bool</span> nok;</div>
+<div class="line"></div>
+<div class="line">    nok = parent.IsOk();</div>
+<div class="line">    node = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)parent.GetID();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!nok &amp;&amp; !node) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>) {</div>
+<div class="line">            items.Add(wxDataViewItem((<span class="keywordtype">void</span>*)<a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>));</div>
+<div class="line">            <span class="keywordflow">return</span> 1;</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            <span class="keywordflow">return</span> 0;</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordflow">return</span> node-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0b9344c83e4b5255c9dda28398c60b62">GetChildren</a>(items);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="abafbe991d4b0341d0e11a065d7639c54"></a>
@@ -372,7 +445,10 @@ Protected Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00300">300</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00102">colcnt</a>.</p>
-
+<div class="fragment"><div class="line">                                                  {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_view.html#ae2a9d162d28fbbc8fb50d1dce1e46388">colcnt</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a594b4e57d9c93cb75ce7c249db7183ae"></a>
@@ -398,7 +474,10 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00308">308</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
-
+<div class="fragment"><div class="line">                                                             {</div>
+<div class="line">    <span class="keywordflow">return</span> wxT(<span class="stringliteral">&quot;string&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a03a9867dcd09b6c74c33f9d79c2d887d"></a>
@@ -444,7 +523,25 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00165">DTSDVMListStore::GetContainers()</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00100">root</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00396">DTSTreeWindowEvent::SortParent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                      {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *node;</div>
+<div class="line">    <span class="keywordtype">bool</span> nok;</div>
+<div class="line"></div>
+<div class="line">    nok = parent.IsOk();</div>
+<div class="line">    node = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)parent.GetID();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!nok &amp;&amp; !node) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>) {</div>
+<div class="line">            items.Add(wxDataViewItem((<span class="keywordtype">void</span>*)<a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>));</div>
+<div class="line">            <span class="keywordflow">return</span> 1;</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            <span class="keywordflow">return</span> 0;</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordflow">return</span> node-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#aa74ad713c4fad25945a08a9643cf7989">GetContainers</a>(items, exonly);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ac8cd1cebdb6a6c3d03cbc7697e4ac9ed"></a>
@@ -466,7 +563,18 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00215">DTSDVMListStore::GetNodeID()</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00100">root</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00736">DTSTreeWindow::CreatePane()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">DTSTreeWindowEvent::TreeEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                        {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *data;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!node.IsOk() &amp;&amp; <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>) {</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a9744dc2bb294481c69a55fcdd667b357">GetNodeID</a>();</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((data = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)node.GetID())) {</div>
+<div class="line">        <span class="keywordflow">return</span> data-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a9744dc2bb294481c69a55fcdd667b357">GetNodeID</a>();</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordflow">return</span> -1;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aee18c001df2dc0a5c907b5d17ea3ece6"></a>
@@ -498,7 +606,23 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00110">DTSDVMListStore::GetNthChild()</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00100">root</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">DTSTreeWindowEvent::TreeEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                             {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *entry, *li;</div>
+<div class="line">    <span class="keywordtype">bool</span> nok;</div>
+<div class="line"></div>
+<div class="line">    nok = parent.IsOk();</div>
+<div class="line">    entry = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)parent.GetID();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (nok &amp;&amp; entry) {</div>
+<div class="line">        li = entry-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#afd9dc74d1cfb86a19e385c5adfd29e70">GetNthChild</a>(idx);</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!nok &amp;&amp; <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>) {</div>
+<div class="line">        li = <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#afd9dc74d1cfb86a19e385c5adfd29e70">GetNthChild</a>(idx);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        li = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> wxDataViewItem(li);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a764737b69417b79b1f57ee862746d7dc"></a>
@@ -528,7 +652,21 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00083">DTSDVMListStore::GetParent()</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00100">root</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00445">DTSTreeWindowEvent::MenuEvent()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">DTSTreeWindowEvent::TreeEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                         {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *node;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!item.IsOk()) {</div>
+<div class="line">        <span class="keywordflow">return</span> wxDataViewItem(NULL);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    node = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)item.GetID();</div>
+<div class="line">    <span class="keywordflow">if</span> (!node || (node == <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>)){</div>
+<div class="line">        <span class="keywordflow">return</span> wxDataViewItem(NULL);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> wxDataViewItem((<span class="keywordtype">void</span>*)node-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0d389a6d98f49cabd9b8526849682f5f">GetParent</a>());</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="adc923eb492e77cb825121688fc73764c"></a>
@@ -549,7 +687,10 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00100">root</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00616">DTSDVMCtrl::AppendNode()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00787">DTSTreeWindow::Show()</a>.</p>
-
+<div class="fragment"><div class="line">                                         {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab6290667fa8c72eedc83399220fee834"></a>
@@ -571,7 +712,17 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00138">DTSDVMListStore::GetTitle()</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00100">root</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00736">DTSTreeWindow::CreatePane()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                  {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *data;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!node.IsOk() &amp;&amp; <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>) {</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a2bea28788838dd5c214e8cf23a5e8a2e">GetTitle</a>();</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((data = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)node.GetID())) {</div>
+<div class="line">        <span class="keywordflow">return</span> data-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a2bea28788838dd5c214e8cf23a5e8a2e">GetTitle</a>();</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> wxEmptyString;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5dbe05ed1e31ca2896d5f5c57229a0a3"></a>
@@ -591,7 +742,18 @@ Protected Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00495">495</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00208">DTSDVMListStore::GetUserData()</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00100">root</a>.</p>
-
+<div class="fragment"><div class="line">                                                            {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *data;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!node.IsOk() &amp;&amp; <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>) {</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a35aa2204af134770c1fab2f5426c50a7">GetUserData</a>();</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((data = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)node.GetID())) {</div>
+<div class="line">        <span class="keywordflow">return</span> data-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a35aa2204af134770c1fab2f5426c50a7">GetUserData</a>();</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordflow">return</span> NULL;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="adb0653ec593332765c9b44c7cbe14e0b"></a>
@@ -635,7 +797,14 @@ Protected Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00312">312</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00138">DTSDVMListStore::GetTitle()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                    {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *node = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)item.GetID();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (col == 0) {</div>
+<div class="line">        variant = node-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a2bea28788838dd5c214e8cf23a5e8a2e">GetTitle</a>();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a90439ae943298c9d7104e3f09dbd3abf"></a>
@@ -675,7 +844,17 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00228">DTSDVMListStore::GetXMLData()</a>, and <a class="el" href="_d_t_s_list_view_8h_source.html#l00100">root</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00754">DTSTreeWindow::UpdateNodeXML()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                  {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *data;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!node.IsOk() &amp;&amp; <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>) {</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a61adea3902f8c4b1c746546b1b9bbff0">GetXMLData</a>(buf);</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((data = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)node.GetID())) {</div>
+<div class="line">        <span class="keywordflow">return</span> data-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a61adea3902f8c4b1c746546b1b9bbff0">GetXMLData</a>(buf);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> NULL;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ab28ac2eef25cf6be486a5fdf2769b4ef"></a>
@@ -703,7 +882,10 @@ Protected Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00304">304</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00101">hascontcol</a>.</p>
-
+<div class="fragment"><div class="line">                                                                         {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_view.html#a2ebf1a7559aef2ca8dc1c0f8b333b244">hascontcol</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a3b8181057f6c202ccb8a096a8550d6d1"></a>
@@ -733,7 +915,15 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00079">DTSDVMListStore::IsContainer()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00814">DTSTreeWindow::Select()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">DTSTreeWindowEvent::TreeEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                 {</div>
+<div class="line">    <span class="keywordflow">if</span> (!item.IsOk()) {</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *node = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)item.GetID();</div>
+<div class="line">    <span class="keywordflow">return</span> node-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a39054039fd35cb8ac46ba0b27be04821">IsContainer</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a4fd06f54c22ab48fddd25fa77bf90034"></a>
@@ -755,7 +945,26 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00118">DTSDVMListStore::GetChildIndex()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00281">GetChildren()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00083">DTSDVMListStore::GetParent()</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00196">DTSDVMListStore::MoveChildDown()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00396">DTSTreeWindowEvent::SortParent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                             {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *data, *parent;</div>
+<div class="line">    wxDataViewItem pnode;</div>
+<div class="line">    wxDataViewItemArray items;</div>
+<div class="line"></div>
+<div class="line">    data = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)node.GetID();</div>
+<div class="line">    <span class="keywordflow">if</span> (!data || !node.IsOk()) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line">    parent = data-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0d389a6d98f49cabd9b8526849682f5f">GetParent</a>();</div>
+<div class="line">    pnode = wxDataViewItem(parent);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (parent) {</div>
+<div class="line">        parent-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#ab4e8b7c639095f8e79ee5a14b140a97e">MoveChildDown</a>(parent-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#ac3114326313888981ecff0f93eb7bff5">GetChildIndex</a>(data));</div>
+<div class="line">        <a class="code" href="class_d_t_s_d_v_m_list_view.html#ade8f140548e87dce4f43782b82928be3">GetChildren</a>(pnode, items);</div>
+<div class="line">        ItemsDeleted(pnode, items);</div>
+<div class="line">        ItemsAdded(pnode, items);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a1d0cb108cee3efdf2acbc813ec66e812"></a>
@@ -777,7 +986,26 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00118">DTSDVMListStore::GetChildIndex()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00281">GetChildren()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00083">DTSDVMListStore::GetParent()</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00184">DTSDVMListStore::MoveChildUp()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00396">DTSTreeWindowEvent::SortParent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                           {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *data, *parent;</div>
+<div class="line">    wxDataViewItem pnode;</div>
+<div class="line">    wxDataViewItemArray items;</div>
+<div class="line"></div>
+<div class="line">    data = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)node.GetID();</div>
+<div class="line">    <span class="keywordflow">if</span> (!data || !node.IsOk()) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line">    parent = data-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a0d389a6d98f49cabd9b8526849682f5f">GetParent</a>();</div>
+<div class="line">    pnode = wxDataViewItem(parent);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (parent) {</div>
+<div class="line">        parent-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a65b937ebdaa75661e2ff974c23e1e35a">MoveChildUp</a>(parent-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#ac3114326313888981ecff0f93eb7bff5">GetChildIndex</a>(data));</div>
+<div class="line">        <a class="code" href="class_d_t_s_d_v_m_list_view.html#ade8f140548e87dce4f43782b82928be3">GetChildren</a>(pnode, items);</div>
+<div class="line">        ItemsDeleted(pnode, items);</div>
+<div class="line">        ItemsAdded(pnode, items);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a216845800003f23bf035f0eb561d4df3"></a>
@@ -809,7 +1037,20 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00100">root</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00150">DTSDVMListStore::SetExpanded()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00396">DTSTreeWindowEvent::SortParent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                          {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *entry;</div>
+<div class="line">    <span class="keywordtype">bool</span> nok;</div>
+<div class="line"></div>
+<div class="line">    nok = node.IsOk();</div>
+<div class="line">    entry = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)node.GetID();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (nok &amp;&amp; entry) {</div>
+<div class="line">        entry-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a069aaa01111b9ae71e09d14134023ef7">SetExpanded</a>(expanded);</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!nok &amp;&amp; <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a069aaa01111b9ae71e09d14134023ef7">SetExpanded</a>();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a3dd3b975a0207831ad000447340482a0"></a>
@@ -853,7 +1094,11 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00100">root</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00616">DTSDVMCtrl::AppendNode()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                        {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a> = <span class="keyword">new</span> <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>(NULL, <span class="keyword">true</span>, title, nodeid, p_cb, userdata);</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="acccd8efb3d7b81849ea504799ac8d638"></a>
@@ -897,7 +1142,18 @@ Protected Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00320">320</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00142">DTSDVMListStore::SetTitle()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                    {</div>
+<div class="line">    assert(item.IsOk());</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *node = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*) item.GetID();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (col == 0) {</div>
+<div class="line">        node-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#a9464b7e487e9c4dccec977a6b6894b98">SetTitle</a>(variant.GetString());</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a53608928d1ea68114e65ba7b92695f32"></a>
@@ -933,7 +1189,16 @@ Protected Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00519">519</a> of file <a class="el" href="_d_t_s_list_view_8cpp_source.html">DTSListView.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_list_view_8h_source.html#l00100">root</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00219">DTSDVMListStore::SetXMLData()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                     {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *data;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!node.IsOk() &amp;&amp; <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_d_v_m_list_view.html#add4852a61464d3771c20bec22f88db6b">root</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#aa82d333247a2bf537c3acdeae7635e15">SetXMLData</a>(xnode, tattr);</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((data = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)node.GetID())) {</div>
+<div class="line">        data-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#aa82d333247a2bf537c3acdeae7635e15">SetXMLData</a>(xnode, tattr);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a463cffa4280decda9cb36655a200caae"></a>
@@ -955,7 +1220,20 @@ Protected Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00281">GetChildren()</a>, and <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00146">DTSDVMListStore::SortChildren()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00600">DTSDVMCtrl::Sort()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00396">DTSTreeWindowEvent::SortParent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                              {</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *node = (<a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a>*)parent.GetID();</div>
+<div class="line">    wxDataViewItemArray items;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!node) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    node-&gt;<a class="code" href="class_d_t_s_d_v_m_list_store.html#af15ec04eead9616fea2b06e750c6b81c">SortChildren</a>();</div>
+<div class="line">    <a class="code" href="class_d_t_s_d_v_m_list_view.html#ade8f140548e87dce4f43782b82928be3">GetChildren</a>(parent, items);</div>
+<div class="line">    ItemsDeleted(parent, items);</div>
+<div class="line">    ItemsAdded(parent, items);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -1041,7 +1319,7 @@ Protected Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_d_v_m_list_view.html">DTSDVMListView</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

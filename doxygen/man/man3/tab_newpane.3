@@ -82,6 +82,33 @@ Definition at line 145 of file DTSTreeWindow\&.cpp\&.
 References cb, cdata, data, data_cb, last, tabv, and xmldoc\&.
 .PP
 Referenced by DTS_C_API::dtsgui_newxmltabpane()\&.
+.PP
+.nf
+                                                                                                    {
+    DTSTabWindow *tv = (DTSTabWindow*)tabv;
+
+    if (data && objref(data)) {
+        this->data = data;
+    }
+
+    if (cdata && objref(cdata)) {
+        this->cdata = cdata;
+    }
+
+    this->tabv = tabv;
+    if (xmldoc && objref(xmldoc)) {
+        this->xmldoc = xmldoc;
+    }
+
+    ALLOC_CONST(this->xpath, xpath);
+    ALLOC_CONST(this->node, node);
+    ALLOC_CONST(this->vitem, vitem);
+    ALLOC_CONST(this->tattr, tattr);
+    this->last = tv->GetPageCount() - 1;
+    this->cb = cb;
+    this->data_cb = data_cb;
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "tab_newpane::DTS_OJBREF_CLASS (\fBtab_newpane\fP)"
@@ -94,6 +121,47 @@ Definition at line 216 of file DTSTreeWindow\&.cpp\&.
 References cb, cdata, DTSTabWindow::CreateTab(), data, data_cb, DTSTabWindow::InsertTab(), last, node, DTSPanel::Panel2XML(), tabv, tattr, DTSTabWindow::Undo(), vitem, wx_PANEL_BUTTON_ACTION, xmldoc, and xpath\&.
 .PP
 Referenced by handle_newtabpane_cb()\&.
+.PP
+.nf
+                                                                     {
+    DTSTabPage *np;
+    struct xml_node *xn;
+    const char *name;
+    int pos = last;
+    void *ndata = cdata;
+
+    if (!(xn = dp->Panel2XML(xpath, node, vitem, tattr))) {
+        return 1;
+    }
+
+    if (tattr) {
+        name = xml_getattr(xn, tattr);
+    } else {
+        name = xn->value;
+    }
+
+    if (data_cb) {
+        data_cb(xmldoc, xn, data, &ndata, &pos);
+        if (cdata && (ndata != cdata)) {
+            objunref(cdata);
+            cdata = NULL;
+        }
+        if (ndata) {
+            cdata = ndata;
+        }
+    }
+
+    if ((np = tabv->CreateTab(name, wx_PANEL_BUTTON_ACTION, NULL, cb, cdata, xmldoc, false))) {
+        tabv->InsertTab(np, pos);
+        tabv->Undo(-1);
+        tabv->SetSelection(pos);
+        last++;
+    }
+
+    objunref(xn);
+    return 0;
+}
+.fi
 .SS "int tab_newpane::handle_newtabpane_cb (class \fBdtsgui\fP *dtsgui, \fBdtsgui_pane\fPp, inttype, intevent, void *data)\fC [static]\fP"
 
 .PP
@@ -102,6 +170,26 @@ Definition at line 198 of file DTSTreeWindow\&.cpp\&.
 References handle_newtabpane(), wx_PANEL_EVENT_BUTTON, and wx_PANEL_EVENT_BUTTON_YES\&.
 .PP
 Referenced by DTS_C_API::dtsgui_newxmltabpane()\&.
+.PP
+.nf
+                                                                                                          {
+    class tab_newpane *tp = (class tab_newpane*)data;
+    DTSPanel *dp = (DTSPanel*)p;
+
+    if (type != wx_PANEL_EVENT_BUTTON) {
+        return 1;
+    }
+
+    switch(event) {
+        case wx_PANEL_EVENT_BUTTON_YES:
+            break;
+        default:
+            return 1;
+    }
+
+    return tp->handle_newtabpane(dtsgui, dp);
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "\fBdtsgui_tabpanel_cb\fP tab_newpane::cb\fC [private]\fP"

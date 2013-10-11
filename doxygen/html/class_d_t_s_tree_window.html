@@ -288,7 +288,116 @@ Additional Inherited Members</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00544">544</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00130">a_window</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00076">DTSObject::dtsevthandler</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00073">DTSObject::frame</a>, <a class="el" href="_d_t_s_frame_8cpp_source.html#l00307">DTSFrame::GetDTSData()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00282">DTSObject::GetPanel()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00445">DTSTreeWindowEvent::MenuEvent()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00524">DTSTreeWindowEvent::OnButton()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00075">DTSObject::panel</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00132">rmenu</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00290">DTSObject::SetXMLDoc()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00787">Show()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00471">DTSTreeWindowEvent::SplitterEvent()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00126">t_pane</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00128">tree</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">DTSTreeWindowEvent::TreeEvent()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00133">treesizer</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00069">DTSObject::type</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00078">DTSObject::userdata</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00129">vm</a>, and <a class="el" href="dtsgui_8h_source.html#l00249">wx_DTSPANEL_TREE</a>.</p>
-
+<div class="fragment"><div class="line">    :wxSplitterWindow(parent, -1, wxDefaultPosition, wxDefaultSize),</div>
+<div class="line">     <a class="code" href="class_d_t_s_object.html#a76f73a01ddebf90d59245dd744d491b5">DTSObject</a>(stat_msg) {</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordtype">int</span> w, h, p, psize;</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="classdtsgui.html">dtsgui</a> *udata;</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#a37362520ed70a72d3b1888cdae337ad4">a_window</a> = NULL;</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window_event.html">DTSTreeWindowEvent</a> *dtsevt;</div>
+<div class="line">    wxSplitterWindow *sw = <span class="keyword">static_cast&lt;</span>wxSplitterWindow*<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="_d_t_s_frame_8h.html#ad396616e0ef9ed30f9053d7b48712ecd">wxBoxSizer</a> *p_sizer = <span class="keyword">new</span> <a class="code" href="_d_t_s_frame_8h.html#ad396616e0ef9ed30f9053d7b48712ecd">wxBoxSizer</a>(wxHORIZONTAL);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#a34f907b7b676ad866ada6d4198de7322">treesizer</a> = <span class="keyword">new</span> <a class="code" href="_d_t_s_frame_8h.html#ad396616e0ef9ed30f9053d7b48712ecd">wxBoxSizer</a>(wxVERTICAL);</div>
+<div class="line">    wxDataViewItem root, root4;</div>
+<div class="line">    <a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *aw;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#ae6ae4cafa2647a549f709206ac35bd81">rmenu</a> = <span class="keyword">new</span> <a class="code" href="classtreemenu.html">treemenu</a>();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (u_data &amp;&amp; objref(u_data)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a> = u_data;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    this-&gt;frame = <a class="code" href="class_d_t_s_object.html#a8ca3e7c6f66685caf07fa93fb5e14337">frame</a>;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (xd) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a1ae63425d8e5770a8b0717f37fd695b2">SetXMLDoc</a>(xd);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    p_sizer-&gt;Add(sw, 1,wxEXPAND,0);</div>
+<div class="line"><span class="preprocessor">#ifdef __WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>    <a class="code" href="class_d_t_s_tree_window.html#a7ea74947094602a9ad9c3ca3ebd078e2">t_pane</a> = <span class="keyword">new</span> wxScrolledWindow(sw, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxVSCROLL);</div>
+<div class="line"><span class="preprocessor">#else</span></div>
+<div class="line"><span class="preprocessor"></span>    <a class="code" href="class_d_t_s_tree_window.html#a7ea74947094602a9ad9c3ca3ebd078e2">t_pane</a> = <span class="keyword">new</span> wxScrolledWindow(sw, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxHSCROLL|wxVSCROLL);</div>
+<div class="line"><span class="preprocessor">#endif // _WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>    <a class="code" href="class_d_t_s_object.html#af8c7a75701ac05261749552eef4bc6ed">panel</a> = <span class="keyword">static_cast&lt;</span><a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *<span class="keyword">&gt;</span>(sw);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#a37362520ed70a72d3b1888cdae337ad4">a_window</a> = <span class="keyword">new</span> <a class="code" href="_d_t_s_frame_8h.html#aaf5c0edaf8bc2cf97613de1b618bff60">DTSWindow</a>(<a class="code" href="class_d_t_s_object.html#af8c7a75701ac05261749552eef4bc6ed">panel</a>, frame);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#a37362520ed70a72d3b1888cdae337ad4">a_window</a>-&gt;<a class="code" href="class_d_t_s_object.html#ad191e42b5daa056f9ea8247d752df3b0">type</a> = <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373a8aa14d05cc73bd9438f302f6f2cb29c3" title="DTSTreeWindow (wx_DTSPANEL_TREE) see Tree view panel interface..">wx_DTSPANEL_TREE</a>;</div>
+<div class="line">    aw = <a class="code" href="class_d_t_s_tree_window.html#a37362520ed70a72d3b1888cdae337ad4">a_window</a>-&gt;<a class="code" href="class_d_t_s_object.html#ae88ef1ea6f28346b6cd6d2d898d7acde">GetPanel</a>();</div>
+<div class="line"></div>
+<div class="line">    SplitVertically(<a class="code" href="class_d_t_s_tree_window.html#a7ea74947094602a9ad9c3ca3ebd078e2">t_pane</a>, aw);</div>
+<div class="line">    SetSashGravity(0.5);</div>
+<div class="line">    SetMinimumPaneSize(20);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#a7ea74947094602a9ad9c3ca3ebd078e2">t_pane</a>-&gt;SetSizer(<a class="code" href="class_d_t_s_tree_window.html#a34f907b7b676ad866ada6d4198de7322">treesizer</a>);</div>
+<div class="line"><span class="preprocessor">#ifdef __WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>    <a class="code" href="class_d_t_s_tree_window.html#a7ea74947094602a9ad9c3ca3ebd078e2">t_pane</a>-&gt;SetScrollRate(0, 10);</div>
+<div class="line"><span class="preprocessor">#else</span></div>
+<div class="line"><span class="preprocessor"></span>    <a class="code" href="class_d_t_s_tree_window.html#a7ea74947094602a9ad9c3ca3ebd078e2">t_pane</a>-&gt;SetScrollRate(10, 10);</div>
+<div class="line"><span class="preprocessor">#endif // _WIN32</span></div>
+<div class="line"><span class="preprocessor"></span></div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#a57f82dd35e2ad0c6f50041b40c6e67f5">vm</a> = <span class="keyword">new</span> <a class="code" href="_d_t_s_tree_window_8h.html#a40910b006b3cb725bb4b46991136f4d9">DTSDVMListView</a>(1, <span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a> = <span class="keyword">new</span> <a class="code" href="_d_t_s_tree_window_8h.html#adfae3fffe0550113ce94a837b02d55f6">DTSDVMCtrl</a>(<a class="code" href="class_d_t_s_tree_window.html#a7ea74947094602a9ad9c3ca3ebd078e2">t_pane</a>, wxID_ANY, <a class="code" href="class_d_t_s_tree_window.html#a57f82dd35e2ad0c6f50041b40c6e67f5">vm</a>, wxDefaultPosition, wxDefaultSize, wxDV_ROW_LINES|wxDV_NO_HEADER);</div>
+<div class="line"></div>
+<div class="line">    udata = (<a class="code" href="class_d_t_s_object.html#a8ca3e7c6f66685caf07fa93fb5e14337">frame</a>) ? frame-&gt;<a class="code" href="class_d_t_s_frame.html#a0a5798261ab9b56b7938f968b4032a24">GetDTSData</a>() : NULL;</div>
+<div class="line">    dtsevt = <span class="keyword">new</span> <a class="code" href="class_d_t_s_tree_window_event.html">DTSTreeWindowEvent</a>(<a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a>, tree_cb, udata, <span class="keyword">this</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (udata) {</div>
+<div class="line">        objunref(udata);</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#a132481851865629352e4aefa7f822e4b">dtsevthandler</a> = dtsevt;</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#a34f907b7b676ad866ada6d4198de7322">treesizer</a>-&gt;Add(<a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>, 1,wxEXPAND,0);</div>
+<div class="line"></div>
+<div class="line">    p_sizer-&gt;FitInside(parent);</div>
+<div class="line">    p_sizer-&gt;Layout();</div>
+<div class="line">    p_sizer-&gt;SetSizeHints(sw);</div>
+<div class="line"></div>
+<div class="line">    parent-&gt;GetSize(&amp;w, &amp;h);</div>
+<div class="line">    p = (w * pos) / 100;</div>
+<div class="line">    SetSashPosition(p, <span class="keyword">true</span>);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#a34f907b7b676ad866ada6d4198de7322">treesizer</a>-&gt;SetSizeHints(<a class="code" href="class_d_t_s_tree_window.html#a7ea74947094602a9ad9c3ca3ebd078e2">t_pane</a>);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#a34f907b7b676ad866ada6d4198de7322">treesizer</a>-&gt;FitInside(<a class="code" href="class_d_t_s_tree_window.html#a7ea74947094602a9ad9c3ca3ebd078e2">t_pane</a>);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#a34f907b7b676ad866ada6d4198de7322">treesizer</a>-&gt;Layout();</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;Bind(wxEVT_DATAVIEW_SELECTION_CHANGED, &amp;<a class="code" href="class_d_t_s_tree_window_event.html#ac0c3b48a9c6227d016dcffe7dc17a250">DTSTreeWindowEvent::TreeEvent</a>, dtsevt);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;Bind(wxEVT_DATAVIEW_ITEM_EXPANDED, &amp;<a class="code" href="class_d_t_s_tree_window_event.html#ac0c3b48a9c6227d016dcffe7dc17a250">DTSTreeWindowEvent::TreeEvent</a>, dtsevt);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;Bind(wxEVT_DATAVIEW_ITEM_CONTEXT_MENU, &amp;<a class="code" href="class_d_t_s_tree_window_event.html#ac0c3b48a9c6227d016dcffe7dc17a250">DTSTreeWindowEvent::TreeEvent</a>, dtsevt);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;Bind(wxEVT_DATAVIEW_ITEM_EDITING_DONE, &amp;<a class="code" href="class_d_t_s_tree_window_event.html#ac0c3b48a9c6227d016dcffe7dc17a250">DTSTreeWindowEvent::TreeEvent</a>, dtsevt);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;Bind(wxEVT_DATAVIEW_ITEM_START_EDITING, &amp;<a class="code" href="class_d_t_s_tree_window_event.html#ac0c3b48a9c6227d016dcffe7dc17a250">DTSTreeWindowEvent::TreeEvent</a>, dtsevt);</div>
+<div class="line">    frame-&gt;Bind(wxEVT_DATAVIEW_ITEM_BEGIN_DRAG, &amp;<a class="code" href="class_d_t_s_tree_window_event.html#ac0c3b48a9c6227d016dcffe7dc17a250">DTSTreeWindowEvent::TreeEvent</a>, dtsevt);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;Bind(wxEVT_COMMAND_MENU_SELECTED, &amp;<a class="code" href="class_d_t_s_tree_window_event.html#ac629b258d688fee58bdccd9d165c076e">DTSTreeWindowEvent::MenuEvent</a>, dtsevt);</div>
+<div class="line">    sw-&gt;Bind(wxEVT_SPLITTER_SASH_POS_CHANGED, &amp;<a class="code" href="class_d_t_s_tree_window_event.html#a70409a54c0a1a20707105e67c2ebfd81">DTSTreeWindowEvent::SplitterEvent</a>, dtsevt);</div>
+<div class="line">    sw-&gt;Bind(wxEVT_COMMAND_BUTTON_CLICKED, &amp;<a class="code" href="class_d_t_s_tree_window_event.html#a7523413f0f0cbe621c630730b8b1713f">DTSTreeWindowEvent::OnButton</a>, dtsevt);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;EnableDragSource(wxDF_UNICODETEXT);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;EnableDropTarget(wxDF_UNICODETEXT);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#a7c6941ddc90e0539d219561556e2e455">Show</a>(<span class="keyword">false</span>);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">/*  root = tree-&gt;AppendContainer(wxDataViewItem(NULL), &quot;The Root&quot;);</span></div>
+<div class="line"><span class="comment">    tree-&gt;AppendItem(root, &quot;Child E&quot;);</span></div>
+<div class="line"><span class="comment">    tree-&gt;AppendContainer(root, &quot;Root2&quot;);</span></div>
+<div class="line"><span class="comment">    tree-&gt;AppendItem(root, &quot;Child D&quot;);</span></div>
+<div class="line"><span class="comment">    tree-&gt;AppendContainer(root, &quot;Root3&quot;);</span></div>
+<div class="line"><span class="comment">    tree-&gt;AppendItem(root, &quot;Child C&quot;);</span></div>
+<div class="line"><span class="comment">    root4 = tree-&gt;AppendContainer(root, &quot;Root4&quot;);</span></div>
+<div class="line"><span class="comment">    tree-&gt;AppendItem(root, &quot;Child B&quot;);</span></div>
+<div class="line"><span class="comment">    tree-&gt;AppendItem(root, &quot;Child A&quot;);</span></div>
+<div class="line"><span class="comment"></span></div>
+<div class="line"><span class="comment">    tree-&gt;AppendItem(root4, &quot;Child E&quot;, true, true, true);</span></div>
+<div class="line"><span class="comment">    tree-&gt;AppendItem(root4, &quot;Child D&quot;, true, true, true);</span></div>
+<div class="line"><span class="comment">    tree-&gt;AppendItem(root4, &quot;Child C&quot;, true, true, true);</span></div>
+<div class="line"><span class="comment">    tree-&gt;AppendItem(root4, &quot;Child B&quot;, true, true, true);</span></div>
+<div class="line"><span class="comment">    tree-&gt;AppendItem(root4, &quot;Child A&quot;, true, true, true);*/</span></div>
+<div class="line"></div>
+<div class="line">    psize = p - GetSashSize();</div>
+<div class="line"><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>    <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;GetColumn(0)-&gt;SetWidth(psize - wxSYS_VSCROLL_X);</div>
+<div class="line"><span class="preprocessor">#else</span></div>
+<div class="line"><span class="preprocessor"></span>    <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;GetColumn(0)-&gt;SetMinWidth(psize);</div>
+<div class="line"><span class="preprocessor">#endif // _WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae76407acd39772ef597cbfa599b349af"></a>
@@ -307,7 +416,15 @@ Additional Inherited Members</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00778">778</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00130">a_window</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00132">rmenu</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00126">t_pane</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00078">DTSObject::userdata</a>.</p>
-
+<div class="fragment"><div class="line">                              {</div>
+<div class="line">    <span class="keyword">delete</span> <a class="code" href="class_d_t_s_tree_window.html#a7ea74947094602a9ad9c3ca3ebd078e2">t_pane</a>;</div>
+<div class="line">    <span class="keyword">delete</span> <a class="code" href="class_d_t_s_tree_window.html#a37362520ed70a72d3b1888cdae337ad4">a_window</a>;</div>
+<div class="line">    objunref(<a class="code" href="class_d_t_s_tree_window.html#ae6ae4cafa2647a549f709206ac35bd81">rmenu</a>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -352,7 +469,27 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00286">DTSObject::GetFrame()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00282">DTSObject::GetPanel()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00482">DTSPanel::SetTitle()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00290">DTSObject::SetXMLDoc()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00069">DTSObject::type</a>, and <a class="el" href="dtsgui_8h_source.html#l00249">wx_DTSPANEL_TREE</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00736">CreatePane()</a>, <a class="el" href="wrapper_8cpp_source.html#l00665">DTS_C_API::dtsgui_treepane()</a>, <a class="el" href="wrapper_8cpp_source.html#l00683">DTS_C_API::dtsgui_treepane_default()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00483">DTSTreeWindowEvent::TreeCallback()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                   {</div>
+<div class="line">    <a class="code" href="class_d_t_s_scroll_panel.html">DTSScrollPanel</a> *dp;</div>
+<div class="line">    <a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *parent;</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f;</div>
+<div class="line"></div>
+<div class="line">    parent = <a class="code" href="class_d_t_s_object.html#ae88ef1ea6f28346b6cd6d2d898d7acde">GetPanel</a>();</div>
+<div class="line">    f = <a class="code" href="class_d_t_s_object.html#ae5239b912c725a7a5720954767c3537a">GetFrame</a>();</div>
+<div class="line"></div>
+<div class="line">    dp = <span class="keyword">new</span> <a class="code" href="class_d_t_s_scroll_panel.html">DTSScrollPanel</a>(parent, f, name, butmask);</div>
+<div class="line">    dp-&gt;<a class="code" href="class_d_t_s_object.html#ad191e42b5daa056f9ea8247d752df3b0">type</a> = <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373a8aa14d05cc73bd9438f302f6f2cb29c3" title="DTSTreeWindow (wx_DTSPANEL_TREE) see Tree view panel interface..">wx_DTSPANEL_TREE</a>;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (name.Len() &gt; 0) {</div>
+<div class="line">        dp-&gt;<a class="code" href="class_d_t_s_panel.html#a58daeb533cce1e4bdac57118cce7c7ea">SetTitle</a>(name, <span class="keyword">true</span>);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>) {</div>
+<div class="line">        dp-&gt;<a class="code" href="class_d_t_s_object.html#a1ae63425d8e5770a8b0717f37fd695b2">SetXMLDoc</a>(<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> dp;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a45d33a41609c46d51d17bb80a64f2ca4"></a>
@@ -372,7 +509,24 @@ Additional Inherited Members</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00736">736</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00715">CreatePane()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00507">DTSDVMListView::GetNodeID()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00540">DTSDVMListView::GetTitle()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00129">vm</a>, <a class="el" href="dtsgui_8h_source.html#l00271">wx_PANEL_BUTTON_ACTION</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00079">DTSObject::xmldoc</a>.</p>
-
+<div class="fragment"><div class="line">                                                                    {</div>
+<div class="line">    <a class="code" href="class_d_t_s_scroll_panel.html">DTSScrollPanel</a> *p;</div>
+<div class="line">    <span class="keywordtype">int</span> nodeid;</div>
+<div class="line">    wxString name;</div>
+<div class="line"></div>
+<div class="line">    nodeid = <a class="code" href="class_d_t_s_tree_window.html#a57f82dd35e2ad0c6f50041b40c6e67f5">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#ac8cd1cebdb6a6c3d03cbc7697e4ac9ed">GetNodeID</a>(node);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (nodeid == -1) {</div>
+<div class="line">        p = <a class="code" href="class_d_t_s_tree_window.html#a7457dc767b9cbc873e0e963644fa1fda">CreatePane</a>();</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        name = <a class="code" href="class_d_t_s_tree_window.html#a57f82dd35e2ad0c6f50041b40c6e67f5">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#ab6290667fa8c72eedc83399220fee834">GetTitle</a>(node);</div>
+<div class="line">        p = <a class="code" href="class_d_t_s_tree_window.html#a7457dc767b9cbc873e0e963644fa1fda">CreatePane</a>(name, <a class="code" href="group___c_o_r_e.html#ga4ef37ee1286eb68a9f5663813f134be2" title="Shortcut flags for action buttons.">wx_PANEL_BUTTON_ACTION</a>, NULL, <a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> p;</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a13f1a1a56891ccba3df14c857e09197e"></a>
@@ -393,7 +547,10 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00131">a_node</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00524">DTSTreeWindowEvent::OnButton()</a>.</p>
-
+<div class="fragment"><div class="line">                                             {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_tree_window.html#a996e933c35328c5302c52880c85d005f">a_node</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ad5c187ebc6203b19afae00ea5a42b78d"></a>
@@ -414,7 +571,10 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00130">a_window</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00524">DTSTreeWindowEvent::OnButton()</a>.</p>
-
+<div class="fragment"><div class="line">                                       {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_tree_window.html#a37362520ed70a72d3b1888cdae337ad4">a_window</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aae9e856659f3701452382e2cdcba8463"></a>
@@ -435,7 +595,10 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00128">tree</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00708">DTS_C_API::dtsgui_treecont()</a>, <a class="el" href="wrapper_8cpp_source.html#l00732">DTS_C_API::dtsgui_treeitem()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00295">DTSTreeWindowEvent::DTSTreeWindowEvent()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00103">tree_newnode::handle_newtreenode()</a>.</p>
-
+<div class="fragment"><div class="line">                                       {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a16e8b0b7de01806b70235b4eac89345e"></a>
@@ -457,7 +620,17 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00257">DTSDVMListView::IsContainer()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00128">tree</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00129">vm</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00103">tree_newnode::handle_newtreenode()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00524">DTSTreeWindowEvent::OnButton()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00787">Show()</a>.</p>
-
+<div class="fragment"><div class="line">                                                     {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_tree_window.html#a57f82dd35e2ad0c6f50041b40c6e67f5">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a3b8181057f6c202ccb8a096a8550d6d1">IsContainer</a>(item)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;Expand(item);</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;Select(item);</div>
+<div class="line"></div>
+<div class="line">    wxDataViewEvent event(wxEVT_DATAVIEW_SELECTION_CHANGED, -1);</div>
+<div class="line">    <span class="keyword">event</span>.SetItem(item);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;ProcessWindowEvent(event);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2ed14675c69eebc630e82b65ddb2bb4a"></a>
@@ -479,7 +652,16 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00130">a_window</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00482">DTSPanel::SetTitle()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00668">TreeResize()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">DTSTreeWindowEvent::TreeEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                     {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *p;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> ((p = dynamic_cast&lt;DTSPanel*&gt;(<a class="code" href="class_d_t_s_tree_window.html#a37362520ed70a72d3b1888cdae337ad4">a_window</a>))) {</div>
+<div class="line">        p-&gt;<a class="code" href="class_d_t_s_panel.html#a58daeb533cce1e4bdac57118cce7c7ea">SetTitle</a>(value);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#a45a0f5740984258b0d318104e7aef932">TreeResize</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="acef5712c7e881b7fbca765d32530737d"></a>
@@ -500,7 +682,15 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00128">tree</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00471">DTSTreeWindowEvent::SplitterEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                    {</div>
+<div class="line">    <span class="keywordtype">int</span> psize = GetSashPosition() - GetSashSize();</div>
+<div class="line"><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>        <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;GetColumn(0)-&gt;SetWidth(psize - wxSYS_VSCROLL_X);</div>
+<div class="line"><span class="preprocessor">#else</span></div>
+<div class="line"><span class="preprocessor"></span>        <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;GetColumn(0)-&gt;SetMinWidth(psize);</div>
+<div class="line"><span class="preprocessor">#endif // _WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a491a55218197db09e099be00afe06850"></a>
@@ -532,7 +722,30 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00131">a_node</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00130">a_window</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00282">DTSObject::GetPanel()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00483">DTSTreeWindowEvent::TreeCallback()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                               {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html">DTSPanel</a> *oldwin;</div>
+<div class="line">    <a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *nw, *cw;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!window || (window == <a class="code" href="class_d_t_s_tree_window.html#a37362520ed70a72d3b1888cdae337ad4">a_window</a>)) {</div>
+<div class="line">        <span class="keywordflow">return</span> NULL;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> ((oldwin = <a class="code" href="class_d_t_s_tree_window.html#a37362520ed70a72d3b1888cdae337ad4">a_window</a>)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tree_window.html#a37362520ed70a72d3b1888cdae337ad4">a_window</a>-&gt;Show(<span class="keyword">false</span>);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    nw = window-&gt;<a class="code" href="class_d_t_s_object.html#ae88ef1ea6f28346b6cd6d2d898d7acde">GetPanel</a>();</div>
+<div class="line">    cw = <a class="code" href="class_d_t_s_tree_window.html#a37362520ed70a72d3b1888cdae337ad4">a_window</a>-&gt;<a class="code" href="class_d_t_s_object.html#ae88ef1ea6f28346b6cd6d2d898d7acde">GetPanel</a>();</div>
+<div class="line"></div>
+<div class="line">    ReplaceWindow(cw, nw);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#a37362520ed70a72d3b1888cdae337ad4">a_window</a> = window;</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#a996e933c35328c5302c52880c85d005f">a_node</a> = item.GetID();</div>
+<div class="line">    nw-&gt;Show(<span class="keyword">true</span>);</div>
+<div class="line">    nw-&gt;Layout();</div>
+<div class="line">    nw-&gt;FitInside();</div>
+<div class="line">    <span class="keywordflow">return</span> oldwin;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7c6941ddc90e0539d219561556e2e455"></a>
@@ -554,7 +767,29 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00080">DTSObject::beenshown</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00073">DTSObject::frame</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00332">DTSDVMListView::GetRoot()</a>, <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00604">DTSDVMCtrl::GetStore()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00814">Select()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00074">DTSObject::status</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00128">tree</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00668">TreeResize()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00544">DTSTreeWindow()</a>.</p>
-
+<div class="fragment"><div class="line">                                  {</div>
+<div class="line">    <span class="keywordflow">if</span> (show) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tree_window.html#a45a0f5740984258b0d318104e7aef932">TreeResize</a>();</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (!<a class="code" href="class_d_t_s_object.html#ab4249f538d36789b20bb15e29ab4121f">beenshown</a>) {</div>
+<div class="line">            wxDataViewItem root;</div>
+<div class="line">            <a class="code" href="class_d_t_s_d_v_m_list_store.html">DTSDVMListStore</a> *ds;</div>
+<div class="line">            <a class="code" href="class_d_t_s_d_v_m_list_view.html">DTSDVMListView</a> *model;</div>
+<div class="line"></div>
+<div class="line">            model = <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_ctrl.html#a5ccdd2f6d3b2652ddfec7d0dc2ade0b1">GetStore</a>();</div>
+<div class="line">            ds = model-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#adc923eb492e77cb825121688fc73764c">GetRoot</a>();</div>
+<div class="line">            root = wxDataViewItem(ds);</div>
+<div class="line">            <a class="code" href="class_d_t_s_tree_window.html#a16e8b0b7de01806b70235b4eac89345e">Select</a>(root);</div>
+<div class="line">            <a class="code" href="class_d_t_s_object.html#ab4249f538d36789b20bb15e29ab4121f">beenshown</a> = <span class="keyword">true</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_object.html#a8ca3e7c6f66685caf07fa93fb5e14337">frame</a>) {</div>
+<div class="line">            <a class="code" href="class_d_t_s_object.html#a8ca3e7c6f66685caf07fa93fb5e14337">frame</a>-&gt;SetStatusText(<a class="code" href="class_d_t_s_object.html#a1292b4804b31450f0ee960fa59fcfc7a">status</a>);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> wxSplitterWindow::Show(show);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0df3486cd55349c3e7efe33f0304d76d"></a>
@@ -610,7 +845,10 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00132">rmenu</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00268">treemenu::Show()</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00128">tree</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">DTSTreeWindowEvent::TreeEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                              {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#ae6ae4cafa2647a549f709206ac35bd81">rmenu</a>-&gt;<a class="code" href="classtreemenu.html#ad011350ad24e3c8c9ec9816dd057ad34">Show</a>(<a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>, cont, cnt, first, last, c_sort, del);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a45a0f5740984258b0d318104e7aef932"></a>
@@ -631,7 +869,11 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00128">tree</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00673">SetPaneTitle()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00787">Show()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00321">DTSTreeWindowEvent::TreeEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                               {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;GetColumn(0)-&gt;SetHidden(<span class="keyword">true</span>);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tree_window.html#af4f29b88bb58c804090e5c4bab01898d">tree</a>-&gt;GetColumn(0)-&gt;SetHidden(<span class="keyword">false</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a3a7d1d1ce34864f71d5ffd154ca18210"></a>
@@ -663,7 +905,30 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_list_view_8cpp_source.html#l00529">DTSDVMListView::GetXMLData()</a>, <a class="el" href="_d_t_s_tree_window_8h_source.html#l00129">vm</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00079">DTSObject::xmldoc</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00825">DTS_C_API::dtsgui_nodesetxml()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00483">DTSTreeWindowEvent::TreeCallback()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                 {</div>
+<div class="line">    <span class="keyword">struct </span>xml_node *xn;</div>
+<div class="line">    <span class="keyword">struct </span>xml_doc *xd;</div>
+<div class="line">    <span class="keywordtype">char</span> *buf;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a> || !objref(<a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>)) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line">    xd = <a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!(xn = <a class="code" href="class_d_t_s_tree_window.html#a57f82dd35e2ad0c6f50041b40c6e67f5">vm</a>-&gt;<a class="code" href="class_d_t_s_d_v_m_list_view.html#a90439ae943298c9d7104e3f09dbd3abf">GetXMLData</a>(node, &amp;buf))) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (buf) {</div>
+<div class="line">        xml_setattr(xd, xn, buf, newname);</div>
+<div class="line">        objunref(buf);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        xml_modify(xd, xn, newname);</div>
+<div class="line">    }</div>
+<div class="line">    objunref(xn);</div>
+<div class="line">    objunref(xd);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -867,7 +1132,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_tree_window.html">DTSTreeWindow</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:37 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

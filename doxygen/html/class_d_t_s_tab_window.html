@@ -228,7 +228,29 @@ Additional Inherited Members</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00888">888</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00076">DTSObject::dtsevthandler</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00073">DTSObject::frame</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00075">DTSObject::panel</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00860">DTSTabWindowEvent::RightMenu()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00941">Show()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00069">DTSObject::type</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00078">DTSObject::userdata</a>, and <a class="el" href="dtsgui_8h_source.html#l00251">wx_DTSPANEL_TAB</a>.</p>
-
+<div class="fragment"><div class="line">    :wxNotebook((<a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a>*)frame, -1),</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#a76f73a01ddebf90d59245dd744d491b5">DTSObject</a>(stat_msg) {</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_window_event.html">DTSTabWindowEvent</a> *dtsevt;</div>
+<div class="line">    wxNotebook *nb = (wxNotebook*)<span class="keyword">this</span>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#af8c7a75701ac05261749552eef4bc6ed">panel</a> = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="_d_t_s_panel_8h.html#af976c481b023e74fc9d1d4cc939082e7">wxBookCtrlBase</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#ad191e42b5daa056f9ea8247d752df3b0">type</a> = <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373a94b4b5412dbd78fdf58517c74afa9dad" title="DTSTabWindow (wx_DTSPANEL_TAB) see Tab view panel interface..">wx_DTSPANEL_TAB</a>;</div>
+<div class="line">    this-&gt;frame = <a class="code" href="class_d_t_s_object.html#a8ca3e7c6f66685caf07fa93fb5e14337">frame</a>;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (u_data &amp;&amp; objref(u_data)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a> = u_data;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    dtsevt = <span class="keyword">new</span> <a class="code" href="class_d_t_s_tab_window_event.html">DTSTabWindowEvent</a>(<a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a>, <span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#a132481851865629352e4aefa7f822e4b">dtsevthandler</a> = dtsevt;</div>
+<div class="line"></div>
+<div class="line">    nb-&gt;Bind(wxEVT_CONTEXT_MENU, &amp;<a class="code" href="class_d_t_s_tab_window_event.html#af41c21b5d534856a22eb64ccf1281807">DTSTabWindowEvent::RightMenu</a>, dtsevt);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_window.html#a7e438e77899502fc316577e972d9ef28">Show</a>(<span class="keyword">false</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2ce2a4e23f391cb621c80d92cd7ebea4"></a>
@@ -247,7 +269,12 @@ Additional Inherited Members</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00912">912</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00078">DTSObject::userdata</a>.</p>
-
+<div class="fragment"><div class="line">                            {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -310,7 +337,29 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00286">DTSObject::GetFrame()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00282">DTSObject::GetPanel()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00326">DTSObject::SetUserData()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00981">CreateTab()</a>, <a class="el" href="wrapper_8cpp_source.html#l00588">DTS_C_API::dtsgui_newtabpage()</a>, <a class="el" href="wrapper_8cpp_source.html#l00617">DTS_C_API::dtsgui_tabpage_insert()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">tab_newpane::handle_newtabpane()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                                                               {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_page.html">DTSTabPage</a> *dp;</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f;</div>
+<div class="line">    <a class="code" href="_d_t_s_panel_8h.html#af976c481b023e74fc9d1d4cc939082e7">wxBookCtrlBase</a> *nb;</div>
+<div class="line"></div>
+<div class="line">    f = <a class="code" href="class_d_t_s_object.html#ae5239b912c725a7a5720954767c3537a">GetFrame</a>();</div>
+<div class="line">    nb = <span class="keyword">static_cast&lt;</span><a class="code" href="_d_t_s_panel_8h.html#af976c481b023e74fc9d1d4cc939082e7">wxBookCtrlBase</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!(dp = <span class="keyword">new</span> <a class="code" href="class_d_t_s_tab_page.html">DTSTabPage</a>(nb, f, name, butmask, <a class="code" href="classdtsgui.html#aa47c583745cf2afd984cd09088d8fa00">cb</a>, cdata, <a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>))) {</div>
+<div class="line">        <span class="keywordflow">return</span> NULL;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a>) {</div>
+<div class="line">        dp-&gt;<a class="code" href="class_d_t_s_object.html#a3e39ba76f7cb701fc9b99f6f059fb49e">SetUserData</a>(<a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a>);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (addpage) {</div>
+<div class="line">        nb-&gt;AddPage(dp-&gt;<a class="code" href="class_d_t_s_object.html#ae88ef1ea6f28346b6cd6d2d898d7acde">GetPanel</a>(), name);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> dp;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a92747d3ec04159b96c1e2fde83b9c325"></a>
@@ -376,7 +425,15 @@ Additional Inherited Members</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00981">981</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00991">CreateTab()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l01014">InsertTab()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                                                                                    {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_page.html">DTSTabPage</a> *dp;</div>
+<div class="line"></div>
+<div class="line">    dp = <a class="code" href="class_d_t_s_tab_window.html#aa37d1c10f98b08a6c7b265ecd77e3f1f">CreateTab</a>(name, butmask, <a class="code" href="class_d_t_s_object.html#a783949e39ffd9e00aec15fa2b8cc12ed">userdata</a>, <a class="code" href="classdtsgui.html#aa47c583745cf2afd984cd09088d8fa00">cb</a>, cdata, <a class="code" href="class_d_t_s_object.html#a0e9b6e22629a9aa1fd5227cefaa25e6f">xmldoc</a>, <span class="keyword">false</span>);</div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_window.html#a9906beec5aeff80face128b7631f5a8b">InsertTab</a>(dp, pos, <span class="keyword">true</span>, undo);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> dp;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a9906beec5aeff80face128b7631f5a8b"></a>
@@ -420,7 +477,24 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00272">DTSObject::GetName()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00282">DTSObject::GetPanel()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00075">DTSObject::panel</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00072">DTSObject::refobj</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00919">Undo()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00981">CreateTab()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">tab_newpane::handle_newtabpane()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00919">Undo()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                           {</div>
+<div class="line">    <a class="code" href="_d_t_s_panel_8h.html#af976c481b023e74fc9d1d4cc939082e7">wxBookCtrlBase</a> *nb = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="_d_t_s_panel_8h.html#af976c481b023e74fc9d1d4cc939082e7">wxBookCtrlBase</a>*<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html">DTSObject</a> *dp = <span class="keyword">static_cast&lt;</span><a class="code" href="class_d_t_s_object.html">DTSObject</a>*<span class="keyword">&gt;</span>(<a class="code" href="class_d_t_s_object.html#af8c7a75701ac05261749552eef4bc6ed">panel</a>);</div>
+<div class="line">    <a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *w = panel-&gt;<a class="code" href="class_d_t_s_object.html#ae88ef1ea6f28346b6cd6d2d898d7acde">GetPanel</a>();</div>
+<div class="line"></div>
+<div class="line">    objlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">    nb-&gt;InsertPage(pos, w, dp-&gt;<a class="code" href="class_d_t_s_object.html#aa800a3664b895617df9884469dbdf1f8">GetName</a>());</div>
+<div class="line">    objunlock(<a class="code" href="class_d_t_s_object.html#a941fc98555b60d021a6c2f488ce9ae3e">refobj</a>);</div>
+<div class="line">    w-&gt;Show(<span class="keyword">true</span>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (sel) {</div>
+<div class="line">        SetSelection(pos);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (undo) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tab_window.html#aa52e98a59b0ad81e28f5463be5e85051">Undo</a>(undo);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a7e438e77899502fc316577e972d9ef28"></a>
@@ -442,7 +516,46 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00080">DTSObject::beenshown</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00945">DTSTabPage::ConfigPane()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00076">DTSObject::dtsevthandler</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00073">DTSObject::frame</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00840">DTSTabWindowEvent::OnButton()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00864">DTSTabWindowEvent::PageChange()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00876">DTSTabWindowEvent::PageChanged()</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00074">DTSObject::status</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00888">DTSTabWindow()</a>.</p>
-
+<div class="fragment"><div class="line">                                 {</div>
+<div class="line">    wxNotebook *nb = (wxNotebook*)<span class="keyword">this</span>;</div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_window_event.html">DTSTabWindowEvent</a> *dtsevt = (<a class="code" href="class_d_t_s_tab_window_event.html">DTSTabWindowEvent</a>*)<a class="code" href="class_d_t_s_object.html#a132481851865629352e4aefa7f822e4b">dtsevthandler</a>;</div>
+<div class="line">    <a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *w;</div>
+<div class="line">    <span class="keywordtype">int</span> i, cnt;</div>
+<div class="line">    <span class="keywordtype">bool</span> res;</div>
+<div class="line"><span class="preprocessor">#ifdef __WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>    <a class="code" href="class_d_t_s_tab_page.html">DTSTabPage</a> *tp;</div>
+<div class="line"><span class="preprocessor">#endif // __WIN32</span></div>
+<div class="line"><span class="preprocessor"></span></div>
+<div class="line">    <span class="keywordflow">if</span> (show &amp;&amp; <a class="code" href="class_d_t_s_object.html#a8ca3e7c6f66685caf07fa93fb5e14337">frame</a>) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#a8ca3e7c6f66685caf07fa93fb5e14337">frame</a>-&gt;SetStatusText(<a class="code" href="class_d_t_s_object.html#a1292b4804b31450f0ee960fa59fcfc7a">status</a>);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    res = wxNotebook::Show(show);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="class_d_t_s_object.html#ab4249f538d36789b20bb15e29ab4121f">beenshown</a> &amp;&amp; show &amp;&amp; res) {</div>
+<div class="line">        cnt = GetPageCount();</div>
+<div class="line">        <span class="keywordflow">for</span>(i = 0; i &lt; cnt;i++) {</div>
+<div class="line">            w = GetPage(i);</div>
+<div class="line"><span class="preprocessor">#ifdef __WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>            tp = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_d_t_s_tab_page.html">DTSTabPage</a>*<span class="keyword">&gt;</span>(w);</div>
+<div class="line">            tp-&gt;<a class="code" href="class_d_t_s_tab_page.html#a433bdbb8af0ded1fb884b45c5d9259a9">ConfigPane</a>();</div>
+<div class="line">            w-&gt;Show(<span class="keyword">true</span>);</div>
+<div class="line">            <span class="keywordflow">if</span> (i) {</div>
+<div class="line">                w-&gt;Show(<span class="keyword">false</span>);</div>
+<div class="line">            }</div>
+<div class="line"><span class="preprocessor">#else</span></div>
+<div class="line"><span class="preprocessor"></span>            w-&gt;Show(<span class="keyword">true</span>);</div>
+<div class="line"><span class="preprocessor">#endif // __WIN32</span></div>
+<div class="line"><span class="preprocessor"></span>        }</div>
+<div class="line">        <a class="code" href="class_d_t_s_object.html#ab4249f538d36789b20bb15e29ab4121f">beenshown</a> = <span class="keyword">true</span>;</div>
+<div class="line">        nb-&gt;Bind(wxEVT_NOTEBOOK_PAGE_CHANGING, &amp;<a class="code" href="class_d_t_s_tab_window_event.html#a0ef3c51fe26036ac2cb0353940307eb6">DTSTabWindowEvent::PageChange</a>, dtsevt);</div>
+<div class="line">        nb-&gt;Bind(wxEVT_NOTEBOOK_PAGE_CHANGED, &amp;<a class="code" href="class_d_t_s_tab_window_event.html#a373ea755544153574d3d93018ebc2f9c">DTSTabWindowEvent::PageChanged</a>, dtsevt);</div>
+<div class="line">        nb-&gt;Bind(wxEVT_COMMAND_BUTTON_CLICKED, &amp;<a class="code" href="class_d_t_s_tab_window_event.html#a0d4bd622b3c1ef90ca87cd6b052b4f76">DTSTabWindowEvent::OnButton</a>, dtsevt);</div>
+<div class="line"></div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> res;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aa52e98a59b0ad81e28f5463be5e85051"></a>
@@ -464,7 +577,28 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l01014">InsertTab()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00216">tab_newpane::handle_newtabpane()</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l01014">InsertTab()</a>, and <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00840">DTSTabWindowEvent::OnButton()</a>.</p>
-
+<div class="fragment"><div class="line">                              {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_page.html">DTSTabPage</a> *pane, *newp;</div>
+<div class="line">    <span class="keywordtype">int</span> idx;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (pg == 0) {</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pg &gt; 0) {</div>
+<div class="line">        idx = pg-1;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        idx = GetPageCount() + pg;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    pane = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_d_t_s_tab_page.html">DTSTabPage</a>*<span class="keyword">&gt;</span>(GetPage(idx));</div>
+<div class="line">    RemovePage(idx);</div>
+<div class="line"></div>
+<div class="line">    newp = <span class="keyword">new</span> <a class="code" href="class_d_t_s_tab_page.html">DTSTabPage</a>(<span class="keyword">this</span>);</div>
+<div class="line">    *newp = *pane;</div>
+<div class="line">    <span class="keyword">delete</span> pane;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_window.html#a9906beec5aeff80face128b7631f5a8b">InsertTab</a>(newp, idx);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -477,7 +611,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_tab_window.html">DTSTabWindow</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

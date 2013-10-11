@@ -185,7 +185,14 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00064">64</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00051">data</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00052">evcb</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00053">parent</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00049">refobj</a>.</p>
-
+<div class="fragment"><div class="line">                                           {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel_event.html#a51478063cdaccd9bb7df533e0a7fc442">refobj</a> = (<span class="keywordtype">void</span>**)objalloc(<span class="keyword">sizeof</span>(<span class="keywordtype">void</span>*), NULL);</div>
+<div class="line">    *<a class="code" href="class_d_t_s_panel_event.html#a51478063cdaccd9bb7df533e0a7fc442">refobj</a> = <span class="keyword">this</span>;</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel_event.html#a1f989eb33812d025e2876c538b032ee4">evcb</a> = NULL;</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel_event.html#a63313454db1807ffd97873cb2ffd5e0d">data</a> = NULL;</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel_event.html#a9870f4a7cbb59e59471ccf811269396d">parent</a> = win;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="abc29f1fa037447b888db14249d480de5"></a>
@@ -204,7 +211,16 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l00072">72</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00051">data</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00049">refobj</a>.</p>
-
+<div class="fragment"><div class="line">                              {</div>
+<div class="line">    objlock(<a class="code" href="class_d_t_s_panel_event.html#a51478063cdaccd9bb7df533e0a7fc442">refobj</a>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_panel_event.html#a63313454db1807ffd97873cb2ffd5e0d">data</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_panel_event.html#a63313454db1807ffd97873cb2ffd5e0d">data</a>);</div>
+<div class="line">        <a class="code" href="class_d_t_s_panel_event.html#a63313454db1807ffd97873cb2ffd5e0d">data</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    objunlock(<a class="code" href="class_d_t_s_panel_event.html#a51478063cdaccd9bb7df533e0a7fc442">refobj</a>);</div>
+<div class="line">    objunref(<a class="code" href="class_d_t_s_panel_event.html#a51478063cdaccd9bb7df533e0a7fc442">refobj</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -237,7 +253,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00123">OnButton()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00724">DTSPanel::Buttons()</a>.</p>
-
+<div class="fragment"><div class="line">                                                        {</div>
+<div class="line">    win-&gt;Bind(wxEVT_COMMAND_BUTTON_CLICKED, &amp;<a class="code" href="class_d_t_s_panel_event.html#ae1fda2b21c16c83d067c5305d5338bd6">DTSPanelEvent::OnButton</a>, <span class="keyword">this</span>, button, button, NULL);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a65d4d4e41f8fe4501dfccab666b46123"></a>
@@ -269,7 +288,11 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00163">OnCombo()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00684">DTSPanel::ComboBox()</a>.</p>
-
+<div class="fragment"><div class="line">                                                     {</div>
+<div class="line">    win-&gt;Bind(wxEVT_COMMAND_TEXT_ENTER, &amp;<a class="code" href="class_d_t_s_panel_event.html#a8e755136313a6c423167af1d44dfc710">DTSPanelEvent::OnCombo</a>, <span class="keyword">this</span>, w_id, w_id, NULL);</div>
+<div class="line">    win-&gt;Bind(wxEVT_COMMAND_TEXT_UPDATED, &amp;<a class="code" href="class_d_t_s_panel_event.html#a8e755136313a6c423167af1d44dfc710">DTSPanelEvent::OnCombo</a>, <span class="keyword">this</span>, w_id, w_id, NULL);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af2333021915425cd85ab9544170e7152"></a>
@@ -291,7 +314,10 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00218">OnDTSEvent()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00348">DTSPanel::DTSPanel()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00962">DTSTabPage::operator=()</a>.</p>
-
+<div class="fragment"><div class="line">                                                {</div>
+<div class="line">    frame-&gt;Bind(DTS_APP_EVENT, &amp;<a class="code" href="class_d_t_s_panel_event.html#a878aaab5bddc9167d3d2380ea7de0f31">DTSPanelEvent::OnDTSEvent</a>, <span class="keyword">this</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae1fda2b21c16c83d067c5305d5338bd6"></a>
@@ -313,7 +339,39 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00070">DTSObject::buttons</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00051">data</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00052">evcb</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00323">DTSObject::EventHandler()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00053">parent</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00096">RunCallBack()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00069">DTSObject::type</a>, <a class="el" href="dtsgui_8h_source.html#l00247">wx_DTSPANEL_DIALOG</a>, and <a class="el" href="dtsgui_8h_source.html#l00216">wx_PANEL_EVENT_BUTTON</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00232">BindButton()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00156">OnDialog()</a>.</p>
-
+<div class="fragment"><div class="line">                                                  {</div>
+<div class="line">    <span class="keywordtype">int</span> eid, i;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="class_d_t_s_panel_event.html#a9870f4a7cbb59e59471ccf811269396d">parent</a>) {</div>
+<div class="line">        <span class="keyword">event</span>.Skip(<span class="keyword">true</span>);</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    eid=<span class="keyword">event</span>.GetId();</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/*convert wxbutton info to own id&#39;s and pass this on except for dialog*/</span></div>
+<div class="line">    <span class="keywordflow">for</span>(i = 0; i &lt; 6; i++) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_panel_event.html#a9870f4a7cbb59e59471ccf811269396d">parent</a>-&gt;<a class="code" href="class_d_t_s_object.html#abcce46b892d3c17810d4551c495512ce">buttons</a>[i] == eid) {</div>
+<div class="line">            eid = 1 &lt;&lt; i;</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_panel_event.html#a9870f4a7cbb59e59471ccf811269396d">parent</a>-&gt;<a class="code" href="class_d_t_s_object.html#ad191e42b5daa056f9ea8247d752df3b0">type</a> != <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373a259d19ace1b7a45cbd7e99697bd2b69a" title="DTSDialog (wx_DTSPANEL_DIALOG) is a wx_DTSPANEL_PANEL displayed in a pop up dialog box...">wx_DTSPANEL_DIALOG</a>) {</div>
+<div class="line">        <span class="keyword">event</span>.SetId(eid);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/*maybe oneday there will be a default*/</span></div>
+<div class="line">    <a class="code" href="class_d_t_s_panel_event.html#a9870f4a7cbb59e59471ccf811269396d">parent</a>-&gt;<a class="code" href="class_d_t_s_object.html#a392c5ee37a2ca5e82e39cf11bc781eda">EventHandler</a>(eid, &amp;event);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_panel_event.html#a1f989eb33812d025e2876c538b032ee4">evcb</a>) {</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_panel_event.html#aac849a4fb920e6e680f4d7092202f60e">RunCallBack</a>(<a class="code" href="group___c_o_r_e.html#gga54d7edaba9c015c3b5310ed3080b82e6a331937b86eb259d1d84728d28fbed79d" title="Button press event.">wx_PANEL_EVENT_BUTTON</a>, eid, <a class="code" href="class_d_t_s_panel_event.html#a63313454db1807ffd97873cb2ffd5e0d">data</a>)) {</div>
+<div class="line">            <span class="keyword">event</span>.Skip(<span class="keyword">true</span>);</div>
+<div class="line">        }</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keyword">event</span>.Skip(<span class="keyword">true</span>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a8e755136313a6c423167af1d44dfc710"></a>
@@ -335,7 +393,61 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_app_8h_source.html#l00037">dtsgui::cb</a>, <a class="el" href="pitems_8h_source.html#l00068">form_item::dtype</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00052">evcb</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00316">DTSObject::GetItems()</a>, <a class="el" href="pitems_8cpp_source.html#l00221">form_item::GetWidget()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00053">parent</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00096">RunCallBack()</a>, <a class="el" href="dtsgui_8h_source.html#l00218">wx_PANEL_EVENT_COMBO_ENTER</a>, and <a class="el" href="dtsgui_8h_source.html#l00220">wx_PANEL_EVENT_COMBO_UPDATE</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00236">BindCombo()</a>.</p>
-
+<div class="fragment"><div class="line">                                                 {</div>
+<div class="line">    <a class="code" href="pitems_8h.html#abd3381f4db4e2b967199254324c78f71">wxComboBox</a> *cb;</div>
+<div class="line">    <span class="keyword">struct </span>bucket_list *bl;</div>
+<div class="line">    <span class="keyword">struct </span>bucket_loop *bloop;</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="classform__item.html">form_item</a> *fi;</div>
+<div class="line">    <span class="keywordtype">int</span> eid, etype, <a class="code" href="classform__item.html#acaa83eeebb557f7e66ae998bc45dc6c9">dtype</a>;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="class_d_t_s_panel_event.html#a9870f4a7cbb59e59471ccf811269396d">parent</a>) {</div>
+<div class="line">        <span class="keyword">event</span>.Skip(<span class="keyword">true</span>);</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    bl = <a class="code" href="class_d_t_s_panel_event.html#a9870f4a7cbb59e59471ccf811269396d">parent</a>-&gt;<a class="code" href="class_d_t_s_object.html#a4cadcce0480e7e8f4a9a07a4aedd3c1f">GetItems</a>();</div>
+<div class="line">    cb = (<a class="code" href="pitems_8h.html#abd3381f4db4e2b967199254324c78f71">wxComboBox</a> *)event.GetEventObject();</div>
+<div class="line">    etype = <span class="keyword">event</span>.GetEventType();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (etype == wxEVT_COMMAND_TEXT_ENTER) {</div>
+<div class="line">        dtype = <a class="code" href="group___c_o_r_e.html#gga54d7edaba9c015c3b5310ed3080b82e6a05cb2a662e44a9332f631e8fb04ea5ef" title="Enter was pressed in a Combo box.">wx_PANEL_EVENT_COMBO_ENTER</a>;</div>
+<div class="line">    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (etype == wxEVT_COMMAND_TEXT_UPDATED) {</div>
+<div class="line">        dtype = <a class="code" href="group___c_o_r_e.html#gga54d7edaba9c015c3b5310ed3080b82e6a9d9853f83e3e28aaca0621c788994cc8" title="Combo box text has been updated.">wx_PANEL_EVENT_COMBO_UPDATE</a>;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        dtype = 0;</div>
+<div class="line">    }</div>
+<div class="line">    bloop = init_bucket_loop(bl);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">while</span>(bl &amp;&amp; bloop &amp;&amp; (fi = (<span class="keyword">class</span> <a class="code" href="classform__item.html">form_item</a> *)next_bucket_loop(bloop))) {</div>
+<div class="line">        <span class="keywordflow">if</span> (fi-&gt;<a class="code" href="classform__item.html#a9d5508fb933bef9f078f702338e3d166">GetWidget</a>() == cb) {</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        objunref(fi);</div>
+<div class="line">        fi = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    stop_bucket_loop(bloop);</div>
+<div class="line">    objunref(bl);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (fi) {</div>
+<div class="line">        eid=<span class="keyword">event</span>.GetId();</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (dtype &amp;&amp; <a class="code" href="class_d_t_s_panel_event.html#a1f989eb33812d025e2876c538b032ee4">evcb</a>) {</div>
+<div class="line">            <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_panel_event.html#aac849a4fb920e6e680f4d7092202f60e">RunCallBack</a>(dtype, eid, fi)) {</div>
+<div class="line">                <span class="keyword">event</span>.Skip(<span class="keyword">true</span>);</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        <span class="keywordflow">if</span> (etype == wxEVT_COMMAND_TEXT_ENTER) {</div>
+<div class="line">            cb-&gt;Popup();</div>
+<div class="line">        }</div>
+<div class="line"></div>
+<div class="line">        objunref(fi);</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keyword">event</span>.Skip(<span class="keyword">true</span>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ae7b3a422bc55f7f9f676b2b640614fd9"></a>
@@ -357,7 +469,13 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00070">DTSObject::buttons</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00123">OnButton()</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00053">parent</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l01048">DTSDialog::DTSDialog()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00899">DTSScrollPanel::DTSScrollPanel()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l01012">DTSStaticPanel::DTSStaticPanel()</a>.</p>
-
+<div class="fragment"><div class="line">                                                  {</div>
+<div class="line">    <span class="comment">/*translate enter into OK/Apply*/</span></div>
+<div class="line">    <span class="keyword">event</span>.SetId(<a class="code" href="class_d_t_s_panel_event.html#a9870f4a7cbb59e59471ccf811269396d">parent</a>-&gt;<a class="code" href="class_d_t_s_object.html#abcce46b892d3c17810d4551c495512ce">buttons</a>[4]);</div>
+<div class="line">    <span class="keyword">event</span>.SetEventType(wxEVT_COMMAND_BUTTON_CLICKED);</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel_event.html#ae1fda2b21c16c83d067c5305d5338bd6">OnButton</a>(event);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a878aaab5bddc9167d3d2380ea7de0f31"></a>
@@ -379,7 +497,16 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00051">data</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00052">evcb</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00096">RunCallBack()</a>, and <a class="el" href="dtsgui_8h_source.html#l00222">wx_PANEL_EVENT_DTS</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00228">BindDTSEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                    {</div>
+<div class="line">    <span class="keywordtype">int</span>  eid;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_panel_event.html#a1f989eb33812d025e2876c538b032ee4">evcb</a>) {</div>
+<div class="line">        eid=<span class="keyword">event</span>.GetId();</div>
+<div class="line">        <a class="code" href="class_d_t_s_panel_event.html#aac849a4fb920e6e680f4d7092202f60e">RunCallBack</a>(<a class="code" href="group___c_o_r_e.html#gga54d7edaba9c015c3b5310ed3080b82e6a8f700b4b2b17b782d57dd32dc696956c" title="DTS Application event..">wx_PANEL_EVENT_DTS</a>, eid, <a class="code" href="class_d_t_s_panel_event.html#a63313454db1807ffd97873cb2ffd5e0d">data</a>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keyword">event</span>.Skip(<span class="keyword">true</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="aac849a4fb920e6e680f4d7092202f60e"></a>
@@ -425,7 +552,33 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00052">evcb</a>, <a class="el" href="_d_t_s_frame_8cpp_source.html#l00307">DTSFrame::GetDTSData()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00286">DTSObject::GetFrame()</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00053">parent</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00123">OnButton()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00163">OnCombo()</a>, and <a class="el" href="_d_t_s_panel_8cpp_source.html#l00218">OnDTSEvent()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                {</div>
+<div class="line">    <span class="keywordtype">void</span> *cbdata = NULL;</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f;</div>
+<div class="line">    <span class="keyword">class </span><a class="code" href="classdtsgui.html">dtsgui</a> *<a class="code" href="classdtsgui.html">dtsgui</a> = NULL;</div>
+<div class="line">    <span class="keywordtype">int</span> res;</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (cb_data &amp;&amp; objref(cb_data)) {</div>
+<div class="line">        cbdata = cb_data;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/*get app data*/</span></div>
+<div class="line">    <span class="keywordflow">if</span> ((f = <a class="code" href="class_d_t_s_panel_event.html#a9870f4a7cbb59e59471ccf811269396d">parent</a>-&gt;<a class="code" href="class_d_t_s_object.html#ae5239b912c725a7a5720954767c3537a">GetFrame</a>())) {</div>
+<div class="line">        dtsgui = f-&gt;<a class="code" href="class_d_t_s_frame.html#a0a5798261ab9b56b7938f968b4032a24">GetDTSData</a>();</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/*pass fresh ref to callback*/</span></div>
+<div class="line">    res = <a class="code" href="class_d_t_s_panel_event.html#a1f989eb33812d025e2876c538b032ee4">evcb</a>(dtsgui, (<span class="keywordtype">void</span> *)<a class="code" href="class_d_t_s_panel_event.html#a9870f4a7cbb59e59471ccf811269396d">parent</a>, etype, eid, cbdata);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (dtsgui) {</div>
+<div class="line">        objunref(dtsgui);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">if</span> (cbdata) {</div>
+<div class="line">        objunref(cbdata);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> res;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ad6d0fb736bf45162b6bf2082e437195b"></a>
@@ -457,7 +610,20 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00051">data</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00052">evcb</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00049">refobj</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l00406">DTSPanel::SetEventCallback()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                    {</div>
+<div class="line">    objlock(<a class="code" href="class_d_t_s_panel_event.html#a51478063cdaccd9bb7df533e0a7fc442">refobj</a>);</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_panel_event.html#a63313454db1807ffd97873cb2ffd5e0d">data</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_panel_event.html#a63313454db1807ffd97873cb2ffd5e0d">data</a>);</div>
+<div class="line">        <a class="code" href="class_d_t_s_panel_event.html#a63313454db1807ffd97873cb2ffd5e0d">data</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classdtsgui.html#a9c7541fac0311f9b2ffcb5c2699719ca">userdata</a> &amp;&amp; objref(<a class="code" href="classdtsgui.html#a9c7541fac0311f9b2ffcb5c2699719ca">userdata</a>)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_panel_event.html#a63313454db1807ffd97873cb2ffd5e0d">data</a> = <a class="code" href="classdtsgui.html#a9c7541fac0311f9b2ffcb5c2699719ca">userdata</a>;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel_event.html#a1f989eb33812d025e2876c538b032ee4">evcb</a> = ev_cb;</div>
+<div class="line">    objunlock(<a class="code" href="class_d_t_s_panel_event.html#a51478063cdaccd9bb7df533e0a7fc442">refobj</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -567,7 +733,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_panel_event.html">DTSPanelEvent</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

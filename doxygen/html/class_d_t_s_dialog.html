@@ -279,7 +279,27 @@ Additional Inherited Members</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l01048">1048</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00114">DTSPanel::button_mask</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00070">DTSObject::buttons</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00169">dialog</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00076">DTSObject::dtsevthandler</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00156">DTSPanelEvent::OnDialog()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00075">DTSObject::panel</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00390">DTSPanel::SetupWin()</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00168">sizer</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00069">DTSObject::type</a>, and <a class="el" href="dtsgui_8h_source.html#l00247">wx_DTSPANEL_DIALOG</a>.</p>
-
+<div class="fragment"><div class="line">                                                                {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel_event.html">DTSPanelEvent</a> *dtsevt = (<a class="code" href="class_d_t_s_panel_event.html">DTSPanelEvent</a>*)<a class="code" href="class_d_t_s_object.html#a132481851865629352e4aefa7f822e4b">dtsevthandler</a>;</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#ad191e42b5daa056f9ea8247d752df3b0">type</a> = <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373a259d19ace1b7a45cbd7e99697bd2b69a" title="DTSDialog (wx_DTSPANEL_DIALOG) is a wx_DTSPANEL_PANEL displayed in a pop up dialog box...">wx_DTSPANEL_DIALOG</a>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html#af25bdb7e04f715c228774c2be0dd8251">button_mask</a> = butmask;</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#abcce46b892d3c17810d4551c495512ce">buttons</a>[4] = wxID_OK;</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#abcce46b892d3c17810d4551c495512ce">buttons</a>[5] = wxID_CANCEL;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">/*this is deleted by app*/</span></div>
+<div class="line">    <a class="code" href="class_d_t_s_dialog.html#aa5f49d2b6d13bebadc4721ade6f29de9">dialog</a> = <span class="keyword">new</span> <a class="code" href="_d_t_s_panel_8h.html#a0a27e6150193664909134000ec2fd06d">wxDialog</a>(frame, -1, name);</div>
+<div class="line">    <a class="code" href="class_d_t_s_dialog.html#aa9988391a17d5a8afe72a24ec57fe9ca">sizer</a> = <span class="keyword">new</span> <a class="code" href="_d_t_s_frame_8h.html#ad396616e0ef9ed30f9053d7b48712ecd">wxBoxSizer</a>(wxHORIZONTAL);</div>
+<div class="line">    <a class="code" href="class_d_t_s_dialog.html#aa5f49d2b6d13bebadc4721ade6f29de9">dialog</a>-&gt;SetSizer(<a class="code" href="class_d_t_s_dialog.html#aa9988391a17d5a8afe72a24ec57fe9ca">sizer</a>);</div>
+<div class="line">    <a class="code" href="class_d_t_s_dialog.html#aa5f49d2b6d13bebadc4721ade6f29de9">dialog</a>-&gt;SetAffirmativeId(<a class="code" href="class_d_t_s_object.html#abcce46b892d3c17810d4551c495512ce">buttons</a>[4]);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#af8c7a75701ac05261749552eef4bc6ed">panel</a> = <span class="keyword">dynamic_cast&lt;</span>wxPanel *<span class="keyword">&gt;</span>(<span class="keyword">this</span>);</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#af8c7a75701ac05261749552eef4bc6ed">panel</a>-&gt;Create(<a class="code" href="class_d_t_s_dialog.html#aa5f49d2b6d13bebadc4721ade6f29de9">dialog</a>, -1);</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#af8c7a75701ac05261749552eef4bc6ed">panel</a>-&gt;SetName(name);</div>
+<div class="line">    <a class="code" href="class_d_t_s_object.html#af8c7a75701ac05261749552eef4bc6ed">panel</a>-&gt;Bind(wxEVT_TEXT_ENTER, &amp;<a class="code" href="class_d_t_s_panel_event.html#ae7b3a422bc55f7f9f676b2b640614fd9">DTSPanelEvent::OnDialog</a>, dtsevt);</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html#a9e90d0d7b1466eb3e8005343ce787974">SetupWin</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af68cd07469e4fbe9dcb3640219adfee0"></a>
@@ -296,7 +316,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="_d_t_s_panel_8cpp_source.html#l01069">1069</a> of file <a class="el" href="_d_t_s_panel_8cpp_source.html">DTSPanel.cpp</a>.</p>
-
+<div class="fragment"><div class="line">                      {</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -329,7 +351,20 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8h_source.html#l00169">dialog</a>, <a class="el" href="_d_t_s_panel_8h_source.html#l00075">DTSObject::panel</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00406">DTSPanel::SetEventCallback()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l01072">Show()</a>, and <a class="el" href="_d_t_s_panel_8h_source.html#l00168">sizer</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00969">DTS_C_API::dtsgui_rundialog()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00495">DTSFrame::Passwd()</a>.</p>
-
+<div class="fragment"><div class="line">                                                         {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html#ac18de08077529d488ea329a72ee14d98">SetEventCallback</a>(evcb, data);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_dialog.html#a569e3d1caa1405354a2a090725b76071">Show</a>(<span class="keyword">true</span>);</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="class_d_t_s_dialog.html#aa9988391a17d5a8afe72a24ec57fe9ca">sizer</a>-&gt;Add(<a class="code" href="class_d_t_s_object.html#af8c7a75701ac05261749552eef4bc6ed">panel</a>, 1, wxALL | wxEXPAND, 15);</div>
+<div class="line">    <a class="code" href="class_d_t_s_dialog.html#aa5f49d2b6d13bebadc4721ade6f29de9">dialog</a>-&gt;Fit();</div>
+<div class="line">    <a class="code" href="class_d_t_s_dialog.html#aa5f49d2b6d13bebadc4721ade6f29de9">dialog</a>-&gt;Center();</div>
+<div class="line">    <a class="code" href="class_d_t_s_dialog.html#aa5f49d2b6d13bebadc4721ade6f29de9">dialog</a>-&gt;Layout();</div>
+<div class="line">    <a class="code" href="class_d_t_s_dialog.html#aa5f49d2b6d13bebadc4721ade6f29de9">dialog</a>-&gt;SetClientSize(<a class="code" href="class_d_t_s_dialog.html#aa9988391a17d5a8afe72a24ec57fe9ca">sizer</a>-&gt;GetSize());</div>
+<div class="line">    <a class="code" href="class_d_t_s_dialog.html#aa5f49d2b6d13bebadc4721ade6f29de9">dialog</a>-&gt;ShowModal();</div>
+<div class="line">    <span class="keyword">delete</span> <span class="keyword">this</span>;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a569e3d1caa1405354a2a090725b76071"></a>
@@ -361,7 +396,11 @@ Additional Inherited Members</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00432">DTSPanel::ShowPanel()</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_panel_8cpp_source.html#l01077">RunDialog()</a>.</p>
-
+<div class="fragment"><div class="line">                              {</div>
+<div class="line">    <a class="code" href="class_d_t_s_panel.html#a0c1a3aa81559298e059473bde57ab23e">ShowPanel</a>(show);</div>
+<div class="line">    <span class="keywordflow">return</span> wxPanel::Show(show);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -423,7 +462,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_dialog.html">DTSDialog</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

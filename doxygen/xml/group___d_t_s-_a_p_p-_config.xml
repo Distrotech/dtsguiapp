@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="group___d_t_s-_a_p_p-_config" kind="group">
+    <compoundname>DTS-APP-Config</compoundname>
+    <title>Configuration menu functions</title>
+    <innerfile refid="config_8c">config.c</innerfile>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_config_1ga72af4355dbc5afe93fef750a81a3e572" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane open_config</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>open_config</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Open XML configuration file callback. </para>        </briefdescription>
+        <detaileddescription>
+<para>Present a file open dialog to the user let them select a configuration file on success enable config menu options and disable file menu options. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name supplied to menuitem. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to data held by menu callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>NULL as no pane is displayed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="44" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="44" bodyend="84"/>
+        <references refid="structapp__data_1a68690abb28e424749f67339ea3736a41" compoundref="private_8h" startline="81">app_data::c_open</references>
+        <references refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" compoundref="private_8h" startline="83">app_data::cfg_menu</references>
+        <references refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" compoundref="wrapper_8cpp" startline="1151" endline="1154">dtsgui_alert</references>
+        <references refid="group___c-_a_p_i-_dialog_1gad458f5d64710487c7213a4921a5ebc99" compoundref="wrapper_8cpp" startline="1192" endline="1195">dtsgui_fileopen</references>
+        <references refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" compoundref="cxxapi_8cpp" startline="51" endline="66">dtsgui_menuenable</references>
+        <references refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" compoundref="wrapper_8cpp" startline="443" endline="446">dtsgui_menuitemenable</references>
+        <references refid="group___c-_a_p_i_1ga4e766a49c1e9eba3f2c2fda47b8166aa" compoundref="wrapper_8cpp" startline="262" endline="265">dtsgui_sendevent</references>
+        <references refid="group___c-_a_p_i_1ga164aa159bc57a744f012b49268796bbe" compoundref="wrapper_8cpp" startline="289" endline="291">dtsgui_set_toolbar</references>
+        <references refid="group___c-_a_p_i_1gafc00c020f324c119956fcc38e7fd55db" compoundref="wrapper_8cpp" startline="300" endline="302">dtsgui_titleappend</references>
+        <references refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" compoundref="wrapper_8cpp" startline="235" endline="237">dtsgui_userdata</references>
+        <references refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" compoundref="private_8h" startline="79">app_data::e_wiz</references>
+        <references refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" compoundref="private_8h" startline="77">app_data::n_wiz</references>
+        <references refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" compoundref="private_8h" startline="71">app_data::xmldoc</references>
+        <referencedby refid="group___d_t_s-_a_p_p_1ga011cd0b131174029fed8babdf1c7a101" compoundref="wxforms_8c" startline="79" endline="102">file_menu</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_config_1gae1a63d1e8add52ca63e83582891054fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane save_config</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>save_config</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Close/Save menu option call back. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function re enables the file menu items And disables the config menu. <xrefsect id="todo_1_todo000001"><xreftitle>Todo</xreftitle><xrefdescription><para>Actually save the config </para></xrefdescription></xrefsect><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name supplied to menuitem. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to data held by menu callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>NULL as no pane is displayed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="95" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="95" bodyend="118"/>
+        <references refid="structapp__data_1a68690abb28e424749f67339ea3736a41" compoundref="private_8h" startline="81">app_data::c_open</references>
+        <references refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" compoundref="private_8h" startline="83">app_data::cfg_menu</references>
+        <references refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" compoundref="cxxapi_8cpp" startline="51" endline="66">dtsgui_menuenable</references>
+        <references refid="group___c-_a_p_i-_menus_1ga99f0bbb3bf979d0102b7b19899ad79dd" compoundref="wrapper_8cpp" startline="443" endline="446">dtsgui_menuitemenable</references>
+        <references refid="group___c-_a_p_i_1ga164aa159bc57a744f012b49268796bbe" compoundref="wrapper_8cpp" startline="289" endline="291">dtsgui_set_toolbar</references>
+        <references refid="group___c-_a_p_i_1gafc00c020f324c119956fcc38e7fd55db" compoundref="wrapper_8cpp" startline="300" endline="302">dtsgui_titleappend</references>
+        <references refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" compoundref="wrapper_8cpp" startline="235" endline="237">dtsgui_userdata</references>
+        <references refid="structapp__data_1ab9263ad9047e56992b17fc5f7062f26a" compoundref="private_8h" startline="79">app_data::e_wiz</references>
+        <references refid="structapp__data_1a0afceecac34508f601812c1dcae49af5" compoundref="private_8h" startline="77">app_data::n_wiz</references>
+        <references refid="structapp__data_1a8b7fe9aa0af51051f077073d12a335e8" compoundref="private_8h" startline="71">app_data::xmldoc</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="240" endline="268">config_menu</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_config_1gabe0b9ce2252ec72774af23a0ec71424f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane view_config_xml</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>view_config_xml</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Display XML document formated in text display. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name supplied to menuitem. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to data held by menu callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Text Panel. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="126" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="126" bodyend="142"/>
+        <references refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" compoundref="wxforms_8c" startline="56" endline="75">app_getxmldoc</references>
+        <references refid="group___c-_a_p_i-_panel_1gafb8efe017917a372826f7ddedb0e8bba" compoundref="wrapper_8cpp" startline="483" endline="486">dtsgui_textpane</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="240" endline="268">config_menu</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_config_1gabc9a4e54439d7a701992752ec7b3f6b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane view_config_conf</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>view_config_conf</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Display XML document formated in text display as a dot conf. </para>        </briefdescription>
+        <detaileddescription>
+<para>Open the XSLT file to transform to .conf and apply it to the XML document placing the output in a text panel. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name supplied to menuitem. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to data held by menu callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Text Panel. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="152" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="152" bodyend="188"/>
+        <references refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" compoundref="wxforms_8c" startline="56" endline="75">app_getxmldoc</references>
+        <references refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" compoundref="private_8h" startline="73">app_data::datadir</references>
+        <references refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" compoundref="wrapper_8cpp" startline="1151" endline="1154">dtsgui_alert</references>
+        <references refid="group___c-_a_p_i-_panel_1gafb8efe017917a372826f7ddedb0e8bba" compoundref="wrapper_8cpp" startline="483" endline="486">dtsgui_textpane</references>
+        <references refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" compoundref="wrapper_8cpp" startline="235" endline="237">dtsgui_userdata</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="240" endline="268">config_menu</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_config_1ga01bdf27a0760d9da4bb77918735171c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane export_config</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>export_config</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Export XML document as a .conf file. </para>        </briefdescription>
+        <detaileddescription>
+<para>Openand apply the XSLT xml2conf.xsl and save the result to a file selected in a file dialog. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name supplied to menuitem. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to data held by menu callback. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>NULL as no panel is displayed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="198" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="198" bodyend="235"/>
+        <references refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" compoundref="wxforms_8c" startline="56" endline="75">app_getxmldoc</references>
+        <references refid="structapp__data_1aaa1b1bd30fab72d8b9a34f890fd060c0" compoundref="private_8h" startline="73">app_data::datadir</references>
+        <references refid="group___c-_a_p_i-_dialog_1gad331a82b0502bea7d78545c6efb72b78" compoundref="wrapper_8cpp" startline="1151" endline="1154">dtsgui_alert</references>
+        <references refid="group___c-_a_p_i-_dialog_1gad2b11bd5e9e51dcba9f53f4969f1f25c" compoundref="wrapper_8cpp" startline="1176" endline="1179">dtsgui_filesave</references>
+        <references refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" compoundref="wrapper_8cpp" startline="235" endline="237">dtsgui_userdata</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="240" endline="268">config_menu</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void config_menu</definition>
+        <argsstring>(struct dtsgui *dtsgui)</argsstring>
+        <name>config_menu</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <briefdescription>
+<para>Add the configure menu to the menu bar and add options. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/config.c" line="240" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/config.c" bodystart="240" bodyend="268"/>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga6d9d2b0105df87000cb2bdecbff91239" compoundref="netconfig_8c" startline="912" endline="926">advanced_config</references>
+        <references refid="structapp__data_1a7ad75d9cf58124aed6037c47c87fcbf5" compoundref="private_8h" startline="83">app_data::cfg_menu</references>
+        <references refid="group___c-_a_p_i-_menus_1gab20156180905342ce3bc648253507f73" compoundref="cxxapi_8cpp" startline="51" endline="66">dtsgui_menuenable</references>
+        <references refid="group___c-_a_p_i-_menus_1gaf655828d94de128cfd8269d03d649092" compoundref="wrapper_8cpp" startline="433" endline="436">dtsgui_menusep</references>
+        <references refid="group___c-_a_p_i-_menus_1gadd0f3eab51bf576378a6438c3982fd48" compoundref="wrapper_8cpp" startline="316" endline="319">dtsgui_newmenu</references>
+        <references refid="group___c-_a_p_i-_menus_1ga045cc441a11f42796d6bd89dfa52e4ec" compoundref="wrapper_8cpp" startline="365" endline="368">dtsgui_newmenucb</references>
+        <references refid="group___c-_a_p_i_1gaa224c0a868745526e6ac3c05970471c5" compoundref="wrapper_8cpp" startline="235" endline="237">dtsgui_userdata</references>
+        <references refid="group___d_t_s-_a_p_p-_config_1ga01bdf27a0760d9da4bb77918735171c1" compoundref="config_8c" startline="198" endline="235">export_config</references>
+        <references refid="group___d_t_s-_a_p_p-_iface_1gabf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="197" endline="236">iface_config</references>
+        <references refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</references>
+        <references refid="group___d_t_s-_a_p_p-_wizard_1ga0be336c09b5cd473a616326c4cb227d2" compoundref="wizard_8c" startline="550" endline="559">reconfig_wizard</references>
+        <references refid="group___d_t_s-_a_p_p-_config_1gae1a63d1e8add52ca63e83582891054fa" compoundref="config_8c" startline="95" endline="118">save_config</references>
+        <references refid="group___d_t_s-_a_p_p-_config_1gabc9a4e54439d7a701992752ec7b3f6b9" compoundref="config_8c" startline="152" endline="188">view_config_conf</references>
+        <references refid="group___d_t_s-_a_p_p-_config_1gabe0b9ce2252ec72774af23a0ec71424f" compoundref="config_8c" startline="126" endline="142">view_config_xml</references>
+        <referencedby refid="group___d_t_s-_a_p_p_1gaf12c2714c0878b7565d8b788931f9e50" compoundref="wxforms_8c" startline="130" endline="143">guiconfig_cb</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Configuration menu functions. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

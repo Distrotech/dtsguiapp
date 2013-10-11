@@ -157,7 +157,16 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="_d_t_s_app_8cpp_source.html#l00227">227</a> of file <a class="el" href="_d_t_s_app_8cpp_source.html">DTSApp.cpp</a>.</p>
-
+<div class="fragment"><div class="line">                                                  {</div>
+<div class="line">    <span class="keywordflow">if</span> (dc &amp;&amp; objref(dc)) {</div>
+<div class="line">        <a class="code" href="classcurl__progress.html#a2df831a7a9744a7d88d85acb6862cf55">owner</a> = dc;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <a class="code" href="classcurl__progress.html#a2df831a7a9744a7d88d85acb6862cf55">owner</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="classcurl__progress.html#ac7738d2384035a652657db4f450222c6">pd</a> = 0;</div>
+<div class="line">    <a class="code" href="classcurl__progress.html#a966b43ffd5e1e8e0447f5fa934f327c0">pause</a> = 0;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -194,7 +203,10 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_app_8cpp_source.html#l00243">243</a> of file <a class="el" href="_d_t_s_app_8cpp_source.html">DTSApp.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_app_8cpp_source.html#l00194">dtsgui_curl::curl_progress_ctrl()</a>, and <a class="el" href="_d_t_s_app_8cpp_source.html#l00168">dtsgui_curl::curl_progress_function()</a>.</p>
-
+<div class="fragment"><div class="line">                                  {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="classcurl__progress.html#a2df831a7a9744a7d88d85acb6862cf55">owner</a>-&gt;<a class="code" href="classdtsgui__curl.html#a5ab8bf28a7dcb9ae37b14873d681bff9">GetFrame</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -262,7 +274,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classcurl__progress.html">curl_progress</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

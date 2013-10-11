@@ -3,6 +3,9 @@
 .nh
 .SH NAME
 app/private.h \- 
+.PP
+Main application private includes\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -12,9 +15,11 @@ app/private.h \-
 .ti -1c
 .RI "struct \fBapp_data\fP"
 .br
+.RI "\fIApplication data structure\&. \fP"
 .ti -1c
 .RI "struct \fBlistitem\fP"
 .br
+.RI "\fIName value pair sturucture\&. \fP"
 .in -1c
 .SS "Macros"
 
@@ -22,6 +27,7 @@ app/private.h \-
 .ti -1c
 .RI "#define \fBDATA_DIR\fP   '/usr/share/dtsguiapp'"
 .br
+.RI "\fIShared application folder\&. \fP"
 .in -1c
 .SS "Enumerations"
 
@@ -29,6 +35,7 @@ app/private.h \-
 .ti -1c
 .RI "enum \fBnode_id\fP { \fBDTS_NODE_CUSTOMER\fP, \fBDTS_NODE_NETWORK_CONFIG\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_DYN\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_SERV\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_ZONE\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_HOST_NEW\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_HOST\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_NEW\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER_NEW\fP, \fBDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER\fP, \fBDTS_NODE_NETWORK_IFACE_NEW\fP, \fBDTS_NODE_NETWORK_IFACE\fP, \fBDTS_NODE_NETWORK_WIFI_NEW\fP, \fBDTS_NODE_NETWORK_WIFI\fP, \fBDTS_NODE_NETWORK_WAN_NEW\fP, \fBDTS_NODE_NETWORK_WAN\fP, \fBDTS_NODE_NETWORK_ROUTE_NEW\fP, \fBDTS_NODE_NETWORK_ROUTE\fP, \fBDTS_NODE_NETWORK_MODEM\fP, \fBDTS_NODE_NETWORK_MODEM_ADV\fP, \fBDTS_NODE_NETWORK_MODEM_ANA\fP, \fBDTS_NODE_NETWORK_ADSL_LINK_NEW\fP, \fBDTS_NODE_NETWORK_ADSL_LINK\fP, \fBDTS_NODE_NETWORK_ADSL_USER_NEW\fP, \fBDTS_NODE_NETWORK_ADSL_USER\fP, \fBDTS_NODE_NETWORK_TOS_NEW\fP, \fBDTS_NODE_NETWORK_TOS\fP }"
 .br
+.RI "\fINode ID's used in application treeview\&. \fP"
 .in -1c
 .SS "Functions"
 
@@ -36,238 +43,83 @@ app/private.h \-
 .ti -1c
 .RI "struct xml_doc * \fBapp_getxmldoc\fP (struct \fBdtsgui\fP *\fBdtsgui\fP)"
 .br
+.RI "\fIreturn reference to xmldoc stored in userdata\&. \fP"
 .ti -1c
 .RI "void * \fBapp_toolbar\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, void *pw, long style, int id, const char *name, void *data)"
 .br
+.RI "\fICallback called when the toolbar is to be created\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBreconfig_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fICallback from configuration menu\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBeditsys_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fICallback from edit customer configuration\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBnewsys_wizard\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fICallback from create new system menu item\&. \fP"
 .ti -1c
 .RI "void \fBwizz_custinfo\fP (\fBdtsgui_pane\fP *pg)"
 .br
+.RI "\fICustomer information panel\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBpbx_settings\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fIConfigure and return the PBX configuration tab view\&. \fP"
 .ti -1c
 .RI "void \fBtest_menu\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, \fBdtsgui_menu\fP menu, const char *url)"
 .br
+.RI "\fIAdd test option to menu\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBadvanced_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fIAdvanced configuration menu callback\&. \fP"
 .ti -1c
 .RI "void \fBnetwork_iface_pane\fP (\fBdtsgui_pane\fP p, const char *xpre, const char *iface)"
 .br
+.RI "\fINetwork interface stub shared with interface config\&. \fP"
 .ti -1c
-.RI "void \fBnetwork_iface_new_pane\fP (\fBdtsgui_pane\fP p, void *data)"
+.RI "void \fBnetwork_iface_new_pane\fP (\fBdtsgui_pane\fP p)"
 .br
+.RI "\fINetwork interface stub shared with interface config\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBiface_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fICallback called when the interface configuration link is selected\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBopen_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fIOpen XML configuration file callback\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBsave_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fIClose/Save menu option call back\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBexport_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fIExport XML document as a \&.conf file\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBview_config_conf\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fIDisplay XML document formated in text display as a dot conf\&. \fP"
 .ti -1c
 .RI "\fBdtsgui_pane\fP \fBview_config_xml\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
 .br
+.RI "\fIDisplay XML document formated in text display\&. \fP"
 .ti -1c
 .RI "void \fBconfig_menu\fP (struct \fBdtsgui\fP *\fBdtsgui\fP)"
 .br
+.RI "\fIAdd the configure menu to the menu bar and add options\&. \fP"
 .in -1c
-.SH "Macro Definition Documentation"
+.SH "Detailed Description"
 .PP 
-.SS "#define DATA_DIR   '/usr/share/dtsguiapp'"
+Main application private includes\&. 
+
 
 .PP
-Definition at line 24 of file private\&.h\&.
-.PP
-Referenced by main()\&.
-.SH "Enumeration Type Documentation"
-.PP 
-.SS "enum \fBnode_id\fP"
-
-.PP
-\fBEnumerator: \fP
-.in +1c
-.TP
-\fB\fIDTS_NODE_CUSTOMER \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_CONFIG \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_CONFIG_DNS \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_DYN \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_SERV \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_ZONE \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_HOST_NEW \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_HOST \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_NEW \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER_NEW \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_IFACE_NEW \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_IFACE \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_WIFI_NEW \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_WIFI \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_WAN_NEW \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_WAN \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_ROUTE_NEW \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_ROUTE \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_MODEM \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_MODEM_ADV \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_MODEM_ANA \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_ADSL_LINK_NEW \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_ADSL_LINK \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_ADSL_USER_NEW \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_ADSL_USER \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_TOS_NEW \fP\fP
-.TP
-\fB\fIDTS_NODE_NETWORK_TOS \fP\fP
-
-.PP
-Definition at line 27 of file private\&.h\&.
-.SH "Function Documentation"
-.PP 
-.SS "\fBdtsgui_pane\fP advanced_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
-.PP
-Definition at line 740 of file netconfig\&.c\&.
-.PP
-References app_getxmldoc(), app_data::datadir, dtsgui_alert(), dtsgui_treewindow(), dtsgui_userdata(), and network_tree_setup()\&.
-.PP
-Referenced by config_menu()\&.
-.SS "void* app_toolbar (struct \fBdtsgui\fP *dtsgui, void *pw, longstyle, intid, const char *name, void *data)"
-
-.PP
-Definition at line 111 of file toolbar\&.cpp\&.
-.PP
-Referenced by guiconfig_cb()\&.
-.SS "void config_menu (struct \fBdtsgui\fP *dtsgui)"
-
-.PP
-Definition at line 189 of file config\&.c\&.
-.PP
-References advanced_config(), app_data::cfg_menu, dtsgui_menuenable(), dtsgui_menusep(), dtsgui_newmenu(), dtsgui_newmenucb(), dtsgui_userdata(), export_config(), iface_config(), pbx_settings(), reconfig_wizard(), save_config(), view_config_conf(), and view_config_xml()\&.
-.PP
-Referenced by guiconfig_cb()\&.
-.SS "\fBdtsgui_pane\fP export_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
-.PP
-Definition at line 150 of file config\&.c\&.
-.PP
-References app_getxmldoc(), app_data::datadir, dtsgui_alert(), dtsgui_filesave(), and dtsgui_userdata()\&.
-.PP
-Referenced by config_menu()\&.
-.SS "\fBdtsgui_pane\fP iface_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
-.PP
-Definition at line 145 of file interface\&.c\&.
-.PP
-References app_getxmldoc(), dtsgui_newtabpage(), dtsgui_tabwindow(), get_iface_cdata(), get_newiface_data(), network_iface_new_pane_cb(), network_iface_pane_cb(), and wx_PANEL_BUTTON_ACTION\&.
-.PP
-Referenced by config_menu()\&.
-.SS "void network_iface_new_pane (\fBdtsgui_pane\fPp, void *data)"
-
-.PP
-Definition at line 222 of file netconfig\&.c\&.
-.PP
-References dtsgui_textbox()\&.
-.PP
-Referenced by network_iface_new_pane_cb(), and network_newiface()\&.
-.SS "void network_iface_pane (\fBdtsgui_pane\fPp, const char *xpre, const char *iface)"
-
-.PP
-Definition at line 201 of file netconfig\&.c\&.
-.PP
-References dtsgui_xmltextbox()\&.
-.PP
-Referenced by network_iface(), and network_iface_pane_cb()\&.
-.SS "\fBdtsgui_pane\fP open_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
-.PP
-Definition at line 27 of file config\&.c\&.
-.PP
-References app_data::c_open, app_data::cfg_menu, dtsgui_alert(), dtsgui_fileopen(), dtsgui_menuenable(), dtsgui_menuitemenable(), dtsgui_sendevent(), dtsgui_set_toolbar(), dtsgui_titleappend(), dtsgui_userdata(), app_data::e_wiz, app_data::n_wiz, and app_data::xmldoc\&.
-.PP
-Referenced by file_menu()\&.
-.SS "\fBdtsgui_pane\fP pbx_settings (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
-.PP
-Definition at line 325 of file pbxconfig\&.c\&.
-.PP
-References app_getxmldoc(), dtsgui_newtabpage(), dtsgui_tabwindow(), pbxconf_acd(), pbxconf_autoadd(), pbxconf_default(), pbxconf_e1(), pbxconf_global(), pbxconf_incoming(), pbxconf_location(), pbxconf_mfcr2(), pbxconf_misdn(), pbxconf_numplan(), pbxconf_topts(), pbxconf_trunk(), and wx_PANEL_BUTTON_ACTION\&.
-.PP
-Referenced by config_menu()\&.
-.SS "\fBdtsgui_pane\fP save_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
-.PP
-Definition at line 69 of file config\&.c\&.
-.PP
-References app_data::c_open, app_data::cfg_menu, dtsgui_menuenable(), dtsgui_menuitemenable(), dtsgui_set_toolbar(), dtsgui_titleappend(), dtsgui_userdata(), app_data::e_wiz, app_data::n_wiz, and app_data::xmldoc\&.
-.PP
-Referenced by config_menu()\&.
-.SS "void test_menu (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_menu\fPmenu, const char *url)"
-
-.PP
-Definition at line 94 of file testing\&.c\&.
-.PP
-References dtsgui_newmenuitem(), dtsgui_panel(), dtsgui_setevcallback(), handle_test(), testpanel(), and wx_PANEL_BUTTON_ALL\&.
-.PP
-Referenced by help_menu()\&.
-.SS "\fBdtsgui_pane\fP view_config_conf (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
-.PP
-Definition at line 112 of file config\&.c\&.
-.PP
-References app_getxmldoc(), app_data::datadir, dtsgui_alert(), dtsgui_textpane(), and dtsgui_userdata()\&.
-.PP
-Referenced by config_menu()\&.
-.SS "\fBdtsgui_pane\fP view_config_xml (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
-
-.PP
-Definition at line 94 of file config\&.c\&.
-.PP
-References app_getxmldoc(), and dtsgui_textpane()\&.
-.PP
-Referenced by config_menu()\&.
+Definition in file \fBprivate\&.h\fP\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

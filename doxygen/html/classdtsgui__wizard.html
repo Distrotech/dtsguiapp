@@ -173,7 +173,15 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_wizard_8cpp_source.html#l00038">38</a> of file <a class="el" href="_d_t_s_wizard_8cpp_source.html">DTSWizard.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_wizard_8h_source.html#l00034">start</a>, and <a class="el" href="_d_t_s_wizard_8h_source.html#l00033">wiz</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                   {</div>
+<div class="line">    <span class="keywordflow">if</span> (dgui &amp;&amp; objref(dgui)) {</div>
+<div class="line">        <a class="code" href="classdtsgui.html">dtsgui</a> = dgui;</div>
+<div class="line">        <a class="code" href="classdtsgui__wizard.html#a54ee023336fe1f000bb593c7dcbbcc9d">wiz</a> = <span class="keyword">new</span> <a class="code" href="_d_t_s_wizard_8h.html#afc9801308f8dd7566a2e222ef91a6932">wxWizard</a>(f, wxID_ANY, title, wxNullBitmap, wxDefaultPosition, wxDEFAULT_DIALOG_STYLE | wxRESIZE_BORDER);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="classdtsgui__wizard.html#aaffe8d8784abd52b3496bce01bc17491">start</a> = NULL;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -212,7 +220,39 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_frame_8cpp_source.html#l00375">DTSFrame::CreatePane()</a>, <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00482">DTSPanel::SetTitle()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00290">DTSObject::SetXMLDoc()</a>, <a class="el" href="_d_t_s_wizard_8h_source.html#l00034">start</a>, <a class="el" href="_d_t_s_wizard_8h_source.html#l00033">wiz</a>, and <a class="el" href="dtsgui_8h_source.html#l00253">wx_DTSPANEL_WIZARD</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l00999">DTS_C_API::dtsgui_wizard_addpage()</a>.</p>
-
+<div class="fragment"><div class="line">                                                                                                 {</div>
+<div class="line">    <a class="code" href="class_d_t_s_wizard_window.html">DTSWizardWindow</a> *dww;</div>
+<div class="line">    <a class="code" href="_d_t_s_wizard_8h.html#a0692504754593e8beb0333a4d1f6c80e">wxWizardPageSimple</a> *wp, *tmp;</div>
+<div class="line">    wxWizardPage *last;</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f = <a class="code" href="classdtsgui.html">dtsgui</a>-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line"></div>
+<div class="line">    dww = (<a class="code" href="class_d_t_s_wizard_window.html">DTSWizardWindow</a>*)f-&gt;<a class="code" href="class_d_t_s_frame.html#a3b1105fb9c8e3b6909994e7f993eee20">CreatePane</a>(title, wxEmptyString, 0, <a class="code" href="group___c_o_r_e.html#gga9275874ac61d3750aa677a36da714373aa108fde55f9c1830cf68cd368aba1d02" title="DTSWizardWindow (wx_DTSPANEL_WIZARD) see Wizard Interface..">wx_DTSPANEL_WIZARD</a>, userdata);</div>
+<div class="line"></div>
+<div class="line">    wp = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="_d_t_s_wizard_8h.html#a0692504754593e8beb0333a4d1f6c80e">wxWizardPageSimple</a> *<span class="keyword">&gt;</span>(dww);</div>
+<div class="line">    wp-&gt;Create(<a class="code" href="classdtsgui__wizard.html#a54ee023336fe1f000bb593c7dcbbcc9d">wiz</a>);</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (title) {</div>
+<div class="line">        dww-&gt;<a class="code" href="class_d_t_s_panel.html#a58daeb533cce1e4bdac57118cce7c7ea">SetTitle</a>(title, <span class="keyword">true</span>);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (xmldoc) {</div>
+<div class="line">        dww-&gt;<a class="code" href="class_d_t_s_object.html#a1ae63425d8e5770a8b0717f37fd695b2">SetXMLDoc</a>(xmldoc);</div>
+<div class="line">    }</div>
+<div class="line"></div>
+<div class="line">    objlock(<span class="keyword">this</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (!<a class="code" href="classdtsgui__wizard.html#aaffe8d8784abd52b3496bce01bc17491">start</a>) {</div>
+<div class="line">        <a class="code" href="classdtsgui__wizard.html#aaffe8d8784abd52b3496bce01bc17491">start</a> = wp;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <span class="keywordflow">for</span>(last = <a class="code" href="classdtsgui__wizard.html#aaffe8d8784abd52b3496bce01bc17491">start</a>; last-&gt;GetNext(); last=last-&gt;GetNext());</div>
+<div class="line"></div>
+<div class="line">        tmp = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="_d_t_s_wizard_8h.html#a0692504754593e8beb0333a4d1f6c80e">wxWizardPageSimple</a>*<span class="keyword">&gt;</span>(last);</div>
+<div class="line">        tmp-&gt;SetNext(wp);</div>
+<div class="line">        wp-&gt;SetPrev(tmp);</div>
+<div class="line">    }</div>
+<div class="line">    objunlock(<span class="keyword">this</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> dww;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a5fed7f6f5eb482fc137f16adf2a494ad"></a>
@@ -249,7 +289,13 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_wizard_8h_source.html#l00034">start</a>, and <a class="el" href="_d_t_s_wizard_8h_source.html#l00033">wiz</a>.</p>
 
 <p>Referenced by <a class="el" href="wrapper_8cpp_source.html#l01014">DTS_C_API::dtsgui_runwizard()</a>.</p>
-
+<div class="fragment"><div class="line">                             {</div>
+<div class="line">    <a class="code" href="classdtsgui__wizard.html#a54ee023336fe1f000bb593c7dcbbcc9d">wiz</a>-&gt;GetPageAreaSizer()-&gt;Add(<a class="code" href="classdtsgui__wizard.html#aaffe8d8784abd52b3496bce01bc17491">start</a>);</div>
+<div class="line">    <a class="code" href="classdtsgui__wizard.html#a54ee023336fe1f000bb593c7dcbbcc9d">wiz</a>-&gt;Center();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code" href="classdtsgui__wizard.html#a54ee023336fe1f000bb593c7dcbbcc9d">wiz</a>-&gt;RunWizard(<a class="code" href="classdtsgui__wizard.html#aaffe8d8784abd52b3496bce01bc17491">start</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -333,7 +379,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classdtsgui__wizard.html">dtsgui_wizard</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

@@ -194,6 +194,12 @@ The fuction does not return\&.
 Definition at line 207 of file wrapper\&.cpp\&.
 .PP
 Referenced by main()\&.
+.PP
+.nf
+                                                                                                                                                  {
+    new DTSApp(confcallback_cb, userdata, wsize, wpos, title, status);
+}
+.fi
 .SS "int DTS_C_API::dtsgui_run (intargc, char **argv)"
 
 .PP
@@ -223,6 +229,12 @@ Return value from callback function\&.
 Definition at line 222 of file wrapper\&.cpp\&.
 .PP
 Referenced by main()\&.
+.PP
+.nf
+                                      {
+    return wxEntry(argc, argv);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_sendevent (struct \fBdtsgui\fP *dtsgui, inteid)"
 
 .PP
@@ -247,6 +259,13 @@ Definition at line 262 of file wrapper\&.cpp\&.
 References dtsgui::GetFrame(), and DTSFrame::SendDTSEvent()\&.
 .PP
 Referenced by open_config()\&.
+.PP
+.nf
+                                                      {
+    DTSFrame *f =  dtsgui->GetFrame();
+    f->SendDTSEvent(eid, NULL);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_set_toolbar (struct \fBdtsgui\fP *dtsgui, intshow)"
 
 .PP
@@ -269,6 +288,12 @@ Definition at line 289 of file wrapper\&.cpp\&.
 References dtsgui::ShowToolbar()\&.
 .PP
 Referenced by open_config(), and save_config()\&.
+.PP
+.nf
+                                                         {
+    dtsgui->ShowToolbar(show);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_setuptoolbar (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_toolbar_create\fPcb, void *data)"
 
 .PP
@@ -300,6 +325,13 @@ Definition at line 278 of file wrapper\&.cpp\&.
 References dtsgui::GetFrame(), and DTSFrame::SetupToolbar()\&.
 .PP
 Referenced by guiconfig_cb()\&.
+.PP
+.nf
+                                                                                      {
+    DTSFrame *f = dtsgui->GetFrame();
+    f->SetupToolbar(cb, data);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_setwindow (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_pane\fPp)"
 
 .PP
@@ -322,6 +354,13 @@ Set the displayed panel to pane provided\&. Switch the curent pane with the one 
 Definition at line 249 of file wrapper\&.cpp\&.
 .PP
 References dtsgui::GetFrame(), and DTSFrame::SetWindow()\&.
+.PP
+.nf
+                                                            {
+    DTSFrame *f = dtsgui->GetFrame();
+    f->SetWindow((DTSPanel*)p);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_titleappend (struct \fBdtsgui\fP *dtsgui, const char *text)"
 
 .PP
@@ -346,6 +385,12 @@ Definition at line 300 of file wrapper\&.cpp\&.
 References dtsgui::AppendTitle()\&.
 .PP
 Referenced by open_config(), and save_config()\&.
+.PP
+.nf
+                                                                 {
+    dtsgui->AppendTitle(text);
+}
+.fi
 .SS "void* DTS_C_API::dtsgui_userdata (struct \fBdtsgui\fP *dtsgui)"
 
 .PP
@@ -375,7 +420,13 @@ Definition at line 235 of file wrapper\&.cpp\&.
 .PP
 References dtsgui::GetUserData()\&.
 .PP
-Referenced by advanced_config(), app_getxmldoc(), config_menu(), export_config(), file_menu(), newsys_wizard(), open_config(), save_config(), and view_config_conf()\&.
+Referenced by app_getxmldoc(), config_menu(), export_config(), file_menu(), newsys_wizard(), open_config(), save_config(), and view_config_conf()\&.
+.PP
+.nf
+                                             {
+    return dtsgui->GetUserData();
+}
+.fi
 .SH "Variable Documentation"
 .PP 
 .SS "int DTS_C_API::menuid = wxID_AUTO_LOWEST\fC [static]\fP"

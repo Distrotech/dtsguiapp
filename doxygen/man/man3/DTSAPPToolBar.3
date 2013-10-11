@@ -3,6 +3,9 @@
 .nh
 .SH NAME
 DTSAPPToolBar \- 
+.PP
+Application toolbar class\&.  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -14,9 +17,11 @@ Inherits wxToolBar\&.
 .ti -1c
 .RI "\fBDTSAPPToolBar\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, \fBwxWindow\fP *parent, long style, wxWindowID id, wxString name, void *data)"
 .br
+.RI "\fIApplication toolbar\&. \fP"
 .ti -1c
 .RI "\fB~DTSAPPToolBar\fP ()"
 .br
+.RI "\fIRelease references held\&. \fP"
 .in -1c
 .SS "Static Public Member Functions"
 
@@ -24,6 +29,7 @@ Inherits wxToolBar\&.
 .ti -1c
 .RI "static struct curl_post * \fBGetPostInfo\fP (const wxString &val)"
 .br
+.RI "\fICallback from \fBDTSXMLComboBox\fP\&. \fP"
 .in -1c
 .SS "Private Member Functions"
 
@@ -31,6 +37,7 @@ Inherits wxToolBar\&.
 .ti -1c
 .RI "void \fBHandleEvent\fP (wxCommandEvent &event)"
 .br
+.RI "\fIToolbar event handler callback\&. \fP"
 .in -1c
 .SS "Private Attributes"
 
@@ -38,69 +45,198 @@ Inherits wxToolBar\&.
 .ti -1c
 .RI "int \fBitemid\fP"
 .br
+.RI "\fIItem id incremented for each item added to toolbar\&. \fP"
 .ti -1c
 .RI "\fBDTSXMLComboBox\fP * \fBserver\fP"
 .br
+.RI "\fIURL Combo box that will populate list based on XML\&. \fP"
 .ti -1c
 .RI "\fBwxComboBox\fP * \fBproto\fP"
 .br
+.RI "\fIProtocol listbox\&. \fP"
 .ti -1c
 .RI "struct \fBdtsgui\fP * \fBdtsgui\fP"
 .br
+.RI "\fIReference to application data ptr\&. \fP"
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 30 of file toolbar\&.cpp\&.
+Application toolbar class\&. 
+
+Derived from wxToolbar\&. 
+.PP
+Definition at line 45 of file toolbar\&.cpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "DTSAPPToolBar::DTSAPPToolBar (struct \fBdtsgui\fP *dtsgui, \fBwxWindow\fP *parent, longstyle, wxWindowIDid, wxStringname, void *data)"
 
 .PP
-Definition at line 44 of file toolbar\&.cpp\&.
+Application toolbar\&. \fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fIparent\fP Parent window\&. 
+.br
+\fIstyle\fP Toolbar Style\&. 
+.br
+\fIid\fP Toolbar ID\&. 
+.br
+\fIname\fP Toolbar name\&. 
+.br
+\fIdata\fP Hold reference to this user data\&. 
+.RE
+.PP
+
+.PP
+Definition at line 98 of file toolbar\&.cpp\&.
 .PP
 References GetPostInfo(), HandleEvent(), itemid, proto, and server\&.
+.PP
+.nf
+                                                                                                                          {
+    int servid;
+
+    if (dtsgui && objref(dtsgui)) {
+        this->dtsgui = (struct dtsgui*)dtsgui;
+    } else {
+        this->dtsgui = NULL;
+    }
+
+    itemid = wxID_AUTO_LOWEST;
+
+    Create(parent, id, wxDefaultPosition, wxDefaultSize, style, name);
+    proto = new wxComboBox(this, itemid++, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, NULL, wxCB_READONLY);
+    servid = itemid++;
+    server = new DTSXMLComboBox(this, servid, 'https://sip1\&.speakezi\&.co\&.za:666/auth/test\&.php', '/servers/Server', &DTSAPPToolBar::GetPostInfo, 3);
+    server->SetSize(wxSize(300,-1));
+    wxStaticText *text2 = new wxStaticText(this, wxID_ANY, '://');
+    wxStaticText *text = new wxStaticText(this, wxID_ANY, 'Server ');
+
+    AddControl(text);
+    proto->Append('http');
+    proto->Append('https');
+    proto->Append('https [:666]');
+    proto->SetSelection(2);
+
+    AddControl(proto);
+    AddControl(text2);
+    AddControl(server);
+    AddStretchableSpace();
+
+    Bind(wxEVT_TEXT_ENTER, &DTSAPPToolBar::HandleEvent, this, servid, servid, NULL);
+    Bind(wxEVT_COMBOBOX, &DTSAPPToolBar::HandleEvent, this, servid, servid, NULL);
+    Bind(wxEVT_COMBOBOX_DROPDOWN, &DTSAPPToolBar::HandleEvent, this, servid, servid, NULL);
+}
+.fi
 .SS "DTSAPPToolBar::~DTSAPPToolBar ()"
 
 .PP
-Definition at line 79 of file toolbar\&.cpp\&.
+Release references held\&. 
+.PP
+Definition at line 133 of file toolbar\&.cpp\&.
+.PP
+.nf
+                              {
+    if (dtsgui) {
+        objunref(dtsgui);
+    }
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "struct curl_post * DTSAPPToolBar::GetPostInfo (const wxString &val)\fC [static]\fP, \fC [read]\fP"
 
 .PP
-Definition at line 85 of file toolbar\&.cpp\&.
+Callback from \fBDTSXMLComboBox\fP\&. \fBParameters:\fP
+.RS 4
+\fIval\fP Value used to create a curl_post structure\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+curl_post structure to send in XML request\&. 
+.RE
+.PP
+
+.PP
+Definition at line 139 of file toolbar\&.cpp\&.
 .PP
 Referenced by DTSAPPToolBar()\&.
+.PP
+.nf
+                                                                {
+    struct curl_post *post;
+
+    post = curl_newpost();
+    curl_postitem(post, 'function', 'getcust');
+    curl_postitem(post, 'search', val);
+
+    return post;
+}
+.fi
 .SS "void DTSAPPToolBar::HandleEvent (wxCommandEvent &event)\fC [private]\fP"
 
 .PP
-Definition at line 95 of file toolbar\&.cpp\&.
+Toolbar event handler callback\&. \fBParameters:\fP
+.RS 4
+\fIevent\fP Event emited by the toolbar\&. 
+.RE
+.PP
+
+.PP
+Definition at line 149 of file toolbar\&.cpp\&.
 .PP
 References DTS_C_API::dtsgui_alert(), DTSXMLComboBox::HasXMLList(), and server\&.
 .PP
 Referenced by DTSAPPToolBar()\&.
+.PP
+.nf
+                                                     {
+    int etype = event\&.GetEventType(), idx;
+    struct xml_node *xn;
+
+    idx = server->GetSelection();
+
+    if (etype == wxEVT_TEXT_ENTER) {
+        DTS_C_API::dtsgui_alert(dtsgui, 'Got Me Some URL ARRRRGh');
+    } else if (etype == wxEVT_COMBOBOX) {
+        xn = (struct xml_node*)server->GetClientData(idx);
+        DTS_C_API::dtsgui_alert(dtsgui, wxString('Selected IP ')\&.Append(xml_getattr(xn, 'ipaddr')));
+    } else if ((etype == wxEVT_COMBOBOX_DROPDOWN) && !server->HasXMLList()) {
+        DTS_C_API::dtsgui_alert(dtsgui, 'Please enter 3 or more characters to search !');
+    }
+}
+.fi
 .SH "Member Data Documentation"
 .PP 
 .SS "struct \fBdtsgui\fP* DTSAPPToolBar::dtsgui\fC [private]\fP"
 
 .PP
-Definition at line 40 of file toolbar\&.cpp\&.
+Reference to application data ptr\&. 
+.PP
+Definition at line 75 of file toolbar\&.cpp\&.
 .SS "int DTSAPPToolBar::itemid\fC [private]\fP"
 
 .PP
-Definition at line 36 of file toolbar\&.cpp\&.
+Item id incremented for each item added to toolbar\&. 
+.PP
+Definition at line 66 of file toolbar\&.cpp\&.
 .PP
 Referenced by DTSAPPToolBar()\&.
 .SS "\fBwxComboBox\fP* DTSAPPToolBar::proto\fC [private]\fP"
 
 .PP
-Definition at line 39 of file toolbar\&.cpp\&.
+Protocol listbox\&. 
+.PP
+Definition at line 73 of file toolbar\&.cpp\&.
 .PP
 Referenced by DTSAPPToolBar()\&.
 .SS "\fBDTSXMLComboBox\fP* DTSAPPToolBar::server\fC [private]\fP"
 
 .PP
-Definition at line 38 of file toolbar\&.cpp\&.
+URL Combo box that will populate list based on XML\&. The XML is returned from a HTTP post using the contents of the comobo box as search key\&. 
+.PP
+Definition at line 71 of file toolbar\&.cpp\&.
 .PP
 Referenced by DTSAPPToolBar(), and HandleEvent()\&.
 

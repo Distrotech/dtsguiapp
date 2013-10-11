@@ -42,15 +42,14 @@
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1151" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1151" bodyend="1154"/>
         <references refid="class_d_t_s_frame_1a890f88e157626205916bdb961cc6fb6f" compoundref="_d_t_s_frame_8cpp" startline="120" endline="127">DTSFrame::Alert</references>
         <references refid="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" compoundref="_d_t_s_app_8cpp" startline="137" endline="139">dtsgui::GetFrame</references>
-        <referencedby refid="private_8h_1a6d9d2b0105df87000cb2bdecbff91239" compoundref="netconfig_8c" startline="740" endline="769">advanced_config</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga126b309803052977061662f97fb9012a" compoundref="wizard_8c" startline="461" endline="479">editsys_wizard</referencedby>
-        <referencedby refid="private_8h_1a01bdf27a0760d9da4bb77918735171c1" compoundref="config_8c" startline="150" endline="187">export_config</referencedby>
-        <referencedby refid="testing_8c_1af1d7f330874be6beda389c9ea4a4545c" compoundref="testing_8c" startline="44" endline="70">handle_test</referencedby>
-        <referencedby refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" compoundref="toolbar_8cpp" startline="95" endline="109">DTSAPPToolBar::HandleEvent</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga56c78e0d32a18452dcea4f026de2c889" compoundref="wizard_8c" startline="436" endline="459">newsys_wizard</referencedby>
-        <referencedby refid="private_8h_1a72af4355dbc5afe93fef750a81a3e572" compoundref="config_8c" startline="27" endline="67">open_config</referencedby>
-        <referencedby refid="testing_8c_1a467cf1f57bc5317de7fa356f87b324a6" compoundref="testing_8c" startline="25" endline="42">post_items</referencedby>
-        <referencedby refid="private_8h_1abc9a4e54439d7a701992752ec7b3f6b9" compoundref="config_8c" startline="112" endline="148">view_config_conf</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga126b309803052977061662f97fb9012a" compoundref="wizard_8c" startline="523" endline="541">editsys_wizard</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga01bdf27a0760d9da4bb77918735171c1" compoundref="config_8c" startline="198" endline="235">export_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_test_1gaf1d7f330874be6beda389c9ea4a4545c" compoundref="testing_8c" startline="70" endline="96">handle_test</referencedby>
+        <referencedby refid="class_d_t_s_a_p_p_tool_bar_1ad3811f20f267392e27a26b839929367b" compoundref="toolbar_8cpp" startline="149" endline="163">DTSAPPToolBar::HandleEvent</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga56c78e0d32a18452dcea4f026de2c889" compoundref="wizard_8c" startline="491" endline="514">newsys_wizard</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga72af4355dbc5afe93fef750a81a3e572" compoundref="config_8c" startline="44" endline="84">open_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_test_1ga467cf1f57bc5317de7fa356f87b324a6" compoundref="testing_8c" startline="41" endline="58">post_items</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1gabc9a4e54439d7a701992752ec7b3f6b9" compoundref="config_8c" startline="152" endline="188">view_config_conf</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_dialog_1ga5761cfa6ab849723e50760a9642efc9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -91,7 +90,7 @@
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1162" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1162" bodyend="1165"/>
         <references refid="class_d_t_s_frame_1a937f276b15be00e81087ef1a73605478" compoundref="_d_t_s_frame_8cpp" startline="104" endline="118">DTSFrame::Confirm</references>
         <references refid="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" compoundref="_d_t_s_app_8cpp" startline="137" endline="139">dtsgui::GetFrame</references>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gae99af9389a848fe0d810a538d0b64d53" compoundref="wizard_8c" startline="363" endline="434">system_wizard</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gae99af9389a848fe0d810a538d0b64d53" compoundref="wizard_8c" startline="408" endline="481">system_wizard</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_dialog_1gad2b11bd5e9e51dcba9f53f4969f1f25c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const char *</type>
@@ -165,8 +164,8 @@
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1176" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1176" bodyend="1179"/>
         <references refid="class_d_t_s_frame_1af996b558ba17ecc23cf6ed1a3d1873fb" compoundref="_d_t_s_frame_8cpp" startline="408" endline="419">DTSFrame::FileDialog</references>
         <references refid="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" compoundref="_d_t_s_app_8cpp" startline="137" endline="139">dtsgui::GetFrame</references>
-        <referencedby refid="private_8h_1a01bdf27a0760d9da4bb77918735171c1" compoundref="config_8c" startline="150" endline="187">export_config</referencedby>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gae99af9389a848fe0d810a538d0b64d53" compoundref="wizard_8c" startline="363" endline="434">system_wizard</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga01bdf27a0760d9da4bb77918735171c1" compoundref="config_8c" startline="198" endline="235">export_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gae99af9389a848fe0d810a538d0b64d53" compoundref="wizard_8c" startline="408" endline="481">system_wizard</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_dialog_1gad458f5d64710487c7213a4921a5ebc99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const char *</type>
@@ -240,8 +239,8 @@
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1192" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1192" bodyend="1195"/>
         <references refid="class_d_t_s_frame_1af996b558ba17ecc23cf6ed1a3d1873fb" compoundref="_d_t_s_frame_8cpp" startline="408" endline="419">DTSFrame::FileDialog</references>
         <references refid="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" compoundref="_d_t_s_app_8cpp" startline="137" endline="139">dtsgui::GetFrame</references>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga126b309803052977061662f97fb9012a" compoundref="wizard_8c" startline="461" endline="479">editsys_wizard</referencedby>
-        <referencedby refid="private_8h_1a72af4355dbc5afe93fef750a81a3e572" compoundref="config_8c" startline="27" endline="67">open_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1ga126b309803052977061662f97fb9012a" compoundref="wizard_8c" startline="523" endline="541">editsys_wizard</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga72af4355dbc5afe93fef750a81a3e572" compoundref="config_8c" startline="44" endline="84">open_config</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_dialog_1gab2431470ff495d71aae8e41368a214cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct basic_auth *</type>

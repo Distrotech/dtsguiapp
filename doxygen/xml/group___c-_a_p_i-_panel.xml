@@ -91,7 +91,7 @@
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="464" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="464" bodyend="467"/>
         <references refid="class_d_t_s_frame_1a3b1105fb9c8e3b6909994e7f993eee20" compoundref="_d_t_s_frame_8cpp" startline="375" endline="406">DTSFrame::CreatePane</references>
         <references refid="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" compoundref="_d_t_s_app_8cpp" startline="137" endline="139">dtsgui::GetFrame</references>
-        <referencedby refid="testing_8c_1a77cb81a619f8c9ccd83cdf1e7c97aae9" compoundref="testing_8c" startline="94" endline="105">test_menu</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_test_1ga77cb81a619f8c9ccd83cdf1e7c97aae9" compoundref="testing_8c" startline="128" endline="139">test_menu</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel_1gafb8efe017917a372826f7ddedb0e8bba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
@@ -143,9 +143,9 @@
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="483" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="483" bodyend="486"/>
         <references refid="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" compoundref="_d_t_s_app_8cpp" startline="137" endline="139">dtsgui::GetFrame</references>
         <references refid="class_d_t_s_frame_1afc0dae8ce7b26ef38297d520a3144d2a" compoundref="_d_t_s_frame_8cpp" startline="421" endline="433">DTSFrame::TextPanel</references>
-        <referencedby refid="group___d_t_s-_a_p_p_1gae1b0e521306d90ee09f460064c015b2b" compoundref="wxforms_8c" startline="94" endline="108">help_menu</referencedby>
-        <referencedby refid="private_8h_1abc9a4e54439d7a701992752ec7b3f6b9" compoundref="config_8c" startline="112" endline="148">view_config_conf</referencedby>
-        <referencedby refid="private_8h_1abe0b9ce2252ec72774af23a0ec71424f" compoundref="config_8c" startline="94" endline="110">view_config_xml</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p_1gae1b0e521306d90ee09f460064c015b2b" compoundref="wxforms_8c" startline="106" endline="120">help_menu</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1gabc9a4e54439d7a701992752ec7b3f6b9" compoundref="config_8c" startline="152" endline="188">view_config_conf</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1gabe0b9ce2252ec72774af23a0ec71424f" compoundref="config_8c" startline="126" endline="142">view_config_xml</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel_1gaa92cb9c6006aaf320e784f04500c3b25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
@@ -217,7 +217,7 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="503" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="503" bodyend="506"/>
         <references refid="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" compoundref="_d_t_s_app_8cpp" startline="137" endline="139">dtsgui::GetFrame</references>
-        <referencedby refid="private_8h_1a6d9d2b0105df87000cb2bdecbff91239" compoundref="netconfig_8c" startline="740" endline="769">advanced_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga6d9d2b0105df87000cb2bdecbff91239" compoundref="netconfig_8c" startline="912" endline="926">advanced_config</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel_1ga05cf1592d301351aa838bd23c710f3bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group___c_o_r_e_1ga29c463cda54f69beb273c77e1aa7ccef" kindref="member">dtsgui_tabview</ref></type>
@@ -268,8 +268,8 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="520" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="520" bodyend="523"/>
         <references refid="classdtsgui_1a533a6afc9b54ac5055ab1fdbd679188a" compoundref="_d_t_s_app_8cpp" startline="137" endline="139">dtsgui::GetFrame</references>
-        <referencedby refid="private_8h_1abf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="145" endline="184">iface_config</referencedby>
-        <referencedby refid="private_8h_1aa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="325" endline="350">pbx_settings</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gabf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="197" endline="236">iface_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel_1gad91055a12542c30dab4aacbd0761c785" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -337,10 +337,10 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="550" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="550" bodyend="553"/>
         <references refid="class_d_t_s_object_1ae177d1cfd85be759810b252b98f2050d" compoundref="_d_t_s_panel_8cpp" startline="305" endline="314">DTSObject::GetXMLDoc</references>
-        <referencedby refid="netconfig_8c_1afbdf0e8165311538e8b408c7ba2fabbf" compoundref="netconfig_8c" startline="446" endline="477">network_adsl_link</referencedby>
-        <referencedby refid="netconfig_8c_1aa4d1bbd43067e6a75b7a441658a28646" compoundref="netconfig_8c" startline="479" endline="502">network_adsl_link_new</referencedby>
-        <referencedby refid="netconfig_8c_1a53ff57cbb1a4442c4428c95746229150" compoundref="netconfig_8c" startline="37" endline="74">network_config</referencedby>
-        <referencedby refid="netconfig_8c_1a3a749e8b1e9561bb168ba3aed04444a8" compoundref="netconfig_8c" startline="277" endline="318">network_newwifi</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gafbdf0e8165311538e8b408c7ba2fabbf" compoundref="netconfig_8c" startline="586" endline="617">network_adsl_link</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gaa4d1bbd43067e6a75b7a441658a28646" compoundref="netconfig_8c" startline="624" endline="647">network_adsl_link_new</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga53ff57cbb1a4442c4428c95746229150" compoundref="netconfig_8c" startline="56" endline="93">network_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga3a749e8b1e9561bb168ba3aed04444a8" compoundref="netconfig_8c" startline="377" endline="418">network_newwifi</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel_1ga71826ffc718e3dc219e57befdb6f0d8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -416,8 +416,8 @@ When a event happens the callback is called with the userdata to allow actioning
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="853" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="853" bodyend="856"/>
         <references refid="class_d_t_s_panel_1ac18de08077529d488ea329a72ee14d98" compoundref="_d_t_s_panel_8cpp" startline="406" endline="415">DTSPanel::SetEventCallback</references>
-        <referencedby refid="interface_8c_1aec69e5698c53680c3551eeb9e05cbaf6" compoundref="interface_8c" startline="123" endline="135">network_iface_pane_cb</referencedby>
-        <referencedby refid="testing_8c_1a77cb81a619f8c9ccd83cdf1e7c97aae9" compoundref="testing_8c" startline="94" endline="105">test_menu</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gaec69e5698c53680c3551eeb9e05cbaf6" compoundref="interface_8c" startline="164" endline="176">network_iface_pane_cb</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_test_1ga77cb81a619f8c9ccd83cdf1e7c97aae9" compoundref="testing_8c" startline="128" endline="139">test_menu</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel_1ga28e2dbe2171ea35e32fa615aca55b934" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -445,7 +445,7 @@ When a event happens the callback is called with the userdata to allow actioning
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="869" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="869" bodyend="872"/>
         <references refid="class_d_t_s_panel_1adc5131960a24dfa65adba935a1be0f79" compoundref="_d_t_s_panel_8cpp" startline="746" endline="775">DTSPanel::Update_XML</references>
-        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gae99af9389a848fe0d810a538d0b64d53" compoundref="wizard_8c" startline="363" endline="434">system_wizard</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_wizard_1gae99af9389a848fe0d810a538d0b64d53" compoundref="wizard_8c" startline="408" endline="481">system_wizard</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel_1ga4d0d6742f61c91fb590b3728a7229150" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>struct curl_post *</type>
@@ -474,7 +474,7 @@ When a event happens the callback is called with the userdata to allow actioning
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="887" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="887" bodyend="890"/>
         <references refid="class_d_t_s_panel_1a7ce048cedd00ee1f1d9ea1c1fd504a6f" compoundref="_d_t_s_panel_8cpp" startline="841" endline="880">DTSPanel::Panel2Post</references>
-        <referencedby refid="testing_8c_1a467cf1f57bc5317de7fa356f87b324a6" compoundref="testing_8c" startline="25" endline="42">post_items</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_test_1ga467cf1f57bc5317de7fa356f87b324a6" compoundref="testing_8c" startline="41" endline="58">post_items</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel_1ga6728901f40e67a95bc46150e1cf3c450" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void *</type>
@@ -504,7 +504,7 @@ When a event happens the callback is called with the userdata to allow actioning
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="901" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="901" bodyend="904"/>
         <references refid="class_d_t_s_object_1a5d32407be34aa68ea2b038ede768d50e" compoundref="_d_t_s_panel_8cpp" startline="338" endline="346">DTSObject::GetUserData</references>
-        <referencedby refid="testing_8c_1a467cf1f57bc5317de7fa356f87b324a6" compoundref="testing_8c" startline="25" endline="42">post_items</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_test_1ga467cf1f57bc5317de7fa356f87b324a6" compoundref="testing_8c" startline="41" endline="58">post_items</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel_1ga3f8f0e22fd2ecdcb915ec06851d12e3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -581,7 +581,7 @@ When a event happens the callback is called with the userdata to allow actioning
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="922" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="922" bodyend="925"/>
         <references refid="class_d_t_s_panel_1a03be174c3cb033ba74b6abce543347e3" compoundref="_d_t_s_panel_8cpp" startline="490" endline="494">DTSPanel::SetStatus</references>
-        <referencedby refid="interface_8c_1a2079939d5d21847b07c782120206b7ce" compoundref="interface_8c" startline="86" endline="121">handle_updatetabpane</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1ga2079939d5d21847b07c782120206b7ce" compoundref="interface_8c" startline="124" endline="159">handle_updatetabpane</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel_1gab2f995a29a5b461ac67c7d9aa7091686" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -761,6 +761,6 @@ When a event happens the callback is called with the userdata to allow actioning
 <para><simplesect kind="remark"><para>The application display area can display one panel at a time these panels may be static or dynamic. static panels are created once and persist during execution. dynamic panels are created and displayed each time the associated menuitem is selected. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group___c_o_r_e_1ga9275874ac61d3750aa677a36da714373" kindref="member">panel_type</ref> </para></simplesect>
 <simplesect kind="warning"><para>The displayed dynamic panel will be removed when a new item is selected. </para></simplesect>
-<xrefsect id="todo_1_todo000002"><xreftitle>Todo</xreftitle><xrefdescription><para>Emit and allow panels to manage a event when a new panel is requested to allow saving the displayed panel. </para></xrefdescription></xrefsect></para>    </detaileddescription>
+<xrefsect id="todo_1_todo000004"><xreftitle>Todo</xreftitle><xrefdescription><para>Emit and allow panels to manage a event when a new panel is requested to allow saving the displayed panel. </para></xrefdescription></xrefsect></para>    </detaileddescription>
   </compounddef>
 </doxygen>

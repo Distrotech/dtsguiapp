@@ -1,0 +1,224 @@
+.TH "Application test panel" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Application test panel \- 
+.PP
+Static window with standard elements that will post to a URL and pop up the result\&.  
+
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBtesting\&.c\fP"
+.br
+.RI "\fITest panel\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBpost_items\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, \fBdtsgui_pane\fP p)"
+.br
+.RI "\fICreate a curl post object and submit to url\&. \fP"
+.ti -1c
+.RI "int \fBhandle_test\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, \fBdtsgui_pane\fP p, int type, int event, void *data)"
+.br
+.RI "\fIpanel event handler\&. \fP"
+.ti -1c
+.RI "void \fBtestpanel\fP (\fBdtsgui_pane\fP p)"
+.br
+.RI "\fIConfigure a panel with test elements\&. \fP"
+.ti -1c
+.RI "void \fBtest_menu\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, \fBdtsgui_menu\fP menu, const char *url)"
+.br
+.RI "\fIAdd test option to menu\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Static window with standard elements that will post to a URL and pop up the result\&. 
+
+This is for testing the basic features and curl integration\&. 
+.SH "Function Documentation"
+.PP 
+.SS "int handle_test (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_pane\fPp, inttype, intevent, void *data)"
+
+.PP
+panel event handler\&. Filter all but button events and on Apply/Yes post the panel to URL\&. Other butons pressed will pop up a alert box with the button pressed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fIp\fP The panel generating the events\&. 
+.br
+\fItype\fP Type of event generated\&. 
+.br
+\fIevent\fP The event generated\&. 
+.br
+\fIdata\fP Reference to userdata set with eventhandler\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 to mark the event as handled or non zero to pass handling on\&. 
+.RE
+.PP
+
+.PP
+Definition at line 70 of file testing\&.c\&.
+.PP
+References dtsgui_alert(), post_items(), wx_PANEL_EVENT_BUTTON, wx_PANEL_EVENT_BUTTON_BACK, wx_PANEL_EVENT_BUTTON_FIRST, wx_PANEL_EVENT_BUTTON_FWD, wx_PANEL_EVENT_BUTTON_LAST, wx_PANEL_EVENT_BUTTON_NO, and wx_PANEL_EVENT_BUTTON_YES\&.
+.PP
+Referenced by test_menu()\&.
+.PP
+.nf
+                                                                                       {
+    if (type != wx_PANEL_EVENT_BUTTON) {
+        return 1;
+    }
+
+    switch(event) {
+        case wx_PANEL_EVENT_BUTTON_YES:
+            post_items(dtsgui, p);
+            break;
+        case wx_PANEL_EVENT_BUTTON_NO:
+            dtsgui_alert(dtsgui, 'Undo');
+            break;
+        case wx_PANEL_EVENT_BUTTON_FIRST:
+            dtsgui_alert(dtsgui, 'First');
+            break;
+        case wx_PANEL_EVENT_BUTTON_LAST:
+            dtsgui_alert(dtsgui, 'Last');
+            break;
+        case wx_PANEL_EVENT_BUTTON_BACK:
+            dtsgui_alert(dtsgui, 'Back');
+            break;
+        case wx_PANEL_EVENT_BUTTON_FWD:
+            dtsgui_alert(dtsgui, 'Forward');
+            break;
+    }
+    return 1;
+}
+.fi
+.SS "void post_items (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_pane\fPp)"
+
+.PP
+Create a curl post object and submit to url\&. The panel data contains the URL 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fIp\fP panel to be posted\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Nothing is returned a alert box is popped up on success\&. 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file testing\&.c\&.
+.PP
+References dtsgui_alert(), dtsgui_pane2post(), and dtsgui_paneldata()\&.
+.PP
+Referenced by handle_test()\&.
+.PP
+.nf
+                                                      {
+    struct curl_post *post;
+    struct curlbuf *cbuf;
+    const char *url;
+
+    url = dtsgui_paneldata(p);
+    post = dtsgui_pane2post(p);
+    cbuf = curl_posturl(url, NULL, post, NULL, NULL);
+
+    if (cbuf && cbuf->body) {
+        dtsgui_alert(dtsgui, (char*)cbuf->body);
+    }
+
+    if (cbuf) {
+        objunref(cbuf);
+    }
+    objunref((void*)url);
+}
+.fi
+.SS "void test_menu (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_menu\fPmenu, const char *url)"
+
+.PP
+Add test option to menu\&. \fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fImenu\fP Menu to append new item too\&. 
+.br
+\fIurl\fP URL to post the panel too\&. 
+.RE
+.PP
+
+.PP
+Definition at line 128 of file testing\&.c\&.
+.PP
+References dtsgui_newmenuitem(), dtsgui_panel(), dtsgui_setevcallback(), handle_test(), testpanel(), and wx_PANEL_BUTTON_ALL\&.
+.PP
+Referenced by help_menu()\&.
+.PP
+.nf
+                                                                         {
+    void *purl;
+    dtsgui_pane p;
+
+    purl = objchar(url);
+    p = dtsgui_panel(dtsgui, 'Test Panel', 'Test Panel', wx_PANEL_BUTTON_ALL, 1, purl);
+    objunref(purl);
+    testpanel(p);
+
+    dtsgui_setevcallback(p, handle_test, NULL);
+    dtsgui_newmenuitem(menu, dtsgui, '&Test', p);
+}
+.fi
+.SS "void testpanel (\fBdtsgui_pane\fPp)"
+
+.PP
+Configure a panel with test elements\&. \fBParameters:\fP
+.RS 4
+\fIp\fP Panel to configure 
+.RE
+.PP
+
+.PP
+Definition at line 100 of file testing\&.c\&.
+.PP
+References dtsgui_checkbox(), dtsgui_combobox(), dtsgui_listbox(), dtsgui_listbox_add(), dtsgui_textbox(), and dtsgui_textbox_multi()\&.
+.PP
+Referenced by test_menu()\&.
+.PP
+.nf
+                              {
+    struct form_item *l;
+
+    dtsgui_textbox(p, 'TextBox', 'text', 'Text', NULL);
+    dtsgui_textbox_multi(p, 'Multi Line', 'multi', 'L\nL\n', NULL);
+    dtsgui_checkbox(p, 'Checkbox', 'check', '1', '0', 1, NULL);
+
+    l = dtsgui_combobox(p, 'ComboBox', 'combo', NULL);
+    dtsgui_listbox_add(l, 'Test1', NULL);
+    dtsgui_listbox_add(l, 'Test2', NULL);
+    dtsgui_listbox_add(l, 'Test3', NULL);
+    dtsgui_listbox_add(l, 'Alt Test3', NULL);
+    objunref(l);
+
+    l = dtsgui_listbox(p, 'ListBox', 'list', NULL);
+    dtsgui_listbox_add(l, 'Test1', NULL);
+    dtsgui_listbox_add(l, 'Test2', NULL);
+    dtsgui_listbox_add(l, 'Test3', NULL);
+    dtsgui_listbox_add(l, 'Alt Test3', NULL);
+    objunref(l);
+}
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

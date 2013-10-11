@@ -1,0 +1,429 @@
+.TH "Interface configuration tab view" 3 "Fri Oct 11 2013" "Version 0.00" "DTS Application wxWidgets GUI Library" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Interface configuration tab view \- 
+.PP
+Tab view panel allowing configuration and addition of interfaces\&.  
+
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBinterface\&.c\fP"
+.br
+.RI "\fIInterface configuration panel\&. \fP"
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBnew_iface_data\fP"
+.br
+.RI "\fIStructure containing treeview and xmldoc for creating new tab\&. \fP"
+.ti -1c
+.RI "struct \fBiface_cdata\fP"
+.br
+.RI "\fIPretty pointless structure holding interface name\&. \fP"
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfree_iface_cdata\fP (void *data)"
+.br
+.RI "\fIRelase references held by structure before free\&. \fP"
+.ti -1c
+.RI "struct \fBiface_cdata\fP * \fBget_iface_cdata\fP (const char *val)"
+.br
+.RI "\fIAllocate new \fBiface_cdata\fP structure\&. \fP"
+.ti -1c
+.RI "void \fBfree_newiface_data\fP (void *data)"
+.br
+.RI "\fIRelease references held by structure before free\&. \fP"
+.ti -1c
+.RI "struct \fBnew_iface_data\fP * \fBget_newiface_data\fP (\fBdtsgui_tabview\fP tv, struct xml_doc *xmldoc)"
+.br
+.RI "\fIAllocate and return a \fBnew_iface_data\fP structure\&. \fP"
+.ti -1c
+.RI "void \fBhandle_newxmltabpane\fP (struct xml_doc *xmldoc, struct xml_node *xn, void *tdata, void **cdata, int *last)"
+.br
+.RI "\fIConfigure panel configuration data\&. \fP"
+.ti -1c
+.RI "int \fBhandle_updatetabpane\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, \fBdtsgui_pane\fP p, int type, int event, void *data)"
+.br
+.RI "\fIEvent handler callback that will only check the interface name and pass handling to default handler\&. \fP"
+.ti -1c
+.RI "void \fBnetwork_iface_pane_cb\fP (\fBdtsgui_pane\fP p, void *data)"
+.br
+.RI "\fICallback called to configure a interface pane\&. \fP"
+.ti -1c
+.RI "void \fBnetwork_iface_new_pane_cb\fP (\fBdtsgui_pane\fP p, void *data)"
+.br
+.RI "\fICallback called for the 'New' interface pane\&. \fP"
+.ti -1c
+.RI "\fBdtsgui_pane\fP \fBiface_config\fP (struct \fBdtsgui\fP *\fBdtsgui\fP, const char *title, void *data)"
+.br
+.RI "\fICallback called when the interface configuration link is selected\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Tab view panel allowing configuration and addition of interfaces\&. 
+
+
+.SH "Function Documentation"
+.PP 
+.SS "void free_iface_cdata (void *data)"
+
+.PP
+Relase references held by structure before free\&. \fBParameters:\fP
+.RS 4
+\fIdata\fP Reference to \fBiface_cdata\fP that is about to be freed 
+.RE
+.PP
+
+.PP
+Definition at line 52 of file interface\&.c\&.
+.PP
+References iface_cdata::name\&.
+.PP
+Referenced by get_iface_cdata()\&.
+.PP
+.nf
+                                  {
+    struct iface_cdata *cdata = data;
+
+    if (cdata->name) {
+        free((void*)cdata->name);
+    }
+}
+.fi
+.SS "void free_newiface_data (void *data)"
+
+.PP
+Release references held by structure before free\&. \fBParameters:\fP
+.RS 4
+\fIdata\fP Reference to \fBnew_iface_data\fP that is about to be freed 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file interface\&.c\&.
+.PP
+References new_iface_data::xmldoc\&.
+.PP
+Referenced by get_newiface_data()\&.
+.PP
+.nf
+                                    {
+    struct new_iface_data *nd = data;
+
+    if (nd->xmldoc) {
+        objunref(nd->xmldoc);
+    }
+
+}
+.fi
+.SS "struct \fBiface_cdata\fP* get_iface_cdata (const char *val)\fC [read]\fP"
+
+.PP
+Allocate new \fBiface_cdata\fP structure\&. \fBParameters:\fP
+.RS 4
+\fIval\fP Name of interface\&. 
+.RE
+.PP
+
+.PP
+Definition at line 62 of file interface\&.c\&.
+.PP
+References free_iface_cdata(), and iface_cdata::name\&.
+.PP
+Referenced by handle_newxmltabpane(), and iface_config()\&.
+.PP
+.nf
+                                                     {
+    struct iface_cdata *cd;
+
+    if (!(cd = objalloc(sizeof(*cd), free_iface_cdata))) {
+        return NULL;
+    }
+
+    ALLOC_CONST(cd->name, val);
+    return cd;
+}
+.fi
+.SS "struct \fBnew_iface_data\fP* get_newiface_data (\fBdtsgui_tabview\fPtv, struct xml_doc *xmldoc)\fC [read]\fP"
+
+.PP
+Allocate and return a \fBnew_iface_data\fP structure\&. This structure is used to create and insert a new tab in the treeview\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItv\fP Tabview to allocate new tab too\&. 
+.br
+\fIxmldoc\fP XML Document to create new node in\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Reference to new \fBnew_iface_data\fP structure 
+.RE
+.PP
+
+.PP
+Definition at line 90 of file interface\&.c\&.
+.PP
+References free_newiface_data(), new_iface_data::tv, and new_iface_data::xmldoc\&.
+.PP
+Referenced by iface_config()\&.
+.PP
+.nf
+                                                                                    {
+    struct new_iface_data *nd;
+
+    if (!(nd = objalloc(sizeof(*nd), free_newiface_data))) {
+        return NULL;
+    }
+
+    if (xmldoc && objref(xmldoc)) {
+        nd->xmldoc = xmldoc;
+    }
+    nd->tv = tv;
+    return nd;
+}
+.fi
+.SS "void handle_newxmltabpane (struct xml_doc *xmldoc, struct xml_node *xn, void *tdata, void **cdata, int *last)"
+
+.PP
+Configure panel configuration data\&. As the new interface name is not known till creation time the configuration data needs to be configured\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBdtsgui_tabpane_newdata_cb\fP 
+.RE
+.PP
+
+.PP
+Definition at line 109 of file interface\&.c\&.
+.PP
+References get_iface_cdata()\&.
+.PP
+Referenced by network_iface_new_pane_cb()\&.
+.PP
+.nf
+                                                                                                                    {
+    struct iface_cdata *ndat = NULL;
+
+    if (xn->value && (ndat = get_iface_cdata(xn->value))) {
+        cdata[0] = ndat;
+    }
+}
+.fi
+.SS "int handle_updatetabpane (struct \fBdtsgui\fP *dtsgui, \fBdtsgui_pane\fPp, inttype, intevent, void *data)"
+
+.PP
+Event handler callback that will only check the interface name and pass handling to default handler\&. \fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fIp\fP Panel generating the event\&. 
+.br
+\fItype\fP Event type\&. 
+.br
+\fIevent\fP Event id\&. 
+.br
+\fIdata\fP Reference to data passed to event handler\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 on error 1 will allow the event to be handled by default handler\&. 
+.RE
+.PP
+
+.PP
+Definition at line 124 of file interface\&.c\&.
+.PP
+References dtsgui_findvalue(), dtsgui_setstatus(), iface_cdata::name, wx_PANEL_EVENT_BUTTON, wx_PANEL_EVENT_BUTTON_NO, and wx_PANEL_EVENT_BUTTON_YES\&.
+.PP
+Referenced by network_iface_pane_cb()\&.
+.PP
+.nf
+                                                                                                       {
+    struct iface_cdata *cdata = data;
+    const char *name;
+
+    if (type != wx_PANEL_EVENT_BUTTON) {
+        return 1;
+    }
+
+    switch(event) {
+        case wx_PANEL_EVENT_BUTTON_YES:
+            break;
+        case wx_PANEL_EVENT_BUTTON_NO:
+            return 1;
+        default:
+            return 1;
+    }
+
+    if (!cdata || !(name = dtsgui_findvalue(p, 'iface'))) {
+        return 0;
+    }
+
+    objlock(cdata);
+    if (cdata->name) {
+        free((void*)cdata->name);
+        cdata->name = NULL;
+    }
+    ALLOC_CONST(cdata->name, name);
+    objunlock(cdata);
+
+    if ((name = dtsgui_findvalue(p, 'name'))) {
+        dtsgui_setstatus(p, name);
+        free((void*)name);
+    }
+
+    return 1;
+}
+.fi
+.SS "\fBdtsgui_pane\fP iface_config (struct \fBdtsgui\fP *dtsgui, const char *title, void *data)"
+
+.PP
+Callback called when the interface configuration link is selected\&. \fBParameters:\fP
+.RS 4
+\fIdtsgui\fP Application data ptr\&. 
+.br
+\fItitle\fP Name assigned to the menu item (not name in menubar)\&. 
+.br
+\fIdata\fP Userdata referenced in menuitem\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Tabview panel to display to configure interface cards\&. 
+.RE
+.PP
+
+.PP
+Definition at line 197 of file interface\&.c\&.
+.PP
+References app_getxmldoc(), dtsgui_newtabpage(), dtsgui_tabwindow(), get_iface_cdata(), get_newiface_data(), network_iface_new_pane_cb(), network_iface_pane_cb(), and wx_PANEL_BUTTON_ACTION\&.
+.PP
+Referenced by config_menu()\&.
+.PP
+.nf
+                                                                               {
+    dtsgui_tabview tabv;
+    struct new_iface_data *nd;
+    struct xml_doc *xmldoc;
+    struct xml_search *xp;
+    struct xml_node *xn;
+    const char *name;
+    struct iface_cdata *cdata;
+    void *iter = NULL;
+
+    if (!(xmldoc = app_getxmldoc(dtsgui))) {
+        return NULL;
+    }
+
+    if (!(xp = xml_xpath(xmldoc, '/config/IP/Interfaces/Interface', 'name'))) {
+        objunref(xmldoc);
+        return NULL;
+    }
+
+    tabv = dtsgui_tabwindow(dtsgui, title, NULL);
+
+    for(xn = xml_getfirstnode(xp, &iter); xn; xn = xml_getnextnode(iter)) {
+        name = xml_getattr(xn, 'name');
+        cdata = get_iface_cdata(xn->value);
+        dtsgui_newtabpage(tabv, name, wx_PANEL_BUTTON_ACTION, NULL, xmldoc, network_iface_pane_cb, cdata);
+        objunref(cdata);
+        objunref(xn);
+    }
+
+    nd = get_newiface_data(tabv, xmldoc);
+    dtsgui_newtabpage(tabv, 'Add', wx_PANEL_BUTTON_ACTION, NULL, xmldoc, network_iface_new_pane_cb, nd);
+    objunref(nd);
+
+    if (iter) {
+        objunref(iter);
+    }
+    objunref(xp);
+    objunref(xmldoc);
+    return tabv;
+}
+.fi
+.SS "void network_iface_new_pane_cb (\fBdtsgui_pane\fPp, void *data)"
+
+.PP
+Callback called for the 'New' interface pane\&. \fBParameters:\fP
+.RS 4
+\fIp\fP Panel to configure\&. 
+.br
+\fIdata\fP Reference to configuration data \fBnew_iface_data\fP\&. 
+.RE
+.PP
+\fBRemarks:\fP
+.RS 4
+use \fBdtsgui_newxmltabpane()\fP helper to atach a callback that will create a new panel 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBhandle_newxmltabpane()\fP 
+.PP
+\fBnetwork_iface_pane_cb()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 181 of file interface\&.c\&.
+.PP
+References dtsgui_newxmltabpane(), handle_newxmltabpane(), network_iface_new_pane(), network_iface_pane_cb(), new_iface_data::tv, and new_iface_data::xmldoc\&.
+.PP
+Referenced by iface_config()\&.
+.PP
+.nf
+                                                          {
+    struct new_iface_data *nd = data;
+
+    network_iface_new_pane(p);
+    dtsgui_newxmltabpane(nd->tv, p, '/config/IP/Interfaces', 'Interface', 'iface', 'name', handle_newxmltabpane, network_iface_pane_cb, NULL, nd->xmldoc, nd);
+}
+.fi
+.SS "void network_iface_pane_cb (\fBdtsgui_pane\fPp, void *data)"
+
+.PP
+Callback called to configure a interface pane\&. \fBParameters:\fP
+.RS 4
+\fIp\fP Panel to configure\&. 
+.br
+\fIdata\fP Reference to configuration data \fBiface_cdata\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 164 of file interface\&.c\&.
+.PP
+References dtsgui_setevcallback(), dtsgui_xmltextbox(), handle_updatetabpane(), iface_cdata::name, and network_iface_pane()\&.
+.PP
+Referenced by iface_config(), and network_iface_new_pane_cb()\&.
+.PP
+.nf
+                                                      {
+    struct iface_cdata *cdata = data;
+    const char *iface;
+    const char *xpre = '/config/IP/Interfaces';
+
+    objlock(cdata);
+    iface = cdata->name;
+    objunlock(cdata);
+
+    dtsgui_xmltextbox(p, 'Name', 'name', xpre, 'Interface', NULL, iface, 'name');
+    network_iface_pane(p, xpre, iface);
+    dtsgui_setevcallback(p, handle_updatetabpane, cdata);
+}
+.fi
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

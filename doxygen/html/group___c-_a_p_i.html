@@ -311,8 +311,11 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00207">207</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="wxforms_8c_source.html#l00137">main()</a>.</p>
-
+<p>Referenced by <a class="el" href="wxforms_8c_source.html#l00167">main()</a>.</p>
+<div class="fragment"><div class="line">                                                                                                                                                  {</div>
+<div class="line">    <span class="keyword">new</span> <a class="code" href="class_d_t_s_app.html">DTSApp</a>(confcallback_cb, userdata, wsize, wpos, title, status);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga3ac9d5ef153d17266a704a373d591962"></a>
@@ -355,8 +358,11 @@ Variables</h2></td></tr>
 
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00222">222</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
-<p>Referenced by <a class="el" href="wxforms_8c_source.html#l00137">main()</a>.</p>
-
+<p>Referenced by <a class="el" href="wxforms_8c_source.html#l00167">main()</a>.</p>
+<div class="fragment"><div class="line">                                      {</div>
+<div class="line">    <span class="keywordflow">return</span> wxEntry(argc, argv);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga4e766a49c1e9eba3f2c2fda47b8166aa"></a>
@@ -398,8 +404,12 @@ Variables</h2></td></tr>
 
 <p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00300">DTSFrame::SendDTSEvent()</a>.</p>
 
-<p>Referenced by <a class="el" href="config_8c_source.html#l00027">open_config()</a>.</p>
-
+<p>Referenced by <a class="el" href="config_8c_source.html#l00044">open_config()</a>.</p>
+<div class="fragment"><div class="line">                                                      {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f =  dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line">    f-&gt;<a class="code" href="class_d_t_s_frame.html#a63488ecbdbe2770ea7d12ce2b06f1b72">SendDTSEvent</a>(eid, NULL);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga164aa159bc57a744f012b49268796bbe"></a>
@@ -440,8 +450,11 @@ Variables</h2></td></tr>
 
 <p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00129">dtsgui::ShowToolbar()</a>.</p>
 
-<p>Referenced by <a class="el" href="config_8c_source.html#l00027">open_config()</a>, and <a class="el" href="config_8c_source.html#l00069">save_config()</a>.</p>
-
+<p>Referenced by <a class="el" href="config_8c_source.html#l00044">open_config()</a>, and <a class="el" href="config_8c_source.html#l00095">save_config()</a>.</p>
+<div class="fragment"><div class="line">                                                         {</div>
+<div class="line">    dtsgui-&gt;<a class="code" href="classdtsgui.html#adbf932006dfc6df2266b5fbf34af67ac">ShowToolbar</a>(show);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga1734b840fc0696b13d5b616df0ec3bbb"></a>
@@ -491,8 +504,12 @@ Variables</h2></td></tr>
 
 <p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00328">DTSFrame::SetupToolbar()</a>.</p>
 
-<p>Referenced by <a class="el" href="wxforms_8c_source.html#l00110">guiconfig_cb()</a>.</p>
-
+<p>Referenced by <a class="el" href="wxforms_8c_source.html#l00130">guiconfig_cb()</a>.</p>
+<div class="fragment"><div class="line">                                                                                      {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f = dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line">    f-&gt;<a class="code" href="class_d_t_s_frame.html#a1fe29f6d56f11d1702a372416a659e3e">SetupToolbar</a>(cb, data);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="ga529d973a998e39dba025dfcd96a9a706"></a>
@@ -533,7 +550,11 @@ Variables</h2></td></tr>
 <p>Definition at line <a class="el" href="wrapper_8cpp_source.html#l00249">249</a> of file <a class="el" href="wrapper_8cpp_source.html">wrapper.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00137">dtsgui::GetFrame()</a>, and <a class="el" href="_d_t_s_frame_8cpp_source.html#l00235">DTSFrame::SetWindow()</a>.</p>
-
+<div class="fragment"><div class="line">                                                            {</div>
+<div class="line">    <a class="code" href="class_d_t_s_frame.html">DTSFrame</a> *f = dtsgui-&gt;<a class="code" href="classdtsgui.html#a533a6afc9b54ac5055ab1fdbd679188a">GetFrame</a>();</div>
+<div class="line">    f-&gt;<a class="code" href="class_d_t_s_frame.html#a7e9f18961fb55d1b9be667b81681803c">SetWindow</a>((<a class="code" href="class_d_t_s_panel.html">DTSPanel</a>*)p);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gafc00c020f324c119956fcc38e7fd55db"></a>
@@ -575,8 +596,11 @@ Variables</h2></td></tr>
 
 <p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00105">dtsgui::AppendTitle()</a>.</p>
 
-<p>Referenced by <a class="el" href="config_8c_source.html#l00027">open_config()</a>, and <a class="el" href="config_8c_source.html#l00069">save_config()</a>.</p>
-
+<p>Referenced by <a class="el" href="config_8c_source.html#l00044">open_config()</a>, and <a class="el" href="config_8c_source.html#l00095">save_config()</a>.</p>
+<div class="fragment"><div class="line">                                                                 {</div>
+<div class="line">    dtsgui-&gt;<a class="code" href="classdtsgui.html#a9d7432eacf96358d22797b37ee73caed">AppendTitle</a>(text);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="gaa224c0a868745526e6ac3c05970471c5"></a>
@@ -608,8 +632,11 @@ Variables</h2></td></tr>
 
 <p>References <a class="el" href="_d_t_s_app_8cpp_source.html#l00085">dtsgui::GetUserData()</a>.</p>
 
-<p>Referenced by <a class="el" href="netconfig_8c_source.html#l00740">advanced_config()</a>, <a class="el" href="wxforms_8c_source.html#l00048">app_getxmldoc()</a>, <a class="el" href="config_8c_source.html#l00189">config_menu()</a>, <a class="el" href="config_8c_source.html#l00150">export_config()</a>, <a class="el" href="wxforms_8c_source.html#l00069">file_menu()</a>, <a class="el" href="wizard_8c_source.html#l00436">newsys_wizard()</a>, <a class="el" href="config_8c_source.html#l00027">open_config()</a>, <a class="el" href="config_8c_source.html#l00069">save_config()</a>, and <a class="el" href="config_8c_source.html#l00112">view_config_conf()</a>.</p>
-
+<p>Referenced by <a class="el" href="wxforms_8c_source.html#l00056">app_getxmldoc()</a>, <a class="el" href="config_8c_source.html#l00240">config_menu()</a>, <a class="el" href="config_8c_source.html#l00198">export_config()</a>, <a class="el" href="wxforms_8c_source.html#l00079">file_menu()</a>, <a class="el" href="wizard_8c_source.html#l00491">newsys_wizard()</a>, <a class="el" href="config_8c_source.html#l00044">open_config()</a>, <a class="el" href="config_8c_source.html#l00095">save_config()</a>, and <a class="el" href="config_8c_source.html#l00152">view_config_conf()</a>.</p>
+<div class="fragment"><div class="line">                                             {</div>
+<div class="line">    <span class="keywordflow">return</span> dtsgui-&gt;<a class="code" href="classdtsgui.html#a4d5bf22a505defc4ab13178ff95f2b32">GetUserData</a>();</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -644,7 +671,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

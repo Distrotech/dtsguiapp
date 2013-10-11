@@ -177,7 +177,15 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00825">825</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00145">data</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00146">tw</a>.</p>
-
+<div class="fragment"><div class="line">                                                                      {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classdtsgui.html#a9c7541fac0311f9b2ffcb5c2699719ca">userdata</a> &amp;&amp; objref(<a class="code" href="classdtsgui.html#a9c7541fac0311f9b2ffcb5c2699719ca">userdata</a>)) {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tab_window_event.html#a4d7e06b09353386e0c891fb2f5c82b55">data</a> = <a class="code" href="classdtsgui.html#a9c7541fac0311f9b2ffcb5c2699719ca">userdata</a>;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        <a class="code" href="class_d_t_s_tab_window_event.html#a4d7e06b09353386e0c891fb2f5c82b55">data</a> = NULL;</div>
+<div class="line">    }</div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_window_event.html#a7e79f616df8c47b3ce95535b0d13fd76">tw</a> = win;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0df6bfbb94e538ba1ab10aea9915aa4c"></a>
@@ -196,7 +204,12 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00834">834</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
 
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00145">data</a>.</p>
-
+<div class="fragment"><div class="line">                                      {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="class_d_t_s_tab_window_event.html#a4d7e06b09353386e0c891fb2f5c82b55">data</a>) {</div>
+<div class="line">        objunref(<a class="code" href="class_d_t_s_tab_window_event.html#a4d7e06b09353386e0c891fb2f5c82b55">data</a>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -219,7 +232,25 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00146">tw</a>, <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00919">DTSTabWindow::Undo()</a>, <a class="el" href="_d_t_s_panel_8cpp_source.html#l00746">DTSPanel::Update_XML()</a>, <a class="el" href="dtsgui_8h_source.html#l00210">wx_PANEL_EVENT_BUTTON_NO</a>, and <a class="el" href="dtsgui_8h_source.html#l00208">wx_PANEL_EVENT_BUTTON_YES</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00941">DTSTabWindow::Show()</a>.</p>
-
+<div class="fragment"><div class="line">                                                      {</div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_page.html">DTSTabPage</a> *pane = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_d_t_s_tab_page.html">DTSTabPage</a>*<span class="keyword">&gt;</span>(<a class="code" href="class_d_t_s_tab_window_event.html#a7e79f616df8c47b3ce95535b0d13fd76">tw</a>-&gt;GetCurrentPage());</div>
+<div class="line">    <span class="keywordtype">int</span> eid = <span class="keyword">event</span>.GetId();</div>
+<div class="line">    <span class="keywordtype">int</span> pg = <a class="code" href="class_d_t_s_tab_window_event.html#a7e79f616df8c47b3ce95535b0d13fd76">tw</a>-&gt;GetSelection();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">switch</span>(eid) {</div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#gga5082bae7f0b5d2b7d715e40450f302eca6ce91176e6c929e87d7acbd000d07f79" title="A Affirmative button.">wx_PANEL_EVENT_BUTTON_YES</a>:</div>
+<div class="line">            pane-&gt;<a class="code" href="class_d_t_s_panel.html#adc5131960a24dfa65adba935a1be0f79">Update_XML</a>();</div>
+<div class="line">        <span class="comment">/*no break here will reload tab*/</span></div>
+<div class="line">        <span class="keywordflow">case</span> <a class="code" href="group___c_o_r_e.html#gga5082bae7f0b5d2b7d715e40450f302ecadb8742f8472eb90558cfbf8e3914553b" title="A Cancel/No/Undo button.">wx_PANEL_EVENT_BUTTON_NO</a>:</div>
+<div class="line">            pg++;</div>
+<div class="line">            <a class="code" href="class_d_t_s_tab_window_event.html#a7e79f616df8c47b3ce95535b0d13fd76">tw</a>-&gt;<a class="code" href="class_d_t_s_tab_window.html#aa52e98a59b0ad81e28f5463be5e85051">Undo</a>(pg);</div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line">        <span class="keywordflow">default</span>:</div>
+<div class="line">            <span class="keywordflow">break</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keyword">event</span>.Skip(<span class="keyword">true</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a0ef3c51fe26036ac2cb0353940307eb6"></a>
@@ -241,7 +272,18 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_panel_8cpp_source.html#l00945">DTSTabPage::ConfigPane()</a>, and <a class="el" href="_d_t_s_tree_window_8h_source.html#l00146">tw</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00941">DTSTabWindow::Show()</a>.</p>
-
+<div class="fragment"><div class="line">                                                         {</div>
+<div class="line">    <a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *w;</div>
+<div class="line">    <a class="code" href="class_d_t_s_tab_page.html">DTSTabPage</a> *tp;</div>
+<div class="line">    <span class="keywordtype">int</span> p = <span class="keyword">event</span>.GetSelection();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (p != wxNOT_FOUND) {</div>
+<div class="line">        w = <a class="code" href="class_d_t_s_tab_window_event.html#a7e79f616df8c47b3ce95535b0d13fd76">tw</a>-&gt;GetPage(p);</div>
+<div class="line">        tp = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_d_t_s_tab_page.html">DTSTabPage</a>*<span class="keyword">&gt;</span>(w);</div>
+<div class="line">        tp-&gt;<a class="code" href="class_d_t_s_tab_page.html#a433bdbb8af0ded1fb884b45c5d9259a9">ConfigPane</a>();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a373ea755544153574d3d93018ebc2f9c"></a>
@@ -263,7 +305,18 @@ Private Attributes</h2></td></tr>
 <p>References <a class="el" href="_d_t_s_tree_window_8h_source.html#l00146">tw</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00941">DTSTabWindow::Show()</a>.</p>
-
+<div class="fragment"><div class="line">                                                          {</div>
+<div class="line">    <a class="code" href="evdata_8h.html#a1105ebf7ed384267b36c9594fb95e3f4">wxWindow</a> *w;</div>
+<div class="line">    <span class="keywordtype">int</span> p = <span class="keyword">event</span>.GetSelection();</div>
+<div class="line"></div>
+<div class="line">    <span class="keywordflow">if</span> (p != wxNOT_FOUND) {</div>
+<div class="line">        w = <a class="code" href="class_d_t_s_tab_window_event.html#a7e79f616df8c47b3ce95535b0d13fd76">tw</a>-&gt;GetPage(p);</div>
+<div class="line">        w-&gt;FitInside();</div>
+<div class="line">        w-&gt;Layout();</div>
+<div class="line">        w-&gt;Refresh();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="af41c21b5d534856a22eb64ccf1281807"></a>
@@ -283,7 +336,10 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00860">860</a> of file <a class="el" href="_d_t_s_tree_window_8cpp_source.html">DTSTreeWindow.cpp</a>.</p>
 
 <p>Referenced by <a class="el" href="_d_t_s_tree_window_8cpp_source.html#l00888">DTSTabWindow::DTSTabWindow()</a>.</p>
-
+<div class="fragment"><div class="line">                                                       {</div>
+<div class="line">    printf(<span class="stringliteral">&quot;MENU\n&quot;</span>);</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -345,7 +401,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_d_t_s_tab_window_event.html">DTSTabWindowEvent</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:36 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

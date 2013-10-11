@@ -16,6 +16,18 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @defgroup DTS-APP-Toolbar Application toolbar
+  * @ingroup DTS-APP
+  * @brief Toolbar with protocol and URL box the URL box.
+  *
+  * The URL box users @ref DTSXMLComboBox and is populated from a URL that returns
+  * XML.
+  * @addtogroup DTS-APP-Toolbar
+  * @{
+  * @file
+  * @brief Application toolbar.*/
+
+/** @brief Allow access to the C API from C++*/
 #define __DTS_C_API
 
 #include <wx/toolbar.h>
@@ -27,19 +39,61 @@
 #include "private.h"
 #include "DTSXMLComboBox.h"
 
+/** @brief Application toolbar class.
+  *
+  * Derived from wxToolbar.*/
 class DTSAPPToolBar: public wxToolBar {
 	public:
+		/** @brief Application toolbar.
+		  * @param dtsgui Application data ptr.
+		  * @param parent Parent window.
+		  * @param style Toolbar Style.
+		  * @param id Toolbar ID.
+		  * @param name Toolbar name.
+		  * @param data Hold reference to this user data.*/
 		DTSAPPToolBar(struct dtsgui *dtsgui, wxWindow *parent, long style, wxWindowID id, wxString name, void *data);
+		/** @brief Release references held.*/
 		~DTSAPPToolBar();
+		/** @brief Callback from @ref DTSXMLComboBox.
+		  * @param val Value used to create a curl_post structure.
+		  * @return curl_post structure to send in XML request.*/
 		static struct curl_post *GetPostInfo(const wxString& val);
 	private:
-		int itemid;
+		/** @brief Toolbar event handler callback.
+		  * @param event Event emited by the toolbar.*/
 		void HandleEvent(wxCommandEvent &event);
+		/** @brief Item id incremented for each item added to toolbar.*/
+		int itemid;
+		/** @brief URL Combo box that will populate list based on XML.
+		  *
+		  * The XML is returned from a HTTP post using the contents of the comobo box as
+		  * search key.*/
 		DTSXMLComboBox *server;
+		/** @brief Protocol listbox*/
 		wxComboBox *proto;
+		/** @brief Reference to application data ptr.*/
 		struct dtsgui *dtsgui;
 };
 
+/** @brief Callback called when the toolbar is to be created.
+  * @see dtsgui_toolbar_create
+  * @see DTSFrame::SetupToolbar()
+  * @param dtsgui Application data ptr.
+  * @param pw Parent window (The application frame)
+  * @param style Style required by application.
+  * @param id Window id to be used.
+  * @param name Name to be used.
+  * @param data Userdata reference supplied when configuring callback.
+  * @return wxToolbar.*/
+void *app_toolbar(struct dtsgui *dtsgui, void *pw, long style, int id, const char *name, void *data) {
+	DTSAPPToolBar *tb;
+
+	tb = new DTSAPPToolBar(dtsgui, (wxWindow*)pw, style, id, name, data);
+
+	return tb;
+}
+
+/**@}*/
 
 DTSAPPToolBar::DTSAPPToolBar(struct dtsgui *dtsgui, wxWindow *parent, long style, wxWindowID id, wxString name, void *data) {
 	int servid;
@@ -106,12 +160,4 @@ void DTSAPPToolBar::HandleEvent(wxCommandEvent& event) {
 	} else if ((etype == wxEVT_COMBOBOX_DROPDOWN) && !server->HasXMLList()) {
 		DTS_C_API::dtsgui_alert(dtsgui, "Please enter 3 or more characters to search !");
 	}
-}
-
-void *app_toolbar(struct dtsgui *dtsgui, void *pw, long style, int id, const char *name, void *data) {
-	DTSAPPToolBar *tb;
-
-	tb = new DTSAPPToolBar(dtsgui, (wxWindow*)pw, style, id, name, data);
-
-	return tb;
 }

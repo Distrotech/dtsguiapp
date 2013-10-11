@@ -173,7 +173,15 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="evdata_8cpp_source.html#l00085">85</a> of file <a class="el" href="evdata_8cpp_source.html">evdata.cpp</a>.</p>
 
 <p>References <a class="el" href="evdata_8h_source.html#l00044">data</a>, and <a class="el" href="evdata_8h_source.html#l00046">unref</a>.</p>
-
+<div class="fragment"><div class="line">                                       {</div>
+<div class="line">    <span class="keywordflow">if</span> (userdata &amp;&amp; uref) {</div>
+<div class="line">        this-&gt;<a class="code" href="classevdata.html#ab8569cae7cd7a33fde4e51872ef29090">data</a> = (objref(userdata)) ? userdata : NULL;</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">        this-&gt;<a class="code" href="classevdata.html#ab8569cae7cd7a33fde4e51872ef29090">data</a> = userdata;</div>
+<div class="line">    }</div>
+<div class="line">    this-&gt;<a class="code" href="classevdata.html#a5ccf23487f6c2b58bedf37bf6da3adf5">unref</a> = uref;</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a class="anchor" id="a2d73a5260935f0e089c1f660c950786d"></a>
@@ -192,7 +200,12 @@ Private Attributes</h2></td></tr>
 <p>Definition at line <a class="el" href="evdata_8cpp_source.html#l00094">94</a> of file <a class="el" href="evdata_8cpp_source.html">evdata.cpp</a>.</p>
 
 <p>References <a class="el" href="evdata_8h_source.html#l00044">data</a>, and <a class="el" href="evdata_8h_source.html#l00046">unref</a>.</p>
-
+<div class="fragment"><div class="line">                {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code" href="classevdata.html#a5ccf23487f6c2b58bedf37bf6da3adf5">unref</a> &amp;&amp; <a class="code" href="classevdata.html#ab8569cae7cd7a33fde4e51872ef29090">data</a>) {</div>
+<div class="line">        objunref(<a class="code" href="classevdata.html#ab8569cae7cd7a33fde4e51872ef29090">data</a>);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -246,7 +259,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classevdata.html">evdata</a></li>
-    <li class="footer">Generated on Fri Oct 11 2013 14:34:16 for DTS Application wxWidgets GUI Library by
+    <li class="footer">Generated on Fri Oct 11 2013 20:56:37 for DTS Application wxWidgets GUI Library by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

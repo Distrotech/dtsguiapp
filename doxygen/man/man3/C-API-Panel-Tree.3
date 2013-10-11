@@ -127,6 +127,13 @@ Definition at line 762 of file wrapper\&.cpp\&.
 References tree_newnode::handle_newtreenode_cb(), and tree_newnode::tree_newnode()\&.
 .PP
 Referenced by network_adsl_link_new(), network_adsl_user_new(), network_config_dns_domain_new(), network_config_dns_domain_server_new(), network_config_dns_host_new(), network_newiface(), network_newroute(), network_newwan(), network_newwifi(), and network_tos_new()\&.
+.PP
+.nf
+                                                                                                                         {
+    class tree_newnode *nn = new tree_newnode(tree, tn, xpath, node, vitem, tattr, nid, flags, node_cb, data, p_cb);
+    static_cast<DTSPanel*>(p)->SetEventCallback(&tree_newnode::handle_newtreenode_cb, nn, true);
+}
+.fi
 .SS "void DTS_C_API::dtsgui_nodesetxml (\fBdtsgui_treeview\fPtree, \fBdtsgui_treenode\fPnode, const char *newname)"
 
 .PP
@@ -151,6 +158,13 @@ Update the XML Node or title attribute with a new name\&. This helper function w
 Definition at line 825 of file wrapper\&.cpp\&.
 .PP
 References DTSTreeWindow::UpdateNodeXML()\&.
+.PP
+.nf
+                                                                                        {
+    DTSTreeWindow *tw = (DTSTreeWindow*)tree;
+    tw->UpdateNodeXML(wxDataViewItem(node), newname);
+}
+.fi
 .SS "\fBdtsgui_treenode\fP DTS_C_API::dtsgui_treecont (\fBdtsgui_treeview\fPtree, \fBdtsgui_treenode\fPnode, const char *title, intcan_edit, intcan_sort, intcan_del, intnodeid, \fBdtsgui_treeviewpanel_cb\fPp_cb, void *data)"
 
 .PP
@@ -196,6 +210,13 @@ Definition at line 708 of file wrapper\&.cpp\&.
 References DTSDVMCtrl::AppendContainer(), and DTSTreeWindow::GetTreeCtrl()\&.
 .PP
 Referenced by network_config_dns_domain_node(), and network_tree_setup()\&.
+.PP
+.nf
+                                                                      {
+    DTSTreeWindow *tw = (DTSTreeWindow*)tree;
+    return tw->GetTreeCtrl()->AppendContainer(wxDataViewItem(node), title, can_edit, can_sort, can_del, nodeid, p_cb, data)\&.GetID();
+}
+.fi
 .SS "\fBdtsgui_treenode\fP DTS_C_API::dtsgui_treeitem (\fBdtsgui_treeview\fPtree, \fBdtsgui_treenode\fPnode, const char *title, intcan_edit, intcan_sort, intcan_del, intnodeid, \fBdtsgui_treeviewpanel_cb\fPp_cb, void *data)"
 
 .PP
@@ -236,6 +257,13 @@ Definition at line 732 of file wrapper\&.cpp\&.
 References DTSDVMCtrl::AppendItem(), and DTSTreeWindow::GetTreeCtrl()\&.
 .PP
 Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                          {
+    DTSTreeWindow *tw = (DTSTreeWindow*)tree;
+    return tw->GetTreeCtrl()->AppendItem(wxDataViewItem(node), title, can_edit, can_sort, can_del, nodeid, p_cb, data)\&.GetID();
+}
+.fi
 .SS "void* DTS_C_API::dtsgui_treenodegetdata (\fBdtsgui_treenode\fPtn)"
 
 .PP
@@ -266,6 +294,13 @@ Definition at line 836 of file wrapper\&.cpp\&.
 References DTSDVMListStore::GetUserData()\&.
 .PP
 Referenced by network_config_dns_domain_server()\&.
+.PP
+.nf
+                                                 {
+    DTSDVMListStore *ls = (DTSDVMListStore*)tn;
+    return ls->GetUserData();
+}
+.fi
 .SS "struct xml_node* DTS_C_API::dtsgui_treenodegetxml (\fBdtsgui_treenode\fPtn, char **buf)\fC [read]\fP"
 
 .PP
@@ -295,6 +330,13 @@ Definition at line 810 of file wrapper\&.cpp\&.
 References DTSDVMListStore::GetXMLData()\&.
 .PP
 Referenced by network_adsl_link(), network_adsl_user(), network_config_dns_domain(), network_config_dns_domain_server(), network_config_dns_host(), network_iface(), network_route(), network_tos(), network_wan(), and network_wifi()\&.
+.PP
+.nf
+                                                                       {
+    DTSDVMListStore *ls = (DTSDVMListStore*)tn;
+    return ls->GetXMLData(buf);
+}
+.fi
 .SS "int DTS_C_API::dtsgui_treenodeid (\fBdtsgui_treenode\fPtn)"
 
 .PP
@@ -318,6 +360,13 @@ the user defined tree node ID
 Definition at line 775 of file wrapper\&.cpp\&.
 .PP
 References DTSDVMListStore::GetNodeID()\&.
+.PP
+.nf
+                                          {
+    DTSDVMListStore *ls = (DTSDVMListStore*)tn;
+    return ls->GetNodeID();
+}
+.fi
 .SS "const char* DTS_C_API::dtsgui_treenodeparent (\fBdtsgui_treenode\fPtn)"
 
 .PP
@@ -343,6 +392,13 @@ Definition at line 785 of file wrapper\&.cpp\&.
 References DTSDVMListStore::GetParentTitle()\&.
 .PP
 Referenced by network_config_dns_domain_server_new()\&.
+.PP
+.nf
+                                                      {
+    DTSDVMListStore *entry = (DTSDVMListStore*)tn;
+    return strdup(entry->GetParentTitle()\&.ToUTF8());
+}
+.fi
 .SS "void DTS_C_API::dtsgui_treenodesetxml (\fBdtsgui_treenode\fPtn, struct xml_node *xn, const char *tattr)"
 
 .PP
@@ -367,6 +423,13 @@ Definition at line 796 of file wrapper\&.cpp\&.
 References DTSDVMListStore::SetXMLData()\&.
 .PP
 Referenced by network_tree_setup()\&.
+.PP
+.nf
+                                                                                      {
+    DTSDVMListStore *ls = (DTSDVMListStore*)tn;
+    return ls->SetXMLData(xn, tattr);
+}
+.fi
 .SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_treepane (\fBdtsgui_treeview\fPtv, const char *name, intbutmask, void *userdata, struct xml_doc *xmldoc)"
 
 .PP
@@ -407,6 +470,13 @@ New Tree Pane\&.
 Definition at line 665 of file wrapper\&.cpp\&.
 .PP
 References DTSTreeWindow::CreatePane()\&.
+.PP
+.nf
+                                                                                                                              {
+    DTSTreeWindow *tw = (DTSTreeWindow*)tv;
+    return tw->CreatePane(name, butmask, userdata, xmldoc);
+}
+.fi
 .SS "\fBdtsgui_pane\fP DTS_C_API::dtsgui_treepane_default (\fBdtsgui_treeview\fPtv, \fBdtsgui_treenode\fPnode)"
 
 .PP
@@ -439,6 +509,13 @@ New Tree Pane\&.
 Definition at line 683 of file wrapper\&.cpp\&.
 .PP
 References DTSTreeWindow::CreatePane()\&.
+.PP
+.nf
+                                                                              {
+    DTSTreeWindow *tw = (DTSTreeWindow*)tv;
+    return tw->CreatePane(wxDataViewItem(node));
+}
+.fi
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for DTS Application wxWidgets GUI Library from the source code\&.

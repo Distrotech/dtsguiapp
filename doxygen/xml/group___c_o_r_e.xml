@@ -895,9 +895,9 @@
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="271" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="271" bodyend="-1"/>
         <referencedby refid="class_d_t_s_tree_window_1a45d33a41609c46d51d17bb80a64f2ca4" compoundref="_d_t_s_tree_window_8cpp" startline="736" endline="752">DTSTreeWindow::CreatePane</referencedby>
         <referencedby refid="classtab__newpane_1af3f96c0ce186f089d5e5598ea4814179" compoundref="_d_t_s_tree_window_8cpp" startline="216" endline="253">tab_newpane::handle_newtabpane</referencedby>
-        <referencedby refid="private_8h_1abf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="145" endline="184">iface_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gabf43f59e582eee9f27734b14c8307819" compoundref="interface_8c" startline="197" endline="236">iface_config</referencedby>
         <referencedby refid="class_d_t_s_frame_1a5a7ad78662b511e7ef6ac513f8d1a28b" compoundref="_d_t_s_frame_8cpp" startline="495" endline="510">DTSFrame::Passwd</referencedby>
-        <referencedby refid="private_8h_1aa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="325" endline="350">pbx_settings</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_p_b_x_1gaa1aa69985689f9714422c273fe968fdf" compoundref="pbxconfig_8c" startline="374" endline="399">pbx_settings</referencedby>
       </memberdef>
       <memberdef kind="define" id="group___c_o_r_e_1ga6fd6c8004323d4605940ac5fb2ff9c9b" prot="public" static="no">
         <name>wx_PANEL_BUTTON_ALL</name>
@@ -909,7 +909,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" line="274" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/include/dtsgui.h" bodystart="274" bodyend="-1"/>
-        <referencedby refid="testing_8c_1a77cb81a619f8c9ccd83cdf1e7c97aae9" compoundref="testing_8c" startline="94" endline="105">test_menu</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_test_1ga77cb81a619f8c9ccd83cdf1e7c97aae9" compoundref="testing_8c" startline="128" endline="139">test_menu</referencedby>
       </memberdef>
       <memberdef kind="define" id="group___c_o_r_e_1ga655f2051956468f6592bef486573e424" prot="public" static="no">
         <name>wx_PANEL_EVENT_BUTTON_NONE</name>

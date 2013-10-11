@@ -1,0 +1,2174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="group___d_t_s-_a_p_p-_tree" kind="group">
+    <compoundname>DTS-APP-Tree</compoundname>
+    <title>Advanced configuration tree</title>
+    <innerfile refid="netconfig_8c">netconfig.c</innerfile>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group___d_t_s-_a_p_p-_tree_1gadbe54f6a0a7e02ca7aa64f300dc162b0" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* protocols[]</definition>
+        <argsstring>[]</argsstring>
+        <name>protocols</name>
+        <initializer>= {&quot;TCP&quot;, &quot;UDP&quot;, &quot;GRE&quot;, &quot;ESP&quot;, &quot;AH&quot;, &quot;OSPF&quot;, &quot;ALL&quot;}</initializer>
+        <briefdescription>
+<para>Array of network protocols. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="40" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="40" bodyend="-1"/>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga0b2d5249167dfdc0b972bff2091b5745" compoundref="netconfig_8c" startline="684" endline="723">network_tos</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga3a92d505fabcecdf55524fe8b77f08bc" compoundref="netconfig_8c" startline="730" endline="765">network_tos_new</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1gaf6cb7d31e4a663493723310afddf0657" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_config_dns_domain_server_new</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_config_dns_domain_server_new</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (New Hosted Domain Server) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="37" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="251" bodyend="273"/>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca5b916eea0e8627cd48cad8e0ea0d39ca" compoundref="private_8h" startline="48">DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a09bf4479510d6996e8c2d0e3cd27c714" compoundref="dtsgui_8h" startline="231">DTS_TREE_NEW_NODE_DELETE</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898ab4026cda71b1fb600c8af942c1194e99" compoundref="dtsgui_8h" startline="235">DTS_TREE_NEW_NODE_SORT</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1ga55a99744231b294667ece32a1087042f" compoundref="wrapper_8cpp" startline="762" endline="766">dtsgui_newxmltreenode</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga9bbd9bb4aa7a921fc64742ecf3b0f61d" compoundref="wrapper_8cpp" startline="1253" endline="1256">dtsgui_textbox</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1gaedca58250011ea48c67fbc4faa14278f" compoundref="wrapper_8cpp" startline="785" endline="788">dtsgui_treenodeparent</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga85464ec7fa78ad423246f4cd96e69cfc" compoundref="netconfig_8c" startline="232" endline="244">network_config_dns_domain_server</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga1d7b1d28e9721a0c428be28f6c505875" compoundref="netconfig_8c" startline="188" endline="190">network_config_dns_domain_node</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1gae22737be42f8d0e7f4095a937e911578" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void customer_info</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>customer_info</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (Customer Info) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="47" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="47" bodyend="49"/>
+        <references refid="group___d_t_s-_a_p_p-_wizard_1gaccc1788f03d17d487ce09a1d07d53018" compoundref="wizard_8c" startline="177" endline="186">wizz_custinfo</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga53ff57cbb1a4442c4428c95746229150" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_config</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_config</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (Network Configuration) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="56" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="56" bodyend="93"/>
+        <references refid="group___c-_a_p_i-_panel-_items_1gadc168d1ed91fc91be2bb7bf7b060dd62" compoundref="wrapper_8cpp" startline="1113" endline="1115">dtsgui_item_value</references>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" compoundref="wrapper_8cpp" startline="1219" endline="1221">dtsgui_listbox_add</references>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga6585281832905a2e769f8b0f813a67e0" compoundref="wrapper_8cpp" startline="1241" endline="1243">dtsgui_listbox_addxml</references>
+        <references refid="group___c-_a_p_i-_panel_1ga75c6083aa363922fdf1fd19767eceeea" compoundref="wrapper_8cpp" startline="550" endline="553">dtsgui_panelxml</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" compoundref="wrapper_8cpp" startline="1403" endline="1406">dtsgui_xmllistbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1gae9c5a17913250cf9e849ee49b2398b98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_config_dns</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_config_dns</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (DNS Configuration) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="100" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="100" bodyend="111"/>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" compoundref="wrapper_8cpp" startline="1386" endline="1389">dtsgui_xmlcheckbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga320c13af10e723f60daea4caa8aa9b50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_config_dns_dyn</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_config_dns_dyn</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (Dynamic DNS) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="118" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="118" bodyend="124"/>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" compoundref="wrapper_8cpp" startline="1386" endline="1389">dtsgui_xmlcheckbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga035e28f34c903ba37365831f1dc546a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_config_dns_serv</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_config_dns_serv</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (DNS Server) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="131" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="131" bodyend="139"/>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" compoundref="wrapper_8cpp" startline="1386" endline="1389">dtsgui_xmlcheckbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga9648a33ba3b8a54dc53b527c6604feb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_config_dns_zone</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_config_dns_zone</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (DNS Zone Defaults) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="146" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="146" bodyend="152"/>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1gad08cc595d8b15576d51ce580336f6063" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_config_dns_host</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_config_dns_host</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (DNS Hosts) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="159" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="159" bodyend="167"/>
+        <references refid="group___c-_a_p_i-_panel-_tree_1gaf56a924134315107e80c8b01bfbeee68" compoundref="wrapper_8cpp" startline="810" endline="813">dtsgui_treenodegetxml</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga298dbf73bc519972483995caa73e6d94" compoundref="netconfig_8c" startline="174" endline="181">network_config_dns_host_new</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga298dbf73bc519972483995caa73e6d94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_config_dns_host_new</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_config_dns_host_new</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (New DNS Host) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="174" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="174" bodyend="181"/>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca1bd61a04594205156cf8c1bdbee06c25" compoundref="private_8h" startline="44">DTS_NODE_NETWORK_CONFIG_DNS_HOST</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a09bf4479510d6996e8c2d0e3cd27c714" compoundref="dtsgui_8h" startline="231">DTS_TREE_NEW_NODE_DELETE</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a92d0796e80ba757f7f74979253423b98" compoundref="dtsgui_8h" startline="229">DTS_TREE_NEW_NODE_EDIT</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898ab4026cda71b1fb600c8af942c1194e99" compoundref="dtsgui_8h" startline="235">DTS_TREE_NEW_NODE_SORT</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1ga55a99744231b294667ece32a1087042f" compoundref="wrapper_8cpp" startline="762" endline="766">dtsgui_newxmltreenode</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga9bbd9bb4aa7a921fc64742ecf3b0f61d" compoundref="wrapper_8cpp" startline="1253" endline="1256">dtsgui_textbox</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gad08cc595d8b15576d51ce580336f6063" compoundref="netconfig_8c" startline="159" endline="167">network_config_dns_host</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga1d7b1d28e9721a0c428be28f6c505875" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_config_dns_domain_node</definition>
+        <argsstring>(dtsgui_treeview tv, dtsgui_treenode tn, struct xml_node *xn, void *data)</argsstring>
+        <name>network_config_dns_domain_node</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>tv</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>tn</declname>
+        </param>
+        <param>
+          <type>struct xml_node *</type>
+          <declname>xn</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Add a container for servers to newly added domain. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Treeview. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New treenode added. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>XML node reference held by new node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="188" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="188" bodyend="190"/>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca67d5c38ab27222a53751515b85b184f3" compoundref="private_8h" startline="47">DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_SERVER_NEW</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1ga550b7516bbb97dd66bc71033e7d996cb" compoundref="wrapper_8cpp" startline="708" endline="712">dtsgui_treecont</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gaf6cb7d31e4a663493723310afddf0657" compoundref="netconfig_8c" startline="251" endline="273">network_config_dns_domain_server_new</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gaa9efe8e76bc229a36fa2499c892949ce" compoundref="netconfig_8c" startline="215" endline="225">network_config_dns_domain_new</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga07f37413fb1c1cb24c6f3a8a2e542114" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_config_dns_domain</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_config_dns_domain</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (Hosted Domain) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="197" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="197" bodyend="208"/>
+        <references refid="group___c-_a_p_i-_panel-_tree_1gaf56a924134315107e80c8b01bfbeee68" compoundref="wrapper_8cpp" startline="810" endline="813">dtsgui_treenodegetxml</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" compoundref="wrapper_8cpp" startline="1386" endline="1389">dtsgui_xmlcheckbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gaa9efe8e76bc229a36fa2499c892949ce" compoundref="netconfig_8c" startline="215" endline="225">network_config_dns_domain_new</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1gaa9efe8e76bc229a36fa2499c892949ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_config_dns_domain_new</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_config_dns_domain_new</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (New Hosted Domain) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="215" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="215" bodyend="225"/>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca25d60169e86212cf235d0c4667064603" compoundref="private_8h" startline="46">DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a67752f3ce4c088a226eb85e1f2369532" compoundref="dtsgui_8h" startline="233">DTS_TREE_NEW_NODE_CONTAINER</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a09bf4479510d6996e8c2d0e3cd27c714" compoundref="dtsgui_8h" startline="231">DTS_TREE_NEW_NODE_DELETE</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a92d0796e80ba757f7f74979253423b98" compoundref="dtsgui_8h" startline="229">DTS_TREE_NEW_NODE_EDIT</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898ab4026cda71b1fb600c8af942c1194e99" compoundref="dtsgui_8h" startline="235">DTS_TREE_NEW_NODE_SORT</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1gad9a5fa9a5623850a3889e305ef3da717" compoundref="wrapper_8cpp" startline="1294" endline="1297">dtsgui_checkbox</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1ga55a99744231b294667ece32a1087042f" compoundref="wrapper_8cpp" startline="762" endline="766">dtsgui_newxmltreenode</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga9bbd9bb4aa7a921fc64742ecf3b0f61d" compoundref="wrapper_8cpp" startline="1253" endline="1256">dtsgui_textbox</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga07f37413fb1c1cb24c6f3a8a2e542114" compoundref="netconfig_8c" startline="197" endline="208">network_config_dns_domain</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga1d7b1d28e9721a0c428be28f6c505875" compoundref="netconfig_8c" startline="188" endline="190">network_config_dns_domain_node</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga85464ec7fa78ad423246f4cd96e69cfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_config_dns_domain_server</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_config_dns_domain_server</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (Hosted Domain Server) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="232" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="232" bodyend="244"/>
+        <references refid="group___c-_a_p_i-_panel-_tree_1ga00767aae723dce154065e0bb090c0e70" compoundref="wrapper_8cpp" startline="836" endline="839">dtsgui_treenodegetdata</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1gaf56a924134315107e80c8b01bfbeee68" compoundref="wrapper_8cpp" startline="810" endline="813">dtsgui_treenodegetxml</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gaf6cb7d31e4a663493723310afddf0657" compoundref="netconfig_8c" startline="251" endline="273">network_config_dns_domain_server_new</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1gab77c80061336502da4c2cc2d2c11f4a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_iface_pane</definition>
+        <argsstring>(dtsgui_pane p, const char *xpre, const char *iface)</argsstring>
+        <name>network_iface_pane</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>xpre</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>iface</declname>
+        </param>
+        <briefdescription>
+<para>Network interface stub shared with interface config. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel been configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xpre</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Xpath for this interface. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iface</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interface name. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="279" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="279" bodyend="289"/>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga21ad9729b2e5667d1a71117c3811d428" compoundref="netconfig_8c" startline="296" endline="303">network_iface</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gaec69e5698c53680c3551eeb9e05cbaf6" compoundref="interface_8c" startline="164" endline="176">network_iface_pane_cb</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga21ad9729b2e5667d1a71117c3811d428" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_iface</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_iface</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (Network Interface) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="296" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="296" bodyend="303"/>
+        <references refid="group___c-_a_p_i-_panel-_tree_1gaf56a924134315107e80c8b01bfbeee68" compoundref="wrapper_8cpp" startline="810" endline="813">dtsgui_treenodegetxml</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gab77c80061336502da4c2cc2d2c11f4a0" compoundref="netconfig_8c" startline="279" endline="289">network_iface_pane</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga27bdf0ff7227d24f8b4811af169802a1" compoundref="netconfig_8c" startline="325" endline="333">network_newiface</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1gac142d92a078e869acbd50ce58a410f51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_iface_new_pane</definition>
+        <argsstring>(dtsgui_pane p)</argsstring>
+        <name>network_iface_new_pane</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+<para>Network interface stub shared with interface config. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Panel been configured. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="307" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="307" bodyend="318"/>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga9bbd9bb4aa7a921fc64742ecf3b0f61d" compoundref="wrapper_8cpp" startline="1253" endline="1256">dtsgui_textbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1gadcfa585026374cce3c2443ea55cebc25" compoundref="interface_8c" startline="181" endline="189">network_iface_new_pane_cb</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga27bdf0ff7227d24f8b4811af169802a1" compoundref="netconfig_8c" startline="325" endline="333">network_newiface</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga27bdf0ff7227d24f8b4811af169802a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_newiface</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_newiface</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (New Network Interface) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="325" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="325" bodyend="333"/>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca08159fce51c8b85d49c5f4966bf35d8b" compoundref="private_8h" startline="50">DTS_NODE_NETWORK_IFACE</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a67752f3ce4c088a226eb85e1f2369532" compoundref="dtsgui_8h" startline="233">DTS_TREE_NEW_NODE_CONTAINER</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a09bf4479510d6996e8c2d0e3cd27c714" compoundref="dtsgui_8h" startline="231">DTS_TREE_NEW_NODE_DELETE</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a92d0796e80ba757f7f74979253423b98" compoundref="dtsgui_8h" startline="229">DTS_TREE_NEW_NODE_EDIT</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898ab4026cda71b1fb600c8af942c1194e99" compoundref="dtsgui_8h" startline="235">DTS_TREE_NEW_NODE_SORT</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1ga55a99744231b294667ece32a1087042f" compoundref="wrapper_8cpp" startline="762" endline="766">dtsgui_newxmltreenode</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga21ad9729b2e5667d1a71117c3811d428" compoundref="netconfig_8c" startline="296" endline="303">network_iface</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gac142d92a078e869acbd50ce58a410f51" compoundref="netconfig_8c" startline="307" endline="318">network_iface_new_pane</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1gadceac66b5b38e18e528fc5a2adb2d649" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_wifi</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_wifi</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (WiFi Interface) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="340" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="340" bodyend="370"/>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" compoundref="wrapper_8cpp" startline="1219" endline="1221">dtsgui_listbox_add</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1gaf56a924134315107e80c8b01bfbeee68" compoundref="wrapper_8cpp" startline="810" endline="813">dtsgui_treenodegetxml</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga9472a3941bf352a063fa5e55a6016fdc" compoundref="wrapper_8cpp" startline="1420" endline="1423">dtsgui_xmlcombobox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga3a749e8b1e9561bb168ba3aed04444a8" compoundref="netconfig_8c" startline="377" endline="418">network_newwifi</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga3a749e8b1e9561bb168ba3aed04444a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_newwifi</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_newwifi</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (New WiFi Interface) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="377" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="377" bodyend="418"/>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca692abd6a99c569736b4bf162a07c298e" compoundref="private_8h" startline="52">DTS_NODE_NETWORK_WIFI</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a09bf4479510d6996e8c2d0e3cd27c714" compoundref="dtsgui_8h" startline="231">DTS_TREE_NEW_NODE_DELETE</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898ab4026cda71b1fb600c8af942c1194e99" compoundref="dtsgui_8h" startline="235">DTS_TREE_NEW_NODE_SORT</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga21dbebc529c734dffe528f2b15b2a441" compoundref="wrapper_8cpp" startline="1307" endline="1310">dtsgui_listbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" compoundref="wrapper_8cpp" startline="1219" endline="1221">dtsgui_listbox_add</references>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga6585281832905a2e769f8b0f813a67e0" compoundref="wrapper_8cpp" startline="1241" endline="1243">dtsgui_listbox_addxml</references>
+        <references refid="group___c-_a_p_i-_panel-_elements_1gaaa4e4de11048d7e32151628f4428cf3e" compoundref="wrapper_8cpp" startline="1227" endline="1229">dtsgui_listbox_set</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1ga55a99744231b294667ece32a1087042f" compoundref="wrapper_8cpp" startline="762" endline="766">dtsgui_newxmltreenode</references>
+        <references refid="group___c-_a_p_i-_panel_1ga75c6083aa363922fdf1fd19767eceeea" compoundref="wrapper_8cpp" startline="550" endline="553">dtsgui_panelxml</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga9bbd9bb4aa7a921fc64742ecf3b0f61d" compoundref="wrapper_8cpp" startline="1253" endline="1256">dtsgui_textbox</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gadceac66b5b38e18e528fc5a2adb2d649" compoundref="netconfig_8c" startline="340" endline="370">network_wifi</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga7b1e028eec7d055f71cd0b466131fb1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_wan</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_wan</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (WAN Route) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="425" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="425" bodyend="436"/>
+        <references refid="group___c-_a_p_i-_panel-_tree_1gaf56a924134315107e80c8b01bfbeee68" compoundref="wrapper_8cpp" startline="810" endline="813">dtsgui_treenodegetxml</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga853ca11b890527ee2031a756497e145c" compoundref="netconfig_8c" startline="443" endline="457">network_newwan</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga853ca11b890527ee2031a756497e145c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_newwan</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_newwan</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (New Wan Route) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="443" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="443" bodyend="457"/>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca701fcc5c32156589c8d427dca26ad3c7" compoundref="private_8h" startline="54">DTS_NODE_NETWORK_WAN</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a09bf4479510d6996e8c2d0e3cd27c714" compoundref="dtsgui_8h" startline="231">DTS_TREE_NEW_NODE_DELETE</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a92d0796e80ba757f7f74979253423b98" compoundref="dtsgui_8h" startline="229">DTS_TREE_NEW_NODE_EDIT</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898ab4026cda71b1fb600c8af942c1194e99" compoundref="dtsgui_8h" startline="235">DTS_TREE_NEW_NODE_SORT</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1ga55a99744231b294667ece32a1087042f" compoundref="wrapper_8cpp" startline="762" endline="766">dtsgui_newxmltreenode</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga9bbd9bb4aa7a921fc64742ecf3b0f61d" compoundref="wrapper_8cpp" startline="1253" endline="1256">dtsgui_textbox</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga7b1e028eec7d055f71cd0b466131fb1e" compoundref="netconfig_8c" startline="425" endline="436">network_wan</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1gafd9751515d9c36b70349d2a9ef5fae7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_route</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_route</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (Static Route) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="464" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="464" bodyend="472"/>
+        <references refid="group___c-_a_p_i-_panel-_tree_1gaf56a924134315107e80c8b01bfbeee68" compoundref="wrapper_8cpp" startline="810" endline="813">dtsgui_treenodegetxml</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga605df16cf428f6c76fe9b0936203b005" compoundref="netconfig_8c" startline="479" endline="490">network_newroute</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga605df16cf428f6c76fe9b0936203b005" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_newroute</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_newroute</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (New Static Route) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="479" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="479" bodyend="490"/>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecaa6a75ad98f4e80d9ef8fa806e966bfdb" compoundref="private_8h" startline="56">DTS_NODE_NETWORK_ROUTE</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a09bf4479510d6996e8c2d0e3cd27c714" compoundref="dtsgui_8h" startline="231">DTS_TREE_NEW_NODE_DELETE</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a92d0796e80ba757f7f74979253423b98" compoundref="dtsgui_8h" startline="229">DTS_TREE_NEW_NODE_EDIT</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898ab4026cda71b1fb600c8af942c1194e99" compoundref="dtsgui_8h" startline="235">DTS_TREE_NEW_NODE_SORT</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1ga55a99744231b294667ece32a1087042f" compoundref="wrapper_8cpp" startline="762" endline="766">dtsgui_newxmltreenode</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga9bbd9bb4aa7a921fc64742ecf3b0f61d" compoundref="wrapper_8cpp" startline="1253" endline="1256">dtsgui_textbox</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gafd9751515d9c36b70349d2a9ef5fae7f" compoundref="netconfig_8c" startline="464" endline="472">network_route</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1gaaf6857ee640832afc05a9e158faedde3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_modem</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_modem</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (Modem Config) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="497" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="497" bodyend="513"/>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" compoundref="wrapper_8cpp" startline="1219" endline="1221">dtsgui_listbox_add</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" compoundref="wrapper_8cpp" startline="1403" endline="1406">dtsgui_xmllistbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1gab761836f12c4ee80260a57451498d48f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_modem_adv</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_modem_adv</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (Advanced Modem Config) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="520" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="520" bodyend="529"/>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" compoundref="wrapper_8cpp" startline="1386" endline="1389">dtsgui_xmlcheckbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga4bab1c305385131091d979ad287b2ea3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_modem_ana</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_modem_ana</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (Analogue Modem Config) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="536" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="536" bodyend="579"/>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" compoundref="wrapper_8cpp" startline="1219" endline="1221">dtsgui_listbox_add</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga2a2a0a7402e2f1bbbd5eeff3446a08fe" compoundref="wrapper_8cpp" startline="1386" endline="1389">dtsgui_xmlcheckbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" compoundref="wrapper_8cpp" startline="1403" endline="1406">dtsgui_xmllistbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1gafbdf0e8165311538e8b408c7ba2fabbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_adsl_link</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_adsl_link</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (DSL Links) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="586" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="586" bodyend="617"/>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga6585281832905a2e769f8b0f813a67e0" compoundref="wrapper_8cpp" startline="1241" endline="1243">dtsgui_listbox_addxml</references>
+        <references refid="group___c-_a_p_i-_panel_1ga75c6083aa363922fdf1fd19767eceeea" compoundref="wrapper_8cpp" startline="550" endline="553">dtsgui_panelxml</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1gaf56a924134315107e80c8b01bfbeee68" compoundref="wrapper_8cpp" startline="810" endline="813">dtsgui_treenodegetxml</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" compoundref="wrapper_8cpp" startline="1403" endline="1406">dtsgui_xmllistbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gaa4d1bbd43067e6a75b7a441658a28646" compoundref="netconfig_8c" startline="624" endline="647">network_adsl_link_new</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1gaa4d1bbd43067e6a75b7a441658a28646" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_adsl_link_new</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_adsl_link_new</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (New DSL Link) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="624" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="624" bodyend="647"/>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca227b415be9d0831d430de77ec5bf8c52" compoundref="private_8h" startline="61">DTS_NODE_NETWORK_ADSL_LINK</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a09bf4479510d6996e8c2d0e3cd27c714" compoundref="dtsgui_8h" startline="231">DTS_TREE_NEW_NODE_DELETE</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a92d0796e80ba757f7f74979253423b98" compoundref="dtsgui_8h" startline="229">DTS_TREE_NEW_NODE_EDIT</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898ab4026cda71b1fb600c8af942c1194e99" compoundref="dtsgui_8h" startline="235">DTS_TREE_NEW_NODE_SORT</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga21dbebc529c734dffe528f2b15b2a441" compoundref="wrapper_8cpp" startline="1307" endline="1310">dtsgui_listbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga6585281832905a2e769f8b0f813a67e0" compoundref="wrapper_8cpp" startline="1241" endline="1243">dtsgui_listbox_addxml</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1ga55a99744231b294667ece32a1087042f" compoundref="wrapper_8cpp" startline="762" endline="766">dtsgui_newxmltreenode</references>
+        <references refid="group___c-_a_p_i-_panel_1ga75c6083aa363922fdf1fd19767eceeea" compoundref="wrapper_8cpp" startline="550" endline="553">dtsgui_panelxml</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga9bbd9bb4aa7a921fc64742ecf3b0f61d" compoundref="wrapper_8cpp" startline="1253" endline="1256">dtsgui_textbox</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gafbdf0e8165311538e8b408c7ba2fabbf" compoundref="netconfig_8c" startline="586" endline="617">network_adsl_link</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1gaa879445eb24134718f10512cbd22df27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_adsl_user</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_adsl_user</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (DSL User) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="654" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="654" bodyend="661"/>
+        <references refid="group___c-_a_p_i-_panel-_tree_1gaf56a924134315107e80c8b01bfbeee68" compoundref="wrapper_8cpp" startline="810" endline="813">dtsgui_treenodegetxml</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga8736362ad99edb6b363f2238131368d7" compoundref="netconfig_8c" startline="668" endline="677">network_adsl_user_new</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga8736362ad99edb6b363f2238131368d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_adsl_user_new</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_adsl_user_new</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (New DSL User) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="668" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="668" bodyend="677"/>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecaeb4d90752cc1ae6b1189057456d4080d" compoundref="private_8h" startline="63">DTS_NODE_NETWORK_ADSL_USER</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a09bf4479510d6996e8c2d0e3cd27c714" compoundref="dtsgui_8h" startline="231">DTS_TREE_NEW_NODE_DELETE</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a92d0796e80ba757f7f74979253423b98" compoundref="dtsgui_8h" startline="229">DTS_TREE_NEW_NODE_EDIT</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898ab4026cda71b1fb600c8af942c1194e99" compoundref="dtsgui_8h" startline="235">DTS_TREE_NEW_NODE_SORT</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1ga55a99744231b294667ece32a1087042f" compoundref="wrapper_8cpp" startline="762" endline="766">dtsgui_newxmltreenode</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga9bbd9bb4aa7a921fc64742ecf3b0f61d" compoundref="wrapper_8cpp" startline="1253" endline="1256">dtsgui_textbox</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gaa879445eb24134718f10512cbd22df27" compoundref="netconfig_8c" startline="654" endline="661">network_adsl_user</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga0b2d5249167dfdc0b972bff2091b5745" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_tos</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_tos</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (TOS Config) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="684" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="684" bodyend="723"/>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" compoundref="wrapper_8cpp" startline="1219" endline="1221">dtsgui_listbox_add</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1gaf56a924134315107e80c8b01bfbeee68" compoundref="wrapper_8cpp" startline="810" endline="813">dtsgui_treenodegetxml</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga0f5275b68ac882154ab7b2bf48e47ef2" compoundref="wrapper_8cpp" startline="1403" endline="1406">dtsgui_xmllistbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_x_m_l_1ga8eca510dc07eee0cd113f852fe67caa6" compoundref="wrapper_8cpp" startline="1336" endline="1339">dtsgui_xmltextbox</references>
+        <references refid="classform__item_1a4b647b26beee4bb3f3935645f3eb1a9b" compoundref="pitems_8h" startline="64">form_item::name</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gadbe54f6a0a7e02ca7aa64f300dc162b0" compoundref="netconfig_8c" startline="40">protocols</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga3a92d505fabcecdf55524fe8b77f08bc" compoundref="netconfig_8c" startline="730" endline="765">network_tos_new</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga3a92d505fabcecdf55524fe8b77f08bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_tos_new</definition>
+        <argsstring>(dtsgui_pane p, dtsgui_treeview self, dtsgui_treenode node, void *data)</argsstring>
+        <name>network_tos_new</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>self</declname>
+        </param>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga6529df5f03710b4fec84553e1d7febc5" kindref="member">dtsgui_treenode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Tree pane configuration call back (New TOS Config) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>panel to be configured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>self</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tree view. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active tree node. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>reference to data held by node </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="730" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="730" bodyend="765"/>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecae4d8c8164988e426b306b81ba7a54551" compoundref="private_8h" startline="65">DTS_NODE_NETWORK_TOS</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a09bf4479510d6996e8c2d0e3cd27c714" compoundref="dtsgui_8h" startline="231">DTS_TREE_NEW_NODE_DELETE</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898a92d0796e80ba757f7f74979253423b98" compoundref="dtsgui_8h" startline="229">DTS_TREE_NEW_NODE_EDIT</references>
+        <references refid="group___c_o_r_e_1gga7ecd2a00f2306c0b94734a72a7899898ab4026cda71b1fb600c8af942c1194e99" compoundref="dtsgui_8h" startline="235">DTS_TREE_NEW_NODE_SORT</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga21dbebc529c734dffe528f2b15b2a441" compoundref="wrapper_8cpp" startline="1307" endline="1310">dtsgui_listbox</references>
+        <references refid="group___c-_a_p_i-_panel-_elements_1ga557f314ceb047c6d2ee3ec5f40e6b93a" compoundref="wrapper_8cpp" startline="1219" endline="1221">dtsgui_listbox_add</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1ga55a99744231b294667ece32a1087042f" compoundref="wrapper_8cpp" startline="762" endline="766">dtsgui_newxmltreenode</references>
+        <references refid="group___c-_a_p_i-_panel-_elements-_s_t_d_1ga9bbd9bb4aa7a921fc64742ecf3b0f61d" compoundref="wrapper_8cpp" startline="1253" endline="1256">dtsgui_textbox</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga0b2d5249167dfdc0b972bff2091b5745" compoundref="netconfig_8c" startline="684" endline="723">network_tos</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gadbe54f6a0a7e02ca7aa64f300dc162b0" compoundref="netconfig_8c" startline="40">protocols</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void network_tree_setup</definition>
+        <argsstring>(dtsgui_treeview tree, struct xml_doc *xmldoc)</argsstring>
+        <name>network_tree_setup</name>
+        <param>
+          <type><ref refid="group___c_o_r_e_1ga91b92f00d06cc6174b8b271fc9f2c241" kindref="member">dtsgui_treeview</ref></type>
+          <declname>tree</declname>
+        </param>
+        <param>
+          <type>struct xml_doc *</type>
+          <declname>xmldoc</declname>
+        </param>
+        <briefdescription>
+<para>Configure the networking noded on the tree. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tree</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Treeview to add nodes too. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>xmldoc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>XML document to configure nodes from. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="770" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="770" bodyend="906"/>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gae22737be42f8d0e7f4095a937e911578" compoundref="netconfig_8c" startline="47" endline="49">customer_info</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca05bdc159f9d09f11da201a71742409ab" compoundref="private_8h" startline="37">DTS_NODE_CUSTOMER</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca227b415be9d0831d430de77ec5bf8c52" compoundref="private_8h" startline="61">DTS_NODE_NETWORK_ADSL_LINK</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecada7817a2ab63af146792c6e8421b0124" compoundref="private_8h" startline="60">DTS_NODE_NETWORK_ADSL_LINK_NEW</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecaeb4d90752cc1ae6b1189057456d4080d" compoundref="private_8h" startline="63">DTS_NODE_NETWORK_ADSL_USER</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca767fd577d500a56d72c11ffea034e08c" compoundref="private_8h" startline="62">DTS_NODE_NETWORK_ADSL_USER_NEW</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca5d9219d48e330379299d2ed15ff4ea15" compoundref="private_8h" startline="38">DTS_NODE_NETWORK_CONFIG</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca18ebf5363d2b4ceb3a8743a4e7647bcf" compoundref="private_8h" startline="39">DTS_NODE_NETWORK_CONFIG_DNS</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca25d60169e86212cf235d0c4667064603" compoundref="private_8h" startline="46">DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecac0f1f71b049c8b3cb01da6496f13806e" compoundref="private_8h" startline="45">DTS_NODE_NETWORK_CONFIG_DNS_DOMAIN_NEW</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecaca8f7e08a6f51e6081b99238a63cbafe" compoundref="private_8h" startline="40">DTS_NODE_NETWORK_CONFIG_DNS_DYN</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca1bd61a04594205156cf8c1bdbee06c25" compoundref="private_8h" startline="44">DTS_NODE_NETWORK_CONFIG_DNS_HOST</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecadc2abb3aae3102620d94987b8bf84f62" compoundref="private_8h" startline="43">DTS_NODE_NETWORK_CONFIG_DNS_HOST_NEW</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca6fc67e5941f734e9de7b2637da5c9d2e" compoundref="private_8h" startline="41">DTS_NODE_NETWORK_CONFIG_DNS_SERV</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca72083493da720ce59de27e706129d826" compoundref="private_8h" startline="42">DTS_NODE_NETWORK_CONFIG_DNS_ZONE</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca08159fce51c8b85d49c5f4966bf35d8b" compoundref="private_8h" startline="50">DTS_NODE_NETWORK_IFACE</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecaadaa5062456242e248fd995b69227644" compoundref="private_8h" startline="49">DTS_NODE_NETWORK_IFACE_NEW</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecab0e808e1aa3a128b563041ad11d63892" compoundref="private_8h" startline="57">DTS_NODE_NETWORK_MODEM</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecae55296fcae8a1a6d9b68b3488ce510ca" compoundref="private_8h" startline="58">DTS_NODE_NETWORK_MODEM_ADV</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecad3a141f5a4b83f7396624ec46408781b" compoundref="private_8h" startline="59">DTS_NODE_NETWORK_MODEM_ANA</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecaffda66a81ab84d7dfb2dac1c5ce352f0" compoundref="private_8h" startline="55">DTS_NODE_NETWORK_ROUTE_NEW</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecae4d8c8164988e426b306b81ba7a54551" compoundref="private_8h" startline="65">DTS_NODE_NETWORK_TOS</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca15c8b3347c4ae06b4206e5960f7bd41c" compoundref="private_8h" startline="64">DTS_NODE_NETWORK_TOS_NEW</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca701fcc5c32156589c8d427dca26ad3c7" compoundref="private_8h" startline="54">DTS_NODE_NETWORK_WAN</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca19640654abb2114b8ee8098dc52e250a" compoundref="private_8h" startline="53">DTS_NODE_NETWORK_WAN_NEW</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808eca692abd6a99c569736b4bf162a07c298e" compoundref="private_8h" startline="52">DTS_NODE_NETWORK_WIFI</references>
+        <references refid="group___d_t_s-_a_p_p_1gga018cb6fe637d3a25a67e794d620808ecae56467f65a231afd6634cae3269e663c" compoundref="private_8h" startline="51">DTS_NODE_NETWORK_WIFI_NEW</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1ga550b7516bbb97dd66bc71033e7d996cb" compoundref="wrapper_8cpp" startline="708" endline="712">dtsgui_treecont</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1ga0f7146637609d42057e2cd21bd2bf33e" compoundref="wrapper_8cpp" startline="732" endline="736">dtsgui_treeitem</references>
+        <references refid="group___c-_a_p_i-_panel-_tree_1ga3e6618e889e7b58e3bf2ae3d63332178" compoundref="wrapper_8cpp" startline="796" endline="799">dtsgui_treenodesetxml</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gafbdf0e8165311538e8b408c7ba2fabbf" compoundref="netconfig_8c" startline="586" endline="617">network_adsl_link</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gaa4d1bbd43067e6a75b7a441658a28646" compoundref="netconfig_8c" startline="624" endline="647">network_adsl_link_new</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gaa879445eb24134718f10512cbd22df27" compoundref="netconfig_8c" startline="654" endline="661">network_adsl_user</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga8736362ad99edb6b363f2238131368d7" compoundref="netconfig_8c" startline="668" endline="677">network_adsl_user_new</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga53ff57cbb1a4442c4428c95746229150" compoundref="netconfig_8c" startline="56" endline="93">network_config</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gae9c5a17913250cf9e849ee49b2398b98" compoundref="netconfig_8c" startline="100" endline="111">network_config_dns</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga07f37413fb1c1cb24c6f3a8a2e542114" compoundref="netconfig_8c" startline="197" endline="208">network_config_dns_domain</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gaa9efe8e76bc229a36fa2499c892949ce" compoundref="netconfig_8c" startline="215" endline="225">network_config_dns_domain_new</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga320c13af10e723f60daea4caa8aa9b50" compoundref="netconfig_8c" startline="118" endline="124">network_config_dns_dyn</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gad08cc595d8b15576d51ce580336f6063" compoundref="netconfig_8c" startline="159" endline="167">network_config_dns_host</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga298dbf73bc519972483995caa73e6d94" compoundref="netconfig_8c" startline="174" endline="181">network_config_dns_host_new</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga035e28f34c903ba37365831f1dc546a0" compoundref="netconfig_8c" startline="131" endline="139">network_config_dns_serv</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga9648a33ba3b8a54dc53b527c6604feb5" compoundref="netconfig_8c" startline="146" endline="152">network_config_dns_zone</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga21ad9729b2e5667d1a71117c3811d428" compoundref="netconfig_8c" startline="296" endline="303">network_iface</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gaaf6857ee640832afc05a9e158faedde3" compoundref="netconfig_8c" startline="497" endline="513">network_modem</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gab761836f12c4ee80260a57451498d48f" compoundref="netconfig_8c" startline="520" endline="529">network_modem_adv</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga4bab1c305385131091d979ad287b2ea3" compoundref="netconfig_8c" startline="536" endline="579">network_modem_ana</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga27bdf0ff7227d24f8b4811af169802a1" compoundref="netconfig_8c" startline="325" endline="333">network_newiface</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga605df16cf428f6c76fe9b0936203b005" compoundref="netconfig_8c" startline="479" endline="490">network_newroute</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga853ca11b890527ee2031a756497e145c" compoundref="netconfig_8c" startline="443" endline="457">network_newwan</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga3a749e8b1e9561bb168ba3aed04444a8" compoundref="netconfig_8c" startline="377" endline="418">network_newwifi</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gafd9751515d9c36b70349d2a9ef5fae7f" compoundref="netconfig_8c" startline="464" endline="472">network_route</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga0b2d5249167dfdc0b972bff2091b5745" compoundref="netconfig_8c" startline="684" endline="723">network_tos</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga3a92d505fabcecdf55524fe8b77f08bc" compoundref="netconfig_8c" startline="730" endline="765">network_tos_new</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1ga7b1e028eec7d055f71cd0b466131fb1e" compoundref="netconfig_8c" startline="425" endline="436">network_wan</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gadceac66b5b38e18e528fc5a2adb2d649" compoundref="netconfig_8c" startline="340" endline="370">network_wifi</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga6d9d2b0105df87000cb2bdecbff91239" compoundref="netconfig_8c" startline="912" endline="926">advanced_config</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group___d_t_s-_a_p_p-_tree_1ga6d9d2b0105df87000cb2bdecbff91239" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group___c_o_r_e_1ga80d0a6abc3c934c0adc3fca6a1e62438" kindref="member">dtsgui_pane</ref></type>
+        <definition>dtsgui_pane advanced_config</definition>
+        <argsstring>(struct dtsgui *dtsgui, const char *title, void *data)</argsstring>
+        <name>advanced_config</name>
+        <param>
+          <type>struct <ref refid="classdtsgui" kindref="compound">dtsgui</ref> *</type>
+          <declname>dtsgui</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Advanced configuration menu callback. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dtsgui</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application data ptr. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Menuitem name. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to data held by menuitem. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" line="912" bodyfile="/usr/src/dtsapplib/dtsguiapp/app/netconfig.c" bodystart="912" bodyend="926"/>
+        <references refid="group___d_t_s-_a_p_p_1ga65a24b9322f0fd002413f3e9e13272f0" compoundref="wxforms_8c" startline="56" endline="75">app_getxmldoc</references>
+        <references refid="group___c-_a_p_i-_panel_1gaa92cb9c6006aaf320e784f04500c3b25" compoundref="wrapper_8cpp" startline="503" endline="506">dtsgui_treewindow</references>
+        <references refid="group___d_t_s-_a_p_p-_tree_1gad5f5bf5384beb7b8c2fefdd51315d079" compoundref="netconfig_8c" startline="770" endline="906">network_tree_setup</references>
+        <referencedby refid="group___d_t_s-_a_p_p-_config_1ga2bcdb1dc60a2dc5383e027578faeb44e" compoundref="config_8c" startline="240" endline="268">config_menu</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>wAdvanced configuration tree </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

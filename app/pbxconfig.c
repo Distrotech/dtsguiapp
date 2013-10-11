@@ -16,12 +16,24 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+/** @defgroup DTS-APP-PBX PBX Configuration
+  * @ingroup DTS-APP
+  * @brief PBX Configuration
+  * @addtogroup DTS-APP-PBX
+  * @{
+  * @file
+  * @brief PBX Configuration panel.*/
+
+
 #include <unistd.h>
 
 #include "dtsgui.h"
 
 #include "private.h"
 
+/** @brief Configuration callback for tunk panel
+  * @param pg Panel to be configured.
+  * @param data data Reference to data held by callback.*/
 void pbxconf_trunk(dtsgui_pane pg, void *data) {
 	struct listitem trunks[] = {{"Linux Modular ISDN Group 1", "mISDN/g:out/"},
 								{"Linux Modular ISDN Group 2", "mISDN/g:out2/"},
@@ -104,6 +116,9 @@ void pbxconf_trunk(dtsgui_pane pg, void *data) {
 	dtsgui_xmltextbox(pg, "Maximum Concurency On Voip Trunk", "VLIMIT", "/config/IP/VOIP/ASTDB", "Option", "option", "VLIMIT", NULL);
 }
 
+/** @brief Configuration callback for trunk options panel
+  * @param pg Panel to be configured.
+  * @param data data Reference to data held by callback.*/
 void pbxconf_topts(dtsgui_pane pg, void *data) {
 	dtsgui_xmltextbox(pg, "Maximum Call Length On Analogue Trunks (mins)", "MaxAna", "/config/IP/VOIP/ASTDB", "Option", "option", "MaxAna", NULL);
 	dtsgui_xmlcheckbox(pg, "Apply Call Limt To All Trunks", "MaxAll", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "MaxAll", NULL);
@@ -118,6 +133,9 @@ void pbxconf_topts(dtsgui_pane pg, void *data) {
 	dtsgui_xmlcheckbox(pg, "Disable access to invalid accounts", "ValidAcc", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "ValidAcc", NULL);
 }
 
+/** @brief Configuration callback for mISDN panel
+  * @param pg Panel to be configured.
+  * @param data data Reference to data held by callback.*/
 void pbxconf_misdn(dtsgui_pane pg, void *data) {
 	dtsgui_xmltextbox(pg, "Isdn Ports To Use (Group 1)", "mISDNports", "/config/IP/VOIP/ASTDB", "Option", "option", "mISDNports", NULL);
 	dtsgui_xmltextbox(pg, "Isdn Ports To Use (Group 2)", "mISDNports2", "/config/IP/VOIP/ASTDB", "Option", "option", "mISDNports2", NULL);
@@ -131,6 +149,9 @@ void pbxconf_misdn(dtsgui_pane pg, void *data) {
 	dtsgui_xmlcheckbox(pg, "Use Round Robin Routing", "mISDNrr", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "mISDNrr", NULL);
 }
 
+/** @brief Configuration callback for E1/T1 panel
+  * @param pg Panel to be configured.
+  * @param data data Reference to data held by callback.*/
 void pbxconf_e1(dtsgui_pane pg, void *data) {
 	struct form_item *lb;
 
@@ -158,6 +179,9 @@ void pbxconf_e1(dtsgui_pane pg, void *data) {
 	dtsgui_xmlcheckbox(pg, "CRC4 Checking (E1 Only)", "PRIcrc4", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "PRIcrc4", NULL);
 }
 
+/** @brief Configuration callback for MFC/R2 panel
+  * @param pg Panel to be configured.
+  * @param data data Reference to data held by callback.*/
 void pbxconf_mfcr2(dtsgui_pane pg, void *data) {
 	struct form_item *lb;
 
@@ -192,6 +216,9 @@ void pbxconf_mfcr2(dtsgui_pane pg, void *data) {
 	dtsgui_xmlcheckbox(pg, "Accept Call With Charge", "E1mfcr2_charge_calls", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "E1mfcr2_charge_calls", NULL);
 }
 
+/** @brief Configuration callback for global settings panel
+  * @param pg Panel to be configured.
+  * @param data data Reference to data held by callback.*/
 void pbxconf_global(dtsgui_pane pg, void *data) {
 	struct form_item *lb;
 
@@ -211,12 +238,18 @@ void pbxconf_global(dtsgui_pane pg, void *data) {
 	dtsgui_xmlcheckbox(pg, "Calls To Internal Extensions Follow Forward Rules", "LocalFwd", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "LocalFwd", NULL);
 }
 
+/** @brief Configuration callback for ACD options panel
+  * @param pg Panel to be configured.
+  * @param data data Reference to data held by callback.*/
 void pbxconf_acd(dtsgui_pane pg, void *data) {
 	dtsgui_xmltextbox(pg, "Default ACD Queue Timeout", "QTimeout", "/config/IP/VOIP/ASTDB", "Option", "option", "QTimeout", NULL);
 	dtsgui_xmltextbox(pg, "Default ACD Queue Agent Timeout", "QATimeout", "/config/IP/VOIP/ASTDB", "Option", "option", "QATimeout", NULL);
 	dtsgui_xmltextbox(pg, "Default ACD Queue Agent Penalty Factor", "QAPenalty", "/config/IP/VOIP/ASTDB", "Option", "option", "QAPenalty", NULL);
 }
 
+/** @brief Configuration callback for extension default panel
+  * @param pg Panel to be configured.
+  * @param data data Reference to data held by callback.*/
 void pbxconf_default(dtsgui_pane pg, void *data) {
 	struct listitem cos[] = {{"Internal Extensions", "0"},
 							 {"Local PSTN", "1"},
@@ -265,6 +298,9 @@ void pbxconf_default(dtsgui_pane pg, void *data) {
 	dtsgui_xmlcheckbox(pg, "Extensions Are Remote By Default", "REMDEF", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "REMDEF", NULL);
 }
 
+/** @brief Configuration callback for location panel
+  * @param pg Panel to be configured.
+  * @param data data Reference to data held by callback.*/
 void pbxconf_location(dtsgui_pane pg, void *data) {
 	dtsgui_xmltextbox(pg, "Local Country Code", "CountryCode", "/config/IP/VOIP/ASTDB", "Option", "option", "CountryCode", NULL);
 	dtsgui_xmltextbox(pg, "Local Area Code", "AreaCode", "/config/IP/VOIP/ASTDB", "Option", "option", "AreaCode", NULL);
@@ -276,6 +312,9 @@ void pbxconf_location(dtsgui_pane pg, void *data) {
 	dtsgui_xmltextbox(pg, "International Access Code", "IntAccess", "/config/IP/VOIP/ASTDB", "Option", "option", "IntAccess", NULL);
 }
 
+/** @brief Configuration callback for incoming panel
+  * @param pg Panel to be configured.
+  * @param data data Reference to data held by callback.*/
 void pbxconf_incoming(dtsgui_pane pg, void *data) {
 	struct form_item *lb;
 
@@ -298,6 +337,9 @@ void pbxconf_incoming(dtsgui_pane pg, void *data) {
 	dtsgui_xmlcheckbox(pg, "Follow DDI If Exten (Inbound)", "FollowDDI", "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "FollowDDI", NULL);
 }
 
+/** @brief Configuration callback for number plan panel
+  * @param pg Panel to be configured.
+  * @param data data Reference to data held by callback.*/
 void pbxconf_numplan(dtsgui_pane pg, void *data) {
 	dtsgui_xmltextbox(pg, "4 Digit Telco Number Pattern", "InternalPat", "/config/IP/VOIP/ASTDB", "Option", "option", "InternalPat", NULL);
 	dtsgui_xmltextbox(pg, "Telco Number Pattern (Premium)", "TPremiumPat", "/config/IP/VOIP/ASTDB", "Option", "option", "TPremiumPat", NULL);
@@ -312,6 +354,9 @@ void pbxconf_numplan(dtsgui_pane pg, void *data) {
 	dtsgui_xmltextbox(pg, "DDI Limit Pattern (Accepted DDI More Than 4 Digits)", "DDIPAT", "/config/IP/VOIP/ASTDB", "Option", "option", "DDIPAT", NULL);
 }
 
+/** @brief Configuration callback for auto add panel
+  * @param pg Panel to be configured.
+  * @param data data Reference to data held by callback.*/
 void pbxconf_autoadd(dtsgui_pane pg, void *data) {
 	dtsgui_xmltextbox(pg, "Start Exten.", "AutoStart", "/config/IP/VOIP/ASTDB", "Option", "option", "AutoStart", NULL);
 	dtsgui_xmltextbox(pg, "End Exten.", "AutoEnd", "/config/IP/VOIP/ASTDB", "Option", "option", "AutoEnd", NULL);
@@ -322,6 +367,10 @@ void pbxconf_autoadd(dtsgui_pane pg, void *data) {
 }
 
 
+/** @brief Configure and return the PBX configuration tab view.
+  * @param dtsgui Application data ptr.
+  * @param title Title of menuitem.
+  * @param data Reference of data associated with menu item.*/
 dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	dtsgui_tabview tabv;
 	struct xml_doc *xmldoc;
@@ -348,3 +397,5 @@ dtsgui_pane pbx_settings(struct dtsgui *dtsgui, const char *title, void *data) {
 	objunref(xmldoc);
 	return tabv;
 }
+
+/** @}*/

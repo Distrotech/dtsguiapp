@@ -127,7 +127,7 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1113" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1113" bodyend="1115"/>
         <references refid="classform__item_1a6377c3eeefcf7272d5200cd462c9eba7" compoundref="pitems_8cpp" startline="192" endline="219">form_item::GetValue</references>
-        <referencedby refid="netconfig_8c_1a53ff57cbb1a4442c4428c95746229150" compoundref="netconfig_8c" startline="37" endline="74">network_config</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_tree_1ga53ff57cbb1a4442c4428c95746229150" compoundref="netconfig_8c" startline="56" endline="93">network_config</referencedby>
       </memberdef>
       <memberdef kind="function" id="group___c-_a_p_i-_panel-_items_1ga2cb1581f47559805b221f9290f9ec83e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const char *</type>
@@ -197,7 +197,7 @@
         </inbodydescription>
         <location file="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" line="1140" bodyfile="/usr/src/dtsapplib/dtsguiapp/src/wrapper.cpp" bodystart="1140" bodyend="1143"/>
         <references refid="class_d_t_s_panel_1aaeef18ad561346699ed24e0aa6fa47b3" compoundref="_d_t_s_panel_8cpp" startline="886" endline="897">DTSPanel::FindValue</references>
-        <referencedby refid="interface_8c_1a2079939d5d21847b07c782120206b7ce" compoundref="interface_8c" startline="86" endline="121">handle_updatetabpane</referencedby>
+        <referencedby refid="group___d_t_s-_a_p_p-_iface_1ga2079939d5d21847b07c782120206b7ce" compoundref="interface_8c" startline="124" endline="159">handle_updatetabpane</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

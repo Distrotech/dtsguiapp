@@ -16,7 +16,7 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-/** @defgroup DTS-APP-Wizard Distrotech Application Wizard Interface
+/** @defgroup DTS-APP-Wizard System configuration wizard
   * @brief System configuration wizard
   * @ingroup DTS-APP
   * @{
@@ -32,6 +32,12 @@
 
 #include "private.h"
 
+/** @brief Add temp nodes used in the wizard.
+  *
+  * The nodes added are compisite information
+  * used in the wizard and using a tempoary XML node
+  * simplifies the process.
+  * @param xmldoc XML Document.*/
 static void set_temp_xml(struct xml_doc *xmldoc) {
 	struct xml_search *xs;
 	struct xml_node *xn, *xn2;
@@ -108,6 +114,11 @@ static void set_temp_xml(struct xml_doc *xmldoc) {
 	}
 }
 
+/** @brief Remove tempoary XML nodes updating XML
+  *
+  * Update the XML document as required based on values
+  * set on these tempoary nones.
+  * @param xmldoc XML document.*/
 static void rem_temp_xml(struct xml_doc *xmldoc) {
 	struct xml_search *xs;
 	struct xml_node *xn, *xn2, *xn3;
@@ -161,6 +172,8 @@ static void rem_temp_xml(struct xml_doc *xmldoc) {
 	objunref(xn);
 }
 
+/** @brief Customer information panel.
+  * @param pg Panel to configure.*/
 void wizz_custinfo(dtsgui_pane *pg) {
 	dtsgui_xmltextbox(pg, "Customer Name", NULL, "/config/Customer", "Option", "option", "Name", NULL);
 	dtsgui_xmltextbox(pg, "Contact Person", NULL, "/config/Customer", "Option", "option", "Contact", NULL);
@@ -172,6 +185,8 @@ void wizz_custinfo(dtsgui_pane *pg) {
 	dtsgui_xmltextbox(pg, "VAT No.", NULL, "/config/Customer", "Option", "option", "VAT", NULL);
 }
 
+/** @brief Network information panel.
+  * @param pg Panel to configure.*/
 void wizz_netinfo(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "IPv4 Address", NULL, "/config/IP/Interfaces/Interface[/config/IP/SysConf/Option[@option = 'Internal'] = .]", NULL, NULL, NULL, "ipaddr");
 	dtsgui_xmltextbox(pg, "IPv4 Subnet Length", NULL, "/config/IP/Interfaces/Interface[/config/IP/SysConf/Option[@option = 'Internal'] = .]", NULL, NULL, NULL, "subnet");
@@ -181,12 +196,16 @@ void wizz_netinfo(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "NTP Server", NULL, "/config/IP/SysConf", "Option", "option", "NTPServer", NULL);
 }
 
+/** @brief Dynamic DNS configuration panel.
+  * @param pg Panel to configure.*/
 void wizz_dyndns(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "Dynamic DNS Server", NULL, "/config/DNS/Config", "Option", "option", "DynServ", NULL);
 	dtsgui_xmltextbox(pg, "Dynamic DNS Zone", NULL, "/config/DNS/Config", "Option", "option", "DynZone", NULL);
 	dtsgui_xmltextbox(pg, "Dynamic DNS KEY", NULL, "/config/DNS/Config", "Option", "option", "DynKey", NULL);
 }
 
+/** @brief DNS/Wins configuration panel.
+  * @param pg Panel to configure.*/
 void wizz_dnsinfo(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "Primary DNS", NULL, "/config/IP/SysConf", "Option", "option", "PrimaryDns", NULL);
 	dtsgui_xmltextbox(pg, "Secondary DNS", NULL, "/config/IP/SysConf", "Option", "option", "SecondaryDns", NULL);
@@ -196,6 +215,8 @@ void wizz_dnsinfo(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "Secondary MX", NULL, "/config/Email/Config", "Option", "option", "MailExchange2", NULL);
 }
 
+/** @brief X.509 configuration panel.
+  * @param pg Panel to configure.*/
 void wizz_x509(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "Country Code", NULL, "/config/X509", "Option", "option", "Country", NULL);
 	dtsgui_xmltextbox(pg, "Province/State", NULL, "/config/X509", "Option", "option", "State", NULL);
@@ -206,6 +227,8 @@ void wizz_x509(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "Email", NULL, "/config/X509", "Option", "option", "Email", NULL);
 }
 
+/** @brief Samba configuration panel
+  * @param pg Panel to configure.*/
 void wizz_samba(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "Workgroup/Domain", NULL, "/config/FileServer/Setup", "Option", "option", "Domain", NULL);
 	dtsgui_xmltextbox(pg, "Aliases", NULL, "/config/FileServer/Config", "Option", "option", "netbios name", NULL);
@@ -214,6 +237,8 @@ void wizz_samba(dtsgui_pane pg) {
 	dtsgui_xmlcheckbox(pg, "Domain Controller", NULL, "1", "0", "/config/tmp", "dcon", NULL, NULL, NULL);
 }
 
+/** @brief Network configuration panel.
+  * @param pg Panel to configure.*/
 void wizz_network(dtsgui_pane pg) {
 	struct form_item *ilist;
 
@@ -230,6 +255,8 @@ void wizz_network(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "MTU", NULL, "/config/IP/Dialup", "Option", "option", "MTU", NULL);
 }
 
+/** @brief Default extension settings panel.
+  * @param pg Panel to configure.*/
 void wizz_exten(dtsgui_pane pg) {
 	struct form_item *ilist;
 	struct listitem cos[] = {{"Internal Extensions", "0"},
@@ -279,6 +306,8 @@ void wizz_exten(dtsgui_pane pg) {
 	dtsgui_xmlcheckbox(pg, "Require Extension Number With PIN", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "ADVPIN", NULL);
 }
 
+/** @brief Location information panel.
+  * @param pg Panel to configure.*/
 void wizz_location(dtsgui_pane pg) {
 	struct form_item *ilist;
 
@@ -314,6 +343,8 @@ void wizz_location(dtsgui_pane pg) {
 	dtsgui_xmlcheckbox(pg, "ISDN PRI CRC4 Checking (E1 Only)", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "PRIcrc4", NULL);
 }
 
+/** @brief ACD configuration panel.
+  * @param pg Panel to configure.*/
 void wizz_acd(dtsgui_pane pg) {
 	dtsgui_xmltextbox(pg, "Queue Timeout Checked Every 18s", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "AATimeout", NULL);
 	dtsgui_xmltextbox(pg, "Auto Attendant Mailbox/Forward On No Agent/Timeout", NULL, "/config/IP/VOIP/ASTDB", "Option", "option", "AANext", NULL);
@@ -323,6 +354,8 @@ void wizz_acd(dtsgui_pane pg) {
 	dtsgui_xmlcheckbox(pg, "Record Inbound Calls", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "AAREC", NULL);
 }
 
+/** @brief Telephony Trunk configuration panel.
+  * @param pg Panel to configure.*/
 void wizz_trunk(dtsgui_pane pg) {
 	struct form_item *ilist;
 
@@ -345,6 +378,8 @@ void wizz_trunk(dtsgui_pane pg) {
 	dtsgui_xmlcheckbox(pg, "Extensions Are On Gateway By Default", NULL, "1", "0", "/config/IP/VOIP/ASTDB", "Option", "option", "REMDEF", NULL);
 }
 
+/** @brief VOIP Configuration panel.
+  * @param pg Panel to configure.*/
 void wizz_voip(dtsgui_pane pg) {
 	struct form_item *ilist;
 
@@ -360,6 +395,16 @@ void wizz_voip(dtsgui_pane pg) {
 	dtsgui_xmlcheckbox(pg, "Register To Server", NULL, "true", "false", "/config/IP", "VOIP", NULL, NULL, "register");
 }
 
+/** @brief System configuration wizard
+  *
+  * Run the system configuration wizard some values are added to the XML document tempoaraly 
+  * and deleted when completed.
+  * @param dtsgui Application data ptr.
+  * @param data User data from menuitem.
+  * @param filename Reference to the filename to write too if editing.
+  * @param xmldoc XML document.
+  * @param save Non zero value if the filename should be saved too on completion.
+  * @return Non zero on success.*/
 static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename, struct xml_doc *xmldoc, int save) {
 	dtsgui_pane dp[12];
 	struct dtsgui_wizard *twiz;
@@ -370,6 +415,7 @@ static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename
 
 	twiz = dtsgui_newwizard(dtsgui, "System Configuration Wizard");
 
+	/**@todo Add callback to dtsgui_wizard_addpage() to be called to configure the panel*/
 	dp[0] = dtsgui_wizard_addpage(twiz, "Customer Information", NULL, xmldoc);
 	dp[1] = dtsgui_wizard_addpage(twiz, "Network/IP Information", NULL, xmldoc);
 	dp[2] = dtsgui_wizard_addpage(twiz, "Dynamic DNS", NULL, xmldoc);
@@ -406,6 +452,7 @@ static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename
 
 		rem_temp_xml(xmldoc);
 
+		/**@remark If no filename is supplied a save dialog is opened for the user to enter file to save too.*/
 		if (!filename && save) {
 			do {
 				newfile = dtsgui_filesave(dtsgui, "Save New Customer Config To File", NULL, "newcustomer.xml", "XML Configuration|*.xml");
@@ -433,6 +480,14 @@ static int system_wizard(struct dtsgui *dtsgui, void *data, const char *filename
 	return res;
 }
 
+/** @brief Callback from create new system menu item.
+  *
+  * Open the default configuration and run the wizard saving to a new
+  * file.
+  * @param dtsgui Application data ptr.
+  * @param title Name of the menuitem as shown on status bar.
+  * @param data Data supplied to the menuitem.
+  * @return NULL as the wizzard will run and no panel is supplied for dislpay area.*/
 extern dtsgui_pane newsys_wizard(struct dtsgui *dtsgui, const char *title, void *data) {
 	char defconf[PATH_MAX];
 	struct xml_doc *xmldoc;
@@ -458,6 +513,13 @@ extern dtsgui_pane newsys_wizard(struct dtsgui *dtsgui, const char *title, void 
 	return NULL;
 }
 
+/** @brief Callback from edit customer configuration
+  *
+  * Open the configuration and run the wizard.
+  * @param dtsgui Application data ptr.
+  * @param title Name of the menuitem as shown on status bar.
+  * @param data Data supplied to the menuitem.
+  * @return NULL as the wizzard will run and no panel is supplied for dislpay area.*/
 extern dtsgui_pane editsys_wizard(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct xml_doc *xmldoc;
 	const char *filename;
@@ -478,6 +540,13 @@ extern dtsgui_pane editsys_wizard(struct dtsgui *dtsgui, const char *title, void
 	return NULL;
 }
 
+/** @brief Callback from configuration menu.
+  *
+  * Run the wizard on the current application XML document.
+  * @param dtsgui Application data ptr.
+  * @param title Name of the menuitem as shown on status bar.
+  * @param data Data supplied to the menuitem.
+  * @return NULL as the wizzard will run and no panel is supplied for dislpay area.*/
 dtsgui_pane reconfig_wizard(struct dtsgui *dtsgui, const char *title, void *data) {
 	struct xml_doc *xmldoc;
 

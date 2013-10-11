@@ -32,6 +32,15 @@ Definition at line 155 of file DTSPanel\&.h\&.
 Definition at line 1035 of file DTSPanel\&.cpp\&.
 .PP
 References DTSObject::panel, DTSPanel::SetupWin(), DTSObject::type, and wx_DTSPANEL_WINDOW\&.
+.PP
+.nf
+    :wxWindow(parent, -1),
+     DTSPanel(frame, status) {
+    type = wx_DTSPANEL_WINDOW;
+    panel = dynamic_cast<wxWindow *>(this);
+    SetupWin();
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "bool DTSWindow::Show (boolshow = \fCtrue\fP)"
@@ -40,6 +49,14 @@ References DTSObject::panel, DTSPanel::SetupWin(), DTSObject::type, and wx_DTSPA
 Definition at line 1043 of file DTSPanel\&.cpp\&.
 .PP
 References DTSPanel::ShowPanel()\&.
+.PP
+.nf
+                              {
+    ShowPanel(show);
+    return wxWindow::Show(show);
+}
+.fi
+
 
 .SH "Author"
 .PP 

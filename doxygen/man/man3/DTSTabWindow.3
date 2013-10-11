@@ -47,12 +47,45 @@ Definition at line 149 of file DTSTreeWindow\&.h\&.
 Definition at line 888 of file DTSTreeWindow\&.cpp\&.
 .PP
 References DTSObject::dtsevthandler, DTSObject::frame, DTSObject::panel, DTSTabWindowEvent::RightMenu(), Show(), DTSObject::type, DTSObject::userdata, and wx_DTSPANEL_TAB\&.
+.PP
+.nf
+    :wxNotebook((wxWindow*)frame, -1),
+    DTSObject(stat_msg) {
+
+    DTSTabWindowEvent *dtsevt;
+    wxNotebook *nb = (wxNotebook*)this;
+
+    panel = dynamic_cast<wxBookCtrlBase*>(this);
+
+    type = wx_DTSPANEL_TAB;
+    this->frame = frame;
+
+    if (u_data && objref(u_data)) {
+        userdata = u_data;
+    }
+
+    dtsevt = new DTSTabWindowEvent(userdata, this);
+    dtsevthandler = dtsevt;
+
+    nb->Bind(wxEVT_CONTEXT_MENU, &DTSTabWindowEvent::RightMenu, dtsevt);
+
+    Show(false);
+}
+.fi
 .SS "DTSTabWindow::~DTSTabWindow ()"
 
 .PP
 Definition at line 912 of file DTSTreeWindow\&.cpp\&.
 .PP
 References DTSObject::userdata\&.
+.PP
+.nf
+                            {
+    if (userdata) {
+        objunref(userdata);
+    }
+}
+.fi
 .SH "Member Function Documentation"
 .PP 
 .SS "\fBDTSTabPage\fP * DTSTabWindow::CreateTab (const wxString &name, intbutmask = \fC0\fP, void *userdata = \fCNULL\fP, \fBdtsgui_tabpanel_cb\fPcb = \fCNULL\fP, void *cdata = \fCNULL\fP, struct xml_doc *xmldoc = \fCNULL\fP, booladdpage = \fCtrue\fP)"
@@ -63,12 +96,48 @@ Definition at line 991 of file DTSTreeWindow\&.cpp\&.
 References DTSObject::GetFrame(), DTSObject::GetPanel(), and DTSObject::SetUserData()\&.
 .PP
 Referenced by CreateTab(), DTS_C_API::dtsgui_newtabpage(), DTS_C_API::dtsgui_tabpage_insert(), and tab_newpane::handle_newtabpane()\&.
+.PP
+.nf
+                                                                                                                                                               {
+    DTSTabPage *dp;
+    DTSFrame *f;
+    wxBookCtrlBase *nb;
+
+    f = GetFrame();
+    nb = static_cast<wxBookCtrlBase*>(this);
+
+    if (!(dp = new DTSTabPage(nb, f, name, butmask, cb, cdata, xmldoc))) {
+        return NULL;
+    }
+
+    if (userdata) {
+        dp->SetUserData(userdata);
+    }
+
+    if (addpage) {
+        nb->AddPage(dp->GetPanel(), name);
+    }
+
+    return dp;
+}
+.fi
 .SS "\fBDTSTabPage\fP * DTSTabWindow::CreateTab (const wxString &name, intbutmask, void *userdata, \fBdtsgui_tabpanel_cb\fPcb, void *cdata, struct xml_doc *xmldoc, intpos, intundo)"
 
 .PP
 Definition at line 981 of file DTSTreeWindow\&.cpp\&.
 .PP
 References CreateTab(), and InsertTab()\&.
+.PP
+.nf
+                                                                                                                                                                    {
+    DTSTabPage *dp;
+
+    dp = CreateTab(name, butmask, userdata, cb, cdata, xmldoc, false);
+    InsertTab(dp, pos, true, undo);
+
+    return dp;
+}
+.fi
 .SS "void DTSTabWindow::InsertTab (\fBDTSTabPage\fP *panel, intpos, boolshow = \fCtrue\fP, intundo = \fC0\fP)"
 
 .PP
@@ -77,6 +146,26 @@ Definition at line 1014 of file DTSTreeWindow\&.cpp\&.
 References DTSObject::GetName(), DTSObject::GetPanel(), DTSObject::panel, DTSObject::refobj, and Undo()\&.
 .PP
 Referenced by CreateTab(), tab_newpane::handle_newtabpane(), and Undo()\&.
+.PP
+.nf
+                                                                           {
+    wxBookCtrlBase *nb = dynamic_cast<wxBookCtrlBase*>(this);
+    DTSObject *dp = static_cast<DTSObject*>(panel);
+    wxWindow *w = panel->GetPanel();
+
+    objlock(refobj);
+    nb->InsertPage(pos, w, dp->GetName());
+    objunlock(refobj);
+    w->Show(true);
+
+    if (sel) {
+        SetSelection(pos);
+    }
+    if (undo) {
+        Undo(undo);
+    }
+}
+.fi
 .SS "bool DTSTabWindow::Show (boolshow = \fCtrue\fP)"
 
 .PP
@@ -85,6 +174,48 @@ Definition at line 941 of file DTSTreeWindow\&.cpp\&.
 References DTSObject::beenshown, DTSTabPage::ConfigPane(), DTSObject::dtsevthandler, DTSObject::frame, DTSTabWindowEvent::OnButton(), DTSTabWindowEvent::PageChange(), DTSTabWindowEvent::PageChanged(), and DTSObject::status\&.
 .PP
 Referenced by DTSTabWindow()\&.
+.PP
+.nf
+                                 {
+    wxNotebook *nb = (wxNotebook*)this;
+    DTSTabWindowEvent *dtsevt = (DTSTabWindowEvent*)dtsevthandler;
+    wxWindow *w;
+    int i, cnt;
+    bool res;
+#ifdef __WIN32
+    DTSTabPage *tp;
+#endif // __WIN32
+
+    if (show && frame) {
+        frame->SetStatusText(status);
+    }
+
+    res = wxNotebook::Show(show);
+
+    if (!beenshown && show && res) {
+        cnt = GetPageCount();
+        for(i = 0; i < cnt;i++) {
+            w = GetPage(i);
+#ifdef __WIN32
+            tp = dynamic_cast<DTSTabPage*>(w);
+            tp->ConfigPane();
+            w->Show(true);
+            if (i) {
+                w->Show(false);
+            }
+#else
+            w->Show(true);
+#endif // __WIN32
+        }
+        beenshown = true;
+        nb->Bind(wxEVT_NOTEBOOK_PAGE_CHANGING, &DTSTabWindowEvent::PageChange, dtsevt);
+        nb->Bind(wxEVT_NOTEBOOK_PAGE_CHANGED, &DTSTabWindowEvent::PageChanged, dtsevt);
+        nb->Bind(wxEVT_COMMAND_BUTTON_CLICKED, &DTSTabWindowEvent::OnButton, dtsevt);
+
+    }
+    return res;
+}
+.fi
 .SS "void DTSTabWindow::Undo (intpg)"
 
 .PP
@@ -93,6 +224,31 @@ Definition at line 919 of file DTSTreeWindow\&.cpp\&.
 References InsertTab()\&.
 .PP
 Referenced by tab_newpane::handle_newtabpane(), InsertTab(), and DTSTabWindowEvent::OnButton()\&.
+.PP
+.nf
+                              {
+    DTSTabPage *pane, *newp;
+    int idx;
+
+    if (pg == 0) {
+        return;
+    } else if (pg > 0) {
+        idx = pg-1;
+    } else {
+        idx = GetPageCount() + pg;
+    }
+
+    pane = dynamic_cast<DTSTabPage*>(GetPage(idx));
+    RemovePage(idx);
+
+    newp = new DTSTabPage(this);
+    *newp = *pane;
+    delete pane;
+
+    InsertTab(newp, idx);
+}
+.fi
+
 
 .SH "Author"
 .PP 
