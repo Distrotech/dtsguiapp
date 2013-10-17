@@ -46,7 +46,7 @@
   * @ingroup C-API
   * @remark The menu bar at the top of the application contains menus,
   * these menus contain menuitems these are the primary control interface.
-  * @remark Menu items when selected can call a function or place a pre created 
+  * @remark Menu items when selected can call a function or place a pre created
   * panel in the display area. If the function returns a panel it will be placed
   * in the display area.
   * @remark Menuitems can also be enabled / disabled programatically,
@@ -96,7 +96,7 @@
   * @note The data is a reference to a referenced object.*/
 
 /** @defgroup C-API-Panel-Elements-XML XML Elements
-  * @brief Elements derived from a XML node.  
+  * @brief Elements derived from a XML node.
   * @ingroup C-API-Panel-Elements
   * @see DTSPanel::GetNode()
   * @todo Adding functions to work from a search path will be better than
@@ -125,7 +125,7 @@
   * @ingroup C-API
   * @remark Custom dialog boxes can be created using DTSDialog panels.
   * @remark All implementations of the wxFileDialog provide a wildcard filter.
-  * Typing a filename containing wildcards (*, ?) in the filename text item, and clicking on Ok, will 
+  * Typing a filename containing wildcards (*, ?) in the filename text item, and clicking on Ok, will
   * result in only those files matching the pattern being displayed.
   * The wildcard may be a specification for multiple types of file with a description for each, such as:
   * @verbatim"BMP and GIF files (*.bmp;*.gif)|*.bmp;*.gif|PNG files (*.png)|*.png"@endverbatim
@@ -149,7 +149,7 @@
 /**
   * @ingroup C-API
   * @brief Defining __DTS_C_API allows access to C API from inside a C++ file
-  * 
+  *
   * dtsgui.h will only include the definitions for the C API using C++ if this is defined.*/
 #define __DTS_C_API
 
@@ -204,7 +204,7 @@ static int menuid = wxID_AUTO_LOWEST;
   * @param title Title displayed on the application bar.
   * @param status Default text displayed on the status bar.
   * @return The fuction does not return.*/
-void dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point wsize, struct point wpos, const char *title, const char *status) {
+void dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point *wsize, struct point *wpos, const char *title, const char *status) {
 	new DTSApp(confcallback_cb, userdata, wsize, wpos, title, status);
 }
 
@@ -1180,9 +1180,9 @@ extern const char *dtsgui_filesave(struct dtsgui *dtsgui, const char *title, con
 
 /** @ingroup C-API-Dialog
   * @brief Open file open dialog box.
-  * 
+  *
   * @see DTSFrame::FileDialog()
-  * @see dtsgui_fileopen() 
+  * @see dtsgui_fileopen()
   * @param dtsgui Application data ptr.
   * @param title Title of the file dialog.
   * @param path Original path to open dialog in.

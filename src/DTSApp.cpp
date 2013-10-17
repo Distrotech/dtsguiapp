@@ -32,7 +32,7 @@
   *@ingroup CPP*/
 wxDEFINE_EVENT(DTS_APP_EVENT, wxCommandEvent);
 
-dtsgui::dtsgui(const char *title, const char *stat, struct point w_size, struct point w_pos, dtsgui_configcb confcallback_cb , void *data) {
+dtsgui::dtsgui(const char *title, const char *stat, struct point *w_size, struct point *w_pos, dtsgui_configcb confcallback_cb , void *data) {
 	wsize = w_size;
 	wpos = w_pos;
 
@@ -65,7 +65,7 @@ int dtsgui::SetupAPPFrame() {
 	void *data = NULL;
 	int res;
 
-	appframe = new DTSFrame(title, wxPoint(wpos.x, wpos.y), wxSize(wsize.x, wsize.y), this);
+	appframe = new DTSFrame(title, wxPoint(wpos->x, wpos->y), wxSize(wsize->x, wsize->y), this);
 	SetStatusText();
 
 	objlock(this);
@@ -244,7 +244,7 @@ DTSFrame *curl_progress::GetFrame() {
 	return owner->GetFrame();
 }
 
-DTSApp::DTSApp(dtsgui_configcb confcallback_cb,void *data, struct point wsize, struct point wpos, const char *title, const char *status) {
+DTSApp::DTSApp(dtsgui_configcb confcallback_cb,void *data, struct point *wsize, struct point *wpos, const char *title, const char *status) {
 	dtsgui = new class dtsgui(title, status, wsize, wpos, confcallback_cb, data);
 }
 

@@ -128,11 +128,6 @@ class DTSStaticPanel: public DTSPanel, public virtual wxPanel  {
 		virtual bool Show(bool = true);
 };
 
-class DTSTextPanel: public DTSStaticPanel  {
-	public:
-		DTSTextPanel(wxWindow *,DTSFrame* = NULL, wxString = wxEmptyString);
-};
-
 class DTSScrollPanel: public DTSPanel, public virtual wxScrolledWindow {
 	public:
 		DTSScrollPanel(wxWindow *, DTSFrame* = NULL, wxString = wxEmptyString, int = 0);
