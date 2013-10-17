@@ -193,7 +193,7 @@ void DTSPanelEvent::OnCombo(wxCommandEvent &event) {
 		objunref(fi);
 		fi = NULL;
 	}
-	stop_bucket_loop(bloop);
+	objunref(bloop);
 	objunref(bl);
 
 	if (fi) {
@@ -770,7 +770,7 @@ void DTSPanel::Update_XML() {
 
 		objunref(fi);
 	}
-	stop_bucket_loop(bloop);
+	objunref(bloop);
 	objunref(fitems);
 }
 
@@ -831,7 +831,7 @@ struct xml_node *DTSPanel::Panel2XML(const char *xpath, const char *node, const 
 		objunref(fi);
 	}
 
-	stop_bucket_loop(bl);
+	objunref(bl);
 	objunref(fitems);
 	objunref(xmldoc);
 
@@ -854,7 +854,7 @@ struct curl_post *DTSPanel::Panel2Post() {
 	}
 
 	if (!(post = curl_newpost())) {
-		stop_bucket_loop(bloop);
+		objunref(bloop);
 		objunlock(fitems);
 		return NULL;
 	}
@@ -873,7 +873,7 @@ struct curl_post *DTSPanel::Panel2Post() {
 		}
 		objunref(fi);
 	}
-	stop_bucket_loop(bloop);
+	objunref(bloop);
 	objunref(fitems);
 
 	return post;
@@ -1026,10 +1026,6 @@ DTSStaticPanel::DTSStaticPanel() {
 bool DTSStaticPanel::Show(bool show) {
 	ShowPanel(show);
 	return wxPanel::Show(show);
-}
-
-DTSTextPanel::DTSTextPanel(wxWindow *parent,DTSFrame *frame, wxString status)
-	:DTSStaticPanel(parent, frame, status) {
 }
 
 DTSWindow::DTSWindow(wxWindow *parent, DTSFrame *frame, wxString status)

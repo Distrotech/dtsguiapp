@@ -424,6 +424,7 @@ DTSWindow *DTSFrame::TextPanel(const wxString &title, const char *buf) {
 	wxTextCtrl *tc;
 
 	p = new DTSWindow(this, this, title);
+
 	w = p->GetPanel();
 
 	tc = new wxTextCtrl(w, -1, buf, wxDefaultPosition, wxDefaultSize,wxTE_MULTILINE | wxHSCROLL | wxTE_READONLY);

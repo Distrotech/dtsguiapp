@@ -164,7 +164,8 @@ void free_appdata(void *data) {
   * @param argc Number of arguments in array argv.
   * @param argv Array of argumements passed on the commandline.
   * @return Exit code.*/
-int main(int argc, char **argv) {
+FRAMEWORK_MAIN("Distrotech System Administration", "Gregory Hinton Nietsky", "gregory@distrotech.co.za",
+        "http://www.distrotech.co.za", 2013, NULL, 0, NULL) {
 	struct point wsize = {800, 600};
 	struct point wpos = {50, 50};
 	struct app_data *appdata;
@@ -191,17 +192,15 @@ int main(int argc, char **argv) {
 	setenv("XML_DEBUG_CATALOG", "", 0);
 #endif
 
-	startthreads();
 	xml_init();
 	xslt_init();
 
-	dtsgui_config(guiconfig_cb, appdata, wsize, wpos, "Distrotech System App", "Welcome to Distrotech App!");
+	dtsgui_config(guiconfig_cb, appdata, &wsize, &wpos, "Distrotech System App", "Welcome to Distrotech App!");
 	res = dtsgui_run(argc, argv);
 	objunref(appdata);
 
 	xslt_close();
 	xml_close();
-	stopthreads();
 
 	return res;
 }

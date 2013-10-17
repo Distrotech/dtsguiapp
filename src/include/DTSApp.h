@@ -22,7 +22,7 @@
 class dtsgui {
 	public:
 		DTS_OJBREF_CLASS(dtsgui);
-		dtsgui(const char *title, const char *stat, struct point w_size, struct point w_pos, dtsgui_configcb confcallback_cb , void *userdata);
+		dtsgui(const char *title, const char *stat, struct point *w_size, struct point *w_pos, dtsgui_configcb confcallback_cb , void *userdata);
 		int SetupAPPFrame(void);
 		void *GetUserData(void);
 		void SetStatusText(void);
@@ -35,8 +35,8 @@ class dtsgui {
 		const char *title;
 		const char *status;
 		dtsgui_configcb cb;
-		struct point wsize;
-		struct point wpos;
+		struct point *wsize;
+		struct point *wpos;
 };
 
 class dtsgui_curl {
@@ -67,7 +67,7 @@ class curl_progress {
 
 class DTSApp : public wxApp {
 	public:
-		DTSApp(dtsgui_configcb confcallback_cb, void *data, struct point wsize, struct point wpos, const char *title, const char *status);
+		DTSApp(dtsgui_configcb confcallback_cb, void *data, struct point *wsize, struct point *wpos, const char *title, const char *status);
 		~DTSApp();
 	private:
 		virtual bool OnInit();

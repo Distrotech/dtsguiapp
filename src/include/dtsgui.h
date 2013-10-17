@@ -21,7 +21,7 @@
   * @brief Main include file for the GUI Library
   *
   * This file needs to be included to use the defined functions and API.
-  * Including it in a C++ file without defining _DTS_C_API will not 
+  * Including it in a C++ file without defining _DTS_C_API will not
   * allow access to the namespace DTS_C_API.
   *
   * It is not recomended to use the C API from C++.
@@ -36,11 +36,11 @@
 
 /** @brief Callback event for tree view.*/
 enum tree_cbtype {
-	/**@brief Treenods is selected*/ 
+	/**@brief Treenods is selected*/
 	DTSGUI_TREE_CB_SELECT,
-	/**@brief Treenods is to be deleted*/ 
+	/**@brief Treenods is to be deleted*/
 	DTSGUI_TREE_CB_DELETE,
-	/**@brief Treenods is edited*/ 
+	/**@brief Treenods is edited*/
 	DTSGUI_TREE_CB_EDIT
 };
 
@@ -101,7 +101,7 @@ typedef int (*dtsgui_configcb)(struct dtsgui*, void*);
   * @param type Event type.
   * @param eid Event ID Depends on the event type.
   * @param data Data attached to the event handler.
-  * @return A non zero value to allow further processing of the event.*/ 
+  * @return A non zero value to allow further processing of the event.*/
 typedef int (*event_callback)(struct dtsgui*, dtsgui_pane, int type, int, void*);
 
 /** @brief Calback to configure and return a wxToolbar objecct.
@@ -289,8 +289,8 @@ namespace DTS_C_API {
 
 #if !defined(__cplusplus) || defined(__DTS_C_API)
 /*app frame config and control*/
-void dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point wsize,
-					  struct point wpos, const char *title, const char *status);
+void dtsgui_config(dtsgui_configcb confcallback_cb, void *userdata, struct point *wsize,
+					  struct point *wpos, const char *title, const char *status);
 int dtsgui_run(int argc, char **argv);
 void *dtsgui_userdata(struct dtsgui *dtsgui);
 void dtsgui_titleappend(struct dtsgui *dtsgui, const char *text);
